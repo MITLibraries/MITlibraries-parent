@@ -1,0 +1,55 @@
+08/02/2013 15:19:58 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:19:58 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:22:34 ANS1082E Invalid destination file specification '/tmp' entered
+08/02/2013 15:22:53 ANS1302E No objects on server match query
+
+08/02/2013 15:23:14 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:23:14 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:23:54 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:23:54 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:24:43 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:24:43 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:25:29 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:25:29 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:27:51 ANS1302E No objects on server match query
+
+08/02/2013 15:28:04 ANS1302E No objects on server match query
+
+08/02/2013 15:28:10 ANS1302E No objects on server match query
+
+08/02/2013 15:28:21 ANS1082E Invalid destination file specification '/tmp' entered
+08/02/2013 15:28:34 ANS1081E Invalid search file specification '/var/www/libraries.mit.edu/htdocs/wp-content/themes/libraries/*/tmp' entered
+08/02/2013 15:28:45 ANS1082E Invalid destination file specification '/tmp' entered
+08/02/2013 15:28:55 ANS1141W Unknown command - browse
+08/02/2013 15:31:50 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:31:50 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:32:08 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:32:08 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:33:04 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:33:04 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:33:13 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:33:13 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/02/2013 15:33:41 ANS1088E File space '/var/www' does not exist
+08/02/2013 15:33:41 ANS1395E The destination filespace or drive letter is unavailable. The following object was not processed: 
+Filespace:'/var/www' 
+08/09/2013 11:58:23 ANS1102E An excessive number of command line arguments are passed to the program.
+08/09/2013 11:58:23 ANS1133W An expression might contain a wildcard not enclosed in quotes.
+08/09/2013 11:58:33 ANS1102E An excessive number of command line arguments are passed to the program.
+08/09/2013 11:58:33 ANS1133W An expression might contain a wildcard not enclosed in quotes.
+08/09/2013 11:58:58 ANS1102E An excessive number of command line arguments are passed to the program.
+08/09/2013 11:58:58 ANS1133W An expression might contain a wildcard not enclosed in quotes.
+08/09/2013 12:05:45 ANS1074W The operation was stopped by the user.
+
+08/09/2013 12:06:13 ANS1074W The operation was stopped by the user.
+
+08/09/2013 12:07:04 ANS1074W The operation was stopped by the user.
+
