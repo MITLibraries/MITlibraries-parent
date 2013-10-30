@@ -52,14 +52,11 @@
 
 <body <?php body_class(); ?>>
 	<div id="container">
-		<header class="row">
+		<header class="row group">
 			<div id="logo"><?php echo get_bloginfo( 'name', 'display' ) ?></div>
-			<nav id="site-navigation" class="span12 main-navigation" role="navigation">
-				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-				<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-				
-			</nav><!-- #site-navigation -->
+
+			<?php get_template_part( 'inc/megaNav' ); ?>
+
 			<div id="toolbox">
 				<a class="yourAccount" href="/barton-account">Your Account</a>
 				<div id="asktell">
@@ -75,7 +72,6 @@
 					</map>
 				</div>
 			</div>
-			<div class="clear"></div>
 		</header>
 		
 		<?php 

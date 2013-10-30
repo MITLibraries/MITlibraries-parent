@@ -12,7 +12,7 @@
 ?>
 		<div class="clear"></div>
 		<footer class="inner" role="contentinfo">
-			<div id="footerHeader" class="">
+			<div id="footerHeader" class="footerHeader">
 				<a href="/" id="logoFooter">MIT Libraries</a>
 				<div id="footerMainLink" class="">
 					<a href="/" id="homeFooter"><span class="hidden-phone">Libraries</span> home</a> |
@@ -36,6 +36,13 @@
 			</div>
 			<div id="footerContent" class="footerContent group">
 				<?php
+
+					global $mainSite;
+					global $blog_id;
+					$current_blog_id = $blog_id;
+
+					switch_to_blog($mainSite);
+
 					$args = array(
 					
 					);
@@ -64,15 +71,16 @@
 							$id = $child->ID;						
 					?>
 						<li><a href="<?php echo $url ?>"><?php echo $title ?></a></li>
-					<?php
-						}
-					?>
+
+					<?php } ?>
+					
 					</ul>
 				</div>
 
 				<?php				
 						
 					}
+					switch_to_blog($current_blog_id);
 				?>
 			</div>
 			
@@ -135,6 +143,6 @@ $('.tabnav a').on('shown', function (e) {
 
 </script>
 
-<?php wp_footer(); ?>
+<?php	wp_footer(); ?>
 </body>
 </html>
