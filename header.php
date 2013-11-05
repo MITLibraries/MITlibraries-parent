@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays all of the <head> section and everything up till div#breadcrumb
  *
  * @package WordPress
  * @subpackage Twenty_Twelve
@@ -53,9 +53,23 @@
 <body <?php body_class(); ?>>
 	<div id="container">
 		<header class="row group">
+			<?php
+				global $blog_id;
+				$current_blog_id = $blog_id;
+				// switch to the main site to get all header content
+				switch_to_blog(1);
+			?>
 			<div id="logo"><?php echo get_bloginfo( 'name', 'display' ) ?></div>
 
-			<?php get_template_part( 'inc/megaNav' ); ?>
+			<nav id="site-navigation" class="span12 main-navigation" role="navigation">
+				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
+				<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
+				<?php 
+					wp_nav_menu(
+						array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' )
+					);
+				?>	
+			</nav><!-- #site-navigation -->
 
 			<div id="toolbox">
 				<a class="yourAccount" href="/barton-account">Your Account</a>
@@ -72,6 +86,12 @@
 					</map>
 				</div>
 			</div>
+
+			<?php
+				//switch back to blog being viewed
+				switch_to_blog($current_blog_id);
+			?>
+			
 		</header>
 		
 		<?php 
