@@ -349,26 +349,27 @@ var Core = {
 		var num = 0;
 		
 		var hash = window.location.hash;
-		hash = hash.replace("#", "");
+		hash = hash.replace("#0", "");
 		
 		$(".expandable .content").attr('aria-expanded', 'false');
 		
 		$(".expandable h3").click(function(e) {
 			e.preventDefault();
-			
+			// window.location.hash = $('.expandable h3').closest('a').attr('id');
 			var par = $(this).parent();
-			var hash = par.attr("data-anchor");
+			var hash = par.attr("id");
+
 			
 			if (par.hasClass("active")) {
 				par.toggleClass("active", false);
 				par.find(".content").slideUp(200);
 				par.find(".content").attr('aria-expanded', 'false');
-				/* window.location.hash = ""; */ //note: this causes the browser to jump to the top of the page
+				window.location.hash = "";  //note: this causes the browser to jump to the top of the page
 			} else {
 				par.toggleClass("active", true);
 				par.find(".content").slideDown(200);
 				par.find(".content").attr('aria-expanded', 'true');
-				/* window.location.hash = "#"+hash; */
+				window.location.hash = "#"+hash; 
 			}
 		});
 		
@@ -377,7 +378,7 @@ var Core = {
 			var h3 = obj.find("h3:first");
 			
 			var setHash = encodeURIComponent(h3.html());
-			obj.attr("data-anchor", setHash);
+			obj.attr("id", setHash);
 
 			if (setHash == hash) {
 				obj.toggleClass("active", true);

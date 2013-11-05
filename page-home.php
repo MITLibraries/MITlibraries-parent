@@ -70,7 +70,7 @@
 			<li><a href="/barton-account">YOUR ACCOUNT</a></li>
 			<li><a href="/hours">HOURS</a></li>
 			<li><a href="/locations">LIST OF LIBRARIES</a></li>
-			<li><a href="/site-index.html">SITE SEARCH</a></li>
+			<li><a href="/about/site-search">SITE SEARCH</a></li>
 		</ul>
 		
 		<!-- Ask us / Tell us navigation area -->
@@ -490,7 +490,7 @@
 										?>
 						<h2>Library Services</h2>
 						
-						<h3 class="allservices"><a href="/services-all">Services A-Z</a></h3>
+						<h3 class="allservices"><a href="/about/site-search">Services A-Z</a></h3>
 			
 						<!-- List of Library Services, first row -->
 						<div class="libraryservices columns three-column floatwrapper">

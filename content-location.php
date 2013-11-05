@@ -80,7 +80,7 @@
 		?>
 		
 		<div id="stage" class="inner row" role="main">
-	
+
 			<div class="title libraryTitle span12 dark">
 				<div class="libraryContent">
 					<h1><span class="libraryName"><?php the_title(); ?></span><span class="librarySubject"><?php echo $subject ?></h1>
@@ -91,7 +91,6 @@
 						
 					</div>
 				</div>
-				
 				
 				<div class="todayHours">
 					<?php if ($hasHours): ?>

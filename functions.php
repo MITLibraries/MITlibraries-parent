@@ -181,7 +181,7 @@ function twentytwelve_scripts_styles() {
 	 * All-site JS
 	 */
 
-	if( is_page() || is_single() ) {
+	if( is_page() || is_single() || is_home()) {
 		wp_enqueue_script('modernizr');
 	}
 
@@ -413,6 +413,18 @@ function twentytwelve_entry_meta() {
 }
 endif;
 
+if (!function_exists('is_child_page')) {
+	function is_child_page() {
+	global $post;     // if outside the loop
+
+	if ( is_page() && $post->post_parent ) {
+    return $post->post_parent;
+	} else {
+    return false;
+	}
+}
+}
+
 /**
  * Extends the default WordPress body class to denote:
  * 1. Using a full-width layout, when no active widgets in the sidebar
@@ -447,6 +459,18 @@ function twentytwelve_body_class( $classes ) {
 			$classes[] = 'two-sidebars';
 	}
 
+	if (is_child_theme()) {
+		$classes[] = 'childTheme';
+	}
+	
+	if(is_child_page()) {
+		$classes[] = 'childPage';
+	}
+	
+	if (is_page_template('page-selfTitle.php')) {
+		$classes[] = 'boxSizingOn';
+	}
+
 	if ( empty( $background_color ) )
 		$classes[] = 'custom-background-empty';
 	elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
@@ -462,6 +486,8 @@ function twentytwelve_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'twentytwelve_body_class' );
+
+
 
 /**
  * Adjusts content_width value for full-width and single image attachment
