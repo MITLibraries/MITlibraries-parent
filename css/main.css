@@ -1892,9 +1892,20 @@ body:not(.page-site-search) #cse-search-box  input[type=text] {
 	margin: 1em 1.5em;
 }
 
-/* ----
-Begin New Flexbox Styles
----- */
+/* ---- Better, Faster, Stronger ---- */
+
+.boxSizingOn,
+.boxSizingOn * {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.boxSizingOn #footerHeader {
+	height: 92px;
+}
+
+/* ---- Begin New Flexbox Styles ---- */
 
 .flexContainer {
 	display: block;
