@@ -7,39 +7,26 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
- 
- 
- 
-@media (min-width: 768px) and (max-width: 979px) {
-
-}
-
-@media (max-width: 767px) {
-
-}
-
-/* Large Desktop */
-@media (min-width: 1200px) {
-
-}
-
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-
-}
-
-/* landscape phone to portrait tablet */
-@media (max-width: 767px) {
-
-}
 
 /* Landscape phone and down -- MOBILE */
 @media (max-width: 480px) {
+
+	.siteTitle,
+	.pageTitle {
+		background: #fff;
+		box-shadow: 0 0 5px #333;
+  	color: #000;
+  	padding: 0.5em;
+  	text-align: center;
+	}
+
+	.siteTitle h1 {
+		margin: 0 auto;
+	}
+
 	#locationsHome {
 		width: 100%;
 	}
-
-	
 
 	.studyList>li {
 		height: auto;
