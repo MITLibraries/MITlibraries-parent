@@ -28,8 +28,6 @@ var Core = {
 		
 		Core.buildMap();
 		
-		Core.nullAlt();
-		
 		$(window).resize(function() {
 			Core.handleResize();
 		});
@@ -399,10 +397,6 @@ var Core = {
 			document.location = "/";
 		});
 	},
-	
-	nullAlt: function() {
-		$("img[alt='null'], img[alt='Null'], img[alt='NULL']").attr("alt", "");
-	}
 	
 }
 
