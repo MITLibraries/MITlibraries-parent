@@ -467,6 +467,10 @@ function twentytwelve_body_class( $classes ) {
 		$classes[] = 'boxSizingOn';
 	}
 
+	if (is_page_template('page-location.php')) {
+		$classes[] = 'locationPage';
+	}
+
 	if ( empty( $background_color ) )
 		$classes[] = 'custom-background-empty';
 	elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )

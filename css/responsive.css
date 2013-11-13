@@ -121,15 +121,14 @@
 	}	
 	
 	.title {
-		position: relative;
 		background: #fff;
 		color: #333;
 		font-size: 17px;
-		line-height: 20px;
-		padding: 10px 5px 5px 0px !important;
 		height: auto;
-		margin-bottom: 5px;
-		
+		line-height: 20px;
+		padding: 0;
+		position: relative;
+		margin: 0.5em 0;
 	}
 	
 	.title .extraInfo {
@@ -224,21 +223,17 @@
 	}
 	
 	.librarySlideshow {
-		position: relative;
-		width: 320px;
+		height: auto;
 		left: auto;
 		margin-top: 5px;
-		height: 150px;
+		position: relative;
 		top: auto;
+		width: 100%;
 	}
 	
 	.tabcontent {
 		width:300px;
 		margin-bottom: 60px;
-	}
-	
-	.page-template-page-location-php .tabcontent .span3 {
-		width: 300px;
 	}
 	
 	.libraryContent {
@@ -267,16 +262,25 @@
 	}
 	
 	.libraryTitle .libraryAlert {
+		background: #333;
+		border: 1px solid #ffcc33;
+		bottom: auto;
+		color: #ffcc33;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		padding: 10px;
 		position: relative;
 		right: auto;
-		bottom: auto;
-		width: 280px;
-		margin-top: 5px;
-		padding: 10px;
-		margin-bottom: 10px;
-		background: #d0d0d0;
-		border: 1px solid #999;
-		color: #333;
+		max-width: 100%;
+		width: 100%;
+		-o-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.libraryTitle .libraryAlert a {
+		color: #ffcc33;
 	}
 	
 	#slideshowNav {
@@ -534,18 +538,60 @@
 		color: #fff;
 		background: transparent url(../images/arrow-white.png) no-repeat right 10px !important;
 	}
+
+	/* Flexboxes and tabs */
 	
+	.page-getit .mainContent {
+		margin: 0;
+		padding: 0;
+	}
 	
+	.page-getit .yourSearch.header {
+		font-size: 1em;
+	}
 	
-}
+	.page-getit .yourSearch h2 {
+		font-size: 1.5em;
+		line-height: 1.25;
+	}
 
-@media (max-width: 979px) {
+	.flexbox .flexContainer {
+		display: block;
+	}
+	
+	.flexbox .flexItem,
+	.flexbox .flexItem:nth-of-type(n) {
+		margin: 1em auto;
+		width: 99%;
+	}
 
-}
+	.mainContent {
+		padding: 1em;
+	}
 
-@media (min-width: 980px) {
+	.mainContent .tabcontent {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
 
+	.mainContent .tabcontent .flexItem {
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	
+	.tabcontent .flexContainer {
+		display: none;
+	}
 
+	.tabcontent .active.flexContainer {
+		display: block;
+	}
 
-
-}
+	.mainContent .tabcontent .first {
+		border-right: none;
+	}
+	
+} /* end @media (max-width:480px) */

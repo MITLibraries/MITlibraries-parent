@@ -2008,19 +2008,19 @@ html:not(.flexbox) .page-getit .flexItem {
 	color: #ffcc33;
 }
 
-.mainContent .flexItem h3,
-.mainContent .flexItem h4 {
+.page-getit .mainContent .flexItem h3,
+.page-getit .mainContent .flexItem h4 {
 	color: #3f1c08;
 	font-family: 'Open Sans';
 	text-shadow: 1px 1px #fff6ed;
 }
 
-.mainContent .flexItem h3 {
+.page-getit .mainContent .flexItem h3 {
 	font-size: 1.5em;
 	margin-bottom: 1em;
 }
 
-.mainContent .flexItem h4 {
+.page-getit .mainContent .flexItem h4 {
 	font-size: 1.25em;
 	margin-top: 2em;
 }
@@ -2078,30 +2078,70 @@ html:not(.flexbox) .page-getit .flexItem {
 	margin: 1em;
 }
 
-@media screen and (max-width:480px) {
+.mainContent .tabcontent,
+.mainContent .tabcontent * {
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
-	.page-getit .mainContent {
-		margin: 0;
-		padding: 0;
-	}
-	
-	.page-getit .yourSearch.header {
-		font-size: 1em;
-	}
-	
-	.page-getit .yourSearch h2 {
-		font-size: 1.5em;
-		line-height: 1.25;
-	}
+.tabcontent .flexContainer {
+	display: none;
+}
 
-	.flexbox .flexContainer {
-		display: block;
-	}
-	
-	.flexbox .flexItem,
-	.flexbox .flexItem:nth-of-type(n) {
-		margin: 1em auto;
-		width: 99%;
-	}
-	
+.tabcontent .active.flexContainer {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	max-width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.mainContent .tabcontent .tab {
+	padding: 1.5em 0 0;
+}
+
+.mainContent .tabcontent .first,
+.mainContent .tabcontent .second {
+	margin: 0;
+	width: 50%;
+	max-width: none;
+}
+
+html:not(.flexbox) .mainContent .flexItem {
+	margin: 16px 0;
+	margin: 1rem 0;
+}
+
+.mainContent .tabcontent .first {
+	border-right: 1px solid #ccc;
+	padding-right: 1.5em;
+}
+
+.mainContent .tabcontent .second {
+	padding-left: 1.5em;
+}
+
+.mainContent .tab2 .first {
+	margin: 0;
+	padding: 0 1rem;
+	width: 26%;
+}
+
+.mainContent .tab2 .second {
+	width: 74%;
+}
+
+.mainContent .tab2 .reserve {
+	color: #fff;
+	width: 100%;
+}
+
+.locationPage .profile {
+	left: auto;
 }
