@@ -557,7 +557,6 @@
 						  <ul class="linklist">
 						    <li><a href="/references">Citation software:</a> <a href="/endnote">EndNote,</a> <a href="/refworks">RefWorks,</a> <a href="/zotero">Zotero,</a> <a href="/mendeley">Mendeley</a></li>
 						    <li><a href="http://libguides.mit.edu/manage-info">Manage your information</a></li>
-						    <li><a href="/betas">Betas &amp; widgets</a></li>
 						    <li><a href="/apps">Apps for academics</a></li>
 						    <li><a href="/libx">LibX</a></li>
 						    <li><a href="/help/rss/barton/">New books RSS feeds</a></li>
