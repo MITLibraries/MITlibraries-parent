@@ -2086,11 +2086,11 @@ html:not(.flexbox) .page-getit .flexItem {
 	box-sizing: border-box;
 }
 
-.tabcontent .flexContainer {
+.flexbox .tabcontent .flexContainer {
 	display: none;
 }
 
-.tabcontent .active.flexContainer {
+.flexbox .tabcontent .active.flexContainer {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
