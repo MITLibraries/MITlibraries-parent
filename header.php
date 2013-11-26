@@ -51,13 +51,24 @@
 <body <?php body_class(); ?>>
 	<div id="container">
 		<header class="row group">
+			
 			<?php
 				global $blog_id;
 				$current_blog_id = $blog_id;
-				// switch to the main site to get all header content
-				switch_to_blog(1);
+				// switch to the main site to get all header content, unless MOH site.
+				if ($blog_id != 21) {
+					switch_to_blog(1);
+				}
 			?>
-			<div id="logo"><?php echo get_bloginfo( 'name', 'display' ) ?></div>
+
+			<div id="logo">
+					if ($blog_id != 21) {
+					}
+					else {
+						echo "MIT Libraries";
+					}
+				?>
+			</div>
 
 			<nav id="site-navigation" class="span12 main-navigation" role="navigation">
 				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
@@ -86,8 +97,10 @@
 			</div>
 
 			<?php
-				//switch back to blog being viewed
-				switch_to_blog($current_blog_id);
+				//switch back to blog being viewed, unless MOH site
+				if ($blog_id != 21) {
+					switch_to_blog($current_blog_id);
+				}
 			?>
 			
 		</header>
