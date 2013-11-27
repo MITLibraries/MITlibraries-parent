@@ -300,49 +300,26 @@ var Core = {
 	},
 	
 	linkExpandable: function() {
-		var num = 0;
-		
-		var hash = window.location.hash;
-		hash = hash.replace("#0", "");
-		
-		$(".expandable .content").attr('aria-expanded', 'false');
-		
-		$(".expandable h3").click(function(e) {
+
+		// Based on Jack Moore's accordion: http://www.jacklmoore.com/notes/jquery-accordion-tutorial/
+
+		$(".expandable h3").click(function(e){
 			e.preventDefault();
-			// window.location.hash = $('.expandable h3').closest('a').attr('id');
-			var par = $(this).parent();
-			var hash = par.attr("data-anchor");
-
-			
-			if (par.hasClass("active")) {
-				par.toggleClass("active", false);
-				par.find(".content").slideUp(200);
-				par.find(".content").attr('aria-expanded', 'false');
-				window.location.hash = "";  //note: this causes the browser to jump to the top of the page
-			} else {
-				par.toggleClass("active", true);
-				par.find(".content").slideDown(200);
-				par.find(".content").attr('aria-expanded', 'true');
-				window.location.hash = "#"+hash; 
-			}
+			$(this).closest("section").find(".content").not(":animated").slideToggle();
+			$(this).closest("section").toggleClass("active");
+			//var $clickLink = $(this).closest("section").find("a").attr("id");
+			//window.location.hash = $clickLink;
 		});
-		
-		$(".expandable").each(function() {
-			var obj = $(this);
-			var h3 = obj.find("h3:first");
-			
-			var setHash = encodeURIComponent(h3.html());
-			obj.attr("data-anchor", setHash);
 
-			if (setHash == hash) {
-				obj.toggleClass("active", true);
-				obj.find(".content").slideDown(200);
-				$(document.body).animate({
-					'scrollTop': $(obj).offset().top - 50
-				}, 500);
+		$(".expandable h3 > a").each(function(){
+			var $title = $(this).html().replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+			var $link = $(this);
+			$(this).attr("id", $title);
+
+			if(window.location.hash.substring(1) == $title) {
+				$($link).closest("h3").click();
+				console.log("the hash is: " + $title);
 			}
-			
-			num++;
 		});
 
 	},
