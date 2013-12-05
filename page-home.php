@@ -500,7 +500,7 @@
 						   <ul class="linklist">
 						    <li><a href="/hours">Hours</a></li>
 						    <li><a href="/locations">List of libraries</a></li>
-						    <li><a href="/studyspaces">Study spaces</a></li>
+						    <li><a href="/study">Study spaces</a> <span class="pipe">|</span> <a href="/study/reserve/">Reserve a group study space</a></li>
 						    <li><a href="/exhibits">Exhibits &amp; galleries</a></li>
 						    <li><a href="/map">Map</a></li>
 						  </ul>
