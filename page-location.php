@@ -31,11 +31,11 @@ get_header(); ?>
 				'post_type' => 'any'
 			);
 			
-			$posts = new WP_Query($args);
+			$locPosts = new WP_Query($args);
 			
 		?>
 		
-		<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+		<?php while ( $locPosts->have_posts() ) : $locPosts->the_post(); ?>
 
 			<?php get_template_part( 'content', 'location' ); ?>
 		
