@@ -432,12 +432,14 @@ nav a.active {
 }
 
 .libraryAlert {
-	position: absolute;
-	width: 200px;
-	right: 10px;
 	border: 1px solid #ac944d;
-	padding: 10px 10px 5px 10px;
 	bottom: 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 0.5em;
+	position: absolute;
+	right: 10px;
+	width: 200px;
 }
 
 .libraryTitle .libraryAlert {
@@ -445,9 +447,37 @@ nav a.active {
 	overflow: hidden;
 }
 
-.libraryAlert  {
-	font-size: 16px;
-	line-height: 20px;
+.page-hours .libraryAlert {
+	border: none;
+	font-weight: bold;
+	margin: -28px auto 0;
+	margin: -1.75rem auto 0;
+	position: relative;
+	width: 18em;
+}
+
+.page-hours .libraryAlert span {
+	background: #ffcc33;
+	border-radius: 3px;
+	box-shadow: inset 0 0 3px black;
+	display: block;
+	margin: 0 auto;
+	padding: 0.5em;
+	text-align: center;
+}
+
+.page-hours .libraryAlert a {
+	color: #333;
+}
+
+.page-hours .libraryAlert a:after {
+	content: '\f061';
+	display: inline-block;
+	font-family: 'fontawesome-MITLibraries';
+	font-style: normal;
+	font-weight: bold;
+	margin-left: 0.5em;
+	text-decoration: none;
 }
 
 .libraryAlert h3 {

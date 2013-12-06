@@ -266,6 +266,11 @@
 		box-sizing: border-box;
 	}
 
+	.libraryTitle .libraryAlert span {
+		background: none;
+		box-shadow: none;
+	}
+
 	.libraryTitle .libraryAlert a {
 		color: #ffcc33;
 	}

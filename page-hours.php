@@ -10,9 +10,6 @@
  * @package WordPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
- 
- 
- 
  */
  
 $pageRoot = getRoot($post);
@@ -94,10 +91,18 @@ $thisWeek = date("Y-n-j");
 				<div class="libraryContent">
 					<h1><?php showBreadTitle(); ?></h1>
 				</div>
-
-				<div class="upcomingSpecial">
-					<?php the_content(); ?>
-				</div>
+					
+					<?php 
+						include(locate_template('inc/alert.php'));
+					 ?>
+					<?php
+						$hoursAlert = apply_filters('the_content', $post->post_content);
+						if ($showAlert == 0 && $hoursAlert != ''):
+					?>
+						<div class="upcomingSpecial">
+							<?php echo $hoursAlert; ?>
+						</div>
+					<?php endif; ?>
 				
 				<div id="hourCalendar" class="hourCalendar hidden-phone">
 					

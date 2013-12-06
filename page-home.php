@@ -466,28 +466,9 @@
 		
 					<!-- Content area (at right, with gradient) -->
 					<div id="content" class="mainContent">
-					                    <?php
-										$args = array(
-											"post_type" => "post",
-											"meta_key" => "active",
-											"meta_value" => true,
-											"category_name" => "Alerts"
-										);
-										
-										$alerts = new WP_Query( $args );
-																			
-										while ($alerts->have_posts()): $alerts->the_post();
-										?>
-										<h1 id="furlough"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-										<?php 
-											
-										endwhile;
-										?>
-										
-										
-										<?php
-										
-										?>
+						
+						<?php get_template_part('inc/alert'); ?>
+
 						<h2>Library Services</h2>
 						
 						<h3 class="allservices"><a href="/about/site-search">Services A-Z</a></h3>
