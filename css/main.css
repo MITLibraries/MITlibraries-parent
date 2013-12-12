@@ -449,35 +449,23 @@ nav a.active {
 
 .page-hours .libraryAlert {
 	border: none;
-	font-weight: bold;
-	margin: -28px auto 0;
-	margin: -1.75rem auto 0;
+	line-height: 1.5;
+	margin: -26px auto 0;
+	margin: -1.6rem auto 0;
+	text-align: center;
 	position: relative;
 	width: 18em;
-}
-
-.page-hours .libraryAlert span {
-	background: #ffcc33;
-	border-radius: 3px;
-	box-shadow: inset 0 0 3px black;
-	display: block;
-	margin: 0 auto;
-	padding: 0.5em;
-	text-align: center;
-}
-
-.page-hours .libraryAlert a {
-	color: #333;
 }
 
 .page-hours .libraryAlert a:after {
 	content: '\f061';
 	display: inline-block;
 	font-family: 'fontawesome-MITLibraries';
+	font-size: 0.75em;
 	font-style: normal;
-	font-weight: bold;
 	margin-left: 0.5em;
 	text-decoration: none;
+	vertical-align: text-bottom;
 }
 
 .libraryAlert h3 {
