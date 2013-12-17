@@ -447,12 +447,11 @@ nav a.active {
 	overflow: hidden;
 }
 
-.page-hours .libraryAlert {
+.page-hours .libraryTitle .libraryAlert {
 	border: none;
 	line-height: 1.5;
-	margin: -26px auto 0;
-	margin: -1.6rem auto 0;
-	text-align: center;
+	margin: 0 auto;
+	text-align: left;
 	position: relative;
 	width: 18em;
 }
@@ -1362,14 +1361,16 @@ ul.arrows li,
 	line-height: 14px;
 }
 
-/** Hours **/
+/* ---- Hours ---- */
 
 .upcomingSpecial {
-	position: absolute;
-	top: 25px;
-	left: 330px;
 	font-size: 14px;
-	line-height: 20px;
+	max-height: 8em;
+	line-height: 1.5;
+	margin: -30px auto 0;
+	margin: -1.85em auto 0;
+	overflow: hidden;
+	width: 22em;
 }
 
 .specialHours {
@@ -1578,7 +1579,8 @@ ul.arrows li,
 	color: #ffcc33;
 	float: left;
 	font-size: 1.5em;
-	margin-top: -12px;
+	margin-top: -16px;
+	margin-top: -1rem;
 	margin-left: -1.075em;
 	position: absolute;
 	top: 50%;

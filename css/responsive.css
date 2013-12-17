@@ -247,7 +247,21 @@
 		right: auto;
 		width: 270px;
 	}
+
+	.page-hours .upcomingSpecial {
+		display: none;
+	}
 	
+	.page-hours .libraryTitle .libraryAlert {
+		border: 1px solid #ffcc33;
+		margin-top: 1em;
+		width: 100%;
+	}
+
+	.page-hours .libraryAlert span {
+  	padding: 0;
+	}
+
 	.libraryTitle .libraryAlert {
 		background: #333;
 		border: 1px solid #ffcc33;
