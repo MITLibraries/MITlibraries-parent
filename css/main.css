@@ -101,6 +101,10 @@ img {
 	position: relative;
 }
 
+.page-barton-help .mainContent {
+	width: 100%;
+}
+
 #mainContent>.space247 {
 	top: 10px;
 }
@@ -1579,8 +1583,7 @@ ul.arrows li,
 	color: #ffcc33;
 	float: left;
 	font-size: 1.5em;
-	margin-top: -16px;
-	margin-top: -1rem;
+	margin-top: -12px;
 	margin-left: -1.075em;
 	position: absolute;
 	top: 50%;
@@ -1983,7 +1986,7 @@ html:not(.flexbox) .page-getit .flexItem {
 .page-getit .mainContent {
 	margin: 0 0 0 30px;
 	padding: 0 1em;
-	max-width: 940px
+	max-width: 940px;
 	width: 100%;
 }
 

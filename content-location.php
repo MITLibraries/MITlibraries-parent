@@ -75,6 +75,7 @@
 		$strLocation = "noThumbs";
 	}
 	
+	
 	$alert = trim(get_field("alert"));
 ?>
 		
@@ -101,17 +102,12 @@
 		<?php if ($study24 == 1): ?>
 			<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 		<?php endif; ?>
-		
-		<?php 
 
-			include(locate_template('inc/alert.php'));
-
-			if ($showAlert == 0 && $alert != "") {
-				echo '<div class="libraryAlert">'.$alert.'</div>';
-			}
-
-		 ?>
-		
+		<?php if ($alert != ""): ?>
+			<div class="libraryAlert">
+				<?php echo $alert; ?>
+			</div>
+		<?php endif; ?>
 		
 		<div class="librarySlideshow">
 

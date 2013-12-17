@@ -107,6 +107,19 @@
 		clear: both;
 	}
 	
+	header {
+		min-height: 105px;
+		height: auto;
+	}
+	
+	header nav {
+		position: relative;
+		font-size: 14px;
+		top: auto;
+		left: auto;
+		margin-top: 55px !important;
+	}	
+	
 	.title {
 		background: #fff;
 		color: #333;
@@ -247,7 +260,7 @@
 		right: auto;
 		width: 270px;
 	}
-
+	
 	.page-hours .upcomingSpecial {
 		display: none;
 	}
@@ -595,7 +608,7 @@
 	.tabcontent .active.flexContainer {
 		display: block;
 	}
-
+	
 	.flexbox .tabcontent .active.flexContainer {
 		display: block;
 	}
