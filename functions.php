@@ -163,33 +163,50 @@ function twentytwelve_scripts_styles() {
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
 	
+	/* Page-specific CSS */
+
+  if(is_page('hours')) {
+    wp_enqueue_style('datepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.mitlibraries.css', array(), '1.0', all);
+  }
+
 	/*  Register JS */
+
+	// Deregister WP Core jQuery, load Google's because it's probably already cached
+  wp_deregister_script('jquery');
+  wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3', false);
 	
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.2', false);
-	 
-	wp_register_script('sticky', get_template_directory_uri() . '/js/sticky/jquery.sticky.js', array('jquery'), false, true);
 
-	wp_register_script('stickyhours', get_template_directory_uri() . '/js/sticky/sticky-hours.menu.js', array('jquery'), false, true);
+  wp_register_script('datepicker', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array('jquery'), '2.0', true);
 
-	wp_register_script('cookieJS', get_template_directory_uri() . '/js/sticky/scrollStick/jquery.cookie.js', array('jquery'), false, true);
+  wp_register_script('hours-datepicker', get_template_directory_uri() . '/js/hours.datepicker.js', array('jquery'), '2.0', true);
+   
+  wp_register_script('sticky', get_template_directory_uri() . '/js/sticky/jquery.sticky.js', array('jquery'), '1.0.0', true);
 
-	wp_register_script('scrollStickHours', get_template_directory_uri() . '/js/sticky/scrollStick/hours.scrollStick.js', array('jquery'), false, true);
+  wp_register_script('stickyhours', get_template_directory_uri() . '/js/sticky/sticky-hours.menu.js', array('jquery'), '1.0.0', true);
 
-	wp_register_script('nullAlt', get_template_directory_uri() . '/js/nullAlt.js', array(), false, false);
+  wp_register_script('cookieJS', get_template_directory_uri() . '/js/sticky/scrollStick/jquery.cookie.js', array('jquery'), '1.3', true);
+
+  wp_register_script('scrollStickHours', get_template_directory_uri() . '/js/sticky/scrollStick/hours.scrollStick.js', array('jquery'), '1.3', true);
+
+  wp_register_script('nullAlt', get_template_directory_uri() . '/js/nullAlt.js', array('jquery'), '1.0', false);
 
 	/* All-site JS */
 	
+	wp_enqueue_script('jquery');
 	wp_enqueue_script('modernizr');
 	wp_enqueue_script('nullAlt');
 
 	/* Page-specific JS */
 	
 	if (is_page('hours')) {
-		wp_enqueue_script('sticky');
-		wp_enqueue_script('stickyhours');
-		wp_enqueue_script('cookieJS');
-		wp_enqueue_script('scrollStickHours');
-		}
+		wp_enqueue_script('datepicker');
+    wp_enqueue_script('hours-datepicker');
+    wp_enqueue_script('sticky');
+    wp_enqueue_script('stickyhours');
+    wp_enqueue_script('cookieJS');
+    wp_enqueue_script('scrollStickHours');
+	}
 	
 }
 
