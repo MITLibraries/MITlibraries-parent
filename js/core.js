@@ -20,11 +20,7 @@ var Core = {
 		Core.linkTabs();
 		Core.buildUberMenu();
 		
-		Core.buildLocationGallery();
-		
 		Core.fixSidebar();
-		
-		Core.buildDatePicker();
 		
 		Core.buildMap();
 		
@@ -253,50 +249,10 @@ var Core = {
 		$("#map").slideUp(200);
 	},
 	
-	buildDatePicker: function() {
-		$("#hourCalendar").glDatePicker({
-				showAlways: true,
-				selectedDate: todayDate,
-				
-				prevArrow: '<i class="icon-arrow-left"></i>',
-				nextArrow: '<i class="icon-arrow-right"></i>',
-				dowNames: "SMTWTFS",
-				dowOffset: 1,
-				onClick: function(target, cell, date, date2) {
-					var newDate = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
-					
-					var path = window.location.pathname;
-					var newUrl = path+"?d="+newDate;
-
-					window.location = newUrl;
-				}
-				
-		});
-		
-	},
-	
 	fixSidebar: function() {
 		$(".sidebarWidgets").each(function() {
 			$(this).find(".widget:last").toggleClass("lastWidget", true);
 		});
-	},
-	
-	buildLocationGallery: function() {
-		$(".slideshow").cycle({
-			fx: "fade",
-			speed: 1500,
-			pause: 0,
-			/*
-			pager: "#slideshowNav",
-			
-			pagerAnchorBuilder: function(idx, slide) {
-				var obj = $(slide);
-				
-				return "<a href='#' class='thumb'><img src='"+obj.attr('data-thumb')+"' width='38' height='38' /></a>";
-			}
-			*/
-
-		});		
 	},
 	
 	buildUberMenu: function() {
