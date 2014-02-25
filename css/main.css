@@ -862,7 +862,7 @@ footer {
 }
 /** Locations Home **/
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 481px) {
 	.locations-list {
 		background: #262626 url(../images/content/locations.jpg) no-repeat center bottom;
 		height: auto;
