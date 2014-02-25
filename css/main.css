@@ -862,11 +862,13 @@ footer {
 }
 /** Locations Home **/
 
-#locationsHome {
-	width: 960px;
-	height: auto;
-	background: #262626 url(../images/content/locations.jpg) no-repeat center bottom;
-	margin-bottom: 20px;
+@media screen and (min-width: 960px) {
+	.locations-list {
+		background: #262626 url(../images/content/locations.jpg) no-repeat center bottom;
+		height: auto;
+		margin-bottom: 20px;
+		width: 960px;
+	}
 }
 
 .activeMap #locationsHome {

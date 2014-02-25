@@ -24,7 +24,8 @@
 		margin: 0 auto;
 	}
 
-	#locationsHome {
+	.locations-list {
+		background-image: none;
 		width: 100%;
 	}
 
@@ -215,11 +216,6 @@
 	.locationMainList li h2 {
 		font-size: 18px;
 		line-height: 18px;
-	}
-	
-	#locationsHome { 
-		background: none !important;
-	
 	}
 	
 	.librarySlideshow {

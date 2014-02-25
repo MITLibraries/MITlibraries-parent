@@ -38,7 +38,7 @@ get_header(); ?>
 				</div>
 			</div>
 			
-			<div class="preContent span12" id="locationsHome">
+			<div class="preContent span12 locations-list group" id="locationsHome">
 				<div id="mapMarkers" class="meta">
 						<?php
 							
