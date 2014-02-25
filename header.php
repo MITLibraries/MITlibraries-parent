@@ -37,9 +37,9 @@
 <link href="/wp-content/themes/libraries/libs/fontawesome-MITLibraries/style.css" rel="stylesheet" media="all">
 <link href="<?php bloginfo('template_directory') ?>/libs/datepicker/styles/glDatePicker.default.css" rel="stylesheet" media="all">
 <link href="<?php bloginfo('template_directory') ?>/libs/lightbox/css/lightbox.css" rel="stylesheet" media="all">
-<link href="<?php bloginfo('template_directory') ?>/css/main.css" rel="stylesheet" media="all">
+<link href="<?php bloginfo('template_directory') ?>/css/main.css?ver=20140225" rel="stylesheet" media="all">
 <link href="<?php bloginfo('template_directory') ?>/css/menu.css" rel="stylesheet" media="all">
-<link href="<?php bloginfo('template_directory') ?>/css/responsive.css" rel="stylesheet" media="all">
+<link href="<?php bloginfo('template_directory') ?>/css/responsive.css?ver=20140225" rel="stylesheet" media="all">
 <?php
 		//$askUrl = get_post_meta($post->ID, "ask_us_override", 1);
 		$askUrl = "";
