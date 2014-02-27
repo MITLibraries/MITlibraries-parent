@@ -380,7 +380,7 @@
 												<input type="radio" name="searchTarget" id="dome" value="dome" class="radio" rel="Ex: hagia sophia, kevin lynch" /><label for="dome"><strong>Dome:</strong> MIT Libraries’ digital images, maps, etc.</label>
 											</div>
 											<div class="radiorow floatwrapper">
-												<input type="radio" name="searchTarget" id="archnet" value="archnet" class="radio" rel="Ex: mosque" /><label style="width:350px;" for="archnet"><strong>Archnet:</strong> architecture in Muslim societies</label>
+												<input type="radio" name="searchTarget" id="archnet" value="archnet" class="radio" rel="Ex: mosque" /><label style="width:350px;" for="archnet"><strong>Archnet:</strong> architecture and urbanism in Muslim societies</label>
 											</div>
 										</div>
 									</div>
