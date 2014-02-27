@@ -70,7 +70,7 @@
 			<li><a href="/barton-account">YOUR ACCOUNT</a></li>
 			<li><a href="/hours">HOURS</a></li>
 			<li><a href="/locations">LIST OF LIBRARIES</a></li>
-			<li><a href="/about/site-search">SITE SEARCH</a></li>
+			<li><a href="/about-us/site-search">SITE SEARCH</a></li>
 		</ul>
 		
 		<!-- Ask us / Tell us navigation area -->
@@ -471,7 +471,7 @@
 
 						<h2>Library Services</h2>
 						
-						<h3 class="allservices"><a href="/about/site-search">Services A-Z</a></h3>
+						<h3 class="allservices"><a href="/about-us/site-search">Services A-Z</a></h3>
 			
 						<!-- List of Library Services, first row -->
 						<div class="libraryservices columns three-column floatwrapper">
@@ -547,13 +547,13 @@
 
 						<!-- Visit the library list -->
 						<div class="column last">
-						  <h3><a href="/about">About us</a></h3>
+						  <h3><a href="/about-us">About us</a></h3>
 						  <ul class="linklist">
 						    <li><a href="http://libguides.mit.edu/directory">Staff directory</a></li>
 						    <li><a href="/news">News</a></li>
 						    <li><a href="/calendar">Calendar of events: classes &amp; workshops</a></li>
-						    <li><a href="/about/guidelines.html">Guidelines for use</a></li>
-						    <li><a href="/about">More&#8230;</a></li>
+						    <li><a href="/about-us/guidelines">Guidelines for use</a></li>
+						    <li><a href="/about-us">More&#8230;</a></li>
 						  </ul>
 						</div>
 						</div>
@@ -623,7 +623,7 @@ if ($arexpert) {
 			<!-- Footer nav -->
 			<div id="footernav">
 				<p><a href="/faculty">Faculty</a> | <a href="/alumni">Alumni</a> | <a href="/visitors">Visitors</a> | <a href="/giving/">Giving</a> | <a href="/mobile">Mobile version</a></p>
-				<p><a href="http://libguides.mit.edu/directory">Staff Directory</a> | <a href="/about/contact.html">Contact us</a></p>
+				<p><a href="http://libguides.mit.edu/directory">Staff Directory</a> | <a href="/about-us/contact">Contact us</a></p>
 		  </div>
 			
 			<!-- Social networking links -->
