@@ -115,7 +115,6 @@ if (typeof jQuery == 'undefined')
 <script src="<?php bloginfo('template_directory') ?>/libs/datepicker/glDatePicker.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/js/jquery.cycle.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/libs/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/libs/lightbox/js/lightbox.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/js/core.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="<?php bloginfo('template_directory') ?>/libs/infobox/infobox.js"></script>
