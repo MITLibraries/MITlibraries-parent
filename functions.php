@@ -185,6 +185,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('datepicker', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array('jquery'), '2.0', true);
 
+	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
+
 	/* All-site JS */
 	
 	wp_enqueue_script('modernizr');
@@ -199,6 +201,10 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_script('cookieJS');
 		wp_enqueue_script('scrollStickHours');
 		}
+
+	if (is_page('locations')) {
+		wp_enqueue_script('googleMapsAPI');
+	}
 	
 }
 
