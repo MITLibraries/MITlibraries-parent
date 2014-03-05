@@ -8,13 +8,10 @@ lib-cov
 *.pid
 *.gz
 
-package.json
-
 pids
 logs
 results
 
 npm-debug.log
-node_modules
 
 .sass-cache
