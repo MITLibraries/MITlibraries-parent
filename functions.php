@@ -183,6 +183,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('nullAlt', get_template_directory_uri() . '/js/nullAlt.js', array(), false, false);
 
+	wp_register_script('datepicker', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array('jquery'), '2.0', true);
+
 	/* All-site JS */
 	
 	wp_enqueue_script('modernizr');
@@ -191,6 +193,7 @@ function twentytwelve_scripts_styles() {
 	/* Page-specific JS */
 	
 	if (is_page('hours')) {
+		wp_enqueue_script('datepicker');
 		wp_enqueue_script('sticky');
 		wp_enqueue_script('stickyhours');
 		wp_enqueue_script('cookieJS');
