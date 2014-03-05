@@ -173,7 +173,7 @@ function twentytwelve_scripts_styles() {
 
 	// Deregister WP Core jQuery, load Google's
   wp_deregister_script('jquery');
-  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0', false);
+  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3', false);
 	
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.2', false);
 	 
