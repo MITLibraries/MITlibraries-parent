@@ -162,6 +162,12 @@ function twentytwelve_scripts_styles() {
 	 */
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
+
+	/* Page-specfic CSS */
+
+	if(is_page('hours')) {
+		wp_enqueue_style('datepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', array(), '1.0', all);
+	}
 	
 	/*  Register JS */
 	
