@@ -114,7 +114,6 @@ if (typeof jQuery == 'undefined')
 </script>
 <script src="<?php bloginfo('template_directory') ?>/libs/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/js/core.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/libs/infobox/infobox.js"></script>
 <script>
 
 // Javascript to enable link to tab
