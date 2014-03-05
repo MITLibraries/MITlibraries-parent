@@ -112,7 +112,6 @@ if (typeof jQuery == 'undefined')
     document.write(unescape("%3Cscript src='js/jquery.js' type='text/javascript'%3E%3C/script%3E"));
 }
 </script>
-<script src="<?php bloginfo('template_directory') ?>/libs/datepicker/glDatePicker.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/js/jquery.cycle.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/libs/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/js/core.js"></script>
