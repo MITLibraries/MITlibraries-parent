@@ -20,8 +20,6 @@ var Core = {
 		Core.linkTabs();
 		Core.buildUberMenu();
 		
-		Core.buildLocationGallery();
-		
 		Core.fixSidebar();
 		
 		Core.buildMap();
@@ -255,24 +253,6 @@ var Core = {
 		$(".sidebarWidgets").each(function() {
 			$(this).find(".widget:last").toggleClass("lastWidget", true);
 		});
-	},
-	
-	buildLocationGallery: function() {
-		$(".slideshow").cycle({
-			fx: "fade",
-			speed: 1500,
-			pause: 0,
-			/*
-			pager: "#slideshowNav",
-			
-			pagerAnchorBuilder: function(idx, slide) {
-				var obj = $(slide);
-				
-				return "<a href='#' class='thumb'><img src='"+obj.attr('data-thumb')+"' width='38' height='38' /></a>";
-			}
-			*/
-
-		});		
 	},
 	
 	buildUberMenu: function() {
