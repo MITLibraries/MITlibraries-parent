@@ -189,7 +189,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('datepicker', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array('jquery'), '2.0', true);
 
-	wp_register_script('makeDatepicker', get_template_directory_uri() . 'js/make.datepicker.js', array('jQuery'), '1.0.0', true);
+	wp_register_script('makeDatepicker', get_template_directory_uri() . '/js/make.datepicker.js', array('jQuery'), '1.0.0', true);
 
 	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
