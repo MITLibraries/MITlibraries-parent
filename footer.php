@@ -105,7 +105,7 @@
 
 
 <!-- Load JS in Footer -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 if (typeof jQuery == 'undefined')
 {
