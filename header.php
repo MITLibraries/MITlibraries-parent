@@ -31,10 +31,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
-<link href="<?php bloginfo('template_directory') ?>/libs/bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
-<link href="<?php bloginfo('template_directory') ?>/libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="all">
-<link href="<?php bloginfo('template_directory') ?>/libs/fontawesome/css/font-awesome.css" rel="stylesheet" media="all">
-<link href="/wp-content/themes/libraries/libs/fontawesome-MITLibraries/style.css" rel="stylesheet" media="all">
 <link href="<?php bloginfo('template_directory') ?>/css/build/minified/global.css?ver=20140306" rel="stylesheet" media="all">
 <?php
 		//$askUrl = get_post_meta($post->ID, "ask_us_override", 1);
