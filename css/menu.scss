@@ -1,7 +1,6 @@
 
 #megaMenu {
   border:none;
-  border-bottom:;
   background-color:transparent;
   background:-webkit-gradient(linear,left top,left bottom,from(transparent),to(transparent));
   background:-webkit-linear-gradient(top,transparent,transparent);
@@ -73,7 +72,6 @@
   background:-o-linear-gradient(top,#ffffff,#ffffff);
 }
 #megaMenu ul.megaMenu ul.sub-menu .wpmega-postlist a { color:#000000; }
-#megaMenu.megaMenuHorizontal ul.megaMenu > li.ss-nav-menu-mega > ul.sub-menu-1, #megaMenu.megaMenuHorizontal ul.megaMenu li.ss-nav-menu-reg > ul.sub-menu { border-top:; }
 #megaMenu ul.megaMenu > li.ss-nav-menu-mega > ul.sub-menu-1 > li { min-width:100px; }
 #megaMenu ul li.ss-nav-menu-mega ul.sub-menu-1 > li > a, #megaMenu ul li.ss-nav-menu-mega ul.sub-menu-1 > li:hover > a, #megaMenu ul li.ss-nav-menu-mega ul ul.sub-menu .ss-nav-menu-header > a, #megaMenu ul li.ss-nav-menu-mega ul.sub-menu-1 > li > span.um-anchoremulator, #megaMenu ul li.ss-nav-menu-mega ul ul.sub-menu .ss-nav-menu-header > span.um-anchoremulator, .wpmega-widgetarea h2.widgettitle {
   color:#000000;
@@ -119,7 +117,6 @@
   background:-o-linear-gradient(top,transparent,transparent);
 }
 #megaMenu.megaMenuVertical ul li.ss-nav-menu-reg li.megaReg-with-sub > a:after, #megaMenu.megaMenuVertical ul li.mega-with-sub > a:after, #megaMenu.megaMenuVertical ul li.ss-nav-menu-mega > a:after, #megaMenu.megaMenuVertical ul li.ss-nav-menu-reg li.megaReg-with-sub > span.um-anchoremulator:after, #megaMenu.megaMenuVertical ul li.mega-with-sub > span.um-anchoremulator:after, #megaMenu.megaMenuVertical ul li.ss-nav-menu-mega > span.um-anchoremulator:after { border-left-color:transparent; }
-#megaMenu.megaMenuVertical ul.megaMenu > li.ss-nav-menu-mega > ul.sub-menu-1, #megaMenu.megaMenuVertical ul.megaMenu li.ss-nav-menu-reg > ul.sub-menu { border-left:; }
 #megaMenu.megaMenuHorizontal ul.megaMenu { *border-bottom:none; }
 #megaMenu.megaMenuVertical ul.megaMenu { *border-right:none; }
 
