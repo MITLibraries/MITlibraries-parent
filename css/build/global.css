@@ -2659,7 +2659,7 @@ html:not(.flexbox) .mainContent .flexItem {
   color: #004bbd !important;
   padding-top: 5px !important;
   padding-bottom: 5px !important;
-  background: transparent url(../images/arrow-blue.png) no-repeat right 10px;
+  background: transparent url(/wp-content/themes/libraries/images/arrow-blue.png) no-repeat right 10px;
 }
 
 #megaMenu .megaMenu > li:hover {
@@ -2705,7 +2705,7 @@ html:not(.flexbox) .mainContent .flexItem {
 .megaHover > a {
   /** Add Carrot To **/
   display: block;
-  background: #f7f2ed url(../images/arrow-black.png) no-repeat right 10px !important;
+  background: #f7f2ed url(/wp-content/themes/libraries/images/arrow-black.png) no-repeat right 10px !important;
   box-shadow: 3px 0px 1px #ccc !important;
   border: none !important;
 }
@@ -2760,8 +2760,8 @@ html:not(.flexbox) .mainContent .flexItem {
 
 #megaMenu .ss-nav-menu-item-depth-2 {
   margin-left: 23px;
-  list-style: url(../images/li.png) outside none !important;
-  list-style-image: url(../images/li.png);
+  list-style: url(/wp-content/themes/libraries/images/li.png) outside none !important;
+  list-style-image: url(/wp-content/themes/libraries/images/li.png);
   display: list-item !important;
   font-size: 9px !important;
   line-height: 8px !important;
