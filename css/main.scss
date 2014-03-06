@@ -170,12 +170,12 @@ h2.bigHead {
 	color: #424286;
 	font-size: 14px;
 	line-height: 14px;
-	background: transparent url(../images/arrow-content-off.png) no-repeat;
+	background: transparent url(#{$imagesPath}/arrow-content-off.png) no-repeat;
 	background-position: 0px 15px;
 }
 
 #content .active.expandable h3 {
-	background-image: url(../images/arrow-content-on.png);
+	background-image: url(#{$imagesPath}/arrow-content-on.png);
 	font-weight: bold;
 	color: #000;
 }
@@ -280,7 +280,7 @@ header a, .main-navigation li a {
 	left: 18px;
 	width: 132px;
 	height: 56px;
-	background: transparent url(../images/logo.png) no-repeat;
+	background: transparent url(#{$imagesPath}/logo.png) no-repeat;
 	text-indent: -9999px;
 }
 
@@ -313,7 +313,7 @@ a.yourAccount:before {
 
 #asktell {
 	display: inline-block;
-	background: transparent url(../images/divider-gradient.png) no-repeat top left;
+	background: transparent url(#{$imagesPath}/divider-gradient.png) no-repeat top left;
 	padding: 0 0 0 18px;
 	position: relative;
 	top: 6px;
@@ -581,7 +581,7 @@ nav a.active {
 }
 
 .snav li, .pagenav ul li {
-	list-style-image: url(../images/nav-arrow-blue.png);
+	list-style-image: url(#{$imagesPath}/nav-arrow-blue.png);
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
@@ -601,7 +601,7 @@ nav a.active {
 }
 
 .findStudySpace {
-	background: url('../images/find_study_space-bg.png') center no-repeat;
+	background: url('#{$imagesPath}/find_study_space-bg.png') center no-repeat;
 	height: 70px;
 	margin-bottom: 15px;
 	text-align: center;
@@ -657,19 +657,19 @@ nav a.active {
 	display: block;
 	width: 56px;
 	height: 30px;
-	background: transparent url(../images/study247.png) no-repeat;
+	background: transparent url(#{$imagesPath}/study247.png) no-repeat;
 	margin: 0 0 5px 0;
 }
 
 .widget ul li {
-	list-style-image: url(../images/list-arrow-blue.png);
+	list-style-image: url(#{$imagesPath}/list-arrow-blue.png);
 	margin-left: 15px;
 	margin-bottom: 2px;
 
 }
 
 ul.checklist li {
-	list-style-image: url(../images/icon-check.png);
+	list-style-image: url(#{$imagesPath}/icon-check.png);
 	margin-left: 15px;
 }
 
@@ -708,7 +708,7 @@ ul.checklist li {
 	top: 16px;
 	left: 18px;
 	text-indent: -9999px;
-	background: transparent url(../images/logo-black.png) no-repeat;
+	background: transparent url(#{$imagesPath}/logo-black.png) no-repeat;
 }
 
 #footerHeader #footerMainLink {
@@ -740,7 +740,7 @@ ul.checklist li {
 	height: 17px;
 	text-align: left;
 	text-indent: -9999px;
-	background-image: url(../images/social-icons.png);
+	background-image: url(#{$imagesPath}/social-icons.png);
 	background-repeat: no-repeat;
 	margin-left: 2px;
 }
@@ -777,7 +777,7 @@ ul.checklist li {
 	position: relative;
 	margin: 25px 0 0 20px;
 	text-indent: -9999px;
-	background: transparent url(../images/logo-mit.png) no-repeat;
+	background: transparent url(#{$imagesPath}/logo-mit.png) no-repeat;
 }
 
 footer {
@@ -822,7 +822,7 @@ footer {
 }
 
 #footerContent ul li {
-	list-style-image: url(../images/list-arrow.png);
+	list-style-image: url(#{$imagesPath}/list-arrow.png);
 	margin-left: 15px;
 	margin-bottom: 0px;
 }
@@ -864,7 +864,7 @@ footer {
 
 @media screen and (min-width: 481px) {
 	.locations-list {
-		background: #262626 url(../images/content/locations.jpg) no-repeat center bottom;
+		background: #262626 url(#{$imagesPath}/content/locations.jpg) no-repeat center bottom;
 		height: auto;
 		margin-bottom: 20px;
 		width: 960px;
@@ -913,7 +913,7 @@ footer {
 	float: left;
 	width: 438px;
 	height: 124px;
-	background: transparent url(../images/location.png) no-repeat;
+	background: transparent url(#{$imagesPath}/location.png) no-repeat;
 	color: #cccccc;
 	margin: 20px 20px 0px 0;
 	padding: 0 0 0 10px;
@@ -1045,7 +1045,7 @@ color: #ffcc33;
 	height: 29px;
 	padding: 10px 20px 10px 10px;
 	display: block;
-	background: transparent url(../images/tab.png) right top;
+	background: transparent url(#{$imagesPath}/tab.png) right top;
 	color: #000;
 	font-weight: bold;
 	font-size: 18px;
@@ -1183,7 +1183,7 @@ ul.arrows li,
 .single-location .tab ul.arrows li,
 .page-template-page-location-php .tab ul.arrows li
 {
-	list-style-image: url(../images/arrow-right-blue.png);
+	list-style-image: url(#{$imagesPath}/arrow-right-blue.png);
 	margin-left: 15px;
 }
 
@@ -1249,18 +1249,18 @@ ul.arrows li,
 	right: 10px;
 	width: 56px;
 	height: 30px;
-	background: transparent url(../images/study247.png) no-repeat;
+	background: transparent url(#{$imagesPath}/study247.png) no-repeat;
 	text-indent: -9999px;
 }
 .libraryTitle .space247 {
 	right: 10px;
 	top: 15px;
-	background: transparent url(../images/study247-light.png) no-repeat;
+	background: transparent url(#{$imagesPath}/study247-light.png) no-repeat;
 }
 
 .locationMainList .space247 {
 	right: 20px;
-	background: transparent url(../images/study247-light.png) no-repeat;
+	background: transparent url(#{$imagesPath}/study247-light.png) no-repeat;
 }
 
 .name .space247 {
@@ -1282,7 +1282,7 @@ ul.arrows li,
 	position: absolute;
 	top: 80px;
 	right: 10px;
-	background: #666666 url(../images/icon-reserve.png) no-repeat 10px 15px;
+	background: #666666 url(#{$imagesPath}/icon-reserve.png) no-repeat 10px 15px;
 	border: 1px solid #434286;
 	padding: 10px 10px 10px 38px;
 	color: #fff;
