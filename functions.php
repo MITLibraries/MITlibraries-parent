@@ -179,7 +179,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '20140306', true);
 
-	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery, productionJS'), '20140306', true);
+	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140306', true);
 
 	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
