@@ -193,6 +193,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
+	wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true);
+
 	// wp_register_script('makeGoogleMap', get_template_directory_uri() . '/js/make.googlemap.js', array('jquery'), '1.0.0', true);
 
 	/* All-site JS */
@@ -212,6 +214,7 @@ function twentytwelve_scripts_styles() {
 
 	if (is_page('locations')) {
 		wp_enqueue_script('googleMapsAPI');
+		wp_enqueue_script('infobox');
 		//wp_enqueue_script('makeGoogleMap');
 	}
 	
