@@ -16,13 +16,6 @@ module.exports = {
       spawn: false,
     }
   },
-  images: {
-    files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
-    tasks: ['imagemin'],
-    options: {
-      spawn: false,
-    }
-  },
   html:{
     files: ['./**/*.html'],
     tasks: [],
