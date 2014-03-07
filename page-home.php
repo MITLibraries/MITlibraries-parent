@@ -552,7 +552,7 @@
 						    <li><a href="http://libguides.mit.edu/directory">Staff directory</a></li>
 						    <li><a href="/news">News</a></li>
 						    <li><a href="/calendar">Calendar of events: classes &amp; workshops</a></li>
-						    <li><a href="/about/guidelines.html">Guidelines for use</a></li>
+						    <li><a href="/about/guidelines">Guidelines for use</a></li>
 						    <li><a href="/about">More&#8230;</a></li>
 						  </ul>
 						</div>
@@ -623,7 +623,7 @@ if ($arexpert) {
 			<!-- Footer nav -->
 			<div id="footernav">
 				<p><a href="/faculty">Faculty</a> | <a href="/alumni">Alumni</a> | <a href="/visitors">Visitors</a> | <a href="/giving/">Giving</a> | <a href="/mobile">Mobile version</a></p>
-				<p><a href="http://libguides.mit.edu/directory">Staff Directory</a> | <a href="/about/contact.html">Contact us</a></p>
+				<p><a href="http://libguides.mit.edu/directory">Staff Directory</a> | <a href="/about/contact">Contact us</a></p>
 		  </div>
 			
 			<!-- Social networking links -->
