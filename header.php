@@ -31,7 +31,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
-<link href="<?php bloginfo('template_directory') ?>/css/build/minified/global.css?ver=20140307" rel="stylesheet" media="all">
 <?php
 		//$askUrl = get_post_meta($post->ID, "ask_us_override", 1);
 		$askUrl = "";
