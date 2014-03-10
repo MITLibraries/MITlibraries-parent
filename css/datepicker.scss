@@ -124,7 +124,7 @@
 .gldp-default .noday {
 	color: #444;
 	font-weight: normal;
-	cursor: wait !important;
+	cursor: not-allowed;
 	background: #aaaaaa;
 	background: -moz-linear-gradient(top,  #aaaaaa 0%, #8a8a8a 98%, #aaaaaa 99%, #8a8a8a 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaaaaa), color-stop(98%,#8a8a8a), color-stop(99%,#aaaaaa), color-stop(100%,#8a8a8a)); /* Chrome,Safari4+ */
