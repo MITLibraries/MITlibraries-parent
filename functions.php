@@ -161,7 +161,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('bootstrap-responsive', get_template_directory_uri() . '/libs/bootstrap/css/bootstrap-responsive.css', array(), '2.2.1');
 
-	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140307');
+	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140310');
 
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('bootstrap-responsive');
@@ -181,9 +181,9 @@ function twentytwelve_scripts_styles() {
 	
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.2', false);
 
-	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '20140306', true);
+	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '20140310', true);
 
-	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140306', true);
+	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140310', true);
 
 	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
