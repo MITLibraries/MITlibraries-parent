@@ -1,7 +1,6 @@
 
 #megaMenu {
   border:none;
-  border-bottom:;
   background-color:transparent;
   background:-webkit-gradient(linear,left top,left bottom,from(transparent),to(transparent));
   background:-webkit-linear-gradient(top,transparent,transparent);
@@ -73,7 +72,6 @@
   background:-o-linear-gradient(top,#ffffff,#ffffff);
 }
 #megaMenu ul.megaMenu ul.sub-menu .wpmega-postlist a { color:#000000; }
-#megaMenu.megaMenuHorizontal ul.megaMenu > li.ss-nav-menu-mega > ul.sub-menu-1, #megaMenu.megaMenuHorizontal ul.megaMenu li.ss-nav-menu-reg > ul.sub-menu { border-top:; }
 #megaMenu ul.megaMenu > li.ss-nav-menu-mega > ul.sub-menu-1 > li { min-width:100px; }
 #megaMenu ul li.ss-nav-menu-mega ul.sub-menu-1 > li > a, #megaMenu ul li.ss-nav-menu-mega ul.sub-menu-1 > li:hover > a, #megaMenu ul li.ss-nav-menu-mega ul ul.sub-menu .ss-nav-menu-header > a, #megaMenu ul li.ss-nav-menu-mega ul.sub-menu-1 > li > span.um-anchoremulator, #megaMenu ul li.ss-nav-menu-mega ul ul.sub-menu .ss-nav-menu-header > span.um-anchoremulator, .wpmega-widgetarea h2.widgettitle {
   color:#000000;
@@ -119,7 +117,6 @@
   background:-o-linear-gradient(top,transparent,transparent);
 }
 #megaMenu.megaMenuVertical ul li.ss-nav-menu-reg li.megaReg-with-sub > a:after, #megaMenu.megaMenuVertical ul li.mega-with-sub > a:after, #megaMenu.megaMenuVertical ul li.ss-nav-menu-mega > a:after, #megaMenu.megaMenuVertical ul li.ss-nav-menu-reg li.megaReg-with-sub > span.um-anchoremulator:after, #megaMenu.megaMenuVertical ul li.mega-with-sub > span.um-anchoremulator:after, #megaMenu.megaMenuVertical ul li.ss-nav-menu-mega > span.um-anchoremulator:after { border-left-color:transparent; }
-#megaMenu.megaMenuVertical ul.megaMenu > li.ss-nav-menu-mega > ul.sub-menu-1, #megaMenu.megaMenuVertical ul.megaMenu li.ss-nav-menu-reg > ul.sub-menu { border-left:; }
 #megaMenu.megaMenuHorizontal ul.megaMenu { *border-bottom:none; }
 #megaMenu.megaMenuVertical ul.megaMenu { *border-right:none; }
 
@@ -146,7 +143,7 @@
 	color: #004bbd !important;
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
-	background: transparent url(../images/arrow-blue.png) no-repeat right 10px;
+	background: transparent url(#{$imagesPath}/arrow-blue.png) no-repeat right 10px;
 }
 
 #megaMenu .megaMenu>li:hover {
@@ -191,7 +188,7 @@
 	.megaHover>a {
 		/** Add Carrot To **/
 		display: block;
-		background: #f7f2ed url(../images/arrow-black.png) no-repeat right 10px !important;
+		background: #f7f2ed url(#{$imagesPath}/arrow-black.png) no-repeat right 10px !important;
 		box-shadow: 3px 0px 1px #ccc !important;
 		border: none !important;
 	}
@@ -246,8 +243,8 @@
 	
 	#megaMenu .ss-nav-menu-item-depth-2 {
 		margin-left: 23px;
-		list-style: url(../images/li.png) outside none !important;
-		list-style-image: url(../images/li.png);
+		list-style: url(#{$imagesPath}/li.png) outside none !important;
+		list-style-image: url(#{$imagesPath}/li.png);
 		display: list-item !important;
 		font-size: 9px !important;
 		line-height: 8px !important;

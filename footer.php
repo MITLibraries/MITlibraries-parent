@@ -105,29 +105,14 @@
 
 
 <!-- Load JS in Footer -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 if (typeof jQuery == 'undefined')
 {
     document.write(unescape("%3Cscript src='js/jquery.js' type='text/javascript'%3E%3C/script%3E"));
 }
 </script>
-<script src="<?php bloginfo('template_directory') ?>/libs/datepicker/glDatePicker.min.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/js/jquery.cycle.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/libs/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/libs/lightbox/js/lightbox.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/js/core.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="<?php bloginfo('template_directory') ?>/libs/infobox/infobox.js"></script>
 <script>
-
-
-$("#hero").cycle({
-	fx: "fade",
-	speed: 1500,
-	pause: 0
-
-});
 
 // Javascript to enable link to tab
 var url = document.location.toString();
