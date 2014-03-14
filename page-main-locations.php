@@ -240,7 +240,7 @@ get_header(); ?>
 								<!-- Will never have hours -->
 							<?php else: ?>
 								<?php if ($hasHours): ?>
-								Todays hours: <br/><?php echo $hoursToday; ?><br/>
+								Today&rsquo;s hours: <br/><?php echo $hoursToday; ?><br/>
 								<?php else: ?>
 								TBA<br/>
 								<?php endif; ?>
