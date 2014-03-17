@@ -17,15 +17,9 @@
 				color: #424286;
 			}
 			&:before {
-				border-top: 5px solid transparent;
-				border-left: 5px solid #424286;
-				border-bottom: 5px solid transparent;
-				content: '';
-				display: inline-block;
+				@include rightArrow(5px, #424286);
 				left: 0;
 				margin-right: 1em;
-				height: 0;
-				width: 0;
 			}
 		}
 		&:nth-of-type(odd) {
@@ -41,16 +35,10 @@
 				color: #000;
 			}
 			&:before {
-				border-left: 5px solid transparent;
-				border-top: 5px solid #000;
-				border-right: 5px solid transparent;
-				content: '';
-				display: inline-block;
+				@include downArrow(5px, #000);
 				left: 0;
 				margin-right: 0.65em;
-				height: 0;
 				vertical-align: bottom;
-				width: 0;
 			}
 		}
 	}
