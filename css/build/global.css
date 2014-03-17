@@ -288,107 +288,6 @@ h2.bigHead {
   margin-bottom: 10px;
 }
 
-.expandable {
-  clear: both;
-  border-bottom: 5px solid #eceaea;
-  margin: 0px 0px 0px -20px;
-  padding: 0px;
-  position: relative;
-}
-
-#content .expandable h3 {
-  padding: 15px 0 5px 20px;
-  cursor: pointer;
-  margin: 0 0 0 0;
-  color: #424286;
-  font-size: 14px;
-  line-height: 14px;
-  background: transparent url(/wp-content/themes/libraries/images/arrow-content-off.png) no-repeat;
-  background-position: 0px 15px;
-}
-
-#content .active.expandable h3 {
-  background-image: url(/wp-content/themes/libraries/images/arrow-content-on.png);
-  font-weight: bold;
-  color: #000;
-}
-
-#content .active.expandable {
-  background: #fbfbfb;
-}
-
-.expandable .content {
-  padding: 10px 10px 40px 20px;
-  display: none;
-}
-
-.no-js .expandable .content {
-  display: block;
-}
-
-#content .expandable {
-  border-bottom: none;
-  padding: 0;
-}
-
-#content .expandable:nth-of-type(odd) {
-  background: #eceaea;
-}
-
-#content .expandable.active h3 {
-  background: none;
-}
-
-#content .expandable h3 {
-  background: none;
-  padding: 1em 1em 0.75em;
-}
-
-#content .expandable h3 a {
-  color: #424286;
-}
-
-#content .expandable.active h3 a {
-  color: #000;
-}
-
-#content .expandable h3:before {
-  border-top: 5px solid transparent;
-  border-left: 5px solid #424286;
-  border-bottom: 5px solid transparent;
-  content: '';
-  display: inline-block;
-  left: 0;
-  margin-right: 1em;
-  height: 0;
-  width: 0;
-}
-
-#content .expandable.active h3:before {
-  border-left: 5px solid transparent;
-  border-top: 5px solid #000;
-  border-right: 5px solid transparent;
-  content: '';
-  display: inline-block;
-  left: 0;
-  margin-right: 0.65em;
-  height: 0;
-  vertical-align: bottom;
-  width: 0;
-}
-
-.no-js #mainContent .expandable h3:before {
-  border-top: 5px solid #424286;
-  border-right: 5px solid transparent;
-  border-bottom: none;
-  border-left: 5px solid transparent;
-  vertical-align: middle;
-}
-
-.expandable .content {
-  padding: 1em 4em 2em;
-}
-
 #mainContent .featuredImage {
   margin: 0 0 0px 0;
 }
@@ -4228,4 +4127,74 @@ you can use the generic selector below, but it's slower:
 
 .icon-long-arrow-down:before {
   content: "\f175";
+}
+
+#content .expandable {
+  background: #fbfbfb;
+  border-bottom: none;
+  clear: both;
+  padding: 0;
+  position: relative;
+}
+#content .expandable h3 {
+  background: none;
+  padding: 1em 1em 0.75em;
+  cursor: pointer;
+  margin: 0 0 0 0;
+  font-size: 14px;
+  line-height: 14px;
+}
+#content .expandable h3 a {
+  color: #424286;
+}
+#content .expandable h3:before {
+  border-top: 5px solid transparent;
+  border-left: 5px solid #424286;
+  border-bottom: 5px solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  left: 0;
+  margin-right: 1em;
+}
+#content .expandable:nth-of-type(odd) {
+  background: #eceaea;
+}
+#content .active.expandable h3 {
+  background: none;
+  color: #000;
+  font-weight: bold;
+}
+#content .active.expandable h3 a {
+  color: #000;
+}
+#content .active.expandable h3:before {
+  border-left: 5px solid transparent;
+  border-top: 5px solid black;
+  border-right: 5px solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  left: 0;
+  margin-right: 0.65em;
+  vertical-align: bottom;
+}
+
+.expandable .content {
+  padding: 1em 4em 2em;
+  display: none;
+}
+
+.no-js .expandable .content {
+  display: block;
+}
+
+.no-js #mainContent .expandable h3:before {
+  border-top: 5px solid #424286;
+  border-right: 5px solid transparent;
+  border-bottom: none;
+  border-left: 5px solid transparent;
+  vertical-align: middle;
 }

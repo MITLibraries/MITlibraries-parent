@@ -3,3 +3,28 @@ $libsPath: "/wp-content/themes/libraries/libs";
 
 $yellow: hsla(45, 100.0000%, 60.0000%, 1.0000);
 $darkYellow: hsla(44, 60.0000%, 50.0000%, 1.0000);
+$blue: hsla(216, 100.0000%, 37.0588%, 1.0000);
+$bluishPurple: hsla(240, 34.0000%, 39.2157%, 1.0000);
+
+$color-text-accent-primary: $blue;
+$color-text-accent-secondary: $bluishPurple;
+
+@mixin rightArrow($size, $color) {
+	border-top: $size solid transparent;
+	border-left: $size solid $color;
+	border-bottom: $size solid transparent;
+	content: '';
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+@mixin downArrow($size, $color) {
+	border-left: $size solid transparent;
+	border-top: $size solid $color;
+	border-right: $size solid transparent;
+	content: '';
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
