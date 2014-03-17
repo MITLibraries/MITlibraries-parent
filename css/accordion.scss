@@ -13,10 +13,10 @@
 			font-size: 14px;
 			line-height: 14px;
 			a {
-				color: #424286;
+				color: $color-text-accent-secondary;
 			}
 			&:before {
-				@include rightArrow(5px, #424286);
+				@include rightArrow(5px, $color-text-accent-secondary);
 				left: 0;
 				margin-right: 1em;
 			}
