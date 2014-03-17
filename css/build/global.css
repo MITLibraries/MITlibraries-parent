@@ -4130,6 +4130,7 @@ you can use the generic selector below, but it's slower:
 }
 
 #content .expandable {
+  background: #fbfbfb;
   clear: both;
   border-bottom: none;
   padding: 0;
@@ -4160,9 +4161,6 @@ you can use the generic selector below, but it's slower:
 }
 #content .expandable:nth-of-type(odd) {
   background: #eceaea;
-}
-#content .active.expandable {
-  background: #fbfbfb;
 }
 #content .active.expandable h3 {
   background: none;
