@@ -4132,7 +4132,6 @@ you can use the generic selector below, but it's slower:
 #content .expandable {
   clear: both;
   border-bottom: none;
-  margin: 0px 0px 0px -20px;
   padding: 0;
   position: relative;
 }
