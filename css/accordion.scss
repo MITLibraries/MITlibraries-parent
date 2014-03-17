@@ -1,8 +1,8 @@
 #content {
 	.expandable {
 		background: #fbfbfb;
-		clear: both;
 		border-bottom: none;
+		clear: both;
 		padding: 0;
 		position: relative;
 		h3 {
@@ -10,7 +10,6 @@
 			padding: 1em 1em 0.75em;
 			cursor: pointer;
 			margin: 0 0 0 0;
-			color: #424286;
 			font-size: 14px;
 			line-height: 14px;
 			a {
@@ -29,8 +28,8 @@
 	.active.expandable {
 		h3 {
 			background: none;
-			font-weight: bold;
 			color: #000;
+			font-weight: bold;
 			a {
 				color: #000;
 			}
