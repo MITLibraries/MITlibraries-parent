@@ -161,7 +161,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('bootstrap-responsive', get_template_directory_uri() . '/libs/bootstrap/css/bootstrap-responsive.css', array(), '2.2.1');
 
-	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140312');
+	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140317');
 
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('bootstrap-responsive');
