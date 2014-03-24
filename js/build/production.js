@@ -2383,7 +2383,7 @@ $(document).ready(function(){Core.ondomready()});
 })(jQuery);
 
 $(function() {
-	$('.main-navigation .megaMenu a').click(function(){
+	$('.main-navigation .megaMenu > li a').click(function(){
 		var linkHref = $(this).attr('href');
 		var linkText = $(this).text();
 		var linkInfo = 'top_' + linkText + '_' + linkHref;
