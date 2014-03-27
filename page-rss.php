@@ -29,13 +29,17 @@ get_header(); ?>
 					<h1><?php the_title(); ?></h1>
 				</div>
 			
-			<div id="content" class="allContent group">
-
-				<?php echo '<a href="'.$rssLink.'" class="rss-link">RSS</a>';?>
+			<div id="content" class="allContent has-sidebar group">
 				
-				<div class="rss-feed">
-					<?php echo '<script src="'.$rssScript.'" type="text/javascript"></script>'; ?>
+				<div class="entry-content content-main">
+					<?php echo '<a href="'.$rssLink.'" class="rss-link">RSS</a>';?>
+					
+					<div class="rss-feed">
+						<?php echo '<script src="'.$rssScript.'" type="text/javascript"></script>'; ?>
+					</div>
 				</div>
+
+				<?php get_sidebar(); ?>
 				
 			</div>
 		
