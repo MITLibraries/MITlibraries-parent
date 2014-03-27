@@ -23,7 +23,7 @@ get_header(); ?>
 			$rssScript = get_field('rss_script');
 		?>
 		
-		<div id="stage" class="stage inner group" role="main">
+		<div id="stage" class="stage inner border-box group" role="main">
 	
 				<div class="pageTitle">
 					<h1><?php the_title(); ?></h1>
