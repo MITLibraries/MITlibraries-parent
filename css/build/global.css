@@ -4207,3 +4207,14 @@ you can use the generic selector below, but it's slower:
 .border-box * {
   box-sizing: border-box;
 }
+
+.has-sidebar .content-main {
+  float: left;
+  padding-right: 2em;
+  width: 76.05%;
+}
+.has-sidebar .sidebar {
+  background: #ede8e2;
+  float: left;
+  width: 23.91%;
+}
