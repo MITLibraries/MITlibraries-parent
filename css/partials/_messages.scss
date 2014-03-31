@@ -4,7 +4,7 @@
 		span {
 			color: $white;
 			@include bp-small {
-				color: $color-primary;
+				color: lighten($color-primary, 20%);
 			}
 		}
 		@include bp-small {

@@ -4207,7 +4207,7 @@ you can use the generic selector below, but it's slower:
 }
 @media only screen and (max-width: 480px) {
   .maintenance .name-site span {
-    color: #333333;
+    color: #666666;
   }
 }
 @media only screen and (max-width: 480px) {
