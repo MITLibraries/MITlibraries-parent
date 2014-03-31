@@ -1,6 +1,28 @@
-.maintenance .name-site {
-	color: $color-accent-primary;
-	span {
-		color: $white;
+.maintenance {
+	.name-site {
+		color: $color-accent-primary;
+		span {
+			color: $white;
+		}
+	}
+}
+
+.content.maintenance {
+	background: url(http://mitlibraries.dev/wp-content/themes/libraries/images/mit-dome-blurred-sfw.jpg) top;
+	background-size: cover;
+	border: none;
+	font-size: 2em;
+	line-height: 1.5;
+	margin: 2em auto 0;
+	padding: 5em;
+	width: 100%;
+	h2 {
+	background: #fffbf0;
+	background: hsla(45, 100.0000%, 97.0000%, 1.0000);
+	border-top: 4px solid #fc3;
+	box-shadow: 0 0 3px #333;
+	font-size: 1.5em;
+	line-height: 1.5;
+	padding: 2em;
 	}
 }

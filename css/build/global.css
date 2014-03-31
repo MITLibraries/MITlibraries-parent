@@ -4205,3 +4205,23 @@ you can use the generic selector below, but it's slower:
 .maintenance .name-site span {
   color: white;
 }
+
+.content.maintenance {
+  background: url(http://mitlibraries.dev/wp-content/themes/libraries/images/mit-dome-blurred-sfw.jpg) top;
+  background-size: cover;
+  border: none;
+  font-size: 2em;
+  line-height: 1.5;
+  margin: 2em auto 0;
+  padding: 5em;
+  width: 100%;
+}
+.content.maintenance h2 {
+  background: #fffbf0;
+  background: #fffbf0;
+  border-top: 4px solid #fc3;
+  box-shadow: 0 0 3px #333;
+  font-size: 1.5em;
+  line-height: 1.5;
+  padding: 2em;
+}
