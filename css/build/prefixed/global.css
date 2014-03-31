@@ -4214,7 +4214,7 @@ you can use the generic selector below, but it's slower:
   .content.maintenance h2 {
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
     box-shadow: none;
     width: 100%;
   }
