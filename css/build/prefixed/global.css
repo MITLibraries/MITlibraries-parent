@@ -4184,5 +4184,7 @@ you can use the generic selector below, but it's slower:
   color: #2e2200;
   font-size: 1.5em;
   line-height: 1.5;
+  margin: 0 auto;
   padding: 2em;
+  width: 72%;
 }
