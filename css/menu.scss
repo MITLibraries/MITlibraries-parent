@@ -374,3 +374,7 @@
 	-moz-transition: none !important;
 	transition: none !important;
 }
+
+.main-navigation #megaMenu ul li.mega-with-sub > a:after {
+  display: none;
+}

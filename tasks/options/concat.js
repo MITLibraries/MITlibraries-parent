@@ -2,7 +2,8 @@ module.exports = {
   dist: {
     src: [
       'libs/bootstrap/js/bootstrap.js',
-      'js/core.js'
+      'js/core.js',
+      'js/ga_links.js'
     ],
     dest: 'js/build/production.js'
   },

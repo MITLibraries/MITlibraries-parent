@@ -2549,6 +2549,10 @@ html:not(.flexbox) .mainContent .flexItem {
   transition: none !important;
 }
 
+.main-navigation #megaMenu ul li.mega-with-sub > a:after {
+  display: none;
+}
+
 /*!
  * Bootstrap Responsive v2.2.1
  *
