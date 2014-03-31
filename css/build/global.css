@@ -4238,3 +4238,9 @@ you can use the generic selector below, but it's slower:
   padding: 2em;
   width: 72%;
 }
+
+@media only screen and (max-width: 480px) {
+  .maintenance.siteTitle h1 {
+    border-bottom: none;
+  }
+}

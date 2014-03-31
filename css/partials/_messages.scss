@@ -35,3 +35,9 @@
 	width: 72%;
 	}
 }
+
+.maintenance.siteTitle h1 {
+	@include bp-small {
+		border-bottom: none;
+	}
+}
