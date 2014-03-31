@@ -27,6 +27,11 @@
 	margin: 2em auto 0;
 	padding: 5em;
 	width: 100%;
+	@include bp-small {
+		background: none;
+		margin: 0 auto;
+		padding: 0;
+	}
 	h2 {
 		background: #fffbf0;
 		background: hsla(45, 100.0000%, 97.0000%, 1.0000);
@@ -38,5 +43,12 @@
 		margin: 0 auto;
 		padding: 2em;
 		width: 72%;
+		@include bp-small {
+			border-right: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			box-shadow: none;
+			width: 100%;
+		}
 	}
 }

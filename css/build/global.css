@@ -4231,6 +4231,13 @@ you can use the generic selector below, but it's slower:
   padding: 5em;
   width: 100%;
 }
+@media only screen and (max-width: 480px) {
+  .content.maintenance {
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
 .content.maintenance h2 {
   background: #fffbf0;
   background: #fffbf0;
@@ -4242,4 +4249,13 @@ you can use the generic selector below, but it's slower:
   margin: 0 auto;
   padding: 2em;
   width: 72%;
+}
+@media only screen and (max-width: 480px) {
+  .content.maintenance h2 {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    box-shadow: none;
+    width: 100%;
+  }
 }
