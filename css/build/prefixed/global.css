@@ -4167,7 +4167,7 @@ you can use the generic selector below, but it's slower:
 }
 
 .content.maintenance {
-  background: url(http://mitlibraries.dev/wp-content/themes/libraries/images/mit-dome-blurred-sfw.jpg) top;
+  background: url(http://mitlibraries.dev/wp-content/themes/libraries/images/dome-indoor-blurred-sfw.jpg) top;
   background-size: cover;
   border: none;
   font-size: 2em;
