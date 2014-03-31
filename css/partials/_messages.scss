@@ -3,6 +3,12 @@
 		color: $color-accent-primary;
 		span {
 			color: $white;
+			@include bp-small {
+				color: $color-primary;
+			}
+		}
+		@include bp-small {
+			color: $color-primary;
 		}
 	}
 }
