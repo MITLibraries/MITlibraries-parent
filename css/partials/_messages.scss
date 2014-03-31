@@ -11,6 +11,11 @@
 			color: $color-primary;
 		}
 	}
+	&.siteTitle h1 {
+		@include bp-small {
+			border-bottom: none;
+		}
+	}
 }
 
 .content.maintenance {
@@ -33,11 +38,5 @@
 	margin: 0 auto;
 	padding: 2em;
 	width: 72%;
-	}
-}
-
-.maintenance.siteTitle h1 {
-	@include bp-small {
-		border-bottom: none;
 	}
 }

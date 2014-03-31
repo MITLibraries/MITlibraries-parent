@@ -4175,6 +4175,11 @@ you can use the generic selector below, but it's slower:
     color: #333333;
   }
 }
+@media only screen and (max-width: 480px) {
+  .maintenance.siteTitle h1 {
+    border-bottom: none;
+  }
+}
 
 .content.maintenance {
   background: url(http://mitlibraries.dev/wp-content/themes/libraries/images/dome-indoor-blurred-sfw.jpg) top;
@@ -4197,10 +4202,4 @@ you can use the generic selector below, but it's slower:
   margin: 0 auto;
   padding: 2em;
   width: 72%;
-}
-
-@media only screen and (max-width: 480px) {
-  .maintenance.siteTitle h1 {
-    border-bottom: none;
-  }
 }
