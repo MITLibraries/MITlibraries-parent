@@ -43,6 +43,9 @@
 		margin: 0 auto;
 		padding: 2em;
 		width: 72%;
+		p {
+			font-size: 1.25rem;
+		}
 		@include bp-small {
 			border-right: 1px solid #ccc;
 			border-bottom: 1px solid #ccc;
