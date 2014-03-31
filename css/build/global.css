@@ -4256,6 +4256,7 @@ you can use the generic selector below, but it's slower:
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
     box-shadow: none;
+    padding: 0.667em;
     width: 100%;
   }
 }
