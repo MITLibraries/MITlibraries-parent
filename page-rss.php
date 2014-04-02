@@ -25,7 +25,7 @@ get_header(); ?>
 		
 		<div id="stage" class="stage inner border-box group" role="main">
 	
-				<div class="pageTitle">
+				<div class="title">
 					<h1><?php the_title(); ?></h1>
 				</div>
 			
