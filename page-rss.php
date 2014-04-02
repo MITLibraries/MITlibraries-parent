@@ -29,7 +29,7 @@ get_header(); ?>
 					<h1><?php the_title(); ?></h1>
 				</div>
 			
-			<div id="content" class="allContent has-sidebar group">
+			<div id="content" class="content-all has-sidebar group">
 				
 				<div class="entry-content content-main">
 					<?php echo '<a href="'.$rssLink.'" class="rss-link">RSS</a>';?>

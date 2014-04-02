@@ -4169,6 +4169,10 @@ you can use the generic selector below, but it's slower:
   box-sizing: border-box;
 }
 
+.content-all {
+  margin-left: 20px;
+}
+
 .has-sidebar .content-main {
   float: left;
   padding-right: 2em;
