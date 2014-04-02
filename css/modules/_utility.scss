@@ -8,3 +8,8 @@
   font-size: $size;
   font-size: calculateRem($size);
 }
+
+@mixin bp-small {
+	@media only screen and (max-width: 480px) {
+		@content;
+}
