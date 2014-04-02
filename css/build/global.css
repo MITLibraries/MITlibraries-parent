@@ -4202,3 +4202,71 @@ you can use the generic selector below, but it's slower:
   border-left: 5px solid transparent;
   vertical-align: middle;
 }
+
+.maintenance .name-site {
+  color: #ffcc33;
+}
+.maintenance .name-site span {
+  color: white;
+}
+@media only screen and (max-width: 480px) {
+  .maintenance .name-site span {
+    color: #666666;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .maintenance .name-site {
+    color: #333333;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .maintenance.siteTitle h1 {
+    border-bottom: none;
+  }
+}
+
+.content.maintenance {
+  background: url(http://mitlibraries.dev/wp-content/themes/libraries/images/dome-indoor-blurred-sfw.jpg) top;
+  background-size: cover;
+  border: none;
+  font-size: 2em;
+  line-height: 1.5;
+  margin: 2em auto 0;
+  padding: 5em;
+  width: 100%;
+}
+@media only screen and (max-width: 480px) {
+  .content.maintenance {
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.content.maintenance .message-maintenance {
+  background: #fffbf0;
+  background: #fffbf0;
+  border-top: 4px solid #fc3;
+  box-shadow: 0 0 3px #333;
+  color: #2e2200;
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 2em;
+  width: 72%;
+}
+.content.maintenance .message-maintenance h2 {
+  margin-bottom: 1em;
+}
+.content.maintenance .message-maintenance p {
+  font-size: 1.25rem;
+}
+@media only screen and (max-width: 480px) {
+  .content.maintenance .message-maintenance {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    box-shadow: none;
+    padding: 0.667em;
+    width: 100%;
+  }
+}

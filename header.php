@@ -99,8 +99,18 @@
 			?>
 			
 		</header>
-		
+
 		<?php 
-			$pageRoot = getRoot($post);
-			$section = get_post($pageRoot);
+			// Temporary maintenance page for site under development.
+			// Change $blog_id to match.
+			if (!is_user_logged_in() && $blog_id == 99) {
+				get_template_part('inc/maintenance');
+				get_footer();
+				exit;
+			}
+
+			else {
+				$pageRoot = getRoot($post);
+				$section = get_post($pageRoot);
+			}
 		?>
