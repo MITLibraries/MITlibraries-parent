@@ -27,7 +27,7 @@ get_header(); ?>
 	
 				<div class="title">
 					<h1><?php the_title(); ?></h1>
-					<a href="<?php echo $rssLink; ?>">
+					<a class="rss-link" href="<?php echo $rssLink; ?>">
 						<svg viewbox="0 0 100 100" class="icon-rss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve"><circle class="rss-piece rss-icon--circle" cx="12" cy="75.5" r="12"/><path class="rss-piece rss-icon--arc-1" d="M58 87.5H41c0-22.644-18.356-41-41-41l0 0v-17C32.033 29.5 58 55.5 58 87.5z"/><path class="rss-piece rss-icon--arc-2" d="M70 87.5c0-38.66-31.34-70-70-70V0c48.324 0 87.5 39.2 87.5 87.5H70z"/></svg>
 					</a>
 				</div>
