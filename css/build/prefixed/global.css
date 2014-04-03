@@ -4184,6 +4184,11 @@ you can use the generic selector below, but it's slower:
   width: 23.91%;
 }
 
+.title-page h1 {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
 .title-page {
   background: #333333;
   color: white;
