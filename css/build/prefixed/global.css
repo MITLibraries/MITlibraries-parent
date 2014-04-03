@@ -4282,6 +4282,12 @@ you can use the generic selector below, but it's slower:
   }
 }
 
+.rss-feed * {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
 .rss-feed .timestamp,
 .rss-feed .callnos {
   margin-left: 20px;

@@ -1,4 +1,7 @@
 .rss-feed {
+	* {
+		@include body-text;
+	}
 	.timestamp,
 	.callnos {
 		margin-left: $margin-left;
