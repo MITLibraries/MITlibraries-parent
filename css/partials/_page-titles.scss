@@ -2,4 +2,9 @@
 	background: $color-primary;
 	color: $white;
 	padding: calculateRem(20px);
+	.rss-link {
+		display: block;
+		height: calculateRem(28px);
+		width: calculateRem(28px);
+	}
 }
