@@ -4169,6 +4169,10 @@ you can use the generic selector below, but it's slower:
   box-sizing: border-box;
 }
 
+.h-inline {
+  display: inline-block;
+}
+
 .content-all {
   margin-left: 20px;
 }
