@@ -4236,6 +4236,7 @@ you can use the generic selector below, but it's slower:
 .title-page {
   background: #333333;
   color: white;
+  margin-bottom: 1.75rem;
   padding: 1.25rem;
 }
 .title-page .rss-link {

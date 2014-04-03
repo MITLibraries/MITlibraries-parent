@@ -1,6 +1,7 @@
 .title-page {
 	background: $color-primary;
 	color: $white;
+	margin-bottom: calculateRem(28px);
 	padding: calculateRem(20px);
 	.rss-link {
 		display: inline-block;
