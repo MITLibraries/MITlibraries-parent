@@ -4189,6 +4189,7 @@ you can use the generic selector below, but it's slower:
 }
 
 .title-page h1 {
+  line-height: 1;
   font-size: 28px;
   font-size: 1.75rem;
 }
@@ -4199,8 +4200,10 @@ you can use the generic selector below, but it's slower:
   padding: 1.25rem;
 }
 .title-page .rss-link {
-  display: block;
+  display: inline-block;
   height: 1.75rem;
+  margin-left: 0.4375rem;
+  vertical-align: bottom;
   width: 1.75rem;
 }
 .title-page .icon-rss {
