@@ -509,7 +509,7 @@
 						    <li><a href="/experts">Librarians &amp; subject experts</a></li>
 						    <li><a href="/research-guides">Research guides: tools and databases for your topic</a></li>
 						    <li><a href="http://libguides.mit.edu/classguides">Class &amp; program guides</a></li>
-						    <li><a href="/about/faqs/remote.html">E-resource troubleshooting</a></li>
+						    <li><a href="/research-support/connect">Connect from on and off-campus</a></li>
 						    <li><a href="/research-support">More&#8230;</a></li>
 						  </ul>
 						</div>
