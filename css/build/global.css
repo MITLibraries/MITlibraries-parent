@@ -4225,6 +4225,8 @@ you can use the generic selector below, but it's slower:
 
 .title-page {
   background: #333333;
+  color: white;
+  padding: 1.25rem;
 }
 
 .maintenance .name-site {
