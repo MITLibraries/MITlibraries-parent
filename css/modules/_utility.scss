@@ -14,9 +14,12 @@
 	line-height: calculateRem(24px);
 }
 
+$font-body: 'Open Sans', sans-serif;
+
 @mixin body-text {
 	@include font-size(18px);
-	@include line-height(24px); 
+	@include line-height(24px);
+	font-family: $font-body;
 }
 
 @mixin bp-small {

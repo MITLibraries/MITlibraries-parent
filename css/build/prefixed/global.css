@@ -4287,6 +4287,7 @@ you can use the generic selector below, but it's slower:
   font-size: 1.125rem;
   line-height: 24px;
   line-height: 1.5rem;
+  font-family: "Open Sans", sans-serif;
 }
 .rss-feed .timestamp,
 .rss-feed .callnos {
