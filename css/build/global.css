@@ -4240,9 +4240,10 @@ you can use the generic selector below, but it's slower:
   line-height: 1.5;
   padding: 5px 20px;
 }
-.breadcrumbs--better span a {
-  margin-left: -4px;
-  /* Fight inline block default spacing */
+.breadcrumbs--better span {
+  display: block;
+  float: left;
+  position: relative;
 }
 .breadcrumbs--better span:not(:last-of-type):after {
   content: '\00bb';

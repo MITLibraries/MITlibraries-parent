@@ -4,9 +4,9 @@
 	line-height: 1.5;
 	padding: 5px $margin-left;
 	span {
-		a {
-			margin-left: -4px; /* Fight inline block default spacing */
-		}
+		display: block;
+		float: left;
+		position: relative;
 		&:not(:last-of-type):after {
 			content: '\00bb';
 			display: inline-block;
