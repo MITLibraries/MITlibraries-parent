@@ -4233,6 +4233,10 @@ you can use the generic selector below, but it's slower:
   font-size: 1.75rem;
 }
 
+.breadcrumbs--better {
+  background: #ebebeb;
+}
+
 .title-page {
   background: #333333;
   color: white;

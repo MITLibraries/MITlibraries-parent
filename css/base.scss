@@ -4,6 +4,7 @@ $libsPath: "/wp-content/themes/libraries/libs";
 $margin-left: 20px;
 
 $gray-dark: hsla(0, 0.0000%, 20.0000%, 1.0000);
+$gray-light: lighten($gray-dark, 72%);
 $yellow: hsla(45, 100.0000%, 60.0000%, 1.0000);
 $darkYellow: hsla(44, 60.0000%, 50.0000%, 1.0000);
 $blue: hsla(216, 100.0000%, 37.0588%, 1.0000);
@@ -12,6 +13,7 @@ $bluishPurple: hsla(240, 34.0000%, 39.2157%, 1.0000);
 $white: hsla(0, 0%, 100.0000%, 1.0000);
 
 $color-primary: $gray-dark;
+$color-secondary: $gray-light;
 $color-accent-primary: $yellow;
 $color-text-accent-primary: $blue;
 $color-text-accent-secondary: $bluishPurple;

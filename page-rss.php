@@ -15,7 +15,7 @@ $isRoot = $section->ID == $post->ID;
 
 get_header(); ?>
 
-		<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 		<?php
