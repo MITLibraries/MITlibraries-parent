@@ -729,6 +729,7 @@ if (!function_exists('better_breadcrumbs')) {
 	  }
 
 	  if(is_child_page()) {
+	  	$hideParent = get_field('hide_parent_breadcrumb');
 	    $parentLink = get_permalink($post->post_parent);
 	    $parentTitle = get_the_title($post->post_parent);
 	    $startLink = '<a href="';
@@ -740,7 +741,7 @@ if (!function_exists('better_breadcrumbs')) {
 	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
 	  }
 
-	  if ($parentBreadcrumb !="") {echo "<span>".$parentBreadcrumb."</span>";}
+	  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
 	  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
 
 	}
