@@ -2,9 +2,3 @@
 	line-height: 1;
 	@include font-size(28px);
 }
-
-.content-main {
-	li {
-		max-width: calculateRem(586px);
-	}
-}

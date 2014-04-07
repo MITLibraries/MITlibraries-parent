@@ -1,7 +1,5 @@
 .rss-feed {
-	* {
-		@include body-text;
-	}
+	@include body-text;
 	.timestamp,
 	.callnos {
 		color: $color-text-minor;

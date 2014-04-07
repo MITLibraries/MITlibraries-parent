@@ -1,3 +1,8 @@
+.rss-feed p, .rss-feed li, .rss-feed a {
+  max-width: 586px;
+  max-width: 36.625rem;
+}
+
 .gldp-default {
   background: transparent;
   position: absolute;
@@ -4210,10 +4215,6 @@ you can use the generic selector below, but it's slower:
   font-size: 1.75rem;
 }
 
-.content-main li {
-  max-width: 36.625rem;
-}
-
 .breadcrumbs--better {
   background: #ebebeb;
   font-size: 12px;
@@ -4351,7 +4352,7 @@ you can use the generic selector below, but it's slower:
   }
 }
 
-.rss-feed * {
+.rss-feed {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 24px;
