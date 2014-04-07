@@ -1,0 +1,39 @@
+.border-box,
+.border-box * {
+	 box-sizing: border-box;
+}
+
+.h-inline {
+	display: inline-block;
+}
+
+.content-all {
+	margin-left: $margin-left;
+	@include bp-small {
+		@include rem-fallback--2-values(margin, 0, 16px);
+	}
+}
+
+.has-sidebar {
+	.content-main {
+		float: left;
+	  padding-right: 2em;
+		width: 76.05%;
+	}
+	.sidebar {
+		background: #ede8e2;
+		float: left;
+		width: 23.91%;
+	}
+	@include bp-small {
+		.content-main {
+			float: none;
+			padding-right: 0;
+			width: 100%;
+		}
+		.sidebar {
+			float: none;
+			width: 100%;
+		}
+	}
+}

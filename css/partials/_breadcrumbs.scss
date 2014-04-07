@@ -1,0 +1,16 @@
+.breadcrumbs--better {
+	background: $color-secondary;
+	@include font-size(12px);
+	line-height: 1.5;
+	padding: 5px $margin-left;
+	span {
+		display: block;
+		float: left;
+		position: relative;
+		&:not(:last-of-type):after {
+			content: '\00bb';
+			display: inline-block;
+			margin: 0 3px;
+		}
+	}
+}

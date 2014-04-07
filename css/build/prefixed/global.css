@@ -1,3 +1,8 @@
+.rss-feed p, .rss-feed li, .rss-feed a {
+  max-width: 586px;
+  max-width: 36.625rem;
+}
+
 .gldp-default {
   background: transparent;
   position: absolute;
@@ -4163,6 +4168,123 @@ you can use the generic selector below, but it's slower:
   vertical-align: middle;
 }
 
+.border-box,
+.border-box * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.h-inline {
+  display: inline-block;
+}
+
+.content-all {
+  margin-left: 20px;
+}
+@media only screen and (max-width: 480px) {
+  .content-all {
+    margin: 0 16px;
+    margin: 0 1rem;
+  }
+}
+
+.has-sidebar .content-main {
+  float: left;
+  padding-right: 2em;
+  width: 76.05%;
+}
+.has-sidebar .sidebar {
+  background: #ede8e2;
+  float: left;
+  width: 23.91%;
+}
+@media only screen and (max-width: 480px) {
+  .has-sidebar .content-main {
+    float: none;
+    padding-right: 0;
+    width: 100%;
+  }
+  .has-sidebar .sidebar {
+    float: none;
+    width: 100%;
+  }
+}
+
+.title-page h1 {
+  line-height: 1;
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
+.breadcrumbs--better {
+  background: #ebebeb;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  padding: 5px 20px;
+}
+.breadcrumbs--better span {
+  display: block;
+  float: left;
+  position: relative;
+}
+.breadcrumbs--better span:not(:last-of-type):after {
+  content: '\00bb';
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.title-page {
+  background: #333333;
+  color: white;
+  margin-bottom: 1.75rem;
+  padding: 1.25rem;
+}
+@media only screen and (max-width: 480px) {
+  .title-page {
+    background: none;
+    box-shadow: 0 0 5px #111;
+    color: #111;
+    display: block;
+    text-align: center;
+  }
+}
+.title-page .rss-link {
+  display: inline-block;
+  height: 1.75rem;
+  margin-left: 0.4375rem;
+  vertical-align: bottom;
+  width: 1.75rem;
+}
+.title-page .rss-link:hover .icon-rss {
+  fill: #cc9900;
+}
+@media only screen and (max-width: 480px) {
+  .title-page .rss-link {
+    color: #aaaaaa;
+    height: auto;
+    font-size: 16px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    text-align: center;
+    vertical-align: baseline;
+    width: 100%;
+  }
+  .title-page .rss-link:after {
+    content: 'View RSS';
+    display: block;
+  }
+}
+.title-page .icon-rss {
+  fill: #ffcc33;
+}
+@media only screen and (max-width: 480px) {
+  .title-page .icon-rss {
+    display: none;
+  }
+}
+
 .maintenance .name-site {
   color: #ffcc33;
 }
@@ -4229,4 +4351,34 @@ you can use the generic selector below, but it's slower:
     padding: 0.667em;
     width: 100%;
   }
+}
+
+.rss-feed {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+.rss-feed .timestamp,
+.rss-feed .callnos {
+  color: #aaaaaa;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-left: 0;
+}
+.rss-feed .callnos:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 1px;
+  margin-top: 16px;
+  margin-top: 1rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.rss-feed ul li {
+  list-style: none;
+  margin-left: 0;
 }

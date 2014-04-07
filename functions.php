@@ -712,3 +712,39 @@ function getExpert($expert) {
 	print_r($qExpert);
 	
 }
+
+if (!function_exists('better_breadcrumbs')) {
+
+	function better_breadcrumbs() {
+
+	  global $post;
+
+	  if(is_search()) {
+	    echo "<span>Search</span>";
+	  }
+
+	  if(!is_child_page() && is_page() || is_category() || is_single()) {
+	    echo "<span>".the_title()."</span>";
+	    return;
+	  }
+
+	  if(is_child_page()) {
+	  	$hideParent = get_field('hide_parent_breadcrumb');
+	    $parentLink = get_permalink($post->post_parent);
+	    $parentTitle = get_the_title($post->post_parent);
+	    $startLink = '<a href="';
+	    $endLink = '">';
+	    $closeLink = '</a>';
+	    $parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
+	    $pageTitle = get_the_title($post);
+	    $pageLink = get_permalink($post);
+	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
+	  }
+
+	  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
+	  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
+
+	}
+
+	add_action('after_setup_theme', 'better_breadcrumbs');
+}
