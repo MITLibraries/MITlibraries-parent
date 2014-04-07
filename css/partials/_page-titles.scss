@@ -3,6 +3,13 @@
 	color: $white;
 	margin-bottom: calculateRem(28px);
 	padding: calculateRem(20px);
+	@include bp-small {
+		background: none;
+		box-shadow: 0 0 5px #111;
+		color: #111;
+		display: block;
+		text-align: center;
+	}
 	.rss-link {
 		display: inline-block;
 		height: calculateRem(28px);
@@ -12,8 +19,25 @@
 		&:hover .icon-rss {
 			fill: darken($color-accent-primary, 20%);
 		}
+		@include bp-small {
+			color: $color-text-minor;
+			height: auto;
+			@include font-size(16px);
+			margin-top: calculateRem(8px);
+			margin-left: 0;
+			text-align: center;
+			vertical-align: baseline;
+			width: 100%;
+			&:after {
+				content: 'View RSS';
+				display: block;
+			}
+		}
 	}
 	.icon-rss {
 		fill: $color-accent-primary;
+		@include bp-small {
+			display: none;
+		}
 	}
 }

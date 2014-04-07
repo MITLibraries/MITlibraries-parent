@@ -4257,6 +4257,15 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 1.75rem;
   padding: 1.25rem;
 }
+@media only screen and (max-width: 480px) {
+  .title-page {
+    background: none;
+    box-shadow: 0 0 5px #111;
+    color: #111;
+    display: block;
+    text-align: center;
+  }
+}
 .title-page .rss-link {
   display: inline-block;
   height: 1.75rem;
@@ -4267,8 +4276,30 @@ you can use the generic selector below, but it's slower:
 .title-page .rss-link:hover .icon-rss {
   fill: #cc9900;
 }
+@media only screen and (max-width: 480px) {
+  .title-page .rss-link {
+    color: #aaaaaa;
+    height: auto;
+    font-size: 16px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    text-align: center;
+    vertical-align: baseline;
+    width: 100%;
+  }
+  .title-page .rss-link:after {
+    content: 'View RSS';
+    display: block;
+  }
+}
 .title-page .icon-rss {
   fill: #ffcc33;
+}
+@media only screen and (max-width: 480px) {
+  .title-page .icon-rss {
+    display: none;
+  }
 }
 
 .maintenance .name-site {
