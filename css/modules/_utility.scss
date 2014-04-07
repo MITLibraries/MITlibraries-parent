@@ -38,3 +38,8 @@ $font-body: 'Open Sans', sans-serif;
 		@extend %line-length;
 	}
 }
+
+@mixin rem-fallback ($property, $value) {
+	#{$property}: #{$value};
+	#{$property}: $value / 16px * 1rem;
+}

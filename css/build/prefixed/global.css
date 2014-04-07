@@ -4371,8 +4371,10 @@ you can use the generic selector below, but it's slower:
   content: '';
   display: block;
   height: 1px;
-  margin-bottom: 1.5rem;
+  margin-top: 16px;
   margin-top: 1rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 .rss-feed ul li {
