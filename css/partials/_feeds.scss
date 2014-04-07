@@ -4,6 +4,8 @@
 	}
 	.timestamp,
 	.callnos {
+		color: $color-text-minor;
+		@include font-size(16px);
 		margin-left: $margin-left;
 	}
 	.callnos {

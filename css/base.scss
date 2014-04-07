@@ -4,6 +4,7 @@ $libsPath: "/wp-content/themes/libraries/libs";
 $margin-left: 20px;
 
 $gray-dark: hsla(0, 0.0000%, 20.0000%, 1.0000);
+$gray-medium: lighten($gray-dark, 46.6667%);
 $gray-light: lighten($gray-dark, 72%);
 $yellow: hsla(45, 100.0000%, 60.0000%, 1.0000);
 $darkYellow: hsla(44, 60.0000%, 50.0000%, 1.0000);
@@ -17,6 +18,7 @@ $color-secondary: $gray-light;
 $color-accent-primary: $yellow;
 $color-text-accent-primary: $blue;
 $color-text-accent-secondary: $bluishPurple;
+$color-text-minor: $gray-medium;
 
 @mixin rightArrow($size, $color) {
 	border-top: $size solid transparent;
