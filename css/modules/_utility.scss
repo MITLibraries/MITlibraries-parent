@@ -1,4 +1,13 @@
+// Break points
+
+@mixin bp-small {
+	@media only screen and (max-width: 480px) {
+		@content;
+	}
+}
+
 // Font Size
+
 @function calculateRem($size) {
   $remSize: $size / 16px;
   @return $remSize * 1rem;
@@ -20,10 +29,4 @@ $font-body: 'Open Sans', sans-serif;
 	@include font-size(18px);
 	@include line-height(24px);
 	font-family: $font-body;
-}
-
-@mixin bp-small {
-	@media only screen and (max-width: 480px) {
-		@content;
-	}
 }
