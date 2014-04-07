@@ -4249,6 +4249,10 @@ you can use the generic selector below, but it's slower:
   font-size: 1.75rem;
 }
 
+.content-main li {
+  max-width: 36.625rem;
+}
+
 .breadcrumbs--better {
   background: #ebebeb;
   font-size: 12px;
