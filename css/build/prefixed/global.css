@@ -4176,6 +4176,11 @@ you can use the generic selector below, but it's slower:
 .content-all {
   margin-left: 20px;
 }
+@media only screen and (max-width: 480px) {
+  .content-all {
+    margin: 0 1rem;
+  }
+}
 
 .has-sidebar .content-main {
   float: left;
@@ -4186,6 +4191,17 @@ you can use the generic selector below, but it's slower:
   background: #ede8e2;
   float: left;
   width: 23.91%;
+}
+@media only screen and (max-width: 480px) {
+  .has-sidebar .content-main {
+    float: none;
+    padding-right: 0;
+    width: 100%;
+  }
+  .has-sidebar .sidebar {
+    float: none;
+    width: 100%;
+  }
 }
 
 .title-page h1 {
