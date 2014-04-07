@@ -43,3 +43,13 @@ $font-body: 'Open Sans', sans-serif;
 	#{$property}: #{$value};
 	#{$property}: $value / 16px * 1rem;
 }
+
+@mixin rem-fallback--2-values($property, $value-1, $value-2) {
+	#{$property}: #{$value-1} #{$value-2};
+	@if $value-1 != 0 {
+		#{$property}: $value-1 / 16px * 1rem $value-2 / 16px * 1rem;
+	}
+	@else {
+		#{$property}: $value-1 $value-2 / 16px * 1rem;
+	}
+}

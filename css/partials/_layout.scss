@@ -10,7 +10,7 @@
 .content-all {
 	margin-left: $margin-left;
 	@include bp-small {
-		margin: 0 calculateRem(16px);
+		@include rem-fallback--2-values(margin, 0, 16px);
 	}
 }
 

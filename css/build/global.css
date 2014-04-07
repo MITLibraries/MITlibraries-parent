@@ -4222,6 +4222,7 @@ you can use the generic selector below, but it's slower:
 }
 @media only screen and (max-width: 480px) {
   .content-all {
+    margin: 0 16px;
     margin: 0 1rem;
   }
 }
