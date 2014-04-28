@@ -3837,13 +3837,18 @@ you can use the generic selector below, but it's slower:
   box-sizing: border-box;
   width: 100%;
 }
+.nav-main a {
+  color: black;
+}
 
 .nav-primary > li {
   display: inline-block;
   position: relative;
 }
 .nav-primary > li > .sub-menu {
+  background: gray;
   display: none;
+  width: 400px;
 }
 .nav-primary > li:hover > .sub-menu {
   display: block;

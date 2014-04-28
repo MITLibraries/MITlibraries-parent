@@ -1,13 +1,18 @@
 .nav-main {
 	box-sizing: border-box;
 	width: 100%;
+	a {
+		color: black;
+	}
 }
 
 .nav-primary > li {
 	display: inline-block;
 	position: relative;
 	> .sub-menu {
+		background: gray;
 		display: none;
+		width: 400px;
 	}
 	&:hover > .sub-menu {
 		display: block;
