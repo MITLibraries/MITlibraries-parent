@@ -5,7 +5,12 @@
 
 .nav-primary > li {
 	display: inline-block;
+	position: relative;
 	> .sub-menu {
 		display: none;
+	}
+	&:hover > .sub-menu {
+		display: block;
+		position: absolute;
 	}
 }

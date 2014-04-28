@@ -3840,9 +3840,14 @@ you can use the generic selector below, but it's slower:
 
 .nav-primary > li {
   display: inline-block;
+  position: relative;
 }
 .nav-primary > li > .sub-menu {
   display: none;
+}
+.nav-primary > li:hover > .sub-menu {
+  display: block;
+  position: absolute;
 }
 
 .breadcrumbs--better {
