@@ -65,7 +65,7 @@
 				?>
 			</div>
 
-			<nav id="site-navigation" class="span12 main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation nav-main" role="navigation">
 				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 				<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 				<?php 
