@@ -1,0 +1,11 @@
+.nav-main {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.nav-primary > li {
+	display: inline-block;
+	> .sub-menu {
+		display: none;
+	}
+}
