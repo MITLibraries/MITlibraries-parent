@@ -540,7 +540,7 @@
 						    <li><a href="http://libguides.mit.edu/manage-info">Manage your information</a></li>
 						    <li><a href="/apps">Apps for academics</a></li>
 						    <li><a href="/libx">LibX</a></li>
-						    <li><a href="/help/rss/barton/">New books RSS feeds</a></li>
+						    <li><a href="/new-books">New books RSS feeds</a></li>
 						    <li><a href="/productivity-tools">More&#8230;</a></li>
 						  </ul>
 						</div>
