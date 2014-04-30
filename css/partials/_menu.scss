@@ -18,4 +18,16 @@
 		display: block;
 		position: absolute;
 	}
+	.col-1 {
+		clear: left;
+		float: left;
+		position: relative;
+		width: 50%;
+	}
+	.col-2 {
+		clear: right;
+		float: right;
+		position: relative;
+		width: 50%;
+	}
 }

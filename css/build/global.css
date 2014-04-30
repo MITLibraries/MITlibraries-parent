@@ -3854,6 +3854,18 @@ you can use the generic selector below, but it's slower:
   display: block;
   position: absolute;
 }
+.nav-primary > li .col-1 {
+  clear: left;
+  float: left;
+  position: relative;
+  width: 50%;
+}
+.nav-primary > li .col-2 {
+  clear: right;
+  float: right;
+  position: relative;
+  width: 50%;
+}
 
 .breadcrumbs--better {
   background: #ebebeb;
