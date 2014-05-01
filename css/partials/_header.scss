@@ -6,17 +6,28 @@
 		height: 56px;
 		width: 132px;
 		@include image-replacement;
+		@include bp-small {
+			background-size: 110px 44px;
+			height: 44px;
+			width: 110px;
+		}
 	}
 	.toolbox {
 		float: right;
 		margin-top: 0.5rem;
 		@include font-size(12px);
+		@include bp-small {
+			margin-top: 0;
+		}
 		.icon-arrow-right {
 			display: inline-block;
 			height: 0.75rem;
 			margin-top: 0.5rem;
 			vertical-align: top;
 			width: 0.75rem;
+			@include bp-small {
+				display: none;
+			}
 		}
 		> a {
 			display: inline-block;
@@ -24,6 +35,10 @@
 			margin-top: 0.5rem;
 			margin-right: 1rem;
 			vertical-align: top;
+			@include bp-small {
+				float: right;
+				margin: 0 0 0.5rem 0;
+			}
 			&:after {
 				background: #ccc;
 				content: '';
@@ -32,10 +47,17 @@
 				margin-top: -0.5rem;
 				margin-left: 1rem;
 				width: 1px;
+				@include bp-small {
+					content: none;
+				}
 			}
 		}
 		.button-ask-tell {
 			display: inline-block;
+			@include bp-small {
+				clear: right;
+				float: right;
+			}
 		}
 	}
 	@include font-size(14px);
