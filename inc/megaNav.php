@@ -1,4 +1,4 @@
-<nav class="nav-main">
+<nav class="nav-main border-box group">
   <div id="link-primary" class="link-primary">
     <a href="/search">Search</a>
     <div class="links-sub visually-hidden group">

@@ -3789,22 +3789,25 @@ you can use the generic selector below, but it's slower:
 }
 
 .link-primary {
-  background: lightgray;
   display: inline-block;
-  margin-right: 0.5rem;
-  padding: 0.5rem;
   position: relative;
-}
-.link-primary:hover {
-  box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
 }
 .link-primary:hover .links-sub {
   box-shadow: 0 1px 2px #444;
   opacity: 1;
   transition: opacity 0.2 ease;
 }
-.link-primary a {
+.link-primary > a {
   color: black;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  position: relative;
+}
+.link-primary > a:hover {
+  background: lightgray;
+  box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
 }
 .link-primary .col-1 {
   padding-right: 1rem;
@@ -3818,7 +3821,6 @@ you can use the generic selector below, but it's slower:
   border: 1px solid gray;
   display: flex;
   flex-flow: row wrap;
-  margin: 0.5rem 0 0 -0.5rem;
   opacity: 0;
   padding: 1rem;
   position: absolute;
@@ -3837,7 +3839,7 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 0.5rem;
 }
 .link-primary .push {
-  right: 0;
+  right: 1rem;
 }
 
 .breadcrumbs--better {
