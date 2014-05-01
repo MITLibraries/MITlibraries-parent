@@ -3760,7 +3760,7 @@ you can use the generic selector below, but it's slower:
   font-size: 1.75rem;
 }
 
-.header-main .logo-mit-libraries {
+.header-main .logo-mit-lib {
   float: left;
 }
 .header-main .toolbox {
