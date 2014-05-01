@@ -20,7 +20,7 @@
 
 @mixin line-height($size) {
 	line-height: $size;
-	line-height: calculateRem(24px);
+	line-height: calculateRem($size);
 }
 
 %line-length {
