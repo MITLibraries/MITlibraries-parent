@@ -38,7 +38,7 @@
   </div>
   <div id="link-primary" class="link-primary">
     <a href="/research-support">Research Support</a>
-    <div class="links-sub visually-hidden push">
+    <div class="links-sub visually-hidden">
       <div class="col-1"></div>
       <div class="col-2"></div>
     </div>
