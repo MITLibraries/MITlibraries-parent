@@ -3784,6 +3784,8 @@ you can use the generic selector below, but it's slower:
 .nav-main {
   box-sizing: border-box;
   clear: both;
+  float: left;
+  margin: 1.5rem 0;
 }
 
 .link-primary {
