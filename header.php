@@ -43,7 +43,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="container">
-		<header class="group">
+		<header class="header-main group">
 			
 			<?php
 				global $blog_id;
