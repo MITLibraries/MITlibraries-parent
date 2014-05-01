@@ -56,9 +56,7 @@
 
 			<div class="logo-mit-lib">MIT Libraries</div>
 
-			<?php get_template_part('inc/meganav'); ?>
-
-			<div id="toolbox">
+			<div class="toolbox">
 				<a class="yourAccount" href="/barton-account">Your Account</a>
 				<div id="asktell">
 					<img class="hidden-phone" src="<?php bloginfo('template_directory') ?>/images/ask-tell.png" alt="" usemap="#asktell"/>
@@ -73,6 +71,8 @@
 					</map>
 				</div>
 			</div>
+
+			<?php get_template_part('inc/meganav'); ?>
 
 			<?php
 				//switch back to blog being viewed, unless MOH site
