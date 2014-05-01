@@ -12,6 +12,10 @@
   padding: 0.5rem;
   position: relative;
   &:hover {
+  	box-shadow: 0 0 2px #444,
+                inset 1px 0 0 gray,
+                inset -1px 0 0 gray,
+                inset 0 1px 0 gray;
     .links-sub {
       box-shadow: 0 0 2px #444;
       opacity: 1;
