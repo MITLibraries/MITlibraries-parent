@@ -1,6 +1,10 @@
 .header-main {
 	.logo-mit-lib {
+		background: url(#{$imagesPath}/logo.png) no-repeat;
 		float: left;
+		height: 56px;
+		width: 132px;
+		@include image-replacement;
 	}
 	.toolbox {
 		float: right;
