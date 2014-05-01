@@ -9,7 +9,15 @@
 	}
 	.toolbox {
 		float: right;
+		margin-top: 0.5rem;
 		@include font-size(12px);
+		.icon-arrow-right {
+			display: inline-block;
+			height: 0.75rem;
+			margin-top: 0.5rem;
+			vertical-align: top;
+			width: 0.75rem;
+		}
 		> a {
 			display: inline-block;
 			font-weight: bold;

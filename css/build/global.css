@@ -3781,6 +3781,13 @@ you can use the generic selector below, but it's slower:
   font-size: 12px;
   font-size: 0.75rem;
 }
+.header-main .toolbox .icon-arrow-right {
+  display: inline-block;
+  height: 0.75rem;
+  margin-top: 0.5rem;
+  vertical-align: top;
+  width: 0.75rem;
+}
 .header-main .toolbox > a {
   display: inline-block;
   font-weight: bold;
