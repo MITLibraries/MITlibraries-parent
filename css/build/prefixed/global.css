@@ -3767,7 +3767,22 @@ you can use the generic selector below, but it's slower:
   font-size: 12px;
   font-size: 0.75rem;
 }
-.header-main .toolbox a,
+.header-main .toolbox > a {
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  vertical-align: top;
+}
+.header-main .toolbox > a:after {
+  background: #ccc;
+  content: '';
+  display: inline-block;
+  height: 2rem;
+  margin-top: -0.5rem;
+  margin-left: 1rem;
+  width: 1px;
+}
 .header-main .toolbox .button-ask-tell {
   display: inline-block;
 }
