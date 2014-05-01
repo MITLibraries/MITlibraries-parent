@@ -58,7 +58,7 @@
 
 			<div class="toolbox">
 				<a class="yourAccount" href="/barton-account">Your Account</a>
-				<div id="asktell">
+				<div id="asktell" class="button-ask-tell">
 					<img class="hidden-phone" src="<?php bloginfo('template_directory') ?>/images/ask-tell.png" alt="" usemap="#asktell"/>
 					<img class="visible-phone" src="<?php bloginfo('template_directory') ?>/images/ask-tell-mobile.png" alt="" usemap="#asktellmobile"/>
 					<map name="asktell">
