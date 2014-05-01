@@ -54,16 +54,7 @@
 				}
 			?>
 
-			<div id="logo">
-				<?php 
-					if ($blog_id != 21) {
-						echo get_bloginfo( 'name', 'display' );
-					}
-					else {
-						echo "MIT Libraries";
-					}
-				?>
-			</div>
+			<div class="logo-mit-lib">MIT Libraries</div>
 
 			<?php get_template_part('inc/meganav'); ?>
 
