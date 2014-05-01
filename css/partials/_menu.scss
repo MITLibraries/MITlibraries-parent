@@ -3,6 +3,7 @@
 	clear: both;
 	float: left;
 	margin: 1.5rem 0;
+	@include line-height(20px);
 }
 
 .link-primary {

@@ -3774,6 +3774,8 @@ you can use the generic selector below, but it's slower:
   clear: both;
   float: left;
   margin: 1.5rem 0;
+  line-height: 20px;
+  line-height: 1.25rem;
 }
 
 .link-primary {
