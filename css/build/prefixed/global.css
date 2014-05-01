@@ -3747,6 +3747,13 @@ you can use the generic selector below, but it's slower:
   font-size: 1.75rem;
 }
 
+.header-main .logo-mit-libraries {
+  float: left;
+}
+.header-main .toolbox {
+  float: right;
+}
+
 .nav-main {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
