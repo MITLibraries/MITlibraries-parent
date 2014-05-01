@@ -3837,7 +3837,7 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 0.5rem;
 }
 .link-primary .push {
-  right: 1rem;
+  right: 0;
 }
 
 .breadcrumbs--better {
