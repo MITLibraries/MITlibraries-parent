@@ -3,7 +3,8 @@ module.exports = {
     src: [
       'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
-      'js/ga_links.js'
+      'js/ga_links.js',
+      'js/nav-main.js'
     ],
     dest: 'js/build/production.js'
   },
