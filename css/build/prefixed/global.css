@@ -3796,7 +3796,7 @@ you can use the generic selector below, but it's slower:
   padding: 0.5rem;
   position: relative;
 }
-.link-primary > a:hover {
+.link-primary > a.active {
   background: lightgray;
   box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
 }

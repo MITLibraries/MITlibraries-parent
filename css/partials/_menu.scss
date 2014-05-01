@@ -23,7 +23,7 @@
     margin-right: 1rem;
 	  padding: 0.5rem;
 	  position: relative;
-	  &:hover {
+	  &.active {
 	  	background: lightgray;
 	  	box-shadow: 0 0 2px #444,
                 inset 1px 0 0 gray,
