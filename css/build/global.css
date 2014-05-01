@@ -3792,6 +3792,7 @@ you can use the generic selector below, but it's slower:
 
 .link-primary {
   display: inline-block;
+  margin-right: 1rem;
   position: relative;
 }
 .link-primary:hover .links-sub {
@@ -3803,7 +3804,6 @@ you can use the generic selector below, but it's slower:
   color: black;
   display: inline-block;
   font-weight: bold;
-  margin-right: 1rem;
   padding: 0.5rem;
   position: relative;
 }

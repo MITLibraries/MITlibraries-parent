@@ -8,6 +8,7 @@
 
 .link-primary {
   display: inline-block;
+  margin-right: 1rem;
   position: relative;
   &:hover {
     .links-sub {
@@ -20,7 +21,6 @@
     color: black;
     display: inline-block;
     font-weight: bold;
-    margin-right: 1rem;
 	  padding: 0.5rem;
 	  position: relative;
 	  &.active {
