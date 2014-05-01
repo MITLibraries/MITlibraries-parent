@@ -362,36 +362,6 @@ a.yourAccount:before {
   top: 6px;
 }
 
-header nav {
-  position: absolute;
-  font-size: 14px;
-  top: 68px;
-  left: -19px;
-  margin-top: 0px !important;
-}
-
-header #site-navigation a {
-  display: inline-block;
-  /*background: transparent url(../images/icon-nav-arrow.gif) no-repeat right center;*/
-  padding-right: 15px;
-  margin-right: 15px;
-}
-
-#site-navigation li, #megaMenu {
-  background: transparent;
-}
-
-nav a.active {
-  color: #000;
-}
-
-#megaMenu .sub-menu {
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px #333;
-}
-
 #breadcrumb {
   background: #eceaea;
   font-size: 12px;
