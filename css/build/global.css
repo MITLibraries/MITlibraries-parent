@@ -3780,6 +3780,10 @@ you can use the generic selector below, but it's slower:
   font-size: 12px;
   font-size: 0.75rem;
 }
+.header-main .toolbox a,
+.header-main .toolbox .button-ask-tell {
+  display: inline-block;
+}
 
 .nav-main {
   box-sizing: border-box;

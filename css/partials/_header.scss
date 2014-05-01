@@ -10,6 +10,10 @@
 	.toolbox {
 		float: right;
 		@include font-size(12px);
+		a,
+		.button-ask-tell {
+			display: inline-block;
+		}
 	}
 	@include font-size(14px);
 }
