@@ -3,6 +3,17 @@
   max-width: 36.625rem;
 }
 
+.visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
 .gldp-default {
   background: transparent;
   position: absolute;
@@ -3835,36 +3846,55 @@ you can use the generic selector below, but it's slower:
 
 .nav-main {
   box-sizing: border-box;
-  width: 100%;
-}
-.nav-main a {
-  color: black;
 }
 
-.nav-primary > li {
+.link-primary {
+  background: lightgray;
   display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
   position: relative;
 }
-.nav-primary > li > .sub-menu {
-  background: gray;
-  display: none;
-  width: 400px;
+.link-primary:hover .links-sub {
+  box-shadow: 0 0 2px #444;
+  opacity: 1;
+  transition: opacity 0.2 ease;
 }
-.nav-primary > li:hover > .sub-menu {
-  display: block;
+.link-primary a {
+  color: black;
+}
+.link-primary .col-1 {
+  padding-right: 1rem;
+}
+.link-primary .col-2 {
+  border-left: 1px solid black;
+  padding-left: 1rem;
+}
+.link-primary .links-sub {
+  background: lightgray;
+  border: 1px solid gray;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0.5rem 0 0 -0.5rem;
+  opacity: 0;
+  padding: 1rem;
   position: absolute;
+  transition: opacity 0.2s ease;
+  width: 600px;
+  z-index: 1;
 }
-.nav-primary > li .col-1 {
-  clear: left;
-  float: left;
-  position: relative;
-  width: 50%;
+.link-primary .links-sub a {
+  display: block;
 }
-.nav-primary > li .col-2 {
-  clear: right;
-  float: right;
-  position: relative;
-  width: 50%;
+.link-primary .links-sub [class*="col"] {
+  width: 275px;
+}
+.link-primary .heading-col {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.link-primary .push {
+  right: 0;
 }
 
 .breadcrumbs--better {

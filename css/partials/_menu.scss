@@ -1,33 +1,54 @@
 .nav-main {
 	box-sizing: border-box;
-	width: 100%;
-	a {
-		color: black;
-	}
 }
 
-.nav-primary > li {
-	display: inline-block;
-	position: relative;
-	> .sub-menu {
-		background: gray;
-		display: none;
-		width: 400px;
-	}
-	&:hover > .sub-menu {
-		display: block;
-		position: absolute;
-	}
-	.col-1 {
-		clear: left;
-		float: left;
-		position: relative;
-		width: 50%;
-	}
-	.col-2 {
-		clear: right;
-		float: right;
-		position: relative;
-		width: 50%;
-	}
+.link-primary {
+  background: lightgray;
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  position: relative;
+  &:hover {
+    .links-sub {
+      box-shadow: 0 0 2px #444;
+      opacity: 1;
+      transition: opacity 0.2 ease;
+    }
+  }
+  a {
+    color: black;
+  }
+  .col-1 {
+    padding-right: 1rem;
+  }
+  .col-2 {
+    border-left: 1px solid black;
+    padding-left: 1rem;
+  }
+  .links-sub {
+    background: lightgray;
+    border: 1px solid gray;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.5rem 0 0 -0.5rem;
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+    transition: opacity 0.2s ease;
+    width: 600px;
+    z-index: 1;
+    a {
+      display: block;
+    }
+    [class*="col"] {
+      width: 275px;
+    }
+  }
+  .heading-col {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .push {
+    right: 0;
+  }
 }
