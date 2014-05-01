@@ -308,60 +308,6 @@ h2.bigHead {
   margin: 0 0 0px 0;
 }
 
-/* ----
-Header Styles
----- */
-header {
-  font-weight: bold;
-  height: 98px;
-}
-
-#logo {
-  position: absolute;
-  top: -2px;
-  cursor: pointer;
-  left: 18px;
-  width: 132px;
-  height: 56px;
-  background: transparent url(/wp-content/themes/libraries/images/logo.png) no-repeat;
-  text-indent: -9999px;
-}
-
-#toolbox {
-  position: absolute;
-  top: 2px;
-  right: 0px;
-}
-
-#toolbox a {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 12px;
-  padding: 0 13px 0 12px;
-}
-
-a.yourAccount {
-  color: #424286;
-}
-
-a.yourAccount:before {
-  content: '\f061';
-  display: inline-block;
-  font-family: 'fontawesome-MITLibraries';
-  font-style: normal;
-  font-weight: normal;
-  margin-right: 0.5em;
-  text-decoration: none;
-}
-
-#asktell {
-  display: inline-block;
-  background: transparent url(/wp-content/themes/libraries/images/divider-gradient.png) no-repeat top left;
-  padding: 0 0 0 18px;
-  position: relative;
-  top: 6px;
-}
-
 #breadcrumb {
   background: #eceaea;
   font-size: 12px;
