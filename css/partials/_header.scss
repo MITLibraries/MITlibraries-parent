@@ -1,6 +1,7 @@
 .header-main {
 	.logo-mit-lib {
 		background: url(#{$imagesPath}/logo.png) no-repeat;
+		display: block;
 		float: left;
 		height: 56px;
 		width: 132px;

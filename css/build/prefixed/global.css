@@ -3753,6 +3753,7 @@ you can use the generic selector below, but it's slower:
 }
 .header-main .logo-mit-lib {
   background: url(/wp-content/themes/libraries/images/logo.png) no-repeat;
+  display: block;
   float: left;
   height: 56px;
   width: 132px;

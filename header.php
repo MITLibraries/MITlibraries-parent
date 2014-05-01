@@ -54,7 +54,7 @@
 				}
 			?>
 
-			<div class="logo-mit-lib">MIT Libraries</div>
+			<a href="/" class="logo-mit-lib">MIT Libraries</a>
 
 			<div class="toolbox">
 				<a class="yourAccount" href="/barton-account">Your Account</a>
