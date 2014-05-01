@@ -64,3 +64,10 @@ $font-body: 'Open Sans', sans-serif;
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
+
+@mixin image-replacement {
+	border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
