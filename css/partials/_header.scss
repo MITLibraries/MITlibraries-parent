@@ -4,6 +4,7 @@
 	}
 	.toolbox {
 		float: right;
+		@include font-size(12px);
 	}
 	@include font-size(14px);
 }

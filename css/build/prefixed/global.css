@@ -3756,6 +3756,8 @@ you can use the generic selector below, but it's slower:
 }
 .header-main .toolbox {
   float: right;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .nav-main {
