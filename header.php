@@ -65,15 +65,7 @@
 				?>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation nav-main" role="navigation">
-				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-				<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-				<?php 
-					wp_nav_menu(
-						array( 'theme_location' => 'primary', 'menu_class' => 'nav-primary' )
-					);
-				?>	
-			</nav><!-- #site-navigation -->
+			<?php get_template_part('inc/meganav'); ?>
 
 			<div id="toolbox">
 				<a class="yourAccount" href="/barton-account">Your Account</a>
