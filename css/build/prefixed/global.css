@@ -3848,6 +3848,17 @@ you can use the generic selector below, but it's slower:
     width: 50%;
   }
 }
+.link-primary > a:after {
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  border-left: 4px solid transparent;
+  border-top: 4px solid black;
+  border-right: 4px solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
 .link-primary > a.active {
   background: lightgray;
   box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
