@@ -97,7 +97,7 @@
     <a href="/productivity-tools">Productivity Tools</a>
     <div class="links-sub push">
       <div class="col-1">
-        <span class="heading-col">Web Tools &mp; Apps</span>
+        <span class="heading-col">Web Tools &amp; Apps</span>
         <a href="/apps">Apps for academics</a>
         <a href="/fulltext">FullText Finder: find specific citation</a>
         <a href="/libx">LibX: search/authenticate via browser</a>
