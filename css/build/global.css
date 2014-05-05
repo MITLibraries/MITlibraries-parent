@@ -3820,6 +3820,7 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   margin-right: 1rem;
   position: relative;
+  transition: background-color 0.2s;
 }
 @media only screen and (max-width: 480px) {
   .link-primary {
@@ -3827,10 +3828,18 @@ you can use the generic selector below, but it's slower:
     margin: 0;
   }
 }
+.link-primary:hover {
+  background: lightgray;
+  box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
+}
 .link-primary:hover .links-sub {
   box-shadow: 0 1px 2px #444;
+  height: auto;
+  margin: auto;
   opacity: 1;
-  transition: opacity 0.2 ease;
+  overflow: visible;
+  padding: 1rem;
+  transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
 }
 .link-primary > a {
   color: black;
@@ -3871,10 +3880,12 @@ you can use the generic selector below, but it's slower:
   border: 1px solid gray;
   display: flex;
   flex-flow: row wrap;
+  height: 0;
   opacity: 0;
-  padding: 1rem;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
-  transition: opacity 0.2s ease;
+  transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
   width: 600px;
   z-index: 1;
 }
