@@ -6,9 +6,6 @@
 .visually-hidden {
   @extend %visuallyhidden;
 }
-.visually-hidden--hover {
-	@extend %visually-hidden--hover;
-}
 
 .h-inline {
 	display: inline-block;
