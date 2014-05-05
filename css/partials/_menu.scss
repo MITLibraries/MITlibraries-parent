@@ -48,6 +48,11 @@
 	  	margin-left: -4px; /* Fight inline-block space */
 	  	width: 50%;
 	  }
+    &:after {
+      margin-left: 0.25rem;
+      vertical-align: middle;
+      @include downArrow(4px, black);
+    }
 	  &.active {
 	  	background: lightgray;
 	  	box-shadow: 0 0 2px #444,
