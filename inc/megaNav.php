@@ -19,7 +19,7 @@
         <a href="http://dome.mit.edu/">Dome: MIT-digitized images, maps, etc.</a>
         <a href="/about/site-search">MIT Libraries web site search</a>
       </div>
-      <a href="/search" class="bottom">More search options</a>
+      <a href="/search" class="bottom flex-clear">More search options</a>
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary">
@@ -43,9 +43,9 @@
         <a href="/vistors">Non-MIT visitors</a>
         <a href="/about/guidelines">Guidelines for using the MIT Libraries</a>
       </div>
-      <a href="/hours" class="bottom">All Hours</a>
-      <a href="/locations" class="bottom">All Locations</a>
-      <a href="/locations/map" class="bottom">Map</a>
+      <a href="/hours" class="bottom flex-clear">All Hours</a>
+      <a href="/locations" class="bottom flex-clear">All Locations</a>
+      <a href="/locations/map" class="bottom flex-clear">Map</a>
     </div>
   </div>
   <div class="link-primary">
@@ -66,7 +66,7 @@
         <a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
         <a href="/ordering/non-mit-access/index.html">Visit non-MIT libraries: Harvard, Boston Library Consortium, etc.</a>
       </div>
-      <a href="/borrow" class="bottom">More borrow &amp; request options</a>
+      <a href="/borrow" class="bottom flex-clear">More borrow &amp; request options</a>
     </div>
   </div>
   <div class="link-primary">
@@ -90,7 +90,7 @@
         <a href="http://libguides.mit.edu/content.php?pid=42346&sid=311602">Getting published: tools &amp; help</a>
         <a href="/archives/thesis-specs/index.html">Thesis specifications</a>
       </div>
-      <a href="/research-support" class="bottom">More research support options</a>
+      <a href="/research-support" class="bottom flex-clear">More research support options</a>
     </div>
   </div>
   <div class="link-primary">
@@ -109,7 +109,7 @@
         <a href="/references">Citation software: EndNote, RefWorks, Zotero, Mendeley</a>
         <a href="http://libguides.mit.edu/manage-info">Manage your information</a>
       </div>
-      <a href="http://libraries.mit.edu/productivity-tools" class="bottom">More productivity tools</a>
+      <a href="http://libraries.mit.edu/productivity-tools" class="bottom flex-clear">More productivity tools</a>
     </div>
   </div>
   <div class="link-primary">
@@ -128,7 +128,7 @@
         <a href="/news">News</a>
         <a href="/exhibits">Exhibits &amp; galleries</a>
       </div>
-      <a href="/about" class="bottom">More about us</a>
+      <a href="/about" class="bottom flex-clear">More about us</a>
     </div>
   </div>
 </nav>

@@ -47,6 +47,9 @@
 }
 
 .no-flexbox {
+	.flex-clear {
+		clear: both;
+	}
 	.flex-container {
 		display: block;
 	}
