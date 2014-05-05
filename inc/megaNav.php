@@ -1,7 +1,7 @@
 <nav class="nav-main border-box group">
   <div id="link-primary" class="link-primary">
     <a href="/search">Search</a>
-    <div class="links-sub visually-hidden group">
+    <div class="links-sub group">
       <div class="col-1">
         <span class="heading-col">Start Here</span>
         <a href="/bartonplus">Articles, books, &amp; more: BartonPlus</a>
@@ -24,35 +24,35 @@
   </div><!-- end div.links-primary -->
   <div id="link-primary" class="link-primary">
     <a href="/locations">Hours &amp; Locations</a>
-    <div class="links-sub visually-hidden">
+    <div class="links-sub">
       <div class="col-1"></div>
       <div class="col-2"></div>
     </div>
   </div>
   <div id="link-primary" class="link-primary">
     <a href="/borrow">Borrow &amp; Request</a>
-    <div class="links-sub visually-hidden">
+    <div class="links-sub">
       <div class="col-1"></div>
       <div class="col-2"></div>
     </div>
   </div>
   <div id="link-primary" class="link-primary">
     <a href="/research-support">Research Support</a>
-    <div class="links-sub visually-hidden">
+    <div class="links-sub">
       <div class="col-1"></div>
       <div class="col-2"></div>
     </div>
   </div>
   <div id="link-primary" class="link-primary">
     <a href="/productivity-tools">Productivity Tools</a>
-    <div class="links-sub visually-hidden push">
+    <div class="links-sub push">
       <div class="col-1"></div>
       <div class="col-2"></div>
     </div>
   </div>
   <div id="link-primary" class="link-primary">
     <a href="/about">About Us</a>
-    <div class="links-sub visually-hidden push">
+    <div class="links-sub push">
       <div class="col-1"></div>
       <div class="col-2"></div>
     </div>
