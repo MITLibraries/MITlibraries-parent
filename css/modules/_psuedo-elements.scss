@@ -1,3 +1,13 @@
+@mixin bullet($size, $color) {
+  background: $color;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  height: $size;
+  vertical-align: middle;
+  width: $size;
+}
+
 @mixin rightArrow($size, $color) {
 	border-top: $size solid transparent;
 	border-left: $size solid $color;

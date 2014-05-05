@@ -90,9 +90,18 @@
     }
     a {
       display: block;
+      &:before {
+        margin-right: 0.25rem;
+        @include bullet(0.25rem, black);
+      }
     }
     [class*="col"] {
       width: 275px;
+    }
+    .bottom {
+      &:before {
+        content: none;
+      }
     }
   }
   .heading-col {
