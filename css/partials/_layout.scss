@@ -41,3 +41,16 @@
 		}
 	}
 }
+
+.flex-container {
+	display: flex;
+}
+
+.no-flexbox {
+	.flex-container {
+		display: block;
+	}
+	.flex-item {
+		float: left;
+	}
+}
