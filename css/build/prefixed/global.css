@@ -3155,7 +3155,6 @@ html:not(.flexbox) .mainContent .flexItem {
   font-weight: normal;
   font-style: normal;
 }
-
 /*  Font Awesome styles
     ------------------------------------------------------- */
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -4057,7 +4056,6 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   font-weight: normal;
   font-style: normal;
 }
-
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 /*[data-icon]:before {
 	font-family: 'fontawesome-MITLibraries';
