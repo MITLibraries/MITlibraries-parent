@@ -99,8 +99,19 @@
       width: 275px;
     }
     .bottom {
+      margin-top: 1rem;
       &:before {
         content: none;
+      }
+      &:not(:first-of-type):before {
+        background: none;
+        border-radius: none;
+        content: '|';
+        display: inline-block;
+        height: auto;
+        margin: 0 0.5rem;
+        vertical-align: top;
+        width: auto;
       }
     }
   }

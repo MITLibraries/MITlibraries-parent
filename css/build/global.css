@@ -3921,8 +3921,21 @@ you can use the generic selector below, but it's slower:
 .link-primary .links-sub [class*="col"] {
   width: 275px;
 }
+.link-primary .links-sub .bottom {
+  margin-top: 1rem;
+}
 .link-primary .links-sub .bottom:before {
   content: none;
+}
+.link-primary .links-sub .bottom:not(:first-of-type):before {
+  background: none;
+  border-radius: none;
+  content: '|';
+  display: inline-block;
+  height: auto;
+  margin: 0 0.5rem;
+  vertical-align: top;
+  width: auto;
 }
 .link-primary .heading-col {
   display: block;
