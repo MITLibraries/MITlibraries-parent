@@ -3713,6 +3713,17 @@ you can use the generic selector below, but it's slower:
   }
 }
 
+.flex-container {
+  display: flex;
+}
+
+.no-flexbox .flex-container {
+  display: block;
+}
+.no-flexbox .flex-item {
+  float: left;
+}
+
 .title-page h1 {
   line-height: 1;
   font-size: 28px;
@@ -3889,7 +3900,6 @@ you can use the generic selector below, but it's slower:
 .link-primary .links-sub {
   background: lightgray;
   border: 1px solid gray;
-  display: flex;
   flex-flow: row wrap;
   height: 0;
   opacity: 0;
