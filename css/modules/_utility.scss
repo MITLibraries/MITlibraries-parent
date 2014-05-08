@@ -20,7 +20,7 @@
 
 @mixin line-height($size) {
 	line-height: $size;
-	line-height: calculateRem(24px);
+	line-height: calculateRem($size);
 }
 
 %line-length {
@@ -53,3 +53,23 @@ $font-body: 'Open Sans', sans-serif;
 		#{$property}: $value-1 $value-2 / 16px * 1rem;
 	}
 }
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin image-replacement {
+	border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+$margin-left: 20px;

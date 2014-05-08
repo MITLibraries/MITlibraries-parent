@@ -1,0 +1,146 @@
+.nav-main {
+	box-sizing: border-box;
+	clear: both;
+	float: left;
+	margin: 1rem 0 1.5rem 0.75rem;
+	@include line-height(20px);
+	@include bp-small {
+		background: #333;
+		margin: 1rem 0;
+	}
+}
+
+.link-primary {
+  display: inline-block;
+  margin-right: 1rem;
+  position: relative;
+  transition: background-color 0.2s;
+  @include bp-small {
+  	display: inline;
+  	margin: 0;
+  }
+  &:hover {
+    background: $color-background--widget;
+    box-shadow: 0 0 2px #444,
+                inset 1px 0 0 gray,
+                inset -1px 0 0 gray,
+                inset 0 1px 0 gray;
+    .links-sub {
+      border: 1px solid gray;
+      box-shadow: 0 1px 2px #444;
+      height: auto;
+      margin: auto;
+      opacity: 1;
+      overflow: visible;
+      padding: 1rem;
+      transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+    }
+    @include bp-small {
+      background: none;
+      box-shadow: none;
+    }
+  }
+  > a {
+    color: $color-text-accent-primary;
+    display: inline-block;
+    font-weight: bold;
+	  padding: 0.5rem;
+	  position: relative;
+    &:hover {
+      color: black;
+      @include bp-small {
+        color: white;
+      }
+      &:after {
+        @include downArrow(4px, black);
+        @include bp-small {
+          content: none;
+        }
+      }
+    }
+	  @include bp-small {
+	  	color: white;
+	  	display: inline-block;
+	  	margin: 0;
+	  	margin-left: -4px; /* Fight inline-block space */
+	  	width: 50%;
+	  }
+    &:after {
+      margin-left: 0.25rem;
+      vertical-align: middle;
+      @include downArrow(4px, $color-text-accent-primary);
+      @include bp-small {
+        content: none;
+      }
+    }
+	  &.active {
+	  	background: lightgray;
+	  	box-shadow: 0 0 2px #444,
+                inset 1px 0 0 gray,
+                inset -1px 0 0 gray,
+                inset 0 1px 0 gray;
+      @include bp-small {
+      	background: none;
+      	box-shadow: none;
+      }
+	  }
+  }
+  .col-1 {
+    padding-right: 1rem;
+  }
+  .col-2 {
+    border-left: 1px solid black;
+    padding-left: 1rem;
+  }
+  .links-sub {
+    background: $color-background--widget;
+    border: none;
+    flex-flow: row wrap;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+    width: 600px;
+    z-index: 1;
+    @include bp-small {
+    	display: none;
+    }
+    a {
+      color: $color-text-accent-primary;
+      display: block;
+      &:before {
+        margin-right: 0.25rem;
+        @include bullet(0.25rem, black);
+      }
+    }
+    [class*="col"] {
+      width: 275px;
+    }
+    .bottom {
+      margin-top: 1rem;
+      &:before {
+        content: none;
+      }
+      &:not(:first-of-type):before {
+        background: none;
+        border-radius: none;
+        content: '|';
+        display: inline-block;
+        height: auto;
+        margin: 0 0.5rem;
+        vertical-align: top;
+        width: auto;
+      }
+    }
+  }
+  .heading-col {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .push {
+    right: 0;
+  }
+}

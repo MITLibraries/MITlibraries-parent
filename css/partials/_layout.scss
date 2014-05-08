@@ -3,6 +3,10 @@
 	 box-sizing: border-box;
 }
 
+.visually-hidden {
+  @extend %visuallyhidden;
+}
+
 .h-inline {
 	display: inline-block;
 }
@@ -35,5 +39,21 @@
 			float: none;
 			width: 100%;
 		}
+	}
+}
+
+.flex-container {
+	display: flex;
+}
+
+.no-flexbox {
+	.flex-clear {
+		clear: both;
+	}
+	.flex-container {
+		display: block;
+	}
+	.flex-item {
+		float: left;
 	}
 }

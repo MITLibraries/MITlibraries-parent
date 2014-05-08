@@ -43,7 +43,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="container">
-		<header class="row group">
+		<header class="header-main group">
 			
 			<?php
 				global $blog_id;
@@ -54,30 +54,12 @@
 				}
 			?>
 
-			<div id="logo">
-				<?php 
-					if ($blog_id != 21) {
-						echo get_bloginfo( 'name', 'display' );
-					}
-					else {
-						echo "MIT Libraries";
-					}
-				?>
-			</div>
+			<a href="/" class="logo-mit-lib">MIT Libraries</a>
 
-			<nav id="site-navigation" class="span12 main-navigation" role="navigation">
-				<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-				<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-				<?php 
-					wp_nav_menu(
-						array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' )
-					);
-				?>	
-			</nav><!-- #site-navigation -->
-
-			<div id="toolbox">
+			<div class="toolbox">
+				<svg class="icon-arrow-right" width="2048" height="2048" viewBox="-256 -384 2048 2048" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 -1) translate(0 -1280)"><path d="M1472 576q0 -54 -37 -91l-651 -651q-39 -37 -91 -37q-51 0 -90 37l-75 75q-38 38 -38 91t38 91l293 293h-704q-52 0 -84.5 37.5t-32.5 90.5v128q0 53 32.5 90.5t84.5 37.5h704l-293 294q-38 36 -38 90t38 90l75 75q38 38 90 38q53 0 91 -38l651 -651q37 -35 37 -90z" fill="black" /></g></svg>
 				<a class="yourAccount" href="/barton-account">Your Account</a>
-				<div id="asktell">
+				<div id="asktell" class="button-ask-tell">
 					<img class="hidden-phone" src="<?php bloginfo('template_directory') ?>/images/ask-tell.png" alt="" usemap="#asktell"/>
 					<img class="visible-phone" src="<?php bloginfo('template_directory') ?>/images/ask-tell-mobile.png" alt="" usemap="#asktellmobile"/>
 					<map name="asktell">
@@ -90,6 +72,8 @@
 					</map>
 				</div>
 			</div>
+
+			<?php get_template_part('inc/meganav'); ?>
 
 			<?php
 				//switch back to blog being viewed, unless MOH site
