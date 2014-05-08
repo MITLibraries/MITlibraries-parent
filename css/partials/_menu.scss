@@ -113,8 +113,10 @@
     a {
       color: $color-text-accent-primary;
       display: block;
+      margin-left: 0.5rem;
       &:before {
         margin-right: 0.25rem;
+        margin-left: -0.5rem;
         @include bullet(0.25rem, black);
       }
     }
