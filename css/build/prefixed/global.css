@@ -3827,6 +3827,7 @@ you can use the generic selector below, but it's slower:
   position: relative;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+  z-index: 7000;
 }
 @media only screen and (max-width: 480px) {
   .link-primary {
@@ -3835,19 +3836,18 @@ you can use the generic selector below, but it's slower:
   }
 }
 .link-primary:hover {
-  background: #ede8e2;
-  box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
+  background: #f1ede8;
+  box-shadow: 0 0 2px #444;
 }
 .link-primary:hover .links-sub {
-  border: 1px solid gray;
-  box-shadow: 0 1px 2px #444;
+  box-shadow: 0 0 2px #444;
   height: auto;
   margin: auto;
   opacity: 1;
   overflow: visible;
   padding: 1rem;
-  -webkit-transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
-  transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+  -webkit-transition: height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
+  transition: height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
 }
 @media only screen and (max-width: 480px) {
   .link-primary:hover {
@@ -3924,12 +3924,11 @@ you can use the generic selector below, but it's slower:
   padding-right: 1rem;
 }
 .link-primary .col-2 {
-  border-left: 1px solid black;
+  border-left: 1px solid #ccc;
   padding-left: 1rem;
 }
 .link-primary .links-sub {
-  background: #ede8e2;
-  border: none;
+  background: #f1ede8;
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
@@ -3938,10 +3937,9 @@ you can use the generic selector below, but it's slower:
   overflow: hidden;
   padding: 0;
   position: absolute;
-  -webkit-transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
-  transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+  -webkit-transition: height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
+  transition: height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
   width: 600px;
-  z-index: 1;
 }
 @media only screen and (max-width: 480px) {
   .link-primary .links-sub {
@@ -3951,9 +3949,11 @@ you can use the generic selector below, but it's slower:
 .link-primary .links-sub a {
   color: #004cbd;
   display: block;
+  margin-left: 0.5rem;
 }
 .link-primary .links-sub a:before {
   margin-right: 0.25rem;
+  margin-left: -0.5rem;
   background: black;
   border-radius: 50%;
   content: '';
@@ -3966,7 +3966,9 @@ you can use the generic selector below, but it's slower:
   width: 275px;
 }
 .link-primary .links-sub .bottom {
+  font-weight: bold;
   margin-top: 1rem;
+  margin-left: 0;
 }
 .link-primary .links-sub .bottom:before {
   content: none;

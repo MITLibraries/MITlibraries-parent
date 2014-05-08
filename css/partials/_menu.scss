@@ -15,25 +15,26 @@
   margin-right: 1rem;
   position: relative;
   transition: background-color 0.2s;
+  z-index: map-get($zindex, dropdown);
   @include bp-small {
   	display: inline;
   	margin: 0;
   }
   &:hover {
-    background: $color-background--widget;
-    box-shadow: 0 0 2px #444,
-                inset 1px 0 0 gray,
-                inset -1px 0 0 gray,
-                inset 0 1px 0 gray;
+    background: lighten($color-background--widget, 2%);
+    box-shadow: 0 0 2px #444;
     .links-sub {
-      border: 1px solid gray;
-      box-shadow: 0 1px 2px #444;
+      box-shadow: 0 0 2px #444;
       height: auto;
       margin: auto;
       opacity: 1;
       overflow: visible;
       padding: 1rem;
-      transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+      transition: height 0.3s,
+                  margin 0.3s,
+                  opacity 0.3s,
+                  overflow 0.3s,
+                  padding-top 0.3s;
     }
     @include bp-small {
       background: none;
@@ -89,29 +90,33 @@
     padding-right: 1rem;
   }
   .col-2 {
-    border-left: 1px solid black;
+    border-left: 1px solid #ccc;
     padding-left: 1rem;
   }
   .links-sub {
-    background: $color-background--widget;
-    border: none;
+    background: lighten($color-background--widget, 2%);
     flex-flow: row wrap;
     height: 0;
     opacity: 0;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+    transition: height 0.3s,
+                margin 0.3s,
+                opacity 0.3s,
+                overflow 0.3s,
+                padding-top 0.3s;
     width: 600px;
-    z-index: 1;
     @include bp-small {
     	display: none;
     }
     a {
       color: $color-text-accent-primary;
       display: block;
+      margin-left: 0.5rem;
       &:before {
         margin-right: 0.25rem;
+        margin-left: -0.5rem;
         @include bullet(0.25rem, black);
       }
     }
@@ -119,7 +124,9 @@
       width: 275px;
     }
     .bottom {
+      font-weight: bold;
       margin-top: 1rem;
+      margin-left: 0;
       &:before {
         content: none;
       }
