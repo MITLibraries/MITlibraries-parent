@@ -44,15 +44,6 @@
 <body <?php body_class(); ?>>
 	<div id="container">
 		<header class="header-main group">
-			
-			<?php
-				global $blog_id;
-				$current_blog_id = $blog_id;
-				// switch to the main site to get all header content, unless MOH site.
-				if ($blog_id != 21) {
-					switch_to_blog(1);
-				}
-			?>
 
 			<a href="/" class="logo-mit-lib">MIT Libraries</a>
 
@@ -74,13 +65,6 @@
 			</div>
 
 			<?php get_template_part('inc/nav', 'main'); ?>
-
-			<?php
-				//switch back to blog being viewed, unless MOH site
-				if ($blog_id != 21) {
-					switch_to_blog($current_blog_id);
-				}
-			?>
 			
 		</header>
 
