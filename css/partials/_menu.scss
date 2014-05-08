@@ -20,7 +20,7 @@
   	margin: 0;
   }
   &:hover {
-    background: lightgray;
+    background: $color-background--widget;
     box-shadow: 0 0 2px #444,
                 inset 1px 0 0 gray,
                 inset -1px 0 0 gray,
@@ -34,13 +34,29 @@
       padding: 1rem;
       transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
     }
+    @include bp-small {
+      background: none;
+      box-shadow: none;
+    }
   }
   > a {
-    color: black;
+    color: $color-text-accent-primary;
     display: inline-block;
     font-weight: bold;
 	  padding: 0.5rem;
 	  position: relative;
+    &:hover {
+      color: black;
+      @include bp-small {
+        color: white;
+      }
+      &:after {
+        @include downArrow(4px, black);
+        @include bp-small {
+          content: none;
+        }
+      }
+    }
 	  @include bp-small {
 	  	color: white;
 	  	display: inline-block;
@@ -51,7 +67,10 @@
     &:after {
       margin-left: 0.25rem;
       vertical-align: middle;
-      @include downArrow(4px, black);
+      @include downArrow(4px, $color-text-accent-primary);
+      @include bp-small {
+        content: none;
+      }
     }
 	  &.active {
 	  	background: lightgray;
@@ -73,7 +92,7 @@
     padding-left: 1rem;
   }
   .links-sub {
-    background: lightgray;
+    background: $color-background--widget;
     border: 1px solid gray;
     flex-flow: row wrap;
     height: 0;

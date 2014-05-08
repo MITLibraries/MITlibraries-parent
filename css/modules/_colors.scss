@@ -5,6 +5,7 @@ $yellow: hsla(45, 100.0000%, 60.0000%, 1.0000);
 $darkYellow: hsla(44, 60.0000%, 50.0000%, 1.0000);
 $blue: hsla(216, 100.0000%, 37.0588%, 1.0000);
 $bluishPurple: hsla(240, 34.0000%, 39.2157%, 1.0000);
+$beige: hsla(33, 23.4043%, 90.7843%, 1.0000);
 
 $white: hsla(0, 0%, 100.0000%, 1.0000);
 
@@ -14,3 +15,4 @@ $color-accent-primary: $yellow;
 $color-text-accent-primary: $blue;
 $color-text-accent-secondary: $bluishPurple;
 $color-text-minor: $gray-medium;
+$color-background--widget: $beige;

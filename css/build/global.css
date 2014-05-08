@@ -3844,7 +3844,7 @@ you can use the generic selector below, but it's slower:
   }
 }
 .link-primary:hover {
-  background: lightgray;
+  background: #ede8e2;
   box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
 }
 .link-primary:hover .links-sub {
@@ -3856,12 +3856,40 @@ you can use the generic selector below, but it's slower:
   padding: 1rem;
   transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
 }
+@media only screen and (max-width: 480px) {
+  .link-primary:hover {
+    background: none;
+    box-shadow: none;
+  }
+}
 .link-primary > a {
-  color: black;
+  color: #004cbd;
   display: inline-block;
   font-weight: bold;
   padding: 0.5rem;
   position: relative;
+}
+.link-primary > a:hover {
+  color: black;
+}
+@media only screen and (max-width: 480px) {
+  .link-primary > a:hover {
+    color: white;
+  }
+}
+.link-primary > a:hover:after {
+  border-left: 4px solid transparent;
+  border-top: 4px solid black;
+  border-right: 4px solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
+@media only screen and (max-width: 480px) {
+  .link-primary > a:hover:after {
+    content: none;
+  }
 }
 @media only screen and (max-width: 480px) {
   .link-primary > a {
@@ -3877,12 +3905,17 @@ you can use the generic selector below, but it's slower:
   margin-left: 0.25rem;
   vertical-align: middle;
   border-left: 4px solid transparent;
-  border-top: 4px solid black;
+  border-top: 4px solid #004cbd;
   border-right: 4px solid transparent;
   content: '';
   display: inline-block;
   height: 0;
   width: 0;
+}
+@media only screen and (max-width: 480px) {
+  .link-primary > a:after {
+    content: none;
+  }
 }
 .link-primary > a.active {
   background: lightgray;
@@ -3902,7 +3935,7 @@ you can use the generic selector below, but it's slower:
   padding-left: 1rem;
 }
 .link-primary .links-sub {
-  background: lightgray;
+  background: #ede8e2;
   border: 1px solid gray;
   flex-flow: row wrap;
   height: 0;
