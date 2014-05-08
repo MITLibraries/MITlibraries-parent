@@ -4,6 +4,7 @@
 		display: block;
 		float: left;
 		height: 56px;
+		margin-left: $margin-left;
 		width: 132px;
 		@include image-replacement;
 		@include bp-small {

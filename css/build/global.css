@@ -3742,6 +3742,7 @@ you can use the generic selector below, but it's slower:
   display: block;
   float: left;
   height: 56px;
+  margin-left: 20px;
   width: 132px;
   border: 0;
   font: 0/0 a;
