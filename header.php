@@ -73,7 +73,7 @@
 				</div>
 			</div>
 
-			<?php get_template_part('inc/meganav'); ?>
+			<?php get_template_part('inc/nav', 'main'); ?>
 
 			<?php
 				//switch back to blog being viewed, unless MOH site
