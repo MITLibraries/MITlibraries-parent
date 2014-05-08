@@ -3966,7 +3966,9 @@ you can use the generic selector below, but it's slower:
   width: 275px;
 }
 .link-primary .links-sub .bottom {
+  font-weight: bold;
   margin-top: 1rem;
+  margin-left: 0;
 }
 .link-primary .links-sub .bottom:before {
   content: none;

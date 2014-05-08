@@ -124,7 +124,9 @@
       width: 275px;
     }
     .bottom {
+      font-weight: bold;
       margin-top: 1rem;
+      margin-left: 0;
       &:before {
         content: none;
       }
