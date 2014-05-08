@@ -3931,7 +3931,7 @@ you can use the generic selector below, but it's slower:
   padding-right: 1rem;
 }
 .link-primary .col-2 {
-  border-left: 1px solid black;
+  border-left: 1px solid #ccc;
   padding-left: 1rem;
 }
 .link-primary .links-sub {
