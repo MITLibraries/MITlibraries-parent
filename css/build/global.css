@@ -3845,11 +3845,10 @@ you can use the generic selector below, but it's slower:
 }
 .link-primary:hover {
   background: #ede8e2;
-  box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
+  box-shadow: 0 0 2px #444;
 }
 .link-primary:hover .links-sub {
-  border: 1px solid gray;
-  box-shadow: 0 1px 2px #444;
+  box-shadow: 0 0 2px #444;
   height: auto;
   margin: auto;
   opacity: 1;
@@ -3937,7 +3936,6 @@ you can use the generic selector below, but it's slower:
 }
 .link-primary .links-sub {
   background: #ede8e2;
-  border: none;
   flex-flow: row wrap;
   height: 0;
   opacity: 0;

@@ -22,13 +22,9 @@
   }
   &:hover {
     background: $color-background--widget;
-    box-shadow: 0 0 2px #444,
-                inset 1px 0 0 gray,
-                inset -1px 0 0 gray,
-                inset 0 1px 0 gray;
+    box-shadow: 0 0 2px #444;
     .links-sub {
-      border: 1px solid gray;
-      box-shadow: 0 1px 2px #444;
+      box-shadow: 0 0 2px #444;
       height: auto;
       margin: auto;
       opacity: 1;
@@ -99,7 +95,6 @@
   }
   .links-sub {
     background: $color-background--widget;
-    border: none;
     flex-flow: row wrap;
     height: 0;
     opacity: 0;
