@@ -1,42 +1,67 @@
 {
+	"Administrative Offices": {
+		"hours" : {
+			"1/1/1970" : "8:00am-8:01am"
+		}
+	},
+	"Aga Khan Documentation Center": {
+		"hours" : {
+			"1/1/1970" : "8:00am-8:01am"
+		}
+	},
 	"Barker Library": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Dewey Library": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Document Services": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
+		}
+	},
+	"Geographic Information Systems (GIS) Laboratory": {
+		"hours" : {
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Hayden Library": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
+		}
+	},
+	"Information Intersection at Stata Center": {
+		"hours" : {
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Institute Archives & Special Collections": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Lewis Music Library": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Library Storage Annex": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
+		}
+	},
+	"Maihaugen Gallery": {
+		"hours" : {
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	},
 	"Rotch Library": {
 		"hours" : {
-			"4/26/2014" : "8:02am-8:05am"
+			"1/1/1970" : "8:00am-8:01am"
 		}
 	}
 }
