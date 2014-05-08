@@ -3855,7 +3855,7 @@ you can use the generic selector below, but it's slower:
   opacity: 1;
   overflow: visible;
   padding: 1rem;
-  transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+  transition: height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
 }
 @media only screen and (max-width: 480px) {
   .link-primary:hover {
@@ -3944,7 +3944,7 @@ you can use the generic selector below, but it's slower:
   overflow: hidden;
   padding: 0;
   position: absolute;
-  transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
+  transition: height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
   width: 600px;
 }
 @media only screen and (max-width: 480px) {
