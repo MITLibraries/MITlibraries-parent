@@ -3812,7 +3812,7 @@ you can use the generic selector below, but it's slower:
   box-sizing: border-box;
   clear: both;
   float: left;
-  margin: 1rem 0 1.5rem 0.75rem;
+  margin: 1rem 0 0 0.75rem;
   line-height: 20px;
   line-height: 1.25rem;
 }
