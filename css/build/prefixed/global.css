@@ -2645,7 +2645,6 @@ html:not(.flexbox) .mainContent .flexItem {
   font-weight: normal;
   font-style: normal;
 }
-
 /*  Font Awesome styles
     ------------------------------------------------------- */
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -3547,7 +3546,6 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   font-weight: normal;
   font-style: normal;
 }
-
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 /*[data-icon]:before {
 	font-family: 'fontawesome-MITLibraries';
@@ -3829,6 +3827,7 @@ you can use the generic selector below, but it's slower:
   position: relative;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+  z-index: 7000;
 }
 @media only screen and (max-width: 480px) {
   .link-primary {
@@ -3943,7 +3942,6 @@ you can use the generic selector below, but it's slower:
   -webkit-transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
   transition: height 0.2s, margin 0.2s, opacity 0.2s, overflow 0.2s, padding 0.2s;
   width: 600px;
-  z-index: 1;
 }
 @media only screen and (max-width: 480px) {
   .link-primary .links-sub {
