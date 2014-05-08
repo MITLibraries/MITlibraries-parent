@@ -21,7 +21,7 @@
   	margin: 0;
   }
   &:hover {
-    background: $color-background--widget;
+    background: lighten($color-background--widget, 2%);
     box-shadow: 0 0 2px #444;
     .links-sub {
       box-shadow: 0 0 2px #444;
@@ -94,7 +94,7 @@
     padding-left: 1rem;
   }
   .links-sub {
-    background: $color-background--widget;
+    background: lighten($color-background--widget, 2%);
     flex-flow: row wrap;
     height: 0;
     opacity: 0;

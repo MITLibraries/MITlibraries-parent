@@ -3836,7 +3836,7 @@ you can use the generic selector below, but it's slower:
   }
 }
 .link-primary:hover {
-  background: #ede8e2;
+  background: #f1ede8;
   box-shadow: 0 0 2px #444;
 }
 .link-primary:hover .links-sub {
@@ -3928,7 +3928,7 @@ you can use the generic selector below, but it's slower:
   padding-left: 1rem;
 }
 .link-primary .links-sub {
-  background: #ede8e2;
+  background: #f1ede8;
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
