@@ -3950,6 +3950,7 @@ you can use the generic selector below, but it's slower:
   }
 }
 .link-primary .links-sub a {
+  color: #004cbd;
   display: block;
 }
 .link-primary .links-sub a:before {

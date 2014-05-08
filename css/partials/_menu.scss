@@ -108,6 +108,7 @@
     	display: none;
     }
     a {
+      color: $color-text-accent-primary;
       display: block;
       &:before {
         margin-right: 0.25rem;
