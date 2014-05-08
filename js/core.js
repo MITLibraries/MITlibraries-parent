@@ -363,7 +363,7 @@ var Core = {
 					// get the name of this library
 					name = jQuery(this).data("location-hours");
 					// look up that library's hours in JSON
-					thisDay = '1/1/1970';
+					// thisDay = '1/1/1970';
 					thisDay = Core.findToday(thisDay);
 					if (json[name] && json[name].hours[thisDay]) {
 						jQuery(this).text(json[name].hours[thisDay]);
