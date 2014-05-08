@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 	clear: both;
 	float: left;
-	margin: 1.5rem 0 1.5rem 0.75rem;
+	margin: 1rem 0 1.5rem 0.75rem;
 	@include line-height(20px);
 	@include bp-small {
 		background: #333;
