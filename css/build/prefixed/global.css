@@ -3840,6 +3840,7 @@ you can use the generic selector below, but it's slower:
   box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
 }
 .link-primary:hover .links-sub {
+  border: 1px solid gray;
   box-shadow: 0 1px 2px #444;
   height: auto;
   margin: auto;
@@ -3929,7 +3930,7 @@ you can use the generic selector below, but it's slower:
 }
 .link-primary .links-sub {
   background: #ede8e2;
-  border: 1px solid gray;
+  border: none;
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
