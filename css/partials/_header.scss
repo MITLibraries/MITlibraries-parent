@@ -23,8 +23,7 @@
 		.icon-arrow-right {
 			display: inline-block;
 			height: 0.75rem;
-			margin-top: 0.5rem;
-			vertical-align: top;
+			margin-top: 0;
 			width: 0.75rem;
 			@include bp-small {
 				display: none;
@@ -33,9 +32,8 @@
 		> a {
 			display: inline-block;
 			font-weight: bold;
-			margin-top: 0.5rem;
+			margin-top: 0;
 			margin-right: 1rem;
-			vertical-align: top;
 			@include bp-small {
 				float: right;
 				margin: 0 0 0.5rem 0;
@@ -45,7 +43,8 @@
 				content: '';
 				display: inline-block;
 				height: 2rem;
-				margin-top: -0.5rem;
+				margin-top: 0;
+				margin-bottom: -0.75rem;
 				margin-left: 1rem;
 				width: 1px;
 				@include bp-small {
@@ -55,6 +54,7 @@
 		}
 		.button-ask-tell {
 			display: inline-block;
+			vertical-align: middle;
 			@include bp-small {
 				clear: right;
 				float: right;
