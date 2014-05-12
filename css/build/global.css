@@ -3969,15 +3969,16 @@ you can use the generic selector below, but it's slower:
 .link-primary .links-sub [class*="col"] {
   width: 275px;
 }
-.link-primary .links-sub .bottom {
+.link-primary .bottom a {
+  display: inline-block;
   font-weight: bold;
   margin-top: 1rem;
   margin-left: 0;
 }
-.link-primary .links-sub .bottom:before {
+.link-primary .bottom a:before {
   content: none;
 }
-.link-primary .links-sub .bottom:not(:first-of-type):before {
+.link-primary .bottom a:not(:first-of-type):before {
   background: none;
   border-radius: none;
   content: '|';

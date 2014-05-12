@@ -1,4 +1,4 @@
-<nav class="nav-main border-box group">
+<nav id="nav-main" class="nav-main border-box group">
   <div class="link-primary">
     <a href="/search">Search</a>
     <div class="links-sub flex-container group">
@@ -19,7 +19,9 @@
         <a href="http://dome.mit.edu/">Dome: MIT-digitized images, maps, etc.</a>
         <a href="/about/site-search">MIT Libraries web site search</a>
       </div>
-      <a href="/search" class="bottom flex-clear">More search options</a>
+      <div class="bottom flex-clear">
+        <a href="/search">More search options</a>
+      </div>
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary">
@@ -43,9 +45,11 @@
         <a href="/vistors">Non-MIT visitors</a>
         <a href="/about/guidelines">Guidelines for using the MIT Libraries</a>
       </div>
-      <a href="/hours" class="bottom flex-clear">All Hours</a>
-      <a href="/locations" class="bottom flex-clear">All Locations</a>
-      <a href="/locations/map" class="bottom flex-clear">Map</a>
+      <div class="bottom flex-clear">
+        <a href="/hours">All Hours</a>
+        <a href="/locations">All Locations</a>
+        <a href="/locations/map">Map</a>
+      </div>
     </div>
   </div>
   <div class="link-primary">
@@ -66,7 +70,9 @@
         <a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
         <a href="/ordering/non-mit-access/index.html">Visit non-MIT libraries: Harvard, Boston Library Consortium, etc.</a>
       </div>
-      <a href="/borrow" class="bottom flex-clear">More borrow &amp; request options</a>
+      <div class="bottom flex-clear">
+        <a href="/borrow">More borrow &amp; request options</a>
+      </div>
     </div>
   </div>
   <div class="link-primary">
@@ -90,7 +96,9 @@
         <a href="http://libguides.mit.edu/content.php?pid=42346&sid=311602">Getting published: tools &amp; help</a>
         <a href="/archives/thesis-specs/index.html">Thesis specifications</a>
       </div>
-      <a href="/research-support" class="bottom flex-clear">More research support options</a>
+      <div class="bottom flex-clear">
+        <a href="/research-support">More research support options</a>
+      </div>
     </div>
   </div>
   <div class="link-primary">
@@ -109,7 +117,9 @@
         <a href="/references">Citation software: EndNote, RefWorks, Zotero, Mendeley</a>
         <a href="http://libguides.mit.edu/manage-info">Manage your information</a>
       </div>
-      <a href="http://libraries.mit.edu/productivity-tools" class="bottom flex-clear">More productivity tools</a>
+      <div class="bottom flex-clear">
+        <a href="http://libraries.mit.edu/productivity-tools">More productivity tools</a>
+      </div>
     </div>
   </div>
   <div class="link-primary">
@@ -128,7 +138,9 @@
         <a href="/news">News</a>
         <a href="/exhibits">Exhibits &amp; galleries</a>
       </div>
-      <a href="/about" class="bottom flex-clear">More about us</a>
+      <div class="bottom flex-clear">
+        <a href="/about">More about us</a>
+      </div>
     </div>
   </div>
 </nav>

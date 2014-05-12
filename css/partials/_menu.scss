@@ -123,23 +123,24 @@
     [class*="col"] {
       width: 275px;
     }
-    .bottom {
-      font-weight: bold;
-      margin-top: 1rem;
-      margin-left: 0;
-      &:before {
-        content: none;
-      }
-      &:not(:first-of-type):before {
-        background: none;
-        border-radius: none;
-        content: '|';
-        display: inline-block;
-        height: auto;
-        margin: 0 0.5rem;
-        vertical-align: top;
-        width: auto;
-      }
+  }
+  .bottom a {
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-left: 0;
+    &:before {
+      content: none;
+    }
+    &:not(:first-of-type):before {
+      background: none;
+      border-radius: none;
+      content: '|';
+      display: inline-block;
+      height: auto;
+      margin: 0 0.5rem;
+      vertical-align: top;
+      width: auto;
     }
   }
   .heading-col {
