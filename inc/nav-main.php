@@ -1,4 +1,4 @@
-<nav class="nav-main border-box group">
+<nav id="nav-main" class="nav-main border-box group">
   <div class="link-primary">
     <a href="/search">Search</a>
     <div class="links-sub flex-container group">
