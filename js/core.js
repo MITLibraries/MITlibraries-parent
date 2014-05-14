@@ -366,7 +366,7 @@ var Core = {
 					// thisDay = '1/1/1970';
 					thisDay = Core.findToday(thisDay);
 					if (json[name] && json[name].hours[thisDay]) {
-						$(this).text(json[name].hours[thisDay]);
+						$(this).text(json[name].hours[thisDay].replace(":00",""));
 					} else {
 						$(this).html(msg);
 					}
