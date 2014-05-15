@@ -3847,13 +3847,15 @@ you can use the generic selector below, but it's slower:
 }
 .link-primary:hover .links-sub {
   box-shadow: 0 0 2px #444;
+  max-height: 1000px;
+  margin: auto;
   opacity: 1;
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
-  -webkit-transform-origin: top;
-  transform-origin: top;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
+  overflow: visible;
+  padding: 1rem;
+  padding: 16px;
+  padding: 1rem;
+  -webkit-transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s, padding-bottom 0.3s;
+  transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s, padding-bottom 0.3s;
 }
 @media only screen and (max-width: 480px) {
   .link-primary:hover {
@@ -3942,16 +3944,14 @@ you can use the generic selector below, but it's slower:
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  max-height: 0;
   opacity: 0;
-  padding: 16px;
-  padding: 1rem;
+  overflow: hidden;
+  padding: 0px 16px;
+  padding: 0rem 1rem;
   position: absolute;
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: top;
-  transform-origin: top;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
+  transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s;
   width: 600px;
 }
 @media only screen and (max-width: 480px) {
