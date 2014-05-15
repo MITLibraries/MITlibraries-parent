@@ -14,7 +14,7 @@
   display: inline-block;
   margin-right: 1rem;
   position: relative;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   z-index: map-get($zindex, dropdown);
   @include bp-small {
   	display: inline;
@@ -25,16 +25,11 @@
     box-shadow: 0 0 2px #444;
     .links-sub {
       box-shadow: 0 0 2px #444;
-      height: auto;
-      margin: auto;
       opacity: 1;
-      overflow: visible;
-      padding: 1rem;
-      transition: height 0.3s,
-                  margin 0.3s,
-                  opacity 0.3s,
-                  overflow 0.3s,
-                  padding-top 0.3s;
+      transform: scaleY(1);
+      transform-origin: top;
+      transition: opacity 0.3s,
+                  transform 0.3s;
     }
     @include bp-small {
       background: none;
@@ -96,16 +91,13 @@
   .links-sub {
     background: lighten($color-background--widget, 2%);
     flex-flow: row wrap;
-    height: 0;
     opacity: 0;
-    overflow: hidden;
-    padding: 0;
+    padding: 1rem;
     position: absolute;
-    transition: height 0.3s,
-                margin 0.3s,
-                opacity 0.3s,
-                overflow 0.3s,
-                padding-top 0.3s;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: opacity 0.3s,
+                transform 0.3s;
     width: 600px;
     @include bp-small {
     	display: none;
@@ -132,16 +124,12 @@
     &:before {
       content: none;
     }
-    &:not(:first-of-type):before {
-      background: none;
-      border-radius: none;
-      content: '|';
-      display: inline-block;
-      height: auto;
-      margin: 0 0.5rem;
-      vertical-align: top;
-      width: auto;
-    }
+  }
+  .bottom span:not(:first-of-type):before {
+    color: $color-text-accent-primary;
+    content: '|';
+    display: inline-block;
+    margin-right: 4px;
   }
   .heading-col {
     display: block;
@@ -150,5 +138,104 @@
   }
   .push {
     right: 0;
+  }
+}
+
+.no-csstransitions {
+  .link-primary {
+    .links-sub {
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 0;
+    }
+    &:hover .links-sub {
+        height: auto;
+        margin: auto;
+        overflow: visible;
+        padding: 1em;
+        width: 600px;
+    }
+  }
+}
+
+/* Navigation Menu */
+.nav-child {
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 0 2.857142857rem 0 0;
+    font-size: 12px;
+    font-size: 0.857142857rem;
+    line-height: 1.42857143;
+    text-decoration: none;
+    a {
+      border-bottom: 0;
+      color: #6a6a6a;
+      line-height: 3.692307692;
+      text-transform: uppercase;
+      white-space: nowrap;
+      &:hover {
+        color: #000;
+      }
+    }
+    ul {
+      display: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      z-index: 1;
+      ul {
+        top: 0;
+        left: 100%;
+      }
+      li a {
+        background: #efefef;
+        border-bottom: 1px solid #ededed;
+        display: block;
+        font-size: 11px;
+        font-size: 0.785714286rem;
+        line-height: 2.181818182;
+        padding: 8px 10px;
+        padding: 0.571428571rem 0.714285714rem;
+        width: 180px;
+        width: 12.85714286rem;
+        white-space: normal;
+        &:hover {
+          background: #e3e3e3;
+          color: #444;
+        }
+      }
+    }
+  }
+  a {
+    color: #5e5e5e;
+    &:hover {
+      color: #21759b;
+    }
+  }
+  ul {
+    margin: 0;
+    text-indent: 0;
+    li:hover > ul {
+      border-left: 0;
+      display: block;
+    }
+  }
+
+  ul.nav-menu,
+  div.nav-menu > ul {
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+  }
+  ul.nav-menu.toggled-on,
+  .menu-toggle {
+    display: inline-block;
   }
 }
