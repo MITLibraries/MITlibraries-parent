@@ -3991,6 +3991,22 @@ you can use the generic selector below, but it's slower:
   right: 0;
 }
 
+.no-csstransitions .link-primary .links-sub {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0;
+}
+.no-csstransitions .link-primary:hover .links-sub {
+  height: auto;
+  margin: auto;
+  overflow: visible;
+  padding: 1em;
+  width: 600px;
+}
+
 /* Navigation Menu */
 .nav-child {
   text-align: center;
