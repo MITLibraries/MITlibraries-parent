@@ -39,6 +39,24 @@ $font-body: 'Open Sans', sans-serif;
 	}
 }
 
+@mixin rem-first ($property, $value) {
+	$remSize: $value+rem; 
+	#{$property}: #{$value * 16px};
+	#{$property}: #{$remSize};
+}
+
+@mixin rem-first--2-values ($property, $value-1, $value-2) {
+	$remSizes: $value-1+rem $value-2+rem; 
+	#{$property}: #{$value-1 * 16px} #{$value-2 * 16px};
+	#{$property}: #{$remSizes};
+}
+
+@mixin rem-first--4-values ($property, $value-1, $value-2, $value-3, $value-4) {
+	$remSizes: $value-1+rem $value-2+rem $value-3+rem $value-4+rem; 
+	#{$property}: #{$value-1 * 16px} #{$value-2 * 16px} #{$value-3 * 16px} #{$value-4 * 16px};
+	#{$property}: #{$remSizes};
+}
+
 @mixin rem-fallback ($property, $value) {
 	#{$property}: #{$value};
 	#{$property}: $value / 16px * 1rem;
