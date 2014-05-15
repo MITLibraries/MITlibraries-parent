@@ -46,8 +46,8 @@
         <a href="/about/guidelines">Guidelines for using the MIT Libraries</a>
       </div>
       <div class="bottom flex-clear">
-        <span><a href="/hours">All Hours</a></span>
-        <span><a href="/locations">All Locations</a></span>
+        <span><a href="/hours">All hours</a></span>
+        <span><a href="/locations">All locations</a></span>
         <span><a href="/locations/map">Map</a></span>
       </div>
     </div>
