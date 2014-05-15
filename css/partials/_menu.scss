@@ -25,11 +25,23 @@
     box-shadow: 0 0 2px #444;
     .links-sub {
       box-shadow: 0 0 2px #444;
+      max-height: 1000px;
+      margin: auto;
       opacity: 1;
-      transform: scaleY(1);
-      transform-origin: top;
-      transition: opacity 0.3s,
-                  transform 0.3s;
+      overflow: visible;
+      padding: 1rem;
+      @include rem-first(padding, 1);
+      transition: max-height 0.3s,
+                  margin 0.3s,
+                  opacity 0.3s,
+                  overflow 0.3s,
+                  padding-top 0.3s,
+                  padding-bottom 0.3s;
+      // SlideDown/SlideUp
+      // transform: scaleY(1);
+      // transform-origin: top;
+      // transition: opacity 0.3s,
+      //             transform 0.3s;
     }
     @include bp-small {
       background: none;
@@ -91,13 +103,21 @@
   .links-sub {
     background: lighten($color-background--widget, 2%);
     flex-flow: row wrap;
+    max-height: 0;
     opacity: 0;
-    @include rem-first(padding, 1);
+    overflow: hidden;
+    @include rem-first--2-values(padding, 0, 1);
     position: absolute;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: opacity 0.3s,
-                transform 0.3s;
+    transition: max-height 0.3s,
+                margin 0.3s,
+                opacity 0.3s,
+                overflow 0.3s,
+                padding-top 0.3s;
+    // SlideDown/SlideUp
+    // transform: scaleY(0);
+    // transform-origin: top;
+    // transition: opacity 0.3s,
+    //             transform 0.3s;
     width: 600px;
     @include bp-small {
     	display: none;
