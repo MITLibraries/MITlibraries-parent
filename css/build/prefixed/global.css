@@ -3810,7 +3810,8 @@ you can use the generic selector below, but it's slower:
   box-sizing: border-box;
   clear: both;
   float: left;
-  margin: 1rem 0 0 0.75rem;
+  margin: 16px 0px 0px 12px;
+  margin: 1rem 0rem 0rem 0.75rem;
   line-height: 20px;
   line-height: 1.25rem;
 }
@@ -3823,6 +3824,7 @@ you can use the generic selector below, but it's slower:
 
 .link-primary {
   display: inline-block;
+  margin-right: 16px;
   margin-right: 1rem;
   position: relative;
   -webkit-transition: background-color 0.3s;
@@ -3859,6 +3861,7 @@ you can use the generic selector below, but it's slower:
   color: #004cbd;
   display: inline-block;
   font-weight: bold;
+  padding: 8px;
   padding: 0.5rem;
   position: relative;
 }
@@ -3895,6 +3898,7 @@ you can use the generic selector below, but it's slower:
   }
 }
 .link-primary > a:after {
+  margin-left: 4px;
   margin-left: 0.25rem;
   vertical-align: middle;
   border-left: 4px solid transparent;
@@ -3921,10 +3925,12 @@ you can use the generic selector below, but it's slower:
   }
 }
 .link-primary .col-1 {
+  padding-right: 16px;
   padding-right: 1rem;
 }
 .link-primary .col-2 {
   border-left: 1px solid #ccc;
+  padding-left: 16px;
   padding-left: 1rem;
 }
 .link-primary .links-sub {
@@ -3933,6 +3939,7 @@ you can use the generic selector below, but it's slower:
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   opacity: 0;
+  padding: 16px;
   padding: 1rem;
   position: absolute;
   -webkit-transform: scaleY(0);
@@ -3951,10 +3958,13 @@ you can use the generic selector below, but it's slower:
 .link-primary .links-sub a {
   color: #004cbd;
   display: block;
+  margin-left: 8px;
   margin-left: 0.5rem;
 }
 .link-primary .links-sub a:before {
+  margin-right: 4px;
   margin-right: 0.25rem;
+  margin-left: -8px;
   margin-left: -0.5rem;
   background: black;
   border-radius: 50%;
@@ -3970,6 +3980,7 @@ you can use the generic selector below, but it's slower:
 .link-primary .bottom a {
   display: inline-block;
   font-weight: bold;
+  margin-top: 16px;
   margin-top: 1rem;
   margin-left: 0;
 }
@@ -3985,6 +3996,7 @@ you can use the generic selector below, but it's slower:
 .link-primary .heading-col {
   display: block;
   font-weight: bold;
+  margin-bottom: 8px;
   margin-bottom: 0.5rem;
 }
 .link-primary .push {
@@ -4003,7 +4015,8 @@ you can use the generic selector below, but it's slower:
   height: auto;
   margin: auto;
   overflow: visible;
-  padding: 1em;
+  padding: 16px;
+  padding: 1rem;
   width: 600px;
 }
 
