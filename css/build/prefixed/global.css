@@ -3993,6 +3993,84 @@ you can use the generic selector below, but it's slower:
   right: 0;
 }
 
+/* Navigation Menu */
+.nav-child {
+  text-align: center;
+}
+.nav-child li {
+  display: inline-block;
+  margin: 0 2.857142857rem 0 0;
+  font-size: 12px;
+  font-size: 0.857142857rem;
+  line-height: 1.42857143;
+  text-decoration: none;
+}
+.nav-child li a {
+  border-bottom: 0;
+  color: #6a6a6a;
+  line-height: 3.692307692;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.nav-child li a:hover {
+  color: #000;
+}
+.nav-child li ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+}
+.nav-child li ul ul {
+  top: 0;
+  left: 100%;
+}
+.nav-child li ul li a {
+  background: #efefef;
+  border-bottom: 1px solid #ededed;
+  display: block;
+  font-size: 11px;
+  font-size: 0.785714286rem;
+  line-height: 2.181818182;
+  padding: 8px 10px;
+  padding: 0.571428571rem 0.714285714rem;
+  width: 180px;
+  width: 12.85714286rem;
+  white-space: normal;
+}
+.nav-child li ul li a:hover {
+  background: #e3e3e3;
+  color: #444;
+}
+.nav-child a {
+  color: #5e5e5e;
+}
+.nav-child a:hover {
+  color: #21759b;
+}
+.nav-child ul {
+  margin: 0;
+  text-indent: 0;
+}
+.nav-child ul li:hover > ul {
+  border-left: 0;
+  display: block;
+}
+.nav-child ul.nav-menu,
+.nav-child div.nav-menu > ul {
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+}
+.nav-child ul.nav-menu.toggled-on,
+.nav-child .menu-toggle {
+  display: inline-block;
+}
+
 .breadcrumbs--better {
   background: #ebebeb;
   font-size: 12px;
