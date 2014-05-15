@@ -15,10 +15,8 @@ var Core = {
 	ondomready: function(){
 		// page functions go here
 		
-		Core.linkLogo();
 		Core.linkExpandable();
 		Core.linkTabs();
-		Core.buildUberMenu();
 		
 		Core.fixSidebar();
 		
@@ -257,32 +255,6 @@ var Core = {
 		});
 	},
 	
-	buildUberMenu: function() {
-		
-		// cancel wrong clicks
-		$("#megaMenu .ss-nav-menu-item-depth-1>a").click(function(e) {
-			e.preventDefault();
-		});
-		
-		$(".megaMenu>li").each(function() {
-			$(this).find(".ss-nav-menu-item-depth-1:not(.ss-nav-menu-highlight):nth-child(odd)").each(function() {
-				var obj = $(this);
-				var next = $(this).next();
-								
-				if (next.height() > obj.height()) {
-					obj.toggleClass("noBorderRight", true);
-					next.toggleClass("borderLeft", true);
-				}
-				
-				if (obj.is(":last-child") || next.is(".ss-nav-menu-highlight")) {
-					obj.toggleClass("noBorderRight", true);
-				}
-			});
-			$(this).find(".ss-nav-menu-item-depth-1:not(.ss-nav-menu-highlight):nth-child(even)").toggleClass("lastSubMenu", true);
-			$(this).find(".ss-nav-menu-item-depth-1:not(.ss-nav-menu-highlight):nth-child(odd)").toggleClass("firstSubMenu", true);
-		});
-	},
-	
 	linkTabs: function() {
 		$(".tabnav h2 a").click(function(e) {
 			e.preventDefault();
@@ -326,13 +298,6 @@ var Core = {
 			}
 		});
 		
-	},
-	
-	linkLogo: function() {
-		$("#logo").click(function(e) {
-			e.preventDefault();
-			document.location = "/";
-		});
 	},
 	
 	nullAlt: function() {
