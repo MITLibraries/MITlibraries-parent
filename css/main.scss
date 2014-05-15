@@ -161,6 +161,7 @@ h2.bigHead {
 
 #breadcrumb {
 	background: #eceaea;
+	clear: both; /* Fixes IE8 issue */
 	font-size: 12px;
 	padding: 3px 20px 7px 20px;
 	height: 12px;
@@ -169,6 +170,7 @@ h2.bigHead {
 
 .betterBreadcrumbs {
 	background: #eceaea;
+	clear: both; /* Fixes IE8 issue */
 	color: #666666;
 	font-size: 12px;
 	font-size: 0.75rem;
