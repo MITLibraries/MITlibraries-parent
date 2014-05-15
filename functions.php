@@ -111,11 +111,6 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 
 	/*
-	 * Adds JavaScript for handling the navigation menu hide-and-show behavior.
-	 */
-	wp_enqueue_script( 'twentytwelve-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
-
-	/*
 	 * Loads our special font CSS file.
 	 *
 	 * The use of Open Sans by default is localized. For languages that use
@@ -161,7 +156,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('bootstrap-responsive', get_template_directory_uri() . '/libs/bootstrap/css/bootstrap-responsive.css', array(), '2.2.1');
 
-	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140407');
+	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140515');
 
 	wp_enqueue_style('bootstrap');
 	wp_enqueue_style('bootstrap-responsive');
@@ -179,9 +174,9 @@ function twentytwelve_scripts_styles() {
   wp_deregister_script('jquery');
   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3', false);
 	
-	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.2', false);
+	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
-	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '20140324', true);
+	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '20140515', true);
 
 	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140312', true);
 
