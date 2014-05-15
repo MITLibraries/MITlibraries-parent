@@ -39,6 +39,12 @@ $font-body: 'Open Sans', sans-serif;
 	}
 }
 
+@mixin rem-first ($property, $value) {
+	$remSize: $value+rem; 
+	#{$property}: #{$value * 16px};
+	#{$property}: #{$remSize};
+}
+
 @mixin rem-fallback ($property, $value) {
 	#{$property}: #{$value};
 	#{$property}: $value / 16px * 1rem;
