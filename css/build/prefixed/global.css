@@ -3825,8 +3825,8 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   margin-right: 1rem;
   position: relative;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
   z-index: 7000;
 }
 @media only screen and (max-width: 480px) {
