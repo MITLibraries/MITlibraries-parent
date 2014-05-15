@@ -3978,15 +3978,11 @@ you can use the generic selector below, but it's slower:
 .link-primary .bottom a:before {
   content: none;
 }
-.link-primary .bottom a:not(:first-of-type):before {
-  background: none;
-  border-radius: none;
+.link-primary .bottom span:not(:first-of-type):before {
+  color: #004cbd;
   content: '|';
   display: inline-block;
-  height: auto;
-  margin: 0 0.5rem;
-  vertical-align: top;
-  width: auto;
+  margin-right: 4px;
 }
 .link-primary .heading-col {
   display: block;

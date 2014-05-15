@@ -132,16 +132,12 @@
     &:before {
       content: none;
     }
-    &:not(:first-of-type):before {
-      background: none;
-      border-radius: none;
-      content: '|';
-      display: inline-block;
-      height: auto;
-      margin: 0 0.5rem;
-      vertical-align: top;
-      width: auto;
-    }
+  }
+  .bottom span:not(:first-of-type):before {
+    color: $color-text-accent-primary;
+    content: '|';
+    display: inline-block;
+    margin-right: 4px;
   }
   .heading-col {
     display: block;
