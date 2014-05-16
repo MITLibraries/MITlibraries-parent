@@ -48,7 +48,7 @@
       <div class="bottom flex-clear">
         <span><a href="/hours">All hours</a></span>
         <span><a href="/locations">All locations</a></span>
-        <span><a href="/locations/map">Map</a></span>
+        <span><a href="/locations/#!map">Map</a></span>
       </div>
     </div>
   </div>
