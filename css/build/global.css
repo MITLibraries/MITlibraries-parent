@@ -4067,11 +4067,13 @@ you can use the generic selector below, but it's slower:
 }
 .nav-secondary .menu > ul > li:hover {
   background: #ebebeb;
+  box-shadow: 0 0 2px #444;
   transition: background-color 0.3s;
 }
 @media only screen and (max-width: 480px) {
   .nav-secondary .menu > ul > li:hover {
     background: none;
+    box-shadow: none;
   }
 }
 .nav-secondary .menu > ul > li:hover li {
@@ -4117,6 +4119,7 @@ you can use the generic selector below, but it's slower:
   width: 0;
 }
 .nav-secondary .menu > ul > li ul {
+  box-shadow: 0 1px 2px #444;
   position: absolute;
   width: 320px;
   width: 20rem;

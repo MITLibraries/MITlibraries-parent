@@ -218,9 +218,11 @@
       }
       &:hover {
         background: $color-secondary;
+        box-shadow: 0 0 2px #444;
         transition: background-color 0.3s;
         @include bp-small {
           background: none;
+          box-shadow: none;
         }
         // Show secondary menu items on hover
         li {
@@ -263,6 +265,7 @@
       }
       // The dropdown
       ul {
+        box-shadow: 0 1px 2px #444;
         position: absolute;
         @include rem-first(width, 20);
       }
