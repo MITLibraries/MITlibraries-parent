@@ -210,6 +210,12 @@
       @include bp-small {
         display: block;
       }
+      &:nth-child(n+4) {
+        // Push dropdowns right if li parents are too far right
+        ul {
+          right: 0;
+        }
+      }
       &:hover {
         background: $color-secondary;
         transition: background-color 0.3s;

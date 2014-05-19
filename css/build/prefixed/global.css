@@ -4058,6 +4058,9 @@ you can use the generic selector below, but it's slower:
     display: block;
   }
 }
+.nav-secondary .menu > ul > li:nth-child(n+4) ul {
+  right: 0;
+}
 .nav-secondary .menu > ul > li:hover {
   background: #ebebeb;
   -webkit-transition: background-color 0.3s;
