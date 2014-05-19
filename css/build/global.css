@@ -3677,6 +3677,10 @@ you can use the generic selector below, but it's slower:
   box-sizing: border-box;
 }
 
+.wrap-page {
+  width: 320px;
+}
+
 .h-inline {
   display: inline-block;
 }
