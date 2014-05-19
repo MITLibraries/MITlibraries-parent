@@ -76,14 +76,6 @@ function twentytwelve_setup() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
 	register_nav_menu( 'footer', __( 'Footer Menu', 'twentytwelve' ) );
 
-	/*
-	 * This theme supports custom background color and image, and here
-	 * we also set up the default background color.
-	 */
-	add_theme_support( 'custom-background', array(
-		'default-color' => 'e6e6e6',
-	) );
-
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
