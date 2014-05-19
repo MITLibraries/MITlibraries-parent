@@ -4024,82 +4024,106 @@ you can use the generic selector below, but it's slower:
   width: 600px;
 }
 
-/* Navigation Menu */
-.nav-child {
-  text-align: center;
+.nav-secondary {
+  border-bottom: 1px solid #ebebeb;
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 0 20px;
+  z-index: 7000;
 }
-.nav-child li {
+@media only screen and (max-width: 480px) {
+  .nav-secondary {
+    background: #333333;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+  .nav-secondary.active {
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+  }
+}
+.nav-secondary ul {
+  list-style: none;
+}
+.nav-secondary .menu > ul > li {
   display: inline-block;
-  margin: 0 2.857142857rem 0 0;
-  font-size: 12px;
-  font-size: 0.857142857rem;
-  line-height: 1.42857143;
-  text-decoration: none;
+  position: relative;
 }
-.nav-child li a {
-  border-bottom: 0;
-  color: #6a6a6a;
-  line-height: 3.692307692;
-  text-transform: uppercase;
-  white-space: nowrap;
+@media only screen and (max-width: 480px) {
+  .nav-secondary .menu > ul > li {
+    display: block;
+  }
 }
-.nav-child li a:hover {
-  color: #000;
+.nav-secondary .menu > ul > li:hover {
+  background: #ebebeb;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
-.nav-child li ul {
-  display: none;
+@media only screen and (max-width: 480px) {
+  .nav-secondary .menu > ul > li:hover {
+    background: none;
+  }
+}
+.nav-secondary .menu > ul > li:hover li {
+  background: #ebebeb;
+  border-top: 1px solid #b8b8b8;
+  height: auto;
+  line-height: 1;
+  margin: auto;
+  opacity: 1;
+  overflow: visible;
+  width: 100%;
+  z-index: 7000;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+@media only screen and (max-width: 480px) {
+  .nav-secondary .menu > ul > li:hover li {
+    display: none;
+  }
+}
+.nav-secondary .menu > ul > li:hover li a {
+  display: block;
+  padding: 16px;
+  padding: 1rem;
+}
+.nav-secondary .menu > ul > li > a {
+  display: block;
+  padding: 16px;
+  padding: 1rem;
+}
+@media only screen and (max-width: 480px) {
+  .nav-secondary .menu > ul > li > a {
+    color: white;
+  }
+}
+.nav-secondary .menu > ul > li li {
+  height: 0;
+  line-height: 0;
   margin: 0;
+  opacity: 0;
+  overflow: hidden;
   padding: 0;
   position: absolute;
-  top: 100%;
-  z-index: 1;
+  width: 0;
 }
-.nav-child li ul ul {
-  top: 0;
-  left: 100%;
+
+.menu--toggle {
+  color: #858585;
+  cursor: pointer;
+  display: none;
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: center;
 }
-.nav-child li ul li a {
-  background: #efefef;
-  border-bottom: 1px solid #ededed;
-  display: block;
-  font-size: 11px;
-  font-size: 0.785714286rem;
-  line-height: 2.181818182;
-  padding: 8px 10px;
-  padding: 0.571428571rem 0.714285714rem;
-  width: 180px;
-  width: 12.85714286rem;
-  white-space: normal;
-}
-.nav-child li ul li a:hover {
-  background: #e3e3e3;
-  color: #444;
-}
-.nav-child a {
-  color: #5e5e5e;
-}
-.nav-child a:hover {
-  color: #21759b;
-}
-.nav-child ul {
-  margin: 0;
-  text-indent: 0;
-}
-.nav-child ul li:hover > ul {
-  border-left: 0;
-  display: block;
-}
-.nav-child ul.nav-menu,
-.nav-child div.nav-menu > ul {
-  border-bottom: 1px solid #ededed;
-  border-top: 1px solid #ededed;
-  display: inline-block;
-  text-align: left;
-  width: 100%;
-}
-.nav-child ul.nav-menu.toggled-on,
-.nav-child .menu-toggle {
-  display: inline-block;
+@media only screen and (max-width: 480px) {
+  .menu--toggle {
+    display: block;
+  }
 }
 
 .breadcrumbs--better {
