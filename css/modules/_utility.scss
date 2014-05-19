@@ -6,6 +6,18 @@
 	}
 }
 
+@mixin bp-tablet--portrait {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin bp-large {
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
 // Font Size
 
 @function calculateRem($size) {
