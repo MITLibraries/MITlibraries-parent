@@ -4,6 +4,15 @@
 
 .wrap-page {
 	width: 320px;
+	@include bp-mobile--landscape {
+		width: 568px;
+	}
+	@include bp-tablet--portrait {
+		width: 768px;
+	}
+	@include bp-large {
+		width: 1024px;
+	}
 }
 
 .visually-hidden {
