@@ -182,81 +182,104 @@
   }
 }
 
-/* Navigation Menu */
-.nav-child {
-  text-align: center;
-  li {
-    display: inline-block;
-    margin: 0 2.857142857rem 0 0;
-    font-size: 12px;
-    font-size: 0.857142857rem;
-    line-height: 1.42857143;
-    text-decoration: none;
-    a {
-      border-bottom: 0;
-      color: #6a6a6a;
-      line-height: 3.692307692;
-      text-transform: uppercase;
-      white-space: nowrap;
-      &:hover {
-        color: #000;
-      }
-    }
-    ul {
-      display: none;
+.nav-secondary {
+  border-bottom: 1px solid $color-secondary;
+  @include font-size(16px);
+  margin: 0 $margin-left;
+  z-index: map-get($zindex, dropdown);
+  @include bp-small {
+    background: $color-primary;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    &.active {
+      height: auto;
       margin: 0;
+      overflow: visible;
       padding: 0;
-      position: absolute;
-      top: 100%;
-      z-index: 1;
-      ul {
-        top: 0;
-        left: 100%;
-      }
-      li a {
-        background: #efefef;
-        border-bottom: 1px solid #ededed;
-        display: block;
-        font-size: 11px;
-        font-size: 0.785714286rem;
-        line-height: 2.181818182;
-        padding: 8px 10px;
-        padding: 0.571428571rem 0.714285714rem;
-        width: 180px;
-        width: 12.85714286rem;
-        white-space: normal;
-        &:hover {
-          background: #e3e3e3;
-          color: #444;
-        }
-      }
-    }
-  }
-  a {
-    color: #5e5e5e;
-    &:hover {
-      color: #21759b;
     }
   }
   ul {
-    margin: 0;
-    text-indent: 0;
-    li:hover > ul {
-      border-left: 0;
-      display: block;
+    list-style: none;
+  }
+  .menu > ul {
+    > li {
+      display: inline-block;
+      position: relative;
+      @include bp-small {
+        display: block;
+      }
+      &:nth-child(n+4) {
+        // Push dropdowns right if li parents are too far right
+        ul {
+          right: 0;
+        }
+      }
+      &:hover {
+        background: $color-secondary;
+        box-shadow: 0 0 2px #444;
+        transition: background-color 0.3s;
+        @include bp-small {
+          background: none;
+          box-shadow: none;
+        }
+        // Show secondary menu items on hover
+        li {
+          background: $color-secondary;
+          border-top: 1px solid darken($color-secondary, 20%);
+          height: auto;
+          line-height: 1;
+          margin: auto;
+          opacity: 1;
+          overflow: visible;
+          width: 100%;
+          z-index: map-get($zindex, dropdown);
+          transition: opacity 0.3s;
+          @include bp-small {
+            display: none;
+          }
+          a {
+            display: block;
+            @include rem-first(padding, 1);
+          }
+        }
+      }
+      > a {
+        display: block;
+        @include rem-first(padding, 1);
+        @include bp-small {
+          color: white;
+        }
+      }
+      li {
+        // Hide secondary menu items
+        height: 0;
+        line-height: 0;
+        margin: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        width: 0;
+      }
+      // The dropdown
+      ul {
+        box-shadow: 0 1px 2px #444;
+        position: absolute;
+        @include rem-first(width, 20);
+      }
     }
   }
+}
 
-  ul.nav-menu,
-  div.nav-menu > ul {
-    border-bottom: 1px solid #ededed;
-    border-top: 1px solid #ededed;
-    display: inline-block;
-    text-align: left;
-    width: 100%;
-  }
-  ul.nav-menu.toggled-on,
-  .menu-toggle {
-    display: inline-block;
+.menu--toggle {
+  color: darken($color-secondary, 40%);
+  cursor: pointer;
+  display: none;
+  @include font-size(16px);
+  text-align: center;
+  @include bp-small {
+    display: block;
   }
 }
