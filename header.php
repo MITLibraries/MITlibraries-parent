@@ -38,7 +38,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="container">
+	<div class="wrap-page">
 		<header class="header-main group">
 
 			<a href="/" class="logo-mit-lib">MIT Libraries</a>
