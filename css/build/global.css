@@ -3673,8 +3673,7 @@ you can use the generic selector below, but it's slower:
   vertical-align: middle;
 }
 
-.border-box,
-.border-box * {
+* {
   box-sizing: border-box;
 }
 
