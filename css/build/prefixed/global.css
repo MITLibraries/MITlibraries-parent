@@ -3665,7 +3665,27 @@ you can use the generic selector below, but it's slower:
 }
 
 .wrap-page {
+  border-top: 8px solid red;
+  margin: 0 auto;
   width: 320px;
+}
+@media only screen and (min-width: 321px) {
+  .wrap-page {
+    border-color: yellow;
+    width: 568px;
+  }
+}
+@media only screen and (min-width: 569px) {
+  .wrap-page {
+    border-color: green;
+    width: 768px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .wrap-page {
+    border-color: black;
+    width: 1024px;
+  }
 }
 
 .h-inline {
@@ -3675,7 +3695,7 @@ you can use the generic selector below, but it's slower:
 .content-all {
   margin-left: 20px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .content-all {
     margin: 0 16px;
     margin: 0 1rem;
@@ -3692,7 +3712,7 @@ you can use the generic selector below, but it's slower:
   float: left;
   width: 23.91%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .has-sidebar .content-main {
     float: none;
     padding-right: 0;
@@ -3743,7 +3763,7 @@ you can use the generic selector below, but it's slower:
   text-shadow: none;
   color: transparent;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .header-main .logo-mit-lib {
     background-size: 110px 44px;
     height: 44px;
@@ -3757,7 +3777,7 @@ you can use the generic selector below, but it's slower:
   font-size: 12px;
   font-size: 0.75rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .header-main .toolbox {
     margin-top: 0;
   }
@@ -3768,7 +3788,7 @@ you can use the generic selector below, but it's slower:
   margin-top: 0;
   width: 0.75rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .header-main .toolbox .icon-arrow-right {
     display: none;
   }
@@ -3779,7 +3799,7 @@ you can use the generic selector below, but it's slower:
   margin-top: 0;
   margin-right: 1rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .header-main .toolbox > a {
     float: right;
     margin: 0 0 0.5rem 0;
@@ -3795,7 +3815,7 @@ you can use the generic selector below, but it's slower:
   margin-left: 1rem;
   width: 1px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .header-main .toolbox > a:after {
     content: none;
   }
@@ -3804,7 +3824,7 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   vertical-align: middle;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .header-main .toolbox .button-ask-tell {
     clear: right;
     float: right;
@@ -3821,7 +3841,7 @@ you can use the generic selector below, but it's slower:
   line-height: 20px;
   line-height: 1.25rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .nav-main {
     background: #333;
     margin: 1rem 0;
@@ -3837,7 +3857,7 @@ you can use the generic selector below, but it's slower:
   transition: background-color 0.3s;
   z-index: 7000;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary {
     display: inline;
     margin: 0;
@@ -3859,7 +3879,7 @@ you can use the generic selector below, but it's slower:
   -webkit-transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s, padding-bottom 0.3s;
   transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s, padding-bottom 0.3s;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary:hover {
     background: none;
     box-shadow: none;
@@ -3876,7 +3896,7 @@ you can use the generic selector below, but it's slower:
 .link-primary > a:hover {
   color: black;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary > a:hover {
     color: white;
   }
@@ -3890,12 +3910,12 @@ you can use the generic selector below, but it's slower:
   height: 0;
   width: 0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary > a:hover:after {
     content: none;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary > a {
     color: white;
     display: inline-block;
@@ -3917,7 +3937,7 @@ you can use the generic selector below, but it's slower:
   height: 0;
   width: 0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary > a:after {
     content: none;
   }
@@ -3926,7 +3946,7 @@ you can use the generic selector below, but it's slower:
   background: lightgray;
   box-shadow: 0 0 2px #444, inset 1px 0 0 gray, inset -1px 0 0 gray, inset 0 1px 0 gray;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary > a.active {
     background: none;
     box-shadow: none;
@@ -3956,7 +3976,7 @@ you can use the generic selector below, but it's slower:
   transition: max-height 0.3s, margin 0.3s, opacity 0.3s, overflow 0.3s, padding-top 0.3s, padding-bottom 0.3s;
   width: 600px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .link-primary .links-sub {
     display: none;
   }
@@ -4033,7 +4053,7 @@ you can use the generic selector below, but it's slower:
   margin: 0 20px;
   z-index: 7000;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .nav-secondary {
     background: #333333;
     height: 0;
@@ -4055,7 +4075,7 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   position: relative;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .nav-secondary .menu > ul > li {
     display: block;
   }
@@ -4069,7 +4089,7 @@ you can use the generic selector below, but it's slower:
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .nav-secondary .menu > ul > li:hover {
     background: none;
     box-shadow: none;
@@ -4088,7 +4108,7 @@ you can use the generic selector below, but it's slower:
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .nav-secondary .menu > ul > li:hover li {
     display: none;
   }
@@ -4103,7 +4123,7 @@ you can use the generic selector below, but it's slower:
   padding: 16px;
   padding: 1rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .nav-secondary .menu > ul > li > a {
     color: white;
   }
@@ -4133,7 +4153,7 @@ you can use the generic selector below, but it's slower:
   font-size: 1rem;
   text-align: center;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .menu--toggle {
     display: block;
   }
@@ -4163,7 +4183,7 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 1.75rem;
   padding: 1.25rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .title-page {
     background: none;
     box-shadow: 0 0 5px #111;
@@ -4182,7 +4202,7 @@ you can use the generic selector below, but it's slower:
 .title-page .rss-link:hover .icon-rss {
   fill: #cc9900;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .title-page .rss-link {
     color: #aaaaaa;
     height: auto;
@@ -4202,7 +4222,7 @@ you can use the generic selector below, but it's slower:
 .title-page .icon-rss {
   fill: #ffcc33;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .title-page .icon-rss {
     display: none;
   }
@@ -4214,17 +4234,17 @@ you can use the generic selector below, but it's slower:
 .maintenance .name-site span {
   color: white;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .maintenance .name-site span {
     color: #666666;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .maintenance .name-site {
     color: #333333;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .maintenance.siteTitle h1 {
     border-bottom: none;
   }
@@ -4240,7 +4260,7 @@ you can use the generic selector below, but it's slower:
   padding: 5em;
   width: 100%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .content.maintenance {
     background: none;
     margin: 0 auto;
@@ -4265,7 +4285,7 @@ you can use the generic selector below, but it's slower:
 .content.maintenance .message-maintenance p {
   font-size: 1.25rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 320px) {
   .content.maintenance .message-maintenance {
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
