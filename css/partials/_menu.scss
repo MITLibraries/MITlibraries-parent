@@ -258,7 +258,7 @@
       // The dropdown
       ul {
         position: absolute;
-        @include rem-first(width, 12);
+        @include rem-first(width, 20);
       }
     }
   }
