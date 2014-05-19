@@ -4,6 +4,7 @@
 
 .wrap-page {
 	border-top: 8px solid red;
+	margin: 0 auto;
 	width: 320px;
 	@include bp-mobile--landscape {
 		border-color: yellow;
