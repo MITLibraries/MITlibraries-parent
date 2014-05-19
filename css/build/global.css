@@ -4110,8 +4110,13 @@ you can use the generic selector below, but it's slower:
   opacity: 0;
   overflow: hidden;
   padding: 0;
-  position: absolute;
+  position: relative;
   width: 0;
+}
+.nav-secondary .menu > ul > li ul {
+  position: absolute;
+  width: 192px;
+  width: 12rem;
 }
 
 .menu--toggle {

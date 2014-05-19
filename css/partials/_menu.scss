@@ -252,8 +252,13 @@
         opacity: 0;
         overflow: hidden;
         padding: 0;
-        position: absolute;
+        position: relative;
         width: 0;
+      }
+      // The dropdown
+      ul {
+        position: absolute;
+        @include rem-first(width, 12);
       }
     }
   }
