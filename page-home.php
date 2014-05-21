@@ -25,6 +25,9 @@
 	<div class="hours-locations">
 		<h2>Hours &amp; Locations</h2>
 		<?php get_template_part('inc/location', 'info'); ?>
+		<a href="/map">View Map</a>
+		<a href="/study" class="study">Find a Study Space</a>
+		<h3><a href="/hours" class="button">All Hours &amp; Locations</a></h3>
 	</div>
 	<div class="news-events">
 		<h2>News &amp; Events</h2>
