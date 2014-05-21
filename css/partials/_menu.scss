@@ -1,13 +1,4 @@
 .nav-main {
-	box-sizing: border-box;
-	clear: both;
-	float: left;
-  @include rem-first--4-values(margin, 1, 0, 0, 0.75);
-	@include line-height(20px);
-	@include bp-small {
-		background: #333;
-		margin: 1rem 0;
-	}
 }
 
 .link-primary {

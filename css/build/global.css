@@ -3771,22 +3771,6 @@ h3 {
   }
 }
 
-.nav-main {
-  box-sizing: border-box;
-  clear: both;
-  float: left;
-  margin: 16px 0px 0px 12px;
-  margin: 1rem 0rem 0rem 0.75rem;
-  line-height: 20px;
-  line-height: 1.25rem;
-}
-@media only screen and (max-width: 320px) {
-  .nav-main {
-    background: #333;
-    margin: 1rem 0;
-  }
-}
-
 .link-primary {
   display: inline-block;
   margin-right: 16px;
