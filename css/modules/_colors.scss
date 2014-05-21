@@ -1,4 +1,5 @@
 // COLOR VARIABLES
+// Defaults
 
 // Cool
 
@@ -25,6 +26,15 @@ $white:  #fff;
 $silver: #ddd;
 $gray:   #aaa;
 $black:  #111;
+
+// Custom
+
+$blue-royal: hsla(212, 46.4912%, 55.2941%, 1.0000);
+$green-sea: hsla(150, 37.0892%, 41.7647%, 1.0000);
+$magenta-dark: hsla(323, 51.4563%, 40.3922%, 1.0000);
+$orange-dark: hsla(26, 90.6977%, 57.8431%, 1.0000);
+$blue-cornFlower: hsla(198, 55.4656%, 51.5686%, 1.0000);
+$pink: hsla(2, 75.5102%, 61.5686%, 1.0000);
 
 $gray-dark: hsla(0, 0.0000%, 20.0000%, 1.0000);
 $gray-medium: lighten($gray-dark, 46.6667%);
