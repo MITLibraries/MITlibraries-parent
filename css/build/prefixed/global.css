@@ -161,14 +161,6 @@ table {
 /*
 Main CSS
 */
-body {
-  font-family: Arial, serif;
-  line-height: 1.5em;
-  color: #333333;
-  background: #fff;
-  height: 100%;
-}
-
 .inner {
   position: relative;
   display: block;
