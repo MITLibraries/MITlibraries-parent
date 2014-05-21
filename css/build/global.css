@@ -3771,6 +3771,15 @@ h3 {
   }
 }
 
+.nav-main {
+  transform: translateY(-1000%);
+}
+@media only screen and (min-width: 769px) {
+  .nav-main {
+    transform: translateY(0%);
+  }
+}
+
 .link-primary {
   display: inline-block;
   margin-right: 16px;

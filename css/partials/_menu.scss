@@ -1,4 +1,8 @@
 .nav-main {
+  transform: translateY(-1000%);
+  @include bp-large {
+    transform: translateY(0%);
+  }
 }
 
 .link-primary {
