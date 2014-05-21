@@ -388,8 +388,7 @@ if (!function_exists('is_child_page')) {
  *    or full-width template.
  * 2. Front Page template: thumbnail in use and number of sidebars for
  *    widget areas.
- * 3. White or empty background color to change the layout and spacing.
- * 4. Single or multiple authors.
+ * 3. Single or multiple authors.
  *
  * @since Twenty Twelve 1.0
  *
@@ -398,7 +397,6 @@ if (!function_exists('is_child_page')) {
  */
 function twentytwelve_body_class( $classes ) {
 	global $post;
-	$background_color = get_background_color();
 
 	if ( isset( $post ) ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
@@ -430,11 +428,6 @@ function twentytwelve_body_class( $classes ) {
 	if (is_page_template('page-location.php')) {
 		$classes[] = 'locationPage';
 	}
-
-	if ( empty( $background_color ) )
-		$classes[] = 'custom-background-empty';
-	elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
-		$classes[] = 'custom-background-white';
 
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
