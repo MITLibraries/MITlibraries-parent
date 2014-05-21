@@ -461,19 +461,7 @@ img.wp-smiley,
 -------------------------------------------------------------- */
 
 /* Body, links, basics */
-html {
-	font-size: 87.5%;
-}
-body {
-	font-size: 14px;
-	font-size: 1rem;
-	font-family: Helvetica, Arial, sans-serif;
-	text-rendering: optimizeLegibility;
-	color: #444;
-}
-body.custom-font-enabled {
-	font-family: Arial, sans-serif;
-}
+
 a {
 	outline: none;
 	color: #21759b;
