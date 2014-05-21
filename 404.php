@@ -35,7 +35,7 @@ get_header(); ?>
 
 					<ul>
 						<li><?php _e('<a href="http://libraries.mit.edu/bartonplus">BartonPlus</a>', 'twentytwelve'); ?></li>
-						<li><?php _e('<a href="/about/staff.html">Staff directory</a>', 'twentytwelve'); ?></li>
+						<li><?php _e('<a href="http://libguides.mit.edu/directory">Staff directory</a>', 'twentytwelve'); ?></li>
 						<li><?php _e('<a href="/multi/research-guides.html">Research guides - databases by subject</a>', 'twentytwelve'); ?></li>
 						<li><?php _e('<a href="/shortcuts.html">Shortcuts to frequently used pages</a>', 'twentytwelve'); ?></li>
 						<li><?php _e('<a href="http://web.mit.edu/search.html">MIT web site search</a>', 'twentytwelve'); ?></li>
