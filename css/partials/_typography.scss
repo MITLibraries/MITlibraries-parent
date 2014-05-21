@@ -12,6 +12,10 @@ h2 {
 	font-weight: 300;
 }
 
+h3 {
+	font-size: 1.125em;
+}
+
 .title-page h1 {
 	line-height: 1;
 	@include font-size(28px);
