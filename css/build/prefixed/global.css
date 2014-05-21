@@ -4083,6 +4083,22 @@ h3 {
   }
 }
 
+.search--lib-resources {
+  background: #6699cc;
+  /* Old browsers */
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #6699cc), color-stop(100%, #3fa5ce));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg, #6699cc 0%, #3fa5ce 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(45deg, #6699cc 0%, #3fa5ce 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699cc', endColorstr='#3fa5ce',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+
 .breadcrumbs--better {
   background: #ebebeb;
   font-size: 12px;
