@@ -3660,8 +3660,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1,
+h1 {
+  font-weight: 300;
+}
+
 h2 {
+  font-size: 29px;
+  font-size: 1.8125rem;
   font-weight: 300;
 }
 
