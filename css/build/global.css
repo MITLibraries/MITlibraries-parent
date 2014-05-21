@@ -4102,6 +4102,14 @@ h3 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699cc', endColorstr='#3fa5ce',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
 }
+.search--lib-resources select {
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .search--lib-resources select {
+    width: auto;
+  }
+}
 
 .breadcrumbs--better {
   background: #ebebeb;
