@@ -1,3 +1,7 @@
+body {
+	text-rendering: optimizeLegibility;
+}
+
 .title-page h1 {
 	line-height: 1;
 	@include font-size(28px);
