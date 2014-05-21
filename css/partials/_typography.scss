@@ -3,8 +3,12 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
-h1,
+h1 {
+	font-weight: 300;
+}
+
 h2 {
+	@include rem-first(font-size, 1.8125);
 	font-weight: 300;
 }
 
