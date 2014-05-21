@@ -49,7 +49,7 @@
     }
   }
   > a {
-    color: $color-text-accent-primary;
+    color: $color-text--light;
     display: inline-block;
     font-weight: bold;
     @include rem-first(padding, 0.5);
