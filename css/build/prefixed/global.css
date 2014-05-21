@@ -3657,6 +3657,7 @@ you can use the generic selector below, but it's slower:
 
 body {
   font-family: "Open Sans", Helvetica, sans-serif;
+  line-height: 1.4;
   text-rendering: optimizeLegibility;
 }
 
