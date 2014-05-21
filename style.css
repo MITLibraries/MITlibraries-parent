@@ -462,14 +462,6 @@ img.wp-smiley,
 
 /* Body, links, basics */
 
-a {
-	outline: none;
-	color: #21759b;
-}
-a:hover {
-	color: #0f3647;
-}
-
 /* Assistive text */
 .assistive-text,
 .site .screen-reader-text {
