@@ -30,6 +30,7 @@ $black:  #111;
 // Custom
 
 $blue-royal: hsla(212, 46.4912%, 55.2941%, 1.0000);
+$blue-light: hsla(210, 100.0000%, 96.0784%, 1.0000);
 $green-sea: hsla(150, 37.0892%, 41.7647%, 1.0000);
 $magenta-dark: hsla(323, 51.4563%, 40.3922%, 1.0000);
 $orange-dark: hsla(26, 90.6977%, 57.8431%, 1.0000);
@@ -54,3 +55,4 @@ $color-text-accent-primary: $blue;
 $color-text-accent-secondary: $bluishPurple;
 $color-text-minor: $gray-medium;
 $color-background--widget: $beige;
+$color-background--option: $blue-light;
