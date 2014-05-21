@@ -42,7 +42,7 @@
 	<div class="wrap-page">
 		<header class="header-main group">
 
-			<a href="/" class="logo-mit-lib">MIT Libraries</a>
+			<h1 class="name-site group"><a href="/" class="logo-mit-lib">MIT Libraries</a></h1>
 
 			<?php get_template_part('inc/nav', 'main'); ?>
 			
