@@ -1,3 +1,9 @@
 .search--lib-resources {
 	@include gradient-blue;
+	select {
+		width: 100%;
+		@include bp-large {
+			width: auto;
+		}
+	}
 }
