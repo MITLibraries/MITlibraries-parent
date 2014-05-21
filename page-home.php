@@ -2,7 +2,7 @@
 	get_header();
 ?>
 
-	<div class="search--resources">
+	<div class="search--lib-resources">
 		<h2>Search in</h2>
 		<select name="" id="">
 			<option value="">Option #1</option>
