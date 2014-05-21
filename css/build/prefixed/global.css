@@ -4099,6 +4099,7 @@ h3 {
   /* IE6-9 fallback on horizontal gradient */
 }
 .search--lib-resources select {
+  background: #ebf5ff;
   width: 100%;
 }
 @media only screen and (min-width: 769px) {

@@ -1,6 +1,7 @@
 .search--lib-resources {
 	@include gradient-blue;
 	select {
+		background: $color-background--option;
 		width: 100%;
 		@include bp-large {
 			width: auto;
