@@ -3663,6 +3663,10 @@ you can use the generic selector below, but it's slower:
   float: left;
 }
 
+body {
+  text-rendering: optimizeLegibility;
+}
+
 .title-page h1 {
   line-height: 1;
   font-size: 28px;
