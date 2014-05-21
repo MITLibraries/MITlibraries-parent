@@ -6,6 +6,7 @@
 	<div class="search--resources"></div>
 	<div class="hours-locations">
 		<h2>Hours &amp; Locations</h2>
+		<?php get_template_part('inc/location', 'info'); ?>
 	</div>
 	<div class="news-events">
 		<h2>News &amp; Events</h2>
