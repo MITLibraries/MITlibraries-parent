@@ -389,8 +389,7 @@ if (!function_exists('is_child_page')) {
  * 2. Front Page template: thumbnail in use and number of sidebars for
  *    widget areas.
  * 3. White or empty background color to change the layout and spacing.
- * 4. Custom fonts enabled.
- * 5. Single or multiple authors.
+ * 4. Single or multiple authors.
  *
  * @since Twenty Twelve 1.0
  *
@@ -436,10 +435,6 @@ function twentytwelve_body_class( $classes ) {
 		$classes[] = 'custom-background-empty';
 	elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
 		$classes[] = 'custom-background-white';
-
-	// Enable custom font class only if the font CSS is queued to load.
-	if ( wp_style_is( 'twentytwelve-fonts', 'queue' ) )
-		$classes[] = 'custom-font-enabled';
 
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
