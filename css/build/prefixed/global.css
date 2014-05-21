@@ -3761,6 +3761,17 @@ h3 {
   }
 }
 
+.nav-main {
+  -webkit-transform: translateY(-1000%);
+  transform: translateY(-1000%);
+}
+@media only screen and (min-width: 769px) {
+  .nav-main {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
 .link-primary {
   display: inline-block;
   margin-right: 16px;
