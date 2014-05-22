@@ -27,7 +27,7 @@
 		<?php get_template_part('inc/location', 'info'); ?>
 		<a href="/map">View Map</a>
 		<a href="/study" class="study">Find a Study Space</a>
-		<a href="/hours" class="button">All Hours &amp; Locations</a>
+		<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
 	</div>
 	<div class="news-events">
 		<h2>News &amp; Events</h2>
@@ -43,20 +43,20 @@
 			// $('.item-1').load('/news h2[data-post-number="0"]');
 			// $('.item-2').load('/news h2[data-post-number="1"]');
 		</script>
-		<a href="/news" class="button">All News &amp; Events</a>
+		<a href="/news" class="button-primary">All News &amp; Events</a>
 	</div>
 	<div class="guides-experts">
 		<h2>Research Guides &amp; Experts</h2>
 		<p class="caption">Specialized guides for every research interest.</p>
 		<p class="caption">Not sure where to start?<a href="/ask">Ask Us</a></p>
-		<a href="" class="button">Astronomy</a>
-		<a href="" class="button">Music</a>
-		<a href="" class="button">Real Estate</a>
-		<a href="" class="button">Environmental Engineering</a>
-		<a href="" class="button">Medicine</a>
-		<a href="" class="button">Physics</a>
-		<a href="" class="button">Women and Gender Studies</a>
-		<a href="" class="button">All 125 Guides</a>
+		<a href="" class="button-secondary">Astronomy</a>
+		<a href="" class="button-secondary">Music</a>
+		<a href="" class="button-secondary">Real Estate</a>
+		<a href="" class="button-secondary">Environmental Engineering</a>
+		<a href="" class="button-secondary">Medicine</a>
+		<a href="" class="button-secondary">Physics</a>
+		<a href="" class="button-secondary">Women and Gender Studies</a>
+		<a href="" class="button-primary">All 125 Guides</a>
 	</div>
 
 <?php 

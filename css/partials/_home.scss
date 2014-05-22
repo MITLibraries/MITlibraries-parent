@@ -4,7 +4,7 @@
 		h2 {
 			color: $color-hours-locations;
 		}
-		.button {
+		.button-primary {
 			@include color-button($color-hours-locations);
 		}
 	}
@@ -12,7 +12,7 @@
 		h2 {
 			color: $color-news-events;
 		}
-		.button {
+		.button-primary {
 			@include color-button($color-news-events);
 		}
 	}
@@ -20,7 +20,7 @@
 		h2 {
 			color: $color-guides-experts;
 		}
-		.button {
+		.button-primary {
 			@include color-button($color-guides-experts);
 		}
 	}
