@@ -31,17 +31,23 @@
 	</div>
 	<div class="news-events">
 		<h2>News &amp; Events</h2>
-		<div class="item-1"><h3></h3></div>
-		<div class="item-2"><h3></h3></div>
+		<div class="item-1">
+			<h3></h3>
+			<div class="item-image"></div>
+		</div>
+		<div class="item-2">
+			<h3></h3>
+			<div class="item-image"></div>
+		</div>
 		<script>
 			$.get('/news', function(data) {
-				var newsItem1 = $(data).find('h2[data-post-number="0"]').text();
-				var newsItem2 = $(data).find('h2[data-post-number="1"]').text();
+				var newsItem1 = $(data).find('.post[data-post-number="0"] h2').text();
+				var newsItem2 = $(data).find('.post[data-post-number="1"] h2').text();
 				$('.item-1 h3').append(newsItem1);
 				$('.item-2 h3').append(newsItem2);
+				$('.item-1 .item-image').load('/news .post[data-post-number="0"] img');
+				$('.item-2 .item-image').load('/news .post[data-post-number="1"] img');
 			});
-			// $('.item-1').load('/news h2[data-post-number="0"]');
-			// $('.item-2').load('/news h2[data-post-number="1"]');
 		</script>
 		<a href="/news" class="button-primary">All News &amp; Events</a>
 	</div>
