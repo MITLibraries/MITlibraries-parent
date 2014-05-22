@@ -14,6 +14,15 @@
   position: absolute;
 }
 
+.button {
+  border-radius: 3px;
+  color: white;
+  display: block;
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+}
+
 .gldp-default {
   background: transparent;
   position: absolute;

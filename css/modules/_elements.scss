@@ -4,6 +4,16 @@
 		background: darken($color, 20%);
 	}
 }
+
+%button {
+	border-radius: 3px;
+	color: $color-text--light;
+	display: block;
+	padding: 1em;
+	text-align: center;
+	width: 100%;
+}
+
 @mixin gradient-blue {
 	background: #6699cc; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #6699cc 0%, #3fa5ce 100%); /* FF3.6+ */
