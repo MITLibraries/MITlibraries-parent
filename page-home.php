@@ -47,6 +47,8 @@
 	</div>
 	<div class="guides-experts">
 		<h2>Research Guides &amp; Experts</h2>
+		<p>Specialized guides for every research interest.</p>
+		<p>Not sure where to start?<a href="/ask">Ask Us</a></p>
 	</div>
 
 <?php 
