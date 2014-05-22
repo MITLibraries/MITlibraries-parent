@@ -7,14 +7,24 @@
 
 %button {
 	border-radius: 3px;
-	color: $color-text--light;
-	display: block;
 	padding: 1em;
 	text-align: center;
+	width: 100%;
+}
+
+%button-primary {
+	@extend %button;
+	color: $color-text--light;
+	display: block;
 	width: 100%;
 	&:hover {
 		color: $color-text--light;
 	}
+}
+
+%button-secondary {
+	@extend %button;
+	display: inline-block;
 }
 
 @mixin gradient-blue {

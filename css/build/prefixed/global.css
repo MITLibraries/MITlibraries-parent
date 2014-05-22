@@ -14,16 +14,24 @@
   position: absolute;
 }
 
-.button {
+.button-primary, .button-secondary {
   border-radius: 3px;
-  color: white;
-  display: block;
   padding: 1em;
   text-align: center;
   width: 100%;
 }
-.button:hover {
+
+.button-primary {
   color: white;
+  display: block;
+  width: 100%;
+}
+.button-primary:hover {
+  color: white;
+}
+
+.button-secondary {
+  display: inline-block;
 }
 
 .gldp-default {
