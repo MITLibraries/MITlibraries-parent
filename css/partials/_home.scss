@@ -5,7 +5,7 @@
 			color: $color-hours-locations;
 		}
 		.button-primary {
-			@include color-button($color-hours-locations);
+			@include color-button-primary($color-hours-locations);
 		}
 	}
 	.news-events {
@@ -13,7 +13,7 @@
 			color: $color-news-events;
 		}
 		.button-primary {
-			@include color-button($color-news-events);
+			@include color-button-primary($color-news-events);
 		}
 	}
 	.guides-experts {
@@ -21,7 +21,8 @@
 			color: $color-guides-experts;
 		}
 		.button-primary {
-			@include color-button($color-guides-experts);
+			@include color-button-primary($color-guides-experts);
+		}
 		}
 	}
 }
