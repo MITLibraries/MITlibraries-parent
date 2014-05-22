@@ -4295,6 +4295,10 @@ h3 {
   color: #f58632;
   text-align: center;
 }
+.home .news-events [class*="item"] {
+  min-height: 205px;
+  min-height: 12.8125rem;
+}
 .home .news-events .button-primary {
   background: #f58632;
 }
