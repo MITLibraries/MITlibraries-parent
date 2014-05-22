@@ -3756,6 +3756,13 @@ h3 {
   font-weight: 300;
 }
 
+a {
+  color: #5889c2;
+}
+a:hover {
+  color: #305784;
+}
+
 .title-page h1 {
   line-height: 1;
   font-size: 28px;
