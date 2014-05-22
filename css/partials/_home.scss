@@ -1,15 +1,25 @@
+// A lot this--colors especially--could probably be better handles with a function or two.
 .home {
 	.hours-locations {
+		h2 {
+			color: $color-hours-locations;
+		}
 		.button {
 			@include color-button($color-hours-locations);
 		}
 	}
 	.news-events {
+		h2 {
+			color: $color-news-events;
+		}
 		.button {
 			@include color-button($color-news-events);
 		}
 	}
 	.guides-experts {
+		h2 {
+			color: $color-guides-experts;
+		}
 		.button {
 			@include color-button($color-guides-experts);
 		}
