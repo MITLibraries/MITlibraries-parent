@@ -4276,28 +4276,28 @@ h3 {
 .home .hours-locations h2 {
   color: #43926a;
 }
-.home .hours-locations .button {
+.home .hours-locations .button-primary {
   background: #43926a;
 }
-.home .hours-locations .button:hover {
+.home .hours-locations .button-primary:hover {
   background: #234c37;
 }
 .home .news-events h2 {
   color: #f58632;
 }
-.home .news-events .button {
+.home .news-events .button-primary {
   background: #f58632;
 }
-.home .news-events .button:hover {
+.home .news-events .button-primary:hover {
   background: #b85509;
 }
 .home .guides-experts h2 {
   color: #9c3273;
 }
-.home .guides-experts .button {
+.home .guides-experts .button-primary {
   background: #9c3273;
 }
-.home .guides-experts .button:hover {
+.home .guides-experts .button-primary:hover {
   background: #4f193a;
 }
 
