@@ -43,6 +43,7 @@
 			// $('.item-1').load('/news h2[data-post-number="0"]');
 			// $('.item-2').load('/news h2[data-post-number="1"]');
 		</script>
+		<a href="/news" class="button">All News &amp; Events</a>
 	</div>
 	<div class="guides-experts">
 		<h2>Research Guides &amp; Experts</h2>
