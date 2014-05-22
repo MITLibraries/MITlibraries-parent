@@ -40,7 +40,7 @@
 			  <div class="rect5"></div>
 			</div>
 			<h3></h3>
-			<div class="item-image"></div>
+			<div class="image"></div>
 		</div>
 		<div class="item-2">
 			<div class="spinner">
@@ -51,7 +51,7 @@
 			  <div class="rect5"></div>
 			</div>
 			<h3></h3>
-			<div class="item-image"></div>
+			<div class="image"></div>
 		</div>
 		<script>
 			$.get('/news', function(data) {
@@ -59,8 +59,8 @@
 				var newsItem2 = $(data).find('.post[data-post-number="1"] h2').text();
 				$('.item-1 h3').append(newsItem1).trigger('newsLoaded1');
 				$('.item-2 h3').append(newsItem2).trigger('newsLoaded2');
-				$('.item-1 .item-image').load('/news .post[data-post-number="0"] img');
-				$('.item-2 .item-image').load('/news .post[data-post-number="1"] img');
+				$('.item-1 .image').load('/news .post[data-post-number="0"] img');
+				$('.item-2 .image').load('/news .post[data-post-number="1"] img');
 			});
 			$('.item-1').on('newsLoaded1', function(){
 				$('.item-1 .spinner').hide();
