@@ -11,6 +11,7 @@ h1 {
 h2 {
 	@include rem-first(font-size, 1.8125);
 	font-weight: 300;
+	padding: 1em 0;
 }
 
 h3 {
