@@ -14,6 +14,9 @@
 			color: $color-news-events;
 			text-align: center;
 		}
+		[class*="item"] {
+			@include rem-first(min-height, 12.8125);
+		}
 		.button-primary {
 			@include color-button-primary($color-news-events);
 		}
