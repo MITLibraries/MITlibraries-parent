@@ -34,6 +34,9 @@
   border-width: 3px;
   display: inline-block;
 }
+.button-secondary:hover {
+  color: white;
+}
 
 .gldp-default {
   background: transparent;
