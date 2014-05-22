@@ -4254,6 +4254,25 @@ h3 {
   }
 }
 
+.home .hours-locations .button {
+  background: #43926a;
+}
+.home .hours-locations .button:hover {
+  background: #234c37;
+}
+.home .news-events .button {
+  background: #5889c2;
+}
+.home .news-events .button:hover {
+  background: #305784;
+}
+.home .guides-experts .button {
+  background: #9c3273;
+}
+.home .guides-experts .button:hover {
+  background: #4f193a;
+}
+
 .rss-feed {
   font-size: 18px;
   font-size: 1.125rem;

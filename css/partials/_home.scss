@@ -1,0 +1,17 @@
+.home {
+	.hours-locations {
+		.button {
+			@include color-button($color-hours-locations);
+		}
+	}
+	.news-events {
+		.button {
+			@include color-button($color-news-events);
+		}
+	}
+	.guides-experts {
+		.button {
+			@include color-button($color-guides-experts);
+		}
+	}
+}
