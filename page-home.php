@@ -83,6 +83,15 @@
 		<a href="" class="button-secondary">Physics</a>
 		<a href="" class="button-secondary">Women and Gender Studies</a>
 		<a href="" class="button-primary">All 125 Guides</a>
+		<div class="expert">
+			<a href="" class="name"></a>
+			<span class="focus"></span>
+		</div>
+		<div class="expert">
+			<a href="" class="name"></a>
+			<span class="focus"></span>
+		</div>
+		<a href="" class="button-primary">All 27 Experts</a>
 	</div>
 
 <?php 
