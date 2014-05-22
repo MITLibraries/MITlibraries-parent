@@ -23,6 +23,8 @@
 		.button-primary {
 			@include color-button-primary($color-guides-experts);
 		}
+		.button-secondary {
+			@include color-button-secondary($color-guides-experts);
 		}
 	}
 }
