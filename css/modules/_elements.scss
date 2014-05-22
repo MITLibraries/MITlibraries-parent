@@ -22,6 +22,7 @@
 	@extend %button;
 	color: $color-text--light;
 	display: block;
+	font-size: 1em;
 	width: 100%;
 	&:hover {
 		color: $color-text--light;
@@ -33,6 +34,7 @@
 	border-width: 3px;
 	@extend %button;
 	display: inline-block;
+	font-size: 0.875em;
 	&:hover {
 		color: $color-text--light;
 	}
