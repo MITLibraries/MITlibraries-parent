@@ -1,4 +1,4 @@
-@mixin color-background($color) {
+@mixin color-button($color) {
 	background: $color;
 	&:hover {
 		background: darken($color, 20%);
