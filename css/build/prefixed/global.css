@@ -4297,6 +4297,12 @@ h3 {
 .home .guides-experts .button-primary:hover {
   background: #4f193a;
 }
+.home .guides-experts .button-secondary {
+  border-color: #9c3273;
+}
+.home .guides-experts .button-secondary:hover {
+  background: #9c3273;
+}
 
 .rss-feed {
   font-size: 18px;
