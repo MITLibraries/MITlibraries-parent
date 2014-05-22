@@ -5,6 +5,13 @@
 	}
 }
 
+@mixin color-button-secondary($color) {
+	border-color: $color;
+	&:hover {
+		background: $color;
+	}
+}
+
 %button {
 	border-radius: 3px;
 	padding: 1em;
