@@ -19,6 +19,13 @@ h3 {
 	font-weight: 300;
 }
 
+a {
+	color: $color-link-primary;
+	&:hover {
+		color: darken($color-link-primary, 20%);
+	}
+}
+
 .title-page h1 {
 	line-height: 1;
 	@include font-size(28px);
