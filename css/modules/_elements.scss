@@ -12,6 +12,9 @@
 	padding: 1em;
 	text-align: center;
 	width: 100%;
+	&:hover {
+		color: $color-text--light;
+	}
 }
 
 @mixin gradient-blue {

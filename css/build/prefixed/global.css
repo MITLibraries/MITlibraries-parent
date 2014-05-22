@@ -22,6 +22,9 @@
   text-align: center;
   width: 100%;
 }
+.button:hover {
+  color: white;
+}
 
 .gldp-default {
   background: transparent;
