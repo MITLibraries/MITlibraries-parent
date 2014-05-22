@@ -3,6 +3,7 @@
 	.hours-locations {
 		h2 {
 			color: $color-hours-locations;
+			text-align: center;
 		}
 		.button-primary {
 			@include color-button-primary($color-hours-locations);
@@ -11,6 +12,7 @@
 	.news-events {
 		h2 {
 			color: $color-news-events;
+			text-align: center;
 		}
 		.button-primary {
 			@include color-button-primary($color-news-events);
@@ -19,6 +21,7 @@
 	.guides-experts {
 		h2 {
 			color: $color-guides-experts;
+			text-align: center;
 		}
 		.button-primary {
 			@include color-button-primary($color-guides-experts);

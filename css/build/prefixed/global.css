@@ -4278,6 +4278,7 @@ h3 {
 
 .home .hours-locations h2 {
   color: #43926a;
+  text-align: center;
 }
 .home .hours-locations .button-primary {
   background: #43926a;
@@ -4287,6 +4288,7 @@ h3 {
 }
 .home .news-events h2 {
   color: #f58632;
+  text-align: center;
 }
 .home .news-events .button-primary {
   background: #f58632;
@@ -4296,6 +4298,7 @@ h3 {
 }
 .home .guides-experts h2 {
   color: #9c3273;
+  text-align: center;
 }
 .home .guides-experts .button-primary {
   background: #9c3273;
