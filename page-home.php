@@ -47,8 +47,16 @@
 	</div>
 	<div class="guides-experts">
 		<h2>Research Guides &amp; Experts</h2>
-		<p>Specialized guides for every research interest.</p>
-		<p>Not sure where to start?<a href="/ask">Ask Us</a></p>
+		<p class="caption">Specialized guides for every research interest.</p>
+		<p class="caption">Not sure where to start?<a href="/ask">Ask Us</a></p>
+		<a href="" class="button">Astronomy</a>
+		<a href="" class="button">Music</a>
+		<a href="" class="button">Real Estate</a>
+		<a href="" class="button">Environmental Engineering</a>
+		<a href="" class="button">Medicine</a>
+		<a href="" class="button">Physics</a>
+		<a href="" class="button">Women and Gender Studies</a>
+		<a href="" class="button">All 125 Guides</a>
 	</div>
 
 <?php 
