@@ -43,6 +43,13 @@
 			<div class="item-image"></div>
 		</div>
 		<div class="item-2">
+			<div class="spinner">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+			</div>
 			<h3></h3>
 			<div class="item-image"></div>
 		</div>
@@ -50,10 +57,16 @@
 			$.get('/news', function(data) {
 				var newsItem1 = $(data).find('.post[data-post-number="0"] h2').text();
 				var newsItem2 = $(data).find('.post[data-post-number="1"] h2').text();
-				$('.item-1 h3').append(newsItem1);
-				$('.item-2 h3').append(newsItem2);
+				$('.item-1 h3').append(newsItem1).trigger('newsLoaded1');
+				$('.item-2 h3').append(newsItem2).trigger('newsLoaded2');
 				$('.item-1 .item-image').load('/news .post[data-post-number="0"] img');
 				$('.item-2 .item-image').load('/news .post[data-post-number="1"] img');
+			});
+			$('.item-1').on('newsLoaded1', function(){
+				$('.item-1 .spinner').hide();
+			});
+			$('.item-2').on('newsLoaded2', function(){
+				$('.item-2 .spinner').hide();
 			});
 		</script>
 		<a href="/news" class="button-primary">All News &amp; Events</a>
