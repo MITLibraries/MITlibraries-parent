@@ -31,6 +31,18 @@
 	</div>
 	<div class="news-events">
 		<h2>News &amp; Events</h2>
+		<div class="item-1"><h3></h3></div>
+		<div class="item-2"><h3></h3></div>
+		<script>
+			$.get('/news', function(data) {
+				var newsItem1 = $(data).find('h2[data-post-number="0"]').text();
+				var newsItem2 = $(data).find('h2[data-post-number="1"]').text();
+				$('.item-1 h3').append(newsItem1);
+				$('.item-2 h3').append(newsItem2);
+			});
+			// $('.item-1').load('/news h2[data-post-number="0"]');
+			// $('.item-2').load('/news h2[data-post-number="1"]');
+		</script>
 	</div>
 	<div class="guides-experts">
 		<h2>Research Guides &amp; Experts</h2>
