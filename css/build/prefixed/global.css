@@ -3747,6 +3747,10 @@ h3 {
   font-size: 1.75rem;
 }
 
+.caption {
+  color: #7b7b7b;
+}
+
 .header-main {
   background: #333333;
   font-size: 14px;
