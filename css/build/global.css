@@ -4427,5 +4427,11 @@ svg {
   display: inline-block;
 }
 .footer-main .social [class*="icon-social"] {
-  width: 1.5em;
+  background: #eeeeee;
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 2.5em;
+}
+.footer-main .social [class*="icon-social"] path {
+  fill: #474747;
 }
