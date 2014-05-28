@@ -519,59 +519,7 @@ ul.checklist li {
 	margin-left: 20px;
 	width: 135px !important;
 }
-#socialFooter {
-	position: absolute;
-	top: 20px;
-	right: 17px;
-	text-align: right;
-	line-height: 17px;
-}
 
-.social {
-	display: inline-block;
-	width: 17px;
-	height: 17px;
-	text-align: left;
-	text-indent: -9999px;
-	background-image: url(#{$imagesPath}/social-icons.png);
-	background-repeat: no-repeat;
-	margin-left: 2px;
-}
-
-#twitter {
-	background-position: -0px 0px;
-}
-
-#facebook {
-	background-position: -20px 0px;
-}
-
-#rss {
-	background-position: -40px 0px;
-}
-
-#flickr {
-	background-position: -60px 0px;
-}
-
-#foursquare {
-	background-position: -80px 0px;
-}
-
-#google {
-	background-position: -100px 0px;
-}
-
-#mitLogo {
-	display: block;
-	float: left;
-	width: 170px;
-	height: 39px;
-	position: relative;
-	margin: 25px 0 0 20px;
-	text-indent: -9999px;
-	background: transparent url(#{$imagesPath}/logo-mit.png) no-repeat;
-}
 
 footer {
 	margin-top: 25px;
