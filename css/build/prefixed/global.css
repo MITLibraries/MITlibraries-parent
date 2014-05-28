@@ -3716,6 +3716,11 @@ a:hover {
   font-size: 0.875em;
 }
 
+svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 .header-main {
   background: #333333;
   font-size: 14px;
