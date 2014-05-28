@@ -25,12 +25,59 @@
 				</a>
 			</div>
 		</div><!-- end div.identity -->
+		<div class="links-all flex-container">
+			<div class="flex-item">
+				<h4><a href="">Search</a></h4>
+				<a href="" class="link-sub">BartonPlus</a>
+				<a href="" class="link-sub">Barton catalog</a>
+				<a href="" class="link-sub">Vera: Databases &amp; e-journals</a>
+				<a href="" class="link-sub">MIT's WorldCat</a>
+				<a href="" class="link-sub">Course reserves</a>
+				<a href="" class="link-sub">Site search</a>
+				<a href="" class="link-sub">More search options</a>
+			</div>
+			<div class="flex-item">
+				<h4><a href="">Hours &amp; Locations</a></h4>
+				<a href="" class="link-sub">Hours</a>
+				<a href="" class="link-sub">List of locations</a>
+				<a href="" class="link-sub">Study spaces</a>
+				<a href="" class="link-sub">Exhibits &amp; galleries</a>
+				<a href="" class="link-sub">Map</a>
+			</div>
+			<div class="flex-item">
+				<h4><a href="">Borrow &amp; Request</a></h4>
+				<a href="" class="link-sub">Your Account</a>
+				<a href="" class="link-sub">Get it: options for getting books &amp; articles</a>
+				<a href="" class="link-sub">Circulation FAQ</a>
+				<a href="" class="link-sub">Reserves &amp; TIP FAQ</a>
+				<a href="" class="link-sub">Visit non-MIT libraries</a>
+				<a href="" class="link-sub">More borrow &amp; request options</a>
+			</div>
+			<div class="flex-item">
+				<h4><a href="">Research &amp; Support</a></h4>
+				<a href="" class="link-sub">Ask Us!</a>
+				<a href="" class="link-sub">Research guides &amp; expert librarians</a>
+				<a href="" class="link-sub">Tools for your research</a>
+				<a href="" class="link-sub">Scholarly publishing</a>
+				<a href="" class="link-sub">Citation software</a>
+				<a href="" class="link-sub">More research support options</a>
+			</div>
+			<div class="flex-item">
+				<h4><a href="">About Us</a></h4>
+				<a href="" class="link-sub">Staﬀ directory</a>
+				<a href="" class="link-sub">News</a>
+				<a href="" class="link-sub">Calendar of events</a>
+				<a href="" class="link-sub">Guidelines for use</a>
+				<a href="" class="link-sub">Services A-Z</a>
+				<a href="" class="link-sub">More about us</a>
+			</div>
+		</div>
 		<div class="links-primary">
-			<a href="">Faculty</a>
-			<a href="">Alumni</a>
-			<a href="">Visitors</a>
-			<a href="">Giving</a>
-			<a href="">Persons with Disabilities</a>
+			<a href="" class="link-sub">Faculty</a>
+			<a href="" class="link-sub">Alumni</a>
+			<a href="" class="link-sub">Visitors</a>
+			<a href="" class="link-sub">Giving</a>
+			<a href="" class="link-sub">Persons with Disabilities</a>
 		</div>
 	</footer>
 
