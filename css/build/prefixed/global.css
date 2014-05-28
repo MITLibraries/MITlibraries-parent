@@ -4429,6 +4429,9 @@ svg {
 .footer-main {
   background: #474747;
 }
+.footer-main a {
+  color: #ebebeb;
+}
 .footer-main .social a {
   display: inline-block;
 }
