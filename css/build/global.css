@@ -4429,6 +4429,12 @@ svg {
 .footer-main a {
   color: #ebebeb;
 }
+.footer-main .links-primary {
+  font-size: 0.8125em;
+}
+.footer-main .links-primary a {
+  display: block;
+}
 .footer-main .social a {
   display: inline-block;
 }
