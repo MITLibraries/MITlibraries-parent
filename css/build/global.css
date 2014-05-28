@@ -4426,6 +4426,11 @@ svg {
 .footer-main {
   background: #474747;
 }
+@media only screen and (min-width: 769px) {
+  .footer-main {
+    background: #333333;
+  }
+}
 .footer-main a {
   color: #ebebeb;
 }
