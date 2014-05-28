@@ -6,6 +6,19 @@
 	a {
 		color: $color-secondary;
 	}
+	.links-all {
+		display: none;
+		@include bp-tablet--portrait {
+			display: flex;
+		}
+		.flex-item {
+			margin-right: 2em;
+		}
+		.link-sub {
+			display: block;
+			font-size: 0.75em;
+		}
+	}
 	.links-primary {
 		font-size: 0.8125em;
 		a {

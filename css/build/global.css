@@ -4434,6 +4434,21 @@ svg {
 .footer-main a {
   color: #ebebeb;
 }
+.footer-main .links-all {
+  display: none;
+}
+@media only screen and (min-width: 569px) {
+  .footer-main .links-all {
+    display: flex;
+  }
+}
+.footer-main .links-all .flex-item {
+  margin-right: 2em;
+}
+.footer-main .links-all .link-sub {
+  display: block;
+  font-size: 0.75em;
+}
 .footer-main .links-primary {
   font-size: 0.8125em;
 }
