@@ -4,6 +4,11 @@
  */
 ?>
 
+	<footer class="footer-main">
+	</footer>
+	
+</div><!-- end div.wrap-page -->
+
 <?php wp_footer(); ?>
 
 </body>
