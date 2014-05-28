@@ -4426,6 +4426,9 @@ svg {
     -webkit-transform: scaleY(1);
   }
 }
+.footer-main {
+  background: #474747;
+}
 .footer-main .social a {
   display: inline-block;
 }
