@@ -4426,3 +4426,9 @@ svg {
     -webkit-transform: scaleY(1);
   }
 }
+.footer-main .social a {
+  display: inline-block;
+}
+.footer-main .social [class*="icon-social"] {
+  width: 1.5em;
+}

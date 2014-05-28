@@ -1,0 +1,10 @@
+.footer-main {
+	.social {
+		a {
+			display: inline-block;
+		}
+		[class*="icon-social"] {
+			width: 1.5em;
+		}
+	}
+}
