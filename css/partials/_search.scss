@@ -1,5 +1,11 @@
 .search--lib-resources {
 	@include gradient-blue;
+	input {
+		display: none;
+		&.active {
+			display: inline;
+		}
+	}
 	select {
 		background: $color-background--option;
 		width: 100%;
