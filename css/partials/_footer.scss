@@ -1,5 +1,8 @@
 .footer-main {
 	background: lighten($color-primary, 7.8431%);
+	@include bp-large {
+		background: $color-primary;
+	}
 	a {
 		color: $color-secondary;
 	}
