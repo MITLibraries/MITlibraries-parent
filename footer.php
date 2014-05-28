@@ -24,7 +24,14 @@
 					<svg class="icon-social--flickr" width="2048" height="2048" viewBox="-320 -384 2048 2048" enable-background="new 0 -128 1536 1536" xml:space="preserve"><path d="M698 640c0-58.7-20.7-108.7-62-150s-91.3-62-150-62 -108.7 20.7-150 62 -62 91.3-62 150 20.7 108.7 62 150 91.3 62 150 62 108.7-20.7 150-62S698 698.7 698 640zM1262 640c0-58.7-20.7-108.7-62-150s-91.3-62-150-62 -108.7 20.7-150 62 -62 91.3-62 150 20.7 108.7 62 150 91.3 62 150 62 108.7-20.7 150-62S1262 698.7 1262 640z"/></svg>
 				</a>
 			</div>
-	</div>
+		</div><!-- end div.identity -->
+		<div class="links-primary">
+			<a href="">Faculty</a>
+			<a href="">Alumni</a>
+			<a href="">Visitors</a>
+			<a href="">Giving</a>
+			<a href="">Persons with Disabilities</a>
+		</div>
 	</footer>
 
 </div><!-- end div.wrap-page -->

@@ -1,5 +1,8 @@
 .footer-main {
 	background: lighten($color-primary, 7.8431%);
+	a {
+		color: $color-secondary;
+	}
 	.social {
 		a {
 			display: inline-block;
