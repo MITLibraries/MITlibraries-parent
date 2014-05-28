@@ -3,6 +3,12 @@
 	a {
 		color: $color-secondary;
 	}
+	.links-primary {
+		font-size: 0.8125em;
+		a {
+			display: block;
+		}
+	}
 	.social {
 		a {
 			display: inline-block;
