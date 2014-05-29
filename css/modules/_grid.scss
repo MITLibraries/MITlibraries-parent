@@ -1,4 +1,5 @@
 @mixin span-12-12 {
+	clear: both;
 	width: 100%;
 	@include bp-tablet--portrait {
 		width: 100%;
