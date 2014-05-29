@@ -2,6 +2,13 @@
 	 box-sizing: border-box;
 }
 
+// Clearfix
+.group:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
 // Grid System
 
 [class*="col-"] {
