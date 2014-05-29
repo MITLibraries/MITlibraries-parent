@@ -3548,6 +3548,7 @@ svg {
 
 .header-main {
   background: #333333;
+  clear: both;
   width: 100%;
   font-size: 14px;
   font-size: 0.875rem;
@@ -4104,6 +4105,15 @@ svg {
 .home .news-events .button-primary:hover {
   background: #b85509;
 }
+.home .guides-experts {
+  width: 100%;
+}
+@media only screen and (min-width: 569px) {
+  .home .guides-experts {
+    float: left;
+    width: 66.04%;
+  }
+}
 .home .guides-experts h2 {
   color: #9c3273;
   text-align: center;
@@ -4270,6 +4280,7 @@ svg {
 }
 .footer-main {
   background: #474747;
+  clear: both;
   width: 100%;
 }
 @media only screen and (min-width: 769px) {
