@@ -2,6 +2,7 @@
 .home {
 	.hours-locations {
 		@include span-4-12;
+		@include span-first-child;
 		h2 {
 			color: $color-hours-locations;
 			text-align: center;

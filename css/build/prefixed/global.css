@@ -4065,7 +4065,13 @@ svg {
 @media only screen and (min-width: 569px) {
   .home .hours-locations {
     float: left;
+    margin-left: 1.875%;
     width: 32.08%;
+  }
+}
+@media only screen and (min-width: 569px) {
+  .home .hours-locations {
+    margin-left: 0;
   }
 }
 .home .hours-locations h2 {
@@ -4084,6 +4090,7 @@ svg {
 @media only screen and (min-width: 569px) {
   .home .news-events {
     float: left;
+    margin-left: 1.875%;
     width: 66.04%;
   }
 }
@@ -4107,6 +4114,7 @@ svg {
 @media only screen and (min-width: 569px) {
   .home .guides-experts {
     float: left;
+    margin-left: 1.875%;
     width: 66.04%;
   }
 }
