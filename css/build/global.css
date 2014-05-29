@@ -4062,6 +4062,14 @@ svg {
   }
 }
 
+.home .hours-locations {
+  width: 100%;
+}
+@media only screen and (min-width: 569px) {
+  .home .hours-locations {
+    width: 32.08%;
+  }
+}
 .home .hours-locations h2 {
   color: #43926a;
   text-align: center;

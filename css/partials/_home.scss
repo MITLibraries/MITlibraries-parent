@@ -1,6 +1,7 @@
 // A lot this--colors especially--could probably be better handles with a function or two.
 .home {
 	.hours-locations {
+		@include span-4-12;
 		h2 {
 			color: $color-hours-locations;
 			text-align: center;
