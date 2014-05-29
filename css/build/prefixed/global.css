@@ -4255,10 +4255,16 @@ svg {
 }
 .footer-main {
   background: #474747;
+  width: 100%;
 }
 @media only screen and (min-width: 769px) {
   .footer-main {
     background: #333333;
+  }
+}
+@media only screen and (min-width: 569px) {
+  .footer-main {
+    width: 100%;
   }
 }
 .footer-main a {

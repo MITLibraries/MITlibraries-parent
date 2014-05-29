@@ -3,6 +3,7 @@
 	@include bp-large {
 		background: $color-primary;
 	}
+	@include span-12-12;
 	a {
 		color: $color-secondary;
 	}
