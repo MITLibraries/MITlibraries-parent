@@ -68,7 +68,7 @@
         <a href="/getit">Get it: understand your options</a>
         <a href="http://libguides.mit.edu/circfaq">Circulation FAQ: fines, renewing, etc.</a>
         <a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
-        <a href="/ordering/non-mit-access/index.html">Visit non-MIT libraries: Harvard, Boston Library Consortium, etc.</a>
+        <a href="/otherlibraries">Visit non-MIT libraries: Harvard, Boston Library Consortium, etc.</a>
       </div>
       <div class="bottom flex-clear">
         <a href="/borrow">More borrow &amp; request options</a>
