@@ -2,17 +2,21 @@
 	get_header();
 ?>
 
-	<div class="search--lib-resources">
+	<div id="search-main" class="search--lib-resources">
 		<h2>Search in</h2>
-		<select name="" id="">
-			<option value="">Option #1</option>
-			<option value="">Option #2</option>
-			<option value="">Option #3</option>
-			<option value="">Option #4</option>
-			<option value="">Option #5</option>
+		<select name="" id="resource">
+			<option value="option-1">Resource #1</option>
+			<option value="option-2">Resource #2</option>
+			<option value="option-3">Resource #3</option>
+			<option value="option-4">Resource #4</option>
+			<option value="option-5">Resource #5</option>
 		</select>
 		<label>for</label>
-		<input type="text">
+		<input type="text" class="option-1 active" placeholder="Resource #1">
+		<input type="text" class="option-2" placeholder="Resource #2">
+		<input type="text" class="option-3" placeholder="Resource #3">
+		<input type="text" class="option-4" placeholder="Resource #4">
+		<input type="text" class="option-5" placeholder="Resource #5">
 		<label>by</label>
 		<select name="" id="">
 			<option value="">Option #1</option>
@@ -21,6 +25,15 @@
 			<option value="">Option #4</option>
 			<option value="">Option #5</option>
 		</select>
+		<script>
+			
+			$('#resource').change(function(){
+				$('#search-main input').removeClass('active');
+				var resourceOption = $('#resource option:selected').val();
+				$('#search-main input.'+resourceOption).addClass('active');
+			});
+			
+		</script>
 	</div>
 	<div class="hours-locations">
 		<h2>Hours &amp; Locations</h2>
