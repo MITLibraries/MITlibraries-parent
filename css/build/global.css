@@ -3427,59 +3427,6 @@ you can use the generic selector below, but it's slower:
   display: table;
 }
 
-[class*="span-"] {
-  width: 100%;
-}
-
-@media only screen and (min-width: 769px) {
-  .span-12-12 {
-    width: 100%;
-  }
-
-  .span-11-12 {
-    width: 91.51%;
-  }
-
-  .span-10-12 {
-    width: 83.02%;
-  }
-
-  .span-9-12 {
-    width: 74.53%;
-  }
-
-  .span-8-12 {
-    width: 66.04%;
-  }
-
-  .span-7-12 {
-    width: 57.55%;
-  }
-
-  .span-6-12 {
-    width: 49.06%;
-  }
-
-  .span-5-12 {
-    width: 40.57%;
-  }
-
-  .span-4-12 {
-    width: 32.08%;
-  }
-
-  .span-3-12 {
-    width: 23.59%;
-  }
-
-  .span-2-12 {
-    width: 15.10%;
-  }
-
-  .span-1-12 {
-    width: 6.614%;
-  }
-}
 .wrap-page {
   border-top: 8px solid red;
   margin: 0 auto;
