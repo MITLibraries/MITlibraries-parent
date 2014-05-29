@@ -4076,6 +4076,14 @@ svg {
 .home .hours-locations .button-primary:hover {
   background: #234c37;
 }
+.home .news-events {
+  width: 100%;
+}
+@media only screen and (min-width: 569px) {
+  .home .news-events {
+    width: 66.04%;
+  }
+}
 .home .news-events h2 {
   color: #f58632;
   text-align: center;

@@ -11,6 +11,7 @@
 		}
 	}
 	.news-events {
+		@include span-8-12;
 		h2 {
 			color: $color-news-events;
 			text-align: center;
