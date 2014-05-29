@@ -1,5 +1,6 @@
 .header-main {
 	background: $color-background--dark;
+	@include span-12-12;
 	.logo-mit-lib {
 		background: url(#{$imagesPath}/logo.png) no-repeat;
 		display: block;
