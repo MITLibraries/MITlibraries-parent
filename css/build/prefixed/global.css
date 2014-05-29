@@ -845,10 +845,6 @@ ul.checklist li {
   width: 700px;
 }
 
-.page-template-page-location-php .tabcontent .span3 {
-  width: 359px;
-}
-
 .tabcontent .tab .row .first {
   border-right: 1px solid #ccc;
   padding-right: 10px;
@@ -984,10 +980,6 @@ ul.arrows li,
   float: right;
   width: 350px;
   line-height: 18px;
-}
-
-.span7 .sideContent {
-  width: 210px;
 }
 
 .sideContent p {
@@ -3422,56 +3414,56 @@ you can use the generic selector below, but it's slower:
   display: table;
 }
 
-[class*="col-"] {
+[class*="span-"] {
   width: 100%;
 }
 
 @media only screen and (min-width: 769px) {
-  .col-12-12 {
+  .span-12-12 {
     width: 100%;
   }
 
-  .col-11-12 {
+  .span-11-12 {
     width: 91.51%;
   }
 
-  .col-10-12 {
+  .span-10-12 {
     width: 83.02%;
   }
 
-  .col-9-12 {
+  .span-9-12 {
     width: 74.53%;
   }
 
-  .col-8-12 {
+  .span-8-12 {
     width: 66.04%;
   }
 
-  .col-7-12 {
+  .span-7-12 {
     width: 57.55%;
   }
 
-  .col-6-12 {
+  .span-6-12 {
     width: 49.06%;
   }
 
-  .col-5-12 {
+  .span-5-12 {
     width: 40.57%;
   }
 
-  .col-4-12 {
+  .span-4-12 {
     width: 32.08%;
   }
 
-  .col-3-12 {
+  .span-3-12 {
     width: 23.59%;
   }
 
-  .col-2-12 {
+  .span-2-12 {
     width: 15.10%;
   }
 
-  .col-1-12 {
+  .span-1-12 {
     width: 6.614%;
   }
 }
