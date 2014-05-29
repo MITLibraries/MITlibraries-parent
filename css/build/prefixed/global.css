@@ -3918,6 +3918,8 @@ svg {
 }
 .search--lib-resources select {
   background: #ebf5ff;
+  font-size: 14px;
+  font-size: 0.875rem;
   width: 100%;
 }
 @media only screen and (min-width: 769px) {

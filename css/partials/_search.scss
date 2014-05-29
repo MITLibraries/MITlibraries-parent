@@ -12,6 +12,7 @@
 	}
 	select {
 		background: $color-background--option;
+		@include rem-first(font-size, 0.875);
 		width: 100%;
 		@include bp-large {
 			width: auto;
