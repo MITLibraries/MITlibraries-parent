@@ -3892,6 +3892,7 @@ svg {
 }
 
 .search--lib-resources {
+  text-align: center;
   background: #6699cc;
   /* Old browsers */
   /* FF3.6+ */

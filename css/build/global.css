@@ -3893,6 +3893,7 @@ svg {
 }
 
 .search--lib-resources {
+  text-align: center;
   background: #6699cc;
   /* Old browsers */
   background: -moz-linear-gradient(45deg, #6699cc 0%, #3fa5ce 100%);
