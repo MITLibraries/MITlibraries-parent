@@ -1,5 +1,8 @@
 .search--lib-resources {
 	@include gradient-blue;
+	h2 {
+		display: inline-block;
+	}
 	input {
 		display: none;
 		&.active {
