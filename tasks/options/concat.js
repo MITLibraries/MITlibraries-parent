@@ -5,7 +5,8 @@ module.exports = {
       'js/core.js',
       'js/ga_links.js',
       'js/menu.toggle.js',
-      'js/libs/*.js'
+      'js/libs/*.js',
+      'js/make/*.js'
     ],
     dest: 'js/build/production.js'
   },
