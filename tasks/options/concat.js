@@ -4,7 +4,8 @@ module.exports = {
       'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
       'js/ga_links.js',
-      'js/menu.toggle.js'
+      'js/menu.toggle.js',
+      'js/libs/*.js'
     ],
     dest: 'js/build/production.js'
   },
