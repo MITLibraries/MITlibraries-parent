@@ -4337,6 +4337,7 @@ svg {
 .footer-main .social [class*="icon-social"] {
   background: #ebebeb;
   border-radius: 50%;
+  height: auto;
   padding: 0.5em;
   width: 2.5em;
 }
