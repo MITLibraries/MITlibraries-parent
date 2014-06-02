@@ -4,7 +4,7 @@
 
 	<div id="search-main" class="search--lib-resources">
 		<h2>Search in</h2>
-		<select name="" id="resource">
+		<select name="" id="resource" tabindex="2">
 			<option value="option-1">Resource #1</option>
 			<option value="option-2">Resource #2</option>
 			<option value="option-3">Resource #3</option>
@@ -12,13 +12,13 @@
 			<option value="option-5">Resource #5</option>
 		</select>
 		<label>for</label>
-		<input type="text" class="option-1 active" placeholder="Resource #1" autofocus="autofocus">
+		<input type="text" class="option-1 active" placeholder="Resource #1" autofocus="autofocus" tabindex="1">
 		<input type="text" class="option-2" placeholder="Resource #2">
 		<input type="text" class="option-3" placeholder="Resource #3">
 		<input type="text" class="option-4" placeholder="Resource #4">
 		<input type="text" class="option-5" placeholder="Resource #5">
 		<label>by</label>
-		<select name="" id="">
+		<select name="" id="" tabindex="3">
 			<option value="">Option #1</option>
 			<option value="">Option #2</option>
 			<option value="">Option #3</option>
