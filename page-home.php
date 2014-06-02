@@ -12,7 +12,7 @@
 			<option value="option-5">Resource #5</option>
 		</select>
 		<label>for</label>
-		<input type="text" class="option-1 active" placeholder="Resource #1">
+		<input type="text" class="option-1 active" placeholder="Resource #1" autofocus="autofocus">
 		<input type="text" class="option-2" placeholder="Resource #2">
 		<input type="text" class="option-3" placeholder="Resource #3">
 		<input type="text" class="option-4" placeholder="Resource #4">
