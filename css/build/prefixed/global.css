@@ -3567,8 +3567,10 @@ svg {
   height: 0;
   overflow: hidden;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 569px) {
   .nav-main {
+    height: auto;
+    width: auto;
     -webkit-transform: translateY(0%);
     transform: translateY(0%);
   }

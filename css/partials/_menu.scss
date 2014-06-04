@@ -1,7 +1,9 @@
 .nav-main {
   transform: translateY(-1000%);
   @include hidden-visually;
-  @include bp-large {
+  @include bp-tablet--portrait {
+    height: auto;
+    width: auto;
     transform: translateY(0%);
   }
 }
