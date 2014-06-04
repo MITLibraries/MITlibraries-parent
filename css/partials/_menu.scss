@@ -55,7 +55,6 @@
         color: white;
       }
       &:after {
-        @include downArrow(4px, black);
         @include bp-small {
           content: none;
         }
@@ -71,7 +70,6 @@
     &:after {
       @include rem-first (margin-left, 0.25);
       vertical-align: middle;
-      @include downArrow(4px, $color-text-accent-primary);
       @include bp-small {
         content: none;
       }

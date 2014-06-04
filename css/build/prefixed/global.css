@@ -3630,15 +3630,6 @@ svg {
     color: white;
   }
 }
-.link-primary > a:hover:after {
-  border-left: 4px solid transparent;
-  border-top: 4px solid black;
-  border-right: 4px solid transparent;
-  content: '';
-  display: inline-block;
-  height: 0;
-  width: 0;
-}
 @media only screen and (max-width: 320px) {
   .link-primary > a:hover:after {
     content: none;
@@ -3658,13 +3649,6 @@ svg {
   margin-left: 4px;
   margin-left: 0.25rem;
   vertical-align: middle;
-  border-left: 4px solid transparent;
-  border-top: 4px solid #004cbd;
-  border-right: 4px solid transparent;
-  content: '';
-  display: inline-block;
-  height: 0;
-  width: 0;
 }
 @media only screen and (max-width: 320px) {
   .link-primary > a:after {
