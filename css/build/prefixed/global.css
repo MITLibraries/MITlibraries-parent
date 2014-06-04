@@ -3561,6 +3561,11 @@ svg {
 .nav-main {
   -webkit-transform: translateY(-1000%);
   transform: translateY(-1000%);
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 @media only screen and (min-width: 769px) {
   .nav-main {

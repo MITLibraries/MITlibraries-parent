@@ -1,5 +1,6 @@
 .nav-main {
   transform: translateY(-1000%);
+  @include hidden-visually;
   @include bp-large {
     transform: translateY(0%);
   }
