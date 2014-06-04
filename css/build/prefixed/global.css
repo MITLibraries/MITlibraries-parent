@@ -3864,7 +3864,6 @@ svg {
 .menu--toggle {
   color: #858585;
   cursor: pointer;
-  display: none;
   font-size: 16px;
   font-size: 1rem;
   -webkit-box-ordinal-group: 2;
@@ -3873,9 +3872,9 @@ svg {
   order: 1;
   text-align: center;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 569px) {
   .menu--toggle {
-    display: block;
+    display: none;
   }
 }
 

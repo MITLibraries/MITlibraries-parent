@@ -269,11 +269,10 @@
 .menu--toggle {
   color: darken($color-secondary, 40%);
   cursor: pointer;
-  display: none;
   @include font-size(16px);
   order: 1;
   text-align: center;
-  @include bp-small {
-    display: block;
+  @include bp-tablet--portrait {
+    display: none;
   }
 }
