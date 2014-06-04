@@ -3870,7 +3870,6 @@ svg {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  text-align: center;
 }
 @media only screen and (min-width: 569px) {
   .menu--toggle {

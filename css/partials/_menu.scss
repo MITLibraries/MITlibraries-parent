@@ -271,7 +271,6 @@
   cursor: pointer;
   @include font-size(16px);
   order: 1;
-  text-align: center;
   @include bp-tablet--portrait {
     display: none;
   }
