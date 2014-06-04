@@ -3573,6 +3573,15 @@ svg {
   height: 0;
   overflow: hidden;
 }
+.nav-main.active {
+  background: red;
+  height: auto;
+  flex: none;
+  position: fixed;
+  transform: translateY(0%);
+  top: 0;
+  width: 100%;
+}
 @media only screen and (min-width: 569px) {
   .nav-main {
     height: auto;

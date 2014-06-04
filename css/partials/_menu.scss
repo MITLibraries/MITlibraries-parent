@@ -1,5 +1,14 @@
 .nav-main {
   transform: translateY(-1000%);
+  &.active {
+    background: red;
+    height: auto;
+    flex: none;
+    position: fixed;
+    transform: translateY(0%);
+    top: 0;
+    width: 100%;
+  }
   @include hidden-visually;
   @include bp-tablet--portrait {
     height: auto;

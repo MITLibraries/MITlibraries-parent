@@ -82,6 +82,12 @@
 	</footer>
 
 </div><!-- end div.wrap-page -->
+<script>
+	$('header .menu--toggle').click(function(){
+		$('#nav-main').toggleClass('active');
+		$('.wrap-page').toggleClass('mobile-nav-active');
+	});
+</script>
 
 <?php wp_footer(); ?>
 
