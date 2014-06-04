@@ -3561,6 +3561,10 @@ svg {
     display: block;
   }
 }
+.header-main .name-site {
+  float: left;
+  width: 6.4375em;
+}
 
 .nav-main {
   -webkit-transform: translateY(-1000%);
