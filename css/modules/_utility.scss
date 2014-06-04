@@ -90,15 +90,12 @@ $font-body: 'Open Sans', sans-serif;
 	}
 }
 
-%visuallyhidden {
-  margin: -1px;
+@mixin hidden-visually {
+  margin: 0;
   padding: 0;
-  width: 1px;
-  height: 1px;
+  width: 0;
+  height: 0;
   overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
 }
 
 @mixin image-replacement {
