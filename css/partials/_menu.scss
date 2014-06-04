@@ -3,6 +3,7 @@
   @include hidden-visually;
   @include bp-tablet--portrait {
     height: auto;
+    order: 3;
     width: auto;
     transform: translateY(0%);
   }

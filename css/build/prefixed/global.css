@@ -3570,6 +3570,10 @@ svg {
 @media only screen and (min-width: 569px) {
   .nav-main {
     height: auto;
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
     width: auto;
     -webkit-transform: translateY(0%);
     transform: translateY(0%);
