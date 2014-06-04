@@ -2,19 +2,13 @@
 	background: $color-background--dark;
 	@include span-12-12;
 	.logo-mit-lib {
-		background: url(#{$imagesPath}/logo.png) no-repeat;
-		display: block;
-		float: left;
-		height: 56px;
-		margin-left: $margin-left;
-		width: 132px;
+		fill: $color-text--light;
 		@include image-replacement;
-		@include bp-small {
-			background-size: 110px 44px;
-			height: 44px;
-			margin-left: 0;
-			width: 110px;
+		.arch {
+			display: none;
+			@include bp-tablet--portrait {
+				display: block;
+			}
 		}
 	}
-	@include font-size(14px);
 }

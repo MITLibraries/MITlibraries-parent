@@ -3540,8 +3540,6 @@ svg {
   background: #333333;
   clear: both;
   width: 100%;
-  font-size: 14px;
-  font-size: 0.875rem;
 }
 @media only screen and (min-width: 569px) {
   .header-main {
@@ -3549,23 +3547,18 @@ svg {
   }
 }
 .header-main .logo-mit-lib {
-  background: url(/wp-content/themes/libraries/images/logo.png) no-repeat;
-  display: block;
-  float: left;
-  height: 56px;
-  margin-left: 20px;
-  width: 132px;
+  fill: white;
   border: 0;
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
-@media only screen and (max-width: 320px) {
-  .header-main .logo-mit-lib {
-    background-size: 110px 44px;
-    height: 44px;
-    margin-left: 0;
-    width: 110px;
+.header-main .logo-mit-lib .arch {
+  display: none;
+}
+@media only screen and (min-width: 569px) {
+  .header-main .logo-mit-lib .arch {
+    display: block;
   }
 }
 
