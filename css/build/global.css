@@ -3572,6 +3572,7 @@ svg {
   }
 }
 .header-main .name-site {
+  order: 2;
   width: 6.4375em;
 }
 
@@ -3864,6 +3865,7 @@ svg {
   display: none;
   font-size: 16px;
   font-size: 1rem;
+  order: 1;
   text-align: center;
 }
 @media only screen and (max-width: 320px) {
