@@ -551,10 +551,6 @@ h2.bigHead {
   color: #666;
 }
 
-.sidebarWidgets {
-  background: #ede8e2;
-}
-
 .widgetButton {
   display: block;
   margin: 0 0 10px 0;
@@ -4206,6 +4202,10 @@ you can use the generic selector below, but it's slower:
   .title-page .icon-rss {
     display: none;
   }
+}
+
+.sidebar .widget {
+  background: #ede8e2;
 }
 
 .maintenance .name-site {
