@@ -4150,7 +4150,7 @@ you can use the generic selector below, but it's slower:
 
 .sidebar .widget {
   background: #ede8e2;
-  border-bottom: 3px solid #c6b6a3;
+  border-bottom: 2px solid #c6b6a3;
   padding: 20px;
 }
 .sidebar .widget:last-of-type {

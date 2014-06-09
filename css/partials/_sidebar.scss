@@ -1,7 +1,7 @@
 .sidebar {
 	.widget {
 		background: $color-background--widget;
-		border-bottom: 3px solid darken($color-background--widget, 20%);
+		border-bottom: 2px solid darken($color-background--widget, 20%);
 		padding: 20px;
 		&:last-of-type {
 			border-bottom: none;
