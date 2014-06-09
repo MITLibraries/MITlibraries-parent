@@ -29,7 +29,7 @@ get_header(); ?>
 			&raquo; <?php showBreadTitle(); ?>
 		</div>
 
-		<div id="stage" class="inner thinSidebar row" role="main">
+		<div id="stage" class="inner row" role="main">
 			<div class="title span12">
 				<h1>Locations</h1>
 				<div class="extraInfo">

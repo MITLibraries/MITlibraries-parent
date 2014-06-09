@@ -86,7 +86,7 @@ $thisWeek = date("Y-n-j");
  ?>
 
 
-<div id="stage" class="inner thinSidebar hours group" role="main">
+<div id="stage" class="inner hours group" role="main">
 
 	<div class="title libraryTitle">
 
