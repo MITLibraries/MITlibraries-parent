@@ -734,11 +734,10 @@ if (!function_exists('better_breadcrumbs')) {
 	    $pageTitle = get_the_title($post);
 	    $pageLink = get_permalink($post);
 	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
-	  }
 
-	  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
-	  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
-
+		  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
+		  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
+		}
 	}
 
 	add_action('after_setup_theme', 'better_breadcrumbs');
