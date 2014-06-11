@@ -16,4 +16,4 @@ npm-debug.log
 
 .sass-cache
 
-css/build
+css/build/*
