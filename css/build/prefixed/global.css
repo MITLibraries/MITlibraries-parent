@@ -4167,6 +4167,10 @@ you can use the generic selector below, but it's slower:
   margin-left: 15px;
 }
 
+.ie8 .sidebar .widget {
+  display: block;
+}
+
 .maintenance .name-site {
   color: #ffcc33;
 }

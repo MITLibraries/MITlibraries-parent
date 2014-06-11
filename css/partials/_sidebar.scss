@@ -19,3 +19,7 @@
 		}
 	}
 }
+
+.ie8 .sidebar .widget {
+	display: block; // Fixes <aside> element non-capatability
+}
