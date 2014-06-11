@@ -2055,8 +2055,6 @@ var Core = {
 		Core.linkExpandable();
 		Core.linkTabs();
 		
-		Core.fixSidebar();
-		
 		Core.buildMap();
 		
 		Core.nullAlt();
@@ -2284,12 +2282,6 @@ var Core = {
 	
 	hideMap: function() {
 		$("#map").slideUp(200);
-	},
-	
-	fixSidebar: function() {
-		$(".sidebarWidgets").each(function() {
-			$(this).find(".widget:last").toggleClass("lastWidget", true);
-		});
 	},
 	
 	linkTabs: function() {

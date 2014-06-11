@@ -505,10 +505,6 @@ h2.bigHead {
   margin-top: 50px;
 }
 
-.thinSidebar #mainContent {
-  /*width: 720px;*/
-}
-
 .column3 #mainContent {
   /*width: 540px;*/
 }
@@ -531,10 +527,6 @@ h2.bigHead {
   /*width: 230px;*/
 }
 
-.thinSidebar #sidebarContent {
-  /*width: 170px !important;*/
-}
-
 .snav li, .pagenav ul li {
   list-style-image: url(/wp-content/themes/libraries/images/nav-arrow-blue.png);
   margin-left: 10px;
@@ -544,10 +536,6 @@ h2.bigHead {
 .snav li.active, .pagenav ul li.active {
   list-style-image: none;
   color: #666;
-}
-
-.sidebarWidgets {
-  background: #ede8e2;
 }
 
 .widgetButton {
@@ -573,39 +561,6 @@ h2.bigHead {
   color: #5c120d;
 }
 
-.widget {
-  padding: 20px 10px 20px 20px;
-  border-bottom: 5px solid #d2ccc4;
-}
-
-.lastWidget {
-  border-bottom: none;
-}
-
-.thinSidebar .widget {
-  padding: 10px 5px 10px 10px;
-}
-
-.widget h2,
-.widget h3 {
-  color: #666666;
-  font-size: 16px;
-  line-height: 16px;
-  margin: 0 0 10px 0;
-}
-
-.thinSidebar .widget h2,
-.thinSidebar .widget h3 {
-  font-size: 14px;
-}
-
-.widget h4 {
-  font-weight: bold;
-  font-size: 18px;
-  margin: 20px 0 10px 0;
-  color: #000;
-}
-
 .study247 {
   text-indent: -9999px;
   display: block;
@@ -613,12 +568,6 @@ h2.bigHead {
   height: 30px;
   background: transparent url(/wp-content/themes/libraries/images/study247.png) no-repeat;
   margin: 0 0 5px 0;
-}
-
-.widget ul li {
-  list-style-image: url(/wp-content/themes/libraries/images/list-arrow-blue.png);
-  margin-left: 15px;
-  margin-bottom: 2px;
 }
 
 ul.checklist li {
@@ -1139,15 +1088,6 @@ ul.arrows li,
 
 .footerCol > h3 {
   color: #333;
-}
-
-.widget #s {
-  width: 90%;
-}
-
-.widget .widget-title {
-  text-transform: none;
-  color: #666;
 }
 
 .single-location #sidebarContent {
@@ -4204,6 +4144,27 @@ you can use the generic selector below, but it's slower:
   .title-page .icon-rss {
     display: none;
   }
+}
+
+.sidebar .widget {
+  background: #ede8e2;
+  border-bottom: 2px solid #c6b6a3;
+  padding: 20px;
+}
+.sidebar .widget:last-of-type {
+  border-bottom: none;
+}
+.sidebar .widget .widget-title {
+  color: #666666;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0 0 10px 0;
+}
+.sidebar .widget ul li {
+  list-style-image: url(/wp-content/themes/libraries/images/list-arrow-blue.png);
+  margin-bottom: 2px;
+  margin-left: 15px;
 }
 
 .maintenance .name-site {
