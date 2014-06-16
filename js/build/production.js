@@ -314,7 +314,11 @@ var Core = {
 		var loc, name, thisDay, msg;
 		loc = $('[data-location-hours]');
 		msg = "unavailable";
-		$.getJSON("/wp-content/themes/libraries/hours.json")
+		$.ajax({
+			cache: false,
+			url: "/wp-content/themes/libraries/hours.json",
+			dataType: "json"
+		})
 			.done(function (json) {
 				$.each(loc, function() {
 					// get the name of this library
