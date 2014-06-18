@@ -682,7 +682,7 @@ if (!function_exists('better_breadcrumbs')) {
 
 // Check for performance issues
 function no_post_limit( $query ) {
-  if ( is_home() ) {
+  if ( is_home() && !is_child_theme()) {
     // No post limit on homepage
     $query->set( 'posts_per_page', -1 );
     return;
