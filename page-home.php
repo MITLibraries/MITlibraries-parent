@@ -99,15 +99,35 @@
 		<a href="" class="button-secondary">Women and Gender Studies</a>
 		<a href="" class="button-primary">All 125 Guides</a>
 		<div class="expert">
-			<a href="" class="name"></a>
-			<span class="focus"></span>
 		</div>
 		<div class="expert">
-			<a href="" class="name"></a>
-			<span class="focus"></span>
 		</div>
 		<a href="" class="button-primary">All 27 Experts</a>
-	</div>
+		<script>
+			$.getJSON('/wp-json/posts?type=experts')
+				.done(function(data){
+					// Count the objects
+					var dataLength = data.length;
+					console.log(dataLength);
+					// Pick two random numbers from the data array
+					var randomImage1 = Math.round(Math.random()*dataLength);
+					var randomImage2 = Math.round(Math.random()*dataLength);
+					// Regenerate randomImage2 if it equals randomImage1
+					while (randomImage1 == randomImage2) {
+						randomImage2 = Math.round(Math.random()*dataLength);
+					}
+					console.log('object 1 is '+randomImage1+' and object 2 is '+randomImage2);
+					// Get the image URL
+					var expertPhoto1 = data[randomImage1].featured_image.guid;
+					var expertPhoto2 = data[randomImage2].featured_image.guid;
+					// Append expert image only if JSON request successful
+					$('.expert').append('<img class="expert-photo">');
+					// Add image URL to src attribute
+					$('.expert .expert-photo:first').attr('src', expertPhoto1);
+					$('.expert .expert-photo:last').attr('src', expertPhoto2);
+				});
+		</script>
+	</div><!-- end div.guides-experts -->
 
 <?php 
 	get_footer();
