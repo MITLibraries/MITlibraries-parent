@@ -679,3 +679,13 @@ if (!function_exists('better_breadcrumbs')) {
 
 	add_action('after_setup_theme', 'better_breadcrumbs');
 }
+
+// Check for performance issues
+function no_post_limit( $query ) {
+  if ( is_home() ) {
+    // No post limit on homepage
+    $query->set( 'posts_per_page', -1 );
+    return;
+  }
+}
+add_action( 'pre_get_posts', 'no_post_limit', 1 );
