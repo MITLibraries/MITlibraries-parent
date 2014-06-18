@@ -102,7 +102,7 @@
 		</div>
 		<div class="expert">
 		</div>
-		<a href="" class="button-primary">All 27 Experts</a>
+		<a href="" class="button-primary view-experts">All <span class="count"></span> Experts</a>
 		<script>
 			$.getJSON('/wp-json/posts?type=experts')
 				.done(function(data){
@@ -125,6 +125,8 @@
 					// Add image URL to src attribute
 					$('.expert .expert-photo:first').attr('src', expertPhoto1);
 					$('.expert .expert-photo:last').attr('src', expertPhoto2);
+					// Add the expert count to the "All Experts" button
+					$('.view-experts .count').text(dataLength);
 				});
 		</script>
 	</div><!-- end div.guides-experts -->
