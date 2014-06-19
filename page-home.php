@@ -102,29 +102,48 @@
 		</div>
 		<div class="expert">
 		</div>
+		<div class="expert hidden-mobile">
+		</div>
+		<div class="expert hidden-mobile">
+		</div>
 		<a href="" class="button-primary view-experts">All <span class="count"></span> Experts</a>
 		<script>
 			$.getJSON('/wp-json/posts?type=experts')
 				.done(function(data){
 					// Count the objects
 					var dataLength = data.length;
-					console.log(dataLength);
-					// Pick two random numbers from the data array
-					var randomImage1 = Math.round(Math.random()*dataLength);
-					var randomImage2 = Math.round(Math.random()*dataLength);
-					// Regenerate randomImage2 if it equals randomImage1
-					while (randomImage1 == randomImage2) {
-						randomImage2 = Math.round(Math.random()*dataLength);
+					var arr = [];
+					while(arr.length < 4){
+					  var randomNumber=Math.ceil(Math.random()*dataLength);
+					  var found=false;
+					  for(var i=0;i<arr.length;i++){
+					    if(arr[i]==randomNumber){found=true;break}
+					  }
+					  if(!found)arr[arr.length]=randomNumber;
 					}
-					console.log('object 1 is '+randomImage1+' and object 2 is '+randomImage2);
-					// Get the image URL
-					var expertPhoto1 = data[randomImage1].featured_image.guid;
-					var expertPhoto2 = data[randomImage2].featured_image.guid;
+					var expertPhoto1 = data[arr[0]].featured_image.guid;
+					var expertPhoto2 = data[arr[1]].featured_image.guid;
+					var expertPhoto3 = data[arr[2]].featured_image.guid;
+					var expertPhoto4 = data[arr[3]].featured_image.guid;
+
+					// Pick two random numbers from the data array
+					// var randomImage1 = Math.round(Math.random()*dataLength);
+					// var randomImage2 = Math.round(Math.random()*dataLength);
+					// // Regenerate randomImage2 if it equals randomImage1
+					// while (randomImage1 == randomImage2) {
+					// 	randomImage2 = Math.round(Math.random()*dataLength);
+					// }
+					// console.log('object 1 is '+randomImage1+' and object 2 is '+randomImage2);
+					// // Get the image URL
+					// var expertPhoto1 = data[randomImage1].featured_image.guid;
+					// var expertPhoto2 = data[randomImage2].featured_image.guid;
 					// Append expert image only if JSON request successful
 					$('.expert').append('<img class="expert-photo">');
 					// Add image URL to src attribute
-					$('.expert .expert-photo:first').attr('src', expertPhoto1);
-					$('.expert .expert-photo:last').attr('src', expertPhoto2);
+					$('.expert .expert-photo:eq(0)').attr('src', expertPhoto1);
+					$('.expert .expert-photo:eq(1)').attr('src', expertPhoto2);
+					$('.expert .expert-photo:eq(2)').attr('src', expertPhoto3);
+					$('.expert .expert-photo:eq(3)').attr('src', expertPhoto4);
 					// Add the expert count to the "All Experts" button
 					$('.view-experts .count').text(dataLength);
 				});
