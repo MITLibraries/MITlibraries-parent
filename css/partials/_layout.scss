@@ -77,3 +77,10 @@
 		float: left;
 	}
 }
+
+.hidden-mobile {
+	display: none;
+	@include bp-tablet--portrait {
+		display: block;
+	}
+}
