@@ -495,7 +495,7 @@
 						    <li><a href="/getit">Request from non-MIT libraries:</a> <a href="/ilb">ILB,</a> <a href="/ordering/borrowdirect.html">BorrowDirect</a></li>
 						    <li><a href="http://libguides.mit.edu/circfaq">Circulation FAQ</a></li>
 						    <li><a href="/reserves">Course reserves &amp; TIP FAQ</a></li>
-						    <li><a href="/ordering/non-mit-access/index.html">Visit non-MIT libraries:</a> <a href="/harvard"> Harvard,</a> <a href="/blc">BLC</a></li>
+						    <li><a href="/otherlibraries">Visit non-MIT libraries:</a> <a href="/harvard"> Harvard,</a> <a href="/blc">BLC</a></li>
 						    <li><a href="/suggest-purchase">Suggest a purchase</a></li>
 						    <li><a href="/borrow">More&#8230;</a></li>
 						  </ul>
