@@ -1,8 +1,17 @@
 // A lot this--colors especially--could probably be better handles with a function or two.
 .home {
-	.hours-locations {
+	.col-1 {
 		@include span-4-12;
-		@include span-first-child;
+	}
+	.col-2 {
+		@include span-8-12;
+	}
+	.content-main {
+		@include bp-small {
+			flex-wrap: wrap;
+		}
+	}
+	.hours-locations {
 		h2 {
 			color: $color-hours-locations;
 			text-align: center;
@@ -12,7 +21,6 @@
 		}
 	}
 	.news-events {
-		@include span-8-12;
 		h2 {
 			color: $color-news-events;
 			text-align: center;
@@ -25,7 +33,6 @@
 		}
 	}
 	.guides-experts {
-		@include span-8-12;
 		h2 {
 			color: $color-guides-experts;
 			text-align: center;
