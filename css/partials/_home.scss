@@ -36,8 +36,23 @@
 		.button-secondary {
 			@include color-button-secondary($color-guides-experts);
 		}
+		.expert {
+			width: 50%;
+			@include bp-tablet--portrait {
+				width: 25%;
+			}
+		}
 		.experts-group {
 			justify-content: space-between;
+		}
+		.expert-photo {
+			border-radius: 50%;
+			display: block;
+			margin: 0 auto;
+		}
+		.name {
+			display: block;
+			text-align: center;
 		}
 	}
 }

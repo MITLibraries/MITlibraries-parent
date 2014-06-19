@@ -4094,8 +4094,25 @@ svg {
 .home .guides-experts .button-secondary:hover {
   background: #9c3273;
 }
+.home .guides-experts .expert {
+  width: 50%;
+}
+@media only screen and (min-width: 569px) {
+  .home .guides-experts .expert {
+    width: 25%;
+  }
+}
 .home .guides-experts .experts-group {
   justify-content: space-between;
+}
+.home .guides-experts .expert-photo {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.home .guides-experts .name {
+  display: block;
+  text-align: center;
 }
 
 .rss-feed {
