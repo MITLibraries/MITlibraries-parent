@@ -4094,6 +4094,9 @@ svg {
 .home .guides-experts .button-secondary:hover {
   background: #9c3273;
 }
+.home .guides-experts .experts-group {
+  justify-content: space-between;
+}
 
 .rss-feed {
   font-size: 18px;

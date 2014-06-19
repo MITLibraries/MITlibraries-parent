@@ -98,13 +98,15 @@
 		<a href="" class="button-secondary">Physics</a>
 		<a href="" class="button-secondary">Women and Gender Studies</a>
 		<a href="" class="button-primary">All 125 Guides</a>
-		<div class="expert">
-		</div>
-		<div class="expert">
-		</div>
-		<div class="expert hidden-mobile">
-		</div>
-		<div class="expert hidden-mobile">
+		<div class="experts-group flex-container">
+			<div class="expert">
+			</div>
+			<div class="expert">
+			</div>
+			<div class="expert hidden-mobile">
+			</div>
+			<div class="expert hidden-mobile">
+			</div>
 		</div>
 		<a href="" class="button-primary view-experts">All <span class="count"></span> Experts</a>
 		<script>

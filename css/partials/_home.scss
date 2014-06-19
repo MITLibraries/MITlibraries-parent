@@ -36,5 +36,8 @@
 		.button-secondary {
 			@include color-button-secondary($color-guides-experts);
 		}
+		.experts-group {
+			justify-content: space-between;
+		}
 	}
 }
