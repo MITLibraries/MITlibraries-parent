@@ -39,7 +39,12 @@
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
 				<h2>Hours &amp; Locations</h2>
-				<?php get_template_part('inc/location', 'info'); ?>
+				<a href="/barker"><h3>Barker Library</h3></a>
+				<a href="/dewey"><h3>Dewey Library</h3></a>
+				<a href="/hayden"><h3>Hayden Library</h3></a>
+				<a href="/archives"><h3>Institute Archives &amp; Special Collections</h3></a>
+				<a href="/lewis"><h3>Lewis Music Library</h3></a>
+				<a href="/rotch"><h3>Rotch Library</h3></a>
 				<a href="/map">View Map</a>
 				<a href="/study" class="study">Find a Study Space</a>
 				<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
