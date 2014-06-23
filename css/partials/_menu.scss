@@ -13,6 +13,7 @@
   @include bp-tablet--portrait {
     height: auto;
     order: 3;
+    overflow: visible;
     width: auto;
     transform: translateY(0%);
   }
