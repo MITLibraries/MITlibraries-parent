@@ -19,7 +19,7 @@
 }
 
 .content.maintenance {
-	background: url($imagesPath) top;
+	background: url(#{$imagesPath}/dome-indoor-blurred-sfw.jpg) top;
 	background-size: cover;
 	border: none;
 	font-size: 2em;
