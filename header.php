@@ -64,20 +64,9 @@
 			
 		</header>
 
-		<?php
+		<?php 
 
-			// Temporary maintenance page for site under development.
-			// Change $blog_id to match.
-			$blog_id = get_current_blog_id();
-			if (!is_user_logged_in() && $blog_id == 25) {
-				get_template_part('inc/maintenance');
-				get_footer();
-				exit;
-			}
-
-			else {
-				$pageRoot = getRoot($post);
-				$section = get_post($pageRoot);
-			}
+			$pageRoot = getRoot($post);
+			$section = get_post($pageRoot);
 
 		?>
