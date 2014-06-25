@@ -100,9 +100,10 @@ $font-body: 'Open Sans', sans-serif;
 
 @mixin image-replacement {
 	border: 0;
+	color: transparent;
   font: 0/0 a;
   text-shadow: none;
-  color: transparent;
+  white-space: nowrap;
 }
 
 $margin-left: 20px;
