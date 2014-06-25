@@ -102,6 +102,10 @@
 			color: $color-guides-experts;
 			text-align: center;
 		}
+		.all-guides {
+			display: inline-block;
+			width: auto;
+		}
 		.button-primary {
 			@include color-button-primary($color-guides-experts);
 		}

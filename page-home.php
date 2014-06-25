@@ -154,7 +154,7 @@
 				<a href="" class="button-secondary">Medicine</a>
 				<a href="" class="button-secondary">Physics</a>
 				<a href="" class="button-secondary">Women and Gender Studies</a>
-				<a href="" class="button-primary">All 125 Guides</a>
+				<a href="" class="button-primary all-guides">All 125 Guides</a>
 				<div class="experts-group flex-container">
 					<div class="expert">
 					</div>
