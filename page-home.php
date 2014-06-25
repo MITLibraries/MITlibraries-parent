@@ -50,11 +50,11 @@
 			
 			$('#resource').change(function(){
 				// Hide all inputs on option change
-				$('#search-main input').removeClass('active');
+				$('#search-main input').removeClass('active selected');
 				// Get the value of the selected option...
 				var resourceOption = $('#resource option:selected').val();
 				// ...and show the corresponding input
-				$('#search-main input.'+resourceOption).addClass('active');
+				$('#search-main input.'+resourceOption).addClass('active selected');
 				// Repeat for keyword selects
 				$('.keywords').removeClass('active');
 				$('#search-main .keywords.'+resourceOption).addClass('active');
