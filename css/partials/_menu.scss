@@ -1,11 +1,12 @@
 .nav-main {
   transform: translateY(-1000%);
   &.active {
-    background: red;
+    background: white;
+    box-shadow: 0 3px 3px $color-shadow;
     height: auto;
     flex: none;
-    position: fixed;
-    transform: translateY(0%);
+    position: absolute;
+    transform: translateY(3em);
     top: 0;
     width: 100%;
   }
@@ -46,11 +47,6 @@
                   overflow 0.3s,
                   padding-top 0.3s,
                   padding-bottom 0.3s;
-      // SlideDown/SlideUp
-      // transform: scaleY(1);
-      // transform-origin: top;
-      // transition: opacity 0.3s,
-      //             transform 0.3s;
     }
     @include bp-small {
       background: none;
@@ -58,9 +54,11 @@
     }
   }
   > a {
-    color: $color-text--light;
-    display: inline-block;
-    font-weight: bold;
+    color: $color-text-accent-primary;
+    display: block;
+    @include bp-tablet--portrait {
+      color: $color-text--light;
+    }
     @include rem-first(padding, 0.5);
 	  position: relative;
     &:hover {
@@ -74,13 +72,6 @@
         }
       }
     }
-	  @include bp-small {
-	  	color: white;
-	  	display: inline-block;
-	  	margin: 0;
-	  	margin-left: -4px; /* Fight inline-block space */
-	  	width: 50%;
-	  }
     &:after {
       @include rem-first (margin-left, 0.25);
       vertical-align: middle;
@@ -109,6 +100,7 @@
   }
   .links-sub {
     background: lighten($color-background--widget, 2%);
+    display: none;
     flex-flow: row wrap;
     max-height: 0;
     opacity: 0;
@@ -121,14 +113,9 @@
                 overflow 0.3s,
                 padding-top 0.3s,
                 padding-bottom 0.3s;
-    // SlideDown/SlideUp
-    // transform: scaleY(0);
-    // transform-origin: top;
-    // transition: opacity 0.3s,
-    //             transform 0.3s;
     width: 600px;
-    @include bp-small {
-    	display: none;
+    @include bp-tablet--portrait {
+      display: block;
     }
     a {
       color: $color-text-accent-primary;
