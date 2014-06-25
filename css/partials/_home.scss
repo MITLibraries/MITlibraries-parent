@@ -15,11 +15,9 @@
 	}
 	.hours-locations {
 		h2 {
+			border-bottom: 1px solid $color-secondary;
 			color: $color-hours-locations;
 			text-align: center;
-			@include bp-tablet--portrait {
-				border-bottom: 1px solid $color-secondary;
-			}
 		}
 		a {
 			@include bp-tablet--portrait {
