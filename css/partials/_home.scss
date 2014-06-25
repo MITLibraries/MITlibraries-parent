@@ -41,8 +41,17 @@
 		.button-primary {
 			@include color-button-primary($color-hours-locations);
 		}
+		.icon-arrow-down {
+			margin-right: 0.5em;
+		}
 		.inactive {
 			opacity: 0;
+		}
+		.show-more {
+			background: $color-secondary;
+			color: $color-hours-locations;
+			fill: $color-hours-locations;
+			text-align: center;
 		}
 	}
 	.news-events {

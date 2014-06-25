@@ -69,7 +69,7 @@
 				<a href="/barker"><h3>Barker Library</h3></a>
 				<a href="/dewey"><h3>Dewey Library</h3></a>
 				<a href="/hayden"><h3>Hayden Library</h3></a>
-				<a href="#0" class="show-more hidden-non-mobile">Show 3 More<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg></a>
+				<a href="#0" class="show-more hidden-non-mobile"><svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More</a>
 				<a href="/archives" class="hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3></a>
 				<a href="/lewis" class="hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3></a>
 				<a href="/rotch" class="hidden-mobile inactive-mobile"><h3>Rotch Library</h3></a>
