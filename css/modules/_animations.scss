@@ -1,9 +1,9 @@
 @keyframes selected {
   0%   { box-shadow: none; }
-  50% { box-shadow: 0 0 5px 5px $orange-dark; }
+  20% { box-shadow: 0 0 5px 5px $orange-dark; }
   0%   { box-shadow: none; }
 }
 
 .selected {
-  animation: selected 1s 1; /* IE 10+ */
+  animation: selected 0.75s 1; /* IE 10+ */
 }
