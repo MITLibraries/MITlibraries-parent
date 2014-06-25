@@ -16,5 +16,11 @@
 		@include bp-large {
 			width: auto;
 		}
+		&.keywords {
+			display: none;
+			&.active {
+				display: inline;
+			}
+		}
 	}
 }

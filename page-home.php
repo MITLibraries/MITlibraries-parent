@@ -49,13 +49,19 @@
 		<script>
 			
 			$('#resource').change(function(){
+				// Hide all inputs on option change
 				$('#search-main input').removeClass('active');
+				// Get the value of the selected option...
 				var resourceOption = $('#resource option:selected').val();
+				// ...and show the corresponding input
 				$('#search-main input.'+resourceOption).addClass('active');
+				// Repeat for keyword selects
+				$('.keywords').removeClass('active');
+				$('#search-main .keywords.'+resourceOption).addClass('active');
 			});
 			
 		</script>
-	</div>
+	</div><!-- end div.search-main -->
 	<div class="content-main flex-container">
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
