@@ -86,3 +86,18 @@
 		display: block;
 	}
 }
+
+// Sets opacity for transitions
+.inactive-mobile {
+	opacity: 0;
+	@include bp-mobile--landscape {
+		opacity: 1;
+	}
+}
+
+.hidden-non-mobile {
+	display: block;
+	@include bp-tablet--portrait {
+		display: none;
+	}
+}

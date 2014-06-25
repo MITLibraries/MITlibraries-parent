@@ -17,8 +17,16 @@
 			color: $color-hours-locations;
 			text-align: center;
 		}
+		.active {
+			display: block;
+			opacity: 1;
+			transition: opacity 0.2s ease;
+		}
 		.button-primary {
 			@include color-button-primary($color-hours-locations);
+		}
+		.inactive {
+			opacity: 0;
 		}
 	}
 	.news-events {
