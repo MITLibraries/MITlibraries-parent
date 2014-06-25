@@ -154,4 +154,10 @@
       </div>
     </div>
   </div>
+  <div class="link-primary">
+    <a href="/ask">Ask Us</a>
+  </div>
+  <div class="link-primary">
+    <a href="/barton-account">Account</a>
+  </div>
 </nav>
