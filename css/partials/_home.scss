@@ -20,6 +20,12 @@
 			text-align: center;
 		}
 		a {
+			@include bp-small {
+				&:nth-child(-n+4) {
+					border-bottom: 1px solid $color-secondary;
+					display: block;
+				}
+			}
 			@include bp-tablet--portrait {
 				border-bottom: 1px solid $color-secondary;
 				&:not(.show-more) {
