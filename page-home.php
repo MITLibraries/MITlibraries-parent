@@ -93,6 +93,7 @@
 		</div>
 		<div class="col-2 flex-item">
 			<div class="news-events">
+				<h2>News &amp; Events</h2>
 				<div class="flex-container">
 					<div class="item-1 flex-container">
 						<div class="spinner">
