@@ -5,6 +5,7 @@
 	}
 	.col-2 {
 		@include span-8-12;
+		border-left: 1px solid $color-secondary;
 	}
 	.content-main {
 		flex-wrap: wrap;
