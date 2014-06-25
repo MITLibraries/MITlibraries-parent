@@ -119,20 +119,23 @@
 					</div>
 				</div>
 				<script>
-					$.get('/news', function(data) {
-						var newsItem1 = $(data).find('.post[data-post-number="0"] h2').text();
-						var newsItem2 = $(data).find('.post[data-post-number="1"] h2').text();
-						$('.item-1 h3').append(newsItem1).trigger('newsLoaded1');
-						$('.item-2 h3').append(newsItem2).trigger('newsLoaded2');
-						$('.item-1 .image').load('/news .post[data-post-number="0"] img');
-						$('.item-2 .image').load('/news .post[data-post-number="1"] img');
-					});
-					$('.item-1').on('newsLoaded1', function(){
-						$('.item-1 .spinner').hide();
-					});
-					$('.item-2').on('newsLoaded2', function(){
-						$('.item-2 .spinner').hide();
-					});
+					$.getJSON('/news/wp-json/posts')
+						.done(function(data){
+							var newsItem1 = data[0];
+							var newsItem2 = data[1];
+							$('.item-1 h3').append(newsItem1.title);
+							$('.item-2 h3').append(newsItem2.title);
+							var newsImage1 = '/news/files/'+newsItem1.featured_image.attachment_meta.file;
+							var newsImage2 = '/news/files/'+newsItem2.featured_image;
+							$('.item-1 .image').css('background-image', 'url('+newsImage1+')').trigger('newsLoaded1');
+							$('.item-2 .image').css('background-image', 'url('+newsImage2+')').trigger('newsLoaded2');
+						});
+						$('.item-1').on('newsLoaded1', function(){
+							$('.item-1 .spinner').hide();
+						});
+						$('.item-2').on('newsLoaded2', function(){
+							$('.item-2 .spinner').hide();
+						});
 				</script>
 				<a href="/news" class="button-primary">All News &amp; Events</a>
 			</div>
