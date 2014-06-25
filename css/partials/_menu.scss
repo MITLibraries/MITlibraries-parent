@@ -281,11 +281,17 @@
 }
 
 .menu--toggle {
-  color: darken($color-secondary, 40%);
+  background: $color-background--accent;
   cursor: pointer;
+  fill: $blue-light;
   @include font-size(16px);
   order: 1;
+  width: 14.375%;
   @include bp-tablet--portrait {
     display: none;
+  }
+  svg {
+    display: block;
+    margin: 1em auto;
   }
 }

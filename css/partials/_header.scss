@@ -12,7 +12,13 @@
 		}
 	}
 	.name-site {
+		line-height: 1;
+		margin-top: -1.25em;
 		order: 2;
+		padding: 0.5em;
 		width: 6.4375em;
+		@include bp-tablet--portrait {
+			margin-top: auto;
+		}
 	}
 }
