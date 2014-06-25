@@ -49,6 +49,9 @@
 		h2 {
 			color: $color-news-events;
 			text-align: center;
+			@include bp-tablet--portrait {
+				display: none;
+			}
 		}
 		& > .flex-container {
 			flex-flow: wrap;
