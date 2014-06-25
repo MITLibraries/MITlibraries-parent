@@ -2,7 +2,9 @@
 	text-align: center;
 	@include gradient-blue;
 	h2 {
+		color: $color-text--light;
 		display: inline-block;
+		@include rem-first(font-size, 1.25);
 	}
 	input {
 		display: none;
