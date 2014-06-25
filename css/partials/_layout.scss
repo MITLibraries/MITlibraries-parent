@@ -10,9 +10,11 @@
 }
 
 .wrap-page {
-	border-top: 8px solid red;
 	margin: 0 auto;
-	width: 320px;
+	@include bp-small {
+		border-top: 8px solid red;
+		width: 320px;
+	}
 	@include bp-mobile--landscape {
 		border-color: yellow;
 		width: 568px;
