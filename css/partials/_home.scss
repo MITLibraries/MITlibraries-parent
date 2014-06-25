@@ -40,6 +40,13 @@
 		.button-primary {
 			@include color-button-primary($color-news-events);
 		}
+		.image {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			@include rem-first(height, 12.8125);
+			@include rem-first(width, 6.875);
+		}
 	}
 	.guides-experts {
 		h2 {
