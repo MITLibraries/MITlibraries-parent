@@ -7,8 +7,9 @@
 		@include span-8-12;
 	}
 	.content-main {
-		@include bp-small {
-			flex-wrap: wrap;
+		flex-wrap: wrap;
+		@include bp-tablet--portrait {
+			flex-wrap: nowrap;
 		}
 	}
 	.hours-locations {
