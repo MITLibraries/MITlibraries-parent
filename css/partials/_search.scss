@@ -9,6 +9,9 @@
 		&.active {
 			display: inline;
 		}
+		@include bp-tablet--portrait {
+			width: 18.75em;
+		}
 	}
 	select {
 		@include rem-first(font-size, 0.875);
