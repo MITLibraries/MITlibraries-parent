@@ -5,25 +5,46 @@
 	<div id="search-main" class="search--lib-resources">
 		<h2>Search in</h2>
 		<select name="" id="resource" tabindex="2">
-			<option value="option-1">Resource #1</option>
-			<option value="option-2">Resource #2</option>
-			<option value="option-3">Resource #3</option>
-			<option value="option-4">Resource #4</option>
-			<option value="option-5">Resource #5</option>
+			<option value="option-1">Articles, books &amp; more</option>
+			<option value="option-2">E-Journals &amp; databases</option>
+			<option value="option-3">Books &amp; media at MIT</option>
+			<option value="option-4">Books &amp; media worldwide</option>
+			<option value="option-5">Course reserves</option>
+			<option value="option-6">Libraries website</option>
 		</select>
 		<label>for</label>
-		<input type="text" class="option-1 active" placeholder="Resource #1" autofocus="autofocus" tabindex="1">
-		<input type="text" class="option-2" placeholder="Resource #2">
-		<input type="text" class="option-3" placeholder="Resource #3">
-		<input type="text" class="option-4" placeholder="Resource #4">
-		<input type="text" class="option-5" placeholder="Resource #5">
+		<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes, oliver twist" autofocus="autofocus" tabindex="1">
+		<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
+		<input type="text" class="option-3" placeholder="ex: carbon nanotubes, game design">
+		<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
+		<input type="text" class="option-5" placeholder="ex: 18.01, STS.320, 21F.108">
+		<input type="text" class="option-6" placeholder="ex: hours, study spaces">
 		<label>by</label>
-		<select name="" id="" tabindex="3">
-			<option value="">Option #1</option>
-			<option value="">Option #2</option>
-			<option value="">Option #3</option>
-			<option value="">Option #4</option>
-			<option value="">Option #5</option>
+		<select name="" id="" class="keywords option-1 active" tabindex="3">
+			<option value="">Keyword</option>
+			<option value="">Title</option>
+			<option value="">Author</option>
+		</select>
+		<select name="" id="" class="keywords option-2" tabindex="3">
+			<option value="">Partial Words In Title</option>
+			<option value="">Title Starts With</option>
+			<option value="">Exact Title</option>
+		</select>
+		<select name="" id="" class="keywords option-3" tabindex="3">
+			<option value="">Keyword</option>
+			<option value="">Author (last name first)</option>
+			<option value="">Call number starts with</option>
+		</select>
+		<select name="" id="" class="keywords option-4" tabindex="3">
+			<option value="">Keyword</option>
+		</select>
+		<select name="" id="" class="keywords option-5" tabindex="3">
+			<option value="">Course number starts with</option>
+			<option value="">Instructor keyword</option>
+			<option value="">Course name keyword</option>
+		</select>
+		<select name="" id="" class="keywords option-6" tabindex="3">
+			<option value="">Keyword</option>
 		</select>
 		<script>
 			
