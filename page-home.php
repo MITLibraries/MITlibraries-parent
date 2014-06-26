@@ -5,12 +5,12 @@
 	<div id="search-main" class="search--lib-resources">
 		<h2>Search in</h2>
 		<select name="" id="resource" tabindex="2">
-			<option value="option-1">Articles, books &amp; more</option>
-			<option value="option-2">E-Journals &amp; databases</option>
-			<option value="option-3">Books &amp; media at MIT</option>
-			<option value="option-4">Books &amp; media worldwide</option>
-			<option value="option-5">Course reserves</option>
-			<option value="option-6">Libraries website</option>
+			<option class="bartonplus" value="option-1">Articles, books &amp; more</option>
+			<option class="vera" value="option-2">E-Journals &amp; databases</option>
+			<option class="barton" value="option-3">Books &amp; media at MIT</option>
+			<option class="worldcat" value="option-4">Books &amp; media worldwide</option>
+			<option class"course-reserves" value="option-5">Course reserves</option>
+			<option class="site-search" value="option-6">Libraries website</option>
 		</select>
 		<label>for</label>
 		<form class="input-submit flex-container">
@@ -54,6 +54,15 @@
 			<option value="">Keyword</option>
 		</select>
 		<script>
+
+			function formSelect() {
+				// Get the class of the selected resource
+				var searchSelected = $('#resource option:selected').attr('class');
+				// Apply this class, as an id, to the form.
+				$('#search-main form').attr('id', searchSelected);
+			}
+
+			formSelect();
 			
 			$('#resource').change(function(){
 				// Hide all inputs on option change
@@ -65,6 +74,10 @@
 				// Repeat for keyword selects
 				$('.keywords').removeClass('active');
 				$('#search-main .keywords.'+resourceOption).addClass('active');
+				// Run formSelect on change
+				formSelect();
+
+			});
 			});
 			
 		</script>
