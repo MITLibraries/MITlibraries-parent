@@ -6,9 +6,25 @@
 		display: inline-block;
 		@include rem-first(font-size, 1.25);
 	}
+	button {
+		background: white;
+		border: 1px solid white;
+		border-radius: 0 5px 5px 0;
+		padding: 0.5em;
+		@include bp-tablet--portrait {
+			background: $color-secondary;
+		}
+		.icon-search {
+			height: auto;
+			width: 1rem;
+		}
+	}
 	input {
+		border: 1px solid white;
+		border-radius: 5px 0 0 5px;
 		display: none;
 		font-size: 1em;
+		padding: 0.5em;
 		&::-webkit-input-placeholder {
 		   font-style: italic;
 		}
