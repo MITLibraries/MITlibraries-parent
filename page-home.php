@@ -63,6 +63,21 @@
 			}
 
 			formSelect();
+
+			function hiddenFields() {
+				// Add hidden fields, necessary for BartonPlus search
+				if ($('#bartonplus').length) {
+					$('#bartonplus')
+						.append("<input name='direct' value='true' type='hidden'>")
+						.append("<input name='scope' value='site' type='hidden'>")
+						.append("<input name='site' value='eds-live' type='hidden'>")
+						.append("<input name='authtype' value='ip,guest' type='hidden'>")
+						.append("<input name='custid' value='s8978330' type='hidden'>")
+						.append("<input name='profile' value='eds' type='hidden'>")
+						.append("<input name='groupid' value='main' type='hidden'>")
+						.append('<input name="bquery" value="" type="hidden">');
+				}
+			}
 			
 			$('#resource').change(function(){
 				// Hide all inputs on option change
@@ -78,8 +93,19 @@
 				formSelect();
 
 			});
+
+			$('#search-main form').on('submit', function(){
+				// Set the correct action for the BartonPlus form
+				$('#bartonplus').attr('action', 'http://search.ebscohost.com/login.aspx');
+				// Add hidden fields
+				hiddenFields();
+				// Get the query entered...
+				var searchQuery = $('input.active', this).val();
+				// ... and add the the bquery value, which sends it along to EDS
+				$('input[name="bquery"]', this).val(searchQuery);
 			});
 			
+
 		</script>
 	</div><!-- end div.search-main -->
 	<div class="content-main flex-container">
