@@ -3,71 +3,73 @@
 ?>
 
 	<div id="search-main" class="search--lib-resources">
-		<h2>Search in</h2>
-		<select name="" id="resource" tabindex="2">
-			<option value="option-1">Articles, books &amp; more</option>
-			<option value="option-2">E-Journals &amp; databases</option>
-			<option value="option-3">Books &amp; media at MIT</option>
-			<option value="option-4">Books &amp; media worldwide</option>
-			<option value="option-5">Course reserves</option>
-			<option value="option-6">Libraries website</option>
-		</select>
-		<label>for</label>
-		<div class="input-submit flex-container">
-			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes, oliver twist" autofocus="autofocus" tabindex="1">
-			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
-			<input type="text" class="option-3" placeholder="ex: carbon nanotubes, game design">
-			<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
-			<input type="text" class="option-5" placeholder="ex: 18.01, STS.320, 21F.108">
-			<input type="text" class="option-6" placeholder="ex: hours, study spaces">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
-					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z" fill="#000000"></path>
-				</svg>
-			</button>
-		</div>
-		<label>by</label>
-		<select name="" id="" class="keywords option-1 active" tabindex="3">
-			<option value="">Keyword</option>
-			<option value="">Title</option>
-			<option value="">Author</option>
-		</select>
-		<select name="" id="" class="keywords option-2" tabindex="3">
-			<option value="">Partial Words In Title</option>
-			<option value="">Title Starts With</option>
-			<option value="">Exact Title</option>
-		</select>
-		<select name="" id="" class="keywords option-3" tabindex="3">
-			<option value="">Keyword</option>
-			<option value="">Author (last name first)</option>
-			<option value="">Call number starts with</option>
-		</select>
-		<select name="" id="" class="keywords option-4" tabindex="3">
-			<option value="">Keyword</option>
-		</select>
-		<select name="" id="" class="keywords option-5" tabindex="3">
-			<option value="">Course number starts with</option>
-			<option value="">Instructor keyword</option>
-			<option value="">Course name keyword</option>
-		</select>
-		<select name="" id="" class="keywords option-6" tabindex="3">
-			<option value="">Keyword</option>
-		</select>
-		<script>
-			
-			$('#resource').change(function(){
-				// Hide all inputs on option change
-				$('#search-main input').removeClass('active selected');
-				// Get the value of the selected option...
-				var resourceOption = $('#resource option:selected').val();
-				// ...and show the corresponding input
-				$('#search-main input.'+resourceOption).addClass('active selected');
-				// Repeat for keyword selects
-				$('.keywords').removeClass('active');
-				$('#search-main .keywords.'+resourceOption).addClass('active');
-			});
-			
-		</script>
+		<form action="">
+			<h2>Search in</h2>
+			<select name="" id="resource" tabindex="2">
+				<option value="option-1">Articles, books &amp; more</option>
+				<option value="option-2">E-Journals &amp; databases</option>
+				<option value="option-3">Books &amp; media at MIT</option>
+				<option value="option-4">Books &amp; media worldwide</option>
+				<option value="option-5">Course reserves</option>
+				<option value="option-6">Libraries website</option>
+			</select>
+			<label>for</label>
+			<div class="input-submit flex-container">
+				<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes, oliver twist" autofocus="autofocus" tabindex="1">
+				<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
+				<input type="text" class="option-3" placeholder="ex: carbon nanotubes, game design">
+				<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
+				<input type="text" class="option-5" placeholder="ex: 18.01, STS.320, 21F.108">
+				<input type="text" class="option-6" placeholder="ex: hours, study spaces">
+				<button type="submit">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+						<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z" fill="#000000"></path>
+					</svg>
+				</button>
+			</div>
+			<label>by</label>
+			<select name="" id="" class="keywords option-1 active" tabindex="3">
+				<option value="">Keyword</option>
+				<option value="">Title</option>
+				<option value="">Author</option>
+			</select>
+			<select name="" id="" class="keywords option-2" tabindex="3">
+				<option value="">Partial Words In Title</option>
+				<option value="">Title Starts With</option>
+				<option value="">Exact Title</option>
+			</select>
+			<select name="" id="" class="keywords option-3" tabindex="3">
+				<option value="">Keyword</option>
+				<option value="">Author (last name first)</option>
+				<option value="">Call number starts with</option>
+			</select>
+			<select name="" id="" class="keywords option-4" tabindex="3">
+				<option value="">Keyword</option>
+			</select>
+			<select name="" id="" class="keywords option-5" tabindex="3">
+				<option value="">Course number starts with</option>
+				<option value="">Instructor keyword</option>
+				<option value="">Course name keyword</option>
+			</select>
+			<select name="" id="" class="keywords option-6" tabindex="3">
+				<option value="">Keyword</option>
+			</select>
+			<script>
+				
+				$('#resource').change(function(){
+					// Hide all inputs on option change
+					$('#search-main input').removeClass('active selected');
+					// Get the value of the selected option...
+					var resourceOption = $('#resource option:selected').val();
+					// ...and show the corresponding input
+					$('#search-main input.'+resourceOption).addClass('active selected');
+					// Repeat for keyword selects
+					$('.keywords').removeClass('active');
+					$('#search-main .keywords.'+resourceOption).addClass('active');
+				});
+				
+			</script>
+		</form>
 	</div><!-- end div.search-main -->
 	<div class="content-main flex-container">
 		<div class="col-1 flex-item">
