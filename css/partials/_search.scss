@@ -41,4 +41,7 @@
 			}
 		}
 	}
+	.input-submit {
+		display: inline-flex; // Correctly aligns the input and submit elements
+	}
 }
