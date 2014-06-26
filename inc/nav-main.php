@@ -9,7 +9,7 @@
 </svg>
 
 </div>
-<nav id="nav-main" class="nav-main border-box group">
+<nav id="nav-main" class="nav-main flex-container">
   <div class="link-primary">
     <a href="/search">Search</a>
     <div class="links-sub flex-container group">
