@@ -156,6 +156,9 @@
   </div>
   <div class="link-primary">
     <a href="/ask">Ask Us</a>
+    <div class="links-sub push">
+      <div id="libchat_inline_widget"></div>
+    </div>
   </div>
   <div class="link-primary">
     <a href="/barton-account">Account</a>
