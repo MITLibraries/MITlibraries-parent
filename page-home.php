@@ -7,7 +7,6 @@
 		<div class="wrap-select">
 			<select name="" id="resource" tabindex="2">
 				<option class="bartonplus" value="option-1">Articles, books &amp; more</option>
-				<span>test</span>
 				<option class="vera" value="option-2">E-Journals &amp; databases</option>
 				<option class="barton" value="option-3">Books &amp; media at MIT</option>
 				<option class="worldcat" value="option-4">Books &amp; media worldwide</option>
