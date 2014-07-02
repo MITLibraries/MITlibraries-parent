@@ -153,13 +153,13 @@
       </div>
     </div>
   </div>
-  <div class="link-primary">
+  <div class="link-primary small">
     <a href="/ask">Ask Us</a>
     <div class="links-sub push">
       <div id="libchat_inline_widget"></div>
     </div>
   </div>
-  <div class="link-primary">
+  <div class="link-primary small">
     <a href="/barton-account">Account</a>
   </div>
 </nav>
