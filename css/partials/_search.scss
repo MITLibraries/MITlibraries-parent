@@ -47,6 +47,10 @@
 	select {
 		@include rem-first(font-size, 0.875);
 		width: 100%;
+		// Heads up. Using non-standard appearance property. Note the Firefox hack. This property is not autoprefixed.
+		-moz-appearance: treeheader;
+		-ms-appearance: none;
+		-webkit-appearance: none;
 		@include bp-large {
 			width: auto;
 		}
