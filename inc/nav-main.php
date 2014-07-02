@@ -10,7 +10,7 @@
 </div>
 <nav id="nav-main" class="nav-main flex-container">
   <div class="link-primary">
-    <a href="/search" class="flex-container">Search</a>
+    <a href="/search">Search</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Start Here</span>
@@ -35,7 +35,7 @@
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary">
-    <a href="/locations" class="flex-container">Hours &amp; Locations</a>
+    <a href="/locations">Hours &amp; Locations</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Locations</span>
@@ -63,7 +63,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/borrow" class="flex-container">Borrow &amp; Request</a>
+    <a href="/borrow">Borrow &amp; Request</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Borrow, Request, Renew</span>
@@ -86,7 +86,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/research-support" class="flex-container">Research Support</a>
+    <a href="/research-support">Research Support</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <span class="heading-col">Expert Help</span>
@@ -112,7 +112,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/productivity-tools" class="flex-container">Productivity Tools</a>
+    <a href="/productivity-tools">Productivity Tools</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <span class="heading-col">Web Tools &amp; Apps</span>
@@ -133,7 +133,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/about" class="flex-container">About Us</a>
+    <a href="/about">About Us</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <span class="heading-col">About Us</span>
@@ -154,12 +154,12 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/ask" class="flex-container">Ask Us</a>
+    <a href="/ask">Ask Us</a>
     <div class="links-sub push">
       <div id="libchat_inline_widget"></div>
     </div>
   </div>
   <div class="link-primary">
-    <a href="/barton-account" class="flex-container">Account</a>
+    <a href="/barton-account">Account</a>
   </div>
 </nav>
