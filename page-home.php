@@ -4,14 +4,17 @@
 
 	<div id="search-main" class="search--lib-resources">
 		<h2>Search in</h2>
-		<select name="" id="resource" tabindex="2">
-			<option class="bartonplus" value="option-1">Articles, books &amp; more</option>
-			<option class="vera" value="option-2">E-Journals &amp; databases</option>
-			<option class="barton" value="option-3">Books &amp; media at MIT</option>
-			<option class="worldcat" value="option-4">Books &amp; media worldwide</option>
-			<option class"course-reserves" value="option-5">Course reserves</option>
-			<option class="site-search" value="option-6">Libraries website</option>
-		</select>
+		<div class="wrap-select">
+			<select name="" id="resource" tabindex="2">
+				<option class="bartonplus" value="option-1">Articles, books &amp; more</option>
+				<span>test</span>
+				<option class="vera" value="option-2">E-Journals &amp; databases</option>
+				<option class="barton" value="option-3">Books &amp; media at MIT</option>
+				<option class="worldcat" value="option-4">Books &amp; media worldwide</option>
+				<option class"course-reserves" value="option-5">Course reserves</option>
+				<option class="site-search" value="option-6">Libraries website</option>
+			</select>
+		</div>
 		<label>for</label>
 		<form class="input-submit flex-container">
 			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes, oliver twist" autofocus="autofocus" tabindex="1">
@@ -27,32 +30,44 @@
 			</button>
 		</form>
 		<label>by</label>
-		<select name="" id="" class="keywords option-1 active" tabindex="3">
-			<option value="">Keyword</option>
-			<option value="">Title</option>
-			<option value="">Author</option>
-		</select>
-		<select name="" id="" class="keywords option-2" tabindex="3">
-			<option value="">Partial Words In Title</option>
-			<option value="">Title Starts With</option>
-			<option value="">Exact Title</option>
-		</select>
-		<select name="" id="" class="keywords option-3" tabindex="3">
-			<option value="">Keyword</option>
-			<option value="">Author (last name first)</option>
-			<option value="">Call number starts with</option>
-		</select>
-		<select name="" id="" class="keywords option-4" tabindex="3">
-			<option value="">Keyword</option>
-		</select>
-		<select name="" id="" class="keywords option-5" tabindex="3">
-			<option value="">Course number starts with</option>
-			<option value="">Instructor keyword</option>
-			<option value="">Course name keyword</option>
-		</select>
-		<select name="" id="" class="keywords option-6" tabindex="3">
-			<option value="">Keyword</option>
-		</select>
+		<div class="wrap-select--keywords active">
+			<select name="" id="" class="keywords option-1 active" tabindex="3">
+				<option value="">Keyword</option>
+				<option value="">Title</option>
+				<option value="">Author</option>
+			</select>
+		</div>
+		<div class="wrap-select--keywords">
+			<select name="" id="" class="keywords option-2" tabindex="3">
+				<option value="">Partial Words In Title</option>
+				<option value="">Title Starts With</option>
+				<option value="">Exact Title</option>
+			</select>
+		</div>
+		<div class="wrap-select--keywords">
+			<select name="" id="" class="keywords option-3" tabindex="3">
+				<option value="">Keyword</option>
+				<option value="">Author (last name first)</option>
+				<option value="">Call number starts with</option>
+			</select>
+		</div>
+		<div class="wrap-select--keywords">
+			<select name="" id="" class="keywords option-4" tabindex="3">
+				<option value="">Keyword</option>
+			</select>
+		</div>
+		<div class="wrap-select--keywords">
+			<select name="" id="" class="keywords option-5" tabindex="3">
+				<option value="">Course number starts with</option>
+				<option value="">Instructor keyword</option>
+				<option value="">Course name keyword</option>
+			</select>
+		</div>
+		<div class="wrap-select--keywords">
+			<select name="" id="" class="keywords option-6" tabindex="3">
+				<option value="">Keyword</option>
+			</select>
+		</div>
 		<script>
 
 			function formSelect() {
@@ -87,8 +102,10 @@
 				// ...and show the corresponding input
 				$('#search-main input.'+resourceOption).addClass('active selected');
 				// Repeat for keyword selects
+				$('.keywords').parent().removeClass('active');
 				$('.keywords').removeClass('active');
 				$('#search-main .keywords.'+resourceOption).addClass('active');
+				$('#search-main .keywords.'+resourceOption).parent().addClass('active');
 				// Run formSelect on change
 				formSelect();
 

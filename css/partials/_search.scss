@@ -64,4 +64,16 @@
 	.input-submit {
 		display: inline-flex; // Correctly aligns the input and submit elements
 	}
+	[class*="wrap-select"] {
+		display: block;
+		@include bp-tablet--portrait {
+			display: inline;
+		}
+	}
+	.wrap-select--keywords {
+		display: none;
+		&.active {
+			display: inline;
+		}
+	}
 }
