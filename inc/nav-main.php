@@ -6,12 +6,11 @@
   s0.216,0.314,0.216,0.511c0,0.197-0.071,0.367-0.216,0.511S20.561,13.818,20.363,13.818z M20.363,19.636H2.909
   c-0.197,0-0.367-0.071-0.511-0.216s-0.216-0.314-0.216-0.511s0.072-0.367,0.216-0.511c0.144-0.145,0.314-0.217,0.511-0.217h17.454
   c0.197,0,0.367,0.072,0.512,0.217c0.145,0.144,0.216,0.314,0.216,0.511s-0.071,0.366-0.216,0.511S20.561,19.636,20.363,19.636z"/>
-</svg>
-
+  </svg>
 </div>
 <nav id="nav-main" class="nav-main flex-container">
   <div class="link-primary">
-    <a href="/search">Search</a>
+    <a href="/search" class="flex-container">Search</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Start Here</span>
@@ -36,7 +35,7 @@
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary">
-    <a href="/locations">Hours &amp; Locations</a>
+    <a href="/locations" class="flex-container">Hours &amp; Locations</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Locations</span>
@@ -64,7 +63,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/borrow">Borrow &amp; Request</a>
+    <a href="/borrow" class="flex-container">Borrow &amp; Request</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Borrow, Request, Renew</span>
@@ -87,7 +86,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/research-support">Research Support</a>
+    <a href="/research-support" class="flex-container">Research Support</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <span class="heading-col">Expert Help</span>
@@ -113,7 +112,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/productivity-tools">Productivity Tools</a>
+    <a href="/productivity-tools" class="flex-container">Productivity Tools</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <span class="heading-col">Web Tools &amp; Apps</span>
@@ -134,7 +133,7 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/about">About Us</a>
+    <a href="/about" class="flex-container">About Us</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <span class="heading-col">About Us</span>
@@ -155,12 +154,12 @@
     </div>
   </div>
   <div class="link-primary">
-    <a href="/ask">Ask Us</a>
+    <a href="/ask" class="flex-container">Ask Us</a>
     <div class="links-sub push">
       <div id="libchat_inline_widget"></div>
     </div>
   </div>
   <div class="link-primary">
-    <a href="/barton-account">Account</a>
+    <a href="/barton-account" class="flex-container">Account</a>
   </div>
 </nav>

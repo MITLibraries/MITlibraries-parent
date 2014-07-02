@@ -59,7 +59,9 @@
     color: $color-text-accent-primary;
     display: block;
     @include bp-tablet--portrait {
+      align-items: flex-end;
       color: $color-text--light;
+      display: flex;
       height: 100%;
     }
     @include rem-first(padding, 0.5);
