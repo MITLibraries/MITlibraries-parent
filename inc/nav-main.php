@@ -116,9 +116,6 @@
         <a href="/references">Citation software: EndNote, RefWorks, Zotero, Mendeley</a>
         <a href="http://libguides.mit.edu/manage-info">Manage your information</a>
       </div>
-      <div class="bottom flex-clear">
-        <a href="http://libraries.mit.edu/productivity-tools">More productivity tools</a>
-      </div>
     </div>
   </div>
   <div class="link-primary">
@@ -129,8 +126,7 @@
         <a href="">Contact us</a>
         <a href="/user-guidelines">Guidelines for using the MIT Libraries</a>
         <a href="/about/#Jobs">Jobs</a>
-        <a href="/giving">Giving to the MIT Libraries</a>
-        <a href="/about" class="about">More about us</a>
+        <a href="/giving">Giving to the MIT Libraries <span class="about">More about us</span></a>
         <a href="http://libguides.mit.edu/directory">Staff directory</a>
       </div>
       <div class="col-2 flex-item">
