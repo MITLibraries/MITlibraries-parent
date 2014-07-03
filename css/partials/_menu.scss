@@ -22,6 +22,7 @@
     transform: translateY(0%);
     .small {
       font-size: 0.5em;
+      padding-top: 2em;
     }
   }
 }
@@ -33,6 +34,7 @@
   width: 100%;
   @include bp-tablet--portrait {
     border-right: 1px solid $color-secondary;
+    padding-top: 1em; // Find a better way to push the link text to bottom
     width: auto;
   }
   &:hover {
@@ -57,7 +59,6 @@
     @include rem-first(padding, 0.5);
     position: relative;
     @include bp-tablet--portrait {
-      align-items: flex-end;
       color: #fff;
       display: flex;
       height: 100%;
