@@ -89,6 +89,17 @@
 						.append("<input name='groupid' value='main' type='hidden'>")
 						.append('<input name="bquery" value="" type="hidden">');
 				}
+				// Vera
+				if($('#vera').length) {
+					$('#vera')
+					.append("<input type='hidden' name='param_perform_save' value='searchTitle' />")
+					.append("<input type='hidden' name='param_chinese_checkbox_save' value='0' />")
+					.append("<input type='hidden' name='param_type_save' value='textSearch' />")
+					.append("<input type='hidden' name='param_type_value' value='textSearch' />")
+					.append("<input type='hidden' name='param_jumpToPage_value' value='' />")
+					.append("<input type='hidden' name='param_services2filter_save' value='getAbstract' />")
+					.append("<input type='hidden' name='param_services2filter_save' value='getFullTxt' />");
+				}
 			}
 			
 			$('#resource').change(function(){
@@ -109,14 +120,37 @@
 			});
 
 			$('#search-main form').on('submit', function(){
-				// Set the correct action for the BartonPlus form
-				$('#bartonplus').attr('action', 'http://search.ebscohost.com/login.aspx');
-				// Add hidden fields
-				hiddenFields();
 				// Get the query entered...
 				var searchQuery = $('input.active', this).val();
-				// ... and add the the bquery value, which sends it along to EDS
-				$('input[name="bquery"]', this).val(searchQuery);
+				alert(searchQuery);
+				// Barton...
+				if ($('#bartonplus').length) {
+					// Set the correct action for the BartonPlus form
+					$('#bartonplus').attr('action', 'http://search.ebscohost.com/login.aspx');
+					// Add hidden fields
+					hiddenFields();
+					// Add search query to the bquery value, which sends it along to EDS
+					$('input[name="bquery"]', this).val(searchQuery);
+					}
+				// Vera...
+				if ($('#vera').length) {
+					// Vera actions
+					$('#vera')
+						.attr('action', 'http://owens.mit.edu/sfx_local/az/mit_all')
+						.attr('name', 'az_user_form')
+						.attr('method', 'get')
+						.attr('accept-charset', 'UTF-8')
+						.attr('id', 'verasearch')
+						.addClass('searchform');
+					// Add hidden fields
+					hiddenFields();
+					// Add the query val
+					$('input', this)
+						.attr('name','param_pattern_value')
+						.attr('id','param_pattern_value')
+						.addClass('searchtext')
+						.val(searchQuery);
+				}
 			});
 			
 
