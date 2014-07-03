@@ -36,16 +36,14 @@
     width: auto;
   }
   &:hover {
-    background: lighten($color-background--widget, 2%);
-    box-shadow: 0 0 2px #444;
+    @include bp-tablet--portrait {
+      background: $color-link-primary;
+    }
     .links-sub {
       box-shadow: 0 0 2px #444;
       max-height: 1000px;
-      margin: auto;
       opacity: 1;
       overflow: visible;
-      padding: 1rem;
-      @include rem-first(padding, 1);
       transition: max-height 0.3s,
                   margin 0.3s,
                   opacity 0.3s,
@@ -53,32 +51,16 @@
                   padding-top 0.3s,
                   padding-bottom 0.3s;
     }
-    @include bp-small {
-      background: none;
-      box-shadow: none;
-    }
   }
   > a {
-    color: $color-text-accent-primary;
     display: block;
+    @include rem-first(padding, 0.5);
+    position: relative;
     @include bp-tablet--portrait {
       align-items: flex-end;
-      color: $color-text--light;
+      color: #fff;
       display: flex;
       height: 100%;
-    }
-    @include rem-first(padding, 0.5);
-	  position: relative;
-    &:hover {
-      color: black;
-      @include bp-small {
-        color: white;
-      }
-      &:after {
-        @include bp-small {
-          content: none;
-        }
-      }
     }
 	  &.active {
 	  	background: lightgray;
@@ -86,27 +68,19 @@
                 inset 1px 0 0 gray,
                 inset -1px 0 0 gray,
                 inset 0 1px 0 gray;
-      @include bp-small {
-      	background: none;
-      	box-shadow: none;
-      }
 	  }
   }
   .col-1 {
-    @include rem-first(padding-right, 1);
+    background: #fff;
   }
   .col-2 {
-    border-left: 1px solid #ccc;
-    @include rem-first(padding-left, 1);
+    background: $color-background-secondary;
   }
   .links-sub {
-    background: lighten($color-background--widget, 2%);
     display: none;
-    flex-flow: row wrap;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    @include rem-first--2-values(padding, 0, 1);
     position: absolute;
     transition: max-height 0.3s,
                 margin 0.3s,
@@ -114,31 +88,28 @@
                 overflow 0.3s,
                 padding-top 0.3s,
                 padding-bottom 0.3s;
-    width: 600px;
+    width: 31.75em;
     @include bp-tablet--portrait {
-      display: block;
+      display: flex;
     }
     a {
       color: $color-text-accent-primary;
       display: block;
-      @include rem-first(margin-left, 0.5);
-      &:before {
-        @include rem-first(margin-right, 0.25);
-        @include rem-first(margin-left, -0.5);
-        @include bullet(0.25rem, black);
+      padding: 0.5em;
+      &:hover {
+        background: darken($color-background-secondary, 10%);
       }
     }
     [class*="col"] {
-      width: 275px;
+      width: 50%;
     }
-  }
-  .bottom a {
-    display: inline-block;
-    font-weight: bold;
-    @include rem-first(margin-top, 1);
-    margin-left: 0;
-    &:before {
-      content: none;
+    .about {
+      display: block;
+      font-size: 0.6875em;
+      text-transform: lowercase;
+    }
+    .bottom {
+      border-top: 1px solid $color-background-secondary;
     }
   }
   .bottom span:not(:first-of-type):before {
@@ -148,9 +119,12 @@
     margin-right: 4px;
   }
   .heading-col {
+    color: #7c7c7d;
     display: block;
+    font-size: 0.5em;
     font-weight: bold;
-    @include rem-first(margin-bottom, 0.5);
+    @include rem-first(margin, 0.5);
+    text-transform: uppercase;
   }
   .push {
     right: 0;
