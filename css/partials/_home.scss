@@ -1,16 +1,16 @@
 // A lot this--colors especially--could probably be better handles with a function or two.
 .home {
-	.col-1 {
-		@include span-4-12;
-	}
-	.col-2 {
-		@include span-8-12;
-		border-left: 1px solid $color-secondary;
-	}
 	.content-main {
 		flex-wrap: wrap;
 		@include bp-tablet--portrait {
 			flex-wrap: nowrap;
+		}
+		.col-1 {
+		@include span-4-12;
+		}
+		.col-2 {
+			@include span-8-12;
+			border-left: 1px solid $color-secondary;
 		}
 	}
 	.hours-locations {
