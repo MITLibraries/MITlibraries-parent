@@ -2,7 +2,7 @@
 	align-items: center;
 	flex-flow: wrap;
 	justify-content: center;
-	padding: 1em 0.5em;
+	padding: 2em;
 	@include gradient-blue;
 	@include bp-tablet--portrait {
 		flex-flow: nowrap
