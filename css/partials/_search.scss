@@ -11,6 +11,9 @@
 		color: $color-text--light;
 		display: inline-block;
 		@include rem-first(font-size, 1.25);
+		@include bp-tablet--portrait {
+			@include rem-first(margin-right, 1);
+		}
 	}
 	button {
 		background: white;
@@ -84,8 +87,25 @@
 		order: 200;
 		width: 100%;
 		@include bp-tablet--portrait {
+			@include rem-first(margin-right, 1);
 			order: 300;
 			width: auto;
+		}
+	}
+	.label {
+		color: #fff;
+		display: none;
+		@include bp-tablet--portrait {
+			display: block;
+			@include rem-first(font-size, 1.25);
+			font-weight: 300;
+			@include rem-first(margin-right, 1);
+				&:first-of-type {
+				order: 250; 
+			}
+			&:last-of-type {
+				order: 350;
+			}
 		}
 	}
 	[class*="wrap-select"] {
@@ -100,6 +120,7 @@
 			box-shadow: inset 0 0 1px #666;
 			border-radius: 3px;
 			display: inline;
+			@include rem-first(margin-right, 1);
 			order: 200;
 			width: auto;
 		}

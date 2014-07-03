@@ -14,6 +14,7 @@
 				<option class="site-search" value="option-6">Libraries website</option>
 			</select>
 		</div>
+		<span class="label">for</span>
 		<form class="input-submit flex-container">
 			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes, oliver twist" autofocus="autofocus" tabindex="1">
 			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
@@ -27,6 +28,7 @@
 				</svg>
 			</button>
 		</form>
+		<span class="label">by</span>
 		<div class="wrap-select--keywords active">
 			<select name="" id="" class="keywords option-1 active" tabindex="3">
 				<option value="">Keyword</option>
