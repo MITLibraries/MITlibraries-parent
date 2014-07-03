@@ -130,6 +130,9 @@
 		box-shadow: none;
 		display: none;
 		order: 400;
+		@include bp-tablet--portrait {
+			border-top: none;
+		}
 		&.active {
 			display: inline;
 		}
