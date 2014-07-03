@@ -14,28 +14,26 @@
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Start Here</span>
-        <a href="/bartonplus">Articles, books, &amp; more: BartonPlus</a>
-        <a href="/vera">E-journals &amp; databases: Vera </a>
-        <a href="/barton">Books &amp; media: Barton catalog </a>
-        <a href="http://mit.worldcat.org">Non-MIT items: MIT’s WorldCat</a>
-        <a href="/barton-reserves">Course reserves</a>
+        <a href="/bartonplus">BartonPlus <span class="about">Articles, books, &amp; more</span></a>
+        <a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a>
+        <a href="/barton">Barton catalog <span class="about">Books &amp; media</span></a>
+        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Non-MIT items</span></a>
+        <a href="/barton-reserves">Course reserves <span class="about">Materials for your classes</span></a>
+        <a href="/search" class="bottom">More search options</a>
       </div>
       <div class="col-2 flex-item">
         <span class="heading-col">Also Try</span>
-        <a href="/fulltext">FullText Finder</a>
-        <a href="http://libguides.mit.edu/googlescholar">Google Scholar for MIT</a>
-        <a href="/libx">LibX: search/authenticate via browser </a>
-        <a href="http://dspace.mit.edu/">DSpace: MIT research </a>
+        <a href="/fulltext">FullText Finder <span class="about">Find specific citations</span></a>
+        <a href="http://libguides.mit.edu/googlescholar">Google Scholar for MIT <span class="about">Change settings to get better access</span></a>
+        <a href="/libx">LibX <span class="about">Search/authenticate via browser</span></a>
+        <a href="http://dspace.mit.edu/">DSpace@MIT <span class="about">MIT digitized images, maps, etc.</span></a>
         <a href="http://dome.mit.edu/">Dome: MIT-digitized images, maps, etc.</a>
-        <a href="/about/site-search">MIT Libraries web site search</a>
-      </div>
-      <div class="bottom flex-clear">
-        <a href="/search">More search options</a>
+        <a href="/about/site-search">Site search</a>
       </div>
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary">
-    <a href="/locations">Hours &amp; Locations</a>
+    <a href="/locations">Hours &amp; locations</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Locations</span>
@@ -46,71 +44,62 @@
         <a href="/lewis">Lewis Music Library</a>
         <a href="/lsa">Library Storage Annex</a>
         <a href="/rotch">Rotch Library</a>
+        <a href="/hours" class="bottom">All hours &amp; locations</a>
       </div>
       <div class="col-2 flex-item">
         <span class="heading-col">Using The Libraries</span>
+        <a href="map">Map</a>
         <a href="/study">Study spaces</a>
         <a href="/copying">Scan, copy, print</a>
-        <a href="/exhibits">Exhibits &amp; Galleries</a>
+        <a href="/exhibits">Exhibits &amp; galleries</a>
         <a href="/visitors">Non-MIT visitors</a>
         <a href="/user-guidelines">Guidelines for using the MIT Libraries</a>
       </div>
-      <div class="bottom flex-clear">
-        <span><a href="/hours">All hours</a></span>
-        <span><a href="/locations">All locations</a></span>
-        <span><a href="/locations/#!map">Map</a></span>
-      </div>
-    </div>
-  </div>
+    </div><!-- end div.links-sub -->
+  </div><!-- end div.links-primary -->
   <div class="link-primary">
-    <a href="/borrow">Borrow &amp; Request</a>
+    <a href="/borrow">Borrow &amp; request</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Borrow, Request, Renew</span>
-        <a href="/barton-account">Your Account: renew MIT, BLC, &amp; Borrow Direct items</a>
-        <a href="http://library.mit.edu">Barton catalog: get MIT items</a>
-        <a href="http://mit.worldcat.org">MIT’s WorldCat: get non-MIT items (BLC &amp; Borrow Direct)</a>
-        <a href="/illiad">ILLiad: get non-MIT items (Interlibrary Borrowing)</a>
+        <a href="/barton-account">Your Account <span class="about">Renew MIT, BLC, &amp; Borrow Direct items</span></a>
+        <a href="http://library.mit.edu">Barton catalog <span class="about">Get MIT items</span></a>
+        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Get non-MIT items (BLC &amp; Borrow Direct)</span></a>
+        <a href="/illiad">ILLiad <span class="about">Get non-MIT items (Interlibrary Borrowing)</span></a>
         <a href="/suggest-purchase">Suggest a purchase</a>
+        <a href="/borrow" class="bottom">More borrow &amp; request options</a>
       </div>
       <div class="col-2 flex-item">
         <span class="heading-col">More Information</span>
-        <a href="/getit">Get it: understand your options</a>
-        <a href="http://libguides.mit.edu/circfaq">Circulation FAQ: fines, renewing, etc.</a>
+        <a href="/getit">Get it <span class="about">Understand your options</span></a>
+        <a href="http://libguides.mit.edu/circfaq">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a>
         <a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
-        <a href="/otherlibraries">Visit non-MIT libraries: Harvard, Boston Library Consortium, etc.</a>
-      </div>
-      <div class="bottom flex-clear">
-        <a href="/borrow">More borrow &amp; request options</a>
+        <a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Boston Library Consortium, etc.</span></a>
       </div>
     </div>
   </div>
   <div class="link-primary">
-    <a href="/research-support">Research Support</a>
+    <a href="/research-support">Research support</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
-        <span class="heading-col">Expert Help</span>
-        <a href="/ask">Ask Us!</a>
-        <a href="/experts">Librarians &amp; subject experts</a>
-        <a href="/research-guides">Research guides</a>
-        <a href="http://libguides.mit.edu/classguides">Class &amp; program guides</a>
-        <a href="http://libguides.mit.edu/finding-data">Data: finding &amp; managing</a>
-        <a href="/offcampus">Connect from on and off-campus</a>
+        <span class="heading-col">Help &amp; useful tools</span>
+        <a href="/ask">Ask Us! <span class="about">Email, chat, call, drop by</span></a>
+        <a href="/research-guides">Research guides &amp; expert librarians <span class="about">For every research interest</span></a>
+        <a href="/offcampus">Connect from on and off-campus <span class="about">Tips &amp; tricks</span></a>
+        <a href="/productivity-tools">Productivity tools <span class="about">Apps, LibX, RSS, etc.</span></a>
+        <a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a>
+        <a href="/research-support" class="bottom">More research support options</a>
       </div>
       <div class="col-2 flex-item">
-        <span class="heading-col">Publishing &amp; Writing</span>
-        <a href="/scholarly">Scholarly publishing: open access &amp; copyright</a>
-        <a href="http://dspace.mit.edu/">DSpace@MIT: MIT scholarly papers</a>
-        <a href="/oapolicy">Faculty open access policy</a>
-        <a href="http://libguides.mit.edu/citing">Citing sources</a>
-        <a href="http://libguides.mit.edu/publishing">Getting published: tools &amp; help</a>
-        <a href="/archives/thesis-specs/index.html">Thesis specifications</a>
+        <span class="heading-col">Publishing &amp; content management</span>
+        <a href="">Citation software <span class="about">EndNote, Mendeley, &amp; Zotero</span></a>
+        <a href="http://libguides.mit.edu/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a>
+        <a href="">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a>
+        <a href="http://libguides.mit.edu/publishing">Getting published <span class="about">Tools &amp; help</span></a>
+        <a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a>
       </div>
-      <div class="bottom flex-clear">
-        <a href="/research-support">More research support options</a>
-      </div>
-    </div>
-  </div>
+    </div><!-- end div.links-sub -->
+  </div><!-- end div.links-primary -->
   <div class="link-primary">
     <a href="/productivity-tools">Productivity Tools</a>
     <div class="links-sub flex-container push group">
@@ -136,23 +125,22 @@
     <a href="/about">About Us</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
-        <span class="heading-col">About Us</span>
-        <a href="http://libguides.mit.edu/directory">Staff directory</a>
+        <span class="heading-col">About us</span>
+        <a href="">Contact us</a>
         <a href="/user-guidelines">Guidelines for using the MIT Libraries</a>
         <a href="/about/#Jobs">Jobs</a>
         <a href="/giving">Giving to the MIT Libraries</a>
+        <a href="/about" class="about">More about us</a>
+        <a href="http://libguides.mit.edu/directory">Staff directory</a>
       </div>
       <div class="col-2 flex-item">
-        <span class="heading-col">News, Events, &amp; Exhibits</span>
+        <span class="heading-col">News, events, &amp; exhibits</span>
         <a href="/calendar">Calendar of events</a>
         <a href="/news">News</a>
         <a href="/exhibits">Exhibits &amp; galleries</a>
       </div>
-      <div class="bottom flex-clear">
-        <a href="/about">More about us</a>
-      </div>
-    </div>
-  </div>
+    </div><!-- end div.links-sub -->
+  </div><!-- end div.links-primary -->
   <div class="link-primary small">
     <a href="/ask">Ask Us</a>
     <div class="links-sub push">
