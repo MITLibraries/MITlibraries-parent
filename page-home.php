@@ -5,8 +5,8 @@
 	<div id="search-main" class="search--lib-resources flex-container">
 		<h2>Search in</h2>
 		<div class="wrap-select">
-			<ul id="resource">
-				<li class="bartonplus">Articles, books &amp; more <span>BartonPlus</span></li>
+			<ul id="resource" class="resource-list">
+				<li class="bartonplus active">Articles, books &amp; more <span>BartonPlus</span></li>
 				<li class="vera">E-Journals &amp; databases <span>Vera</span></li>
 				<li class="barton">Books &amp; media at MIT <span>Barton Catalog</span></li>
 				<li class="worldcat">Books &amp; media worldwide <span>MIT's Worldcat</span></li>
