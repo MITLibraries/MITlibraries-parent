@@ -1,5 +1,6 @@
 .footer-main {
 	background: lighten($color-primary, 7.8431%);
+	padding: 2em 1.375em;
 	@include bp-large {
 		background: $color-primary;
 	}
@@ -21,23 +22,42 @@
 		}
 	}
 	.links-primary {
+		flex-flow: wrap;
 		font-size: 0.8125em;
 		a {
 			display: block;
+			width: 50%;
+			&:not(:last-of-type) {
+				margin-bottom: 1.5em;
+			}
+			@include bp-tablet--portrait {
+				display: none;
+			}
 		}
+	}
+	.logo-mit-lib {
+		display: block;
+		fill: #fff;
+		margin-right: 1em;
+		width: 67%;
 	}
 	.social {
 		a {
-			display: inline-block;
+			margin: 0.5em;
 		}
+		flex-flow: wrap;
 		[class*="icon-social"] {
 			background: $color-secondary;
 			border-radius: 50%;
 			height: auto;
-			padding: 0.5em;
-			width: 2.5em;
+			padding: 0.2em;
+			width: 1.5em;
 			path {
 				fill: #474747;
+			}
+			@include bp-tablet--portrait {
+				padding: 0.5em;
+				width: 2.5em;
 			}
 		}
 	}
