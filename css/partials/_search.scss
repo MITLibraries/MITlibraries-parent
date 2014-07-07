@@ -3,9 +3,11 @@
 	flex-flow: wrap;
 	justify-content: center;
 	padding: 2em 0;
+	position: relative;
 	@include gradient-blue;
+	z-index: map-get($zindex, main);
 	@include bp-tablet--portrait {
-		flex-flow: nowrap
+		flex-wrap: wrap
 	}
 	h2 {
 		color: $color-text--light;
@@ -150,6 +152,19 @@
 			content: url(#{$imagesPath}/select-arrows-sfw.svg);
 		}
 	}
+	.search-advanced {
+		bottom: 1rem;
+		display: none;
+		font-size: 0.75em;
+		@include rem-first(margin-left, 0.5);
+		position: absolute;
+		@include bp-tablet--portrait {
+			color: #fff;
+			&.active {
+				display: block;
+			}
+		}
+	}
 	[class*="wrap-select"] {
 		background: #ebf5ff;
 		box-shadow: 0 0 8px -1px #444;
@@ -184,5 +199,6 @@
 	}
 	.wrap-select--resources {
 		min-width: 10em;
+		z-index: map-get($zindex, dropdown-body);
 	}
 }

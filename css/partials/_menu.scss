@@ -1,6 +1,7 @@
 .nav-main {
   flex-flow: wrap;
   transform: translateY(-1000%);
+  z-index: map-get($zindex, dropdown);
   &.active {
     background: white;
     box-shadow: 0 3px 3px $color-shadow;
@@ -30,7 +31,6 @@
 .link-primary {
   position: relative;
   transition: background-color 0.3s;
-  z-index: map-get($zindex, dropdown);
   width: 100%;
   @include bp-tablet--portrait {
     border-right: 1px solid $color-secondary;
