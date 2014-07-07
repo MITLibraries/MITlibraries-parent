@@ -108,6 +108,18 @@
 			}
 		}
 	}
+	.resource-list {
+		cursor: pointer;
+		li {
+			display: none;
+			span {
+				display: none;
+			}
+			&.active {
+				display: block;
+			}
+		}
+	}
 	[class*="wrap-select"] {
 		background: #ebf5ff;
 		box-shadow: 0 0 8px -1px #444;
