@@ -76,18 +76,24 @@
 		</div>
 		<script>
 				
+			// All available resources	
 			var resourcesAll = $('#resources li');
 			$('#resources').on('click', 'li', function() {
+				// To show or hide the parent <ul>
 				$(this).parent().toggleClass('active');
+				// Remove active class from any <li> that has it...
 				$(resourcesAll).removeClass('active');
+				// And add the class to the <li> that gets clicked
 				$(this).toggleClass('active');
-			
-				var selected = $('#resources li.active .main');
-				var selectedText = $(selected).text();
+				
+				// Get the main text of the currently selected <li>
+				var selectedText = $('#resources li.active .main').text();
+				// Show this text above the dropdown (when active), mimicing a <select>
 				if ($('#resources').hasClass('active')) {
 					console.log('open');
 					$('.wrap-select--resources .selected').text(selectedText).addClass('active');
 				}
+				// Remove the text when the dropdown is closed
 				else {
 					console.log('closed');
 					$('.wrap-select--resources .selected').text('').removeClass('active');
@@ -126,17 +132,19 @@
 			}
 
 			$('#search-main').on('click', '#resources', function(){
-				// Hide all inputs on option change
-				$('#search-main input').removeClass('active');
-				// Get the value of the selected option...
-				var resourceOption = $('#resources li.active').attr('data-option');
-				// ...and show the corresponding input
-				$('#search-main input.'+resourceOption).addClass('active');
-				// Repeat for keyword selects
-				$('.keywords').parent().removeClass('active');
-				$('.keywords').removeClass('active');
-				$('#search-main .keywords.'+resourceOption).addClass('active');
-				$('#search-main .keywords.'+resourceOption).parent().addClass('active');
+				function formSelect() {
+					// Hide all inputs on option change
+					$('#search-main input').removeClass('active');
+					// Get the value of the selected option...
+					var resourceOption = $('#resources li.active').attr('data-option');
+					// ...and show the corresponding input
+					$('#search-main input.'+resourceOption).addClass('active');
+					// Repeat for keyword selects
+					$('.keywords').parent().removeClass('active');
+					$('.keywords').removeClass('active');
+					$('#search-main .keywords.'+resourceOption).addClass('active');
+					$('#search-main .keywords.'+resourceOption).parent().addClass('active');
+				}
 			});
 
 			$('#search-main form').on('submit', function(){
