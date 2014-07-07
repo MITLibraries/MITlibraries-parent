@@ -133,6 +133,12 @@
 					.append("<input type='hidden' name='param_services2filter_save' value='getAbstract' />")
 					.append("<input type='hidden' name='param_services2filter_save' value='getFullTxt' />");
 				}
+				// Worldcat
+				if($('#worldcat'.length)) {
+					$('#worldcat')
+						.append("<input type='hidden' name='qt' value='wc_org_mit'/>")
+						.append("<input type='hidden' name='qt' value='affiliate'/>");
+				}
 			}
 
 			$('#search-main').on('click', '#resources', function(event){
@@ -194,6 +200,21 @@
 						.attr('name','param_pattern_value')
 						.attr('id','param_pattern_value')
 						.addClass('searchtext')
+						.val(searchQuery);
+				}
+				// Barton
+				if($('#barton').length) {
+					$('input', this)
+						.attr("action", "http://library.mit.edu/F/")
+						.val(searchQuery);
+				}
+				// Worldcat
+				if($('#worldcat').length) {
+					// Add hidden fields
+					hiddenFields();
+					$('input', this)
+						.attr("action", "http://mit.worldcat.org/search")
+						.attr("name","q")
 						.val(searchQuery);
 				}
 			});
