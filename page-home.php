@@ -4,14 +4,15 @@
 
 	<div id="search-main" class="search--lib-resources flex-container">
 		<h2>Search in</h2>
-		<div class="wrap-select">
-			<ul id="resource" class="resource-list">
-				<li class="bartonplus active">Articles, books &amp; more <span>BartonPlus</span></li>
-				<li class="vera">E-Journals &amp; databases <span>Vera</span></li>
-				<li class="barton">Books &amp; media at MIT <span>Barton Catalog</span></li>
-				<li class="worldcat">Books &amp; media worldwide <span>MIT's Worldcat</span></li>
-				<li class="course-reserves">Course reserves</li>
-				<li class="site-search">Libraries website</li>
+		<div class="wrap-select--resources">
+			<div class="selected"></div>
+			<ul id="resources" class="resource-list">
+				<li class="bartonplus active" data-target="bartonplus" data-option="option-1"><span class="main">Articles, books &amp; more</span> <span class="name">BartonPlus</span></li>
+				<li class="vera" data-target="vera" data-option="option-2"><span class="main">E-Journals &amp; databases</span> <span class="name">Vera</span></li>
+				<li class="barton" data-target="barton" data-option="option-3"><span class="main">Books &amp; media at MIT</span> <span class="name">Barton Catalog</span></li>
+				<li class="worldcat" data-target="worldcat" data-option="option-4"><span class="main">Books &amp; media worldwide</span> <span class="name">MIT's Worldcat</span></li>
+				<li class="course-reserves" data-target="course-reserves" data-option="option-5"><span class="main">Course reserves</span></li>
+				<li class="site-search" data-target="site-search" data-option="option-6"><span class="main">Libraries website</span></li>
 			</ul>
 		</div>
 		<span class="label">for</span>
@@ -74,15 +75,29 @@
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg>
 		</div>
 		<script>
-
-			function formSelect() {
+				
+			var resourcesAll = $('#resources li');
+			$('#resources').on('click', 'li', function() {
+				$(this).parent().toggleClass('active');
+				$(resourcesAll).removeClass('active');
+				$(this).toggleClass('active');
+			
+				var selected = $('#resources li.active .main');
+				var selectedText = $(selected).text();
+				if ($('#resources').hasClass('active')) {
+					console.log('open');
+					$('.wrap-select--resources .selected').text(selectedText).addClass('active');
+				}
+				else {
+					console.log('closed');
+					$('.wrap-select--resources .selected').text('').removeClass('active');
+					//$('.wrap-select--resources').trigger('closed');
+				}
 				// Get the class of the selected resource
-				var searchSelected = $('#resource option:selected').attr('class');
+				var searchSelected = $('#resources li.active').attr('data-target');
 				// Apply this class, as an id, to the form.
 				$('#search-main form').attr('id', searchSelected);
-			}
-
-			formSelect();
+			});
 
 			function hiddenFields() {
 				// Add hidden fields, necessary for BartonPlus search
@@ -109,12 +124,12 @@
 					.append("<input type='hidden' name='param_services2filter_save' value='getFullTxt' />");
 				}
 			}
-			
-			$('#resource').change(function(){
+
+			$('#search-main').on('click', '#resources', function(){
 				// Hide all inputs on option change
 				$('#search-main input').removeClass('active');
 				// Get the value of the selected option...
-				var resourceOption = $('#resource option:selected').val();
+				var resourceOption = $('#resources li.active').attr('data-option');
 				// ...and show the corresponding input
 				$('#search-main input.'+resourceOption).addClass('active');
 				// Repeat for keyword selects
@@ -122,9 +137,6 @@
 				$('.keywords').removeClass('active');
 				$('#search-main .keywords.'+resourceOption).addClass('active');
 				$('#search-main .keywords.'+resourceOption).parent().addClass('active');
-				// Run formSelect on change
-				formSelect();
-
 			});
 
 			$('#search-main form').on('submit', function(){
