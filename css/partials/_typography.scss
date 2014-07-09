@@ -41,6 +41,13 @@ a {
 	}
 }
 
+.error-load {
+	font-size: 1em;
+	font-weight: 300;
+	margin: 1em auto;
+	text-align: center;
+}
+
 .title-page h1 {
 	line-height: 1;
 	@include font-size(28px);
