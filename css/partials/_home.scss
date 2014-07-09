@@ -8,8 +8,12 @@
 		.col-1 {
 			@include span-4-12;
 			@include bp-tablet--portrait {
+				background: $color-background-secondary;
 				margin-left: 0; // Creates full bleed
 				width: 33.955%; // Corrects grid for zero margin
+				& > :not(.extra) {
+					background: #fff;
+				}
 			}
 		}
 		.col-2 {
@@ -26,7 +30,49 @@
 			color: $color-hours-locations;
 			text-align: center;
 		}
-		a {
+		p {
+			color: darken($color-background-secondary, 70%);
+			font-size: 0.875em;
+			font-weight: 300;
+		}
+		.active {
+			display: block;
+			opacity: 1;
+			transition: opacity 0.2s ease;
+		}
+		.button-primary {
+			@include color-button-primary($color-hours-locations);
+		}
+		.extra {
+			background: $color-background-secondary;
+			padding: 1em;
+		}
+		.hours {
+			display: inline-block;
+		}
+		.icon-arrow-down {
+			margin-right: 0.5em;
+		}
+		.inactive {
+			opacity: 0;
+		}
+		.link-map,
+		.link-study {
+			color: $color-hours-locations;
+			font-weight: 300;
+			@include bp-tablet--portrait {
+				display: block;
+				font-weight: 600;
+			}
+		}
+		.location {
+			color: #111;
+			font-weight: 300;
+			padding: 1em;
+			&:hover {
+				background: $color-background-secondary;
+			}
+			transition: background 0.1s ease;
 			@include bp-small {
 				&:nth-child(-n+4) {
 					border-bottom: 1px solid $color-secondary;
@@ -39,28 +85,6 @@
 					display: block;
 				}
 			}
-		}
-		.active {
-			display: block;
-			opacity: 1;
-			transition: opacity 0.2s ease;
-		}
-		.button-primary {
-			@include color-button-primary($color-hours-locations);
-		}
-		.hours {
-			display: inline-block;
-		}
-		.icon-arrow-down {
-			margin-right: 0.5em;
-		}
-		.inactive {
-			opacity: 0;
-		}
-		.location {
-			color: #111;
-			font-weight: 300;
-			padding: 1em;
 		}
 		.show-more {
 			background: $color-secondary;

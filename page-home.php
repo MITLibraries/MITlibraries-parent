@@ -245,9 +245,12 @@
 				<a href="/archives" class="location hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3><div class="hours"></div></a>
 				<a href="/lewis" class="location hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3><div class="hours"></div></a>
 				<a href="/rotch" class="location hidden-mobile inactive-mobile"><h3>Rotch Library</h3><div class="hours"></div></a>
-				<a href="/map">View Map</a>
-				<a href="/study" class="study">Find a Study Space</a>
 				<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
+				<div class="extra">
+					<a href="/map" class="link-map">View Map</a>
+					<a href="/study" class="link-study">Find a Study Space</a>
+					<p>Quiet, group, and 24/7 study spaces available</p>
+				</div>
 			</div>
 			<script>
 				$(document).on('click', '.hours-locations .show-more', function(){
