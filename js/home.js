@@ -61,6 +61,12 @@ function hiddenFields() {
 			.append("<input type='hidden' name='qt' value='wc_org_mit'/>")
 			.append("<input type='hidden' name='qt' value='affiliate'/>");
 	}
+	// Site Search
+	if($('#site-search').length) {
+		$('#site-search')
+			.append('<input type="hidden" name="cx" value="016240528703941589557:i7wrbu9cdxu" />')
+			.append('<input type="hidden" name="ie" value="UTF-8" />');
+	}
 }
 
 $('#search-main').on('click', '#resources', function(event){
@@ -150,6 +156,21 @@ $('#search-main form').on('submit', function(){
 		$('input', this)
 			.attr("name","q")
 			.val(searchQuery);
+	}
+	// Site Search
+	if($('#site-search').length) {
+		$(this)
+			.attr('action', 'http://www.google.com/cse')
+			.attr('id', 'cse-search-box');
+		hiddenFields();
+		$('input', this)
+			.addClass('searchText')
+			.attr('name', 'q')
+			.attr('type', 'text')
+			.val(searchQuery);
+		$('button', this)
+			.attr('name', 'sa')
+			.attr('value', 'Search');
 	}
 });
 
