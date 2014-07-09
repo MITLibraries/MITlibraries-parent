@@ -164,11 +164,30 @@
 			display: inline-block;
 			width: auto;
 		}
+		[class*="button"] {
+			margin-bottom: 0.5em;
+			&:not(:last-of-type) {
+				margin-right: 0.5em;
+				margin-left: -4px; // Fights inline-block space
+			}
+		}
 		.button-primary {
+			border: 2px solid $color-guides-experts;
 			@include color-button-primary($color-guides-experts);
+			&:hover {
+				border-color: darken($color-guides-experts, 20%);
+			}
 		}
 		.button-secondary {
-			@include color-button-secondary($color-guides-experts);
+			color: $color-guides-experts;
+			transition: background 0.1s,
+									border-color 0.1s,
+									color 0.1s;
+			&:hover {
+				background: $color-guides-experts;
+				border-color: $color-guides-experts;
+				color: #fff;
+			}
 		}
 		.expert {
 			width: 50%;
@@ -183,6 +202,10 @@
 			border-radius: 50%;
 			display: block;
 			margin: 0 auto;
+		}
+		.link-ask {
+			color: $color-guides-experts;
+			font-weight: 700;
 		}
 		.name {
 			display: block;

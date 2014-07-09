@@ -378,7 +378,7 @@
 			<div class="guides-experts">
 				<h2>Research Guides &amp; Experts</h2>
 				<p class="caption">Specialized guides for every research interest.</p>
-				<p class="caption">Not sure where to start?<a href="/ask">Ask Us</a></p>
+				<p class="caption">Not sure where to start? <a href="/ask" class="link-ask">Ask Us</a></p>
 				<a href="" class="button-secondary">Astronomy</a>
 				<a href="" class="button-secondary">Music</a>
 				<a href="" class="button-secondary">Real Estate</a>
