@@ -142,7 +142,7 @@ $('#search-main form').on('submit', function(){
 		// Add hidden fields
 		hiddenFields();
 
-		$('input', this)
+		$('input.active', this)
 			.attr('type', 'text')
 			.attr('id', 'bookrequest')
 			.addClass('searchtext')
@@ -153,7 +153,7 @@ $('#search-main form').on('submit', function(){
 		$(this).attr('action', 'http://mit.worldcat.org/search');
 		// Add hidden fields
 		hiddenFields();
-		$('input', this)
+		$('input.active', this)
 			.attr("name","q")
 			.val(searchQuery);
 	}
@@ -163,7 +163,7 @@ $('#search-main form').on('submit', function(){
 			.attr('action', 'http://www.google.com/cse')
 			.attr('id', 'cse-search-box');
 		hiddenFields();
-		$('input', this)
+		$('input.active', this)
 			.addClass('searchText')
 			.attr('name', 'q')
 			.attr('type', 'text')
