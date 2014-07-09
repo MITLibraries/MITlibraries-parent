@@ -10,6 +10,10 @@ module.exports = {
     ],
     dest: 'js/build/production.js'
   },
+  home: {
+    src: 'js/home.js',
+    dest: 'js/build/home.js'
+  },
   hours: {
   	src: [
   		'js/sticky/*.js',
