@@ -204,8 +204,20 @@
 				}
 				// Barton
 				if($('#barton').length) {
+					
+					$('#barton')
+					.addClass('searchform')
+					.attr('action', 'http://library.mit.edu/F/')
+					.attr('name', 'booksearch')
+					.attr('method', 'get');
+
+					// Add hidden fields
+					hiddenFields();
+
 					$('input', this)
-						.attr("action", "http://library.mit.edu/F/")
+						.attr('type', 'text')
+						.attr('id', 'bookrequest')
+						.addClass('searchtext')
 						.val(searchQuery);
 				}
 				// Worldcat
