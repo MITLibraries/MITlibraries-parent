@@ -6,11 +6,18 @@
 			flex-wrap: nowrap;
 		}
 		.col-1 {
-		@include span-4-12;
+			@include span-4-12;
+			@include bp-tablet--portrait {
+				margin-left: 0; // Creates full bleed
+				width: 33.955%; // Corrects grid for zero margin
+			}
 		}
 		.col-2 {
-			@include span-8-12;
 			border-left: 1px solid $color-secondary;
+			@include bp-tablet--portrait {
+				margin-left: 0; // Creates full bleed
+				width: 67.915%; // Corrects grid for zero margin
+			}
 		}
 	}
 	.hours-locations {
@@ -53,6 +60,7 @@
 		.location {
 			color: #111;
 			font-weight: 300;
+			padding: 1em;
 		}
 		.show-more {
 			background: $color-secondary;
