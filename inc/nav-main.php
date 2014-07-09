@@ -101,24 +101,6 @@
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary">
-    <a href="/productivity-tools">Productivity Tools</a>
-    <div class="links-sub flex-container push group">
-      <div class="col-1 flex-item">
-        <span class="heading-col">Web Tools &amp; Apps</span>
-        <a href="/apps">Apps for academics</a>
-        <a href="/fulltext">FullText Finder: find specific citation</a>
-        <a href="/libx">LibX: search/authenticate via browser</a>
-        <a href="/mobile">Mobile site</a>
-        <a href="/new-books">New books RSS feeds</a>
-      </div>
-      <div class="col-2 flex-item">
-        <span class="heading-col">Citation &amp; Content Management Tools</span>
-        <a href="/references">Citation software: EndNote, RefWorks, Zotero, Mendeley</a>
-        <a href="http://libguides.mit.edu/manage-info">Manage your information</a>
-      </div>
-    </div>
-  </div>
-  <div class="link-primary">
     <a href="/about">About Us</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
