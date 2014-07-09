@@ -238,13 +238,13 @@
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
 				<h2>Hours &amp; Locations</h2>
-				<a href="/barker"><h3>Barker Library</h3></a>
-				<a href="/dewey"><h3>Dewey Library</h3></a>
-				<a href="/hayden"><h3>Hayden Library</h3></a>
+				<a href="/barker" class="location"><h3>Barker Library</h3></a>
+				<a href="/dewey" class="location"><h3>Dewey Library</h3></a>
+				<a href="/hayden" class="location"><h3>Hayden Library</h3></a>
 				<a href="#0" class="show-more hidden-non-mobile"><svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More</a>
-				<a href="/archives" class="hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3></a>
-				<a href="/lewis" class="hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3></a>
-				<a href="/rotch" class="hidden-mobile inactive-mobile"><h3>Rotch Library</h3></a>
+				<a href="/archives" class="location hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3></a>
+				<a href="/lewis" class="location hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3></a>
+				<a href="/rotch" class="location hidden-mobile inactive-mobile"><h3>Rotch Library</h3></a>
 				<a href="/map">View Map</a>
 				<a href="/study" class="study">Find a Study Space</a>
 				<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
@@ -273,34 +273,44 @@
 				}
 
 				function getHours() {
+					// What day is it?
+					var thisDay = findToday(thisDay);
+					// Empty array for library locations
 					var libArr = [];
+					// Get the number of locations
 					var locs = $('.hours-locations h3').length;
 					for (var i = 0; i < locs; i++) {
+						// Populate an array, "libArr", with location names
 						var loc = $('.hours-locations h3')[i];
 						var locName = $(loc).text();
-						libArr.push(locName);
+						libArr.push(locName); 
 					};
-					console.log(libArr);
-
-					var thisDay = findToday(thisDay);
 					
 					$.getJSON('/wp-content/themes/libraries/hours.json')
 						.done(function(data) {
-							var arr = [];
-							//var libName = data[arr];
-							var barker = data[libArr[0]];
-							var barkerToday = barker.hours.thisDay;
-							console.log(barkerToday);
-							console.log(data[libArr[1]]);
-							console.log(data[libArr[2]]);
-							console.log(data[libArr[3]]);
-							console.log(data[libArr[4]]);
-							console.log(data[libArr[5]]);
-							console.log(data[libArr[6]]);
-							$('.hours-locations a').append(data[libArr[0].hours]);
+							// Empty array for library hours
+							var libHrsArr = [];
+							// Run the loop again
+							for (var i = 0; i < locs; i++) {
+								// Each library
+								var libs = data[libArr[i]];
+								// Each library's hours, today
+								var libHrsToday = libs.hours[thisDay];
+								// Add these values to the array
+								libHrsArr.push(libHrsToday);
+							};
+							// Append each value to a location, shifting off each object as it is used
+							$('.hours-locations a.location').each(function(){
+								$(this).append(libHrsArr[0]);
+								libHrsArr.shift();
+							});
+
 						})
 						.fail(function(textStatus, error) {
-							console.log('fail');
+							// Show link to /hours if Ajax request fails
+							$('.hours-locations a.location').each(function(){
+								$(this).append('<a href="/hours">View Hours</a>');
+							});
 						});
 				}
 				getHours();
