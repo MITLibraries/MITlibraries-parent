@@ -261,6 +261,49 @@
 					$('.hours-locations .hidden-mobile').removeClass('hidden-mobile');
 						//$('.hidden-mobile', this).removeClass('inactive');
 					});
+
+				function findToday() {
+					var today, d, m, yyyy;
+					today = new Date();
+					d = today.getDate();
+					m = today.getMonth() + 1;
+					yyyy = today.getFullYear();
+					today = m + "/" + d + "/" + yyyy;
+					return today;
+				}
+
+				function getHours() {
+					var libArr = [];
+					var locs = $('.hours-locations h3').length;
+					for (var i = 0; i < locs; i++) {
+						var loc = $('.hours-locations h3')[i];
+						var locName = $(loc).text();
+						libArr.push(locName);
+					};
+					console.log(libArr);
+
+					var thisDay = findToday(thisDay);
+					
+					$.getJSON('/wp-content/themes/libraries/hours.json')
+						.done(function(data) {
+							var arr = [];
+							//var libName = data[arr];
+							var barker = data[libArr[0]];
+							var barkerToday = barker.hours.thisDay;
+							console.log(barkerToday);
+							console.log(data[libArr[1]]);
+							console.log(data[libArr[2]]);
+							console.log(data[libArr[3]]);
+							console.log(data[libArr[4]]);
+							console.log(data[libArr[5]]);
+							console.log(data[libArr[6]]);
+							$('.hours-locations a').append(data[libArr[0].hours]);
+						})
+						.fail(function(textStatus, error) {
+							console.log('fail');
+						});
+				}
+				getHours();
 			</script>
 		</div>
 		<div class="col-2 flex-item">
