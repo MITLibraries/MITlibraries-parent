@@ -30,13 +30,13 @@
 }
 
 %button-secondary {
-	border-style: solid;
-	border-width: 3px;
+	border: 2px solid $color-secondary;
 	@extend %button;
 	display: inline-block;
 	font-size: 0.875em;
-	&:hover {
-		color: $color-text--light;
+	font-weight: 600;
+	@include bp-tablet--portrait {
+		font-size: 1em;
 	}
 }
 
