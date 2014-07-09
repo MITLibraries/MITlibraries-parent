@@ -266,7 +266,10 @@ $.getJSON('/wp-json/posts?type=experts')
 		  var randomNumber=Math.ceil(Math.random()*dataLength);
 		  var found=false;
 		  for(var i=0;i<arr.length;i++){
-		    if(arr[i]==randomNumber){found=true;break}
+		    if(arr[i]==randomNumber){
+		    	found=true;
+		    	break;
+		    }
 		  }
 		  if(!found)arr[arr.length]=randomNumber;
 		}
