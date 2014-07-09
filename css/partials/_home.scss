@@ -41,17 +41,30 @@
 		.button-primary {
 			@include color-button-primary($color-hours-locations);
 		}
+		.hours {
+			display: inline-block;
+		}
 		.icon-arrow-down {
 			margin-right: 0.5em;
 		}
 		.inactive {
 			opacity: 0;
 		}
+		.location {
+			color: #111;
+			font-weight: 300;
+		}
 		.show-more {
 			background: $color-secondary;
 			color: $color-hours-locations;
 			fill: $color-hours-locations;
 			text-align: center;
+		}
+		.special {
+			color: #ababab;
+			@include bp-tablet--portrait {
+				color: $color-hours-locations;
+			}
 		}
 	}
 	.news-events {
