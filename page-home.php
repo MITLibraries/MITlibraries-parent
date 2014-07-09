@@ -210,10 +210,10 @@
 				}
 				// Worldcat
 				if($('#worldcat').length) {
+					$(this).attr('action', 'http://mit.worldcat.org/search');
 					// Add hidden fields
 					hiddenFields();
 					$('input', this)
-						.attr("action", "http://mit.worldcat.org/search")
 						.attr("name","q")
 						.val(searchQuery);
 				}
