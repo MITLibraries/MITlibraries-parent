@@ -239,6 +239,12 @@ $.getJSON('/news/wp-json/posts')
 		var newsImage2 = '/news/files/'+newsItem2.featured_image.attachment_meta.file;
 		$('.item-1 .image').css('background-image', 'url('+newsImage1+')').trigger('newsLoaded1');
 		$('.item-2 .image').css('background-image', 'url('+newsImage2+')').trigger('newsLoaded2');
+	})
+	.fail(function(){
+		$('.news-events > .flex-container')
+			.append('<div class="error-load">MIT Libraries News is currently unavailable.</div>')
+			$('.item-1').hide()
+			$('.item-2').hide();
 	});
 	$('.item-1').on('newsLoaded1', function(){
 		$('.item-1 .spinner').hide();
