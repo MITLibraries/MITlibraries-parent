@@ -121,9 +121,6 @@
 	}
 	.resource-list {
 		cursor: pointer;
-		&:after {
-			content: url(#{$imagesPath}/select-arrows-sfw.svg);
-		}
 		li {
 			color: #fff;
 			display: none;
@@ -148,6 +145,9 @@
 				&:hover {
 					background: darken(#fff, 20%);
 				}
+			}
+			svg {
+				display: none;
 			}
 			.name {
 				display: block;
@@ -192,11 +192,7 @@
 			align-items: center;
 		}
 		svg {
-			display: inline-block;
 			fill: #fff;
-			margin-left: -15%;
-			position: relative;
-			z-index: map-get($zindex, body);
 		}
 	}
 	.wrap-select--keywords {
@@ -215,6 +211,12 @@
 			svg {
 				margin-left: -8%;
 			}
+		}
+		svg {
+			display: inline-block;
+			margin-left: -15%;
+			position: relative;
+			z-index: map-get($zindex, body);
 		}
 	}
 	.wrap-select--resources {
