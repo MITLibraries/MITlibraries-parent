@@ -16,8 +16,8 @@
 			</ul>
 		</div>
 		<span class="label">for</span>
-		<form class="input-submit flex-container">
-			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes, oliver twist" autofocus="autofocus" tabindex="1">
+		<form id="bartonplus" class="input-submit flex-container">
+			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes" autofocus="autofocus" tabindex="1">
 			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
 			<input type="text" class="option-3" placeholder="ex: carbon nanotubes, game design">
 			<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
