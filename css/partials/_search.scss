@@ -74,6 +74,9 @@
 			font-weight: bold;
 			width: auto;
 		}
+		&:disabled {
+			color: #444;
+		}
 		&.keywords {
 			display: none;
 			&.active {
