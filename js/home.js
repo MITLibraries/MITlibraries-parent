@@ -186,6 +186,7 @@ $('#search-main').on('option-change', function(){
 	searchBy();
 })
 
+// Close the faux select menu when clicking outside it 
 $(document).on('click', function(event){
 	if(!$('#resources.active').has(event.target).length == 0) {
 		return;
