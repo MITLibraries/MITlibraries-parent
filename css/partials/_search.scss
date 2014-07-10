@@ -79,6 +79,7 @@
 			font-weight: bold;
 		}
 		&:disabled {
+			cursor: not-allowed;
 			color: #444;
 		}
 		&.keywords {
