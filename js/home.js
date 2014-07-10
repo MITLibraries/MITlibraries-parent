@@ -200,76 +200,83 @@ $(document).on('click', function(event){
 $('#search-main form').on('submit', function(){
 	// Get the query entered...
 	var searchQuery = $('input.active', this).val();
-	alert(searchQuery);
-	// Barton...
-	if ($('#bartonplus').length) {
-		// Set the correct action for the BartonPlus form
-		$('#bartonplus').attr('action', 'http://search.ebscohost.com/login.aspx');
-		// Add hidden fields
-		hiddenFields();
-		// Add search query to the bquery value, which sends it along to EDS
-		$('input[name="bquery"]', this).val(searchQuery);
+	if (searchQuery == '') {
+		// Show alert if no search term is entered
+		alert('Please enter a search term.');
+		// Is this proper?
+		return false;
+	}
+	else {
+		// Barton...
+		if ($('#bartonplus').length) {
+			// Set the correct action for the BartonPlus form
+			$('#bartonplus').attr('action', 'http://search.ebscohost.com/login.aspx');
+			// Add hidden fields
+			hiddenFields();
+			// Add search query to the bquery value, which sends it along to EDS
+			$('input[name="bquery"]', this).val(searchQuery);
+			}
+		// Vera...
+		if ($('#vera').length) {
+			// Vera actions
+			$('#vera')
+				.attr('action', 'http://owens.mit.edu/sfx_local/az/mit_all')
+				.attr('name', 'az_user_form')
+				.attr('method', 'get')
+				.attr('accept-charset', 'UTF-8')
+				.attr('id', 'verasearch')
+				.addClass('searchform');
+			// Add hidden fields
+			hiddenFields();
+			// Add the query val
+			$('input', this)
+				.attr('name','param_pattern_value')
+				.attr('id','param_pattern_value')
+				.addClass('searchtext')
+				.val(searchQuery);
 		}
-	// Vera...
-	if ($('#vera').length) {
-		// Vera actions
-		$('#vera')
-			.attr('action', 'http://owens.mit.edu/sfx_local/az/mit_all')
-			.attr('name', 'az_user_form')
-			.attr('method', 'get')
-			.attr('accept-charset', 'UTF-8')
-			.attr('id', 'verasearch')
-			.addClass('searchform');
-		// Add hidden fields
-		hiddenFields();
-		// Add the query val
-		$('input', this)
-			.attr('name','param_pattern_value')
-			.attr('id','param_pattern_value')
-			.addClass('searchtext')
-			.val(searchQuery);
-	}
-	// Barton
-	if($('#barton').length) {
-		
-		$('#barton')
-		.addClass('searchform')
-		.attr('action', 'http://library.mit.edu/F/')
-		.attr('name', 'booksearch')
-		.attr('method', 'get');
+		// Barton
+		if($('#barton').length) {
+			
+			$('#barton')
+			.addClass('searchform')
+			.attr('action', 'http://library.mit.edu/F/')
+			.attr('name', 'booksearch')
+			.attr('method', 'get');
 
-		// Add hidden fields
-		hiddenFields();
+			// Add hidden fields
+			hiddenFields();
 
-		$('input.active', this)
-			.attr('type', 'text')
-			.attr('id', 'bookrequest')
-			.addClass('searchtext')
-			.val(searchQuery);
-	}
-	// Worldcat
-	if($('#worldcat').length) {
-		$(this).attr('action', 'http://mit.worldcat.org/search');
-		// Add hidden fields
-		hiddenFields();
-		$('input.active', this)
-			.attr("name","q")
-			.val(searchQuery);
-	}
-	// Site Search
-	if($('#site-search').length) {
-		$(this)
-			.attr('action', 'http://www.google.com/cse')
-			.attr('id', 'cse-search-box');
-		hiddenFields();
-		$('input.active', this)
-			.addClass('searchText')
-			.attr('name', 'q')
-			.attr('type', 'text')
-			.val(searchQuery);
-		$('button', this)
-			.attr('name', 'sa')
-			.attr('value', 'Search');
+			$('input.active', this)
+				.attr('type', 'text')
+				.attr('id', 'bookrequest')
+				.addClass('searchtext')
+				.val(searchQuery);
+		}
+		// Worldcat
+		if($('#worldcat').length) {
+			$(this).attr('action', 'http://mit.worldcat.org/search');
+			// Add hidden fields
+			hiddenFields();
+			$('input.active', this)
+				.attr("name","q")
+				.val(searchQuery);
+		}
+		// Site Search
+		if($('#site-search').length) {
+			$(this)
+				.attr('action', 'http://www.google.com/cse')
+				.attr('id', 'cse-search-box');
+			hiddenFields();
+			$('input.active', this)
+				.addClass('searchText')
+				.attr('name', 'q')
+				.attr('type', 'text')
+				.val(searchQuery);
+			$('button', this)
+				.attr('name', 'sa')
+				.attr('value', 'Search');
+		}
 	}
 });
 
