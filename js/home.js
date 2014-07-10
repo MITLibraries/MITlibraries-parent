@@ -5,6 +5,15 @@
 // All available resources	
 var resourcesAll = $('#resources li');
 
+// Forms
+var bartonplusForm = $('#bartonplus');
+var veraForm = $('#vera');
+var bartonForm = $('#barton');
+var worldcatForm = $('#worldcat');
+var courseReservesForm = $('#course-reserves');
+var siteSearchForm = $('#site-search');
+
+// Mimic a <select> element with a <ul>
 $('#resources').on('click', 'li', function(event) {
 	// To show or hide the parent <ul>
 	$(this).parent().toggleClass('active');
@@ -29,7 +38,88 @@ $('#resources').on('click', 'li', function(event) {
 	var searchSelected = $('#resources li.active').attr('data-target');
 	// Apply this class, as an id, to the form.
 	$('#search-main form').attr('id', searchSelected);
+
 });
+
+function searchBy() {
+	var optionSelected = $('#search-main select.active option:selected').val();
+	if ($('#bartonplus').length) {
+		if(optionSelected == 'keyword') {
+			$('input.active').attr('placeholder', 'ex: carbon nanotubes');
+		}
+		if(optionSelected == 'title') {
+			$('input.active').attr('placeholder', 'ex: freakonomics');
+		}
+		if(optionSelected == 'author') {
+			$('input.active').attr('placeholder', 'ex: noam chomsky');
+		}
+	}
+	if ($('#vera').length) {
+		if(optionSelected == 'partial-words') {
+			$('input.active').attr('placeholder', 'ex: new eng j of med');
+		}
+		if(optionSelected == 'title-start') {
+			$('input.active').attr('placeholder', 'ex: journal of cell biology');
+		}
+		if(optionSelected == 'title-exact') {
+			$('input.active').attr('placeholder', 'ex: web of science');
+		}
+	}
+	if ($('#barton').length) {
+		if(optionSelected == 'keyword') {
+			$('input.active').attr('placeholder', 'ex: game design');
+		}
+		if(optionSelected == 'title-start') {
+			$('input.active').attr('placeholder', 'ex: introduction to fluid mechanics');
+		}
+		if(optionSelected == 'author') {
+			$('input.active').attr('placeholder', 'ex: shakespeare william');
+		}
+		if(optionSelected == 'call-number') {
+			$('input.active').attr('placeholder', 'ex: ta405.t5854');
+		}
+	}
+	if ($('#worldcat').length) {
+		if(optionSelected == 'keyword') {
+			$('input.active').attr('placeholder', 'ex: carbon nanotubes');
+		}
+		if(optionSelected == 'author') {
+			$('input.active').attr('placeholder', 'ex: william shakespeare');
+		}
+		if(optionSelected == 'title') {
+			$('input.active').attr('placeholder', 'ex: introduction to fluid mechanics');
+		}
+	}
+	if ($('#course-reserves').length) {
+		if(optionSelected == 'course-number') {
+			$('input.active').attr('placeholder', 'ex: introduction chemistry');
+		}
+		if(optionSelected == 'instructor') {
+			$('input.active').attr('placeholder', 'ex: cohen');
+		}
+		if(optionSelected == 'course-name') {
+			$('input.active').attr('placeholder', 'ex: introduction chemistry');
+		}
+	}
+}
+
+searchBy();
+
+function searchBySwitch() {
+	// Get the value of the active "search-by" option
+	var optionSelected = $('#search-main select.active option:selected').val();
+	console.log(optionSelected);
+
+	// Change the value on select change
+	$('#search-main select.active').change(function(){
+		var optionSelected = $('#search-main select.active option:selected').val();
+		console.log(optionSelected);
+		searchBy();
+	});
+
+}
+
+searchBySwitch();
 
 function hiddenFields() {
 	// Add hidden fields, necessary for BartonPlus search
@@ -81,11 +171,20 @@ $('#search-main').on('click', '#resources', function(event){
 	$('.keywords').removeClass('active');
 	$('#search-main .keywords.'+resourceOption).addClass('active');
 	$('#search-main .keywords.'+resourceOption).parent().addClass('active');
+	// Trigger option-change (better to use callback function?)
+	$(this).trigger('option-change');
 	// Advanced search
 	var searchSelected = $('#resources li.active').attr('data-target');
 	$('#search-main a.search-advanced').removeClass('active');
 	$('#search-main a.search-advanced.'+searchSelected).addClass('active');
+
 });
+
+// Run searchBy on option-change event
+$('#search-main').on('option-change', function(){
+	searchBySwitch();
+	searchBy();
+})
 
 $(document).on('click', function(event){
 	if(!$('#resources.active').has(event.target).length == 0) {
