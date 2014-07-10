@@ -76,6 +76,7 @@
 		-webkit-appearance: none;
 		@include bp-tablet--portrait {
 			color: #fff;
+			font-size: 1em;
 			font-weight: bold;
 		}
 		&:disabled {
@@ -151,12 +152,18 @@
 				&:hover {
 					background: darken(#fff, 20%);
 				}
+				&:not(:last-of-type) {
+					border-bottom: 1px solid #7b7c7c;
+				}
 			}
 			svg {
 				display: none;
 			}
 			.name {
+				color: #7b7c7c;
 				display: block;
+				font-size: 0.875em;
+				font-weight: 300;
 			}
 		}
 	}
