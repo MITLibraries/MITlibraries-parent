@@ -20,9 +20,11 @@
 		@include bp-tablet--portrait {
 			align-self: flex-end;
 			display: block;
+			height: auto;
 			fill: $color-background-secondary;
 			order: 4;
 			padding: 0.5em;
+			width: 4.5em;
 			.color {
 				fill: #fff;
 			}
