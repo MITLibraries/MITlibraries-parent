@@ -61,6 +61,7 @@
 	select {
 		background: none;
 		border: none;
+		cursor: pointer;
 		font-family: 'Open Sans', sans-serif;
 		@include rem-first(font-size, 0.875);
 		width: 100%;
