@@ -137,7 +137,13 @@
 			background: #fff;
 			border: 2px solid $color-secondary;
 			box-shadow: 0 0 3px #444;
+			margin: 0 0 0 -0.5em;
 			position: absolute;
+			width: 100%;
+			@include bp-tablet--portrait {
+				margin-top: 1em;
+				width: auto;
+			}
 			li {
 				color: #111;
 				display: block;
