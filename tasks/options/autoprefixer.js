@@ -1,6 +1,6 @@
 module.exports = {
   options: {
-    browsers: ['last 2 version']
+    browsers: ['last 10 version']
   },
   multiple_files: {
     expand: true,
