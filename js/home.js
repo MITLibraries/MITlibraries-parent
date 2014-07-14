@@ -272,13 +272,10 @@ $('#search-main form').on('submit', function(){
 		// Site Search
 		if($('#site-search').length) {
 			$(this)
-				.attr('action', 'http://www.google.com/cse')
-				.attr('id', 'cse-search-box');
+				.attr('action', 'http://www.google.com/cse');
 			hiddenFields();
 			$('input.active', this)
-				.addClass('searchText')
 				.attr('name', 'q')
-				.attr('type', 'text')
 				.val(searchQuery);
 			$('button', this)
 				.attr('name', 'sa')
