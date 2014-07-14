@@ -98,7 +98,7 @@ function searchBy() {
 	}
 	if ($('#course-reserves').length) {
 		if(optionSelected == 'course-number') {
-			$('input.active').attr('placeholder', 'ex: introduction chemistry');
+			$('input.active').attr('placeholder', 'ex: STS.320');
 		}
 		if(optionSelected == 'instructor') {
 			$('input.active').attr('placeholder', 'ex: cohen');
