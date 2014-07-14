@@ -81,7 +81,7 @@
 		}
 		&:disabled {
 			cursor: not-allowed;
-			color: #444;
+			color: #111;
 		}
 		&.keywords {
 			display: none;
@@ -251,7 +251,6 @@
 		}
 	}
 	.wrap-select--resources {
-		min-width: 10em;
 		padding: 0.5em;
 		z-index: map-get($zindex, dropdown-body);
 		@include bp-tablet--portrait {
