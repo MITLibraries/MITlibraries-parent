@@ -159,6 +159,13 @@
 			svg {
 				display: none;
 			}
+			.more {
+				&:after {
+					content: url(#{$imagesPath}/arrow-right-sfw.svg);
+					display: inline-block;
+					margin-left: 0.25em;
+				} 
+			}
 			.name {
 				color: #7b7c7c;
 				display: block;
