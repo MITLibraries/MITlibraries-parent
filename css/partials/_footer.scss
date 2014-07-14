@@ -16,7 +16,6 @@
 	}
 	.identity {
 		@include bp-tablet--portrait {
-			order: 200;
 			width: 100%;
 		}
 	}
@@ -29,7 +28,6 @@
 		display: none;
 		@include bp-tablet--portrait {
 			display: flex;
-			order: 100;
 			width: 100%;
 		}
 		h4 {
