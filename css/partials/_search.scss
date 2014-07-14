@@ -125,7 +125,7 @@
 		li {
 			color: #fff;
 			display: none;
-			font-weight: bold;
+			font-weight: 600;
 			.name {
 				display: none;
 				font-weight: normal;
@@ -148,18 +148,23 @@
 			li {
 				color: #111;
 				display: block;
-				padding: 0.5em 1em;
+				&:not(.has-link) {
+					padding: 0.5em 1em;
+				}
 				&:hover {
 					background: darken(#fff, 20%);
 				}
 				&:not(:last-of-type) {
-					border-bottom: 1px solid #7b7c7c;
+					border-bottom: 1px solid $color-secondary;
 				}
 			}
 			svg {
 				display: none;
 			}
 			.more {
+				display: block;
+				line-height: 2.625em;
+				padding: 0.5em 1em;
 				&:after {
 					content: url(#{$imagesPath}/arrow-right-sfw.svg);
 					display: inline-block;
@@ -171,6 +176,9 @@
 				display: block;
 				font-size: 0.875em;
 				font-weight: 300;
+			}
+			.tall {
+				line-height: 2.625em;
 			}
 		}
 	}
