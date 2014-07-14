@@ -86,6 +86,17 @@
 				}
 			}
 		}
+		.map-location:before {
+			content: url(#{$imagesPath}/pin-sfw.svg);
+			display: inline-block;
+			margin-right: 0.25em; 
+		}
+		.phone:before {
+			content: url(#{$imagesPath}/phone-sfw.svg);
+			display: inline-block;
+			margin-right: 0.25em; 
+			margin-left: 1em;
+		}
 		.show-more {
 			background: $color-secondary;
 			color: $color-hours-locations;

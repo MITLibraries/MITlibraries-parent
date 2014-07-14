@@ -85,13 +85,13 @@
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
 				<h2>Hours &amp; Locations</h2>
-				<a href="/barker" class="location"><h3>Barker Library</h3><div class="hours"></div> <span class="special">24/7 Study</span></a>
-				<a href="/dewey" class="location"><h3>Dewey Library</h3><div class="hours"></div> <span class="special">24/7 Study</span></a>
-				<a href="/hayden" class="location"><h3>Hayden Library</h3><div class="hours"></div> <span class="special">24/7 Study</span></a>
+				<a href="/barker" class="location"><h3>Barker Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">10-500</span><span class="phone">617-253-0968</span></div></a>
+				<a href="/dewey" class="location"><h3>Dewey Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">E53-100</span><span class="phone">617-253-5676 </span></div></a>
+				<a href="/hayden" class="location"><h3>Hayden Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">14S-100</span><span class="phone">617-253-5671</span></div></a>
 				<a href="#0" class="show-more hidden-non-mobile"><svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More</a>
-				<a href="/archives" class="location hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3><div class="hours"></div></a>
-				<a href="/lewis" class="location hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3><div class="hours"></div></a>
-				<a href="/rotch" class="location hidden-mobile inactive-mobile"><h3>Rotch Library</h3><div class="hours"></div></a>
+				<a href="/archives" class="location hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3><div class="hours"></div><div class="location-info"><span class="map-location">14N-118</span><span class="phone">617-253-5136</span></div></a>
+				<a href="/lewis" class="location hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3><div class="hours"></div><div class="location-info"><span class="map-location">14E-109</span><span class="phone">617-253-5689</span></div></a>
+				<a href="/rotch" class="location hidden-mobile inactive-mobile"><h3>Rotch Library</h3><div class="hours"></div><div class="location-info"><span class="map-location">7-238</span><span class="phone">617-258-5592</span></div></a>
 				<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
 				<div class="extra">
 					<a href="/map" class="link-map">View Map</a>
