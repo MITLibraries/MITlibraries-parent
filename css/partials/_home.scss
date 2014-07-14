@@ -188,6 +188,12 @@
 			&:hover {
 				border-color: darken($color-guides-experts, 20%);
 			}
+			&.view-experts {
+				@include bp-tablet--portrait {
+					margin: 0 auto;
+					width: 27.75%;
+				}
+			}
 		}
 		.button-secondary {
 			color: $color-guides-experts;
@@ -208,6 +214,8 @@
 		}
 		.experts-group {
 			justify-content: space-between;
+			min-height: 7.625em;
+			margin: 2em 0;
 		}
 		.expert-photo {
 			border-radius: 50%;
@@ -217,6 +225,15 @@
 		.link-ask {
 			color: $color-guides-experts;
 			font-weight: 700;
+			&:after {
+				content: url(#{$imagesPath}/arrow-right-sfw.svg);
+				display: inline-block;
+				margin-left: 0.25em;
+			}
+			svg {
+				display: inline-block;
+				margin-left: 0.5em;
+			}
 		}
 		.name {
 			display: block;
