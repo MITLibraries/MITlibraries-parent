@@ -3,7 +3,7 @@
 ?>
 
 	<div id="search-main" class="search--lib-resources flex-container">
-		<h2>Search in</h2>
+		<h2>Search</h2>
 		<div class="wrap-select--resources">
 			<div class="selected"></div>
 			<ul id="resources" class="resource-list">
