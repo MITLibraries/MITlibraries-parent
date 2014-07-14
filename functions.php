@@ -698,3 +698,14 @@ function no_post_limit( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'no_post_limit', 1 );
+
+// Prevent Wordpress from "guessing" redirects instead of showing a 404 page
+if (!function_exists('stop_404_guessing')) {
+	add_filter('redirect_canonical', 'stop_404_guessing');
+	function stop_404_guessing($url) {
+		if (is_404()) {
+			return false;
+		}
+		return $url;
+	}
+}
