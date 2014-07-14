@@ -27,7 +27,7 @@
         <a href="http://libguides.mit.edu/googlescholar">Google Scholar for MIT <span class="about">Change settings to get better access</span></a>
         <a href="/libx">LibX <span class="about">Search/authenticate via browser</span></a>
         <a href="http://dspace.mit.edu/">DSpace@MIT <span class="about">MIT digitized images, maps, etc.</span></a>
-        <a href="http://dome.mit.edu/">Dome: MIT-digitized images, maps, etc.</a>
+        <a href="http://dome.mit.edu/">Dome <span class="about">MIT-digitized images, maps, etc.</span></a>
         <a href="/about/site-search">Site search</a>
       </div>
     </div><!-- end div.links-sub -->
