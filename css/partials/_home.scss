@@ -45,7 +45,7 @@
 		}
 		.extra {
 			background: $color-background-secondary;
-			padding: 1em;
+			padding: 2em 1em;
 		}
 		.hours {
 			display: inline-block;
@@ -90,6 +90,18 @@
 			content: url(#{$imagesPath}/pin-sfw.svg);
 			display: inline-block;
 			margin-right: 0.25em; 
+		}
+		.more {
+			margin-bottom: 1em;
+			&:after {
+				content: url(#{$imagesPath}/arrow-right-sfw.svg);
+				display: inline-block;
+				margin-left: 0.25em; 
+			}
+			svg {
+				display: inline-block;
+				margin-right: 0.5em;
+			}
 		}
 		.phone:before {
 			content: url(#{$imagesPath}/phone-sfw.svg);
