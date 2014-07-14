@@ -68,7 +68,7 @@
 	display: flex;
 }
 
-.no-flexbox {
+.no-flexbox:not(.flexboxlegacy) {
 	.flex-clear {
 		clear: both;
 	}
