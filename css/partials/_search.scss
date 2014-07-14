@@ -162,15 +162,14 @@
 			svg {
 				display: none;
 			}
+			.has-link span:first-of-type:after {
+				content: url(#{$imagesPath}/arrow-right-sfw.svg);
+				display: inline-block;
+				margin-left: 0.25em;
+			}
 			.more {
 				display: block;
-				line-height: 2.625em;
 				padding: 0.5em 1em;
-				&:after {
-					content: url(#{$imagesPath}/arrow-right-sfw.svg);
-					display: inline-block;
-					margin-left: 0.25em;
-				} 
 			}
 			.name {
 				color: #7b7c7c;
