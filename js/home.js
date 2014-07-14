@@ -15,29 +15,35 @@ var siteSearchForm = $('#site-search');
 
 // Mimic a <select> element with a <ul>
 $('#resources').on('click', 'li', function(event) {
-	// To show or hide the parent <ul>
-	$(this).parent().toggleClass('active');
-	// Remove active class from any <li> that has it...
-	$(resourcesAll).removeClass('active');
-	// And add the class to the <li> that gets clicked
-	$(this).toggleClass('active');
-	
-	// Get the main text of the currently selected <li>
-	var selectedText = $('#resources li.active .main').text();
-	// Show this text above the dropdown (when active), mimicing a <select>
-	if ($('#resources').hasClass('active')) {
-		console.log('open');
-		$('.wrap-select--resources .selected').text(selectedText).addClass('active');
+	// Cancel if the li has a link in it
+	if ($(this).hasClass('has-link')) {
+		return;
 	}
-	// Remove the text when the dropdown is closed
 	else {
-		console.log('closed');
-		$('.wrap-select--resources .selected').text('').removeClass('active');
+		// To show or hide the parent <ul>
+		$(this).parent().toggleClass('active');
+		// Remove active class from any <li> that has it...
+		$(resourcesAll).removeClass('active');
+		// And add the class to the <li> that gets clicked
+		$(this).toggleClass('active');
+		
+		// Get the main text of the currently selected <li>
+		var selectedText = $('#resources li.active .main').text();
+		// Show this text above the dropdown (when active), mimicing a <select>
+		if ($('#resources').hasClass('active')) {
+			console.log('open');
+			$('.wrap-select--resources .selected').text(selectedText).addClass('active');
+		}
+		// Remove the text when the dropdown is closed
+		else {
+			console.log('closed');
+			$('.wrap-select--resources .selected').text('').removeClass('active');
+		}
+		// Get the class of the selected resource
+		var searchSelected = $('#resources li.active').attr('data-target');
+		// Apply this class, as an id, to the form.
+		$('#search-main form').attr('id', searchSelected);
 	}
-	// Get the class of the selected resource
-	var searchSelected = $('#resources li.active').attr('data-target');
-	// Apply this class, as an id, to the form.
-	$('#search-main form').attr('id', searchSelected);
 
 });
 
