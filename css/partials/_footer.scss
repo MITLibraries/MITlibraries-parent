@@ -1,5 +1,6 @@
 .footer-main {
 	background: lighten($color-primary, 7.8431%);
+	flex-flow: wrap;
 	padding: 2em 1.375em;
 	@include bp-large {
 		background: $color-primary;
@@ -8,10 +9,32 @@
 	a {
 		color: $color-secondary;
 	}
+	.about-mit {
+		@include bp-tablet--portrait {
+			order: 300;
+		}
+	}
+	.identity {
+		@include bp-tablet--portrait {
+			order: 200;
+			width: 100%;
+		}
+	}
+	.license {
+		@include bp-tablet--portrait {
+			order: 400;
+		}
+	}
 	.links-all {
 		display: none;
 		@include bp-tablet--portrait {
 			display: flex;
+			order: 100;
+			width: 100%;
+		}
+		h4 {
+			font-size: 1.125em;
+			font-weight: normal;
 		}
 		.flex-item {
 			margin-right: 2em;
@@ -40,6 +63,9 @@
 		fill: #fff;
 		margin-right: 1em;
 		width: 67%;
+		@include bp-tablet--portrait {
+			width: 9.5em;
+		}
 	}
 	.social {
 		a {
