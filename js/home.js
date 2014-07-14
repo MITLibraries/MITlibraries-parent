@@ -415,6 +415,8 @@ $.getJSON('/wp-json/posts?type=experts')
 		$('.expert').append('<img class="expert-photo">');
 		// Append empty spans for expert names
 		$('.expert').append('<span class="name"></span>');
+		// Append empty spans for expert titles
+		$('.expert').append('<span class="title-job"></span>');
 		// Add expert name to appropriate span
 		$('.expert .name:eq(0)').text(expertName1);
 		$('.expert .name:eq(1)').text(expertName2);
