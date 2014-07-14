@@ -742,3 +742,13 @@ if (!function_exists('better_breadcrumbs')) {
 
 	add_action('after_setup_theme', 'better_breadcrumbs');
 }
+// Prevent Wordpress from "guessing" redirects instead of showing a 404 page
+if (!function_exists('stop_404_guessing')) {
+	add_filter('redirect_canonical', 'stop_404_guessing');
+	function stop_404_guessing($url) {
+		if (is_404()) {
+			return false;
+		}
+		return $url;
+	}
+}
