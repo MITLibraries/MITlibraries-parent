@@ -186,8 +186,10 @@
 			background: #fff;
 			@include rem-first(min-height, 12.8125);
 			width: 100%;
-			&:last-of-type {
-				margin-bottom: 1em;
+			@include bp-small {
+				&:last-of-type {
+					margin-bottom: 1em;
+				}
 			}
 			@include bp-tablet--portrait {
 				border-bottom: none;
@@ -228,6 +230,9 @@
 		h2 {
 			color: $color-guides-experts;
 			text-align: center;
+		}
+		p {
+			margin: 0 1em;
 		}
 		.all-guides {
 			display: inline-block;
@@ -279,6 +284,9 @@
 			border-radius: 50%;
 			display: block;
 			margin: 0 auto;
+		}
+		.guide-list {
+			margin: 0 1em;
 		}
 		.link-ask {
 			color: $color-guides-experts;
