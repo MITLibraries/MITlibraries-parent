@@ -79,9 +79,18 @@
 		.link-study {
 			color: $color-hours-locations;
 			font-weight: 300;
+			&:hover {
+				color: darken($color-hours-locations, 15%);
+				svg {
+					fill: darken($color-hours-locations, 15%);
+				}
+			}
 			@include bp-tablet--portrait {
 				display: block;
 				font-weight: 600;
+			}
+			svg {
+				fill: $color-hours-locations;
 			}
 		}
 		.location {
@@ -296,7 +305,14 @@
 				display: inline-block;
 				margin-left: 0.25em;
 			}
+			&:hover {
+				color: darken($color-guides-experts, 15%);
+				svg {
+					fill: darken($color-guides-experts, 15%);
+				}
+			}
 			svg {
+				fill: $color-guides-experts;
 				display: inline-block;
 				margin-left: 0.5em;
 			}

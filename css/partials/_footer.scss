@@ -10,6 +10,9 @@
 	@include span-12-12;
 	a {
 		color: $color-secondary;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	.about-mit {
 		font-size: 0.625em;
@@ -126,6 +129,9 @@
 		}
 		a {
 			width: 33%;
+			&:hover {
+				text-decoration: none;
+			}
 			@include bp-tablet--portrait {
 				width: 20%;
 				&:not(:last-of-type) {
