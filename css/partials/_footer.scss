@@ -22,6 +22,7 @@
 		flex-flow: wrap;
 		padding: 2em 0 0;
 		@include bp-tablet--portrait {
+			align-items: flex-end;
 			justify-content: space-between;
 			width: 100%;
 		}
@@ -82,7 +83,14 @@
 				margin-bottom: 1.5em;
 			}
 			@include bp-tablet--portrait {
+				font-weight: 300;
+				padding-left: 1em;
 				width: auto;
+				&:not(:last-of-type):after {
+					content: '|';
+					display: inline-flex;
+					margin-left: 1em;
+				}
 			}
 		}
 	}
@@ -97,23 +105,32 @@
 		}
 	}
 	.text-find-us {
+		color: #ebebeb;
 		display: none;
 		font-size: 0.625em;
+		font-weight: bold;
+		text-transform: uppercase;
+		min-width: 7em;
 		@include bp-tablet--portrait {
 			display: block;
 		}
 	}
 	.social {
+		align-items: center;
 		flex-flow: wrap;
 		padding-left: 1.375em;
 		width: auto;
 		@include bp-tablet--portrait {
 			flex-flow: nowrap;
+			margin-bottom: -0.8em;
 		}
 		a {
 			width: 33%;
 			@include bp-tablet--portrait {
 				width: 20%;
+				&:not(:last-of-type) {
+					margin-right: 0.5em;
+				}
 			}
 		}
 		flex-flow: wrap;
@@ -127,8 +144,8 @@
 				fill: #474747;
 			}
 			@include bp-tablet--portrait {
-				padding: 0.5em;
-				width: 2.5em;
+				padding: 0.2em;
+				width: 2em;
 			}
 		}
 	}
