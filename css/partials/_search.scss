@@ -203,6 +203,9 @@
 		font-weight: bold;
 		&.active {
 			padding: 0.5em;
+			&:after {
+				content: url(#{$imagesPath}/select-arrows-sfw.svg);
+			}
 		}
 	}
 	.search-advanced {
