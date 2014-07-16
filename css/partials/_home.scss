@@ -115,10 +115,15 @@
 			width: 50%;
 			&:first-of-type {
 				border-right: 1px solid $color-secondary;
+				@include bp-tablet--portrait {
+					border-right: none;
+				}
 			}
 			@include bp-tablet--portrait {
+				border-bottom: none;
 				display: block;
 				margin-bottom: 1em;
+				text-align: left;
 				width: auto;
 				&:after {
 					content: url(#{$imagesPath}/arrow-right-sfw.svg);
