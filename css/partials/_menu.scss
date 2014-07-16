@@ -138,9 +138,9 @@
   .heading-col {
     color: #7c7c7d;
     display: block;
-    font-size: 0.5em;
+    font-size: 0.6em;
     font-weight: bold;
-    @include rem-first(margin, 0.5);
+    @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
     text-transform: uppercase;
   }
   .push {
