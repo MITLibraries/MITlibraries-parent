@@ -38,7 +38,7 @@ $('#resources').on('click', 'li', function(event) {
 		// Remove the text when the dropdown is closed
 		else {
 			console.log('closed');
-			$('.wrap-select--resources .selected').text('').removeClass('active');
+			$('.wrap-select--resources .selected').text('').remove(selectArrows).removeClass('active');
 		}
 		// Get the class of the selected resource
 		var searchSelected = $('#resources li.active').attr('data-target');
