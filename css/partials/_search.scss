@@ -133,6 +133,9 @@
 		li {
 			display: none;
 			font-weight: bold;
+			&:not(.has-link) {
+				padding: 0.5em;
+			}
 			.name {
 				display: none;
 				font-weight: normal;
@@ -198,8 +201,11 @@
 	.selected {
 		color: #fff;
 		font-weight: bold;
-		&.active:after {
-			content: url(#{$imagesPath}/select-arrows-sfw.svg);
+		&.active {
+			padding: 0.5em;
+			&:after {
+				content: url(#{$imagesPath}/select-arrows-sfw.svg);
+			}
 		}
 	}
 	.search-advanced {
@@ -263,7 +269,6 @@
 		}
 	}
 	.wrap-select--resources {
-		padding: 0.5em;
 		z-index: map-get($zindex, dropdown-body);
 		@include bp-tablet--portrait {
 			display: inline;
