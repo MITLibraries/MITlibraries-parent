@@ -40,6 +40,13 @@
 	}
 }
 
+%button-tertiary {
+	@include bp-small {
+		background: #fff;
+		padding: 0.75em;
+	}
+}
+
 @mixin gradient-blue {
 	background: #5889c2; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #5889c2 0%, #3fa0c9 100%); /* FF3.6+ */

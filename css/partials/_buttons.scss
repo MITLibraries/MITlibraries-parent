@@ -3,5 +3,9 @@
 }
 
 .button-secondary {
-	@extend %button-secondary
+	@extend %button-secondary;
+}
+
+.button-tertiary {
+	@extend %button-tertiary;
 }
