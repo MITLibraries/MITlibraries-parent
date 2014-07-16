@@ -261,6 +261,8 @@
 				border-color: darken($color-guides-experts, 20%);
 			}
 			&.view-experts {
+				margin: 1em 1.5em 2em;
+				width: auto;
 				@include bp-tablet--portrait {
 					margin: 0 auto;
 					width: 27.75%;
