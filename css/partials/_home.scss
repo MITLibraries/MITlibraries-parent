@@ -89,7 +89,7 @@
 			}
 			transition: background 0.1s ease;
 			@include bp-small {
-				&:nth-child(-n+4) {
+				&:not(.hidden-mobile) {
 					border-bottom: 1px solid $color-secondary;
 					display: block;
 				}

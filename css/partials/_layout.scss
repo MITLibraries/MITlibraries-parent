@@ -12,19 +12,15 @@
 .wrap-page {
 	margin: 0 auto;
 	@include bp-small {
-		border-top: 8px solid red;
 		width: 320px;
 	}
 	@include bp-mobile--landscape {
-		border-color: yellow;
 		width: 568px;
 	}
 	@include bp-tablet--portrait {
-		border-color: green;
 		width: 768px;
 	}
 	@include bp-large {
-		border-color: black;
 		width: 1024px;
 	}
 }

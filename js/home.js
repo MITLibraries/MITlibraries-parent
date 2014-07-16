@@ -296,7 +296,7 @@ $(document).on('click', '.hours-locations .show-more', function(){
 
 $(document).on('more-locs', function(){
 	$('.hours-locations .show-more').hide(100);
-	$('.hours-locations .hidden-mobile').removeClass('hidden-mobile');
+	$('.hours-locations .hidden-mobile').removeClass('hidden-mobile').removeClass('inactive-mobile');
 });
 
 function findToday() {
