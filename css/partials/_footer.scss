@@ -14,13 +14,6 @@
 			text-decoration: underline;
 		}
 	}
-	.about-mit {
-		font-size: 0.625em;
-		@include rem-first(padding, 1);
-		@include bp-tablet--portrait {
-			order: 300;
-		}
-	}
 	.identity {
 		flex-flow: wrap;
 		padding: 2em 0 0;
@@ -28,13 +21,6 @@
 			align-items: flex-end;
 			justify-content: space-between;
 			width: 100%;
-		}
-	}
-	.license {
-		font-size: 0.625em;
-		@include rem-first--4-values(padding, 0, 1, 2, 1);
-		@include bp-tablet--portrait {
-			order: 400;
 		}
 	}
 	.links-all {
@@ -153,6 +139,59 @@
 				padding: 0.2em;
 				width: 2em;
 			}
+		}
+	}
+} // End .footer-main
+.footer-info-institute {
+	align-items: baseline;
+	background: #595959;
+	display: flex;
+	flex-direction: column;
+	flex-flow: wrap;
+	padding: 1.5em 1em;
+	@include bp-tablet--portrait {
+		flex-direction: row;
+	}
+	.about-mit {
+		font-size: 0.625em;
+		margin-bottom: 2em;
+		@include bp-tablet--portrait {
+			margin-bottom: 0;
+		}
+		span {
+			color: #eeeeee;
+			text-transform: uppercase;
+			&:first-of-type {
+				font-weight: bold;
+			}
+			@include bp-tablet--portrait {
+				color: #ededed;
+				&:not(:last-of-type):after {
+					content: '|';
+					font-weight: normal;
+				}
+			}
+		}
+	}
+	.license {
+		color: #bbb9b8;
+		font-size: 0.6875em;
+		width: 100%;
+		a {
+			color: #ededed;
+		}
+	}
+	.link-mit-home {
+		display: block;
+		@include bp-tablet--portrait{
+			margin: 0 1em 1.5em 0;
+		}
+	}
+	.logo-mit {
+		fill: #bbb9b8;
+		width: 3.375em;
+		.color {
+			fill: #ededed;
 		}
 	}
 }

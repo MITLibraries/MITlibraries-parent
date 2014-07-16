@@ -82,13 +82,18 @@
 				<a href="" class="link-sub">Persons with Disabilities</a>
 			</div>
 		</div><!-- end div.identity -->
+	</footer>
+	<footer class="footer-info-institute">
+		<a href="http://web.mit.edu" class="link-mit-home">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="54" height="28" viewBox="0 0 54 28" enable-background="new 0 0 54 28" xml:space="preserve" class="logo-mit"><rect x="28.9" y="8.9" width="5.8" height="19.1" class="color"/><rect width="5.8" height="28"/><rect x="9.6" width="5.8" height="18.8"/><rect x="19.3" width="5.8" height="28"/><rect x="38.5" y="8.9" width="5.8" height="19.1"/><rect x="38.8" width="15.2" height="5.6"/><rect x="28.9" width="5.8" height="5.6"/></svg>
+		</a>
 		<div class="about-mit">
-			<span>MASSACHUSETTS INSTITUTE OF TECHNOLOGY</span>
+			<span>MASSACHUSETTS INSTITUTE OF TECHNOLOGY </span>
 			<span>77 MASSACHUSETTS AVENUE </span>
 			<span>CAMBRIDGE MA 02139-4307</span>
 		</div>
-		<div class="license">Massachusetts Institute of Technology Licensed under the Creative Commons Attribution Non-Commercial License unless otherwise noted.
-		</div>
+		<div class="license">Massachusetts Institute of Technology Licensed under the <a href="" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted.
+		</div><!-- end footer.footer-info-institure -->
 	</footer>
 
 </div><!-- end div.wrap-page -->
