@@ -24,14 +24,19 @@
 		border: 1px solid white;
 		border-radius: 0 5px 0 0;
 		margin: 0; // Corrects some browser defaults
-		padding: 0.5em;
+		padding: 0 0.5em;
 		@include bp-tablet--portrait {
 			background: $color-secondary;
 			border-radius: 0 5px 5px 0;
 		}
 		.icon-search {
+			fill: #27aae1;
 			height: auto;
-			width: 1rem;
+			width: 2em;
+			@include bp-tablet--portrait {
+				fill: darken(#27aae1, 20%);
+				width: 1.5em;
+			}
 		}
 	}
 	input {
