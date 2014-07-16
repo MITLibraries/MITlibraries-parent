@@ -49,8 +49,18 @@
 			}
 		}
 		.extra {
-			background: $color-background-secondary;
-			padding: 2em 1em;
+			display: flex;
+			@include bp-tablet--portrait {
+				background: $color-background-secondary;
+				display: block;
+				padding: 2em 1em;
+			}
+			p {
+				display: none;
+				@include bp-tablet--portrait {
+					display: block;
+				}
+			}
 		}
 		.hours {
 			display: inline-block;
@@ -97,11 +107,24 @@
 			margin-right: 0.25em; 
 		}
 		.more {
-			margin-bottom: 1em;
-			&:after {
-				content: url(#{$imagesPath}/arrow-right-sfw.svg);
-				display: inline-block;
-				margin-left: 0.25em; 
+			align-items: center;
+			border-bottom: 1px solid $color-secondary;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			width: 50%;
+			&:first-of-type {
+				border-right: 1px solid $color-secondary;
+			}
+			@include bp-tablet--portrait {
+				display: block;
+				margin-bottom: 1em;
+				width: auto;
+				&:after {
+					content: url(#{$imagesPath}/arrow-right-sfw.svg);
+					display: inline-block;
+					margin-left: 0.25em; 
+				}
 			}
 			svg {
 				display: inline-block;
