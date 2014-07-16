@@ -2,18 +2,20 @@
 	align-items: center;
 	flex-flow: wrap;
 	justify-content: center;
-	padding: 2em 0;
+	padding: 2em 0.5em;
 	position: relative;
 	@include gradient-blue;
 	z-index: map-get($zindex, main);
 	@include bp-tablet--portrait {
-		flex-wrap: wrap
+		flex-wrap: wrap;
+		padding: 2em 0;
 	}
 	h2 {
 		color: $color-text--light;
-		display: inline-block;
+		display: none;
 		@include rem-first(font-size, 1.25);
 		@include bp-tablet--portrait {
+			display: inline-block;
 			@include rem-first(margin-right, 1);
 		}
 	}
@@ -21,7 +23,7 @@
 		background: white;
 		border: 1px solid white;
 		border-radius: 0 5px 0 0;
-		margin-left: 0; // Corrects some browser defaults
+		margin: 0; // Corrects some browser defaults
 		padding: 0.5em;
 		@include bp-tablet--portrait {
 			background: $color-secondary;
@@ -37,6 +39,7 @@
 		border-radius: 5px 0 0 0;
 		display: none;
 		font-size: 1em;
+		margin: 0; // Corrects some browser defaults
 		padding: 0.5em;
 		width: 100%;
 		&::-webkit-input-placeholder {
@@ -123,16 +126,21 @@
 	.resource-list {
 		cursor: pointer;
 		li {
-			color: #fff;
 			display: none;
-			font-weight: 600;
+			font-weight: 300;
 			.name {
 				display: none;
 				font-weight: normal;
 			}
 			&.active {
 				display: inline-block;
-				font-weight: bold;
+				font-weight: 300;
+				@include bp-tablet--portrait {
+					font-weight: bold;
+				}
+			}
+			@include bp-tablet--portrait {
+				color: #fff;
 			}
 		}
 		&.active {
@@ -228,6 +236,7 @@
 	}
 	.wrap-select--keywords {
 		border-top: 1px solid darken(#ebf5ff, 20%);
+		border-radius: 0 0 3px 3px;
 		box-shadow: none;
 		display: none;
 		order: 400;
