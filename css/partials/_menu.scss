@@ -112,7 +112,7 @@
         background: darken($color-background-secondary, 10%);
       }
     }
-    [class*="col"] {
+    [class*="col-"] {
       width: 50%;
     }
     .about {
