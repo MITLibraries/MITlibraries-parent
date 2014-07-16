@@ -121,7 +121,7 @@
       font-weight: normal;
     }
     .bottom {
-      border-top: 1px solid $color-background-secondary;
+      border-top: 1px solid $color-secondary;
       &:after {
         content: url(#{$imagesPath}/arrow-right-sfw.svg);
         display: inline-block;
