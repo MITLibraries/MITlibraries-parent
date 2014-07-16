@@ -41,7 +41,12 @@
 			transition: opacity 0.2s ease;
 		}
 		.button-primary {
+			margin: 0 1.5em;
+			width: auto;
 			@include color-button-primary($color-hours-locations);
+			@include bp-tablet--portrait {
+				margin: 1em 2em;
+			}
 		}
 		.extra {
 			background: $color-background-secondary;
