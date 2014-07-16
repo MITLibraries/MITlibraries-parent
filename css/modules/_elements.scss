@@ -16,6 +16,7 @@
 	border-radius: 3px;
 	padding: 0.5em;
 	text-align: center;
+	transition: background 0.1s ease;
 	@include bp-tablet--portrait {
 		padding: 1em;
 	}
