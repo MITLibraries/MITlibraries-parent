@@ -77,10 +77,10 @@
 				<option value="keyword">Keyword</option>
 			</select>
 		</div>
-		<a href="" class="search-advanced bartonplus active">BartonPlus advanced search</a>
-		<a href="" class="search-advanced barton">Barton advanced search</a>
-		<a href="" class="search-advanced worldcat">WorldCat advanced search</a>
-		<a href="" class="search-advanced course-reserves">Course Reserves advanced search</a>
+		<a href="" class="search-advanced bartonplus active">Go to BartonPlus advanced search</a>
+		<a href="" class="search-advanced barton">Go to Barton advanced search</a>
+		<a href="" class="search-advanced worldcat">Go to WorldCat advanced search</a>
+		<a href="" class="search-advanced course-reserves">Go to Course Reserves advanced search</a>
 	</div><!-- end div.search-main -->
 	<div class="content-main flex-container">
 		<div class="col-1 flex-item">
