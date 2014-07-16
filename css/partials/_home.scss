@@ -185,8 +185,10 @@
 			border-bottom: 1px solid $color-secondary;
 			background: #fff;
 			@include rem-first(min-height, 12.8125);
-			margin-bottom: 1em;
 			width: 100%;
+			&:last-of-type {
+				margin-bottom: 1em;
+			}
 			@include bp-tablet--portrait {
 				border-bottom: none;
 				box-shadow: 0 3px 3px $color-shadow;
