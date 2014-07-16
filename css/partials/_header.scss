@@ -1,8 +1,10 @@
 .header-main {
+	align-items: flex-end;
 	background: $color-background--dark;
 	justify-content: flex-start;
 	@include span-12-12;
 	@include bp-tablet--portrait {
+		align-items: flex-start;
 		justify-content: space-between;
 		padding: 0 1em;
 	}
@@ -34,11 +36,13 @@
 	.name-site {
 		line-height: 1;
 		margin-top: -1.25em;
+		margin-left: 0.75em;
 		order: 2;
 		padding-bottom: 0.5em;
 		width: 6.4375em;
 		@include bp-tablet--portrait {
 			margin-top: 0.5em;
+			margin-left: 0;
 		}
 	}
 }
