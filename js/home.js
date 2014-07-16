@@ -364,12 +364,12 @@ $.getJSON('/news/wp-json/posts')
 	.done(function(data){
 		var newsItem1 = data[0];
 		var newsItem2 = data[1];
-		$('.item-1 h3').append(newsItem1.title);
-		$('.item-2 h3').append(newsItem2.title);
+		$('.item-1 h3').append(newsItem1.title).trigger('newsLoaded1');
+		$('.item-2 h3').append(newsItem2.title).trigger('newsLoaded2');
 		var newsImage1 = '/news/files/'+newsItem1.featured_image.attachment_meta.file;
 		var newsImage2 = '/news/files/'+newsItem2.featured_image.attachment_meta.file;
-		$('.item-1 .image').css('background-image', 'url('+newsImage1+')').trigger('newsLoaded1');
-		$('.item-2 .image').css('background-image', 'url('+newsImage2+')').trigger('newsLoaded2');
+		$('.item-1 .image').css('background-image', 'url('+newsImage1+')');
+		$('.item-2 .image').css('background-image', 'url('+newsImage2+')');
 	})
 	.fail(function(){
 		$('.news-events > .flex-container')
