@@ -132,7 +132,7 @@
 		cursor: pointer;
 		li {
 			display: none;
-			font-weight: 300;
+			font-weight: bold;
 			.name {
 				display: none;
 				font-weight: normal;
@@ -162,9 +162,6 @@
 			li {
 				color: #111;
 				display: block;
-				&.active {
-					font-weight: 600;
-				}
 				&:not(.has-link) {
 					padding: 0.5em 1em;
 				}
