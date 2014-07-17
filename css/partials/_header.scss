@@ -10,7 +10,6 @@
 	}
 	.logo-mit-lib {
 		fill: $color-text--light;
-		@include image-replacement;
 		.arch {
 			display: none;
 			@include bp-tablet--portrait {
