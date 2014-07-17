@@ -67,7 +67,10 @@
 			}
 		}
 		.hours {
+			color: #7b7b7b;
 			display: inline-block;
+			font-size: 0.875em;
+			font-weight: normal;
 		}
 		.icon-arrow-down {
 			margin-right: 0.5em;
@@ -96,7 +99,7 @@
 		.location {
 			color: #111;
 			font-weight: 300;
-			padding: 1em;
+			padding: 0;
 			&:hover {
 				background: $color-background-secondary;
 			}
@@ -104,15 +107,21 @@
 			@include bp-small {
 				&:not(.hidden-mobile) {
 					border-bottom: 1px solid $color-secondary;
-					display: block;
+					display: flex;
 				}
 			}
 			@include bp-tablet--portrait {
 				border-bottom: 1px solid $color-secondary;
+				padding: 1em;
 				&:not(.show-more) {
-					display: block;
+					display: flex;
 				}
 			}
+		}
+		.location-info {
+			color: #7b7b7b;
+			font-size: 0.875em;
+			font-weight: normal;
 		}
 		.map-location:before {
 			content: url(#{$imagesPath}/pin-sfw.svg);
@@ -165,6 +174,7 @@
 		}
 		.special {
 			color: #ababab;
+			font-size: 0.875em;
 			@include bp-tablet--portrait {
 				color: $color-hours-locations;
 			}
