@@ -245,6 +245,12 @@
 		svg {
 			fill: #fff;
 		}
+		.select-arrows {
+			display: none;
+			@include bp-tablet--portrait {
+				display: inline;
+			}
+		}
 	}
 	.wrap-select--keywords {
 		border-top: 1px solid darken(#ebf5ff, 20%);
