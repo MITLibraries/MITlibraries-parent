@@ -88,6 +88,10 @@
 		-moz-appearance: treeheader;
 		-ms-appearance: none;
 		-webkit-appearance: none;
+		// Extra work to hide IE dropdown
+		&::-ms-expand {
+		 display: none; 
+		}
 		@include bp-tablet--portrait {
 			color: #fff;
 			font-size: 1em;
