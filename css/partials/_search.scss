@@ -74,6 +74,8 @@
 		display: inline-block;
 		font-family: 'Open Sans', sans-serif;
 		@include rem-first(font-size, 0.875);
+		margin-top: 0; // Overrides some browser defaults
+		margin-bottom: 0; // Overrides some browser defaults
 		margin-left: -5.7em; // Watch out, magic number!
 		padding-top: 0.5em;
 		padding-right: 1em;
