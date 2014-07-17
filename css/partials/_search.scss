@@ -115,7 +115,8 @@
 		}
 	}
 	.input-submit {
-		display: inline-flex; // Correctly aligns the input and submit elements
+		align-items: stretch;
+		display: flex;
 		order: 200;
 		width: 100%;
 		@include bp-tablet--portrait {
