@@ -10,6 +10,9 @@
 	}
 	.logo-mit-lib {
 		fill: $color-text--light;
+		svg {
+			max-height: 3em;
+		}
 		.arch {
 			display: none;
 			@include bp-tablet--portrait {
@@ -23,6 +26,7 @@
 			align-self: flex-end;
 			display: block;
 			height: auto;
+			max-height: 2.8125em;
 			fill: $color-background-secondary;
 			order: 4;
 			padding: 0.5em;
