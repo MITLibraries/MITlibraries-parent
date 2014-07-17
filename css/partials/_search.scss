@@ -32,6 +32,7 @@
 		.icon-search {
 			fill: #27aae1;
 			height: auto;
+			max-height: 2em;
 			width: 2em;
 			@include bp-tablet--portrait {
 				fill: darken(#27aae1, 20%);
