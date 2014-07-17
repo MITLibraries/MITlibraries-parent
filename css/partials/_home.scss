@@ -170,6 +170,31 @@
 			}
 		}
 	}
+	.img-loc {
+		display: inline-block;
+		height: 4.625em;
+		margin-right: 0.5em;
+		width: 4.625em;
+		min-width: 4.625em; // Corrects some flexbox behavior when adjoining div content is very large
+		&.archives {
+			background-position: -1px -1px;
+		}
+		&.barker {
+			background-position: -77px -1px;
+		}
+		&.dewey {
+			background-position: -1px -77px;
+		}
+		&.hayden {
+			background-position: -77px -77px;
+		}
+		&.lewis {
+			background-position: -153px -1px;
+		}
+		&.rotch {
+			background-position: -153px -77px;
+		}
+	}
 	.news-events {
 		@include bp-tablet--portrait {
 			background: $color-background-secondary;

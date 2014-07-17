@@ -357,6 +357,14 @@ function getHours() {
 getHours();
 
 //
+// Location Images
+//
+$(function(){
+	$('.img-loc').css('background-image', 'url(/wp-content/themes/libraries/images/locations-sprite-74.png)').trigger('image-ready');
+	console.log('success');
+});
+
+//
 // News
 //
 

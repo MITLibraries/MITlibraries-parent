@@ -86,13 +86,45 @@
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
 				<h2>Hours &amp; Locations</h2>
-				<a href="/barker" class="location"><h3>Barker Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">10-500</span><span class="phone">617-253-0968</span></div></a>
-				<a href="/dewey" class="location"><h3>Dewey Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">E53-100</span><span class="phone">617-253-5676 </span></div></a>
-				<a href="/hayden" class="location"><h3>Hayden Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">14S-100</span><span class="phone">617-253-5671</span></div></a>
-				<a href="#0" class="show-more hidden-non-mobile"><svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More</a>
-				<a href="/archives" class="location hidden-mobile inactive-mobile"><h3>Institute Archives &amp; Special Collections</h3><div class="hours"></div><div class="location-info"><span class="map-location">14N-118</span><span class="phone">617-253-5136</span></div></a>
-				<a href="/lewis" class="location hidden-mobile inactive-mobile"><h3>Lewis Music Library</h3><div class="hours"></div><div class="location-info"><span class="map-location">14E-109</span><span class="phone">617-253-5689</span></div></a>
-				<a href="/rotch" class="location hidden-mobile inactive-mobile"><h3>Rotch Library</h3><div class="hours"></div><div class="location-info"><span class="map-location">7-238</span><span class="phone">617-258-5592</span></div></a>
+				<a href="/barker" class="location">
+					<div class="img-loc barker"></div>
+					<div class="wrap-loc-info">
+						<h3>Barker Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">10-500</span><span class="phone">617-253-0968</span></div>
+					</div>
+				</a>
+				<a href="/dewey" class="location">
+					<div class="img-loc dewey"></div>
+					<div class="wrap-loc-info">
+						<h3>Dewey Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">E53-100</span><span class="phone">617-253-5676 </span></div>
+					</div>
+				</a>
+				<a href="/hayden" class="location">
+					<div class="img-loc hayden"></div>
+					<div class="wrap-loc-info">
+						<h3>Hayden Library</h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><span class="map-location">14S-100</span><span class="phone">617-253-5671</span></div>
+					</div>
+				</a>
+				<a href="#0" class="show-more hidden-non-mobile">
+					<svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More
+				</a>
+				<a href="/archives" class="location hidden-mobile inactive-mobile">
+					<div class="img-loc archives"></div>
+					<div class="wrap-loc-info">
+						<h3>Institute Archives &amp; Special Collections</h3><div class="hours"></div><div class="location-info"><span class="map-location">14N-118</span><span class="phone">617-253-5136</span></div>
+					</div>
+				</a>
+				<a href="/lewis" class="location hidden-mobile inactive-mobile">
+					<div class="img-loc lewis"></div>
+					<div class="wrap-loc-info">
+						<h3>Lewis Music Library</h3><div class="hours"></div><div class="location-info"><span class="map-location">14E-109</span><span class="phone">617-253-5689</span></div>
+					</div>
+				</a>
+				<a href="/rotch" class="location hidden-mobile inactive-mobile">
+					<div class="img-loc rotch"></div>
+					<div class="wrap-loc-info">
+						<h3>Rotch Library</h3><div class="hours"></div><div class="location-info"><span class="map-location">7-238</span><span class="phone">617-258-5592</span></div>
+					</div>
+				</a>
 				<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
 				<div class="extra">
 					<a href="/map" class="button-tertiary link-map more"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><path d="M16 2.922v12.695c0 0.211-0.117 0.336-0.273 0.336 -0.055 0-0.117-0.016-0.18-0.039l-4.344-2.109c-0.125-0.055-0.281-0.086-0.438-0.086 -0.172 0-0.336 0.031-0.461 0.094l-4.109 2.086C6.062 15.969 5.883 16 5.711 16c-0.156 0-0.305-0.023-0.422-0.07l-4.828-2.141C0.203 13.68 0 13.359 0 13.078V0.383c0-0.219 0.117-0.344 0.289-0.344 0.055 0 0.109 0.008 0.172 0.031l4.828 2.141c0.117 0.047 0.266 0.078 0.422 0.078 0.172 0 0.352-0.039 0.484-0.102l4.109-2.086C10.43 0.039 10.594 0 10.766 0c0.156 0 0.312 0.031 0.438 0.086l4.344 2.109C15.797 2.312 16 2.641 16 2.922zM5.5 14.805V3.484L1 1.523v11.32L5.5 14.805zM10.5 12.508V1.242L6 3.492v11.266L10.5 12.508zM15 3.133l-4-1.906v11.289l4 1.898V3.133z"/></svg> View Map</a>
