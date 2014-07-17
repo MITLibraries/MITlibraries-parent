@@ -74,7 +74,11 @@
 		display: inline-block;
 		font-family: 'Open Sans', sans-serif;
 		@include rem-first(font-size, 0.875);
-		padding: 0.5em 1em 0.5em 0.5em;
+		margin-left: -5.7em; // Watch out, magic number!
+		padding-top: 0.5em;
+		padding-right: 1em;
+		padding-bottom: 0.5em;
+		padding-left: 5.7em; // Watch out, magic number!
 		position: relative;
 		width: 100%;
 		z-index: map-get($zindex, dropdown-body);
@@ -86,6 +90,8 @@
 			color: #fff;
 			font-size: 1em;
 			font-weight: bold;
+			margin-left: 0;
+			padding: 0.5em 1em 0.5em 0.5em;
 		}
 		&:disabled {
 			cursor: not-allowed;
@@ -298,10 +304,6 @@
 			margin-left: -15%;
 			position: relative;
 			z-index: map-get($zindex, body);
-		}
-		.search-by {
-			margin-left: -6em; // Watch out, magic numbers!
-			padding-left: 6em; // Watch out, magic numbers!
 		}
 	}
 	.wrap-select--resources {
