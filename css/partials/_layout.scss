@@ -64,12 +64,23 @@
 	display: flex;
 }
 
-.no-flexbox:not(.flexboxlegacy) {
+.no-flexbox.no-flexboxlegacy {
 	.flex-clear {
 		clear: both;
 	}
 	.flex-container {
 		display: block;
+		> a,
+		> button,
+		> div,
+		> form,
+		> h2,
+		> input,
+		> span,
+		> ul {
+			float: left;
+			width: auto;
+		}
 	}
 	.flex-item {
 		float: left;
