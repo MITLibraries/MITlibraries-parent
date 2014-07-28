@@ -368,7 +368,7 @@ $(function(){
 // News
 //
 
-$.getJSON('/news/wp-json/posts')
+$.getJSON('/news/wp-json/posts?type[]=post&type[]=event')
 	.done(function(data){
 		var newsItem1 = data[0];
 		var newsItem2 = data[1];
