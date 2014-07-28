@@ -379,3 +379,14 @@
 		}
 	}
 }
+
+.lt-ie10 {
+	select {
+		ms-appearance: select;
+	}
+	.wrap-select--keywords {
+		background: none;
+		border: none;
+		box-shadow: none;
+	}
+}
