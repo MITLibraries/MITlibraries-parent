@@ -399,7 +399,7 @@ $.getJSON('/news/wp-json/posts')
 	})
 	.fail(function(){
 		$('.news-events > .flex-container')
-			.append('<div class="error-load">MIT Libraries News is currently unavailable.</div>')
+			.append('<div class="error-load">MIT Libraries News is currently unavailable.</div>');
 			$('.item-1').hide();
 			$('.item-2').hide();
 	});
