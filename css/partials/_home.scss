@@ -405,5 +405,10 @@
 				max-width: 220px;
 			}
 		}
+		.news-events {
+			[class*="item"] {
+				max-width: 311px;
+			}
+		}
 	}
 }
