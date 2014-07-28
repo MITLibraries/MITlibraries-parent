@@ -389,5 +389,21 @@
 				max-width: 683px;
 			}
 		}
+		.hours-locations {
+			.img-loc {
+				display: block;
+				float: left;
+			}
+			.location:after {
+				content: '';
+				clear: both;
+				display: table;
+			}
+			.wrap-loc-info {
+				display: block;
+				float: left;
+				max-width: 220px;
+			}
+		}
 	}
 }
