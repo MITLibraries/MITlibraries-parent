@@ -378,3 +378,16 @@
 		}
 	}
 }
+
+.lt-ie10 {
+	.home {
+		.content-main {
+			.col-1 {
+				max-width: 341px;
+			}
+			.col-2 {
+				max-width: 683px;
+			}
+		}
+	}
+}
