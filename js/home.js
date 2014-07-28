@@ -38,6 +38,8 @@ $('#resources').on('click', 'li', function(event) {
 		else {
 			console.log('closed');
 			$('.wrap-select--resources .selected').text('').removeClass('active');
+			// Remove any input text
+			$('#search-main input').val('');
 		}
 		// Get the class of the selected resource
 		var searchSelected = $('#resources li.active').attr('data-target');
