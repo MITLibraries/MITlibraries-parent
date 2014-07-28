@@ -146,6 +146,7 @@
 						  <div class="rect5"></div>
 						</div>
 						<div class="excerpt-news">
+							<div class="category-post"></div>
 							<h3></h3>
 						</div>
 						<div class="image"></div>
@@ -159,6 +160,7 @@
 						  <div class="rect5"></div>
 						</div>
 						<div class="excerpt-news">
+							<div class="category-post"></div>
 							<h3></h3>
 						</div>
 						<div class="image"></div>
