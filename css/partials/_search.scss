@@ -268,16 +268,6 @@
 					display: none;
 				}
 			}
-			&:after {
-				content: url(#{$imagesPath}/icon-arrow-down-sfw.svg);
-				position: absolute;
-				right: 1.75em;
-				@include bp-tablet--portrait {
-					content: url(#{$imagesPath}/select-arrows-sfw.svg);
-					position: relative;
-					right: 0;
-				}
-			}
 		}
 	}
 	.search-advanced {
