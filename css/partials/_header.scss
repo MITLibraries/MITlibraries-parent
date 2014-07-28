@@ -8,6 +8,12 @@
 		justify-content: space-between;
 		padding: 0 1em;
 	}
+	> [class*="link"] {
+		color: #fff;
+		font-size: 0.4375em;
+		order: 400;
+		text-transform: uppercase;
+	}
 	.logo-mit-lib {
 		fill: $color-text--light;
 		svg {
