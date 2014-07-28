@@ -229,6 +229,7 @@
 			border-bottom: 1px solid $color-secondary;
 			background: #fff;
 			@include rem-first(min-height, 12.8125);
+			justify-content: space-between;
 			width: 100%;
 			@include bp-small {
 				&:last-of-type {
