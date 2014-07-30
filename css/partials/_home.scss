@@ -100,9 +100,6 @@
 			color: #111;
 			font-weight: 300;
 			padding: 0;
-			&:hover {
-				background: $color-background-secondary;
-			}
 			transition: background 0.1s ease;
 			@include bp-small {
 				&:not(.hidden-mobile) {
@@ -123,10 +120,13 @@
 			font-size: 0.875em;
 			font-weight: normal;
 		}
-		.map-location:before {
-			content: url(#{$imagesPath}/pin-sfw.svg);
-			display: inline-block;
-			margin-right: 0.25em; 
+		.map-location {
+			color: #7b7b7b;
+			&::before {
+				content: url(#{$imagesPath}/pin-sfw.svg);
+				display: inline-block;
+				margin-right: 0.25em; 
+			}
 		}
 		.more {
 			align-items: center;
@@ -158,11 +158,20 @@
 				margin-right: 0.5em;
 			}
 		}
-		.phone:before {
-			content: url(#{$imagesPath}/phone-sfw.svg);
-			display: inline-block;
-			margin-right: 0.25em; 
-			margin-left: 1em;
+		.name-location {
+			color: #111;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.phone {
+			color: #7b7b7b;
+			&::before {
+				content: url(#{$imagesPath}/phone-sfw.svg);
+				display: inline-block;
+				margin-right: 0.25em; 
+				margin-left: 1em;
+			}
 		}
 		.show-more {
 			background: $color-secondary;

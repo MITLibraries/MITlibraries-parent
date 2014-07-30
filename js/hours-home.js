@@ -53,19 +53,19 @@ $(function(){
 					libHrsArr.push(libHrsToday);
 				};
 				// Append each value to a location, shifting off each object as it is used
-				$('.hours-locations a.location .hours').each(function(){
+				$('.hours-locations .location .hours').each(function(){
 					$(this).append(libHrsArr[0]+' <span class="today">today</today>');
 					libHrsArr.shift();
 				});
 				// Add a comma if 24/7 space
-				$('.hours-locations a.location').has('.special').each(function(){
+				$('.hours-locations .location').has('.special').each(function(){
 					$('.today', this).append(',');
 				})
 
 			})
 			.fail(function(textStatus, error) {
 				// Show link to /hours if Ajax request fails
-				$('.hours-locations a.location .hours').each(function(){
+				$('.hours-locations .location .hours').each(function(){
 					$(this).append('<a href="/hours">View Hours</a>');
 				});
 			});
