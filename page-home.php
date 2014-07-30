@@ -152,6 +152,8 @@
 						$eventPost = cf('is_event') == true;
 						$postImageID = get_post_thumbnail_id();
 						$postImageURL = wp_get_attachment_url($postImageID);
+						$eventRawDate = cf('event_date');
+						$eventDate = date("l, F j", strtotime($eventRawDate));
 					?>
 					<div class="item-1 flex-container">
 						<div class="excerpt-news">
@@ -166,6 +168,11 @@
 							?>
 							</div>
 							<h3 class="title-post"><?php the_title(); ?></h3>
+							<?php
+								if($eventPost && $eventDate != '') {
+									echo '<span class="date-event">'.$eventDate.'</span>';
+								}
+							?>
 						</div>
 						<?php
 							if (has_post_thumbnail()) {
