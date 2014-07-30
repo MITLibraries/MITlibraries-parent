@@ -157,7 +157,7 @@
 						$eventStartTime = cf('event_start_time');
 						$eventEndTime = cf('event_end_time');
 					?>
-					<div class="item-1 flex-container">
+					<a class="post-news flex-container" href="<?php the_permalink(); ?>">
 						<div class="excerpt-news">
 							<div class="category-post">
 							<?php
@@ -184,7 +184,7 @@
 								echo '<div class="image" style="background-image: url('.$postImageURL.');"></div>';
 							}
 						?>
-					</div>
+					</a>
 					<?php
 						endwhile;
 						wp_reset_postdata();
