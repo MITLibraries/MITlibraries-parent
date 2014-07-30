@@ -211,7 +211,7 @@
 						$expertURL = cf('expert_url');
 					?>
 					<div class="expert">
-						<a href="<?php echo $expertURL; ?>">
+						<a class="link-profile" href="<?php echo $expertURL; ?>">
 							<img class="expert-photo" src="<?php echo $postImageURL; ?>">
 							<span class="name"><?php the_title(); ?></span>
 							<span class="title-job"><?php the_excerpt(); ?></span>

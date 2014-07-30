@@ -362,6 +362,15 @@
 				margin-left: 0.5em;
 			}
 		}
+		.link-profile {
+			display: block;
+			&:hover {
+				.name {
+					color: darken($color-text-accent-primary, 20%);
+					text-decoration: underline;
+				}
+			}
+		}
 		.name {
 			color: $color-text-accent-primary;
 			display: block;
