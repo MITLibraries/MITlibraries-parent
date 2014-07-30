@@ -258,8 +258,16 @@
 			font-weight: bold;
 			text-transform: uppercase;
 		}
+		.date-event {
+			color: $color-news-events;
+			font-weight: 600;
+		}
 		.excerpt-news {
 			padding: 0.8125em;
+		}
+		.icon-calendar {
+			fill: $color-news-events;
+			margin-right: 0.25em;
 		}
 		.item-1 {
 			@include bp-tablet--portrait {
@@ -273,6 +281,9 @@
 			@include rem-first(height, 12.8125);
 			@include rem-first(min-width, 6.875);
 			@include rem-first(width, 6.875);
+		}
+		.title-post {
+			margin: 0.5em 0 0.75em;
 		}
 	}
 	.guides-experts {
