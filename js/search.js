@@ -53,13 +53,13 @@ $(function(){
 	function searchBy() {
 		var optionSelected = $('#search-main select.active option:selected').val();
 		if ($('#bartonplus').length) {
-			if(optionSelected == 'keyword') {
+			if(optionSelected == '') {
 				$('input.active').attr('placeholder', 'ex: carbon nanotubes');
 			}
-			if(optionSelected == 'title') {
+			if(optionSelected == 'TI ') {
 				$('input.active').attr('placeholder', 'ex: freakonomics');
 			}
-			if(optionSelected == 'author') {
+			if(optionSelected == 'AU ') {
 				$('input.active').attr('placeholder', 'ex: noam chomsky');
 			}
 		}
@@ -219,15 +219,20 @@ $(function(){
 			return false;
 		}
 		else {
+		// Get the value of the "search by" select element
+		var selectVal = $('#search-main select.active').val();
 			// Barton...
 			if ($('#bartonplus').length) {
 				// Set the correct action for the BartonPlus form
-				$('#bartonplus').attr('action', 'http://search.ebscohost.com/login.aspx');
+				$('#bartonplus')
+					.attr('action', 'http://search.ebscohost.com/login.aspx')
+					.attr('method', 'get')
+					.attr('target', '_top');
 				// Add hidden fields
 				hiddenFields();
-				// Add search query to the bquery value, which sends it along to EDS
-				$('input[name="bquery"]', this).val(searchQuery);
-				}
+				// Add search query to the bquery value, along with the select val, which sends it along to EDS
+				$('input[name="bquery"]', this).val(selectVal+searchQuery).replace(/"/g, '&quot;');
+			}
 			// Vera...
 			if ($('#vera').length) {
 				// Vera actions
