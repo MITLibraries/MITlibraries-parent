@@ -13,9 +13,7 @@ module.exports = {
   home: {
     src: [
       'js/search.js',
-      'js/hours-home.js',
-      'js/news-home.js',
-      'js/experts-home.js'
+      'js/hours-home.js'
     ],
     dest: 'js/build/home.js'
   },
