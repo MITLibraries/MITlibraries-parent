@@ -225,24 +225,6 @@
 				flex-flow: nowrap;
 			}
 		}
-		[class*="item"] {
-			border-bottom: 1px solid $color-secondary;
-			background: #fff;
-			@include rem-first(min-height, 12.8125);
-			justify-content: space-between;
-			width: 100%;
-			@include bp-small {
-				&:last-of-type {
-					margin-bottom: 1em;
-				}
-			}
-			@include bp-tablet--portrait {
-				border-bottom: none;
-				box-shadow: 0 3px 3px $color-shadow;
-				margin-bottom: 2.5em;
-				width: 50%;
-			}
-		}
 		.button-primary {
 			margin: 1em 1.5em 0;
 			width: auto;
@@ -269,11 +251,6 @@
 			fill: $color-news-events;
 			margin-right: 0.25em;
 		}
-		.item-1 {
-			@include bp-tablet--portrait {
-				margin-right: 1.25em;
-			}
-		}
 		.image {
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -281,6 +258,29 @@
 			@include rem-first(height, 12.8125);
 			@include rem-first(min-width, 6.875);
 			@include rem-first(width, 6.875);
+		}
+		.post-news {
+			border-bottom: 1px solid $color-secondary;
+			background: #fff;
+			@include rem-first(min-height, 12.8125);
+			justify-content: space-between;
+			width: 100%;
+			@include bp-small {
+				&:last-of-type {
+					margin-bottom: 1em;
+				}
+			}
+			@include bp-tablet--portrait {
+				border-bottom: none;
+				box-shadow: 0 3px 3px $color-shadow;
+				margin-bottom: 2.5em;
+				width: 50%;
+			}
+			&:first-of-type {
+				@include bp-tablet--portrait {
+					margin-right: 1.25em;
+				}
+			}
 		}
 		.time-event {
 			color: #ababab;
