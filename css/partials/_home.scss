@@ -282,6 +282,9 @@
 			@include rem-first(min-width, 6.875);
 			@include rem-first(width, 6.875);
 		}
+		.time-event {
+			color: #ababab;
+		}
 		.title-post {
 			margin: 0.5em 0 0.75em;
 		}
