@@ -137,37 +137,50 @@
 			<div class="news-events">
 				<h2>News &amp; Events</h2>
 				<div class="flex-container">
+					<?php
+						switch_to_blog(7); 
+						$args = array(
+										'no_found_rows' => true,
+										'orderby' => 'date',
+										'order' => 'DESC',
+										'post_type' => 'post',
+										'posts_per_page' => 2,
+									);							
+						$newsPosts = new WP_Query( $args );
+						while ( $newsPosts->have_posts() ) : $newsPosts->the_post();
+						$postID = get_the_ID();
+						$eventPost = cf('is_event') == true;
+						$postImageID = get_post_thumbnail_id();
+						$postImageURL = wp_get_attachment_url($postImageID);
+					?>
 					<div class="item-1 flex-container">
-						<div class="spinner">
-						  <div class="rect1"></div>
-						  <div class="rect2"></div>
-						  <div class="rect3"></div>
-						  <div class="rect4"></div>
-						  <div class="rect5"></div>
-						</div>
 						<div class="excerpt-news">
-							<div class="category-post"></div>
-							<h3></h3>
+							<div class="category-post">
+							<?php
+								if($eventPost) {
+									echo 'Event';
+								}
+								else {
+									echo 'News';
+								}
+							?>
+							</div>
+							<h3 class="title-post"><?php the_title(); ?></h3>
 						</div>
-						<div class="image"></div>
+						<?php
+							if (has_post_thumbnail()) {
+								echo '<div class="image" style="background-image: url('.$postImageURL.');"></div>';
+							}
+						?>
 					</div>
-					<div class="item-2 flex-container">
-						<div class="spinner">
-						  <div class="rect1"></div>
-						  <div class="rect2"></div>
-						  <div class="rect3"></div>
-						  <div class="rect4"></div>
-						  <div class="rect5"></div>
-						</div>
-						<div class="excerpt-news">
-							<div class="category-post"></div>
-							<h3></h3>
-						</div>
-						<div class="image"></div>
-					</div>
+					<?php
+						endwhile;
+						wp_reset_postdata();
+						switch_to_blog(1);
+					?>
 				</div>
 				<a href="/news" class="button-primary">All News &amp; Events</a>
-			</div>
+			</div><!-- end div.news-events -->
 			<div class="guides-experts">
 				<h2>Research Guides &amp; Experts</h2>
 				<p class="caption">Specialized guides for every research interest.</p>
@@ -194,7 +207,7 @@
 				</div>
 				<a href="" class="button-primary view-experts">All <span class="count"></span> Experts</a>
 			</div><!-- end div.guides-experts -->
-		</div>
+		</div><!-- end div.col-2 -->
 	</div>
 
 <?php 
