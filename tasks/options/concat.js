@@ -11,7 +11,12 @@ module.exports = {
     dest: 'js/build/production.js'
   },
   home: {
-    src: 'js/home.js',
+    src: [
+      'js/search.js',
+      'js/hours-home.js',
+      'js/news-home.js',
+      'js/experts-home.js'
+    ],
     dest: 'js/build/home.js'
   },
   hours: {
