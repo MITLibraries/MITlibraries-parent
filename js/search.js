@@ -131,9 +131,11 @@ $(function(){
 	searchBySwitch();
 
 	function hiddenFields() {
-		// Add hidden fields, necessary for BartonPlus search
+		// Remove any hidden fileds
+		$('#search-main form .hidden-fields').html('');
+		// Add hidden fields, respective of search selected
 		if ($('#bartonplus').length) {
-			$('#bartonplus')
+			$('#bartonplus .hidden-fields')
 				.append("<input name='direct' value='true' type='hidden'>")
 				.append("<input name='scope' value='site' type='hidden'>")
 				.append("<input name='site' value='eds-live' type='hidden'>")
@@ -145,7 +147,7 @@ $(function(){
 		}
 		// Vera
 		if($('#vera').length) {
-			$('#vera')
+			$('#vera .hidden-fields')
 			.append("<input type='hidden' name='param_perform_save' value='searchTitle' />")
 			.append("<input type='hidden' name='param_chinese_checkbox_save' value='0' />")
 			.append("<input type='hidden' name='param_type_save' value='textSearch' />")
@@ -156,13 +158,13 @@ $(function(){
 		}
 		// Worldcat
 		if($('#worldcat'.length)) {
-			$('#worldcat')
+			$('#worldcat .hidden-fields')
 				.append("<input type='hidden' name='qt' value='wc_org_mit'/>")
 				.append("<input type='hidden' name='qt' value='affiliate'/>");
 		}
 		// Site Search
 		if($('#site-search').length) {
-			$('#site-search')
+			$('#site-search .hidden-fields')
 				.append('<input type="hidden" name="cx" value="016240528703941589557:i7wrbu9cdxu" />')
 				.append('<input type="hidden" name="ie" value="UTF-8" />');
 		}

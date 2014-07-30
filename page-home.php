@@ -18,6 +18,7 @@
 		</div>
 		<span class="label">for</span>
 		<form id="bartonplus" class="input-submit flex-container">
+			<div class="hidden-fields"></div>
 			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes" autofocus="autofocus" tabindex="1">
 			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
 			<input type="text" class="option-3" placeholder="ex: carbon nanotubes, game design">
