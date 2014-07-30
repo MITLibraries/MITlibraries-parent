@@ -75,16 +75,16 @@ $(function(){
 			}
 		}
 		if ($('#barton').length) {
-			if(optionSelected == 'keyword') {
+			if(optionSelected == 'find_WRD') {
 				$('input.active').attr('placeholder', 'ex: game design');
 			}
-			if(optionSelected == 'title-start') {
+			if(optionSelected == 'scan_TTL') {
 				$('input.active').attr('placeholder', 'ex: introduction to fluid mechanics');
 			}
-			if(optionSelected == 'author') {
+			if(optionSelected == 'scan_AUT') {
 				$('input.active').attr('placeholder', 'ex: shakespeare william');
 			}
-			if(optionSelected == 'call-number') {
+			if(optionSelected == 'scan_CND') {
 				$('input.active').attr('placeholder', 'ex: ta405.t5854');
 			}
 		}
@@ -167,6 +167,25 @@ $(function(){
 			}
 			if (selectVal == 'exactMatch') {
 				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="exactMatch" value="exactMatch" class="radio" checked="checked" />')
+			}
+		}
+		if($('#barton').length) {
+			$('#barton').append("<input type='hidden' name='func' value='scan'/>")
+			// Keyword search
+			if (selectVal == 'find_WRD') {
+				$('#barton').append('<input type="radio" name="code" id="bartonkeyword" value="find_WRD" checked="checked" class="radio" />');
+			}
+			// Title search
+			if (selectVal == 'scan_TTL') {
+				$('#barton').append('<input type="radio" name="code" id="bartontitle" value="scan_TTL" class="radio" checked="checked" />');
+			}
+			// Author search
+			if (selectVal == 'scan_AUT') {
+				$('#barton').append('<input type="radio" name="code" id="bartonauthor" value="scan_AUT" class="radio" checked="checked" />');
+			}
+			// Call number search
+			if (selectVal == 'scan_CND') {
+				$('#barton').append('<input type="radio" name="code" id="bartoncallnumber" value="scan_CND" class="radio" checked="checked" />');
 			}
 		}
 		// Worldcat
@@ -266,21 +285,38 @@ $(function(){
 			}
 			// Barton
 			if($('#barton').length) {
-				
+				// Split the query
+				var splitOptions = selectVal.split('_');
 				$('#barton')
-				.addClass('searchform')
-				.attr('action', 'http://library.mit.edu/F/')
-				.attr('name', 'booksearch')
-				.attr('method', 'get');
+					.addClass('searchform')
+					.attr('action', 'http://search.ebscohost.com/login.aspx')
+					.attr('name', 'booksearch')
+					.attr('method', 'get');
 
 				// Add hidden fields
 				hiddenFields();
+				// Set the val of the checked option
+				$('#barton input[name = "code"]:checked').val(splitOptions[1]);
+				// What is F8?
+				if ( opt[0] == "find" || opt[0] == "F8" ) {
+					$("#barton .hiddenfields").append("<input type='hidden' name='func' value='find-b'/>");
+					$("#barton input[name = 'code']").attr("name","find_code");
+				}
+				else {
+					$("#barton .hiddenfields").append("<input type='hidden' name='func' value='scan'/>");
+					$("#barton input[name = 'code']").attr("name","scan_code");
+					$("#barton input.searchtext").attr("name","scan_start");
+				}
 
 				$('input.active', this)
 					.attr('type', 'text')
 					.attr('id', 'bookrequest')
 					.addClass('searchtext')
 					.val(searchQuery);
+				if(selectVal == 'find_WRD') {
+					$('#barton')
+						.attr('action', 'http://library.mit.edu/F/');
+				}
 			}
 			// Worldcat
 			if($('#worldcat').length) {
