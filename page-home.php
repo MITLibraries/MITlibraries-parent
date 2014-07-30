@@ -154,6 +154,8 @@
 						$postImageURL = wp_get_attachment_url($postImageID);
 						$eventRawDate = cf('event_date');
 						$eventDate = date("l, F j", strtotime($eventRawDate));
+						$eventStartTime = cf('event_start_time');
+						$eventEndTime = cf('event_end_time');
 					?>
 					<div class="item-1 flex-container">
 						<div class="excerpt-news">
@@ -171,6 +173,9 @@
 							<?php
 								if($eventPost && $eventDate != '') {
 									echo '<svg class="icon-calendar" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="14" height="15" viewBox="0 0 14 15" enable-background="new 0 0 14 15" xml:space="preserve"><path d="M0 4V3c0-0.6 0.4-1 1-1h1V1c0-0.6 0.4-1 1-1 0.6 0 1 0.4 1 1v1h6V1c0-0.6 0.4-1 1-1 0.6 0 1 0.4 1 1v1h1c0.6 0 1 0.4 1 1v1H0zM14 5v9c0 0.6-0.4 1-1 1H1c-0.6 0-1-0.4-1-1V5H14zM4 7H2v2h2V7zM4 11H2v2h2V11zM8 7H6v2h2V7zM8 11H6v2h2V11zM12 7h-2v2h2V7zM12 11h-2v2h2V11z"/></svg><span class="date-event">'.$eventDate.'</span>';
+									if($eventStartTime != '' && $eventEndTime != '') {
+										echo ' <span class="time-event">'.$eventStartTime.' - '.$eventEndTime.'</span>';
+									}
 								}
 							?>
 						</div>
