@@ -271,6 +271,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			@include rem-first(height, 12.8125);
+			@include rem-first(min-width, 6.875);
 			@include rem-first(width, 6.875);
 		}
 	}
