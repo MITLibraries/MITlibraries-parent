@@ -64,13 +64,13 @@ $(function(){
 			}
 		}
 		if ($('#vera').length) {
-			if(optionSelected == 'partial-words') {
+			if(optionSelected == 'contains') {
 				$('input.active').attr('placeholder', 'ex: new eng j of med');
 			}
-			if(optionSelected == 'title-start') {
+			if(optionSelected == 'startsWith') {
 				$('input.active').attr('placeholder', 'ex: journal of cell biology');
 			}
-			if(optionSelected == 'title-exact') {
+			if(optionSelected == 'exactMatch') {
 				$('input.active').attr('placeholder', 'ex: web of science');
 			}
 		}
@@ -131,6 +131,8 @@ $(function(){
 	searchBySwitch();
 
 	function hiddenFields() {
+		// Get the value of the "search by" select element
+		var selectVal = $('#search-main select.active').val();
 		// Remove any hidden fileds
 		$('#search-main form .hidden-fields').html('');
 		// Add hidden fields, respective of search selected
@@ -148,13 +150,24 @@ $(function(){
 		// Vera
 		if($('#vera').length) {
 			$('#vera .hidden-fields')
-			.append("<input type='hidden' name='param_perform_save' value='searchTitle' />")
-			.append("<input type='hidden' name='param_chinese_checkbox_save' value='0' />")
-			.append("<input type='hidden' name='param_type_save' value='textSearch' />")
-			.append("<input type='hidden' name='param_type_value' value='textSearch' />")
-			.append("<input type='hidden' name='param_jumpToPage_value' value='' />")
-			.append("<input type='hidden' name='param_services2filter_save' value='getAbstract' />")
-			.append("<input type='hidden' name='param_services2filter_save' value='getFullTxt' />");
+				.append("<input type='hidden' name='param_perform_save' value='searchTitle' />")
+				.append("<input type='hidden' name='param_chinese_checkbox_save' value='0' />")
+				.append("<input type='hidden' name='param_type_save' value='textSearch' />")
+				.append("<input type='hidden' name='param_type_value' value='textSearch' />")
+				.append("<input type='hidden' name='param_jumpToPage_value' value='' />")
+				.append("<input type='hidden' name='param_services2filter_save' value='getAbstract' />")
+				.append("<input type='hidden' name='param_services2filter_save' value='getFullTxt' />");
+			// Check the select val...
+			if (selectVal == 'contains') {
+				// and append a radio input to the form
+				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="contains" value="contains" checked="checked" class="radio" />')
+			}
+			if (selectVal == 'startsWith') {
+				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="startsWith" value="startsWith" class="radio" checked="checked" />');
+			}
+			if (selectVal == 'exactMatch') {
+				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="exactMatch" value="exactMatch" class="radio" checked="checked" />')
+			}
 		}
 		// Worldcat
 		if($('#worldcat'.length)) {
@@ -241,12 +254,11 @@ $(function(){
 					.attr('name', 'az_user_form')
 					.attr('method', 'get')
 					.attr('accept-charset', 'UTF-8')
-					.attr('id', 'verasearch')
 					.addClass('searchform');
 				// Add hidden fields
 				hiddenFields();
 				// Add the query val
-				$('input', this)
+				$('input.active', this)
 					.attr('name','param_pattern_value')
 					.attr('id','param_pattern_value')
 					.addClass('searchtext')
