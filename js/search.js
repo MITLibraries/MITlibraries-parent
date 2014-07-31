@@ -289,7 +289,7 @@ $(function(){
 				var splitOptions = selectVal.split('_');
 				$('#barton')
 					.addClass('searchform')
-					.attr('action', 'http://search.ebscohost.com/login.aspx')
+					.attr('action', 'http://library.mit.edu/F/')
 					.attr('name', 'booksearch')
 					.attr('method', 'get');
 
@@ -298,12 +298,13 @@ $(function(){
 				// Set the val of the checked option
 				$('#barton input[name = "code"]:checked').val(splitOptions[1]);
 				// What is F8?
-				if ( opt[0] == "find" || opt[0] == "F8" ) {
-					$("#barton .hiddenfields").append("<input type='hidden' name='func' value='find-b'/>");
+				if ( splitOptions[0] == "find" || splitOptions[0] == "F8" ) {
+					$("#barton .hidden-fields").append("<input type='hidden' name='func' value='find-b'/>");
 					$("#barton input[name = 'code']").attr("name","find_code");
+					console.log('split options 0');
 				}
 				else {
-					$("#barton .hiddenfields").append("<input type='hidden' name='func' value='scan'/>");
+					$("#barton .hidden-fields").append("<input type='hidden' name='func' value='scan'/>");
 					$("#barton input[name = 'code']").attr("name","scan_code");
 					$("#barton input.searchtext").attr("name","scan_start");
 				}
@@ -311,12 +312,7 @@ $(function(){
 				$('input.active', this)
 					.attr('type', 'text')
 					.attr('id', 'bookrequest')
-					.addClass('searchtext')
 					.val(searchQuery);
-				if(selectVal == 'find_WRD') {
-					$('#barton')
-						.attr('action', 'http://library.mit.edu/F/');
-				}
 			}
 			// Worldcat
 			if($('#worldcat').length) {
