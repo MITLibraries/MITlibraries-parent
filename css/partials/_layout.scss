@@ -90,6 +90,11 @@
 			float: left;
 			width: auto;
 		}
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
 	}
 	.flex-item {
 		float: left;
