@@ -100,13 +100,13 @@ $(function(){
 			}
 		}
 		if ($('#course-reserves').length) {
-			if(optionSelected == 'course-number') {
+			if(optionSelected == 'scan_CNB') {
 				$('input.active').attr('placeholder', 'ex: STS.320');
 			}
-			if(optionSelected == 'instructor') {
+			if(optionSelected == 'find_WIN') {
 				$('input.active').attr('placeholder', 'ex: cohen');
 			}
-			if(optionSelected == 'course-name') {
+			if(optionSelected == 'find_WOU') {
 				$('input.active').attr('placeholder', 'ex: introduction chemistry');
 			}
 		}
@@ -193,6 +193,22 @@ $(function(){
 			$('#worldcat .hidden-fields')
 				.append("<input type='hidden' name='qt' value='wc_org_mit'/>")
 				.append("<input type='hidden' name='qt' value='affiliate'/>");
+		}
+		// Course reserves
+		if($('#course-reserves').length) {
+			$('#course-reserves .hidden-fields')
+				.append("<input type='hidden' name='func' value=''/>");
+			// Course number search
+			if(selectVal == 'scan_CNB') {
+				$('#course-reserves').append('<input name="code" id="coursenumber" value="scan_CNB" checked="checked" type="radio" class="radio" />');
+			}
+			// Instructor keyword search
+			if(selectVal == 'find_WIN') {
+				$('#course-reserves').append('<input name="code" id="instructorkeyword" value="find_WIN" type="radio" class="radio" checked="checked" />');
+			}
+			if(selectVal == 'find_WOU') {
+				$('#course-reserves').append('<input name="code" id="coursenamekeyword" value="find_WOU" type="radio" class="radio" checked="checked" />');
+			}
 		}
 		// Site Search
 		if($('#site-search').length) {
@@ -321,6 +337,32 @@ $(function(){
 				hiddenFields();
 				$('input.active', this)
 					.attr("name","q")
+					.val(searchQuery);
+			}
+			// Course Reserves
+			if($('#course-reserves').length) {
+				$('#course-reserves')
+					.addClass('searchform')
+					.addClass('barton')
+					.attr('action', 'http://library.mit.edu/F/')
+					.attr('method', 'get')
+					.attr('name', 'getInfo');
+				// Add hidden fields
+				hiddenFields();
+				// Split the query
+				var splitOptions = selectVal.split('_');
+				$("#course-reserves input[name = 'code']:checked").val(splitOptions[1]);
+				$("#course-reserves .hidden-fields").append("<input type='hidden' name='local_base' value='u-mit30'/>");
+				if (splitOptions[0] == "find") {	
+					$("#course-reserves .hidden-fields input[name = 'func']").val("find-b");
+					$("#course-reserves input[name = 'code']").attr("name","find_code");
+				} else {
+					$("#course-reserves .hidden-fields input[name = 'func']").val("scan");
+					$("#course-reserves input[name = 'code']").attr("name","scan_code");
+					$("#course-reserves input[name = 'request']").attr("name","scan_start");
+				};
+				$('input.active', this)
+					.attr('name', 'request')
 					.val(searchQuery);
 			}
 			// Site Search
