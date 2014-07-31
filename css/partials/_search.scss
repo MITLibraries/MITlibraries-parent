@@ -372,12 +372,18 @@
 
 .lt-ie10 {
 	select {
-		ms-appearance: select;
+		-ms-appearance: select;
 	}
 	.wrap-select--keywords {
 		background: none;
 		border: none;
 		box-shadow: none;
+		&.active {
+			display: block;	
+		}
+		.resource-list {
+			background: #fff;
+		}
 		.select-arrows {
 			display: none;
 		}
