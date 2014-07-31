@@ -141,21 +141,6 @@ h2.bigHead {
 	margin: 0 0 0px 0;
 }
 
-.todayHours {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 200px;
-	font-size: 14px;
-	line-height: 20px;
-}
-
-.todayHours b {
-	font-size: 18px;
-	line-height: 22px;
-	font-weight: bold;
-}
-
 .tertiaryPage .title h2 {
 	font-weight: normal;
 }
@@ -408,23 +393,6 @@ color: #ffcc33;
 .libraryContent {
 	width: 240px;
 	
-}
-
-.librarySlideshow {
-	position: absolute;
-	top: 9px;
-	left: 270px;
-	width: 440px;
-	height: 176px;
-	overflow: visible;
-}
-
-.librarySlideshow .thumb {
-	display: inline-block;
-	border: 1px solid #cc6600;
-	margin: 0 10px 0 0;
-	width: 38px;
-	height: 38px;
 }
 
 .tabnav {

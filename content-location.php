@@ -79,51 +79,48 @@
 		
 <div id="stage" class="inner row group" role="main">
 
-	<div class="title libraryTitle span12 dark">
-
-		<div class="libraryContent">
-			<h1><span class="libraryName"><?php the_title(); ?></span><span class="librarySubject"><?php echo $subject ?></h1>
-			<div class="sub">
-				<?php echo $phone ?><br/>
-				show on map: <a href="<?php echo $mapPage.$slug; ?>"><?php echo $building ?> <i class="icon-arrow-right"></i></a>
-			</div>
-		</div>
-		
-		<div class="todayHours">
-			<?php if ($hasHours): ?>
-			Today's hours:<br/>
-			<b data-location-hours="<?php the_title(); ?>"></b></br>
-			<a href="/hours">See all hours <i class="icon-arrow-right"></i></a>
-			<?php endif; ?>
-		</div>					
-
-		<?php if ($study24 == 1): ?>
-			<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
-		<?php endif; ?>
-
-		<?php 
-
-			include(locate_template('inc/alert.php'));
-
-			if ($showAlert == 0 && $alert != "") {
-				echo '<div class="libraryAlert">'.$alert.'</div>';
-			}
-
-		 ?>
-		
-		<div class="librarySlideshow">
-
-			<div class="slideshow">
-				<?php
-					$val = $arMain[array_rand($arMain)];
-				?>
-				<?php if ($val != ""): ?>
-				<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
+	<div class="title-page libraryTitle flex-container">
+		<div class="flex-item">
+			<div class="libraryContent">
+				<h1>
+					<span class="libraryName"><?php the_title(); ?></span>
+					<span class="subject-library"><?php echo $subject ?></span>
+				</h1>
+				<div class="info-more">
+					<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a>
+					<a href="<?php echo $mapPage.$slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+				</div>
+			</div><!-- end div.libraryContent -->
+			
+			<div class="hours-today">
+				<?php if ($hasHours): ?>
+					<span>Today's hours: <b data-location-hours="<?php the_title(); ?>"></b></span>
+					<?php if ($study24 == 1): ?>
+						<a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+					<?php endif; ?>
+					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
 				<?php endif; ?>
-			</div>
+			</div>					
 
-		</div>
-
+		</div><!-- end div.flex-item -->
+		<div class="flex-item">
+			<?php 
+				include(locate_template('inc/alert.php'));
+				if ($showAlert == 0 && $alert != "") {
+					echo '<div class="libraryAlert">'.$alert.'</div>';
+				}
+			 ?>
+			<div class="librarySlideshow">
+				<div class="slideshow">
+					<?php
+						$val = $arMain[array_rand($arMain)];
+					?>
+					<?php if ($val != ""): ?>
+					<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
+					<?php endif; ?>
+				</div>
+			</div><!-- end div.librarySlideshow -->
+		</div><!-- end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 	
 	<div id="content" class="allContent locationContent group <?php echo $strLocation; ?>">
