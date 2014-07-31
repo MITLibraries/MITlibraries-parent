@@ -179,13 +179,13 @@
 									}
 								}
 							?>
-						</div>
+						</div><!-- end div.excerpt-news -->
 						<?php
 							if (has_post_thumbnail()) {
 								echo '<div class="image" style="background-image: url('.$postImageURL.');"></div>';
 							}
 						?>
-					</a>
+					</a><!-- end a.post-news -->
 					<?php
 						endwhile;
 						wp_reset_postdata();
@@ -238,7 +238,7 @@
 				<a href="" class="button-primary view-experts">All <span class="count"></span> Experts</a>
 			</div><!-- end div.guides-experts -->
 		</div><!-- end div.col-2 -->
-	</div>
+	</div><!-- end div.content-main -->
 
 <?php 
 	get_footer();
