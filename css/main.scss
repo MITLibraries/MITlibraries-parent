@@ -141,30 +141,6 @@ h2.bigHead {
 	margin: 0 0 0px 0;
 }
 
-#breadcrumb {
-	background: #eceaea;
-	clear: both; /* Fixes IE8 issue */
-	font-size: 12px;
-	padding: 3px 20px 7px 20px;
-	height: 12px;
-	color: #666666;
-}
-
-.betterBreadcrumbs {
-	background: #eceaea;
-	clear: both; /* Fixes IE8 issue */
-	color: #666666;
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: 0.5em 0.5em 0.5em 1.5em;
-}
-
-.betterBreadcrumbs span:not(:last-of-type):after {
-	content: '\00bb';
-	display: inline-block;
-	margin: 0 0.25em;
-}
 
 .title {
 	position: relative;
