@@ -5,6 +5,7 @@ body {
 }
 
 h1 {
+	@include rem-first(font-size, 2.125);
 	font-weight: 300;
 }
 
