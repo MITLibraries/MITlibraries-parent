@@ -21,7 +21,7 @@
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes" autofocus="autofocus" tabindex="1">
 			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
-			<input type="text" class="option-3 searchtext" id="bookrequest" name="request" placeholder="ex: carbon nanotubes, game design">
+			<input type="text" class="option-3 searchtext" id="bookrequest" placeholder="ex: carbon nanotubes, game design">
 			<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
 			<input type="text" id="coursereservesrequest" value="" class="option-5 searchtext" placeholder="ex: 18.01, STS.320, 21F.108">
 			<input type="text" class="option-6" placeholder="ex: hours">

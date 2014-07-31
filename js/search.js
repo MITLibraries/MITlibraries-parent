@@ -326,6 +326,7 @@ $(function(){
 				}
 
 				$('input.active', this)
+					.attr('name', 'request')
 					.attr('type', 'text')
 					.attr('id', 'bookrequest')
 					.val(searchQuery);
