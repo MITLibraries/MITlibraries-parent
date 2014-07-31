@@ -1,6 +1,7 @@
 module.exports = {
   dist: {
     src: [
+      'js/dev.js',
       'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
       'js/ga_links.js',
@@ -12,6 +13,7 @@ module.exports = {
   },
   home: {
     src: [
+      'js/dev.js',
       'js/search.js',
       'js/hours-home.js'
     ],
