@@ -24,6 +24,9 @@
 			}
 		}
 	}
+	//
+	// Hours & Locations
+	//
 	.hours-locations {
 		display: flex;
 		flex-direction: column;
@@ -164,13 +167,26 @@
 				text-decoration: underline;
 			}
 		}
+		.number {
+			display: none;
+			@include bp-tablet--portrait {
+				display: inline;
+			}
+		}
 		.phone {
 			color: #7b7b7b;
-			&::before {
-				content: url(#{$imagesPath}/phone-sfw.svg);
+			&:before {
+				content: url(#{$imagesPath}/phone-mobile-sfw.svg);
 				display: inline-block;
 				margin-right: 0.25em; 
 				margin-left: 1em;
+				position: absolute;
+				right: 0;
+				@include bp-tablet--portrait {
+					content: url(#{$imagesPath}/phone-sfw.svg);
+					position: relative;
+					right: auto;
+				}
 			}
 		}
 		.show-more {
@@ -214,6 +230,9 @@
 			background-position: -153px -77px;
 		}
 	}
+	//
+	// News & Events
+	//
 	.news-events {
 		@include bp-tablet--portrait {
 			background: $color-background-secondary;

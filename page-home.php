@@ -90,19 +90,19 @@
 				<div class="location">
 					<div class="img-loc barker"></div>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone">617-253-0968</a></div>
+						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
 					</div>
 				</div>
 				<div class="location">
 					<div class="img-loc dewey"></div>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone">617-253-5676</a></div>
+						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
 					</div>
 				</div>
 				<div class="location">
 					<div class="img-loc hayden"></div>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone">617-253-5671</a></div>
+						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
 				</div>
 				<a href="#0" class="show-more hidden-non-mobile">
@@ -111,19 +111,19 @@
 				<div class="location hidden-mobile inactive-mobile">
 					<div class="img-loc archives"></div>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone">617-253-5136</a></div>
+						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone"><span class="number">617-253-5136</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
 					<div class="img-loc lewis"></div>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/lewis">Lewis Music Library</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone">617-253-5689</a></div>
+						<h3><a class="name-location" href="/lewis">Lewis Music Library</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
 					</div>
 				</div>
 				<div href="/rotch" class="location hidden-mobile inactive-mobile">
 					<div class="img-loc rotch"></div>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone">617-258-5592</a></div>
+						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone"><span class="number">617-258-5592</span></a></div>
 					</div>
 				</div>
 				<a href="/hours" class="button-primary">All Hours &amp; Locations</a>
