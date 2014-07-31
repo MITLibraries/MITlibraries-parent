@@ -41,3 +41,96 @@
 		}
 	}
 }
+//
+// Begin old styles. Clean this stuff up, when time.
+//
+.title {
+	color: #111;
+	@include rem-first--2-values(padding, 1, 3);
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.pageTitle {
+	background: #333;
+	color: #f7f7f7;
+	font-size: 1.75rem;
+	line-height: 1;
+	padding: 0.7em 0 0.7em 0.75em;
+	position: relative;
+	width: 100%;
+}
+
+.page-template-page-hours-php .title,
+.page-template-page-main-locations-php .title {
+	margin-bottom: 0px;
+}
+
+.libraryContent .librarySubject,
+.libraryContent h2,
+.title h3 {
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: normal;
+}
+
+.libraryContent .libraryName {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.libraryContent .librarySubject {
+	display: block;
+}
+
+.title .sub {
+	font-size: 14px;
+	color: #e4e5ec;
+	line-height: 16px;
+}
+
+.title a {
+	color: #ffcc33;
+}
+
+.libraryAlert {
+	border: 1px solid #ac944d;
+	bottom: 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 0.5em;
+	position: absolute;
+	right: 10px;
+	width: 200px;
+}
+
+.libraryTitle .libraryAlert {
+	max-height: 4.5em;
+	overflow: hidden;
+}
+
+.page-hours .libraryTitle .libraryAlert {
+	border: none;
+	line-height: 1.5;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+	width: 18em;
+}
+
+.page-hours .libraryAlert a:after {
+	content: '\f061';
+	display: inline-block;
+	font-family: 'fontawesome-MITLibraries';
+	font-size: 0.75em;
+	font-style: normal;
+	margin-left: 0.5em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+}
+
+.libraryAlert h3 {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+}
