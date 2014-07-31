@@ -464,9 +464,6 @@
 				clear: both;
 				display: table;
 			}
-			.post-news {
-				max-width: 311px;
-			}
 			.wrap-loc-info {
 				display: block;
 				float: left;
@@ -474,8 +471,11 @@
 			}
 		}
 		.news-events {
-			[class*="item"] {
+			.post-news {
 				max-width: 311px;
+			}
+			.excerpt-news {
+				max-width: 201px;
 			}
 		}
 	}
