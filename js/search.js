@@ -189,7 +189,7 @@ $(function(){
 			}
 		}
 		// Worldcat
-		if($('#worldcat'.length)) {
+		if($('#worldcat').length) {
 			$('#worldcat .hidden-fields')
 				.append("<input type='hidden' name='qt' value='wc_org_mit'/>")
 				.append("<input type='hidden' name='qt' value='affiliate'/>");
