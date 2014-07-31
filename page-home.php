@@ -88,19 +88,19 @@
 			<div class="hours-locations">
 				<h2>Hours &amp; Locations</h2>
 				<div class="location">
-					<div class="img-loc barker"></div>
+					<a href="/barker" class="img-loc barker"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
 					</div>
 				</div>
 				<div class="location">
-					<div class="img-loc dewey"></div>
+					<a href="/dewey" class="img-loc dewey"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
 					</div>
 				</div>
 				<div class="location">
-					<div class="img-loc hayden"></div>
+					<a href="/hayden" class="img-loc hayden"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
@@ -109,19 +109,19 @@
 					<svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More
 				</a>
 				<div class="location hidden-mobile inactive-mobile">
-					<div class="img-loc archives"></div>
+					<a href="/archives" class="img-loc archives"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone"><span class="number">617-253-5136</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
-					<div class="img-loc lewis"></div>
+					<a href="/lewis" class="img-loc lewis"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/lewis">Lewis Music Library</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
 					</div>
 				</div>
-				<div href="/rotch" class="location hidden-mobile inactive-mobile">
-					<div class="img-loc rotch"></div>
+				<div class="location hidden-mobile inactive-mobile">
+					<a href="/rotch" class="img-loc rotch"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours"></div><div class="location-info"><a href="/map" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone"><span class="number">617-258-5592</span></a></div>
 					</div>
