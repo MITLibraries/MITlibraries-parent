@@ -185,22 +185,6 @@ h2.bigHead {
 	/*width: 700px;*/
 }
 
-.noThumbs #mainContent {
-	margin-top: 0px !important;
-}
-
-.locationContent #mainContent {
-	margin-top: 50px;
-}
-
-.column3 #mainContent {
-	/*width: 540px;*/
-}
-
-.column1 #mainContent {
-	/*width: 940px;*/
-}
-
 #leftContent {
 	margin-top: 20px;
 }
@@ -394,96 +378,6 @@ color: #ffcc33;
 	width: 240px;
 	
 }
-
-.tabnav {
-	border-bottom: 1px solid #ccc;
-	height: 49px;
-}
-.tabnav .active {
-	z-index: 10;
-}
-
-.tabnav li {
-	position: relative;
-	z-index: 1;
-	display: block;
-}
-
-.tabnav h2 {
-	clear: none;
-	margin: 0;
-}
-
-.tabnav a {
-	outline: none !important;
-	display: block;
-	float: left;
-	border-left: 1px solid #cccccc;
-	height: 29px;
-	padding: 10px 20px 10px 10px;
-	display: block;
-	background: transparent url(#{$imagesPath}/tab.png) right top;
-	color: #000;
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 18px;
-	margin-right: -10px;
-	border-bottom: 1px solid #cccccc;
-}
-
-.tabnav a:hover {
-	text-decoration: none;
-}
-
-.tabnav a div {
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 16px;	
-}
-
-.tabnav .active a{
-	background-position: right bottom;
-	z-index: 10;
-	border-bottom: 1px solid #fff;
-}
-
-.tabcontent {
-	position: relative;
-	clear: both;
-	width: 700px;
-}
-
-.tabcontent .tab .row .first {
-	border-right: 1px solid #ccc;
-	padding-right: 10px;
-}
-
-.tabcontent .wideColumn {
-	border-right: none !important;
-	padding-right: 0px;
-}
-
-.noTab .tab {
-	padding-top: 0px !important;
-}
-
-.tabcontent .tab {
-	display: none;
-	padding: 20px 0 0 10px;
-}
-
-#mainContent .tabcontent .tab h3 {
-/*
-	margin: 0 0 0px 0;
-	font-size: 14px;
-	font-weight: bold;
-*/
-}
-
-.tabcontent .active {
-	display: block;
-}
-
 
 .profile {
 	background: #ede8e2;

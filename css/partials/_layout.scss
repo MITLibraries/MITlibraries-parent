@@ -36,6 +36,12 @@
 	}
 }
 
+.content-main {
+	.content-page {
+		min-width: 44em;
+	}
+}
+
 .has-sidebar {
 	.content-main {
 		float: left;

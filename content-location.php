@@ -123,21 +123,17 @@
 		</div><!-- end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 	
-	<div id="content" class="allContent locationContent group <?php echo $strLocation; ?>">
-		<div id="mainContent" class="mainContent span9">
-			<!--
-			<?php if ($study24 == 1): ?>
-				<a class="space247" href="<?php echo $gStudy24Url; ?>">Study 24/7</a>
-			<?php endif; ?>
-			-->
+	<div class="content-main flex-container group <?php echo $strLocation; ?>">
+		<div class="col-1 content-page">
+
 			<?php if ($title1 != "" || $title2 != ""): ?>
 				<?php $noTab = "";  ?>
 			<ul class="tabnav">
 				<?php if ($title1 != ""): ?>
-				<li class="active"><h2><a href="#tab1"><?php echo $title1 ?><div><?php echo $subtitle1 ?></div></a></h2></li>
+				<li class="active"><h2 class="title-tab"><a href="#tab1"><?php echo $title1 ?><div><?php echo $subtitle1 ?></div></a></h2></li>
 				<?php endif; ?>
 				<?php if ($title2 != ""): ?>
-				<li><h2><a href="#tab2"><?php echo $title2 ?><div><?php echo $subtitle2 ?></div></a></h2></li>
+				<li><h2 class="title-tab"><a href="#tab2"><?php echo $title2 ?><span class="title-sub"><?php echo $subtitle2 ?></span class="title-sub"></a></h2></li>
 				<?php endif; ?>
 			</ul>
 			<?php else: ?>
@@ -219,8 +215,10 @@
 
 			</div><!-- end div.tabcontent -->
 
-		</div>
+		</div><!-- end div.col-1 -->
 
-		<?php get_sidebar(); ?>
+		<div class="col-2">
+			<?php get_sidebar(); ?>
+		</div>
 
 </div><!-- end div#stage -->
