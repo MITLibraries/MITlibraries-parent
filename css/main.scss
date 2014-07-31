@@ -634,35 +634,6 @@ ul.arrows li,
 	margin-bottom: 10px;
 }
 
-.space247 {
-	display: block;
-	position: absolute;
-	top: 30px;
-	right: 10px;
-	width: 56px;
-	height: 30px;
-	background: transparent url(#{$imagesPath}/study247.png) no-repeat;
-	text-indent: -9999px;
-}
-.libraryTitle .space247 {
-	right: 10px;
-	top: 15px;
-	background: transparent url(#{$imagesPath}/study247-light.png) no-repeat;
-}
-
-.locationMainList .space247 {
-	right: 20px;
-	background: transparent url(#{$imagesPath}/study247-light.png) no-repeat;
-}
-
-.name .space247 {
-	position: relative;
-	top: auto;
-	left: auto;
-	right: auto;
-	text-indent: -9999px;
-}
-
 .studyList .info {
 	width: 100%;
 	clear: both;
