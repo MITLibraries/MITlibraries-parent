@@ -436,7 +436,9 @@
 		}
 	}
 }
-
+//
+// IE Fixes
+//
 .lt-ie10 {
 	.home {
 		.content-main {
@@ -456,6 +458,9 @@
 				content: '';
 				clear: both;
 				display: table;
+			}
+			.post-news {
+				max-width: 311px;
 			}
 			.wrap-loc-info {
 				display: block;
