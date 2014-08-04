@@ -37,6 +37,18 @@
       }
     }
   }
+  .chat {
+    display: none;
+    @include bp-tablet--portrait {
+      display: block;
+      .links-sub {
+        background: #f3f3f3;
+        //margin-top: 3px;
+        @include rem-first--2-values(padding, 1, 0.5);
+        width: auto;
+      }
+    }
+  }
 }
 
 .link-primary {
