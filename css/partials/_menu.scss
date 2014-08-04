@@ -23,10 +23,12 @@
     transform: translateY(0%);
     .small {
       font-size: 0.5em;
-      padding-top: 0.5em;
+      line-height: 1.4;
+      @include rem-first(padding-top, 0.5);
       a {
         align-items: center;
         flex-direction: column;
+        @include rem-first(padding-bottom, 0.5);
         text-transform: uppercase;
       }
       svg {
