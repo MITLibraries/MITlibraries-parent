@@ -127,66 +127,8 @@ h2.bigHead {
 	margin-bottom: 10px;
 }
 
-#mainContent .featuredImage {
-	margin: 0 0 0px 0;
-}
-
-.tertiaryPage .title h2 {
-	font-weight: normal;
-}
-
-.tertiaryPage .entry-content h2 {
-	font-size: 24px;
-	font-weight: normal;
-}
-
-.tertiaryPage .entry-content h3 {
-	font-size: 14px;
-}
-
-#content {  
-	/*margin: 10px 10px 10px 10px;*/
-	font-size: 14px;
-	line-height: 20px;
-
-}
-
-.locationContent {
-	margin-top: 70px !important;
-}
-
-.locationContent.noThumbs {
-	margin-top: 15px !important;
-}
-
-.single-location .noThumbs #sidebarContent {
-	margin-top: 5px !important;
-}
-
-#leftContent {
-	/*width: 140px;*/
-	border-right: 1px solid #eceaea;
-	font-size: 12px;
-	line-height: 12px;
-}
-
-#mainContent {
-	float: left;
-	/*width: 700px;*/
-}
-
-#leftContent {
-	margin-top: 20px;
-}
-
 .snav li.active a, .pagenav ul li.active a{
 	color: #666;
-}
-
-#sidebarContent {
-	float: right;
-	margin: 0 0 0 0px;
-	/*width: 230px;*/
 }
 
 .snav li, .pagenav ul li {
