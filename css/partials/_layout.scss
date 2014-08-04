@@ -43,16 +43,16 @@
 			min-width: 44em;
 			width: 100%;
 		}
-	}
-	.col-1 {
-		@include bp-tablet--portrait {
-			@include rem-first(padding-right, 2);
+		.col-1 {
+			@include bp-tablet--portrait {
+				@include rem-first(padding-right, 2);
+			}
 		}
-	}
-	.col-2 {
-		width: 100%;
-		@include bp-tablet--portrait {
-			min-width: 18em;
+		.col-2 {
+			width: 100%;
+			@include bp-tablet--portrait {
+				min-width: 18em;
+			}
 		}
 	}
 }
