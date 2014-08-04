@@ -86,7 +86,7 @@
 		width: 100%;
 		z-index: map-get($zindex, dropdown-body);
 		// Heads up. Using non-standard appearance property. Note the Firefox hack. This property is not autoprefixed.
-		-moz-appearance: treeheader;
+		// -moz-appearance: treeheader;
 		-ms-appearance: none;
 		-webkit-appearance: none;
 		// Extra work to hide IE dropdown
@@ -385,6 +385,13 @@
 		@include bp-tablet--portrait {
 			display: inline;
 		}
+	}
+}
+
+// Hide select svg on firefox
+@-moz-document url-prefix() {
+	.search--lib-resources .wrap-select--keywords svg.select-arrows {
+		display: none;
 	}
 }
 
