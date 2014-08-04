@@ -41,6 +41,13 @@
 		@include rem-first(margin-bottom, 1.5);
 		@include bp-tablet--portrait {
 			min-width: 44em;
+			width: 100%;
+		}
+	}
+	.sidebar {
+		width: 100%;
+		@include bp-tablet--portrait {
+			min-width: 18em;
 		}
 	}
 }
