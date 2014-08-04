@@ -18,7 +18,7 @@
 			</div>
 			<div class="flex-item">
 				<h4><a href="">Hours &amp; Locations</a></h4>
-				<a href="" class="link-sub">Hours</a>
+				<a href="/hours" class="link-sub">Hours</a>
 				<a href="" class="link-sub">List of locations</a>
 				<a href="" class="link-sub">Study spaces</a>
 				<a href="" class="link-sub">Exhibits &amp; galleries</a>
