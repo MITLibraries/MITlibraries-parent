@@ -122,7 +122,7 @@
 		width: 100%;
 		@include bp-tablet--portrait {
 			@include rem-first(margin-right, 1);
-			order: 300;
+			order: 500;
 			width: auto;
 		}
 	}
@@ -135,7 +135,7 @@
 			font-weight: 300;
 			@include rem-first(margin-right, 1);
 				&:first-of-type {
-				order: 250; 
+				order: 450; 
 			}
 			&:last-of-type {
 				order: 350;
