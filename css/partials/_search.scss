@@ -284,6 +284,24 @@
 			color: #fff;
 			&.active {
 				display: block;
+				&:after {
+					content: url(#{$imagesPath}/arrow-right-white-sfw.svg);
+					display: inline-block;
+					margin-left: 0.5em;
+				}
+			}
+			// Magic numbers.
+			&.bartonplus.active {
+				right: 218px;
+			}
+			&.barton.active {
+				right: 187px;
+			}
+			&.worldcat.active {
+				right: 217px;
+			}
+			&.course-reserves.active {
+				right: 142px;
 			}
 		}
 	}
