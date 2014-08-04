@@ -304,6 +304,11 @@ $(function(){
 
 				// Add hidden fields
 				hiddenFields();
+				$('input.active', this)
+					.attr('name', 'request')
+					.attr('type', 'text')
+					.attr('id', 'bookrequest')
+					.val(searchQuery);
 				// Set the val of the checked option
 				$('#barton input[name = "code"]:checked').val(splitOptions[1]);
 				// What is F8?
@@ -317,11 +322,6 @@ $(function(){
 					$("#barton input[name = 'code']").attr("name","scan_code");
 					$("#barton input.searchtext").attr("name","scan_start");
 				}
-
-				$('input.active', this)
-					.attr('type', 'text')
-					.attr('id', 'bookrequest')
-					.val(searchQuery);
 			}
 			// Worldcat
 			if($('#worldcat').length) {
@@ -340,6 +340,9 @@ $(function(){
 					.attr('action', 'http://library.mit.edu/F/')
 					.attr('method', 'get')
 					.attr('name', 'getInfo');
+				$('input.active', this)
+					.attr('name', 'request')
+					.val(searchQuery);
 				// Add hidden fields
 				hiddenFields();
 				// Split the query
@@ -354,9 +357,6 @@ $(function(){
 					$("#course-reserves input[name = 'code']").attr("name","scan_code");
 					$("#course-reserves input[name = 'request']").attr("name","scan_start");
 				};
-				$('input.active', this)
-					.attr('name', 'request')
-					.val(searchQuery);
 			}
 			// Site Search
 			if($('#site-search').length) {
