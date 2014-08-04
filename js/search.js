@@ -3,19 +3,11 @@
 //
 
 $(function(){
-	// All available resources	
-	var resourcesAll = $('#resources li');
-
-	// Forms
-	var bartonplusForm = $('#bartonplus');
-	var veraForm = $('#vera');
-	var bartonForm = $('#barton');
-	var worldcatForm = $('#worldcat');
-	var courseReservesForm = $('#course-reserves');
-	var siteSearchForm = $('#site-search');
 
 	// Mimic a <select> element with a <ul>
 	$('#resources').on('click', 'li', function(event) {
+		// All available resources	
+		var resourcesAll = $('#resources li');
 		// Cancel if the li has a link in it
 		if ($(this).hasClass('has-link')) {
 			return;
@@ -41,15 +33,26 @@ $(function(){
 				$('.wrap-select--resources .selected').text('').removeClass('active');
 				// Remove any input text
 				$('#search-main input').val('');
+				$(this).trigger('search-change');
 			}
 			// Get the class of the selected resource
 			var searchSelected = $('#resources li.active').attr('data-target');
 			// Apply this class, as an id, to the form.
 			$('#search-main form').attr('id', searchSelected);
 		}
-
 	});
-
+	// Close the faux select menu when clicking outside it 
+	$(document).on('click', function(event){
+		if(!$('#resources.active').has(event.target).length == 0) {
+			return;
+		}
+		else {
+			$('#resources').removeClass('active');
+			$('#search-main .selected').removeClass('active').text('');
+		}
+	});
+	
+	// Placeholder text changes
 	function searchBy() {
 		var optionSelected = $('#search-main select.active option:selected').val();
 		if ($('#bartonplus').length) {
@@ -111,7 +114,7 @@ $(function(){
 			}
 		}
 	}
-
+	// Run searchby
 	searchBy();
 
 	function searchBySwitch() {
@@ -130,6 +133,7 @@ $(function(){
 
 	searchBySwitch();
 
+	// Handles hidden fields
 	function hiddenFields() {
 		// Get the value of the "search by" select element
 		var selectVal = $('#search-main select.active').val();
@@ -218,6 +222,7 @@ $(function(){
 		}
 	}
 
+	// Handles the toggling of forms
 	$('#search-main').on('click', '#resources', function(event){
 		// Hide all inputs on option change
 		$('#search-main input').removeClass('active');
@@ -236,27 +241,15 @@ $(function(){
 		var searchSelected = $('#resources li.active').attr('data-target');
 		$('#search-main a.search-advanced').removeClass('active');
 		$('#search-main a.search-advanced.'+searchSelected).addClass('active');
-
 	});
 
 	// Run searchBy on option-change event
 	$('#search-main').on('option-change', function(){
 		searchBySwitch();
 		searchBy();
-	})
-
-	// Close the faux select menu when clicking outside it 
-	$(document).on('click', function(event){
-		if(!$('#resources.active').has(event.target).length == 0) {
-			return;
-		}
-		else {
-			$('#resources').removeClass('active');
-			$('#search-main .selected').removeClass('active').text('');
-		}
 	});
 
-
+	// On form submit
 	$('#search-main form').on('submit', function(){
 		// Get the query entered...
 		var searchQuery = $('input.active', this).val();
