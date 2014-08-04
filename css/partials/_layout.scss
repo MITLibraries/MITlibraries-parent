@@ -123,7 +123,7 @@
 			@include rem-first(margin-left, 1);
 		}
 	}
-	ul {
+	> ul {
 		border-top: 1px solid #aaa;
 		border-bottom: 1px solid #aaa;
 		@include rem-first(padding, 1);
