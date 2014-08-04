@@ -39,7 +39,9 @@
 .content-main {
 	.content-page {
 		@include rem-first(margin-bottom, 1.5);
-		min-width: 44em;
+		@include bp-tablet--portrait {
+			min-width: 44em;
+		}
 	}
 }
 
