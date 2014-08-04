@@ -374,11 +374,6 @@ color: #ffcc33;
 	text-align: center;
 }
 
-.libraryContent {
-	width: 240px;
-	
-}
-
 .profile {
 	background: #ede8e2;
 	padding: 15px 10px 0px 10px;
@@ -594,16 +589,6 @@ ul.arrows li,
 
 /* ---- Hours ---- */
 
-.upcomingSpecial {
-	font-size: 14px;
-	max-height: 8em;
-	line-height: 1.5;
-	margin: -30px auto 0;
-	margin: -1.85em auto 0;
-	overflow: hidden;
-	width: 22em;
-}
-
 .specialHours {
 	font-weight: bold;
 }
@@ -611,13 +596,6 @@ ul.arrows li,
 .specialHours b {
 	color: #ca3;
 }
-
-.hourCalendar {
-	width: 160px;
-	position: absolute;
-	top: 10px;
-	right: 20px;
-}	
 
 #hourContent {
 	width: 100%;

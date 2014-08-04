@@ -88,7 +88,7 @@ $thisWeek = date("Y-n-j");
 
 <div id="stage" class="inner hours group" role="main">
 
-	<div class="title libraryTitle">
+	<div class="title-page flex-container">
 
 		<div class="libraryContent">
 			<h1><?php showBreadTitle(); ?></h1>
@@ -98,7 +98,7 @@ $thisWeek = date("Y-n-j");
 				$hoursAlert = apply_filters('the_content', $post->post_content);
 				if($hoursAlert != ''): 
 			?>
-				<div class="upcomingSpecial">
+				<div class="alert--upcoming">
 					<?php echo $hoursAlert; ?>
 				</div>
 			<?php endif; ?>
@@ -107,14 +107,15 @@ $thisWeek = date("Y-n-j");
 				include(locate_template('inc/alert.php'));
 			 ?>
 			
-		<div id="hourCalendar" class="hourCalendar hidden-phone">
+		<div class="wrap-cal-hours hidden-phone">
+			<div id="hourCalendar" class="cal-hours"></div>
 		</div>
 
 	</div>		
 	
-	<div id="content" class="allContent">
+	<div id="content" class="content-main">
 
-		<div id="hourContent" class="light">
+		<div id="hourContent" class="content-page">
 		
 			<div id="hourNav">
 				<div id="prevWeek"><i class="icon-arrow-left"></i> <a href="<?php echo $path."?d=".$prevWeek; ?>">Previous week</a></div>

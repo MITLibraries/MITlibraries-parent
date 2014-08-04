@@ -1,27 +1,3 @@
-.gldp-default {
-	background: transparent;
-	position: absolute;
-	font-family: Helvetica;
-}
-
-/* Core style for every cell */
-.gldp-default .core {
-	background: transparent;
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	position: relative;
-	float: left;
-	font-size: 12px;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	text-shadow: none;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
 /* Month/Year text */
 .gldp-default .monyear span {
 	margin: 0 5px 0 5px;
@@ -63,11 +39,6 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88e888', endColorstr='#37ef37',GradientType=0 );
 }
 
-.gldp-default .next-arrow, .gldp-default .prev-arrow {
-	color: $darkYellow;
-	text-shadow: none;
-}
-
 .gldp-default .monyear {
 	font-size: 12px;
 	font-weight: bold;
@@ -89,12 +60,6 @@
 .gldp-default .sun {
 	color: $darkYellow;
 	font-weight: normal;
-} 
-
-/* Selectable days that are outside of current month being shown */
-.gldp-default .outday {
-	color: #666;
-	cursor: not-allowed;
 }
 
 .gldp-default .selected {
