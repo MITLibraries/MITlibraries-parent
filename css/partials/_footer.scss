@@ -195,3 +195,63 @@
 		}
 	}
 }
+// Old browser fixes
+.no-flexbox {
+	.footer-info-institute {
+		display: block;
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+		> a,
+		> div {
+			float: left;
+		}
+		.about-mit {
+			padding-top: 4em;
+		}
+		.link-mit-home {
+			padding-top: 1.5em;
+		}
+	}
+	.footer-main {
+		&.flex-container {
+			display: block;
+			float: left;
+		}
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+		.identity {
+			position: relative;
+			width: 100%;
+			.logo-mit-lib {
+				display: block;
+				float: left;
+			}
+			.social {
+				bottom: 0;
+				display: block;
+				right: 22px;
+				position: absolute;
+			}
+		}
+		.links-primary {
+			display: block;
+			margin-top: 0;
+			margin-left: 0;
+			left: 202px;
+			position: absolute;
+			top: 79px;
+			width: 100%;
+			a {
+				display: block;
+				float: left;
+				position: relative;
+			}
+		}
+	}
+}
