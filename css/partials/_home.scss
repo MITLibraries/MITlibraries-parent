@@ -34,6 +34,9 @@
 			border-bottom: 1px solid $color-secondary;
 			color: $color-hours-locations;
 			text-align: center;
+			@include bp-tablet--portrait {
+				padding: 0.5em 0 0.25em;
+			}
 		}
 		p {
 			color: darken($color-background-secondary, 70%);
