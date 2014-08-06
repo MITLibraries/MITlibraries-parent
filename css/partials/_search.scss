@@ -345,6 +345,8 @@
 			display: none;
 			@include bp-tablet--portrait {
 				display: inline;
+				max-height: 14px;
+				max-width: 8px;
 			}
 		}
 	}
