@@ -267,7 +267,7 @@
 						wp_reset_postdata();
 					?>
 				</div>
-				<a href="" class="button-primary view-experts">All <span class="count"></span> experts</a>
+				<a href="/experts" class="button-primary view-experts">All <span class="count">32</span> experts</a>
 			</div><!-- end div.guides-experts -->
 		</div><!-- end div.col-2 -->
 	</div><!-- end div.content-main -->
