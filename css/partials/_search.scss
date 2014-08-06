@@ -400,9 +400,6 @@
 	}
 	.wrap-select--resources {
 		z-index: map-get($zindex, dropdown-body);
-		@include bp-tablet--portrait {
-			display: inline;
-		}
 	}
 }
 
