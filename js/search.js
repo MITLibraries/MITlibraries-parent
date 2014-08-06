@@ -35,10 +35,10 @@ $(function(){
 				$('#search-main input').val('');
 				$(this).trigger('search-change');
 			}
-			// Get the class of the selected resource
-			var searchSelected = $('#resources li.active').attr('data-target');
-			// Apply this class, as an id, to the form.
-			$('#search-main form').attr('id', searchSelected);
+			// // Get the class of the selected resource
+			// var searchSelected = $('#resources li.active').attr('data-target');
+			// // Apply this class, as an id, to the form.
+			// $('#search-main form').attr('id', searchSelected);
 		}
 	});
 	// Close the faux select menu when clicking outside it 
@@ -55,7 +55,7 @@ $(function(){
 	// Placeholder text changes
 	function searchBy() {
 		var optionSelected = $('#search-main select.active option:selected').val();
-		if ($('#bartonplus').length) {
+		if ($('#bartonplus.active').length) {
 			if(optionSelected == '') {
 				$('input.active').attr('placeholder', 'ex: carbon nanotubes');
 			}
@@ -66,7 +66,7 @@ $(function(){
 				$('input.active').attr('placeholder', 'ex: noam chomsky');
 			}
 		}
-		if ($('#vera').length) {
+		if ($('#vera.active').length) {
 			if(optionSelected == 'contains') {
 				$('input.active').attr('placeholder', 'ex: new eng j of med');
 			}
@@ -77,7 +77,7 @@ $(function(){
 				$('input.active').attr('placeholder', 'ex: web of science');
 			}
 		}
-		if ($('#barton').length) {
+		if ($('#barton.active').length) {
 			if(optionSelected == 'find_WRD') {
 				$('input.active').attr('placeholder', 'ex: game design');
 			}
@@ -91,7 +91,7 @@ $(function(){
 				$('input.active').attr('placeholder', 'ex: ta405.t5854');
 			}
 		}
-		if ($('#worldcat').length) {
+		if ($('#worldcat.active').length) {
 			if(optionSelected == 'keyword') {
 				$('input.active').attr('placeholder', 'ex: carbon nanotubes');
 			}
@@ -102,7 +102,7 @@ $(function(){
 				$('input.active').attr('placeholder', 'ex: introduction to fluid mechanics');
 			}
 		}
-		if ($('#course-reserves').length) {
+		if ($('#course-reserves.active').length) {
 			if(optionSelected == 'scan_CNB') {
 				$('input.active').attr('placeholder', 'ex: STS.320');
 			}
@@ -226,11 +226,15 @@ $(function(){
 
 	// Handles the toggling of forms
 	$('#search-main').on('click', '#resources', function(event){
+		// Hide all forms on option change
+		$('#search-main form').removeClass('input-submit active');
 		// Hide all inputs on option change
 		$('#search-main input').removeClass('active');
 		// Get the value of the selected option...
 		var resourceOption = $('#resources li.active').attr('data-option');
-		// ...and show the corresponding input
+		// ...and show the corresponding form
+		$('#search-main input.'+resourceOption).parent().addClass('active input-submit');
+		// ...and active input
 		$('#search-main input.'+resourceOption).addClass('active');
 		// Repeat for keyword selects
 		$('.keywords').parent().removeClass('active');
@@ -265,7 +269,7 @@ $(function(){
 		// Get the value of the "search by" select element
 		var selectVal = $('#search-main select.active').val();
 			// Barton...
-			if ($('#bartonplus').length) {
+			if ($('#bartonplus.active').length) {
 				// Set the correct action for the BartonPlus form
 				$('#bartonplus')
 					.attr('action', 'http://search.ebscohost.com/login.aspx')
@@ -277,7 +281,7 @@ $(function(){
 				$('input[name="bquery"]', this).val(selectVal+searchQuery).replace(/"/g, '&quot;');
 			}
 			// Vera...
-			if ($('#vera').length) {
+			if ($('#vera.active').length) {
 				// Vera actions
 				$('#vera')
 					.attr('action', 'http://owens.mit.edu/sfx_local/az/mit_all')
@@ -295,7 +299,7 @@ $(function(){
 					.val(searchQuery);
 			}
 			// Barton
-			if($('#barton').length) {
+			if($('#barton.active').length) {
 				// Split the query
 				var splitOptions = selectVal.split('_');
 				$('#barton')
@@ -326,7 +330,7 @@ $(function(){
 				}
 			}
 			// Worldcat
-			if($('#worldcat').length) {
+			if($('#worldcat.active').length) {
 				$(this).attr('action', 'http://mit.worldcat.org/search');
 				// Add hidden fields
 				hiddenFields();
@@ -335,7 +339,7 @@ $(function(){
 					.val(searchQuery);
 			}
 			// Course Reserves
-			if($('#course-reserves').length) {
+			if($('#course-reserves.active').length) {
 				$('#course-reserves')
 					.addClass('searchform')
 					.addClass('barton')
@@ -361,7 +365,7 @@ $(function(){
 				};
 			}
 			// Site Search
-			if($('#site-search').length) {
+			if($('#site-search.active').length) {
 				$(this)
 					.attr('action', 'http://www.google.com/cse');
 				hiddenFields();
