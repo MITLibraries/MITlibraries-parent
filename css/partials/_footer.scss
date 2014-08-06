@@ -129,13 +129,14 @@
 		[class*="icon-social"] {
 			background: $color-secondary;
 			border-radius: 50%;
-			height: auto;
+			height: 1.5em;
 			padding: 0.2em;
 			width: 1.5em;
 			path {
 				fill: #474747;
 			}
 			@include bp-tablet--portrait {
+				height: 2em;
 				padding: 0.2em;
 				width: 2em;
 			}
