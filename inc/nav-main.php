@@ -64,7 +64,7 @@
         <span class="heading-col">Borrow, Request, Suggest</span>
         <a href="/barton-account">Your Account <span class="about">Renew MIT, BLC, &amp; Borrow Direct items</span></a>
         <a href="http://library.mit.edu">Barton catalog <span class="about">Request items owned by MIT</span></a>
-        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Get items not owned by MIT (BLC &amp; Borrow Direct)</span></a>
+        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Get items not owned by MIT <br>(BLC &amp; Borrow Direct)</span></a>
         <a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a>
         <a href="/suggest-purchase">Suggest a purchase</a>
         <a href="/borrow" class="bottom">More options &amp; help</a>
