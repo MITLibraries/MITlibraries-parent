@@ -136,14 +136,21 @@
     }
     .bottom {
       border-top: 1px solid $color-secondary;
-      &:after {
+      &.extra {
+        span:first-of-type:after {
+          content: url(#{$imagesPath}/arrow-right-sfw.svg);
+          display: inline-block;
+          margin-left: 0.25em;
+        }
+      }
+      &:not(.extra):after {
         content: url(#{$imagesPath}/arrow-right-sfw.svg);
         display: inline-block;
         margin-left: 0.25em; 
       }
     }
   }
-  .bottom span:not(:first-of-type):before {
+  .bottom:not(.extra) span:not(:first-of-type):before {
     color: $color-text-accent-primary;
     content: '|';
     display: inline-block;

@@ -14,12 +14,12 @@
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Start Here</span>
-        <a href="/bartonplus">BartonPlus <span class="about">Articles, books, &amp; more</span></a>
+        <a href="/bartonplus">BartonPlus (mega-search) <span class="about">Articles, e-books, &amp; more</span></a>
         <a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a>
-        <a href="/barton">Barton catalog <span class="about">Books &amp; media</span></a>
-        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Non-MIT items</span></a>
-        <a href="/barton-reserves">Course reserves <span class="about">Materials for your classes</span></a>
-        <a href="/search" class="bottom">More search options</a>
+        <a href="/barton">Barton catalog (classic search) <span class="about">Books &amp; more at MIT</span></a>
+        <a href="http://mit.worldcat.org">Worldcat<span class="about">Books &amp; more worldwide</span></a>
+        <a href="/barton-reserves">Course reserves</a>
+        <a href="/search" class="bottom extra"><span>More search options</span> <span class="about">Images, data, DSpace, etc.</span></a>
       </div>
       <div class="col-2 flex-item">
         <span class="heading-col">Also Try</span>
@@ -61,13 +61,13 @@
     <a href="/borrow">Borrow &amp; request</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
-        <span class="heading-col">Borrow, Request, Renew</span>
+        <span class="heading-col">Borrow, Request, Suggest</span>
         <a href="/barton-account">Your Account <span class="about">Renew MIT, BLC, &amp; Borrow Direct items</span></a>
-        <a href="http://library.mit.edu">Barton catalog <span class="about">Get MIT items</span></a>
-        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Get non-MIT items (BLC &amp; Borrow Direct)</span></a>
-        <a href="/illiad">ILLiad <span class="about">Get non-MIT items (Interlibrary Borrowing)</span></a>
+        <a href="http://library.mit.edu">Barton catalog <span class="about">Request items owned by MIT</span></a>
+        <a href="http://mit.worldcat.org">MIT’s WorldCat <span class="about">Get items not owned by MIT (BLC &amp; Borrow Direct)</span></a>
+        <a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a>
         <a href="/suggest-purchase">Suggest a purchase</a>
-        <a href="/borrow" class="bottom">More borrow &amp; request options</a>
+        <a href="/borrow" class="bottom">More options &amp; help</a>
       </div>
       <div class="col-2 flex-item">
         <span class="heading-col">More Information</span>
