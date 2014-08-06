@@ -92,7 +92,7 @@
 			<span>77 MASSACHUSETTS AVENUE </span>
 			<span>CAMBRIDGE MA 02139-4307</span>
 		</div>
-		<div class="license">Massachusetts Institute of Technology Licensed under the <a href="" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted.
+		<div class="license">Licensed under the <a href="" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted.
 		</div><!-- end footer.footer-info-institure -->
 	</footer>
 
