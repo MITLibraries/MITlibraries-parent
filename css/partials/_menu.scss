@@ -43,9 +43,21 @@
       display: block;
       .links-sub {
         background: #f3f3f3;
-        //margin-top: 3px;
+        flex-flow: wrap;
         @include rem-first--2-values(padding, 1, 0.5);
+        @include rem-first(min-width, 9.375);
         width: auto;
+      }
+      .more {
+        display: block;
+        @include rem-first(font-size, 0.75);
+        text-align: center;
+        text-transform: none;
+        width: 100%;
+      }
+      .wrap-button-chat {
+        @include rem-first(min-height, 2.875);
+        min-width: 100%;
       }
     }
   }
