@@ -7,12 +7,19 @@
     box-shadow: 0 3px 3px $color-shadow;
     height: auto;
     flex: none;
+    @include rem-first--4-values(padding, 0, 0.5, 0.5, 0.5);
     position: absolute;
     transform: translateY(3em);
     top: 0;
     width: 100%;
   }
   @include hidden-visually;
+  .small {
+    display: none;
+    @include bp-tablet--portrait {
+      display: block;
+    }
+  }
   @include bp-tablet--portrait {
     align-items: stretch;
     height: auto;
@@ -93,10 +100,12 @@
     }
   }
   > a {
+    border-bottom: 1px solid #b5b5b5;
     display: block;
     @include rem-first(padding, 0.5);
     position: relative;
     @include bp-tablet--portrait {
+      border-bottom: none;
       color: #fff;
       display: flex;
       height: 100%;

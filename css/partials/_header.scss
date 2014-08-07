@@ -26,6 +26,26 @@
 			}
 		}
 	}
+	.link-account {
+		margin-left: 2em;
+	}
+	.link-site-search {
+		margin-left: 5.5em;
+	}
+	.link-account,
+	.link-site-search {
+		align-self: flex-end;
+		display: flex;
+		flex-flow: column;
+		@include rem-first(padding-bottom, 0.5);
+		svg {
+			fill: #c8c8c8;
+			margin: 0 auto;
+		}
+		@include bp-tablet--portrait {
+			display: none;
+		}
+	}
 	.logo-mit {
 		display: none;
 		@include bp-tablet--portrait {
