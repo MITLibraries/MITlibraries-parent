@@ -58,6 +58,9 @@
       .wrap-button-chat {
         @include rem-first(min-height, 2.875);
         min-width: 100%;
+        #libchat_btn_widget {
+          border: 1px solid #666;
+        }
       }
     }
   }
