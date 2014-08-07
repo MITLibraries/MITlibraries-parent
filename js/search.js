@@ -257,6 +257,8 @@ $(function(){
 
 	// On form submit
 	$('#search-main form').on('submit', function(){
+		// Remove added inputs
+		$('#search-main input[type="hidden"], #search-main input[type="radio"]').remove();
 		// Get the query entered...
 		var searchQuery = $('input.active', this).val();
 		if (searchQuery == '') {
