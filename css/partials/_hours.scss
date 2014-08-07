@@ -33,6 +33,9 @@
 			cursor: not-allowed;
 		}
 	}
+	.locations-more {
+		@include rem-first(margin-bottom, 1.5);
+	}
 }
 .wrap-cal-hours {
 	display: none;
