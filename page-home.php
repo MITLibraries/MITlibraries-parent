@@ -189,10 +189,8 @@
 									);							
 						$newsPosts = new WP_Query( $args );
 						while ( $newsPosts->have_posts() ) : $newsPosts->the_post();
-						$postID = get_the_ID();
+						$postImageArr = get_field('homepage_image');
 						$eventPost = cf('is_event') == true;
-						$postImageID = get_post_thumbnail_id();
-						$postImageURL = wp_get_attachment_url($postImageID);
 						$eventRawDate = cf('event_date');
 						$eventDate = date("l, F j", strtotime($eventRawDate));
 						$eventStartTime = cf('event_start_time');
@@ -221,8 +219,8 @@
 							?>
 						</div><!-- end div.excerpt-news -->
 						<?php
-							if (has_post_thumbnail()) {
-								echo '<div class="image" style="background-image: url('.$postImageURL.');"></div>';
+							if ($postImageURL != '') {
+								echo '<div class="image" style="background-image: url('.$postImageArr['url'].');"></div>';
 							}
 						?>
 					</a><!-- end a.post-news -->
