@@ -7,49 +7,49 @@
 	<footer class="footer-main flex-container">
 		<div class="links-all flex-container">
 			<div class="flex-item">
-				<h4><a href="">Search</a></h4>
-				<a href="" class="link-sub">BartonPlus</a>
-				<a href="" class="link-sub">Barton catalog</a>
-				<a href="" class="link-sub">Vera: Databases &amp; e-journals</a>
-				<a href="" class="link-sub">MIT's WorldCat</a>
-				<a href="" class="link-sub">Course reserves</a>
-				<a href="" class="link-sub">Site search</a>
-				<a href="" class="link-sub">More search options</a>
+				<h4><a href="/search">Search</a></h4>
+				<a href="/bartonplus" class="link-sub">BartonPlus</a>
+				<a href="/barton" class="link-sub">Barton catalog</a>
+				<a href="/vera" class="link-sub">Vera: Databases &amp; e-journals</a>
+				<a href="/worldcat" class="link-sub">MIT's WorldCat</a>
+				<a href="/course-reserves" class="link-sub">Course reserves</a>
+				<a href="/search" class="link-sub">Site search</a>
+				<a href="/search" class="link-sub">More search options</a>
 			</div>
 			<div class="flex-item">
-				<h4><a href="">Hours &amp; Locations</a></h4>
+				<h4><a href="/hours">Hours &amp; Locations</a></h4>
 				<a href="/hours" class="link-sub">Hours</a>
-				<a href="" class="link-sub">List of locations</a>
-				<a href="" class="link-sub">Study spaces</a>
-				<a href="" class="link-sub">Exhibits &amp; galleries</a>
-				<a href="" class="link-sub">Map</a>
+				<a href="/locations" class="link-sub">List of locations</a>
+				<a href="/study" class="link-sub">Study spaces</a>
+				<a href="/exhibits" class="link-sub">Exhibits &amp; galleries</a>
+				<a href="/#!map" class="link-sub">Map</a>
 			</div>
 			<div class="flex-item">
-				<h4><a href="">Borrow &amp; Request</a></h4>
-				<a href="" class="link-sub">Your Account</a>
-				<a href="" class="link-sub">Get it: options for getting books &amp; articles</a>
-				<a href="" class="link-sub">Circulation FAQ</a>
-				<a href="" class="link-sub">Reserves &amp; TIP FAQ</a>
-				<a href="" class="link-sub">Visit non-MIT libraries</a>
-				<a href="" class="link-sub">More borrow &amp; request options</a>
+				<h4><a href="/borrow">Borrow &amp; Request</a></h4>
+				<a href="/account" class="link-sub">Your Account</a>
+				<a href="/getit" class="link-sub">Get it: options for getting books &amp; articles</a>
+				<a href="/circfaq" class="link-sub">Circulation FAQ</a>
+				<a href="/reserves" class="link-sub">Reserves &amp; TIP FAQ</a>
+				<a href="/otherlibraries" class="link-sub">Visit non-MIT libraries</a>
+				<a href="/borrow" class="link-sub">More borrow &amp; request options</a>
 			</div>
 			<div class="flex-item">
-				<h4><a href="">Research &amp; Support</a></h4>
-				<a href="" class="link-sub">Ask Us!</a>
-				<a href="" class="link-sub">Research guides &amp; expert librarians</a>
+				<h4><a href="/research-support">Research &amp; Support</a></h4>
+				<a href="/ask" class="link-sub">Ask Us!</a>
+				<a href="/research-guides" class="link-sub">Research guides &amp; expert librarians</a>
 				<a href="" class="link-sub">Tools for your research</a>
-				<a href="" class="link-sub">Scholarly publishing</a>
+				<a href="/scholarly" class="link-sub">Scholarly publishing</a>
 				<a href="" class="link-sub">Citation software</a>
-				<a href="" class="link-sub">More research support options</a>
+				<a href="/research-support" class="link-sub">More research support options</a>
 			</div>
 			<div class="flex-item">
-				<h4><a href="">About Us</a></h4>
-				<a href="" class="link-sub">Staﬀ directory</a>
-				<a href="" class="link-sub">News</a>
-				<a href="" class="link-sub">Calendar of events</a>
-				<a href="" class="link-sub">Guidelines for use</a>
+				<h4><a href="/about">About Us</a></h4>
+				<a href="/directory" class="link-sub">Staﬀ directory</a>
+				<a href="/news" class="link-sub">News</a>
+				<a href="/calendar" class="link-sub">Calendar of events</a>
+				<a href="/user-guidelines" class="link-sub">Guidelines for use</a>
 				<a href="" class="link-sub">Services A-Z</a>
-				<a href="" class="link-sub">More about us</a>
+				<a href="/about-us" class="link-sub">More about us</a>
 			</div>
 		</div><!-- end div.links-all -->
 		<div class="identity flex-container">
