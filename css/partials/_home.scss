@@ -376,8 +376,17 @@
 		}
 		.expert {
 			width: 50%;
+			&:nth-child(3) {
+				display: none;
+			}
+			&:nth-child(4) {
+				display: none;
+			}
 			@include bp-tablet--portrait {
 				width: 25%;
+				&:nth-child(n) {
+					display: block;
+				}
 			}
 		}
 		.experts-group {
