@@ -9,10 +9,7 @@
  * @since Twenty Twelve 1.0
  */
 ?><!DOCTYPE html>
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 9]><html class="no-js lt-ie10" lang="en"><![endif]-->
+<!--[if lte IE 9]><html class="no-js lte-ie9" lang="en"><![endif]-->
 <!--[if !(IE 8) | !(IE 9) ]><!-->
 <html <?php language_attributes(); ?> class="no-js">
 <!--<![endif]-->
