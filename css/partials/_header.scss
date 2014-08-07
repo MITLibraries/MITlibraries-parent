@@ -36,6 +36,7 @@
 			fill: #b9b7b6;
 			order: 4;
 			padding: 0.5em;
+			max-width: 4.5em;
 			width: 4.5em;
 			.color {
 				fill: #fff;
@@ -60,7 +61,12 @@
 .lte-ie9 {
 	.header-main {
 		.name-site {
+			margin-left: 32px;
 			max-width: 103px;
+		}
+		.logo-mit {
+			margin-top: 24px;
+			margin-left: 40px;
 		}
 	}
 }
