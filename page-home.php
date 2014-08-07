@@ -219,7 +219,7 @@
 							?>
 						</div><!-- end div.excerpt-news -->
 						<?php
-							if ($postImageURL != '') {
+							if ($postImageArr != '') {
 								echo '<div class="image" style="background-image: url('.$postImageArr['url'].');"></div>';
 							}
 						?>
