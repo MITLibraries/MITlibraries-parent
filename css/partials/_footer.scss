@@ -90,10 +90,12 @@
 		width: 10.3125em;
 		@include bp-tablet--portrait {
 			padding-left: 0;
+			max-width: 9.5em;
 			width: 9.5em;
 		}
 		svg {
 			max-height: 4em;
+			max-width: 9.5em;
 		}
 	}
 	.text-find-us {
@@ -256,6 +258,13 @@
 				float: left;
 				position: relative;
 			}
+		}
+	}
+}
+.lte-ie9.no-flexbox {
+	.footer-main {
+		.identity {
+			width: 100%;
 		}
 	}
 }
