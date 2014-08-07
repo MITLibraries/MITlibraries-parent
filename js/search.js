@@ -336,9 +336,20 @@ $(function(){
 				$(this).attr('action', 'http://mit.worldcat.org/search');
 				// Add hidden fields
 				hiddenFields();
-				$('input.active', this)
-					.attr("name","q")
-					.val(searchQuery);
+				$('input.active', this).attr('method','get');
+				if (selectVal == 'keyword') {
+					$('input.active', this)
+						.attr("name","q")
+						.val(searchQuery);
+				}
+				if (selectVal == 'author') {
+					var searchQuery = 'au:'+$('input.active', this).val();
+					$('#worldcat.active').append('<input type="hidden" name="q" value="'+searchQuery+'" />');
+				}
+				if (selectVal == 'title') {
+					var searchQuery = 'ti:'+$('input.active', this).val();
+					$('#worldcat.active').append('<input type="hidden" name="q" value="'+searchQuery+'" />');
+				}
 			}
 			// Course Reserves
 			if($('#course-reserves.active').length) {
