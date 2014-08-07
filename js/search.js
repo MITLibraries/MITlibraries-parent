@@ -142,7 +142,7 @@ $(function(){
 		// Remove any hidden fileds
 		$('#search-main form .hidden-fields').html('');
 		// Add hidden fields, respective of search selected
-		if ($('#bartonplus').length) {
+		if ($('#bartonplus.active').length) {
 			$('#bartonplus .hidden-fields')
 				.append("<input name='direct' value='true' type='hidden'>")
 				.append("<input name='scope' value='site' type='hidden'>")
@@ -154,7 +154,7 @@ $(function(){
 				.append('<input name="bquery" value="" type="hidden">');
 		}
 		// Vera
-		if($('#vera').length) {
+		if($('#vera.active').length) {
 			$('#vera .hidden-fields')
 				.append("<input type='hidden' name='param_perform_save' value='searchTitle' />")
 				.append("<input type='hidden' name='param_chinese_checkbox_save' value='0' />")
@@ -175,7 +175,7 @@ $(function(){
 				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="exactMatch" value="exactMatch" class="radio" checked="checked" />')
 			}
 		}
-		if($('#barton').length) {
+		if($('#barton.active').length) {
 			$('#barton').append("<input type='hidden' name='func' value='scan'/>")
 			// Keyword search
 			if (selectVal == 'find_WRD') {
@@ -195,13 +195,13 @@ $(function(){
 			}
 		}
 		// Worldcat
-		if($('#worldcat').length) {
+		if($('#worldcat.active').length) {
 			$('#worldcat .hidden-fields')
 				.append("<input type='hidden' name='qt' value='wc_org_mit'/>")
 				.append("<input type='hidden' name='qt' value='affiliate'/>");
 		}
 		// Course reserves
-		if($('#course-reserves').length) {
+		if($('#course-reserves.active').length) {
 			$('#course-reserves .hidden-fields')
 				.append("<input type='hidden' name='func' value=''/>");
 			// Course number search
@@ -217,7 +217,7 @@ $(function(){
 			}
 		}
 		// Site Search
-		if($('#site-search').length) {
+		if($('#site-search.active').length) {
 			$('#site-search .hidden-fields')
 				.append('<input type="hidden" name="cx" value="016240528703941589557:i7wrbu9cdxu" />')
 				.append('<input type="hidden" name="ie" value="UTF-8" />');
