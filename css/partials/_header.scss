@@ -29,6 +29,15 @@
 	.link-account {
 		margin-left: 2em;
 	}
+	.link-logo-mit {
+		display: none;
+		@include bp-tablet--portrait {
+			align-self: flex-end;
+			display: block;
+			order: 4;
+			@include rem-first(margin-bottom, 0.5);
+		}
+	}
 	.link-site-search {
 		margin-left: 5.5em;
 	}
@@ -49,15 +58,10 @@
 	.logo-mit {
 		display: none;
 		@include bp-tablet--portrait {
-			align-self: flex-end;
 			display: block;
 			height: auto;
-			max-height: 2.8125em;
+			@include rem-first(max-height, 2.8125);
 			fill: #b9b7b6;
-			order: 4;
-			padding: 0.5em;
-			max-width: 4.5em;
-			width: 4.5em;
 			.color {
 				fill: #fff;
 			}
@@ -69,7 +73,6 @@
 		margin-top: -1.25em;
 		margin-left: 0.75em;
 		order: 2;
-		padding-bottom: 0.5em;
 		width: 6.4375em;
 		@include bp-tablet--portrait {
 			margin-top: 0.5em;
