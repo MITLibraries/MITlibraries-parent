@@ -130,19 +130,19 @@
 				<div class="location">
 					<a href="/barker" class="img-loc barker"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
+						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/map" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
 					</div>
 				</div>
 				<div class="location">
 					<a href="/dewey" class="img-loc dewey"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
+						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/map" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
 					</div>
 				</div>
 				<div class="location">
 					<a href="/hayden" class="img-loc hayden"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"></div> <span class="special">24/7 Study</span><div class="location-info"><a href="/map" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
+						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/map" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
 				</div>
 				<a href="#0" class="show-more hidden-non-mobile">
