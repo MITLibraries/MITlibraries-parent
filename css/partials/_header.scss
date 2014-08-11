@@ -73,10 +73,12 @@
 		margin-top: -1.25em;
 		margin-left: 0.75em;
 		order: 2;
+		@include rem-first(padding-bottom, 0.5);
 		width: 6.4375em;
 		@include bp-tablet--portrait {
 			margin-top: 0.5em;
 			margin-left: 0;
+			padding-bottom: 0;
 		}
 	}
 }
