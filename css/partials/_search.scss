@@ -10,6 +10,10 @@
 		flex-wrap: wrap;
 		padding: 2em 0;
 	}
+	@include bp-extra-wide {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
 	h2 {
 		color: $color-text--light;
 		display: none;
