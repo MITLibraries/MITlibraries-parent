@@ -207,6 +207,9 @@
 				color: $color-hours-locations;
 			}
 		}
+		.wrap-loc-info {
+			-ms-flex: 0 1 auto; // Corrects IE10 bug
+		}
 	}
 	.img-loc {
 		display: inline-block;
@@ -277,6 +280,7 @@
 		}
 		.excerpt-news {
 			padding: 0.8125em;
+			-ms-flex: 0 1 auto; // Corrects IE10 bug
 		}
 		.icon-calendar {
 			fill: $color-news-events;
