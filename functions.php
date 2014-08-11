@@ -131,6 +131,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140312', true);
 
+	wp_register_script('searchJS', get_template_directory_uri() . '/js/build/search.min.js', array('jquery', 'modernizr'), '20140811', false);
+
 	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
 	wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true);
@@ -159,6 +161,10 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_script('googleMapsAPI');
 		wp_enqueue_script('infobox');
 		//wp_enqueue_script('makeGoogleMap');
+	}
+
+	if (is_page('search')) {
+		wp_enqueue_script('searchJS');
 	}
 	
 }

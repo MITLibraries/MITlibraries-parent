@@ -29,5 +29,9 @@ module.exports = {
   		'js/make.datepicker.js'
   	],
   	dest: 'js/build/hours.js'
+  },
+  search: {
+    src: 'js/search.js',
+    dest: 'js/build/search.js'
   }
 }
