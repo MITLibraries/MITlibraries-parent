@@ -189,7 +189,6 @@
 									);							
 						$newsPosts = new WP_Query( $args );
 						while ( $newsPosts->have_posts() ) : $newsPosts->the_post();
-						$postImageArr = get_field('homepage_image');
 						$eventPost = cf('is_event') == true;
 						$eventRawDate = cf('event_date');
 						$eventDate = date("l, F j", strtotime($eventRawDate));
@@ -218,11 +217,7 @@
 								}
 							?>
 						</div><!-- end div.excerpt-news -->
-						<?php
-							if ($postImageArr != '') {
-								echo '<div class="image" style="background-image: url('.$postImageArr['url'].');"></div>';
-							}
-						?>
+						<div class="image"></div>
 					</a><!-- end a.post-news -->
 					<?php
 						endwhile;
