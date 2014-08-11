@@ -21,6 +21,7 @@
 			@include bp-tablet--portrait {
 				margin-left: 0; // Creates full bleed
 				width: 67.915%; // Corrects grid for zero margin
+				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
 		}
 	}
@@ -311,6 +312,7 @@
 				box-shadow: 0 3px 3px $color-shadow;
 				margin-bottom: 2.5em;
 				width: 50%;
+				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
 			&:hover {
 				.title-post {
