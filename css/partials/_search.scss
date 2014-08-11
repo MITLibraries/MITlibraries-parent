@@ -100,7 +100,7 @@
 		padding-left: 5.7em; // Watch out, magic number!
 		position: relative;
 		width: 100%;
-		z-index: map-get($zindex, dropdown-body);
+		z-index: map-get($zindex, dropdown-body-secondary);
 		// Heads up. Using non-standard appearance property. Note the Firefox hack. This property is not autoprefixed.
 		// -moz-appearance: treeheader;
 		-ms-appearance: none;
