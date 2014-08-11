@@ -186,6 +186,7 @@
 										'order' => 'DESC',
 										'post_type' => 'post',
 										'posts_per_page' => 2,
+										'author_name' => 'mit-admin'
 									);							
 						$newsPosts = new WP_Query( $args );
 						while ( $newsPosts->have_posts() ) : $newsPosts->the_post();
