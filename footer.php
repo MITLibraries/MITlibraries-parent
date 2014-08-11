@@ -13,7 +13,7 @@
 				<a href="/vera" class="link-sub">Vera: Databases &amp; e-journals</a>
 				<a href="/worldcat" class="link-sub">MIT's WorldCat</a>
 				<a href="/course-reserves" class="link-sub">Course reserves</a>
-				<a href="/search" class="link-sub">Site search</a>
+				<a href="/about/site-search" class="link-sub">Site search</a>
 				<a href="/search" class="link-sub">More search options</a>
 			</div>
 			<div class="flex-item">
@@ -26,9 +26,9 @@
 			</div>
 			<div class="flex-item">
 				<h4><a href="/borrow">Borrow &amp; Request</a></h4>
-				<a href="/account" class="link-sub">Your Account</a>
+				<a href="/barton-account" class="link-sub">Your Account</a>
 				<a href="/getit" class="link-sub">Get it: options for getting books &amp; articles</a>
-				<a href="/circfaq" class="link-sub">Circulation FAQ</a>
+				<a href="/circ" class="link-sub">Circulation FAQ</a>
 				<a href="/reserves" class="link-sub">Reserves &amp; TIP FAQ</a>
 				<a href="/otherlibraries" class="link-sub">Visit non-MIT libraries</a>
 				<a href="/borrow" class="link-sub">More borrow &amp; request options</a>
@@ -37,9 +37,9 @@
 				<h4><a href="/research-support">Research &amp; Support</a></h4>
 				<a href="/ask" class="link-sub">Ask Us!</a>
 				<a href="/research-guides" class="link-sub">Research guides &amp; expert librarians</a>
-				<a href="" class="link-sub">Tools for your research</a>
+				<a href="/research-support/productivity-tools/" class="link-sub">Productivity tools</a>
 				<a href="/scholarly" class="link-sub">Scholarly publishing</a>
-				<a href="" class="link-sub">Citation software</a>
+				<a href="/references" class="link-sub">Citation software</a>
 				<a href="/research-support" class="link-sub">More research support options</a>
 			</div>
 			<div class="flex-item">
@@ -48,8 +48,8 @@
 				<a href="/news" class="link-sub">News</a>
 				<a href="/calendar" class="link-sub">Calendar of events</a>
 				<a href="/user-guidelines" class="link-sub">Guidelines for use</a>
-				<a href="" class="link-sub">Services A-Z</a>
-				<a href="/about-us" class="link-sub">More about us</a>
+				<a href="/about/site-search/" class="link-sub">Services A-Z</a>
+				<a href="/about" class="link-sub">More about us</a>
 			</div>
 		</div><!-- end div.links-all -->
 		<div class="identity flex-container">
@@ -75,11 +75,11 @@
 				</a>
 			</div><!-- end div.social -->
 			<div class="links-primary flex-container">
-				<a href="" class="link-sub">Faculty</a>
-				<a href="" class="link-sub">Alumni</a>
-				<a href="" class="link-sub">Visitors</a>
-				<a href="" class="link-sub">Giving</a>
-				<a href="" class="link-sub">Persons with Disabilities</a>
+				<a href="/faculty" class="link-sub">Faculty</a>
+				<a href="/alumni" class="link-sub">Alumni</a>
+				<a href="/visitors" class="link-sub">Visitors</a>
+				<a href="/giving" class="link-sub">Giving</a>
+				<a href="/disabilities" class="link-sub">Persons with disabilities</a>
 			</div>
 		</div><!-- end div.identity -->
 	</footer>
@@ -92,7 +92,7 @@
 			<span>77 MASSACHUSETTS AVENUE </span>
 			<span>CAMBRIDGE MA 02139-4307</span>
 		</div>
-		<div class="license">Licensed under the <a href="" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted.
+		<div class="license">Licensed under the <a href="http://creativecommons.org/licenses/by-nc/2.0/" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted.
 		</div><!-- end footer.footer-info-institure -->
 	</footer>
 
