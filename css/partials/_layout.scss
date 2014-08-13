@@ -68,8 +68,11 @@ html.no-js .js-hidden {
 		flex-direction: row;
 	}
 	.content-page {
+		@include rem-first--4-values(margin, 0, 1, 1.5, 1);
+		width: 100%;
 		@include rem-first(margin-bottom, 1.5);
 		@include bp-tablet--portrait {
+			@include rem-first--4-values(margin, 0, 0, 1.5, 1);
 			min-width: 44em;
 			width: 100%;
 		}
