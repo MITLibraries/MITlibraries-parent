@@ -142,9 +142,9 @@
 
 			<div class="tabcontent group <?php echo $noTab ?>">
 
-				<div class="tab active flexContainer group" id="tab1">
+				<div class="tab active flex-container group" id="tab1">
 
-						<div class="flexItem first group <?php if($content1wide): ?>span7 wideColumn<?php else: ?>span4<?php endif; ?>">
+						<div class="flex-item first group <?php if($content1wide): ?>span7 wideColumn<?php else: ?>span4<?php endif; ?>">
 						
 							<?php
 								if ($arexpert) {
@@ -164,7 +164,7 @@
 									}
 									
 							?>
-							<div class="profile group">
+							<div class="profile flex-container group">
 								<?php if ($thumb != ""): 
 									echo $thumb;
 								endif; ?>

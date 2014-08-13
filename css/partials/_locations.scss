@@ -1,10 +1,23 @@
 .locationPage {
+	.profile {
+		align-items: flex-start;
+	}
 	.reserve {
 		background: #666;
 		color: #fff;
 		display: block;
 		margin: 1em 0;
 		padding: 1em;
+	}
+	.tab {
+		display: none;
+		&.active {
+			display: flex;
+		}
+		.first {
+			margin-right: 1.5em;
+			width: 50%;
+		}
 	}
 }
 
