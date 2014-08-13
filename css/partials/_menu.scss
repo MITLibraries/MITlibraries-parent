@@ -20,6 +20,12 @@
       display: block;
     }
   }
+  @include bp-tablet--portrait-below {
+    font-size: 0.75em;
+    .small {
+      font-size: 0.25em;
+    }
+  }
   @include bp-tablet--portrait {
     align-items: stretch;
     height: auto;
