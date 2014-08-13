@@ -12,8 +12,32 @@
 	}
 }
 
+@mixin bp-mobile--only {
+	@media only screen and (max-width: 568px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--portrait-below {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
 @mixin bp-tablet--portrait {
 	@media only screen and (min-width: 569px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--portrait-above {
+	@media only screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--landscape {
+	@media only screen and (min-width: 769px) {
 		@content;
 	}
 }
