@@ -322,6 +322,18 @@
     margin: 1em auto;
   }
 }
+
+.no-flexbox {
+  .link-primary.chat:hover {
+    .links-sub {
+      display: block;
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
 //
 // IE Fixes
 //
