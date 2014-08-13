@@ -4,7 +4,23 @@
 
 	<div id="search-main" class="search--lib-resources flex-container">
 		<h2>Search</h2>
-		<div class="wrap-select--resources">
+		<div class="search-options--static flex-container js-hidden">
+			<div class="col-1">
+				<div>Articles, e-books, &amp; more:</div>
+				<div>E-Journals &amp; databases:</div>
+				<div>Books &amp; more at MIT:</div>
+				<div>Books &amp; more worldwide:</div>
+			</div>
+			<div class="col-2">
+				<a href="/bartonplus">BartonPlus (mega search)</a>
+				<a href="/vera">Vera</a>
+				<a href="/barton">Barton (classic search)</a>
+				<a href="/worldcat">WorldCat</a>
+				<a href="/course-reserves">Course reserves</a>
+				<a href="/about/site-search">Site search</a>
+			</div>
+		</div>
+		<div class="wrap-select--resources no-js-hidden">
 			<div class="selected"></div>
 			<ul id="resources" class="resource-list">
 				<li class="bartonplus active" data-target="bartonplus" data-option="option-1"><span class="main">Articles, e-books, &amp; more <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve" class="select-arrows"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg></span> <span class="name">BartonPlus (mega-search)</span></li>
@@ -16,8 +32,8 @@
 				<li class="has-link"><a href="/search" class="more"><span>More search tools &amp; help</span> <span class="name">Images, data, DSpace, etc.</span></a></li>
 			</ul>
 		</div>
-		<span class="label">for</span>
-		<form id="bartonplus" class="input-submit flex-container active">
+		<span class="label no-js-hidden">for</span>
+		<form id="bartonplus" class="input-submit flex-container active no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes" autofocus="autofocus" tabindex="1">
 			<button type="submit">
@@ -26,7 +42,7 @@
 				</svg>
 			</button>
 		</form>
-		<form id="vera">
+		<form id="vera" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
 			<button type="submit">
@@ -35,7 +51,7 @@
 				</svg>
 			</button>
 		</form>
-		<form id="barton">
+		<form id="barton" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-3 searchtext" id="bookrequest" placeholder="ex: carbon nanotubes, game design">
 			<button type="submit">
@@ -44,7 +60,7 @@
 				</svg>
 			</button>
 		</form>
-		<form id="worldcat">
+		<form id="worldcat" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
 			<button type="submit">
@@ -53,7 +69,7 @@
 				</svg>
 			</button>
 		</form>	
-		<form id="course-reserves">
+		<form id="course-reserves" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" id="coursereservesrequest" value="" class="option-5 searchtext" placeholder="ex: 18.01, STS.320, 21F.108">
 			<button type="submit">
@@ -62,7 +78,7 @@
 				</svg>
 			</button>
 		</form>
-		<form id="site-search">
+		<form id="site-search" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-6" placeholder="ex: hours">
 			<button type="submit">
@@ -71,8 +87,8 @@
 				</svg>
 			</button>
 		</form>
-		<span class="label">by</span>
-		<div class="wrap-select--keywords flex-container active">
+		<span class="label no-js-hidden">by</span>
+		<div class="wrap-select--keywords flex-container active no-js-hidden">
 			<select name="" id="" class="keywords option-1 search-by active" tabindex="3">
 				<option value="">Keyword</option>
 				<option value="TI ">Title</option>
@@ -80,7 +96,7 @@
 			</select>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve" class="select-arrows"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg>
 		</div>
-		<div class="wrap-select--keywords flex-container long">
+		<div class="wrap-select--keywords flex-container long no-js-hidden">
 			<select name="" id="" class="keywords search-by option-2" tabindex="3">
 				<option value="contains">Partial Words In Title</option>
 				<option value="startsWith">Title Starts With</option>
@@ -88,7 +104,7 @@
 			</select>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve" class="select-arrows"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg>
 		</div>
-		<div class="wrap-select--keywords flex-container long">
+		<div class="wrap-select--keywords flex-container long no-js-hidden">
 			<select name="" id="" class="keywords search-by option-3" tabindex="3">
 				<option value="find_WRD">Keyword</option>
 				<option value="scan_TTL">Title starts with</option>
@@ -97,7 +113,7 @@
 			</select>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve" class="select-arrows"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg>
 		</div>
-		<div class="wrap-select--keywords flex-container">
+		<div class="wrap-select--keywords flex-container no-js-hidden">
 			<select name="" id="" class="keywords search-by option-4" tabindex="3">
 				<option value="keyword">Keyword</option>
 				<option value="author">Author</option>
@@ -105,7 +121,7 @@
 			</select>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve" class="select-arrows"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg>
 		</div>
-		<div class="wrap-select--keywords flex-container long">
+		<div class="wrap-select--keywords flex-container long no-js-hidden">
 			<select name="" id="" class="keywords search-by option-5" tabindex="3">
 				<option value="scan_CNB">Course number starts with</option>
 				<option value="find_WIN">Instructor keyword</option>
@@ -113,15 +129,15 @@
 			</select>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="8.071px" height="14px" viewBox="0 0 8.071 14" enable-background="new 0 0 8.071 14" xml:space="preserve" class="select-arrows"><path d="M0.069 8.74c0.08-0.159 0.252-0.264 0.436-0.274 0.023 0 1.743-0.104 3.531-0.104s3.508 0.104 3.53 0.104C7.751 8.476 7.911 8.581 8.003 8.74c0.092 0.161 0.092 0.356 0 0.517 -1.364 2.431-3.508 4.517-3.6 4.598 -0.206 0.194-0.528 0.194-0.734 0 -0.091-0.081-2.235-2.167-3.6-4.598C-0.023 9.096-0.023 8.901 0.069 8.74M8.003 5.259c-0.08 0.16-0.252 0.264-0.437 0.275 -0.022 0-1.742 0.103-3.53 0.103S0.528 5.535 0.505 5.535C0.321 5.523 0.161 5.419 0.069 5.259c-0.092-0.161-0.092-0.355 0-0.516 1.365-2.431 3.508-4.517 3.6-4.598 0.206-0.194 0.528-0.194 0.734 0 0.092 0.081 2.235 2.167 3.6 4.598C8.095 4.904 8.095 5.099 8.003 5.259"/></svg>
 		</div>
-		<div class="wrap-select--keywords flex-container">
+		<div class="wrap-select--keywords flex-container no-js-hidden">
 			<select name="" id="" class="keywords search-by option-6" tabindex="3" disabled>
 				<option value="keyword">Keyword</option>
 			</select>
 		</div>
-		<a href="http://libraries.mit.edu/bartonplus-advanced" class="search-advanced bartonplus active">Go to BartonPlus advanced search</a>
-		<a href="http://libraries.mit.edu/barton-advanced" class="search-advanced barton">Go to Barton advanced search</a>
-		<a href="http://mit.worldcat.org/advancedsearch" class="search-advanced worldcat">Go to WorldCat advanced search</a>
-		<a href="http://libraries.mit.edu/barton-reserves" class="search-advanced course-reserves">Go to Course Reserves advanced search</a>
+		<a href="http://libraries.mit.edu/bartonplus-advanced" class="search-advanced bartonplus active no-js-hidden">Go to BartonPlus advanced search</a>
+		<a href="http://libraries.mit.edu/barton-advanced" class="search-advanced barton no-js-hidden">Go to Barton advanced search</a>
+		<a href="http://mit.worldcat.org/advancedsearch" class="search-advanced worldcat no-js-hidden">Go to WorldCat advanced search</a>
+		<a href="http://libraries.mit.edu/barton-reserves" class="search-advanced course-reserves no-js-hidden">Go to Course Reserves advanced search</a>
 	</div><!-- end div.search-main -->
 	<div class="content-main flex-container">
 		<div class="col-1 flex-item">

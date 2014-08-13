@@ -9,6 +9,21 @@
 	display: table;
 }
 
+html.js .js-hidden {
+	display: none;
+}
+
+html.no-js {
+	.no-js-hidden,
+	.wrap-page .no-js-hidden {
+		display: none;
+	}
+}
+
+html.no-js .js-hidden {
+	display: block;
+}
+
 .wrap-page {
 	margin: 0 auto;
 	@include bp-small {
