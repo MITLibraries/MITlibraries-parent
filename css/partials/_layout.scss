@@ -9,8 +9,15 @@
 	display: table;
 }
 
-html.js .js-hidden {
-	display: none;
+html.js {
+	&.no-flexbox.no-flexboxlegacy {
+		.js-hidden {
+			display: none;
+		}
+	}
+	.js-hidden {
+		display: none;
+	}
 }
 
 html.no-js {
