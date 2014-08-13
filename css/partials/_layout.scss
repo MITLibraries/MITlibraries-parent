@@ -38,6 +38,10 @@ html.no-js .js-hidden {
 	@include bp-large {
 		width: 1024px;
 	}
+	@include bp-extra-wide {
+		max-width: 1280px;
+		width: 100%;
+	}
 }
 
 .h-inline {
