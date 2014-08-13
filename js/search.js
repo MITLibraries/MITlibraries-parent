@@ -3,7 +3,23 @@
 //
 
 $(function(){
-
+	function oldIESearch() {
+	var oldIE = $('html').hasClass('lte-ie9');
+		if (oldIE) {
+			$('#resources, .wrap-select--resources .selected').remove();
+			$('.wrap-select--resources').append('<select id="resources"></select');
+			$('#resources')
+				.append('<option value="option-1">BartonPlus</option>')
+				.append('<option value="option-2">Vera</option>')
+				.append('<option value="option-3">Barton</option>')
+				.append('<option value="option-4">WorldCat</option>')
+				.append('<option value="option-5">Course Reserves</option>')
+				.append('<option value="option-6">Site Search</option>');
+			var selectedVal = $('#resources option:selected').val();
+			$('#seach-main form').attr('id', selectedVal);
+		}
+	}
+	
 	// Mimic a <select> element with a <ul>
 	$('#resources').on('click', 'li', function(event) {
 		// All available resources	
