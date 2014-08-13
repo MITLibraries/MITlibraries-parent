@@ -14,5 +14,9 @@ module.exports = {
   search: {
     src: 'js/build/search.js',
     dest: 'js/build/search.min.js'
+  },
+  map: {
+    src: 'js/build/map.js',
+    dest: 'js/build/map.min.js'
   }
 }

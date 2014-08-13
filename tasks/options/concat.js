@@ -33,5 +33,9 @@ module.exports = {
   search: {
     src: 'js/search.js',
     dest: 'js/build/search.js'
+  },
+  map: {
+    src: 'js/map.js',
+    dest: 'js/build/map.js'
   }
 }
