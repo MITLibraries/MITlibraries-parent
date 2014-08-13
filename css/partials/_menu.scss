@@ -51,9 +51,11 @@
       .links-sub {
         background: #f3f3f3;
         flex-flow: wrap;
-        @include rem-first--2-values(padding, 1, 0.5);
         @include rem-first(min-width, 9.375);
         width: auto;
+        a:hover {
+          background: none;
+        }
       }
       .more {
         display: block;
@@ -64,6 +66,7 @@
       }
       .wrap-button-chat {
         @include rem-first(min-height, 2.875);
+        @include rem-first--4-values(padding, 1, 0.5, 0, 0.5);
         min-width: 100%;
         #libchat_btn_widget {
           border: 1px solid #666;
