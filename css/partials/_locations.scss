@@ -15,8 +15,10 @@
 			display: flex;
 		}
 		.first {
-			margin-right: 1.5em;
-			width: 50%;
+			@include bp-tablet--portrait {
+				margin-right: 1.5em;
+				width: 50%;
+			}
 		}
 	}
 }
