@@ -34,7 +34,6 @@ get_header(); ?>
 				<h1>Locations</h1>
 				<div class="extraInfo">
 					<a id="hoursLink" class="inlineLink" href="/hours/"><i class="icon-arrow-right"></i> See all library hours</a>
-					<a id="showMap" class="hidden-phone btn btn-warning btnShow" href="#">Show map</a>
 				</div>
 			</div>
 			
@@ -118,10 +117,9 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php endwhile; ?>
 				</div>
-				<div id="map">
-				
-				</div>
 				<ul class="locationMainList dark">
+				<!-- The Map -->
+				<div id="map" class="map-locations"></div>
 						<?php
 							
 							$args = array(

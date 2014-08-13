@@ -1,29 +1,19 @@
-var needMap = 1;
 var map;
 var arMarkers = new Array();
 var focusMarker;
-
 var lastMarker = "";
-
-var showMap = 0;
-
 var mapIconBase = '/wp-content/themes/libraries/images/';
 
 (function($){
 
 var Core = {
 	ondomready: function(){
-		// page functions go here
-		
 		Core.linkExpandable();
 		Core.linkTabs();
-		
+		Core.initMap();
 		Core.buildMap();
-		
 		Core.nullAlt();
-
 		Core.buildHours();
-		
 		$(window).resize(function() {
 			Core.handleResize();
 		});
@@ -58,19 +48,8 @@ var Core = {
 	
 	buildMap: function() {
 		$(".map").click(function(e) {
-			//e.preventDefault();
-			var stage = $("#stage");
-			if (needMap) Core.initMap();
-
-			if (stage.hasClass("activeMap")) {
-				// map open
-			} else {
-				// open map
-				$("#showMap").click();
-			}
 			
 			var id = $(this).attr("data-target");
-			
 			
 			for(i=0;i<arMarkers.length;i++) {
 				var marker = arMarkers[i];
@@ -82,44 +61,10 @@ var Core = {
 					
 				}
 			}
-
 			
 			$("html, body").animate({scrollTop: 0}, 500);
-			
-
-
-			
-			
-			
-		});
-		
-		$("#showMap").click(function(e) {
-			e.preventDefault();
-			if (needMap) Core.initMap();
-			
-			if ($(this).hasClass("btn-warning")) {
-				$(this).toggleClass("btn-warning", false);
-				$(this).html("Hide map");
-				$("#stage").toggleClass("activeMap", true);
-				Core.showMap();
-				location.hash = "!map";
 				
-
-				
-			} else {
-				$(this).toggleClass("btn-warning", true);
-				$(this).html("Show map");
-				$("#stage").toggleClass("activeMap", false);
-				Core.hideMap();
-				// reset hash
-				location.hash = "!";
-			}
 		});
-		
-		
-		if (showMap) {
-			$("#showMap").click();
-		}
 		
 		var hash = location.hash.substr(2);
 		if (hash != "") {
@@ -130,10 +75,6 @@ var Core = {
 			}
 		}
 		
-		
-		
-		
-
 	},
 	
 	initMap: function() {
@@ -235,16 +176,6 @@ var Core = {
 			
 			arMarkers.push(marker);
 		});
-	},
-	
-	showMap: function() {
-		$("#map").slideDown(200, function() {
-			google.maps.event.trigger(map, 'resize');
-		});
-	},
-	
-	hideMap: function() {
-		$("#map").slideUp(200);
 	},
 	
 	linkTabs: function() {
