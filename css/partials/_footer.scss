@@ -78,7 +78,7 @@
 				&:not(:last-of-type):after {
 					color: #dedede;
 					content: '|';
-					display: inline-flex;
+					display: inline-block;
 					margin-left: 1em;
 				}
 			}
@@ -254,7 +254,7 @@
 			position: absolute;
 			top: 79px;
 			width: 100%;
-			a {
+			span {
 				display: block;
 				float: left;
 				position: relative;
