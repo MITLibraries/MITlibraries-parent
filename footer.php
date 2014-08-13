@@ -75,11 +75,11 @@
 				</a>
 			</div><!-- end div.social -->
 			<div class="links-primary flex-container">
-				<a href="/faculty" class="link-sub">Faculty</a>
-				<a href="/alumni" class="link-sub">Alumni</a>
-				<a href="/visitors" class="link-sub">Visitors</a>
-				<a href="/giving" class="link-sub">Giving</a>
-				<a href="/disabilities" class="link-sub">Persons with disabilities</a>
+				<span><a href="/faculty" class="link-sub">Faculty</a></span>
+				<span><a href="/alumni" class="link-sub">Alumni</a></span>
+				<span><a href="/visitors" class="link-sub">Visitors</a></span>
+				<span><a href="/giving" class="link-sub">Giving</a></span>
+				<span><a href="/disabilities" class="link-sub">Persons with disabilities</a></span>
 			</div>
 		</div><!-- end div.identity -->
 	</footer>

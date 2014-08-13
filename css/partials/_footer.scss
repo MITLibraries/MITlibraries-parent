@@ -65,7 +65,7 @@
 			@include rem-first(margin-left, 11.5); // Match logo width
 			padding: 0
 		}
-		a {
+		span {
 			display: block;
 			width: 50%;
 			&:not(:last-of-type) {
@@ -76,6 +76,7 @@
 				padding-left: 1em;
 				width: auto;
 				&:not(:last-of-type):after {
+					color: #dedede;
 					content: '|';
 					display: inline-flex;
 					margin-left: 1em;
