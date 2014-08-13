@@ -248,15 +248,6 @@
 	.libraryTitle .space247 {
 		background: transparent url(../images/study247.png) no-repeat;
 	}
-
-	
-	#megaMenu ul.megaMenu > li:hover > a, #megaMenu ul.megaMenu > li > a:hover, #megaMenu ul.megaMenu > li.megaHover > a, #megaMenu ul.megaMenu > li:hover > span.um-anchoremulator, #megaMenu ul.megaMenu > li > span.um-anchoremulator:hover, #megaMenu ul.megaMenu > li.megaHover > span.um-anchoremulator {
-	  color:#ccc !important;
-	  /*color:#fff !important;
-	  text-decoration: underline;
-	  */
-	}	
-	
 	
 	/* Hours Page */
 	
@@ -319,27 +310,6 @@
 		display: block;
 		min-height: 20px;
 	}
-	
-	/*
-	.hrList td.cur {
-		border-left: 1px solid #ccc;
-		border-bottom: 5px solid #ccc;
-		background: #fff;
-	}
-	
-	.hrList .even td.cur {
-		background: #eceaea;
-		border-left: 1px solid #ccc;
-		border-bottom: 5px solid #ccc;		
-	}
-	
-	.hrList td.curAfter {
-		border-left: 1px solid #ccc;	
-	}
-	.hrList .even td.curAfter {
-		border-left: 1px solid #ccc;	
-	}
-	*/
 
 	.hrList .name .libraryAlert,
 	.hrList .name .libraryAlert p {
