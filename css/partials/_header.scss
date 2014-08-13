@@ -8,9 +8,6 @@
 		justify-content: space-between;
 		padding: 0 1em;
 	}
-	@include bp-extra-wide {
-		padding: 0 10%;
-	}
 	> [class*="link"] {
 		color: #fff;
 		font-size: 0.4375em;

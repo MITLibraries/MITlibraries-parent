@@ -38,9 +38,6 @@
 			@include bp-tablet--portrait {
 				padding: 0.5em 0 0.25em;
 			}
-			@include bp-extra-wide {
-				padding-left: 29.976580796253%;
-			}
 		}
 		p {
 			color: darken($color-background-secondary, 70%);
@@ -123,9 +120,6 @@
 				&:not(.show-more) {
 					display: flex;
 				}
-			}
-			@include bp-extra-wide {
-				margin-left: 26.229508196721%;
 			}
 		}
 		.location-info {
