@@ -23,12 +23,12 @@ $(function(){
 			var featured_image2 = postsArr[1].featured_image;
 			if (featured_image1 != null) {
 				// Get the featured image URL
-				var postImage1URL = postsArr[0].featured_image.guid;
+				var postImage1URL = postsArr[0].featured_image.source;
 				$('.post-news:first .image').css('background-image', 'url('+postImage1URL+')');
 			}
 			if (featured_image2 != null) {
 				// Get the featured image URL
-				var postImage2URL = postsArr[1].featured_image.guid;
+				var postImage2URL = postsArr[1].featured_image.source;
 				$('.post-news:first .image').css('background-image', 'url('+postImage2URL+')');
 			}
 		});
