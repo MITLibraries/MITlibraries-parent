@@ -63,6 +63,10 @@ html.no-js .js-hidden {
 }
 
 .content-main {
+	flex-direction: column;
+	@include bp-tablet--portrait {
+		flex-direction: row;
+	}
 	.content-page {
 		@include rem-first(margin-bottom, 1.5);
 		@include bp-tablet--portrait {
