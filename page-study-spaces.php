@@ -24,18 +24,17 @@ get_header(); ?>
 		</div>
 
 		<div id="stage" class="inner row" role="main">
-			<div class="title span12">
+			<div class="title-page">
 				<h1><?php the_title(); ?></h1>
 				<div class="extraInfo">
 					<a href="/hours/"><i class="icon-arrow-right"></i> See all library hours</a>
 				</div>
 			</div>
 			
-			<div id="content">
-				<div id="mainContent" class="span9">
+			<div class="content-main flex-container">
+				<div class="content-page col-1">
 					<?php the_content(); ?>
-					<hr/>
-					<ul class="studyList">
+					<ul class="list--study-spaces">
 						<?php
 							$args = array(
 								'post_type' => 'location',
@@ -49,7 +48,6 @@ get_header(); ?>
 							);							
 							$subList = new WP_Query( $args );
 							
-							$odd = " odd";
 						?>					
 						<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
 						<?php 
@@ -96,8 +94,9 @@ get_header(); ?>
 							
 
 						?>
-							<li class="<?php echo $odd; ?>" style="background-image: url(<?php echo $studyImage; ?>);">
-								<div class="content">
+							<li class="flex-container study-space">
+								<div class="image-study-space"><img src="<?php echo $studyImage; ?>"></div>
+								<div class="content--study-space">
 									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a> <i class="icon-arrow-right"></i></h3>
 									<div class="description">
 										<?php echo $description; ?>
@@ -110,7 +109,7 @@ get_header(); ?>
 										<?php endif; ?>
 									
 									
-									<div class="info">
+									<div class="info--study-space flex-container">
 										<div class="infoCol first">
 										<?php if ($study24 == 1): ?>
 											<a class="space247 visible-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
@@ -145,26 +144,17 @@ get_header(); ?>
 											<?php echo $spaces; ?>
 										</div>
 										<?php endif; ?>
-										
-										<br clear="all" />
 									</div>
-									<br clear="all" />
 								</div>
 							</li>
-						<?php 
-							if ($odd == "") {
-								$odd = " odd";
-							} else {
-								$odd = "";
-							}
-						?>
 						<?php endwhile; // end of the loop. ?>					
 					</ul>
 					
 				</div>
-				<?php get_sidebar(); ?>
-				
-			</div>		
+				<div class="col-2">
+					<?php get_sidebar(); ?>
+				</div>
+			</div><!-- end div.content-main -->		
 		</div>
 		
 
