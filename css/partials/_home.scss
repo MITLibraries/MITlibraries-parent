@@ -256,7 +256,7 @@
 		}
 		& > .flex-container {
 			flex-flow: wrap;
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				flex-flow: nowrap;
 			}
 		}
@@ -314,13 +314,16 @@
 				width: 50%;
 				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
+			@include bp-tablet--portrait-below {
+				width: 100%;
+			}
 			&:hover {
 				.title-post {
 					text-decoration: underline;
 				}
 			}
 			&:first-of-type {
-				@include bp-tablet--portrait {
+				@include bp-tablet--landscape {
 					margin-right: 1.25em;
 				}
 			}
@@ -451,6 +454,16 @@
 			margin-top: 1em;
 			text-align: center;
 			text-transform: uppercase;
+		}
+	}
+}
+//
+// Old Browsers
+//
+.no-flexbox {
+	.news-events {
+		& > .flex-container {
+			display: block;
 		}
 	}
 }
