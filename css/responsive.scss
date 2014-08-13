@@ -24,11 +24,6 @@
 		margin: 0 auto;
 	}
 
-	.locations-list {
-		background-image: none;
-		width: 100%;
-	}
-
 	.studyList>li {
 		height: auto;
 		background-image: none !important;
@@ -90,23 +85,6 @@
 		margin: 0.5em 0;
 	}
 	
-	.title .extraInfo {
-		position: absolute;
-		bottom: 2px;
-		top: auto;
-		right: 0px;
-		text-align: right;
-	}
-	
-	.title .extraInfo a {
-		font-size: 11px;
-		color: #000;
-		margin: 0px;
-	}
-	.title .extraInfo a i{
-		display: none;
-	}
-	
 	.title h1 .libraryName,
 	.title h1,
 	.title h2 {
@@ -117,21 +95,6 @@
 	
 	.info .infoCol {
 		width: 200px;
-	}	
-	
-	.locationMainList {
-		padding-left: 0px;
-		height: auto;
-	}
-	
-	.locationMainList li {
-			width: 100%;
-			font-size: 12px;
-	}
-	
-	.locationMainList li h2 {
-		font-size: 18px;
-		line-height: 18px;
 	}
 	
 	.librarySlideshow {
@@ -242,8 +205,6 @@
 	#hourNav #nextWeek {
 		margin-left: 0;
 	}
-	
-	
 	
 	.libraryTitle .space247 {
 		background: transparent url(../images/study247.png) no-repeat;
