@@ -123,3 +123,19 @@
 		align-items: center;
 	}
 }
+
+.no-flexbox {
+	.page-locations {
+		.locations-main,
+		.locations-secondary {
+			display: block;
+			li {
+				display: block;
+				float: left;
+				min-height: 200px;
+				@include rem-first(padding-right, 1);
+				width: 33%;
+			}
+		}
+	}
+}
