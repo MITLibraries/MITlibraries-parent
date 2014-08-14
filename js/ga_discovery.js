@@ -5,8 +5,16 @@ $(document).ready(function() {
 function InitAnalytics(){
 
 	// Store initial tab state
-	var startTab = $('li.ui-tabs-selected a').text();
-	TrackEvent('Discovery','Initial Tab',startTab,1);
+
+	// Check for old IE
+	if($('html').hasClass('lte-ie9')) {
+		var startOption = $('#resources-select option:selected');
+	}
+	else {
+		var startOption = $('#resources li').attr('data-target');
+	}
+	
+	TrackEvent('Discovery','Initial Tab',startOption,1);
 
 	// Loading a different tab
 	$("ul#mitlibrarysearchnav a").click(function() {
