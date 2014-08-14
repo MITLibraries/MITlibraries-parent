@@ -4,63 +4,94 @@ $(document).ready(function() {
 
 function InitAnalytics(){
 
-	//
-	// Store initial tab state
-	//
-
 	// Check for old IE
 	if($('html').hasClass('lte-ie9')) {
+		// Store initial tab state
 		var startOption = $('#resources-select option:selected');
+		TrackEvent('Discovery','Initial Tab',startOption,1);
+		
+		// Loading a different tab
+		$('#resources-select').change(function(){
+			var optTarget = $('#resources-select option:selected').attr('data-target');
+			switch (optTarget) {
+				case 'option-1':
+					optTarget = 'Articles, e-books, & more';
+					intValue = 1;
+					break;
+				case 'option-2':
+					optTarget = 'E-journals & databases';
+					intValue = 2;
+					break;
+				case 'option-3':
+					optTarget = 'Books & more at MIT';
+					intValue = 3;
+					break;
+				case 'option-4':
+					optTarget = 'Books & more worldwide';
+					intValue = 4;
+					break;
+				case 'option-5':
+					optTarget = 'Course reserves';
+					intValue = 5;
+					break;
+				case 'option-6':
+					optTarget = 'Site search';
+					intValue = 6;
+					break;
+				default:
+					optTarget = 'Unknown option';
+					intValue = 7;
+					break;
+			}
+			TrackEvent('Discovery','Tab',optTarget,intValue);
+		});
 	}
+	// All other browsers
 	else {
+		console.log('newer browser GA script running');
 		var startOption = $('#resources li').attr('data-target');
+		TrackEvent('Discovery','Initial Tab',startOption,1);
+
+		// Loading a different tab
+		// Using custom event from search.js
+		$('#resources').on('option-change', function(){
+			var optTarget = $('#resources li.active').attr('data-target');
+			switch (optTarget) {
+				case 'bartonplus':
+					optTarget = 'Articles, e-books, & more';
+					intValue = 1;
+					break;
+				case 'vera':
+					optTarget = 'E-journals & databases';
+					intValue = 2;
+					break;
+				case 'barton':
+					optTarget = 'Books & more at MIT';
+					intValue = 3;
+					break;
+				case 'worldcat':
+					optTarget = 'Books & more worldwide';
+					intValue = 4;
+					break;
+				case 'course-reserves':
+					optTarget = 'Course reserves';
+					intValue = 5;
+					break;
+				case 'site-search':
+					optTarget = 'Site search';
+					intValue = 6;
+					break;
+				default:
+					optTarget = 'Unknown option';
+					intValue = 7;
+					break;
+			}
+			TrackEvent('Discovery','Tab',optTarget,intValue);
+		});
 	}
-	
-	TrackEvent('Discovery','Initial Tab',startOption,1);
-
-	//
-	// Loading a different tab
-	//
-
-	// Using custom event from search.js
-	$('#resources').on('option-change', function(){
-		var optTarget = $('#resources li.active').attr('data-target');
-		switch (optTarget) {
-			case 'bartonplus':
-				optTarget = 'Articles, e-books, & more';
-				intValue = 1;
-				break;
-			case 'vera':
-				optTarget = 'E-journals & databases';
-				intValue = 2;
-				break;
-			case 'barton':
-				optTarget = 'Books & more at MIT';
-				intValue = 3;
-				break;
-			case 'worldcat':
-				optTarget = 'Books & more worldwide';
-				intValue = 4;
-				break;
-			case 'course-reserves':
-				optTarget = 'Course reserves';
-				intValue = 5;
-				break;
-			case 'site-search':
-				optTarget = 'Site search';
-				intValue = 6;
-				break;
-			default:
-				optTarget = 'Unknown option';
-				intValue = 7;
-				break;
-		}
-		TrackEvent('Discovery','Tab',optTarget,intValue);
-	});
 
 	// Submitting a search form
 	$('#search-main form').on('submit', function(e) {
-		console.log('submitted');
 		var thisForm, strSearchString, intValue, strOption, strAltSearchString, strSearchType, strArticles;
 		intValue = -1;
 		thisForm = $(this).attr('id');
