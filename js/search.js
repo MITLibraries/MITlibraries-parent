@@ -277,7 +277,7 @@ $(function(){
 				// Add hidden fields
 				hiddenFields();
 				// Add search query to the bquery value, along with the select val, which sends it along to EDS
-				$('input[name="bquery"]', this).val(selectVal+searchQuery).replace(/"/g, '&quot;');
+				$('input[name="bquery"]', this).val((selectVal+searchQuery).replace(/"/g, '&quot;'));
 			}
 			// Vera...
 			if ($('#vera.active').length) {
