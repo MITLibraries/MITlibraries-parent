@@ -48,7 +48,7 @@
       </div>
       <div class="col-2 flex-item">
         <span class="heading-col">Using The Libraries</span>
-        <a href="map">Map</a>
+        <a href="/locations">Map</a>
         <a href="/study">Study spaces</a>
         <a href="/copying">Scan, copy, print</a>
         <a href="/exhibits">Exhibits &amp; galleries</a>
