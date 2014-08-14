@@ -29,7 +29,7 @@ $(function(){
 			if (featured_image2 != null) {
 				// Get the featured image URL
 				var postImage2URL = postsArr[1].featured_image.source;
-				$('.post-news:first .image').css('background-image', 'url('+postImage2URL+')');
+				$('.post-news:last .image').css('background-image', 'url('+postImage2URL+')');
 			}
 		});
 
