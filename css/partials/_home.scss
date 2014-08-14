@@ -463,7 +463,9 @@
 .no-flexbox {
 	.news-events {
 		& > .flex-container {
-			display: block;
+			@include bp-tablet--portrait-below {
+				display: block;
+			}
 		}
 	}
 }
