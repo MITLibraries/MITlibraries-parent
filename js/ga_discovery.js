@@ -12,7 +12,7 @@ function InitAnalytics(){
 		
 		// Loading a different tab
 		$('#resources-select').change(function(){
-			var optTarget = $('#resources-select option:selected').attr('data-target');
+			var optTarget = $('#resources-select option:selected').val();
 			switch (optTarget) {
 				case 'option-1':
 					optTarget = 'Articles, e-books, & more';
