@@ -49,7 +49,7 @@ function InitAnalytics(){
 			case 'site-search':
 				optTarget = 'Site search';
 				intValue = 6;
-				break
+				break;
 			default:
 				optTarget = 'Unknown option';
 				intValue = 7;
