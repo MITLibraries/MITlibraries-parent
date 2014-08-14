@@ -18,7 +18,8 @@ module.exports = {
       'js/search.js',
       'js/hours-home.js',
       'js/news-home.js',
-      'js/guides-home.js'
+      'js/guides-home.js',
+      'js/ga_discovery.js'
     ],
     dest: 'js/build/home.js'
   },
@@ -34,7 +35,8 @@ module.exports = {
   search: {
     src: [
       'js/search.js',
-      'js/search-ie.js'
+      'js/search-ie.js',
+      'js/ga_discovery.js'
     ],
     dest: 'js/build/search.js'
   },
