@@ -19,10 +19,9 @@
 			<div class="flex-item">
 				<h4><a href="/hours">Hours &amp; Locations</a></h4>
 				<a href="/hours" class="link-sub">Hours</a>
-				<a href="/locations" class="link-sub">List of locations</a>
+				<a href="/locations" class="link-sub">Map of locations</a>
 				<a href="/study" class="link-sub">Study spaces</a>
 				<a href="/exhibits" class="link-sub">Exhibits &amp; galleries</a>
-				<a href="/#!map" class="link-sub">Map</a>
 			</div>
 			<div class="flex-item">
 				<h4><a href="/borrow">Borrow &amp; Request</a></h4>
@@ -47,7 +46,7 @@
 				<a href="/directory" class="link-sub">Staﬀ directory</a>
 				<a href="/news" class="link-sub">News</a>
 				<a href="/calendar" class="link-sub">Calendar of events</a>
-				<a href="/user-guidelines" class="link-sub">Guidelines for use</a>
+				<a href="/use-policies" class="link-sub">Use policy</a>
 				<a href="/about/site-search/" class="link-sub">Services A-Z</a>
 				<a href="/about" class="link-sub">More about us</a>
 			</div>
