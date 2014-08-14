@@ -81,10 +81,12 @@ html.no-js .js-hidden {
 			@include rem-first(padding-left, 1);
 			min-width: 44em;
 			width: 100%;
+			-ms-flex: 0 1 auto; // Corrects IE10 bug
 		}
 		.col-1 {
 			@include bp-tablet--portrait {
 				@include rem-first(padding-right, 2);
+				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
 		}
 	}
@@ -92,6 +94,7 @@ html.no-js .js-hidden {
 		width: 100%;
 		@include bp-tablet--portrait {
 			min-width: 18em;
+			width: auto;
 		}
 	}
 }
