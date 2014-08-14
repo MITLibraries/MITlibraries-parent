@@ -443,6 +443,17 @@
 		-ms-appearance: select;
 	}
 	.search--lib-resources {
+		.wrap-select--resources {
+			.selected {
+				display: none;
+			}
+			.resource-list {
+				display: none;
+			}
+		}
+		form.active {
+			display: block;
+		}
 		h2 {
 			margin-left: 80px;
 		}

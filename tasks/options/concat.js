@@ -14,6 +14,7 @@ module.exports = {
   home: {
     src: [
       'js/dev.js',
+      'js/search-ie.js',
       'js/search.js',
       'js/hours-home.js',
       'js/news-home.js',
@@ -31,7 +32,10 @@ module.exports = {
   	dest: 'js/build/hours.js'
   },
   search: {
-    src: 'js/search.js',
+    src: [
+      'js/search.js',
+      'js/search-ie.js'
+    ],
     dest: 'js/build/search.js'
   },
   map: {
