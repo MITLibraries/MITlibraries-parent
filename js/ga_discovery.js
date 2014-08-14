@@ -49,22 +49,6 @@ function InitAnalytics(){
 		TrackEvent('Discovery','Tab',tabTarget,intValue);
 	});
 
-	// Clicking a sidebar link
-	$("div.mitlibrarysearchoptions a").click(function() {
-		TrackEvent('Discovery','Sidebar',this.href,1);
-	});
-
-	// Clicking a "what am I searching" link
-	$("div.whatami a.panel").click(function() {
-		var Eform = $(this).parents(".mitlibrarysearchtabcontent").attr("id");
-		TrackEvent('Discovery','Panel Toggle',Eform,1);
-	});
-
-	$("div.whatami table a").click(function() {
-		var strLinkText = $(this).text();
-		TrackEvent('Discovery','Panel Resource',strLinkText,1);
-	});
-
 	// Submitting a search form
 	$('form.searchform').submit(function(e) {
 		var thisForm, strSearchString, intValue, strOption, strAltSearchString, strSearchType, strArticles;
