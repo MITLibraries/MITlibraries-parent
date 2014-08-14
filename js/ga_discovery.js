@@ -69,7 +69,7 @@ function InitAnalytics(){
 			case 'bartonplus':
 				intValue = 100; // fallback value - shouldn't be needed
 				strSearchString = $('#search-main input.active').val();
-				strSearchType = $('#search-main form.active input[name="r1"]:checked').val();
+				strSearchType = $('#search-main select.active option:selected').val();
 				switch (strSearchType) {
 					case 'TI ':
 						// Title search
