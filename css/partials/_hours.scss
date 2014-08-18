@@ -1,0 +1,47 @@
+.cal-hours {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	width: 160px;
+}
+.page-hours {
+	// Datepicker
+	.gldp-default {
+		font-family: 'Open Sans', sans-serif;
+		position: absolute;
+		.core {
+			background: transparent;
+			border: none;
+			color: #111;
+			cursor: pointer;
+			position: relative;
+			float: left;
+			font-size: 12px;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			text-shadow: none;
+			&:hover:not(.outday) {
+				background: lighten(#111, 60%);
+			}
+		}
+		.selected {
+			background: lighten(#111, 60%);
+		}
+		.outday {
+			color: lighten(#111, 60%);
+			cursor: not-allowed;
+		}
+	}
+	.locations-more {
+		@include rem-first(margin-bottom, 1.5);
+	}
+}
+.wrap-cal-hours {
+	display: none;
+	min-height: 162px;
+	min-width: 160px;
+	@include bp-tablet--portrait {
+		display: block;
+	}
+}

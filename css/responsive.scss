@@ -23,32 +23,6 @@
 	.siteTitle h1 {
 		margin: 0 auto;
 	}
-
-	.locations-list {
-		background-image: none;
-		width: 100%;
-	}
-
-	.studyList>li {
-		height: auto;
-		background-image: none !important;
-		padding-left: 10px;
-	}
-	
-	.studyList>li .content .description {
-		width: auto;
-	}
-	
-	.studyList>li .content .space247 {
-		top: 5px;
-		position: absolute;
-		right: 15px;
-	}
-	
-	.studyList>li .mobileReserve {
-		padding-top: 10px;
-		font-weight: bold;
-	}
 	
 	.sideContent {
 		float: right;
@@ -90,23 +64,6 @@
 		margin: 0.5em 0;
 	}
 	
-	.title .extraInfo {
-		position: absolute;
-		bottom: 2px;
-		top: auto;
-		right: 0px;
-		text-align: right;
-	}
-	
-	.title .extraInfo a {
-		font-size: 11px;
-		color: #000;
-		margin: 0px;
-	}
-	.title .extraInfo a i{
-		display: none;
-	}
-	
 	.title h1 .libraryName,
 	.title h1,
 	.title h2 {
@@ -117,63 +74,6 @@
 	
 	.info .infoCol {
 		width: 200px;
-	}	
-	
-	#footer {
-		
-	}
-	
-	#socialFooter {
-		right: 10px;
-	}
-	
-	#footerHeader {
-		height: 65px;
-	}
-	
-	#footerHeader #footerMainLink {
-		position: absolute;
-		right: 10px;
-		width: 160px;
-		left: auto;
-		text-align: right;
-	}
-	
-	footer .copyright {
-		clear: left;
-		float: left;
-		margin-right: 0;
-		padding-left: 20px;
-		width: 100%;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	
-	#leftContent, #mainContent, #sidebarContent {
-		margin-top: 0px;
-	}
-
-	#footerContent h3 {
-		padding: 0 0 5px 0;
-	}
-	#footerContent ul li {
-		display: none;
-	}
-	
-	.locationMainList {
-		padding-left: 0px;
-		height: auto;
-	}
-	
-	.locationMainList li {
-			width: 100%;
-			font-size: 12px;
-	}
-	
-	.locationMainList li h2 {
-		font-size: 18px;
-		line-height: 18px;
 	}
 	
 	.librarySlideshow {
@@ -188,23 +88,6 @@
 	.tabcontent {
 		width:300px;
 		margin-bottom: 60px;
-	}
-	
-	.libraryContent {
-		width: 270px;
-	}
-
-	.libraryContent .librarySubject,
-	.libraryContent h2,
-	.libraryContent h3 {
-		font-size: 15px;
-		line-height: 15px;
-		margin-bottom: 5px;
-	}
-	
-	.libraryContent .sub {
-		color: #333;
-		font-size: 12px;
 	}
 	
 	.todayHours {
@@ -302,20 +185,9 @@
 		margin-left: 0;
 	}
 	
-	
-	
 	.libraryTitle .space247 {
 		background: transparent url(../images/study247.png) no-repeat;
 	}
-
-	
-	#megaMenu ul.megaMenu > li:hover > a, #megaMenu ul.megaMenu > li > a:hover, #megaMenu ul.megaMenu > li.megaHover > a, #megaMenu ul.megaMenu > li:hover > span.um-anchoremulator, #megaMenu ul.megaMenu > li > span.um-anchoremulator:hover, #megaMenu ul.megaMenu > li.megaHover > span.um-anchoremulator {
-	  color:#ccc !important;
-	  /*color:#fff !important;
-	  text-decoration: underline;
-	  */
-	}	
-	
 	
 	/* Hours Page */
 	
@@ -338,7 +210,7 @@
 	
 	.hrList td {
 		position: relative;
-		width: 33px;
+		width: 14.28571428571429%;
 		font-size: 10px;
 		line-height: 12px;
 		float: left;
@@ -363,7 +235,7 @@
 	}
 	
 	.hrList .name {
-		width: 308px;
+		width: 100%;
 		text-align: left;
 		display: block;
 		border-bottom-width: 1px;
@@ -378,27 +250,6 @@
 		display: block;
 		min-height: 20px;
 	}
-	
-	/*
-	.hrList td.cur {
-		border-left: 1px solid #ccc;
-		border-bottom: 5px solid #ccc;
-		background: #fff;
-	}
-	
-	.hrList .even td.cur {
-		background: #eceaea;
-		border-left: 1px solid #ccc;
-		border-bottom: 5px solid #ccc;		
-	}
-	
-	.hrList td.curAfter {
-		border-left: 1px solid #ccc;	
-	}
-	.hrList .even td.curAfter {
-		border-left: 1px solid #ccc;	
-	}
-	*/
 
 	.hrList .name .libraryAlert,
 	.hrList .name .libraryAlert p {

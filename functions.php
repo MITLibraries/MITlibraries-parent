@@ -76,14 +76,6 @@ function twentytwelve_setup() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
 	register_nav_menu( 'footer', __( 'Footer Menu', 'twentytwelve' ) );
 
-	/*
-	 * This theme supports custom background color and image, and here
-	 * we also set up the default background color.
-	 */
-	add_theme_support( 'custom-background', array(
-		'default-color' => 'e6e6e6',
-	) );
-
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
@@ -111,55 +103,12 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 
 	/*
-	 * Loads our special font CSS file.
-	 *
-	 * The use of Open Sans by default is localized. For languages that use
-	 * characters not supported by the font, the font can be disabled.
-	 *
-	 * To disable in a child theme, use wp_dequeue_style()
-	 * function mytheme_dequeue_fonts() {
-	 *     wp_dequeue_style( 'twentytwelve-fonts' );
-	 * }
-	 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
-	 */
-
-	/* translators: If there are characters in your language that are not supported
-	   by Open Sans, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'twentytwelve' ) ) {
-		$subsets = 'latin,latin-ext';
-
-		/* translators: To add an additional Open Sans character subset specific to your language, translate
-		   this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language. */
-		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'twentytwelve' );
-
-		if ( 'cyrillic' == $subset )
-			$subsets .= ',cyrillic,cyrillic-ext';
-		elseif ( 'greek' == $subset )
-			$subsets .= ',greek,greek-ext';
-		elseif ( 'vietnamese' == $subset )
-			$subsets .= ',vietnamese';
-
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => 'Open+Sans:400italic,700italic,400,700',
-			'subset' => $subsets,
-		);
-		wp_enqueue_style( 'twentytwelve-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
-	}
-
-	/*
 	 * Loads our main stylesheet.
 	 */
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style('bootstrap', get_template_directory_uri() . '/libs/bootstrap/css/bootstrap.css', array(), '2.2.1');
+	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style'), '20140623');
 
-	wp_register_style('bootstrap-responsive', get_template_directory_uri() . '/libs/bootstrap/css/bootstrap-responsive.css', array(), '2.2.1');
-
-	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style', 'bootstrap', 'bootstrap-responsive'), '20140623');
-
-	wp_enqueue_style('bootstrap');
-	wp_enqueue_style('bootstrap-responsive');
 	wp_enqueue_style('libraries-global');
 
 	/*
@@ -172,26 +121,37 @@ function twentytwelve_scripts_styles() {
 
 	// Deregister WP Core jQuery, load Google's
   wp_deregister_script('jquery');
-  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3', false);
+  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.8.3', false);
 	
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
+
+	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '20140709', true);
 
 	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '201400616', true);
 
 	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140312', true);
 
+	wp_register_script('searchJS', get_template_directory_uri() . '/js/build/search.min.js', array('jquery', 'modernizr'), '20140811', false);
+
+	wp_register_script('mapJS', get_template_directory_uri() . '/js/build/map.min.js', array('jquery'), '20140813', true);
+
 	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
 	wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true);
 
-	// wp_register_script('makeGoogleMap', get_template_directory_uri() . '/js/make.googlemap.js', array('jquery'), '1.0.0', true);
-
 	/* All-site JS */
 	
 	wp_enqueue_script('modernizr');
-	wp_enqueue_script('productionJS');
 
 	/* Page-specific JS & CSS */
+
+	if (!is_front_page()) {
+		wp_enqueue_script('productionJS');
+	}
+
+	if (is_front_page()) {
+		wp_enqueue_script('homeJS');
+	}
 
 	if (is_page('hours')) {
 		wp_enqueue_script('hoursJS');
@@ -199,8 +159,12 @@ function twentytwelve_scripts_styles() {
 
 	if (is_page('locations')) {
 		wp_enqueue_script('googleMapsAPI');
+		wp_enqueue_script('mapJS');
 		wp_enqueue_script('infobox');
-		//wp_enqueue_script('makeGoogleMap');
+	}
+
+	if (is_page('search')) {
+		wp_enqueue_script('searchJS');
 	}
 	
 }
@@ -439,9 +403,7 @@ if (!function_exists('is_child_page')) {
  *    or full-width template.
  * 2. Front Page template: thumbnail in use and number of sidebars for
  *    widget areas.
- * 3. White or empty background color to change the layout and spacing.
- * 4. Custom fonts enabled.
- * 5. Single or multiple authors.
+ * 3. Single or multiple authors.
  *
  * @since Twenty Twelve 1.0
  *
@@ -450,7 +412,6 @@ if (!function_exists('is_child_page')) {
  */
 function twentytwelve_body_class( $classes ) {
 	global $post;
-	$background_color = get_background_color();
 
 	if ( isset( $post ) ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
@@ -482,15 +443,6 @@ function twentytwelve_body_class( $classes ) {
 	if (is_page_template('page-location.php')) {
 		$classes[] = 'locationPage';
 	}
-
-	if ( empty( $background_color ) )
-		$classes[] = 'custom-background-empty';
-	elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
-		$classes[] = 'custom-background-white';
-
-	// Enable custom font class only if the font CSS is queued to load.
-	if ( wp_style_is( 'twentytwelve-fonts', 'queue' ) )
-		$classes[] = 'custom-font-enabled';
 
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
@@ -742,6 +694,17 @@ if (!function_exists('better_breadcrumbs')) {
 
 	add_action('after_setup_theme', 'better_breadcrumbs');
 }
+
+// Check for performance issues
+function no_post_limit( $query ) {
+  if ( is_home() && !is_child_theme()) {
+    // No post limit on homepage
+    $query->set( 'posts_per_page', -1 );
+    return;
+  }
+}
+add_action( 'pre_get_posts', 'no_post_limit', 1 );
+
 // Prevent Wordpress from "guessing" redirects instead of showing a 404 page
 if (!function_exists('stop_404_guessing')) {
 	add_filter('redirect_canonical', 'stop_404_guessing');

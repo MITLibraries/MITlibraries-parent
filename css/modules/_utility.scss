@@ -1,7 +1,49 @@
 // Break points
 
 @mixin bp-small {
-	@media only screen and (max-width: 480px) {
+	@media only screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+@mixin bp-mobile--landscape {
+	@media only screen and (min-width: 321px) {
+		@content;
+	}
+}
+
+@mixin bp-mobile--only {
+	@media only screen and (max-width: 568px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--portrait-below {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--portrait {
+	@media only screen and (min-width: 569px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--portrait-above {
+	@media only screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--landscape {
+	@media only screen and (min-width: 769px) {
+		@content;
+	}
+}
+
+@mixin bp-large {
+	@media only screen and (min-width: 769px) {
 		@content;
 	}
 }
@@ -72,22 +114,20 @@ $font-body: 'Open Sans', sans-serif;
 	}
 }
 
-%visuallyhidden {
-  margin: -1px;
+@mixin hidden-visually {
+  margin: 0;
   padding: 0;
-  width: 1px;
-  height: 1px;
+  width: 0;
+  height: 0;
   overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
 }
 
 @mixin image-replacement {
 	border: 0;
+	color: transparent;
   font: 0/0 a;
   text-shadow: none;
-  color: transparent;
+  white-space: nowrap;
 }
 
 $margin-left: 20px;

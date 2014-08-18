@@ -1,85 +1,124 @@
 .nav-main {
-	box-sizing: border-box;
-	clear: both;
-	float: left;
-  @include rem-first--4-values(margin, 1, 0, 0, 0.75);
-	@include line-height(20px);
-	@include bp-small {
-		background: #333;
-		margin: 1rem 0;
-	}
+  flex-flow: wrap;
+  transform: translateY(-1000%);
+  z-index: map-get($zindex, dropdown);
+  &.active {
+    background: white;
+    box-shadow: 0 3px 3px $color-shadow;
+    height: auto;
+    flex: none;
+    @include rem-first--4-values(padding, 0, 0.5, 0.5, 0.5);
+    position: absolute;
+    transform: translateY(3em);
+    top: 0;
+    width: 100%;
+  }
+  @include hidden-visually;
+  .small {
+    display: none;
+    @include bp-tablet--portrait {
+      display: block;
+    }
+  }
+  @include bp-tablet--portrait-below {
+    font-size: 0.75em;
+    .small {
+      font-size: 0.25em;
+    }
+  }
+  @include bp-tablet--portrait {
+    align-items: stretch;
+    height: auto;
+    flex-flow: nowrap;
+    order: 3;
+    overflow: visible;
+    width: auto;
+    transform: translateY(0%);
+    .small {
+      font-size: 0.5em;
+      line-height: 1.4;
+      @include rem-first(padding-top, 0.5);
+      a {
+        align-items: center;
+        flex-direction: column;
+        @include rem-first(padding-bottom, 0.5);
+        text-transform: uppercase;
+      }
+      svg {
+        fill: #fff;
+        margin-bottom: 1em;
+      }
+    }
+  }
+  .chat {
+    display: none;
+    @include bp-tablet--portrait {
+      display: block;
+      .links-sub {
+        background: #f3f3f3;
+        flex-flow: wrap;
+        @include rem-first(min-width, 9.375);
+        width: auto;
+        a:hover {
+          background: none;
+        }
+      }
+      .more {
+        display: block;
+        @include rem-first(font-size, 0.75);
+        text-align: center;
+        text-transform: none;
+        width: 100%;
+      }
+      .wrap-button-chat {
+        @include rem-first(min-height, 2.875);
+        @include rem-first--4-values(padding, 1, 0.5, 0, 0.5);
+        min-width: 100%;
+        #libchat_btn_widget {
+          border: 1px solid #666;
+        }
+      }
+    }
+  }
 }
 
 .link-primary {
-  display: inline-block;
-  @include rem-first(margin-right, 1);
   position: relative;
   transition: background-color 0.3s;
-  z-index: map-get($zindex, dropdown);
-  @include bp-small {
-  	display: inline;
-  	margin: 0;
+  width: 100%;
+  @include bp-tablet--portrait {
+    border-right: 1px solid lighten($color-background--dark, 20%);
+    padding-top: 1em; // Find a better way to push the link text to bottom
+    width: auto;
   }
   &:hover {
-    background: lighten($color-background--widget, 2%);
-    box-shadow: 0 0 2px #444;
+    @include bp-tablet--portrait {
+      background: $color-link-primary;
+    }
     .links-sub {
       box-shadow: 0 0 2px #444;
       max-height: 1000px;
-      margin: auto;
       opacity: 1;
       overflow: visible;
-      padding: 1rem;
-      @include rem-first(padding, 1);
       transition: max-height 0.3s,
                   margin 0.3s,
                   opacity 0.3s,
                   overflow 0.3s,
                   padding-top 0.3s,
                   padding-bottom 0.3s;
-      // SlideDown/SlideUp
-      // transform: scaleY(1);
-      // transform-origin: top;
-      // transition: opacity 0.3s,
-      //             transform 0.3s;
-    }
-    @include bp-small {
-      background: none;
-      box-shadow: none;
     }
   }
   > a {
-    color: $color-text-accent-primary;
-    display: inline-block;
-    font-weight: bold;
+    border-bottom: 1px solid #b5b5b5;
+    display: block;
     @include rem-first(padding, 0.5);
-	  position: relative;
-    &:hover {
-      color: black;
-      @include bp-small {
-        color: white;
-      }
-      &:after {
-        @include downArrow(4px, black);
-        @include bp-small {
-          content: none;
-        }
-      }
-    }
-	  @include bp-small {
-	  	color: white;
-	  	display: inline-block;
-	  	margin: 0;
-	  	margin-left: -4px; /* Fight inline-block space */
-	  	width: 50%;
-	  }
-    &:after {
-      @include rem-first (margin-left, 0.25);
-      vertical-align: middle;
-      @include downArrow(4px, $color-text-accent-primary);
-      @include bp-small {
-        content: none;
-      }
+    position: relative;
+    @include bp-tablet--portrait {
+      border-bottom: none;
+      color: #fff;
+      display: flex;
+      height: 100%;
+      padding-top: 1em;
     }
 	  &.active {
 	  	background: lightgray;
@@ -87,26 +126,19 @@
                 inset 1px 0 0 gray,
                 inset -1px 0 0 gray,
                 inset 0 1px 0 gray;
-      @include bp-small {
-      	background: none;
-      	box-shadow: none;
-      }
 	  }
   }
   .col-1 {
-    @include rem-first(padding-right, 1);
+    background: #fff;
   }
   .col-2 {
-    border-left: 1px solid #ccc;
-    @include rem-first(padding-left, 1);
+    background: $color-background-secondary;
   }
   .links-sub {
-    background: lighten($color-background--widget, 2%);
-    flex-flow: row wrap;
+    display: none;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    @include rem-first--2-values(padding, 0, 1);
     position: absolute;
     transition: max-height 0.3s,
                 margin 0.3s,
@@ -114,48 +146,56 @@
                 overflow 0.3s,
                 padding-top 0.3s,
                 padding-bottom 0.3s;
-    // SlideDown/SlideUp
-    // transform: scaleY(0);
-    // transform-origin: top;
-    // transition: opacity 0.3s,
-    //             transform 0.3s;
-    width: 600px;
-    @include bp-small {
-    	display: none;
+    width: 31.75em;
+    @include bp-tablet--portrait {
+      display: flex;
     }
     a {
       color: $color-text-accent-primary;
       display: block;
-      @include rem-first(margin-left, 0.5);
-      &:before {
-        @include rem-first(margin-right, 0.25);
-        @include rem-first(margin-left, -0.5);
-        @include bullet(0.25rem, black);
+      font-weight: 600;
+      padding: 0.5em;
+      &:hover {
+        background: darken($color-background-secondary, 10%);
       }
     }
-    [class*="col"] {
-      width: 275px;
+    [class*="col-"] {
+      width: 50%;
+    }
+    .about {
+      display: block;
+      font-size: 0.6875em;
+      font-weight: normal;
+    }
+    .bottom {
+      border-top: 1px solid $color-secondary;
+      &.extra {
+        span:first-of-type:after {
+          content: url(#{$imagesPath}/arrow-right-sfw.svg);
+          display: inline-block;
+          margin-left: 0.25em;
+        }
+      }
+      &:not(.extra):after {
+        content: url(#{$imagesPath}/arrow-right-sfw.svg);
+        display: inline-block;
+        margin-left: 0.25em; 
+      }
     }
   }
-  .bottom a {
-    display: inline-block;
-    font-weight: bold;
-    @include rem-first(margin-top, 1);
-    margin-left: 0;
-    &:before {
-      content: none;
-    }
-  }
-  .bottom span:not(:first-of-type):before {
+  .bottom:not(.extra) span:not(:first-of-type):before {
     color: $color-text-accent-primary;
     content: '|';
     display: inline-block;
     margin-right: 4px;
   }
   .heading-col {
+    color: #7c7c7d;
     display: block;
+    font-size: 0.6em;
     font-weight: bold;
-    @include rem-first(margin-bottom, 0.5);
+    @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
+    text-transform: uppercase;
   }
   .push {
     right: 0;
@@ -274,12 +314,39 @@
 }
 
 .menu--toggle {
-  color: darken($color-secondary, 40%);
+  background: $color-background--accent;
   cursor: pointer;
-  display: none;
+  fill: $blue-light;
   @include font-size(16px);
-  text-align: center;
-  @include bp-small {
+  order: 1;
+  width: 14.375%;
+  @include bp-tablet--portrait {
+    display: none;
+  }
+  svg {
     display: block;
+    margin: 1em auto;
+  }
+}
+
+.no-flexbox {
+  .link-primary.chat:hover {
+    .links-sub {
+      display: block;
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+//
+// IE Fixes
+//
+.lte-ie9 {
+  .nav-main {
+    .links-sub {
+      display: none;
+    }
   }
 }

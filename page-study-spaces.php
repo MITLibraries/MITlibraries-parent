@@ -23,19 +23,18 @@ get_header(); ?>
 			&raquo; <?php showBreadTitle(); ?>
 		</div>
 
-		<div id="stage" class="inner row" role="main">
-			<div class="title span12">
+		<div id="stage" role="main">
+			<div class="title-page flex-container">
 				<h1><?php the_title(); ?></h1>
 				<div class="extraInfo">
-					<a href="/hours/"><i class="icon-arrow-right"></i> See all library hours</a>
+					<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
 				</div>
 			</div>
 			
-			<div id="content">
-				<div id="mainContent" class="span9">
+			<div class="content-main flex-container">
+				<div class="content-page col-1">
 					<?php the_content(); ?>
-					<hr/>
-					<ul class="studyList">
+					<ul class="list--study-spaces">
 						<?php
 							$args = array(
 								'post_type' => 'location',
@@ -49,7 +48,6 @@ get_header(); ?>
 							);							
 							$subList = new WP_Query( $args );
 							
-							$odd = " odd";
 						?>					
 						<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
 						<?php 
@@ -96,25 +94,22 @@ get_header(); ?>
 							
 
 						?>
-							<li class="<?php echo $odd; ?>" style="background-image: url(<?php echo $studyImage; ?>);">
-								<div class="content">
-									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a> <i class="icon-arrow-right"></i></h3>
+							<li class="flex-container study-space">
+								<div class="image-study-space" style="background-image: url(<?php echo $studyImage; ?>);"></div>
+								<div class="content--study-space">
+									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
 									<div class="description">
 										<?php echo $description; ?>
 									</div>
-									<?php if ($study24 == 1): ?>
-										<a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+									<?php if ($reserveUrl != ""): ?>
+											<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 									<?php endif; ?>
-										<?php if ($reserveUrl != ""): ?>
-												<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
-										<?php endif; ?>
+									<?php if ($study24 == 1): ?>
+										<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+									<?php endif; ?>
 									
-									
-									<div class="info">
-										<div class="infoCol first">
-										<?php if ($study24 == 1): ?>
-											<a class="space247 visible-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
-										<?php endif; ?>
+									<div class="info--study-space flex-container">
+										<div class="col-1">
 										
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
@@ -133,38 +128,29 @@ get_header(); ?>
 										</div>
 
 										<?php if ($individual != ""): ?>
-										<div class="infoCol hidden-phone">
+										<div class="col-2">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
 										
 										<?php if ($spaces != ""): ?>
-										<div class="infoCol hidden-phone">
+										<div class="col-3">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>
 										</div>
 										<?php endif; ?>
-										
-										<br clear="all" />
 									</div>
-									<br clear="all" />
 								</div>
 							</li>
-						<?php 
-							if ($odd == "") {
-								$odd = " odd";
-							} else {
-								$odd = "";
-							}
-						?>
 						<?php endwhile; // end of the loop. ?>					
 					</ul>
 					
 				</div>
-				<?php get_sidebar(); ?>
-				
-			</div>		
+				<div class="col-2">
+					<?php get_sidebar(); ?>
+				</div>
+			</div><!-- end div.content-main -->		
 		</div>
 		
 

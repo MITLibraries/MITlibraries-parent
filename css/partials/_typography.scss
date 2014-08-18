@@ -1,4 +1,50 @@
-.title-page h1 {
-	line-height: 1;
-	@include font-size(28px);
+body {
+	font-family: $font-family-primary;
+	line-height: $line-height-primary;
+	text-rendering: optimizeLegibility;
+}
+
+h1 {
+	@include rem-first(font-size, 2.125);
+	font-weight: 300;
+}
+
+h2 {
+	@include rem-first(font-size, 1.8125);
+	font-weight: 300;
+	padding: 1em 0;
+	@include bp-tablet--landscape {
+		font-size: 2.125em;
+	}
+}
+
+h3 {
+	font-size: 1.125em;
+	font-weight: 300;
+	@include bp-tablet--portrait {
+		font-size: 1.375em;
+	}
+}
+
+a {
+	color: $color-link-primary;
+	&:hover {
+		color: darken($color-link-primary, 20%);
+	}
+}
+
+.caption {
+	color: hsla(0, 0.0000%, 48.2353%, 1.0000);
+	font-size: 0.875em;
+	font-weight: 300;
+	@include bp-tablet--portrait {
+		font-size: 1.0625em;
+	}
+}
+
+.error-load {
+	font-size: 1em;
+	font-weight: 300;
+	margin: 1em auto;
+	text-align: center;
 }

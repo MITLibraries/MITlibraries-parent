@@ -1,66 +1,97 @@
 .header-main {
+	align-items: flex-end;
+	background: $color-background--dark;
+	justify-content: flex-start;
+	@include span-12-12;
+	@include bp-tablet--portrait {
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 0 1em;
+	}
+	> [class*="link"] {
+		color: #fff;
+		font-size: 0.4375em;
+		order: 400;
+		text-transform: uppercase;
+	}
 	.logo-mit-lib {
-		background: url(#{$imagesPath}/logo.png) no-repeat;
-		display: block;
-		float: left;
-		height: 56px;
-		margin-left: $margin-left;
-		width: 132px;
-		@include image-replacement;
-		@include bp-small {
-			background-size: 110px 44px;
-			height: 44px;
+		fill: $color-text--light;
+		svg {
+			max-height: 3em;
+		}
+		.arch {
+			display: none;
+			@include bp-tablet--portrait {
+				display: block;
+			}
+		}
+	}
+	.link-account {
+		margin-left: 2em;
+	}
+	.link-logo-mit {
+		display: none;
+		@include bp-tablet--portrait {
+			align-self: flex-end;
+			display: block;
+			order: 4;
+			@include rem-first(margin-bottom, 0.5);
+		}
+	}
+	.link-site-search {
+		margin-left: 5.5em;
+	}
+	.link-account,
+	.link-site-search {
+		align-self: flex-end;
+		display: flex;
+		flex-flow: column;
+		@include rem-first(padding-bottom, 0.5);
+		svg {
+			fill: #c8c8c8;
+			margin: 0 auto;
+		}
+		@include bp-tablet--portrait {
+			display: none;
+		}
+	}
+	.logo-mit {
+		display: none;
+		@include bp-tablet--portrait {
+			display: block;
+			height: auto;
+			@include rem-first(max-height, 2.8125);
+			fill: #b9b7b6;
+			.color {
+				fill: #fff;
+			}
+		}
+	}
+	.name-site {
+		@include rem-first(font-size, 1);
+		line-height: 1;
+		margin-top: -1.25em;
+		margin-left: 0.75em;
+		order: 2;
+		@include rem-first(padding-bottom, 0.5);
+		width: 6.4375em;
+		@include bp-tablet--portrait {
+			margin-top: 0.5em;
 			margin-left: 0;
-			width: 110px;
+			padding-bottom: 0;
 		}
 	}
-	.toolbox {
-		float: right;
-		margin-top: 0.5rem;
-		@include font-size(12px);
-		@include bp-small {
-			margin-top: 0;
+}
+
+.lte-ie9 {
+	.header-main {
+		.name-site {
+			margin-left: 32px;
+			max-width: 103px;
 		}
-		.icon-arrow-right {
-			display: inline-block;
-			height: 0.75rem;
-			margin-top: 0;
-			width: 0.75rem;
-			@include bp-small {
-				display: none;
-			}
-		}
-		> a {
-			display: inline-block;
-			font-weight: bold;
-			margin-top: 0;
-			margin-right: 1rem;
-			@include bp-small {
-				float: right;
-				margin: 0 0 0.5rem 0;
-			}
-			&:after {
-				background: #ccc;
-				content: '';
-				display: inline-block;
-				height: 2rem;
-				margin-top: 0;
-				margin-bottom: -0.75rem;
-				margin-left: 1rem;
-				width: 1px;
-				@include bp-small {
-					content: none;
-				}
-			}
-		}
-		.button-ask-tell {
-			display: inline-block;
-			vertical-align: middle;
-			@include bp-small {
-				clear: right;
-				float: right;
-			}
+		.logo-mit {
+			margin-top: 24px;
+			margin-left: 40px;
 		}
 	}
-	@include font-size(14px);
 }

@@ -29,16 +29,13 @@ get_header(); ?>
 			&raquo; <?php showBreadTitle(); ?>
 		</div>
 
-		<div id="stage" class="inner row" role="main">
-			<div class="title span12">
-				<h1>Locations</h1>
-				<div class="extraInfo">
-					<a id="hoursLink" class="inlineLink" href="/hours/"><i class="icon-arrow-right"></i> See all library hours</a>
-					<a id="showMap" class="hidden-phone btn btn-warning btnShow" href="#">Show map</a>
-				</div>
+		<div id="stage" role="main">
+			<div class="title-page flex-container">
+				<h1>Map of locations</h1>
+				<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
 			</div>
 			
-			<div class="preContent span12 locations-list group" id="locationsHome">
+			<div id="locationsHome">
 				<div id="mapMarkers" class="meta">
 						<?php
 							
@@ -118,10 +115,13 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php endwhile; ?>
 				</div>
-				<div id="map">
-				
-				</div>
-				<ul class="locationMainList dark">
+				<!-- The Map -->
+				<div id="map" class="map-locations"></div>
+			</div>
+			
+			<div class="content-main flex-container">
+				<div class="content-page col-1">
+					<ul class="locations-main flex-container">
 						<?php
 							
 							$args = array(
@@ -159,38 +159,24 @@ get_header(); ?>
 							
 						?>
 							<li>
-								<!--
-								Main locations listing
-								-->
-							
-							
-							
+								<h2 class="name-location"><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
+								<div class="sub"><?php echo $subject ?></div>
+								<?php if ($phone != ""): ?>
+								<?php echo $phone ?>
 								<?php if ($hasHours): ?>
 								<div class="hours">Today&rsquo;s hours: <span data-location-hours="<?php the_title(); ?>"></span></div>
 								<?php else: ?>
 								<div class="hours">TBA</div>
 								<?php endif; ?>
-								<h2><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
-								<div class="sub"><?php echo $subject ?></div>
-								<?php if ($phone != ""): ?>
-								<?php echo $phone ?>
 								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
 								<?php if ($study24 == 1): ?>
 									<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 								<?php endif; ?>
-
 							</li>	
-						
 						<?php endwhile; // end of the loop. ?>					
-			
-			
 				</ul>
-			</div>
-			
-			<div id="content" class="">
-				<div id="mainContent" class="span9">
-					<h2 class="bigHead">More Locations</h2>
-					<ul class="locationList row light">
+					<h2 class="more-locations">More Locations</h2>
+					<ul class="locations-secondary flex-container">
 					<?php
 						$args = array(
 							'post_type' => 'location',
@@ -226,8 +212,8 @@ get_header(); ?>
 						$pageID = $displayPage->ID;
 						$pageLink = get_permalink($pageID);
 					?>
-						<li class="span3">
-							<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a> <i class="icon-arrow-right"></i></h3>
+						<li class="location-secondary">
+							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
 							<?php if ($phone != ""): ?>
 							<?php echo $phone ?><br/>
 							<?php endif; ?>
@@ -236,13 +222,13 @@ get_header(); ?>
 								<!-- Will never have hours -->
 							<?php else: ?>
 								<?php if ($hasHours): ?>
-								Today&rsquo;s hours: <br/><span data-location-hours="<?php the_title(); ?>"></span><br/>
+								<div class="hours-today">Today&rsquo;s hours: <span data-location-hours="<?php the_title(); ?>"></span></div>
 								<?php else: ?>
-								TBA<br/>
+								<div class="hours-today">TBA</div>
 								<?php endif; ?>
 							<?php endif; ?>
 							
-							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a> <i class="icon-arrow-right"></i>
+							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
 						</li>
 					
 					<?php endwhile; // end of the loop. ?>					
@@ -250,14 +236,10 @@ get_header(); ?>
 					
 				</div>
 
-				<div id="sidebarContent" class="span3">
-					<div class="findStudySpace">
-						<h3><a href="/study/" class="widgetButton">Find a study space</a></h3>
-					</div>
+				<div class="col-2">
+					<a class="link-find-study-space button-primary" href="/study/">Find a study space</a>
+					<?php get_sidebar(); ?>
 				</div>
-				<?php get_sidebar(); ?>			
 		</div>		
 	</div>
-
-
 <?php get_footer(); ?>

@@ -1,0 +1,11 @@
+.button-primary {
+	@extend %button-primary;
+}
+
+.button-secondary {
+	@extend %button-secondary;
+}
+
+.button-tertiary {
+	@extend %button-tertiary;
+}
