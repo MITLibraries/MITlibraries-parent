@@ -85,6 +85,12 @@
 
 .lte-ie9 {
 	.header-main {
+		height: 62px;
+		overflow: hidden;
+		* {
+			height: 62px;
+			overflow: hidden;
+		}
 		.name-site {
 			margin-left: 32px;
 			max-width: 103px;
@@ -92,6 +98,13 @@
 		.logo-mit {
 			margin-top: 24px;
 			margin-left: 40px;
+		}
+		.small {
+			@include rem-first(font-size, 0.625);
+			@include rem-first(padding-top, 1.625);
+			svg {
+				display: none;
+			}
 		}
 	}
 }

@@ -443,7 +443,28 @@
 		-ms-appearance: select;
 	}
 	.search--lib-resources {
+		button {
+			@include rem-first(height, 1.5);
+			svg {
+				max-height: 1em;
+				max-width: 1em;
+			}
+		}
+		h2 {
+			display: block;
+			@include rem-first(padding-left, 6);
+			padding-top: 0;
+		}
+		input {
+			@include rem-first(max-height, 1.5);
+		}
+		select {
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
 		.wrap-select--resources {
+			background: none;
 			.selected {
 				display: none;
 			}
