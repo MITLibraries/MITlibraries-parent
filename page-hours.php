@@ -251,9 +251,9 @@ $thisWeek = date("Y-n-j");
 		<div class="locations-more">
 			<h3>Other locations</h2>
 			<h4>Digital Instruction Resource Center (DIRC)</h3>
-			<a href="">Map: 14N-132</a>
+			<a href="/locations/#!digital-instruction-resource-center-dirc">Map: 14N-132</a>
 			<h4>Information Intersection at Stata Center</h3>
-			<a href="">Map: 32-Student Street</a>
+			<a href="/locations/#!information-intersection">Map: 32-Student Street</a>
 		</div>
 
 	</div> <!-- end div.allContent -->
