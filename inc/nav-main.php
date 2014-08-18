@@ -41,7 +41,7 @@
         <a href="/dewey">Dewey Library</a>
         <a href="/hayden">Hayden Library</a>
         <a href="/archives">Institute Archives &amp; Special Collections</a>
-        <a href="/lewis">Lewis Music Library</a>
+        <a href="/music">Lewis Music Library</a>
         <a href="/lsa">Library Storage Annex</a>
         <a href="/rotch">Rotch Library</a>
         <a href="/hours" class="bottom">All hours &amp; locations</a>
