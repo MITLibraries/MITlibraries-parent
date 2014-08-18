@@ -95,19 +95,18 @@ get_header(); ?>
 
 						?>
 							<li class="flex-container study-space">
-								<div class="image-study-space"><img src="<?php echo $studyImage; ?>"></div>
+								<div class="image-study-space" style="background-image: url(<?php echo $studyImage; ?>);"></div>
 								<div class="content--study-space">
 									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
 									<div class="description">
 										<?php echo $description; ?>
 									</div>
-									<?php if ($study24 == 1): ?>
-										<a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+									<?php if ($reserveUrl != ""): ?>
+											<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 									<?php endif; ?>
-										<?php if ($reserveUrl != ""): ?>
-												<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
-										<?php endif; ?>
-									
+									<?php if ($study24 == 1): ?>
+										<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+									<?php endif; ?>
 									
 									<div class="info--study-space flex-container">
 										<div class="col-1">

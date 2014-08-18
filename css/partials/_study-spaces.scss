@@ -7,6 +7,11 @@
 	.content--study-space {
 		@include rem-first--4-values(padding, 1, 0, 1, 1);
 	}
+	.image-study-space {
+		background-size: cover;
+		@include rem-first--4-values(margin, 1, 0, 1, 1);
+		width: 8em;
+	}
 	.info--study-space {
 		justify-content: space-between;
 		@include rem-first(margin-top, 1);
@@ -23,6 +28,9 @@
 		.col-3 {
 			@include rem-first(padding-left, 1);
 		}
+	}
+	.space247 {
+		color: #43926a;
 	}
 }
 
