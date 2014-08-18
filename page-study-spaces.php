@@ -23,11 +23,11 @@ get_header(); ?>
 			&raquo; <?php showBreadTitle(); ?>
 		</div>
 
-		<div id="stage" class="inner row" role="main">
-			<div class="title-page">
+		<div id="stage" role="main">
+			<div class="title-page flex-container">
 				<h1><?php the_title(); ?></h1>
 				<div class="extraInfo">
-					<a href="/hours/"><i class="icon-arrow-right"></i> See all library hours</a>
+					<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
 				</div>
 			</div>
 			
@@ -97,7 +97,7 @@ get_header(); ?>
 							<li class="flex-container study-space">
 								<div class="image-study-space"><img src="<?php echo $studyImage; ?>"></div>
 								<div class="content--study-space">
-									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a> <i class="icon-arrow-right"></i></h3>
+									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
 									<div class="description">
 										<?php echo $description; ?>
 									</div>
@@ -110,10 +110,7 @@ get_header(); ?>
 									
 									
 									<div class="info--study-space flex-container">
-										<div class="infoCol first">
-										<?php if ($study24 == 1): ?>
-											<a class="space247 visible-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
-										<?php endif; ?>
+										<div class="col-1">
 										
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
@@ -132,14 +129,14 @@ get_header(); ?>
 										</div>
 
 										<?php if ($individual != ""): ?>
-										<div class="infoCol hidden-phone">
+										<div class="col-2">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
 										
 										<?php if ($spaces != ""): ?>
-										<div class="infoCol hidden-phone">
+										<div class="col-3">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>
 										</div>
