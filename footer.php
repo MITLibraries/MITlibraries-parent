@@ -12,7 +12,7 @@
 				<a href="/barton" class="link-sub">Barton catalog</a>
 				<a href="/vera" class="link-sub">Vera: Databases &amp; e-journals</a>
 				<a href="/worldcat" class="link-sub">MIT's WorldCat</a>
-				<a href="/course-reserves" class="link-sub">Course reserves</a>
+				<a href="/reserves" class="link-sub">Course reserves</a>
 				<a href="/about/site-search" class="link-sub">Site search</a>
 				<a href="/search" class="link-sub">More search options</a>
 			</div>
@@ -43,7 +43,7 @@
 			</div>
 			<div class="flex-item">
 				<h4><a href="/about">About Us</a></h4>
-				<a href="/directory" class="link-sub">Staﬀ directory</a>
+				<a href="/contact" class="link-sub">Contact us</a>
 				<a href="/news" class="link-sub">News</a>
 				<a href="/calendar" class="link-sub">Calendar of events</a>
 				<a href="/use-policies" class="link-sub">Use policy</a>
