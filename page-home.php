@@ -173,7 +173,7 @@
 				<div class="location hidden-mobile inactive-mobile">
 					<a href="/music" class="img-loc lewis"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/lewis">Lewis Music Library</a></h3><div class="hours"></div><div class="location-info"><a href="/locations/#!lewis-music-library" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
+						<h3><a class="name-location" href="/music">Lewis Music Library</a></h3><div class="hours"></div><div class="location-info"><a href="/locations/#!lewis-music-library" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
