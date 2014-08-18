@@ -133,12 +133,10 @@ ul.checklist li {
 
 .profile {
 	background: #ede8e2;
+	font-size: 14px;
+	margin: 0 0 15px;
 	padding: 15px 10px 0px 10px;
 	position: relative;
-	left: -10px;
-	font-size: 14px;
-	/*width: 340px;*/
-	margin: 0 0 15px;
 }
 
 .profile img {
@@ -706,27 +704,4 @@ body:not(.page-site-search) #cse-search-box  input[type=text] {
 html:not(.flexbox) .mainContent .flexItem {
 	margin: 16px 0;
 	margin: 1rem 0;
-}
-
-.mainContent .tabcontent .first {
-	border-right: 1px solid #ccc;
-	padding-right: 1.5em;
-}
-
-.mainContent .tabcontent .second {
-	padding-left: 1.5em;
-}
-
-.mainContent .tab2 .first {
-	margin: 0;
-	padding: 0 1rem;
-	width: 26%;
-}
-
-.mainContent .tab2 .second {
-	width: 74%;
-}
-
-.locationPage .profile {
-	left: auto;
 }
