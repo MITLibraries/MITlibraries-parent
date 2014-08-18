@@ -48,7 +48,6 @@ function InitAnalytics(){
 	}
 	// All other browsers
 	else {
-		console.log('newer browser GA script running');
 		var startOption = $('#resources li').attr('data-target');
 		TrackEvent('Discovery','Initial Tab',startOption,1);
 
