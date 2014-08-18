@@ -20,6 +20,11 @@
 				width: 50%;
 			}
 		}
+		.second {
+			@include bp-tablet--portrait {
+				width: 50%;
+			}
+		}
 	}
 }
 
