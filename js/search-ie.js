@@ -9,10 +9,10 @@ function oldIESearch() {
 		$('.wrap-select--resources').append('<select id="resources-select"></select');
 		// New select menu options
 		$('#resources-select')
-			.append('<option value="option-1">BartonPlus</option>')
-			.append('<option value="option-2">Vera</option>')
-			.append('<option value="option-3">Barton</option>')
-			.append('<option value="option-4">WorldCat</option>')
+			.append('<option value="option-1">Articles, e-books, &amp; more</option>')
+			.append('<option value="option-2">E-Journals &amp; databases</option>')
+			.append('<option value="option-3">Books &amp; more at MIT</option>')
+			.append('<option value="option-4">Books &amp; more worldwide</option>')
 			.append('<option value="option-5">Course Reserves</option>')
 			.append('<option value="option-6">Site Search</option>');
 		$('#resources-select').change(function(){
