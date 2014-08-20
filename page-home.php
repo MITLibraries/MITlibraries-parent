@@ -252,31 +252,14 @@
 				<div id="guide-list-home" class="guide-list">
 				</div>
 				<div class="experts-group flex-container">
-					<?php
-						$args = array(
-										'no_found_rows' => true,
-										'orderby' => 'rand',
-										'post_type' => 'experts',
-										'posts_per_page' => 4,
-									);							
-						$expertPosts = new WP_Query( $args );
-						while ( $expertPosts->have_posts() ) : $expertPosts->the_post();
-						$postID = get_the_ID();
-						$postImageID = get_post_thumbnail_id();
-						$postImageURL = wp_get_attachment_url($postImageID);
-						$expertURL = cf('expert_url');
-					?>
 					<div class="expert">
-						<a class="link-profile" href="<?php echo $expertURL; ?>">
-							<img class="expert-photo" src="<?php echo $postImageURL; ?>">
-							<span class="name"><?php the_title(); ?></span>
-							<span class="title-job"><?php the_excerpt(); ?></span>
-						</a>
 					</div>
-					<?php
-						endwhile;
-						wp_reset_postdata();
-					?>
+					<div class="expert">
+					</div>
+					<div class="expert">
+					</div>
+					<div class="expert">
+					</div>
 				</div>
 				<a href="/experts" class="button-primary view-experts">All <span class="count">32</span> experts</a>
 			</div><!-- end div.guides-experts -->

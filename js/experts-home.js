@@ -20,22 +20,38 @@ $(function(){
 			  }
 			  if(!found)arr[arr.length]=randomNumber;
 			}
+			// Expert names
 			var expertName1 = data[arr[0]].title;
 			var expertName2 = data[arr[1]].title;
 			var expertName3 = data[arr[2]].title;
 			var expertName4 = data[arr[3]].title;
 
+			// Expert images
 			var expertPhoto1 = data[arr[0]].featured_image.guid;
 			var expertPhoto2 = data[arr[1]].featured_image.guid;
 			var expertPhoto3 = data[arr[2]].featured_image.guid;
 			var expertPhoto4 = data[arr[3]].featured_image.guid;
 
-			// Append expert image only if JSON request successful
-			$('.expert').append('<img class="expert-photo">');
+			// Expert job titles (post excerpts)
+			var expertExcerpt1 = data[arr[0]].excerpt;
+			var expertExcerpt2 = data[arr[1]].excerpt;
+			var expertExcerpt3 = data[arr[2]].excerpt;
+			var expertExcerpt4 = data[arr[3]].excerpt;
+
+			// Expert URL (currently an ACF field)
+			var expertURL1 = data[arr[0]].meta.expert_url;
+			var expertURL2 = data[arr[1]].meta.expert_url;
+			var expertURL3 = data[arr[2]].meta.expert_url;
+			var expertURL4 = data[arr[3]].meta.expert_url;
+
+			// Append extra markup only if JSON request successful
+			$('.expert').append('<a class="link-profile">')
+			// Append expert image div
+			$('.expert .link-profile').append('<img class="expert-photo">');
 			// Append empty spans for expert names
-			$('.expert').append('<span class="name"></span>');
+			$('.expert .link-profile').append('<span class="name"></span>');
 			// Append empty spans for expert titles
-			$('.expert').append('<span class="title-job"></span>');
+			$('.expert .link-profile').append('<span class="title-job"></span>');
 			// Add expert name to appropriate span
 			$('.expert .name:eq(0)').text(expertName1);
 			$('.expert .name:eq(1)').text(expertName2);
@@ -46,6 +62,16 @@ $(function(){
 			$('.expert .expert-photo:eq(1)').attr('src', expertPhoto2);
 			$('.expert .expert-photo:eq(2)').attr('src', expertPhoto3);
 			$('.expert .expert-photo:eq(3)').attr('src', expertPhoto4);
+			// Add expert excerpt
+			$('.expert .title-job:eq(0)').html(expertExcerpt1);
+			$('.expert .title-job:eq(1)').html(expertExcerpt2);
+			$('.expert .title-job:eq(2)').html(expertExcerpt3);
+			$('.expert .title-job:eq(3)').html(expertExcerpt4);
+			// Add expert URL
+			$('.expert .link-profile:eq(0)').attr('href', expertURL1);
+			$('.expert .link-profile:eq(1)').attr('href', expertURL2);
+			$('.expert .link-profile:eq(2)').attr('href', expertURL3);
+			$('.expert .link-profile:eq(3)').attr('href', expertURL4);
 			// Add the expert count to the "All Experts" button
 			$('.view-experts .count').text(dataLength);
 		});
