@@ -56,6 +56,23 @@ var Core = {
 			
 			tar.toggleClass("active", true);
 		});
+		// Check if there are tabs
+		if($('.tabnav').length) {
+			// Store a var
+			var tabnav = $('.tabnav');
+			// Check if URL has hash
+			if(window.location.hash) {
+			  var hash = window.location.hash;
+			  // Remove all active classes from tabnav
+			  $('> li', tabnav).removeClass('active');
+			  // Add active class to tab that contains the hash
+			  $('h2 a[href="'+hash+'"]', tabnav).parent().parent().addClass('active');
+			  // Get the top offset of the active tab
+			 	var activePos = $('li.active', tabnav).offset().top;
+			 	// ...and scroll down to it
+			 	$(window).scrollTop(activePos);
+			}
+		}
 	},
 	
 	linkExpandable: function() {
