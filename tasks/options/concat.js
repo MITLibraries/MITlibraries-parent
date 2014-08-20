@@ -19,6 +19,7 @@ module.exports = {
       'js/hours-home.js',
       'js/news-home.js',
       'js/guides-home.js',
+      'js/experts-home.js',
       'js/ga_discovery.js'
     ],
     dest: 'js/build/home.js'
