@@ -19,6 +19,7 @@
 <!--<meta name="viewport" content="width=device-width" />-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+<meta property="og:image" content="/wp-content/themes/libraries/images/mit-libraries-logo-bg-black-1200x504.png"/>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
