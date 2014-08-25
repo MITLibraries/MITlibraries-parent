@@ -39,14 +39,18 @@ $(function(){
 			libArr.push(locName); 
 		};
 		
-		$.getJSON('/wp-content/themes/libraries/hours.json')
-			.done(function(data) {
+		$.ajax({
+				cache: false,
+				url: "/wp-content/themes/libraries/hours.json",
+				dataType: "json"
+			})
+			.done(function(json) {
 				// Empty array for library hours
 				var libHrsArr = [];
 				// Run the loop again
 				for (var i = 0; i < locs; i++) {
 					// Each library
-					var libs = data[libArr[i]];
+					var libs = json[libArr[i]];
 					// Each library's hours, today
 					var libHrsToday = libs.hours[thisDay];
 					// Add these values to the array
