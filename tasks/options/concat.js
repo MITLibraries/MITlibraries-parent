@@ -20,6 +20,7 @@ module.exports = {
       'js/news-home.js',
       'js/guides-home.js',
       'js/experts-home.js',
+      'js/libs/libchat.js',
       'js/ga_discovery.js'
     ],
     dest: 'js/build/home.js'

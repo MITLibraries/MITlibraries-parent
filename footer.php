@@ -104,8 +104,5 @@
 </script>
 
 <?php wp_footer(); ?>
-<!-- Libchat scripts -->
-<script> var libchat_efc75c55947db323d4faab725b79307f = { iid:59, key:'fb10446730e271c', width:'240' }</script>
-<script type="text/javascript" src="//libanswers.mit.edu/load_chat.php?hash=efc75c55947db323d4faab725b79307f&options=libchat_efc75c55947db323d4faab725b79307f"></script>
 </body>
 </html>
