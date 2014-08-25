@@ -63,7 +63,8 @@
 			font-size: 0.875em;
 			@include rem-first(margin-top, -1.4);
 			@include rem-first(margin-left, 11.5); // Match logo width
-			padding: 0
+			padding: 0;
+			z-index: map-get($zindex, main-secondary);
 		}
 		span {
 			display: block;
@@ -118,6 +119,7 @@
 		@include bp-tablet--portrait {
 			flex-flow: nowrap;
 			margin-bottom: -0.8em;
+			z-index: map-get($zindex, main);
 		}
 		a {
 			width: 33%;
