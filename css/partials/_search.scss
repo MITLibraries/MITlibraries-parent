@@ -1,12 +1,14 @@
 .search--lib-resources {
 	align-items: center;
-	flex-flow: wrap;
+	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: center;
 	padding: 2em 0.5em;
 	position: relative;
 	@include gradient-blue;
 	z-index: map-get($zindex, main);
 	@include bp-tablet--portrait {
+		flex-direction: row;
 		flex-wrap: wrap;
 		padding: 2em 0;
 	}
@@ -49,10 +51,10 @@
 		&.active {
 			display: flex;
 			button {
-				display: inline-block;
+				display: block;
 			}
 			input.active {
-				display: inline;
+				display: block;
 			}
 		}
 	}
@@ -123,7 +125,7 @@
 		&.keywords {
 			display: none;
 			&.active {
-				display: inline;
+				display: block;
 			}
 		}
 		option {
@@ -439,6 +441,19 @@
 @-moz-document url-prefix() {
 	.search--lib-resources .wrap-select--keywords svg.select-arrows {
 		display: none;
+	}
+}
+
+// Old flexbox fixes
+@include bp-small {
+	.no-flexbox.flexboxlegacy {
+		.search--lib-resources {
+			.input-submit {
+				input.active {
+					max-width: 89%; // Corrects for old flexbox layout
+				}
+			}
+		}
 	}
 }
 
