@@ -180,8 +180,10 @@
 				font-weight: normal;
 				&:after {
 					content: url(#{$imagesPath}/icon-arrow-down-sfw.svg);
+					max-height: 19px; // For IE
 					position: absolute;
 					right: 1.75em;
+					max-width: 17px; // For IE
 				}
 				@include bp-tablet--portrait {
 					font-weight: bold;
@@ -392,7 +394,9 @@
 		&:after {
 			content: url(#{$imagesPath}/icon-arrow-down-sfw.svg);
 			display: inline-block;
+			max-height: 19px; // For IE
 			margin-left: -2em;
+			max-width: 17px; // For IE
 			@include bp-tablet--portrait {
 				content: none;
 				display: none;
