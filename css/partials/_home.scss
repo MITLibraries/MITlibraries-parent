@@ -45,7 +45,9 @@
 			font-weight: 300;
 		}
 		svg {
-			@include svg-max-height-width;
+			@include bp-small {
+				@include svg-max-height-width;
+			}
 		}
 		.active {
 			display: block;
@@ -258,7 +260,9 @@
 			}
 		}
 		svg {
-			@include svg-max-height-width;
+			@include bp-small {
+				@include svg-max-height-width;
+			}
 		}
 		& > .flex-container {
 			flex-flow: wrap;
