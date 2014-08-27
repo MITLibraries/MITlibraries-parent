@@ -264,6 +264,12 @@
 		}
 	}
 }
+
+.no-flexbox.flexboxlegacy {
+	.footer-main {
+		overflow-x: hidden;
+	}
+}
 .lte-ie9.no-flexbox {
 	.footer-main {
 		.identity {
