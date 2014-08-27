@@ -130,4 +130,9 @@ $font-body: 'Open Sans', sans-serif;
   white-space: nowrap;
 }
 
+@mixin svg-max-height-width {
+	max-height: 1em;
+	max-width: 1em;
+}
+
 $margin-left: 20px;
