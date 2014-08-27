@@ -83,6 +83,27 @@
 	}
 }
 
+.no-flexbox.flexboxlegacy {
+	.header-main {
+		.icon-account,
+		.icon-search {
+			@include bp-small {
+				@include rem-first(max-height, 1);
+				@include rem-first(max-width, 1);
+			}
+		}
+		.menu--toggle {
+			svg {
+				@include bp-small {
+					height: 100%;
+					padding: 1em;
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
 .lte-ie9 {
 	.header-main {
 		height: 62px;
