@@ -359,6 +359,11 @@
 		p {
 			margin: 0 1em;
 		}
+		svg {
+			@include bp-small {
+				@include svg-max-height-width;
+			}
+		}
 		.all-guides {
 			display: inline-block;
 			width: auto;
