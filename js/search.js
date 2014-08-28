@@ -125,7 +125,7 @@ $(function(){
 			var optionSelected = $('#search-main select.active option:selected').val();
 			searchBy();
 			// Remove any input text
-			$('#search-main input').val('');
+			//$('#search-main input').val('');
 		});
 
 	}
