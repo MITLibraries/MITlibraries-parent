@@ -104,7 +104,7 @@ $(function(){
 		}
 		if ($('#course-reserves.active').length) {
 			if(optionSelected == 'scan_CNB') {
-				$('input.active').attr('placeholder', 'ex: STS.320');
+				$('input.active').attr('placeholder', 'ex: 21F.108');
 			}
 			if(optionSelected == 'find_WIN') {
 				$('input.active').attr('placeholder', 'ex: cohen');
@@ -125,7 +125,7 @@ $(function(){
 			var optionSelected = $('#search-main select.active option:selected').val();
 			searchBy();
 			// Remove any input text
-			$('#search-main input').val('');
+			//$('#search-main input').val('');
 		});
 
 	}
