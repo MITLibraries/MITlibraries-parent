@@ -31,7 +31,7 @@ get_header(); ?>
 
 		<div id="stage" role="main">
 			<div class="title-page flex-container">
-				<h1>Map of locations</h1>
+				<h1><?php the_title(); ?></h1>
 				<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
 			</div>
 			
