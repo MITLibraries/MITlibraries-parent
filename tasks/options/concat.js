@@ -3,6 +3,7 @@ module.exports = {
     src: [
       'js/libs/underscrore.js',
       'js/libs/moment.min.js',
+      'js/libs/twix.min.js',
       'js/dev.js',
       'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
@@ -17,6 +18,7 @@ module.exports = {
     src: [
       'js/libs/underscrore.js',
       'js/libs/moment.min.js',
+      'js/libs/twix.min.js',
       'js/dev.js',
       'js/search-ie.js',
       'js/search.js',
