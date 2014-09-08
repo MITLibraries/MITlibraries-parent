@@ -2,6 +2,7 @@ module.exports = {
   dist: {
     src: [
       'js/libs/underscrore.js',
+      'js/libs/moment.min.js',
       'js/dev.js',
       'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
@@ -15,6 +16,7 @@ module.exports = {
   home: {
     src: [
       'js/libs/underscrore.js',
+      'js/libs/moment.min.js',
       'js/dev.js',
       'js/search-ie.js',
       'js/search.js',
