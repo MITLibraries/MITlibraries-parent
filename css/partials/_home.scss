@@ -265,9 +265,9 @@
 			}
 		}
 		& > .flex-container {
-			flex-flow: wrap;
+			flex-wrap: wrap;
 			@include bp-tablet--landscape {
-				flex-flow: nowrap;
+				flex-wrap: nowrap;
 			}
 		}
 		.button-primary {

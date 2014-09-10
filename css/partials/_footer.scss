@@ -1,6 +1,6 @@
 .footer-main {
 	background: lighten($color-primary, 7.8431%);
-	flex-flow: wrap;
+	flex-wrap: wrap;
 	@include bp-large {
 		background: $color-primary;
 	}
@@ -15,7 +15,7 @@
 		}
 	}
 	.identity {
-		flex-flow: wrap;
+		flex-wrap: wrap;
 		padding: 2em 0 0;
 		@include bp-tablet--portrait {
 			align-items: flex-end;
@@ -52,7 +52,7 @@
 	.links-primary {
 		border-top: 1px solid #808285;
 		border-bottom: 1px solid #808285;
-		flex-flow: wrap;
+		flex-wrap: wrap;
 		font-size: 0.8125em;
 		margin-top: 2em;
 		padding: 2rem 1.375rem;
@@ -113,11 +113,11 @@
 	}
 	.social {
 		align-items: center;
-		flex-flow: wrap;
+		flex-wrap: wrap;
 		padding-left: 1.375em;
 		width: auto;
 		@include bp-tablet--portrait {
-			flex-flow: nowrap;
+			flex-wrap: nowrap;
 			margin-bottom: -0.8em;
 			z-index: map-get($zindex, main);
 		}
@@ -133,7 +133,6 @@
 				}
 			}
 		}
-		flex-flow: wrap;
 		[class*="icon-social"] {
 			background: $color-secondary;
 			border-radius: 50%;
@@ -156,7 +155,7 @@
 	background: #595959;
 	display: flex;
 	flex-direction: column;
-	flex-flow: wrap;
+	flex-wrap: wrap;
 	padding: 1.5em 1em;
 	@include bp-tablet--portrait {
 		flex-direction: row;

@@ -1,5 +1,5 @@
 .nav-main {
-  flex-flow: wrap;
+  flex-wrap: wrap;
   transform: translateY(-1000%);
   z-index: map-get($zindex, dropdown);
   &.active {
@@ -29,7 +29,7 @@
   @include bp-tablet--portrait {
     align-items: stretch;
     height: auto;
-    flex-flow: nowrap;
+    flex-wrap: nowrap;
     order: 3;
     overflow: visible;
     width: auto;
@@ -56,7 +56,7 @@
       display: block;
       .links-sub {
         background: #f3f3f3;
-        flex-flow: wrap;
+        flex-wrap: wrap;
         @include rem-first(min-width, 9.375);
         width: auto;
         a:hover {

@@ -45,7 +45,7 @@
 	.link-site-search {
 		align-self: flex-end;
 		display: flex;
-		flex-flow: column;
+		flex-direction: column;
 		@include rem-first(padding-bottom, 0.5);
 		svg {
 			fill: #c8c8c8;
