@@ -1,0 +1,186 @@
+{
+	"terms" : [
+		{
+			"termName" : "Fall 2015",
+			"termStart": "8/25/2014",
+			"termEnd" : "12/19/2014",
+			"locations" : [
+				{
+					"locationName" : "barker",
+					"monday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"tuesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"wednesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"thursday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"friday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"saturday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"sunday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "9/1/2014",
+							"closedAll" : true,
+							"open" : "",
+							"closed" : ""
+						},
+						{
+							"date" : "9/8/2014",
+							"closedAll" : true,
+							"open" : "testing",
+							"closed" : "exceptions"
+						},
+						{
+							"date" : "11/24/2014",
+							"closedAll" : true,
+							"open" : "",
+							"closed" : ""
+						}
+					]
+				},
+				{
+					"locationName" : "dewey",
+					"monday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"tuesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"wednesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"thursday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"friday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"saturday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"sunday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "",
+							"closedAll" : true,
+							"open" : "",
+							"closed" : ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"termName" : "another term",
+			"termStart": "8/25/2015",
+			"termEnd" : "12/19/2015",
+			"locations" : [
+				{
+					"locationName" : "barker",
+					"monday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"tuesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"wednesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"thursday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"friday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"saturday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"sunday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "",
+							"closedAll" : true,
+							"open" : "",
+							"closed" : ""
+						}
+					]
+				},
+				{
+					"locationName" : "barker",
+					"monday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"tuesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"wednesday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"thursday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"friday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"saturday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"sunday" : {
+						"open" : "8:30pm",
+						"closed" : "11:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "",
+							"closedAll" : true,
+							"open" : "",
+							"closed" : ""
+						}
+					]
+				}
+			]
+		}
+	]
+}

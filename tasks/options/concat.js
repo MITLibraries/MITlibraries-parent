@@ -10,7 +10,8 @@ module.exports = {
       'js/ga_links.js',
       'js/menu.toggle.js',
       'js/libs/*.js',
-      'js/make/*.js'
+      'js/make/*.js',
+      'js/page-term-hours.js'
     ],
     dest: 'js/build/production.js'
   },
