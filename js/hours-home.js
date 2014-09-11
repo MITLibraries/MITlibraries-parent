@@ -58,7 +58,7 @@ $(function(){
 				};
 				// Append each value to a location, shifting off each object as it is used
 				$('.hours-locations .location .hours').each(function(){
-					$(this).append(libHrsArr[0]+' <span class="today">today</today>');
+					$(this).append(libHrsArr[0].replace(/:00/g,"")+' <span class="today">today</today>');
 					libHrsArr.shift();
 				});
 				// Add a comma if 24/7 space
