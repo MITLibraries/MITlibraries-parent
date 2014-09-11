@@ -7,9 +7,7 @@ yyyy = today.getFullYear();
 today = m + "/" + d + "/" + yyyy;
 
 // Day of week
-var day = moment()
-						.format('dddd')
-						.toLowerCase(); // to match JSON
+var day = moment().format('dddd').toLowerCase(); // to match JSON
 
 var addDay = moment().add('days', 1).format('M/DD/YYYY');
 
@@ -27,9 +25,7 @@ $.ajax({
 			var termStart = terms[i].termStart;
 			var termEnd = terms[i].termEnd;
 			// Check the range (using Moment.js w/ Twix plugin)
-			var termActive = moment
-												.twix(termStart, termEnd, {parseStrict: true})
-												.isCurrent();
+			var termActive = moment.twix(termStart, termEnd, {parseStrict: true}).isCurrent();
 			// Set the active term
 			if (termActive === true) {
 				var theTerm = terms[i];
