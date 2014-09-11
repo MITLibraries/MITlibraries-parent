@@ -20,15 +20,15 @@ We're currently handling hours two ways on libraries.mit.edu:
 
 Ideally, the hours values should exist solely as JSON values, and should not live in Wordpress at all.
 
-[This branch](//github.com/zgreen/MITlibraries-parent/tree/hours-underscore) sets a new data structure for handling hours([term-hours.json](//github.com/zgreen/MITlibraries-parent/blob/hours-underscore/term-hours.json)). Hours are __term based__, with start/end dates, and default Monday-Sunday open/closed values per location. Each location is also given a set of exceptions for handling special hours.
+[This branch](//github.com/zgreen/MITlibraries-parent/tree/hours-underscore) sets a new data structure for handling hours ([term-hours.json](//github.com/zgreen/MITlibraries-parent/blob/hours-underscore/term-hours.json)). Hours are __term based__, with start/end dates, and default Monday-Sunday open/closed values per location. Each location is also given a set of exceptions for handling special hours.
 
-Visit [libraries-dev.mit.edu/term-hours](//libraries-dev.mit.edu/term-hours/) to view this new structure in action.
+Visit [libraries-dev.mit.edu/term-hours](http://libraries-dev.mit.edu/term-hours/) to view this new structure in action.
 
 Using jQuery and Underscore.js, [this script](https://github.com/zgreen/MITlibraries-parent/blob/hours-underscore/js/page-term-hours.js) Ajax-es today's hours for each location onto the `term-hours` page, checking first for exceptions and then defaulting to the hours for the current day. [Moment.js](http://momentjs.com/) is used for date handling, and the [Twix.js plugin](http://isaaccambron.com/twix.js/) is used to create date ranges.
 
 This page represents a workable solution for displaying "Today's hours" for any given location.
 
-From here, we'd like to template out a weekly view similar to our current one on [libraries.mit.edu/hours](//libraries.mit.edu/hours). This should be possible using Underscore, though a jQuery plugin like [CLNDR.js](//kylestetz.github.io/CLNDR/) is also a possibility.
+From here, we'd like to template out a weekly view similar to our current one on [libraries.mit.edu/hours](http://libraries.mit.edu/hours). This should be possible using Underscore, though a jQuery plugin like [CLNDR.js](http://kylestetz.github.io/CLNDR/) is also a possibility.
 
 Additionally, we'd like some sort of GUI/form that would allow people to add/update hours JSON values without having to acutally hand edit the JSON file itself. Backbone.js? PHP form? Drupal? Open to suggestions...
 
