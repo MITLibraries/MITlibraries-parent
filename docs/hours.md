@@ -12,7 +12,7 @@ We're currently handling hours two ways on libraries.mit.edu:
 
 	We did this for two reasons:
 	1. To speed up the load time on those pages, as the Wordpress queries were very heavy.
-	2. To make sure that those hours values were never cached (there were some instanced where the cache held onto a previous day's hours, displaying that value as the hours for the current day).
+	2. To make sure that those hours values were never cached (there were some instances where the cache held onto a previous day's hours, displaying that value as the hours for the current day).
 
 	This solution solved those problems, but unfortunately--because there's no good way to build out the proper data structure for handling these hours values in Wordpress--to date we have been hand editing the `hours.json` file with individual day-by-day entries.
 
