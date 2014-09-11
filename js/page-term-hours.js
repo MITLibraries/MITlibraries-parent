@@ -9,7 +9,9 @@ today = m + "/" + d + "/" + yyyy;
 // Day of week
 var day = moment()
 						.format('dddd')
-						.toLowerCase();
+						.toLowerCase(); // to match JSON
+
+var addDay = moment().add('days', 1).format('M/DD/YYYY');
 
 $.ajax({
 		cache: false,
@@ -51,8 +53,8 @@ $.ajax({
 				var todayOpen = '<%= '+day+'.open %>';
 				var todayClosed = '<%= '+day+'.closed %>';
 			}
-			// The template for term-hours.html
-			var compiled = _.template(
+			// The template for today's hours
+			var dayCompiled = _.template(
 				'<tr>' +
 					'<td>' +
 						'<%= locationName %>' +
@@ -65,9 +67,10 @@ $.ajax({
 					'</td>' +
 				'</tr>'
 			);
-			// Set this for each location
-			var html = compiled(locations[i]);
-			$('#table-today').append(html);
+			
+			// Set today's hours for each location
+			var dayTemplate = dayCompiled(locations[i]);
+			$('#table-today').append(dayTemplate);
 		};
 		// Append term start and end times
 		$('#date-term-begin').text(theTerm.termStart);
