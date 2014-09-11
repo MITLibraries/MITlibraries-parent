@@ -11,8 +11,8 @@ We're currently handling hours two ways on libraries.mit.edu:
 2. Each location's hours for today also appear on the homepage, and on individual location pages (like [libraries.mit.edu/barker](//libraries.mit.edu)). Beginning a few months back, we started using using a little jQuery to Ajax these values onto those pages from a [JSON file](//github.com/zgreen/MITlibraries-parent/blob/prod/hours.json) ([homepage script here](https://github.com/zgreen/MITlibraries-parent/blob/prod/js/hours-home.js#L18), and [location page script here](https://github.com/zgreen/MITlibraries-parent/blob/prod/js/core.js#L121)).
 
 	We did this for two reasons:
-		1. To speed up the load time on those pages, as the Wordpress queries were very heavy.
-		2. To make sure that those hours values were never cached (there were some instanced where the cache held onto a previous day's hours, displaying that value as the hours for the current day).
+			1. To speed up the load time on those pages, as the Wordpress queries were very heavy.
+			2. To make sure that those hours values were never cached (there were some instanced where the cache held onto a previous day's hours, displaying that value as the hours for the current day).
 
 	This solution solved those problems, but unfortunately, because there's no good way to build out the proper data structure for handling these hours values in Wordpress. To date, we have been hand editing the `hours.json` file with individual day-by-day entries.
 
