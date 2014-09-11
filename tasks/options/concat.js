@@ -1,25 +1,18 @@
 module.exports = {
   dist: {
     src: [
-      'js/libs/underscrore.js',
-      'js/libs/moment.min.js',
-      'js/libs/twix.min.js',
       'js/dev.js',
       'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
       'js/ga_links.js',
       'js/menu.toggle.js',
       'js/libs/*.js',
-      'js/make/*.js',
-      'js/page-term-hours.js'
+      'js/make/*.js'
     ],
     dest: 'js/build/production.js'
   },
   home: {
     src: [
-      'js/libs/underscrore.js',
-      'js/libs/moment.min.js',
-      'js/libs/twix.min.js',
       'js/dev.js',
       'js/search-ie.js',
       'js/search.js',
@@ -52,5 +45,14 @@ module.exports = {
   map: {
     src: 'js/map.js',
     dest: 'js/build/map.js'
+  },
+  termHours: {
+    src: [
+      'js/libs/underscrore.js',
+      'js/libs/moment.min.js',
+      'js/libs/twix.min.js',
+      'js/page-term-hours.js'
+    ],
+    dest: 'js/build/term-hours.js'
   }
 }
