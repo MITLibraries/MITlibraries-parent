@@ -172,7 +172,7 @@
 									<h3 class="profileTitle"><span class="intro">Featured expert:</span><span class="name"><?php echo $name; ?></span><span class="bio"><?php echo $bio; ?></span></h3>
 									<div class="links">
 										<a class="primary" href="<?php echo $url; ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
-										<a href="http://libguides.mit.edu/content.php?pid=110460&sid=1651114" target="_blank">See all our experts <i class="icon-arrow-right"></i></a>
+										<a href="/experts">See all our experts <i class="icon-arrow-right"></i></a>
 									</div>
 
 								</div>
