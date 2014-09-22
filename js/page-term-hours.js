@@ -30,15 +30,13 @@ $.ajax({
 			if (termActive === true) {
 				var theTerm = terms[i];
 			}
-		};;
+		};
 		// Active term locations
 		var locations = theTerm.locations;
 
 		for (var i = 0; i < locations.length; i++) {
 			// Empty exceptions arr for each location
 			var exceptionsArr = [];
-			// Extract the dates from each exception
-			//var exceptionDates = _.pluck(exceptionsPer, 'date');
 			// Find the first exception that matches today's date
 			var exceptions = _.findWhere(locations[i].exceptions, {"date" : today});
 			// Set the open/closed hours if there is an exception...
@@ -65,6 +63,7 @@ $.ajax({
 					'</td>' +
 				'</tr>'
 			);
+			// Location exception template
 			var locationsCompiled = _.template(
 				'<h2 class="name-location">' +
 					'<%= locationName %> exceptions' +
@@ -80,137 +79,36 @@ $.ajax({
 				'</table>'
 			);
 			var locationTemplate = locationsCompiled(locations[i]);
+			// Append the location exception template
 			$('.entry-content').append(locationTemplate);
+			// Exceptions per location
 			var exceptionsPer = locations[i].exceptions;
-			var exceptionsList = [];
+			
 			for (var ii = 0; ii < exceptionsPer.length; ii++) {
-				var exception = exceptionsPer[ii];
-				var exceptionDate = exception.date;
-				var exceptionOpen = exception.open;
-				var exceptionClosed = exception.closed;
-				console.log(exception, exceptionOpen, exceptionClosed);
-
-				// The template for each location's exceptions
+				// Template for each exception
 				var exceptionsCompiled = _.template(
 					'<tr>' +
 						'<td>' +
-							exceptionDate +
+							'<%= date %>' +
 						'</td>' +
 						'<td>' +
-							exceptionOpen +
+							'<%= open %>' +
 						'</td>' +
 						'<td>' +
-							exceptionClosed +
+							'<%= closed %>' +
 						'</td>' +
 					'</tr>'
 				);
-				var exceptionsTemplate = exceptionsCompiled(exceptionsPer[ii]);
-				exceptionsList.push(exceptionsTemplate);
-				//$('.table-exceptions').append(exceptionsTemplate);
-				
+				var exceptionsTemplate = exceptionsCompiled(locations[i].exceptions[ii]);
+				// Append each exception to the most recently create location exception list
+				$('.table-exceptions:last').append(exceptionsTemplate);
 			};
-			$('.table-exceptions').each(function(){
-				$(this).append(exceptionsTemplate);
-				//exceptionsList.pop();
-			});
-			console.log($('.table-exceptions').length);
-			console.log(exceptionsList);
-
 			
 			// Set today's hours for each location
 			var dayTemplate = dayCompiled(locations[i]);
 			$('#table-today').append(dayTemplate);
+
 		};
-
-		//
-		// Exceptions view
-		//
-
-		
-
-		//
-		// Weekly view -- EXPERIMENTING.
-		//
-
-		var week = 	[
-									'sunday',
-									'monday',
-									'tuesday',
-									'wednesday',
-									'thursday',
-									'friday',
-									'saturday'
-								];
-		// Index of today in the week
-		var todayWeek = week.indexOf(day);
-		// Array of days remaining in the week
-		var daysRemain = _.rest(week, [todayWeek]);
-		// Days from today to the beginning of the week (e.g. Sunday - today)
-		var daysDiff = _.difference(week, daysRemain);
-		// Seven days from today
-		var newWeek = daysRemain.concat(daysDiff);
-		console.log(newWeek);
-
-
-		// console.log(sevenDays);
-		// console.log(day);
-		// console.log(week);
-		// console.log(todayWeek);
-		// for (var i = 0; i < week.length; i++) {
-			
-		// };
-
-		// Empty week dates array
-		var weekDates = [];
-
-		for (var i = 0; i < 7; i++) {
-			// Next seven dates, starting from today
-			var nextDay = moment().add('days', i).format('M/DD/YYYY');
-			weekDates.push(nextDay);
-
-			var weekDatesCompiled = _.template(
-				'<th>' +
-					weekDates[i] +
-				'</th>'
-			);
-
-			$('#hours-week').append(weekDatesCompiled);
-		};
-
-		// for (var i = 0; i < locations.length; i++) {
-		// 	var dayWeek = moment().add('days', i).format('dddd').toLowerCase();
-		// 	// Empty exceptions arr for each location
-		// 	var exceptionsArr = [];
-		// 	// Find the first exception that matches today's date
-		// 	var exceptions = _.findWhere(locations[i].exceptions, {"date" : today});
-		// 	// Set the open/closed hours if there is an exception...
-		// 	if (exceptions != undefined) {
-		// 		var todayOpen = '<%= '+'"'+exceptions.open+'"'+' %>';
-		// 		var todayClosed = '<%= '+'"'+exceptions.closed+'"'+' %>';
-		// 	}
-		// 	// or else use today's default hours
-		// 	else {
-		// 		var todayOpen = '<%= '+dayWeek+'.open %>';
-		// 		var todayClosed = '<%= '+dayWeek+'.closed %>';
-		// 	}
-		// 	console.log(dayWeek);
-
-		// 	for (var ii = 0; ii < 7; ii++) {
-		// 		// 7 day week view
-		// 		var weekCompiled = _.template(
-		// 			'<tr>' +
-		// 				'<td>' +
-		// 					todayOpen + ' - ' + todayClosed +
-		// 				'</td>' +
-		// 			'</tr>'
-		// 		);
-
-		// 	};
-			
-		// };
-
-		// END WEEKLY VIEW
-
 
 		// Append term start and end times
 		$('#date-term-begin').text(theTerm.termStart);
