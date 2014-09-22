@@ -63,6 +63,98 @@ $.ajax({
 					'</td>' +
 				'</tr>'
 			);
+			// Location default Mon-Sun hours template
+			var weekCompiled = _.template(
+				'<h2 class="name-location">' +
+					'<%= locationName %> Monday - Sunday' +
+				'</h2>' +
+				'<table>' +
+					'<tbody class="table-mon-sun">' +
+						'<tr>' +
+							'<th>Day</th>' +
+							'<th>Open</th>' +
+							'<th>Closed</th>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Monday' +
+							'</td>' +
+							'<td>' +
+								'<%= monday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= monday.closed %>' +
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Tuesday' +
+							'</td>' +
+							'<td>' +
+								'<%= tuesday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= tuesday.closed %>' +
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Wednesday' +
+							'</td>' +
+							'<td>' +
+								'<%= wednesday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= wednesday.closed %>' +
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Thursday' +
+							'</td>' +
+							'<td>' +
+								'<%= thursday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= thursday.closed %>' +
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Friday' +
+							'</td>' +
+							'<td>' +
+								'<%= friday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= friday.closed %>' +
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Saturday' +
+							'</td>' +
+							'<td>' +
+								'<%= saturday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= saturday.closed %>' +
+							'</td>' +
+						'</tr>' +
+						'<tr>' +
+							'<td>' +
+								'Sunday' +
+							'</td>' +
+							'<td>' +
+								'<%= sunday.open %>' +
+							'</td>' +
+							'<td>' +
+								'<%= sunday.closed %>' +
+							'</td>' +
+						'</tr>' +
+					'</tbody>'+
+				'</table>'
+			);
 			// Location exception template
 			var locationsCompiled = _.template(
 				'<h2 class="name-location">' +
@@ -78,12 +170,16 @@ $.ajax({
 					'</tbody>'+
 				'</table>'
 			);
+
+			var weekTemplate = weekCompiled(locations[i]);
+			// Append the Mon-Sun hours template
+			$('.entry-content').append(weekTemplate);
 			var locationTemplate = locationsCompiled(locations[i]);
 			// Append the location exception template
 			$('.entry-content').append(locationTemplate);
+			
 			// Exceptions per location
 			var exceptionsPer = locations[i].exceptions;
-			
 			for (var ii = 0; ii < exceptionsPer.length; ii++) {
 				// Template for each exception
 				var exceptionsCompiled = _.template(
