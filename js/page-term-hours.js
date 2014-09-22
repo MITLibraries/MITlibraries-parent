@@ -63,9 +63,11 @@ $.ajax({
 					'</td>' +
 				'</tr>'
 			);
+			var locId = locations[i].locationName.substr(0, locations[i].locationName.indexOf(' ')).toLowerCase();
+			console.log(locId);
 			// Location default Mon-Sun hours template
 			var weekCompiled = _.template(
-				'<h2 class="name-location">' +
+				'<h2 id="hours-week-' + locId + '" class="name-location">' +
 					'<%= locationName %> Monday - Sunday' +
 				'</h2>' +
 				'<table>' +
@@ -157,7 +159,7 @@ $.ajax({
 			);
 			// Location exception template
 			var locationsCompiled = _.template(
-				'<h2 class="name-location">' +
+				'<h2 id="hours-exceptions-' + locId + '" class="name-location">' +
 					'<%= locationName %> exceptions' +
 				'</h2>' +
 				'<table>' +
@@ -208,5 +210,18 @@ $.ajax({
 
 		// Append term start and end times
 		$('#date-term-begin').text(theTerm.termStart);
-		$('#date-term-end').text(theTerm.termEnd);
-	})
+		$('#date-term-end').text(theTerm.termEnd).trigger('hours-loaded');
+		//console.log($(this));
+	});
+$(document).on('hours-loaded', function(){
+	console.log('hours-loaded');
+	$('<nav id="nav-hours">').appendTo('.entry-content');
+	$('.entry-content h2').each(function(){
+		var jumpLink = $(this).attr('id');
+		var jumpText = $(this).text();
+		$('#nav-hours').append('<a href="#' + jumpLink + '">' + jumpText + '</a>');
+		console.log(jumpLink);
+	});
+});
+
+//$('h2').text().appendTo('#nav-hours');
