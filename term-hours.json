@@ -43,7 +43,7 @@
 							"closed" : "11:00pm"
 						},
 						{
-							"date" : "11/14/2014",
+							"date" : "11/11/2014",
 							"closedAll" : false,
 							"open" : "12:00pm",
 							"closed" : "11:00pm"
@@ -112,7 +112,7 @@
 							"closed" : "11:00pm"
 						},
 						{
-							"date" : "11/14/2014",
+							"date" : "11/11/2014",
 							"closedAll" : false,
 							"open" : "12:00pm",
 							"closed" : "11:00pm"
@@ -181,7 +181,7 @@
 							"closed" : "12:00am"
 						},
 						{
-							"date" : "11/14/2014",
+							"date" : "11/11/2014",
 							"closedAll" : false,
 							"open" : "12:00pm",
 							"closed" : "12:00am"
@@ -250,7 +250,7 @@
 							"closed" : "closed"
 						},
 						{
-							"date" : "11/14/2014",
+							"date" : "11/11/2014",
 							"closedAll" : true,
 							"open" : "closed",
 							"closed" : "closed"
@@ -313,7 +313,7 @@
 							"closed" : "9:00pm"
 						},
 						{
-							"date" : "11/14/2014",
+							"date" : "11/11/2014",
 							"closedAll" : false,
 							"open" : "12:00pm",
 							"closed" : "9:00pm"
@@ -382,7 +382,7 @@
 							"closed" : "12:00am"
 						},
 						{
-							"date" : "11/14/2014",
+							"date" : "11/11/2014",
 							"closedAll" : false,
 							"open" : "12:00pm",
 							"closed" : "12:00am"
