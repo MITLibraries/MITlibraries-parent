@@ -223,5 +223,3 @@ $(document).on('hours-loaded', function(){
 		console.log(jumpLink);
 	});
 });
-
-//$('h2').text().appendTo('#nav-hours');
