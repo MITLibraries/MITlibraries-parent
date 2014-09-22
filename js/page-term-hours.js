@@ -37,6 +37,8 @@ $.ajax({
 		for (var i = 0; i < locations.length; i++) {
 			// Empty exceptions arr for each location
 			var exceptionsArr = [];
+			// Extract the dates from each exception
+			//var exceptionDates = _.pluck(exceptionsPer, 'date');
 			// Find the first exception that matches today's date
 			var exceptions = _.findWhere(locations[i].exceptions, {"date" : today});
 			// Set the open/closed hours if there is an exception...
@@ -63,11 +65,68 @@ $.ajax({
 					'</td>' +
 				'</tr>'
 			);
+			var locationsCompiled = _.template(
+				'<h2 class="name-location">' +
+					'<%= locationName %> exceptions' +
+				'</h2>' +
+				'<table>' +
+					'<tbody class="table-exceptions">' +
+						'<tr>' +
+							'<th>Date</th>' +
+							'<th>Open</th>' +
+							'<th>Closed</th>' +
+						'</tr>' +
+					'</tbody>'+
+				'</table>'
+			);
+			var locationTemplate = locationsCompiled(locations[i]);
+			$('.entry-content').append(locationTemplate);
+			var exceptionsPer = locations[i].exceptions;
+			var exceptionsList = [];
+			for (var ii = 0; ii < exceptionsPer.length; ii++) {
+				var exception = exceptionsPer[ii];
+				var exceptionDate = exception.date;
+				var exceptionOpen = exception.open;
+				var exceptionClosed = exception.closed;
+				console.log(exception, exceptionOpen, exceptionClosed);
+
+				// The template for each location's exceptions
+				var exceptionsCompiled = _.template(
+					'<tr>' +
+						'<td>' +
+							exceptionDate +
+						'</td>' +
+						'<td>' +
+							exceptionOpen +
+						'</td>' +
+						'<td>' +
+							exceptionClosed +
+						'</td>' +
+					'</tr>'
+				);
+				var exceptionsTemplate = exceptionsCompiled(exceptionsPer[ii]);
+				exceptionsList.push(exceptionsTemplate);
+				//$('.table-exceptions').append(exceptionsTemplate);
+				
+			};
+			$('.table-exceptions').each(function(){
+				$(this).append(exceptionsTemplate);
+				//exceptionsList.pop();
+			});
+			console.log($('.table-exceptions').length);
+			console.log(exceptionsList);
+
 			
 			// Set today's hours for each location
 			var dayTemplate = dayCompiled(locations[i]);
 			$('#table-today').append(dayTemplate);
 		};
+
+		//
+		// Exceptions view
+		//
+
+		
 
 		//
 		// Weekly view -- EXPERIMENTING.
