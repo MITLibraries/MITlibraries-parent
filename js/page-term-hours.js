@@ -211,15 +211,20 @@ $.ajax({
 		// Append term start and end times
 		$('#date-term-begin').text(theTerm.termStart);
 		$('#date-term-end').text(theTerm.termEnd).trigger('hours-loaded');
-		//console.log($(this));
 	});
-$(document).on('hours-loaded', function(){
-	console.log('hours-loaded');
-	$('<nav id="nav-hours">').appendTo('.entry-content');
-	$('.entry-content h2').each(function(){
-		var jumpLink = $(this).attr('id');
-		var jumpText = $(this).text();
-		$('#nav-hours').append('<a href="#' + jumpLink + '">' + jumpText + '</a>');
-		console.log(jumpLink);
-	});
-});
+
+// Append a jump nav
+
+// $(document).on('hours-loaded', function(){
+// 	$('<nav id="nav-hours" class="nav-page--dynamic" />').appendTo('.content-main');
+// 	$('.content-page').css('width', '67%');
+// 	$('.entry-content h2').each(function(){
+// 		var jumpLink = $(this).attr('id');
+// 		var jumpText = $(this).text();
+// 		$('#nav-hours')
+// 			.append('<a href="#' + jumpLink + '">' + jumpText + '</a>');
+// 	});
+// 	var navHeight = $('#nav-hours').outerHeight() + 530;
+// 	console.log(navHeight);
+// 	$('#nav-hours').css('margin-bottom', navHeight);
+// });
