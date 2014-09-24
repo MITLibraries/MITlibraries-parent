@@ -2,7 +2,6 @@ module.exports = {
   dist: {
     src: [
       'js/dev.js',
-      'libs/bootstrap/js/bootstrap.js',
       'js/core.js',
       'js/ga_links.js',
       'js/menu.toggle.js',
