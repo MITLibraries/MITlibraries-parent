@@ -93,13 +93,11 @@
 			</div><!-- end div.libraryContent -->
 			
 			<div class="hours-today">
-				<?php if ($hasHours): ?>
-					<span>Today's hours: <b data-location-hours="<?php the_title(); ?>"></b></span>
-					<?php if ($study24 == 1): ?>
-						<a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
-					<?php endif; ?>
-					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
+				<span>Today's hours: <strong data-location-hours="<?php the_title(); ?>"></strong></span>
+				<?php if ($study24 == 1): ?>
+					<a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 				<?php endif; ?>
+				<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
 			</div>					
 
 		</div><!-- end div.flex-item -->
