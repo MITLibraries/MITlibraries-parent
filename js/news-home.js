@@ -13,24 +13,49 @@ $(function(){
 				var post = data[i];
 				// Get the username for each post
 				var user = post.author.username;
-				if (user == 'mit-admin') {
+				if (user === 'mit-admin') {
 					// Create an array of posts from a single user
 					postsArr.push(post);
 				}
 			}
-			// Post featured image objects
-			var featured_image1 = postsArr[0].featured_image;
-			var featured_image2 = postsArr[1].featured_image;
-			if (featured_image1 != null) {
-				// Get the featured image URL
-				var postImage1URL = postsArr[0].featured_image.source;
-				$('.post-news:first .image').css('background-image', 'url('+postImage1URL+')');
-			}
-			if (featured_image2 != null) {
-				// Get the featured image URL
-				var postImage2URL = postsArr[1].featured_image.source;
-				$('.post-news:last .image').css('background-image', 'url('+postImage2URL+')');
-			}
+			console.log(postsArr);
+			// Template; 2 posts
+			for (var i = 0; i < 2; i++) {
+				//var featuredImage = postsArr[i].featured_image;
+				var postCat = postsArr[i].meta.is_event,
+						catName,
+						featuredImage;
+				if (postsArr[i].featured_image !== null) {
+					featuredImage = postsArr[i].featured_image.source;
+				}
+				else {
+					featuredImage = '';
+				}
+				function checkEvent() {
+					if (postCat) {
+						catName = 'Event';
+					}
+					else {
+						catName = 'News'
+					}
+				};
+				checkEvent();
+				var newsPostsCompiled = _.template(
+				'<div class="post-news">' +
+					'<div class="except-news">' +
+						'<div class="category-post">' +
+							catName +
+						'</div>' +
+						'<h3 class="title-post">' +
+							'<%= meta.homepage_post_title %>' +
+						'</h3>' +
+						'<div class="image" style="background-image: url(\'' + featuredImage + '\');" />'
+				);
+
+				var newsPostsTemplate = newsPostsCompiled(postsArr[i]);
+				$('#home-posts-news > .flex-container').append(newsPostsTemplate);
+			};
+
 		});
 
 });

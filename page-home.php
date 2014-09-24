@@ -191,7 +191,7 @@
 			</div><!-- end div.hours-locations -->
 		</div><!-- end div.col-1 -->
 		<div class="col-2 flex-item">
-			<div class="news-events">
+			<div id="home-posts-news" class="news-events">
 				<h2>News &amp; events</h2>
 				<div class="flex-container">
 					<?php
