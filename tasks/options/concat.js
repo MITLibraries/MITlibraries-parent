@@ -1,11 +1,11 @@
 module.exports = {
   dist: {
     src: [
+      'js/libs/*.js',
       'js/dev.js',
       'js/core.js',
       'js/ga_links.js',
       'js/menu.toggle.js',
-      'js/libs/*.js',
       'js/make/*.js'
     ],
     dest: 'js/build/production.js'
@@ -15,11 +15,11 @@ module.exports = {
       'js/dev.js',
       'js/search-ie.js',
       'js/search.js',
+      'js/libs/*.js',
       'js/hours-home.js',
       'js/news-home.js',
       'js/guides-home.js',
       'js/experts-home.js',
-      'js/libs/libchat.js',
       'js/ga_discovery.js'
     ],
     dest: 'js/build/home.js'
