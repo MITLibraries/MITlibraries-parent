@@ -139,17 +139,19 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true);
 
+	wp_register_script('term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array('jquery', 'productionJS'), false, true);
+
 	/* All-site JS */
 	
 	wp_enqueue_script('modernizr');
 
 	/* Page-specific JS & CSS */
 
-	if (!is_front_page()) {
+	if (!is_front_page() || is_child_theme()) {
 		wp_enqueue_script('productionJS');
 	}
 
-	if (is_front_page()) {
+	if (is_front_page() && !is_child_theme()) {
 		wp_enqueue_script('homeJS');
 	}
 
@@ -165,6 +167,10 @@ function twentytwelve_scripts_styles() {
 
 	if (is_page('search')) {
 		wp_enqueue_script('searchJS');
+	}
+
+	if (is_page('term-hours')) {
+		wp_enqueue_script('term-hours');
 	}
 	
 }

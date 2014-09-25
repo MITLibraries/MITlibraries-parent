@@ -5,7 +5,6 @@ var Core = {
 		Core.linkExpandable();
 		Core.linkTabs();
 		Core.nullAlt();
-		Core.buildHours();
 		$(window).resize(function() {
 			Core.handleResize();
 		});
@@ -102,52 +101,6 @@ var Core = {
 	
 	nullAlt: function() {
 		$("img[alt='null'], img[alt='Null'], img[alt='NULL']").attr("alt", "");
-	},
-
-	findToday: function(testDay) {
-		var today, d, m, yyyy;
-		if (!testDay) {
-			today = new Date();
-			d = today.getDate();
-			m = today.getMonth() + 1;
-			yyyy = today.getFullYear();
-			today = m + "/" + d + "/" + yyyy;
-		} else {
-			today = testDay;
-		}
-		return today;
-	},
-
-	buildHours: function() {
-		var loc, name, thisDay, msg;
-		loc = $('[data-location-hours]');
-		msg = "unavailable";
-		$.ajax({
-			cache: false,
-			url: "/wp-content/themes/libraries/hours.json",
-			dataType: "json"
-		})
-			.done(function (json) {
-				$.each(loc, function() {
-					// get the name of this library
-					name = $(this).data("location-hours");
-					// look up that library's hours in JSON
-					// thisDay = '1/1/1970';
-					thisDay = Core.findToday(thisDay);
-					if (json[name] && json[name].hours[thisDay]) {
-						$(this).text(json[name].hours[thisDay].replace(/:00/g,""));
-					} else {
-						$(this).html(msg);
-					}
-				});
-			})
-			.fail(function (textStatus, error) {
-				var err = textStatus + ", " + error;
-				console.log("Hours lookup failed: " + err);
-				$.each(loc, function() {
-					$(this).html(msg);
-				});
-			});
 	}
 	
 }
