@@ -147,11 +147,11 @@ function twentytwelve_scripts_styles() {
 
 	/* Page-specific JS & CSS */
 
-	if (!is_front_page()) {
+	if (!is_front_page() || is_child_theme()) {
 		wp_enqueue_script('productionJS');
 	}
 
-	if (is_front_page()) {
+	if (is_front_page() && !is_child_theme()) {
 		wp_enqueue_script('homeJS');
 	}
 
