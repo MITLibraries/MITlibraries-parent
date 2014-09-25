@@ -3,19 +3,26 @@
 //
 
 $(function(){
+	// Use WP API, don't cache requests
+	$.ajax({
+		cache: false,
+		url: '/news/wp-json/posts',
+		dataType: "json"
+	})
+	.done(function(json){
+		// Empty posts Arr
+		var postsArr = [];
+		for (var i = 0; i < json.length; i++) {
+			// Each post
+			var post = json[i];
+			// Get the username for each post
+			var user = post.author.username;
+			if (user === 'mit-admin') {
+				// Create an array of posts from a single user
+				postsArr.push(post);
+			}
+		}
 
-	$.getJSON('/news/wp-json/posts')
-		.done(function(data){
-			// Empty posts Arr
-			var postsArr = [];
-			for (var i = 0; i < data.length; i++) {
-				// Each post
-				var post = data[i];
-				// Get the username for each post
-				var user = post.author.username;
-				if (user === 'mit-admin') {
-					// Create an array of posts from a single user
-					postsArr.push(post);
 				}
 			}
 			console.log(postsArr);
