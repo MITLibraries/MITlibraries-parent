@@ -107,9 +107,13 @@ $(function(){
 			);
 
 			var newsPostsTemplate = newsPostsCompiled(postsArr[i]);
-			$('#home-posts-news > .flex-container').append(newsPostsTemplate);
+			$('#home-posts-news > .flex-container').append(newsPostsTemplate).trigger('news-loaded');
 		};
 
 	});
-
+	
+});
+// Remove HTML "loading" element
+$(document).on('news-loaded', function(){
+	$('.spinner').remove();
 });

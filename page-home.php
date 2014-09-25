@@ -193,7 +193,16 @@
 		<div class="col-2 flex-item">
 			<div id="home-posts-news" class="news-events">
 				<h2>News &amp; events</h2>
-				<div class="flex-container"></div>
+				<div class="flex-container">
+					<!-- loading element -->
+					<div class="spinner">
+						<div class="rect1"></div>
+						<div class="rect2"></div>
+						<div class="rect3"></div>
+						<div class="rect4"></div>
+						<div class="rect5"></div>
+					</div>
+				</div>
 				<a href="/news" class="button-primary">All news &amp; events</a>
 			</div><!-- end div.news-events -->
 			<div class="guides-experts">
