@@ -18,5 +18,9 @@ module.exports = {
   map: {
     src: 'js/build/map.js',
     dest: 'js/build/map.min.js'
+  },
+  termHours: {
+    src: 'js/build/term-hours.js',
+    dest: 'js/build/term-hours.min.js'
   }
 }

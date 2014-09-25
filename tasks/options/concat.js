@@ -1,12 +1,12 @@
 module.exports = {
   dist: {
     src: [
-      'js/libs/*.js',
       'js/dev.js',
       'js/core.js',
       'js/ga_links.js',
       'js/menu.toggle.js',
-      'js/make/*.js'
+      'js/libs/*.js',
+      'js/hours-today-location.js'
     ],
     dest: 'js/build/production.js'
   },
@@ -44,5 +44,14 @@ module.exports = {
   map: {
     src: 'js/map.js',
     dest: 'js/build/map.js'
+  },
+  termHours: {
+    src: [
+      'js/libs/underscrore.js',
+      'js/libs/moment.min.js',
+      'js/libs/twix.min.js',
+      'js/page-term-hours.js'
+    ],
+    dest: 'js/build/term-hours.js'
   }
 }
