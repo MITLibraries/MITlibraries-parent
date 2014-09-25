@@ -63,7 +63,7 @@ $(function(){
 
 				var hoursTodayTemplate = hoursTodayCompiled(locationHrs);
 
-				locSelector.append(hoursTodayTemplate)
+				locSelector.append(hoursTodayTemplate.replace(/:00/g,""));
 
 			});
 		}
