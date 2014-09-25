@@ -1,6 +1,8 @@
 // Build today's hours on individual location pages
 $(function(){
-	var locSelector = $('[data-location-hours]');
+	var locSelector = $('[data-location-hours]'),
+			apptOnlyLoc = ['Document Services', 'Library Storage Annex'],
+			apptOnly;
 	if (locSelector.length) {
 		// Today
 		var today, d, m, yyyy;
@@ -64,6 +66,10 @@ $(function(){
 				var hoursTodayTemplate = hoursTodayCompiled(locationHrs);
 
 				locSelector.append(hoursTodayTemplate.replace(/:00/g,""));
+
+				if (apptOnlyLoc.indexOf(location) !== -1) {
+					locSelector.append(' (by appointment only)');
+				}
 
 			});
 		}
