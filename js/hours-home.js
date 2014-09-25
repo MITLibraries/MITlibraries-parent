@@ -81,7 +81,7 @@ $(function(){
 			};
 			// Add each location hours...
 			$('.location .hours').each(function() {
-				$(this).append(hoursArr[0].replace(/:00/g,"")+' <span class="today">today</today>');
+				$(this).append(hoursArr[0].replace(/:00/g,"").replace(/12am/g,"midnight")+' <span class="today">today</today>');
 				// And shift off from the array
 				hoursArr.shift();
 			});

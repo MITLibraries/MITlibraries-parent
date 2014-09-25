@@ -65,7 +65,7 @@ $(function(){
 
 				var hoursTodayTemplate = hoursTodayCompiled(locationHrs);
 
-				locSelector.append(hoursTodayTemplate.replace(/:00/g,""));
+				locSelector.append(hoursTodayTemplate.replace(/:00/g,"").replace(/12am/g,"midnight"));
 
 				if (apptOnlyLoc.indexOf(location) !== -1) {
 					locSelector.append(' (by appointment only)');
