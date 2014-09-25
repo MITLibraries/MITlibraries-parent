@@ -60,7 +60,7 @@ $(function(){
 
 				// The template for today's hours
 				var hoursTodayCompiled = _.template(
-						todayOpen + ' - ' + todayClosed
+						todayOpen + '-' + todayClosed
 				);
 
 				var hoursTodayTemplate = hoursTodayCompiled(locationHrs);
