@@ -269,6 +269,9 @@
 			@include bp-tablet--landscape {
 				flex-wrap: nowrap;
 			}
+			@include bp-tablet--portrait {
+				min-height: 245px; // Content loaded w/ Ajax
+			}
 		}
 		.button-primary {
 			margin: 1em 1.5em 0;
