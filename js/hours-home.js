@@ -78,16 +78,16 @@ $(function(){
 				var hoursTodayTemplate = hoursTodayCompiled(locations[i]);
 				// Push these to the hoursArr array
 				hoursArr.push(hoursTodayTemplate);
-				// Add a comma if 24/7 space
-				$('.hours-locations .location').has('.special').each(function(){
-					$('.today', this).append(',');
-				});
 			};
 			// Add each location hours...
 			$('.location .hours').each(function() {
 				$(this).append(hoursArr[0]);
 				// And shift off from the array
 				hoursArr.shift();
+			});
+			// Add a comma if 24/7 space
+			$('.hours-locations .location').has('.special').each(function(){
+				$('.today', this).append(',');
 			});
 		})
 		.fail(function(textStatus, error) {
