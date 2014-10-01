@@ -1,5 +1,5 @@
 // Build today's hours on individual location pages
-$(function(){
+$(function buildLocHours(){
 	var locSelector = $('[data-location-hours]'),
 			apptOnlyLoc = ['Document Services', 'Library Storage Annex'],
 			apptOnly,
@@ -83,7 +83,6 @@ $(function(){
 				if (apptOnlyLoc.indexOf(location) !== -1) {
 					locSelector.append(' (by appointment only)');
 				}
-
 			})
 			.fail(function(textStatus, error) {
 				// Show link to /hours if Ajax request fails
