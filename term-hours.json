@@ -459,14 +459,14 @@
 						{
 							"date" : "10/13/2014",
 							"closedAll" : false,
-							"open" : "12:00pm",
-							"closed" : "12:00am"
+							"open" : "closed",
+							"closed" : "closed"
 						},
 						{
 							"date" : "11/11/2014",
 							"closedAll" : false,
-							"open" : "12:00pm",
-							"closed" : "12:00am"
+							"open" : "closed",
+							"closed" : "closed"
 						},
 						{
 							"date" : "11/27/2014",
@@ -514,16 +514,28 @@
 					},
 					"exceptions" : [
 						{
+							"date" : "10/7/2014",
+							"closedAll" : false,
+							"open" : "9:00am",
+							"closed" : "4:00pm"
+						},
+						{
+							"date" : "10/8/2014",
+							"closedAll" : false,
+							"open" : "10:00am",
+							"closed" : "5:00pm"
+						},
+						{
 							"date" : "10/13/2014",
 							"closedAll" : false,
-							"open" : "12:00pm",
-							"closed" : "12:00am"
+							"open" : "closed",
+							"closed" : "closed"
 						},
 						{
 							"date" : "11/11/2014",
 							"closedAll" : false,
-							"open" : "12:00pm",
-							"closed" : "12:00am"
+							"open" : "closed",
+							"closed" : "closed"
 						},
 						{
 							"date" : "11/27/2014",
@@ -538,38 +550,7 @@
 							"closed" : "closed"
 						}
 					]
-				},
-				{
-					"locationName" : "Information Intersection at Stata Center",
-					"monday" : {
-						"open" : "",
-						"closed" : ""
-					},
-					"tuesday" : {
-						"open" : "",
-						"closed" : ""
-					},
-					"wednesday" : {
-						"open" : "",
-						"closed" : ""
-					},
-					"thursday" : {
-						"open" : "",
-						"closed" : ""
-					},
-					"friday" : {
-						"open" : "",
-						"closed" : ""
-					},
-					"saturday" : {
-						"open" : "",
-						"closed" : ""
-					},
-					"sunday" : {
-						"open" : "",
-						"closed" : ""
-					}
-				}	
+				}
 			]
 		}
 	]
