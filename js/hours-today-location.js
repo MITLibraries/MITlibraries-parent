@@ -18,8 +18,6 @@ $(function(){
 		
 		var addDay = moment().add(1, 'days').format('M/DD/YYYY');
 
-		var location = locSelector.data('location-hours');
-
 		$.ajax({
 				cache: false,
 				url: "/wp-content/themes/libraries/term-hours.json",
@@ -42,32 +40,38 @@ $(function(){
 				};
 				// Active term locations
 				var locations = theTerm.locations;
-				// The location
-				var locationHrs = _.findWhere(theTerm.locations, {"locationName" : location});
-				// Empty exceptions arr for each location
-				var exceptionsArr = [];
-				// Find the first exception that matches today's date
-				var exceptions = _.findWhere(locationHrs.exceptions, {"date" : today});
-				// Set the open/closed hours if there is an exception...
-				if (exceptions != undefined) {
-					var todayOpen = '<%= '+'"'+exceptions.open+'"'+' %>';
-					var todayClosed = '<%= '+'"'+exceptions.closed+'"'+' %>';
-				}
-				// or else use today's default hours
-				else {
-					var todayOpen = '<%= '+day+'.open %>';
-					var todayClosed = '<%= '+day+'.closed %>';
-				}
+				// Each location
+				locSelector.each(function(){
 
-				// The template for today's hours
-				var hoursTodayCompiled = _.template(
-						todayOpen + '-' + todayClosed
-				);
+					var location = $(this).data('location-hours');
 
-				var hoursTodayTemplate = hoursTodayCompiled(locationHrs);
+					// The location
+					var locationHrs = _.findWhere(theTerm.locations, {"locationName" : location});
+					// Empty exceptions arr for each location
+					var exceptionsArr = [];
+					// Find the first exception that matches today's date
+					var exceptions = _.findWhere(locationHrs.exceptions, {"date" : today});
+					// Set the open/closed hours if there is an exception...
+					if (exceptions != undefined) {
+						var todayOpen = '<%= '+'"'+exceptions.open+'"'+' %>';
+						var todayClosed = '<%= '+'"'+exceptions.closed+'"'+' %>';
+					}
+					// or else use today's default hours
+					else {
+						var todayOpen = '<%= '+day+'.open %>';
+						var todayClosed = '<%= '+day+'.closed %>';
+					}
 
-				locSelector.append(hoursTodayTemplate.replace(/:00/g,"").replace(/12am/g,"midnight"));
+					// The template for today's hours
+					var hoursTodayCompiled = _.template(
+							todayOpen + '-' + todayClosed
+					);
 
+					var hoursTodayTemplate = hoursTodayCompiled(locationHrs);
+
+					$(this).append(hoursTodayTemplate.replace(/:00/g,"").replace(/12am/g,"midnight"));
+
+				});
 				// If location hours are "by appoinment only"
 				if (apptOnlyLoc.indexOf(location) !== -1) {
 					locSelector.append(' (by appointment only)');
