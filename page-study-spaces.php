@@ -89,7 +89,6 @@ get_header(); ?>
 							$description = get_the_content();
 							
 							$temp = $post;
-							$hoursToday = getHoursToday($locationId);
 							$post = $temp;
 							
 
