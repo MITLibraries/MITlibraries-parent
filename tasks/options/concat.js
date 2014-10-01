@@ -6,7 +6,7 @@ module.exports = {
       'js/ga_links.js',
       'js/menu.toggle.js',
       'js/libs/*.js',
-      'js/hours-today-location.js'
+      'js/hours-today.js'
     ],
     dest: 'js/build/production.js'
   },
@@ -16,7 +16,7 @@ module.exports = {
       'js/search-ie.js',
       'js/search.js',
       'js/libs/*.js',
-      'js/hours-home.js',
+      'js/hours-today.js',
       'js/news-home.js',
       'js/guides-home.js',
       'js/experts-home.js',
