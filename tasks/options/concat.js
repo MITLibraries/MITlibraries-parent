@@ -17,6 +17,7 @@ module.exports = {
       'js/search.js',
       'js/libs/*.js',
       'js/hours-today.js',
+      'js/hours-home.js',
       'js/news-home.js',
       'js/guides-home.js',
       'js/experts-home.js',
