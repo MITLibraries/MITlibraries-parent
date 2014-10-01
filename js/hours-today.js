@@ -76,12 +76,27 @@ $(function buildLocHours(){
 
 					hoursTodayTemplate = hoursTodayCompiled(locationHrs);
 
-					$(this).append(hoursTodayTemplate.replace(/:00/g,"").replace(/12am/g,"midnight"));
+					// TODO: Clean this up!
+					if (hoursTodayTemplate !== 'closed-closed') {
+						$(this).append(hoursTodayTemplate.replace(/:00/g,"").replace(/12am/g,"midnight"));
+					}
+					else {
+						$(this).append('Closed');
+					}
+
+					if ($('body.home').length && hoursTodayTemplate !== 'closed-closed') {
+						$(this).append(', today');
+					}
+
+					if ($('body.home').length && hoursTodayTemplate === 'closed-closed') {
+						$(this).append(' today');
+					}
 
 					// If location hours are "by appoinment only"
 					if (apptOnlyLoc.indexOf(location) !== -1) {
 						locSelector.append(' (by appointment only)');
 					}
+
 				});
 				
 			})
