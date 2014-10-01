@@ -32,7 +32,6 @@
 	$study24 = get_field("study_24");
 
 	$temp = $post;
-	$hasHours = hasHours($locationId, date("Y-m-d"));
 	$post = $temp;
 	
 	
