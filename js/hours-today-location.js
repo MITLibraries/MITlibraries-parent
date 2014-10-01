@@ -3,6 +3,7 @@ $(function(){
 	var locSelector = $('[data-location-hours]'),
 			apptOnlyLoc = ['Document Services', 'Library Storage Annex'],
 			apptOnly;
+	// If the selector exists
 	if (locSelector.length) {
 		// Today
 		var today, d, m, yyyy;
@@ -67,6 +68,7 @@ $(function(){
 
 				locSelector.append(hoursTodayTemplate.replace(/:00/g,"").replace(/12am/g,"midnight"));
 
+				// If location hours are "by appoinment only"
 				if (apptOnlyLoc.indexOf(location) !== -1) {
 					locSelector.append(' (by appointment only)');
 				}
