@@ -538,7 +538,38 @@
 							"closed" : "closed"
 						}
 					]
-				}
+				},
+				{
+					"locationName" : "Information Intersection at Stata Center",
+					"monday" : {
+						"open" : "",
+						"closed" : ""
+					},
+					"tuesday" : {
+						"open" : "",
+						"closed" : ""
+					},
+					"wednesday" : {
+						"open" : "",
+						"closed" : ""
+					},
+					"thursday" : {
+						"open" : "",
+						"closed" : ""
+					},
+					"friday" : {
+						"open" : "",
+						"closed" : ""
+					},
+					"saturday" : {
+						"open" : "",
+						"closed" : ""
+					},
+					"sunday" : {
+						"open" : "",
+						"closed" : ""
+					}
+				}	
 			]
 		}
 	]
