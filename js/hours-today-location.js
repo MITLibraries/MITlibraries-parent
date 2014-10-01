@@ -77,6 +77,12 @@ $(function(){
 					locSelector.append(' (by appointment only)');
 				}
 
+			})
+			.fail(function(textStatus, error) {
+				// Show link to /hours if Ajax request fails
+				locSelector.each(function(){
+					$(this).append('<a href="/hours">View Hours</a>');
+				});
 			});
 		}
 });
