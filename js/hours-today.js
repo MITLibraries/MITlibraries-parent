@@ -84,12 +84,12 @@ $(function buildLocHours(){
 						$(this).append('Closed');
 					}
 
-					if ($('body.home').length && hoursTodayTemplate !== 'closed-closed') {
-						$(this).append(', today');
+					if ($('body.home').length) {
+						$(this).append(' today');
 					}
 
-					if ($('body.home').length && hoursTodayTemplate === 'closed-closed') {
-						$(this).append(' today');
+					if ($('body.home').length && $('+ .special', this).length) {
+						$(this).append(',');
 					}
 
 					// If location hours are "by appoinment only"
