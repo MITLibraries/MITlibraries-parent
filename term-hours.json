@@ -514,18 +514,6 @@
 					},
 					"exceptions" : [
 						{
-							"date" : "10/7/2014",
-							"closedAll" : false,
-							"open" : "9:00am",
-							"closed" : "4:00pm"
-						},
-						{
-							"date" : "10/8/2014",
-							"closedAll" : false,
-							"open" : "10:00am",
-							"closed" : "5:00pm"
-						},
-						{
 							"date" : "10/13/2014",
 							"closedAll" : false,
 							"open" : "closed",
