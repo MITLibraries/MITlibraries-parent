@@ -5,6 +5,23 @@
 	width: 160px;
 }
 .page-hours {
+	.mobileDay,
+	.mobileToday {
+		display: none;
+	}
+	.fullHourDay {
+		@include bp-mobile--only {
+			display: none;
+		}
+		display: block;
+		font-size: 0.9rem; // Prevent hours from busting table cells
+	}
+	.mobileHourDay {
+		@include bp-mobile--only {
+			display: block;
+		}
+		display: none;
+	}
 	// Datepicker
 	.gldp-default {
 		@include bp-mobile--only {
