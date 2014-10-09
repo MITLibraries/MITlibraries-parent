@@ -1192,29 +1192,6 @@ a.comment-edit-link:hover {
 	color: red;
 }
 
-
-/* =Front page template
--------------------------------------------------------------- */
-
-.entry-page-image {
-	margin-bottom: 14px;
-	margin-bottom: 1rem;
-}
-.template-front-page .site-content article {
-	border: 0;
-	margin-bottom: 0;
-}
-
-/* =Plugins
------------------------------------------------ */
-
-img#wpstats {
-	display: block;
-	margin: 0 auto 24px;
-	margin: 0 auto 1.714285714rem;
-}
-
-
 /* =Media queries
 -------------------------------------------------------------- */
 
