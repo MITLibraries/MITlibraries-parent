@@ -146,19 +146,19 @@
 				<div class="location">
 					<a href="/barker" class="img-loc barker"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!barker-library" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
+						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours" data-location-hours="Barker Library"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!barker-library" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
 					</div>
 				</div>
 				<div class="location">
 					<a href="/dewey" class="img-loc dewey"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!dewey-library" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
+						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours" data-location-hours="Dewey Library"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!dewey-library" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
 					</div>
 				</div>
 				<div class="location">
 					<a href="/hayden" class="img-loc hayden"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
+						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours" data-location-hours="Hayden Library"></div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
 				</div>
 				<a href="#0" class="show-more hidden-non-mobile">
@@ -167,19 +167,19 @@
 				<div class="location hidden-mobile inactive-mobile">
 					<a href="/archives" class="img-loc archives"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours"></div><div class="location-info"><a href="/locations/#!institute-archives-special-collections" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone"><span class="number">617-253-5136</span></a></div>
+						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours" data-location-hours="Institute Archives & Special Collections"></div><div class="location-info"><a href="/locations/#!institute-archives-special-collections" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone"><span class="number">617-253-5136</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
 					<a href="/music" class="img-loc lewis"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/music">Lewis Music Library</a></h3><div class="hours"></div><div class="location-info"><a href="/locations/#!lewis-music-library" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
+						<h3><a class="name-location" href="/music">Lewis Music Library</a></h3><div class="hours" data-location-hours="Lewis Music Library"></div><div class="location-info"><a href="/locations/#!lewis-music-library" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
 					<a href="/rotch" class="img-loc rotch"></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours"></div><div class="location-info"><a href="/locations/#!rotch-library" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone"><span class="number">617-258-5592</span></a></div>
+						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours" data-location-hours="Rotch Library"></div><div class="location-info"><a href="/locations/#!rotch-library" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone"><span class="number">617-258-5592</span></a></div>
 					</div>
 				</div>
 				<a href="/hours" class="button-primary">All hours &amp; locations</a>
@@ -191,57 +191,17 @@
 			</div><!-- end div.hours-locations -->
 		</div><!-- end div.col-1 -->
 		<div class="col-2 flex-item">
-			<div class="news-events">
+			<div id="home-posts-news" class="news-events">
 				<h2>News &amp; events</h2>
 				<div class="flex-container">
-					<?php
-						switch_to_blog(7); 
-						$args = array(
-										'no_found_rows' => true,
-										'orderby' => 'date',
-										'order' => 'DESC',
-										'post_type' => 'post',
-										'posts_per_page' => 2,
-										'author_name' => 'mit-admin'
-									);							
-						$newsPosts = new WP_Query( $args );
-						while ( $newsPosts->have_posts() ) : $newsPosts->the_post();
-						$postSecondTitle = cf('homepage_post_title');
-						$eventPost = cf('is_event') == true;
-						$eventRawDate = cf('event_date');
-						$eventDate = date("l, F j", strtotime($eventRawDate));
-						$eventStartTime = cf('event_start_time');
-						$eventEndTime = cf('event_end_time');
-					?>
-					<a class="post-news flex-container" href="<?php the_permalink(); ?>">
-						<div class="excerpt-news">
-							<div class="category-post">
-							<?php
-								if($eventPost) {
-									echo 'Event';
-								}
-								else {
-									echo 'News';
-								}
-							?>
-							</div>
-							<h3 class="title-post"> <?php if ($postSecondTitle != '') { echo $postSecondTitle; } else the_title(); ?></h3>
-							<?php
-								if($eventPost && $eventDate != '') {
-									echo '<svg class="icon-calendar" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="14" height="15" viewBox="0 0 14 15" enable-background="new 0 0 14 15" xml:space="preserve"><path d="M0 4V3c0-0.6 0.4-1 1-1h1V1c0-0.6 0.4-1 1-1 0.6 0 1 0.4 1 1v1h6V1c0-0.6 0.4-1 1-1 0.6 0 1 0.4 1 1v1h1c0.6 0 1 0.4 1 1v1H0zM14 5v9c0 0.6-0.4 1-1 1H1c-0.6 0-1-0.4-1-1V5H14zM4 7H2v2h2V7zM4 11H2v2h2V11zM8 7H6v2h2V7zM8 11H6v2h2V11zM12 7h-2v2h2V7zM12 11h-2v2h2V11z"/></svg><span class="date-event">'.$eventDate.'</span>';
-									if($eventStartTime != '' && $eventEndTime != '') {
-										echo ' <span class="time-event">'.$eventStartTime.' - '.$eventEndTime.'</span>';
-									}
-								}
-							?>
-						</div><!-- end div.excerpt-news -->
-						<div class="image"></div>
-					</a><!-- end a.post-news -->
-					<?php
-						endwhile;
-						wp_reset_postdata();
-						switch_to_blog(1);
-					?>
+					<!-- loading element -->
+					<div class="spinner">
+						<div class="rect1"></div>
+						<div class="rect2"></div>
+						<div class="rect3"></div>
+						<div class="rect4"></div>
+						<div class="rect5"></div>
+					</div>
 				</div>
 				<a href="/news" class="button-primary">All news &amp; events</a>
 			</div><!-- end div.news-events -->

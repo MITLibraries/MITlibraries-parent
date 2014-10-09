@@ -15,7 +15,7 @@ table {border-collapse:collapse; border-spacing:0;}
 Main CSS
 */
 
-.inner {
+.inner { // Affects some pages, including /hours. TODO: make this an @extend?
 	position: relative;
 	display: block;
 }
@@ -431,85 +431,6 @@ body:not(.page-site-search) #cse-search-box  input[type=text] {
 #cse-search-box input[type=submit] {
 	height: 30px;
 	vertical-align: top;
-}
-
-/** Spanning messages in calendar **/
-
-.message {
-	position: absolute;
-	top: 10px;
-	border: 1px solid #000;
-	background: #333;
-	color: #fff;
-	padding: 3px 13px 3px 3px;
-	text-align: center;
-	z-index: 20;
-}
-
-.msgSpan1 {
-	width: 83px;
-}
-
-.msgSpan2 {
-	width: 188px;
-}
-
-.msgSpan3 {
-	width: 293px;
-}
-
-.msgSpan4 {
-	width: 398px;
-}
-
-.msgSpan5 {
-	width: 503px;
-}
-
-.msgSpan6 {
-	width: 608px;
-}
-
-.msgSpan7 {
-	width: 713px;
-}
-
-.msgContinued {
-	left: 0px;
-	padding-left: 13px;
-}
-
-.msgEnds {
-	padding-right: 3px;
-}
-
-.msgSpan7.msgContinued {
-	padding-right: 3px;
-}
-
-
-.mobileDay, .mobileToday {
-	display: none;
-}
-
-.fullHourDay {
-	display: block;
-}
-.mobileHourDay {
-	display: none;
-}
-
-
-.uber-close {
-	line-height: 24px !important;
-	font-size: 24px !important;
-	background: #333 !important;
-	padding: 0px 0px 0px 10px !important;
-	display: none !important;
-}
-
-.megaHover .uber-close {
-	display: block !important;
 }
 
 .sideContent .videoRight {

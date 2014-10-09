@@ -111,17 +111,24 @@ $thisWeek = date("Y-n-j");
 			<div id="hourCalendar" class="cal-hours"></div>
 		</div>
 
-	</div>		
+	</div><!-- end div.title-page -->
 	
 	<div id="content" class="content-main">
 
 		<div id="hourContent" class="content-page">
 		
 			<div id="hourNav">
-				<div id="prevWeek"><i class="icon-arrow-left"></i> <a href="<?php echo $path."?d=".$prevWeek; ?>">Previous week</a></div>
-				<div id="thisWeek"><a href="<?php echo $path."?d=".$thisWeek; ?>"">This week</a></div>
-				<div id="nextWeek"><a href="<?php echo $path."?d=".$nextWeek; ?>"">Next week</a> <i class="icon-arrow-right"></i></div>
+				<div id="prevWeek">
+					<i class="icon-arrow-left"></i>
+					<a href="<?php echo $path."?d=".$prevWeek; ?>">Previous week</a>
+				</div>
+				<div id="thisWeek">
+					<a href="<?php echo $path."?d=".$thisWeek; ?>"">This week</a></div>
+				<div id="nextWeek"><a href="<?php echo $path."?d=".$nextWeek; ?>"">Next week</a>
+					<i class="icon-arrow-right"></i>
+				</div>
 			</div>
+
 			<table class="hrList">
 				<thead>
 					<th class="name">Locations</th>
@@ -245,18 +252,19 @@ $thisWeek = date("Y-n-j");
 					<?php get_template_part( 'content', 'hour-row' ); ?>
 				<?php endwhile; 	?>
 				</tbody>
-			</table>
-		</div>
+			</table><!-- end table.hrlist -->
 
-		<div class="locations-more">
-			<h3>Other locations</h2>
-			<h4>Digital Instruction Resource Center (DIRC)</h3>
-			<a href="/locations/#!digital-instruction-resource-center-dirc">Map: 14N-132</a>
-			<h4>Information Intersection at Stata Center</h3>
-			<a href="/locations/#!information-intersection">Map: 32-Student Street</a>
-		</div>
+			<div class="locations-more">
+				<h3>Other locations</h3>
+				<h4>Digital Instruction Resource Center (DIRC)</h4>
+				<a href="/locations/#!digital-instruction-resource-center-dirc">Map: 14N-132</a>
+				<h4>Information Intersection at Stata Center</h4>
+				<a href="/locations/#!information-intersection">Map: 32-Student Street</a>
+			</div>
 
-	</div> <!-- end div.allContent -->
+		</div><!-- end div.content-page -->
+
+	</div><!-- end div.content-main -->
 
 </div> <!-- end div#stage -->
 

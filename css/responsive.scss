@@ -303,16 +303,6 @@
 	}
 	.libraryContent a[href^=tel] {
 		color: #424286;
-	}	
-	.fullHourDay {
-		display: none;
-	}
-	.mobileHourDay {
-		display: block;
-	}	
-	
-	.gldp-default {
-		display: none;
 	}
 	
 	.nameHolder {
@@ -322,45 +312,6 @@
 	.tdInside {
 		top: 0px;
 		left: 0px;
-	}
-	
-	.message {
-		top: 0px;
-		padding: 3px 13px 3px 3px;
-		text-align: center;
-	}
-
-	.msgSpan1 {
-		width: 33px;
-	}
-
-	.msgSpan2 {
-		width: 76px;
-	}
-
-	.msgSpan3 {
-		width: 119px;
-	}
-
-	.msgSpan4 {
-		width: 152px;
-	}
-
-	.msgSpan5 {
-		width: 195px;
-	}
-
-	.msgSpan6 {
-		width: 238px;
-	}
-
-	.msgSpan7 {
-		width: 261px;
-	}	
-	
-	#megaMenu .megaMenu > li > a {
-		color: #fff;
-		background: transparent url(../images/arrow-white.png) no-repeat right 10px !important;
 	}
 
 	/* Flexboxes and tabs */

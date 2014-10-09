@@ -127,6 +127,10 @@ html.no-js .js-hidden {
 	display: flex;
 }
 
+.space-between {
+	justify-content: space-between;
+}
+
 .no-flexbox.no-flexboxlegacy {
 	.flex-clear {
 		clear: both;
@@ -173,6 +177,30 @@ html.no-js .js-hidden {
 		@include rem-first(padding, 1);
 	}
 }
+
+// .nav-page--dynamic {
+// 	border-left: 4px solid $color-hours-locations;
+// 	font-size: 80%;
+// 	margin-left: 1em;
+// 	margin-bottom: 530px;
+// 	padding-left: 1em;
+// 	position: fixed;
+// 	max-width: 22em;
+// 	z-index: map-get($zindex, main);
+// 	a {
+// 		color: #111;
+// 		display: block;
+// 		overflow: hidden;
+// 		text-overflow: ellipsis;
+// 		transition: background 0.1s ease,
+// 								color 0.1s ease;
+// 		white-space: nowrap;
+// 		&:hover {
+// 			background: $color-hours-locations;
+// 			color: #fff;
+// 		}
+// 	}
+// }
 
 .hidden-mobile {
 	display: none;

@@ -1,0 +1,545 @@
+{
+	"terms" : [
+		{
+			"termName" : "Fall 2014",
+			"termStart": "9/2/2014",
+			"termEnd" : "12/19/2014",
+			"locations" : [
+				{
+					"locationName" : "Barker Library",
+					"monday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"tuesday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"wednesday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"thursday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"friday" : {
+						"open" : "8:30am",
+						"closed" : "6:00pm"
+					},
+					"saturday" : {
+						"open" : "11:00am",
+						"closed" : "7:00pm"
+					},
+					"sunday" : {
+						"open" : "11:00am",
+						"closed" : "11:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "11:00pm"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "11:00pm"
+						},
+						{
+							"date" : "11/26/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "5:00pm"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "12/19/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "6:00pm"
+						}
+					]
+				},
+				{
+					"locationName" : "Dewey Library",
+					"monday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"tuesday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"wednesday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"thursday" : {
+						"open" : "8:30am",
+						"closed" : "11:00pm"
+					},
+					"friday" : {
+						"open" : "8:30am",
+						"closed" : "6:00pm"
+					},
+					"saturday" : {
+						"open" : "11:00am",
+						"closed" : "7:00pm"
+					},
+					"sunday" : {
+						"open" : "11:00am",
+						"closed" : "11:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "11:00pm"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "11:00pm"
+						},
+						{
+							"date" : "11/26/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "5:00pm"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "12/19/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "6:00pm"
+						}
+					]
+				},
+				{
+					"locationName" : "Hayden Library",
+					"monday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"tuesday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"wednesday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"thursday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"friday" : {
+						"open" : "8:30am",
+						"closed" : "8:00pm"
+					},
+					"saturday" : {
+						"open" : "11:00am",
+						"closed" : "7:00pm"
+					},
+					"sunday" : {
+						"open" : "11:00am",
+						"closed" : "12:00am"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "12:00am"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "12:00am"
+						},
+						{
+							"date" : "11/26/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "5:00pm"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "12/19/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "6:00pm"
+						}
+					]
+				},
+				{
+					"locationName" : "Institute Archives & Special Collections",
+					"monday" : {
+						"open" : "10:00am",
+						"closed" : "4:00pm"
+					},
+					"tuesday" : {
+						"open" : "10:00am",
+						"closed" : "4:00pm"
+					},
+					"wednesday" : {
+						"open" : "10:00am",
+						"closed" : "4:00pm"
+					},
+					"thursday" : {
+						"open" : "10:00am",
+						"closed" : "4:00pm"
+					},
+					"friday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"saturday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"sunday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/2/2014",
+							"closedAll" : false,
+							"open" : "10:00am",
+							"closed" : "12:00pm"
+						},
+						{
+							"date" : "10/7/2014",
+							"closedAll" : false,
+							"open" : "1:00pm",
+							"closed" : "4:00pm"
+						},
+						{
+							"date" : "10/13/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "10/15/2014",
+							"closedAll" : false,
+							"open" : "1:00pm",
+							"closed" : "4:00pm"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						}
+					]
+				},
+				{
+					"locationName" : "Lewis Music Library",
+					"monday" : {
+						"open" : "9:00am",
+						"closed" : "9:00pm"
+					},
+					"tuesday" : {
+						"open" : "9:00am",
+						"closed" : "9:00pm"
+					},
+					"wednesday" : {
+						"open" : "9:00am",
+						"closed" : "9:00pm"
+					},
+					"thursday" : {
+						"open" : "9:00am",
+						"closed" : "9:00pm"
+					},
+					"friday" : {
+						"open" : "9:00am",
+						"closed" : "6:00pm"
+					},
+					"saturday" : {
+						"open" : "1:00pm",
+						"closed" : "6:00pm"
+					},
+					"sunday" : {
+						"open" : "2:00pm",
+						"closed" : "9:00pm"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "9:00pm"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "9:00pm"
+						},
+						{
+							"date" : "11/26/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "5:00pm"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "12/19/2014",
+							"closedAll" : false,
+							"open" : "9:00am",
+							"closed" : "6:00pm"
+						}
+					]
+				},
+				{
+					"locationName" : "Rotch Library",
+					"monday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"tuesday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"wednesday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"thursday" : {
+						"open" : "8:30am",
+						"closed" : "12:00am"
+					},
+					"friday" : {
+						"open" : "8:30am",
+						"closed" : "8:00pm"
+					},
+					"saturday" : {
+						"open" : "11:00am",
+						"closed" : "7:00pm"
+					},
+					"sunday" : {
+						"open" : "11:00am",
+						"closed" : "12:00am"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "12:00am"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "12:00pm",
+							"closed" : "12:00am"
+						},
+						{
+							"date" : "11/26/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "5:00pm"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "12/19/2014",
+							"closedAll" : false,
+							"open" : "8:30am",
+							"closed" : "6:00pm"
+						}
+					]
+				},
+				{
+					"locationName" : "Document Services",
+					"monday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"tuesday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"wednesday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"thursday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"friday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"saturday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"sunday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						}
+					]
+				},
+				{
+					"locationName" : "Library Storage Annex",
+					"monday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"tuesday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"wednesday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"thursday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"friday" : {
+						"open" : "9:00am",
+						"closed" : "5:00pm"
+					},
+					"saturday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"sunday" : {
+						"open" : "closed",
+						"closed" : "closed"
+					},
+					"exceptions" : [
+						{
+							"date" : "10/13/2014",
+							"closedAll" : false,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/11/2014",
+							"closedAll" : false,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/27/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						},
+						{
+							"date" : "11/28/2014",
+							"closedAll" : true,
+							"open" : "closed",
+							"closed" : "closed"
+						}
+					]
+				}
+			]
+		}
+	]
+}

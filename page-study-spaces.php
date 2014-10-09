@@ -89,7 +89,6 @@ get_header(); ?>
 							$description = get_the_content();
 							
 							$temp = $post;
-							$hoursToday = getHoursToday($locationId);
 							$post = $temp;
 							
 
@@ -117,11 +116,13 @@ get_header(); ?>
 												<?php echo $phone ?><br/>
 												<?php endif; ?>
 												Show on map: <a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
-												<?php if ($hoursToday != "" && strtolower($hoursToday) != "tba" && strtolower($hoursToday) != "closed"): ?>
-												<span class="hours">Open today<br/>
-												<span data-location-hours="<?php the_title(); ?>"></span></span>
-												<?php endif; ?>
-												<?php if ($reserveUrl != ""): ?>
+												<?php if (get_the_title() !== 'Information Intersection at Stata Center'): ?>
+													<span class="hours">Open today<br/>
+													<span data-location-hours="<?php the_title(); ?>"></span></span>
+												<?php
+													endif;
+													if ($reserveUrl != ""):
+												?>
 												<a class="mobileReserve visible-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 												<?php endif; ?>
 											</div>

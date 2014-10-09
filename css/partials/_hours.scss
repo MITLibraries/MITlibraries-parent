@@ -5,8 +5,28 @@
 	width: 160px;
 }
 .page-hours {
+	.mobileDay,
+	.mobileToday {
+		display: none;
+	}
+	.fullHourDay {
+		@include bp-mobile--only {
+			display: none;
+		}
+		display: block;
+		font-size: 0.9rem; // Prevent hours from busting table cells
+	}
+	.mobileHourDay {
+		@include bp-mobile--only {
+			display: block;
+		}
+		display: none;
+	}
 	// Datepicker
 	.gldp-default {
+		@include bp-mobile--only {
+			display: none;
+		}
 		font-family: 'Open Sans', sans-serif;
 		position: absolute;
 		.core {
@@ -34,7 +54,7 @@
 		}
 	}
 	.locations-more {
-		@include rem-first(margin-bottom, 1.5);
+		@include rem-first--2-values(margin, 1.5, 0);
 	}
 }
 .wrap-cal-hours {
