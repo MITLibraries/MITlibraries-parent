@@ -7,6 +7,9 @@
 .page-hours {
 	// Datepicker
 	.gldp-default {
+		@include bp-mobile--only {
+			display: none;
+		}
 		font-family: 'Open Sans', sans-serif;
 		position: absolute;
 		.core {
