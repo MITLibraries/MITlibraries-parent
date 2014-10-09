@@ -127,6 +127,10 @@ html.no-js .js-hidden {
 	display: flex;
 }
 
+.space-between {
+	justify-content: space-between;
+}
+
 .no-flexbox.no-flexboxlegacy {
 	.flex-clear {
 		clear: both;
