@@ -1289,33 +1289,6 @@ img#wpstats {
 	}
 }
 
-/* Minimum width of 960 pixels. */
-@media screen and (min-width: 960px) {
-	body {
-		background-color: #e6e6e6;
-	}
-	body .site {
-		padding: 0 40px;
-		padding: 0 2.857142857rem;
-		margin-top: 48px;
-		margin-top: 3.428571429rem;
-		margin-bottom: 48px;
-		margin-bottom: 3.428571429rem;
-		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-	}
-	body.custom-background-empty {
-		background-color: #fff;
-	}
-	body.custom-background-empty .site,
-	body.custom-background-white .site {
-		padding: 0;
-		margin-top: 0;
-		margin-bottom: 0;
-		box-shadow: none;
-	}
-}
-
-
 /* =Print
 ----------------------------------------------- */
 
