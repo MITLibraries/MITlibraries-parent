@@ -64,6 +64,32 @@ $color-shadow: hsla(0, 0.0000%, 80.0000%, 1.0000);
 
 $color-link-primary: $blue-royal;
 
+// Color modules
+
+@mixin color-bg--green {
+	background-color: $green-sea;
+}
+
+@mixin color-bg--orange {
+	background-color: $orange-dark;
+}
+
+@mixin color-bg--magenta {
+	background-color: $magenta-dark;
+}
+
+@mixin color-green {
+	color: $green-sea;
+}
+
+@mixin color-orange {
+	color: $orange-sea;
+}
+
+@mixin color-magenta {
+	color: $magenta-sea;
+}
+
 // Homepage Modules
 
 $color-hours-locations: $green-sea;
