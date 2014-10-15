@@ -23,7 +23,10 @@ get_header(); ?>
 				width: 100%;
 			}
 			[class*="swatch-color"] {
+				align-items: center;
+				display: flex;
 				height: 8em;
+				justify-content: center;
 				min-width: 8em;
 			}
 			.swatch-color--000 {
