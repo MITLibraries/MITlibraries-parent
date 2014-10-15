@@ -44,6 +44,18 @@ get_header(); ?>
 			.swatch-color--f3f3f3 {
 				background: #f3f3f3;
 			}
+			.swatch-color--dedede {
+				background: #dedede;
+			}
+			.swatch-color--43926a {
+				background: #43926a;
+			}
+			.swatch-color--f58632 {
+				background: #f58632;
+			}
+			.swatch-color--9c3273 {
+				background: #9c3273;
+			}
 		</style>
 		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
 			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
@@ -80,7 +92,18 @@ get_header(); ?>
 						<div class="swatch-color--f3f3f3">
 							<span class="hex-color">#f3f3f3</span>
 						</div>
-						<div class="swatch-color"></div>
+						<div class="swatch-color--dedede">
+							<span class="hex-color">#dedede</span>
+						</div>
+						<div class="swatch-color--43926a">
+							<span class="hex-color">#43926a</span>
+						</div>
+						<div class="swatch-color--f58632">
+							<span class="hex-color">#f58632</span>
+						</div>
+						<div class="swatch-color--9c3273">
+							<span class="hex-color">9c3273</span>
+						</div>
 					</article>
 					<article id="guide-headings">
 						<h1 class="title-section">Headings</h1>
