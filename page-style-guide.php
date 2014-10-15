@@ -26,6 +26,14 @@ get_header(); ?>
 				height: 8em;
 				min-width: 8em;
 			}
+			.swatch-color--000 {
+				background: #000;
+				color: #f7f7f7;
+			}
+			.swatch-color--111 {
+				background: #111;
+				color: #f7f7f7;
+			}
 			.swatch-color--0088D0 {
 				background: #0088D0;
 			}
@@ -37,6 +45,11 @@ get_header(); ?>
 			}
 			.swatch-color--333 {
 				background: #333;
+				color: #f7f7f7;
+			}
+			.swatch-color--595959 {
+				background: #595959;
+				color: #f7f7f7;
 			}
 			.swatch-color--CCC {
 				background: #CCC;
@@ -46,6 +59,12 @@ get_header(); ?>
 			}
 			.swatch-color--dedede {
 				background: #dedede;
+			}
+			.swatch-color--ede8e2 {
+				background: #ede8e2;
+			}
+			.swatch-color--c6b6a3 {
+				background: #c6b6a3;
 			}
 			.swatch-color--43926a {
 				background: #43926a;
@@ -74,17 +93,17 @@ get_header(); ?>
 				<div class="guide-style">
 					<article id="guide-colors">
 						<h1 class="title-section">Colors</h1>
-						<div class="swatch-color--5889c2">
-							<span class="hex-color">#5889c2</span>
+						<div class="swatch-color--000">
+							<span class="hex-color">#000</span>
 						</div>
-						<div class="swatch-color--0088D0">
-							<span class="hex-color">#0088D0</span>
-						</div>
-						<div class="swatch-color--21759B">
-							<span class="hex-color">#21759B</span>
+						<div class="swatch-color--111">
+							<span class="hex-color">#111</span>
 						</div>
 						<div class="swatch-color--333">
 							<span class="hex-color">#333</span>
+						</div>
+						<div class="swatch-color--595959">
+							<span class="hex-color">#595959</span>
 						</div>
 						<div class="swatch-color--CCC">
 							<span class="hex-color">#CCC</span>
@@ -94,6 +113,21 @@ get_header(); ?>
 						</div>
 						<div class="swatch-color--dedede">
 							<span class="hex-color">#dedede</span>
+						</div>
+						<div class="swatch-color--5889c2">
+							<span class="hex-color">#5889c2</span>
+						</div>
+						<div class="swatch-color--0088D0">
+							<span class="hex-color">#0088D0</span>
+						</div>
+						<div class="swatch-color--21759B">
+							<span class="hex-color">#21759B</span>
+						</div>
+						<div class="swatch-color--ede8e2">
+							<span class="hex-color">#ede8e2</span>
+						</div>
+						<div class="swatch-color--c6b6a3">
+							<span class="hex-color">#c6b6a3</span>
 						</div>
 						<div class="swatch-color--43926a">
 							<span class="hex-color">#43926a</span>
