@@ -68,6 +68,10 @@ $color-link-primary: $blue-royal;
 
 // Color modules
 
+@mixin color-bg--beige {
+	background-color: $beige;
+}
+
 @mixin color-bg--green {
 	background-color: $green-sea;
 }
@@ -78,6 +82,10 @@ $color-link-primary: $blue-royal;
 
 @mixin color-bg--magenta {
 	background-color: $magenta-dark;
+}
+
+@mixin color-black {
+	color: $black;
 }
 
 @mixin color-green {
