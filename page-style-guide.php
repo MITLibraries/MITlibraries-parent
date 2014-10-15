@@ -15,6 +15,35 @@ get_header(); ?>
 			.guide-style .title-section {
 				border-bottom: 5px solid #ccc;
 			}
+			#guide-colors {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			#guide-colors h1 {
+				width: 100%;
+			}
+			[class*="swatch-color"] {
+				height: 8em;
+				min-width: 8em;
+			}
+			.swatch-color--0088D0 {
+				background: #0088D0;
+			}
+			.swatch-color--21759B {
+				background: #21759B;
+			}
+			.swatch-color--5889c2 {
+				background: #5889c2;
+			}
+			.swatch-color--333 {
+				background: #333;
+			}
+			.swatch-color--CCC {
+				background: #CCC;
+			}
+			.swatch-color--f3f3f3 {
+				background: #f3f3f3;
+			}
 		</style>
 		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
 			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
@@ -31,6 +60,28 @@ get_header(); ?>
 			
 			<div class="content-page">
 				<div class="guide-style">
+					<article id="guide-colors">
+						<h1 class="title-section">Colors</h1>
+						<div class="swatch-color--5889c2">
+							<span class="hex-color">#5889c2</span>
+						</div>
+						<div class="swatch-color--0088D0">
+							<span class="hex-color">#0088D0</span>
+						</div>
+						<div class="swatch-color--21759B">
+							<span class="hex-color">#21759B</span>
+						</div>
+						<div class="swatch-color--333">
+							<span class="hex-color">#333</span>
+						</div>
+						<div class="swatch-color--CCC">
+							<span class="hex-color">#CCC</span>
+						</div>
+						<div class="swatch-color--f3f3f3">
+							<span class="hex-color">#f3f3f3</span>
+						</div>
+						<div class="swatch-color"></div>
+					</article>
 					<article id="guide-headings">
 						<h1 class="title-section">Headings</h1>
 						<h1>Heading 1</h1>
