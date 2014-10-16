@@ -105,3 +105,16 @@ $color-link-primary: $blue-royal;
 $color-hours-locations: $green-sea;
 $color-news-events: $orange-dark;
 $color-guides-experts: $magenta-dark;
+
+// Gradients
+
+@mixin gradient-blue {
+	background: #5889c2; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #5889c2 0%, #3fa0c9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#5889c2), color-stop(100%,#3fa0c9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #5889c2 0%,#3fa0c9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #5889c2 0%,#3fa0c9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #5889c2 0%,#3fa0c9 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #5889c2 0%,#3fa0c9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5889c2', endColorstr='#3fa0c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
