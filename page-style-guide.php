@@ -78,6 +78,12 @@ get_header(); ?>
 			.swatch-color--9c3273 {
 				background: #9c3273;
 			}
+			.swatch-color--ffcc33 {
+				background: #ffcc33;
+			}
+			.swatch-color--cca329 {
+				background: #cca329;
+			}
 		</style>
 		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
 			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
@@ -139,7 +145,13 @@ get_header(); ?>
 							<span class="hex-color">#f58632</span>
 						</div>
 						<div class="swatch-color--9c3273">
-							<span class="hex-color">9c3273</span>
+							<span class="hex-color">#9c3273</span>
+						</div>
+						<div class="swatch-color--ffcc33">
+							<div class="hex-color">#ffcc33</div>
+						</div>
+						<div class="swatch-color--cca329">
+							<div class="hex-color">#cca329</div>
 						</div>
 					</article>
 					<article id="guide-headings">
