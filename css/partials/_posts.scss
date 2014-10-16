@@ -1,3 +1,11 @@
-[class*="posts"] {
-	background: $gray-light;
+.content-main [class*="posts"] {
+	@include bp-tablet--portrait {
+		background: $gray-light;
+	}
+}
+
+[class*="posts"] [class*="post"] {
+	@include bp-tablet--portrait {
+		box-shadow: 0 3px 3px $color-shadow;
+	}
 }
