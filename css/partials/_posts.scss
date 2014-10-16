@@ -1,7 +1,7 @@
 .wrap-page > [class*="posts"], // Covers top-level alert posts
 .content-main [class*="posts"] {
 	@include bp-tablet--portrait {
-		background: #f3f3f3;
+		background: $gray-light;
 		border-bottom: 3px solid #dedede;
 		padding: 1.25em;
 	}
