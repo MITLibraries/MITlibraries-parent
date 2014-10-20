@@ -42,6 +42,10 @@ $(function mitlib_alerts(){
 														'</div>' +
 													'</div>';
 				$(alert_template).prependTo('.wrap-page');
+
+				setTimeout(function() {
+				  $('.posts--preview--alerts').removeClass('inactive');
+				}, 300);
 			}
 			
 		}).fail(function(){
