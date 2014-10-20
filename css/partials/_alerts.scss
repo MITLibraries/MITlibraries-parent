@@ -1,0 +1,59 @@
+.posts--preview--alerts {
+	max-height: 1000px;
+	opacity: 1;
+	//text-transform: translateY(0%);
+	transition: border-width 0.3s ease,
+							max-height 0.3s ease, 
+							opacity 0.3s ease,
+							padding-top 0.3s ease,
+							padding-bottom 0.3s ease;
+}
+
+.posts--preview--alerts.inactive {
+	border-width: 0;
+	max-height: 0px;
+	opacity: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	//transform: translateY(-1000%);
+}
+
+.posts--preview--alerts:before {
+	background: #ea4848; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #ea4848 0%, #ed0e0e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#ea4848), color-stop(100%,#ed0e0e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #ea4848 0%,#ed0e0e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #ea4848 0%,#ed0e0e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #ea4848 0%,#ed0e0e 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #ea4848 0%,#ed0e0e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea4848', endColorstr='#ed0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	box-shadow: 0 3px 3px #ccc;
+	color: #fff;
+	content: '';
+	display: block;
+	height: 1em;
+	opacity: 1;
+	transition: box-shadow 0.3s 0.3s ease, // prevents box-shadow from overlaying post div
+							max-height 0.3s ease, 
+							opacity 0.3s ease;
+	width: 100%;
+}
+
+.posts--preview--alerts.inactive:before {
+	box-shadow: 0 0 0 #ccc;
+	max-height: 0px;
+	opacity: 0;
+}
+
+.posts--preview--alerts svg {
+	display: inline-block;
+	fill: #ed0e0e;
+	filter: drop-shadow(0 0 1px #aaa);
+	max-height: 4em;
+	margin-right: 1em;
+	max-width: 4em;
+}
+
+.post.alert--critical {
+	align-items: center;
+}
