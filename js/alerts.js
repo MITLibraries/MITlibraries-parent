@@ -1,5 +1,4 @@
 // Loads alert-level posts on the top of all pages
-
 $(function mitlib_alerts(){
 	$.ajax({
 		cache: false,
@@ -31,7 +30,7 @@ $(function mitlib_alerts(){
 					}
 				}
 			};
-
+			// If there is an alert post
 			if (alert_posts_arr.length) {
 				alert_content = alert_posts_arr[0].content;
 				alert_template = 	'<div class="posts-alerts">' +
