@@ -40,6 +40,7 @@ $(function mitlib_alerts(){
 					is_alert,
 					confirm,
 					alert_posts_arr = [],
+					alert_ID;
 					alert_content,
 					alert_template;
 
@@ -66,6 +67,7 @@ $(function mitlib_alerts(){
 					alert_title = 'Alert!'
 				}
 				alert_content = alert_posts_arr[0].content;
+				alert_ID = alert_posts_arr[0].ID;
 				alert_template = 	'<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
 														'<div class="post alert--critical flex-container">' +
 															'<svg class="icon-exclamation-circle width="2048" height="2048" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1024 256q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"/></svg>' +
@@ -78,7 +80,7 @@ $(function mitlib_alerts(){
 				closable_alert = alert_posts_arr[0].meta.closable;
 
 				if (local_storage === true) {
-					if (localStorage.getItem('alert_closed') !== 'true') {
+					if (localStorage.getItem('alert_closed-' + alert_ID) !== 'true') {
 				  	$(alert_template).prependTo('.wrap-page');
 						setTimeout(function() {
 							$('.posts--preview--alerts').removeClass('transition-vertical--hide');
@@ -97,7 +99,7 @@ $(function mitlib_alerts(){
 					$('#close').click(function(){
 				  	$('.posts--preview--alerts').addClass('transition-vertical--hide');
 				  	if (local_storage === true) {
-				  		localStorage.setItem('alert_closed', 'true');
+				  		localStorage.setItem('alert_closed-' + alert_ID, 'true');
 				  	}
 					});
 				}
