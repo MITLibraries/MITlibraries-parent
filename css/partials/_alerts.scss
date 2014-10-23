@@ -1,23 +1,3 @@
-.posts--preview--alerts {
-	max-height: 1000px;
-	opacity: 1;
-	//text-transform: translateY(0%);
-	transition: border-width 0.3s ease,
-							max-height 0.3s ease, 
-							opacity 0.3s ease,
-							padding-top 0.3s ease,
-							padding-bottom 0.3s ease;
-}
-
-.posts--preview--alerts.inactive {
-	border-width: 0;
-	max-height: 0px;
-	opacity: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-	//transform: translateY(-1000%);
-}
-
 .posts--preview--alerts:before {
 	background: #ea4848; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #ea4848 0%, #ed0e0e 100%); /* FF3.6+ */
@@ -45,15 +25,35 @@
 	opacity: 0;
 }
 
-.posts--preview--alerts svg {
+.posts--preview--alerts .icon-exclamation-circle {
 	display: inline-block;
 	fill: #ed0e0e;
 	filter: drop-shadow(0 0 1px #aaa);
 	max-height: 4em;
 	margin-right: 1em;
 	max-width: 4em;
+	@include bp-mobile--only {
+		max-height: 3em;
+		margin-right: 0.75em;
+		max-width: 3em;
+	}
 }
 
 .post.alert--critical {
 	align-items: center;
+	position: relative;
+	@include bp-mobile--only {
+		font-size: 0.75em;
+	}
+}
+
+.action-close {
+	fill: #333;
+	position: absolute;
+	right: 0.5em;
+	top: 0.5em;
+	svg {
+		max-height: 2em;
+		max-width: 2em;
+	}
 }
