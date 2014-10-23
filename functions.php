@@ -111,6 +111,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_style('libraries-global');
 
+	wp_enqueue_style('get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array('libraries-global'), '1.0');
+
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
@@ -171,6 +173,10 @@ function twentytwelve_scripts_styles() {
 
 	if (is_page('term-hours')) {
 		wp_enqueue_script('term-hours');
+	}
+
+	if (is_page('getit')) {
+		wp_enqueue_style('get-it');
 	}
 	
 }
