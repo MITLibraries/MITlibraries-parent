@@ -9,23 +9,6 @@ $(function mitlib_alerts(){
   } else {
   	local_storage = false;
   }
-
-  //   alert_closed = localStorage.getItem('alert_closed');
-
-  //   // If first time visitor
-  //   if (alert_closed === 'true') {
-  //     // Set localStorage item
-  //     alert_closed = true;
-  //     console.log('localStorage: alert_closed = true');
-  //   } else {
-  //     // Returning visitor
-  //     alert_closed = false;
-  //     console.log('localStorage: alert_closed = false');
-  //   }
-  // } else {
-  //   // If no localStorage
-  //   alert_closed = false;
-  // }
   
 	$.ajax({
 		cache: false,
