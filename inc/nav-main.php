@@ -62,7 +62,7 @@
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <span class="heading-col">Renew, request, suggest</span>
-        <a href="/barton-account">Your Account <span class="about">Renew MIT, BLC, &amp; Borrow Direct items</span></a>
+        <a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a>
         <a href="http://library.mit.edu">Barton catalog <span class="about">Request items owned by MIT</span></a>
         <a href="http://mit.worldcat.org">WorldCat <span class="about">Request items not owned by MIT</span></a>
         <a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a>
