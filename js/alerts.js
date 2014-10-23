@@ -30,19 +30,25 @@ $(function mitlib_alerts(){
 			for (var i = 0; i < posts; i++) {
 				// Each post
 				post = json[i];
-				// Post meta fields
-				post_meta = post.meta;
-				// Post alert field
-				is_alert = post_meta.alert;
-
-				if (is_alert === true) {
-					// Confirm alert field
-					confirm = post_meta.confirm_alert;
-					if (confirm === true) {
-						// Push alert posts to a unique array
-						alert_posts_arr.push(post);
+				// Make sure the field exists
+				if ($(post.meta).length) {
+					// Post meta fields
+					post_meta = post.meta;
+					// Make sure the field exists
+					if ($(post_meta.alert).length) {
+						// Post alert field
+						is_alert = post_meta.alert;
+						// If an alert post
+						if (is_alert === true) {
+							// Confirm alert field
+							confirm = post_meta.confirm_alert;
+							if (confirm === true) {
+								// Push alert posts to a unique array
+								alert_posts_arr.push(post);
+							}
+						}
 					}
-				}
+				}			
 			};
 			// If there is an alert post
 			if (alert_posts_arr.length) {
@@ -56,6 +62,7 @@ $(function mitlib_alerts(){
 				alert_content = alert_posts_arr[0].content;
 				// Alert post ID
 				alert_ID = alert_posts_arr[0].ID;
+
 				// Alert HTML template
 				alert_template = 	'<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
 														'<div class="post alert--critical flex-container">' +
