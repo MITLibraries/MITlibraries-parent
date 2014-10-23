@@ -1,0 +1,19 @@
+.wrap-page > [class*="posts"], // Covers top-level alert posts
+.content-main [class*="posts"] {
+	@include bp-tablet--portrait {
+		background: #f3f3f3;
+		border-bottom: 3px solid #dedede;
+		padding: 1.25em;
+	}
+}
+
+[class*="posts--preview"] .post {
+	background: #fff;
+	padding: 0.8125em;
+}
+
+[class*="posts"] .post {
+	@include bp-tablet--portrait {
+		box-shadow: 0 3px 3px $color-shadow;
+	}
+}
