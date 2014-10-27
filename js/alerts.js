@@ -23,7 +23,7 @@ $(function mitlib_alerts(){
 					is_alert,
 					confirm,
 					alert_posts_arr = [],
-					alert_ID;
+					alert_ID,
 					alert_content,
 					alert_template;
 
