@@ -307,10 +307,8 @@
 			@include rem-first(min-width, 6.875);
 			@include rem-first(width, 6.875);
 		}
-		.post {
+		.post--full-bleed {
 			border-bottom: 1px solid $color-secondary;
-			background: #fff;
-			color: #111;
 			@include rem-first(min-height, 12.8125);
 			justify-content: space-between;
 			width: 100%;
