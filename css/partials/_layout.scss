@@ -88,6 +88,11 @@ html.no-js .js-hidden {
 				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
 		}
+		&.single-col {
+			@include bp-tablet--portrait {
+				@include rem-first(padding-right, 1); // To match .content-page padding-left
+			}
+		}
 	}
 	.col-2 {
 		width: 100%;
