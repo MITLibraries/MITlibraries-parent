@@ -313,48 +313,7 @@
 		top: 0px;
 		left: 0px;
 	}
-
-	/* Flexboxes and tabs */
-
-	.flexbox .flexContainer {
-		display: block;
-	}
 	
-	.flexbox .flexItem,
-	.flexbox .flexItem:nth-of-type(n) {
-		margin: 1em auto;
-		width: 99%;
-	}
-
-	.mainContent {
-		padding: 1em;
-	}
-
-	.mainContent .tabcontent {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-
-	.mainContent .tabcontent .flexItem {
-		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-	
-	.tabcontent .flexContainer {
-		display: none;
-	}
-
-	.tabcontent .active.flexContainer {
-		display: block;
-	}
-	
-	.flexbox .tabcontent .active.flexContainer {
-		display: block;
-	}
-
 	.mainContent .tabcontent .first {
 		border-right: none;
 	}
