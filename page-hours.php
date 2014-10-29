@@ -115,9 +115,9 @@ $thisWeek = date("Y-n-j");
 	
 	<div id="content" class="content-main">
 
-		<div id="hourContent" class="content-page">
+		<div id="hourContent" class="content-page single-col">
 		
-			<div id="hourNav">
+			<div id="hourNav" class="flex-container space-between">
 				<div id="prevWeek">
 					<i class="icon-arrow-left"></i>
 					<a href="<?php echo $path."?d=".$prevWeek; ?>">Previous week</a>
