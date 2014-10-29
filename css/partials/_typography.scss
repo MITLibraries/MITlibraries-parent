@@ -29,6 +29,7 @@ h3 {
 
 a {
 	color: $color-link-primary;
+	text-decoration: none;
 	&:hover {
 		color: darken($color-link-primary, 20%);
 		text-decoration: underline;
