@@ -91,7 +91,7 @@ $(function(){
 				}
 			};
 			var newsPostsCompiled = _.template(
-				'<a class="post--full-bleed flex-container" href="<%= link %>">' +
+				'<a class="post--full-bleed no-underline flex-container" href="<%= link %>">' +
 					'<div class="excerpt-news">' +
 						'<div class="category-post">' +
 							checkEvent() +

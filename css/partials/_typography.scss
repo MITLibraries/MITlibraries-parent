@@ -30,6 +30,12 @@ a {
 	color: $color-link-primary;
 	&:hover {
 		color: darken($color-link-primary, 20%);
+		text-decoration: underline;
+	}
+	&.no-underline {
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 

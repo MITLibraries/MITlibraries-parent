@@ -10,9 +10,6 @@
 	@include span-12-12;
 	a {
 		color: $color-secondary;
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 	.identity {
 		flex-wrap: wrap;

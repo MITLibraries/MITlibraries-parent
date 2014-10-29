@@ -312,9 +312,6 @@
 		font-weight: 300;
 		@include rem-first(margin-left, 0.5);
 		position: absolute;
-		&:hover {
-			text-decoration: underline;
-		}
 		@include bp-tablet--portrait {
 			color: #fff;
 			&.active {

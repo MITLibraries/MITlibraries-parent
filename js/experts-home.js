@@ -54,7 +54,7 @@ $(function(){
 			var expertURL4 = data[3].meta.expert_url;
 
 			// Append extra markup only if JSON request successful
-			$('.expert').append('<a class="link-profile">')
+			$('.expert').append('<a class="link-profile no-underline">')
 			// Append expert image div
 			$('.expert .link-profile').append('<img class="expert-photo">');
 			// Append empty spans for expert names
