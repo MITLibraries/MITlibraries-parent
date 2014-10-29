@@ -35,6 +35,13 @@
 	}
 }
 
+.button-primary--blue {
+	@include color-button-primary($blue-royal);
+	&.border {
+		@include color-button-primary--border($blue-royal)
+	}
+}
+
 // Secondary button color classes
 
 .button-secondary--green {
@@ -47,4 +54,8 @@
 
 .button-secondary--magenta {
 	@include color-button-secondary($magenta-dark);
+}
+
+.button-secondary--blue {
+	@include color-button-secondary($blue-royal);
 }
