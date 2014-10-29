@@ -137,14 +137,23 @@ html.no-js .js-hidden {
 
 .flex-container--wrap--2-col > * {
 	width: 50%;
+	@include bp-mobile--only {
+		width: 100%;
+	}
 }
 
 .flex-container--wrap--3-col > * {
 	width: 33%;
+	@include bp-mobile--only {
+		width: 100%;
+	}
 }
 
 .flex-container--wrap--4-col > * {
 	width: 25%;
+	@include bp-mobile--only {
+		width: 100%;
+	}
 }
 
 .space-between {
