@@ -75,7 +75,6 @@ html.no-js .js-hidden {
 	.content-page {
 		@include rem-first--4-values(margin, 0, 1, 1.5, 1);
 		width: 100%;
-		@include rem-first(margin-bottom, 1.5);
 		@include bp-tablet--portrait {
 			@include rem-first--4-values(margin, 0, 0, 1.5, 0);
 			@include rem-first(padding-left, 1);
