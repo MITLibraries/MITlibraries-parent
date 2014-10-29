@@ -5,10 +5,18 @@
 	}
 }
 
+@mixin color-button-primary--border($color) { // Matches button-primary size when inline with button secondary
+	border: 2px solid $color;
+	&:hover {
+		border-color: darken($color, 15%);
+	}
+}
+
 @mixin color-button-secondary($color) {
-	border-color: $color;
+	color: $color;
 	&:hover {
 		background: $color;
+		border-color: $color;
 	}
 }
 
@@ -16,7 +24,6 @@
 	border-radius: 3px;
 	padding: 0.5em;
 	text-align: center;
-	transition: background 0.1s ease;
 	@include bp-tablet--portrait {
 		padding: 0.5em 1em;
 	}
@@ -27,6 +34,7 @@
 	color: $color-text--light;
 	display: block;
 	font-size: 1em;
+	transition: background $timer-primary ease;
 	width: 100%;
 	&:hover {
 		color: $color-text--light;
@@ -39,6 +47,12 @@
 	display: inline-block;
 	font-size: 0.875em;
 	font-weight: 600;
+	transition: background $timer-primary ease,
+							border-color $timer-primary ease,
+							color $timer-primary ease;
+	&:hover {
+		color: $color-text--light;
+	}
 	@include bp-tablet--portrait {
 		font-size: 1em;
 	}

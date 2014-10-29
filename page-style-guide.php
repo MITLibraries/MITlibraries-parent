@@ -482,7 +482,12 @@ get_header(); ?>
 					</article>
 					<article id="guide-custom-buttons">
 						<h1 class="title-section">Custom Buttons</h1>
-						<a href="#0" class="button-primary" style="background-color:#43926A">I'm a primary button</a>
+						<a href="#0" class="button-primary--green">I'm a primary button</a>
+						<a href="#0" class="button-primary--orange">I'm a primary button</a>
+						<a href="#0" class="button-primary--magenta">I'm a primary button</a>
+						<a href="#0" class="button-secondary--green">I'm a secondary button</a>
+						<a href="#0" class="button-secondary--orange">I'm a secondary button</a>
+						<a href="#0" class="button-secondary--magenta">I'm a secondary button</a>
 					</article>
 				</div>
 			</div>
