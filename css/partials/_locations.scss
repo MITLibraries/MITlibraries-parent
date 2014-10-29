@@ -33,13 +33,7 @@
 		padding-bottom: 0;
 	}
 	.link-find-study-space {
-		background: #43926a;
-		@include rem-first(font-size, 1);
-		font-weight: normal;
 		margin-bottom: 1em;
-		&:hover {
-			background: darken(#43926a, 15%);
-		}
 	}
 	.locations-main,
 	.locations-secondary {

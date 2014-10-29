@@ -54,11 +54,10 @@
 			opacity: 1;
 			transition: opacity 0.2s ease;
 		}
-		.button-primary {
+		.link-hours {
 			margin: 1em 1.5em 0;
 			order: 99999; // Order last on mobile
 			width: auto;
-			@include color-button-primary($color-hours-locations);
 			@include bp-tablet--portrait {
 				margin: 1em 2em;
 				order: 0;
@@ -272,10 +271,9 @@
 				min-height: 245px; // Content loaded w/ Ajax
 			}
 		}
-		.button-primary {
+		.link-news {
 			margin: 1em 1.5em 0;
 			width: auto;
-			@include color-button-primary($color-news-events);
 			@include bp-tablet--portrait {
 				margin: 0 auto;
 				width: 27.75%;
@@ -374,30 +372,12 @@
 				margin-left: -4px; // Fights inline-block space
 			}
 		}
-		.button-primary {
-			border: 2px solid $color-guides-experts;
-			@include color-button-primary($color-guides-experts);
-			&:hover {
-				border-color: darken($color-guides-experts, 20%);
-			}
-			&.view-experts {
-				margin: 1em 1.5em 2em;
-				width: auto;
-				@include bp-tablet--portrait {
-					margin: 0 auto;
-					width: 27.75%;
-				}
-			}
-		}
-		.button-secondary {
-			color: $color-guides-experts;
-			transition: background 0.1s,
-									border-color 0.1s,
-									color 0.1s;
-			&:hover {
-				background: $color-guides-experts;
-				border-color: $color-guides-experts;
-				color: #fff;
+		.view-experts {
+			margin: 1em 1.5em 2em;
+			width: auto;
+			@include bp-tablet--portrait {
+				margin: 0 auto;
+				width: 27.75%;
 			}
 		}
 		.expert {
