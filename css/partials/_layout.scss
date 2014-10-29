@@ -131,8 +131,20 @@ html.no-js .js-hidden {
 	display: flex;
 }
 
-.flex-container--wrap {
+[class*="flex-container--wrap"] {
 	flex-wrap: wrap;
+}
+
+.flex-container--wrap--2-col > * {
+	width: 50%;
+}
+
+.flex-container--wrap--3-col > * {
+	width: 33%;
+}
+
+.flex-container--wrap--4-col > * {
+	width: 25%;
 }
 
 .space-between {
