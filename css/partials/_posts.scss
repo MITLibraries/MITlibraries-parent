@@ -20,3 +20,15 @@
 [class*="posts--preview"] .post--full-bleed { // Allows for full bleed of images
 	padding: 0;
 }
+
+.content-main [class*="posts"] {
+	@include bp-tablet--portrait {
+		background: $gray-light;
+	}
+}
+
+[class*="posts"] .post {
+	@include bp-tablet--portrait {
+		box-shadow: 0 3px 3px $color-shadow;
+	}
+}
