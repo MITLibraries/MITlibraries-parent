@@ -2,7 +2,7 @@
     pesticide v0.1.0 . @mrmrs . MIT
 */
 
-$pesticide-debug: false;
+$pesticide-debug: true;
 
 @if $pesticide-debug == true {
   body { outline: 1px solid #2980b9 !important; }
