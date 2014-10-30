@@ -2,3 +2,10 @@ svg {
 	max-height: 100%;
 	max-width: 100%;
 }
+
+// No inline svg
+.no-inlinesvg {
+	svg {
+		display: none;
+	}
+}
