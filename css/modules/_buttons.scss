@@ -37,10 +37,35 @@
 	color: $color-text--light;
 	display: block;
 	font-size: 1em;
+	margin: 1em 1.5em;
 	transition: background $timer-primary ease;
 	width: 100%;
+	@include rem-first(max-width, 17);
+	@include bp-tablet--portrait {
+		margin: 1em auto;
+		width: auto;
+		@include rem-first(max-width, 12);
+	}
 	&:hover {
 		color: $color-text--light;
+	}
+	&.inline { // Display primary buttons inline with secondary buttons
+		display: inline-block;
+		font-size: 0.875em;
+		margin-top: 0;
+		margin-right: 0.5em;
+		margin-bottom: 0.5em;
+		margin-left: -4px; // Fights inline block space
+		@include bp-tablet--portrait {
+			font-size: 1em;
+		}
+	}
+	&.full { // Extend the button to full width
+		@include bp-tablet--portrait {
+			margin: 1em auto;
+			width: 100%;
+			max-width: 100%;
+		}
 	}
 }
 
