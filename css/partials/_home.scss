@@ -261,7 +261,7 @@
 				flex-wrap: nowrap;
 			}
 			@include bp-tablet--portrait {
-				min-height: 245px; // Content loaded w/ Ajax
+				min-height: 230px; // Content loaded w/ Ajax
 			}
 		}
 		.category-post {
@@ -303,6 +303,7 @@
 			@include bp-tablet--portrait {
 				border-bottom: none;
 				margin-bottom: 1.25em; // Matches padding for container
+				max-height: 205px; // Make sure the container is never taller than the post image
 				width: 50%;
 				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
