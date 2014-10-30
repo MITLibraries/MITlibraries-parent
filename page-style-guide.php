@@ -485,9 +485,15 @@ get_header(); ?>
 						<a href="#0" class="button-primary--green">I'm a primary button</a>
 						<a href="#0" class="button-primary--orange">I'm a primary button</a>
 						<a href="#0" class="button-primary--magenta">I'm a primary button</a>
+						<a href="#0" class="button-primary--blue">I'm a primary button</a>
 						<a href="#0" class="button-secondary--green">I'm a secondary button</a>
 						<a href="#0" class="button-secondary--orange">I'm a secondary button</a>
 						<a href="#0" class="button-secondary--magenta">I'm a secondary button</a>
+						<a href="#0" class="button-primary--blue border inline">Primary inline button</a>
+						<a href="#0" class="button-primary--green full">Full width primary button</a>
+						<a href="#0" class="button-primary--orange full">Full width primary button</a>
+						<a href="#0" class="button-primary--magenta full">Full width primary button</a>
+						<a href="#0" class="button-primary--blue full">Full width primary button</a>
 					</article>
 				</div>
 			</div>
