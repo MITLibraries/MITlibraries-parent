@@ -239,10 +239,6 @@
 	// News & Events
 	//
 	.news-events {
-		@include bp-tablet--portrait {
-			border-bottom: 3px solid $color-secondary;
-			padding: 1.25em 1.25em 2.5em;
-		}
 		h2 {
 			border-bottom: 1px solid $color-secondary;
 			color: $color-news-events;
@@ -303,7 +299,7 @@
 			}
 			@include bp-tablet--portrait {
 				border-bottom: none;
-				margin-bottom: 2.5em;
+				margin-bottom: 1.25em; // Matches padding for container
 				width: 50%;
 				-ms-flex: 0 1 auto; // Corrects IE10 bug
 			}
