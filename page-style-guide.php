@@ -43,8 +43,8 @@ get_header(); ?>
 			.swatch-color--21759B {
 				background: #21759B;
 			}
-			.swatch-color--5889c2 {
-				background: #5889c2;
+			.swatch-color--338bc5 {
+				background: #338bc5;
 			}
 			.swatch-color--333 {
 				background: #333;
@@ -123,8 +123,8 @@ get_header(); ?>
 						<div class="swatch-color--dedede">
 							<span class="hex-color">#dedede</span>
 						</div>
-						<div class="swatch-color--5889c2">
-							<span class="hex-color">#5889c2</span>
+						<div class="swatch-color--338bc5">
+							<span class="hex-color">#338bc5</span>
 						</div>
 						<div class="swatch-color--0088D0">
 							<span class="hex-color">#0088D0</span>
