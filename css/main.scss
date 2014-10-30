@@ -212,23 +212,6 @@ ul.arrows li,
 	background: #f00;
 }
 
-.menu-toggle {
-	display: none !important;
-}
-
-#cse-search-box  input[type=text]{
-	vertical-align: top;
-}
-
-body:not(.page-site-search) #cse-search-box  input[type=text] {
-	width: 100px;
-}
-
-#cse-search-box input[type=submit] {
-	height: 30px;
-	vertical-align: top;
-}
-
 .sideContent .videoRight {
 	display: block;
 	position: relative;
