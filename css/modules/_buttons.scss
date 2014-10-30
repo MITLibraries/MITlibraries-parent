@@ -66,6 +66,12 @@
 			width: 100%;
 			max-width: 100%;
 		}
+		&.add-margin {
+			@include bp-tablet--portrait {
+				margin: 1em;
+				width: auto;
+			}
+		}
 	}
 }
 
