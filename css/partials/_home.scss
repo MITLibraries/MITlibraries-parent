@@ -216,6 +216,9 @@
 		margin-right: 0.5em;
 		width: 4.625em;
 		min-width: 4.625em; // Corrects some flexbox behavior when adjoining div content is very large
+		@include bp-tablet--portrait-only {
+			display: none;
+		}
 		&.archives {
 			background-position: -1px -1px;
 		}
