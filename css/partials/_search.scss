@@ -7,7 +7,7 @@
 	position: relative;
 	@include gradient-blue;
 	z-index: map-get($zindex, main);
-	@include bp-tablet--portrait {
+	@include bp-tablet--landscape {
 		flex-direction: row;
 		padding: 2em 0;
 	}
@@ -15,7 +15,7 @@
 		color: $color-text--light;
 		display: none;
 		@include rem-first(font-size, 1.25);
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			display: inline-block;
 			@include rem-first(margin-right, 1);
 		}
@@ -27,7 +27,7 @@
 		display: none;
 		margin: 0; // Corrects some browser defaults
 		padding: 0 0.5em;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			background: $color-secondary;
 			border-radius: 0 5px 5px 0;
 		}
@@ -36,7 +36,7 @@
 			height: auto;
 			max-height: 2em;
 			width: 2em;
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				fill: darken(#27aae1, 20%);
 				width: 1.5em;
 			}
@@ -80,7 +80,7 @@
 		&.active {
 			display: inline;
 		}
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			border-radius: 5px 0 0 5px;
 			width: 18.75em;
 		}
@@ -110,7 +110,7 @@
 		&::-ms-expand {
 		 display: none; 
 		}
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			color: #fff;
 			font-size: 1em;
 			font-weight: bold;
@@ -137,7 +137,7 @@
 		display: flex;
 		order: 200;
 		width: 100%;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			@include rem-first(margin-right, 1);
 			order: 500;
 			width: auto;
@@ -146,7 +146,7 @@
 	.label {
 		color: #fff;
 		display: none;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			display: block;
 			@include rem-first(font-size, 1.25);
 			font-weight: 300;
@@ -166,7 +166,7 @@
 			font-size: 0.875em;
 			font-weight: bold;
 			width: 100%;
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				font-size: 1em;
 			}
 			&:not(.has-link) {
@@ -186,7 +186,7 @@
 					right: 1.75em;
 					max-width: 17px; // For IE
 				}
-				@include bp-tablet--portrait {
+				@include bp-tablet--landscape {
 					font-weight: bold;
 					&:after {
 						content: none;
@@ -194,7 +194,7 @@
 					}
 				}
 			}
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				color: #fff;
 			}
 		}
@@ -205,7 +205,7 @@
 			margin: 0 0 0 -0.5em;
 			position: absolute;
 			width: 100%;
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				margin-top: 1em;
 				width: auto;
 			}
@@ -258,7 +258,7 @@
 				font-weight: 300;
 				margin-right: 1.1em;
 				white-space: nowrap;
-				@include bp-tablet--portrait {
+				@include bp-tablet--landscape {
 					content: none;
 					display: none;
 				}
@@ -284,7 +284,7 @@
 		color: #111;
 		font-size: 0.875em;
 		font-weight: normal;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			color: #fff;
 			font-size: 1em;
 			font-weight: bold;
@@ -297,7 +297,7 @@
 				font-weight: 300;
 				margin-right: 1.1em;
 				white-space: nowrap;
-				@include bp-tablet--portrait {
+				@include bp-tablet--landscape {
 					content: none;
 					display: none;
 				}
@@ -311,7 +311,7 @@
 		font-weight: 300;
 		@include rem-first(margin-left, 0.5);
 		position: absolute;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			color: #fff;
 			&.active {
 				display: block;
@@ -342,7 +342,7 @@
 		display: block;
 		order: 300;
 		width: 100%;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			background: hsla(0, 0.0000%, 0%, 0.1000);
 			box-shadow: inset 0 0 1px #666;
 			border-radius: 3px;
@@ -358,7 +358,7 @@
 		}
 		.select-arrows {
 			display: none;
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				display: inline;
 				max-height: 14px;
 				max-width: 8px;
@@ -371,7 +371,7 @@
 		box-shadow: none;
 		display: none;
 		order: 400;
-		@include bp-tablet--portrait {
+		@include bp-tablet--landscape {
 			border-top: none;
 			border-radius: 3px;
 			box-shadow: inset 0 0 1px #666;
@@ -384,7 +384,7 @@
 			margin-right: 0.75em;
 			@include rem-first(margin-left, 0.5);
 			white-space: nowrap;
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				content: none;
 				display: none;
 			}
@@ -395,7 +395,7 @@
 			max-height: 19px; // For IE
 			margin-left: -2em;
 			max-width: 17px; // For IE
-			@include bp-tablet--portrait {
+			@include bp-tablet--landscape {
 				content: none;
 				display: none;
 			}
