@@ -18,6 +18,7 @@
 		@include bp-tablet--landscape {
 			display: inline-block;
 			@include rem-first(margin-right, 1);
+			@include rem-first(margin-left, 1); // Matches search input margin-right
 		}
 	}
 	button {
