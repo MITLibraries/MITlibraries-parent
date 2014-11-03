@@ -4,36 +4,148 @@
 
 We're currently handling hours two ways on libraries.mit.edu:
 
-1. At [libraries.mit.edu/hours](http://libraries.mit.edu/hours), one can view a weekly display of each library location's hours, with a date picker, next week/last week navigation, etc.
+### Hours in WordPress
 
-	These hours entries exist in Wordpress. Broadly speaking, each hours entry exists as a single post in Wordpress. This is hugely inefficient, and has been a big problem for the site. The hours have to be uploaded as a crazy multi-sheet spreadsheet ([here](//wikis.mit.edu/confluence/display/UXWS/Hours)) via an [Excel-to-PHP](https://github.com/zgreen/MITlibraries-parent/tree/prod/libs/PHPExcel-develop) spreadsheet plugin, parsed with [a heavy PHP script](github.com/zgreen/MITlibraries-parent/blob/prod/lib/hours.php), and spat out onto the page. The only reason this page doesn't take many, many seconds to load is that all that data gets cached by Wordpress (using the W3 Total Cache plugin). These hours posts also heavily pollute the site, are indexed by search engines, confuse users, etc.
+At [libraries.mit.edu/hours](http://libraries.mit.edu/hours), one can view a weekly display of each library location's hours, with a date picker, next week/last week navigation, etc.
 
-2. Each location's hours for today also appear on the homepage, and on individual location pages (like [libraries.mit.edu/barker](//libraries.mit.edu)). Beginning a few months back, we started using using a little jQuery to Ajax these values onto those pages from a [JSON file](//github.com/zgreen/MITlibraries-parent/blob/prod/hours.json) ([homepage script here](https://github.com/zgreen/MITlibraries-parent/blob/prod/js/hours-home.js#L18), and [location page script here](https://github.com/zgreen/MITlibraries-parent/blob/prod/js/core.js#L121)).
+These hours entries exist in Wordpress. Broadly speaking, each hours entry exists as a single post in Wordpress. This is hugely inefficient, and has been a big problem for the site. The hours have to be uploaded as a crazy multi-sheet spreadsheet ([here](//wikis.mit.edu/confluence/display/UXWS/Hours)) via an [Excel-to-PHP](https://github.com/zgreen/MITlibraries-parent/tree/prod/libs/PHPExcel-develop) spreadsheet plugin, parsed with [a heavy PHP script](github.com/zgreen/MITlibraries-parent/blob/prod/lib/hours.php), and spat out onto the page. The only reason this page doesn't take many, many seconds to load is that all that data gets cached by Wordpress (using the W3 Total Cache plugin). These hours posts also heavily pollute the site, are indexed by search engines, confuse users, etc.
 
-	We did this for two reasons:
-	1. To speed up the load time on those pages, as the Wordpress queries were very heavy.
-	2. To make sure that those hours values were never cached (there were some instances where the cache held onto a previous day's hours, displaying that value as the hours for the current day).
+### Hours in JSON
 
-	This solution solved those problems, but unfortunately--because there's no good way to build out the proper data structure for handling these hours values in Wordpress--to date we have been hand editing the `hours.json` file with individual day-by-day entries.
+Each location's hours for today also appear on the homepage, on individual location pages (like [libraries.mit.edu/barker](//libraries.mit.edu)), and on the [study spaces page](libraries.mit.edu/study). This hours data is loaded via jQuery Ajax from [term-hours.json](//github.com/zgreen/MITlibraries-parent/blob/prod/term-hours.json) (`/term-hours.json`).
+
+#### Hours JSON data structure
+
+- This set of hours data is organized by semester.
+- Each semester is given a start and end date (`termStart` and `termEnd`).
+- Each semester is also given a set of locations (ex. `"locationName" : "Barker Library"`). 
+- Each location is given a set of default Monday-Sunday opening and closing hours. For example:
+```
+{
+	"locationName" : "Dewey Library",
+	"monday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"tuesday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"wednesday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"thursday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"friday" : {
+		"open" : "8:30am",
+		"closed" : "6:00pm"
+	},
+	"saturday" : {
+		"open" : "11:00am",
+		"closed" : "7:00pm"
+	},
+	"sunday" : {
+		"open" : "11:00am",
+		"closed" : "11:00pm"
+	}
+}
+```
+- Each location is also given a set of exception dates (if applicable), for example:
+```
+{
+	"locationName" : "Dewey Library",
+	"monday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"tuesday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"wednesday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"thursday" : {
+		"open" : "8:30am",
+		"closed" : "11:00pm"
+	},
+	"friday" : {
+		"open" : "8:30am",
+		"closed" : "6:00pm"
+	},
+	"saturday" : {
+		"open" : "11:00am",
+		"closed" : "7:00pm"
+	},
+	"sunday" : {
+		"open" : "11:00am",
+		"closed" : "11:00pm"
+	},
+	"exceptions" : [
+		{
+			"date" : "10/13/2014",
+			"closedAll" : false,
+			"open" : "12:00pm",
+			"closed" : "11:00pm"
+		},
+		{
+			"date" : "11/11/2014",
+			"closedAll" : false,
+			"open" : "12:00pm",
+			"closed" : "11:00pm"
+		},
+		{
+			"date" : "11/26/2014",
+			"closedAll" : false,
+			"open" : "8:30am",
+			"closed" : "5:00pm"
+		},
+		{
+			"date" : "11/27/2014",
+			"closedAll" : true,
+			"open" : "closed",
+			"closed" : "closed"
+		},
+		{
+			"date" : "11/28/2014",
+			"closedAll" : true,
+			"open" : "closed",
+			"closed" : "closed"
+		},
+		{
+			"date" : "12/19/2014",
+			"closedAll" : false,
+			"open" : "8:30am",
+			"closed" : "6:00pm"
+		}
+	]
+}
+```
+- Note that the `"closedAll"` value is not necessary, as current scripts do not use this value.
+
+#### Using this data
+
+- [hours-today.js](//github.com/zgreen/MITlibraries-parent/blob/prod/js/hours-today.js) (`/js/hours-today.js`) is the script that loads today's hours. This script relies on [moment.js](//github.com/zgreen/MITlibraries-parent/blob/prod/js/libs/moment.min.js) (`/js/libs/moment.min.js`) with the [twix plugin](//github.com/zgreen/MITlibraries-parent/blob/prod/js/libs/twix.min.js) (`/js/libs/twix.min.js`) to create the proper date ranges for each semester and week. The script first checks which semester today's date falls within, and then checks the proper location for any exceptions--and if none exist, the default hours for that location, for the current day, will be displayed.
+
+- To load a location's hours anywhere on the site, you need only use the `data-location-hours` data-attribute. For example, to load Barker's hours in a `div`, use `<div data-location-hours="Barker Library"`. To load Dewey's hours in a link, use `<a href="example-page" data-location-hours="Dewey Library"`. Note that the location names much match exactly those in the `term-hours.json` file.
+
+- To add a new semester, copy the JSON data structure from the previous semester and set the correct hours for each location. You may store as many semester's worth of data in this file as you like, but old semesters may also be safely deleted (doing so will also help reduce load time for the `term-hours.json` file).
+
+#### Template views
+
+There is a WordPress page, [/term-hours](//libraries.mit.edu/term-hours) that presents this data in various formats (Today's hours, each location's default hours, and each location's exceptions). There is a separate script for handling this data and creating the proper templates, [page-term-hours.js](//github.com/zgreen/MITlibraries-parent/blob/prod/js/page-term-hours.js) (`/js/page-term-hours.js`).
 
 ## Next steps
 
-Ideally, the hours values should exist solely as JSON values, and should not live in Wordpress at all.
+Ideally, all hours on the site should be parsed as JSON. This is theoretically possible to do in WordPress, but WordPress makes nesting and repeating data fields somewhat difficult and arduous. As of this writing, it's recommended that the hours data be rendered from some other source, like a Google Sheet. Alternatively, we could make use of a GUI/form that would allow people to add/update hours JSON values without having to acutally hand edit the JSON file itself.
 
-[This branch](//github.com/zgreen/MITlibraries-parent/tree/hours-underscore) sets a new data structure for handling hours ([term-hours.json](//github.com/zgreen/MITlibraries-parent/blob/hours-underscore/term-hours.json)). Hours are __term based__, with start/end dates, and default Monday-Sunday open/closed values per location. Each location is also given a set of exceptions for handling special hours.
-
-Visit [libraries-dev.mit.edu/term-hours](http://libraries-dev.mit.edu/term-hours/) to view this new structure in action.
-
-Using jQuery and Underscore.js, [this script](https://github.com/zgreen/MITlibraries-parent/blob/hours-underscore/js/page-term-hours.js) Ajax-es today's hours for each location onto the `term-hours` page, checking first for exceptions and then defaulting to the hours for the current day. [Moment.js](http://momentjs.com/) is used for date handling, and the [Twix.js plugin](http://isaaccambron.com/twix.js/) is used to create date ranges.
-
-This page represents a workable solution for displaying "Today's hours" for any given location.
-
-From here, we'd like to template out a weekly view similar to our current one on [libraries.mit.edu/hours](http://libraries.mit.edu/hours). This should be possible using Underscore, though a jQuery plugin like [CLNDR.js](http://kylestetz.github.io/CLNDR/) is also a possibility.
-
-Additionally, we'd like some sort of GUI/form that would allow people to add/update hours JSON values without having to acutally hand edit the JSON file itself. Backbone.js? PHP form? Drupal? Open to suggestions...
+From here, we'd like to template out a weekly view similar to our current one on [libraries.mit.edu/hours](http://libraries.mit.edu/hours).
 
 ## To-dos
 
-1. Implement new "Today's hours" script, as detailed above, for use on the MIT Libraries' homepage and individual location pages.
-2. Create a weekly template view for all location hours. Ideally, this would include prev/next week and datepicker functionality.
-3. Build out GUI/form to POST/EDIT/DELETE hours values.
+1. Create a weekly template view for all location hours. Ideally, this would include prev/next week and datepicker functionality.
+2. Build out Google Sheet + script/GUI/form to `POST`/`EDIT`/`DELETE` hours values.
