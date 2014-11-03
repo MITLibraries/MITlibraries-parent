@@ -150,6 +150,10 @@
     @include bp-tablet--portrait {
       display: flex;
     }
+    &.push { // Orients mega-nav dropdown so that it doesn't overflow page width
+      left: auto;
+      right: 0;
+    }
     a {
       color: $color-text-accent-primary;
       display: block;
@@ -196,9 +200,6 @@
     font-weight: bold;
     @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
     text-transform: uppercase;
-  }
-  .push {
-    right: 0;
   }
 }
 
