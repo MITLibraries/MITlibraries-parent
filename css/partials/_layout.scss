@@ -1,4 +1,6 @@
-* {
+*,
+*:before,
+*:after {
 	 box-sizing: border-box;
 }
 
@@ -43,16 +45,20 @@ html.no-js .js-hidden {
 .wrap-page {
 	margin: 0 auto;
 	@include bp-small {
-		width: 320px;
+		max-width: 320px;
+		width: 100%;
 	}
 	@include bp-mobile--landscape {
-		width: 568px;
+		max-width: 568px;
+		width: 100%;
 	}
 	@include bp-tablet--portrait {
-		width: 768px;
+		max-width: 768px;
+		width: 100%;
 	}
 	@include bp-large {
-		width: 1024px;
+		max-width: 1024px;
+		width: 100%;
 	}
 }
 
@@ -74,8 +80,7 @@ html.no-js .js-hidden {
 	}
 	.content-page {
 		@include rem-first--4-values(margin, 0, 1, 1.5, 1);
-		width: 100%;
-		@include rem-first(margin-bottom, 1.5);
+		max-width: 100%;
 		@include bp-tablet--portrait {
 			@include rem-first--4-values(margin, 0, 0, 1.5, 0);
 			@include rem-first(padding-left, 1);
@@ -87,6 +92,11 @@ html.no-js .js-hidden {
 			@include bp-tablet--portrait {
 				@include rem-first(padding-right, 1.5);
 				-ms-flex: 0 1 auto; // Corrects IE10 bug
+			}
+		}
+		&.single-col {
+			@include bp-tablet--portrait {
+				@include rem-first(padding-right, 1); // To match .content-page padding-left
 			}
 		}
 	}
@@ -123,12 +133,41 @@ html.no-js .js-hidden {
 	}
 }
 
-.flex-container {
+[class*="flex-container"] {
 	display: flex;
+}
+
+[class*="flex-container--wrap"] {
+	flex-wrap: wrap;
+}
+
+.flex-container--wrap--2-col > * {
+	width: 50%;
+	@include bp-mobile--only {
+		width: 100%;
+	}
+}
+
+.flex-container--wrap--3-col > * {
+	width: 33%;
+	@include bp-mobile--only {
+		width: 100%;
+	}
+}
+
+.flex-container--wrap--4-col > * {
+	width: 25%;
+	@include bp-mobile--only {
+		width: 100%;
+	}
 }
 
 .space-between {
 	justify-content: space-between;
+}
+
+.flex-end {
+	align-items: flex-end;
 }
 
 .no-flexbox.no-flexboxlegacy {

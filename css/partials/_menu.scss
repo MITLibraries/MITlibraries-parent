@@ -6,35 +6,22 @@
     background: white;
     box-shadow: 0 3px 3px $color-shadow;
     height: auto;
+    @include rem-first(font-size, 1);
     flex: none;
     @include rem-first--4-values(padding, 0, 0.5, 0.5, 0.5);
     position: absolute;
-    transform: translateY(3em);
+    transform: translateY(2.8em); // Accounts for nav padding
     top: 0;
     width: 100%;
+    a {
+      width: 100%;
+    }
   }
   @include hidden-visually;
   .small {
     display: none;
     @include bp-tablet--portrait {
       display: block;
-    }
-  }
-  @include bp-tablet--portrait-below {
-    font-size: 0.75em;
-    .small {
-      font-size: 0.25em;
-    }
-  }
-  @include bp-tablet--portrait {
-    align-items: stretch;
-    height: auto;
-    flex-wrap: nowrap;
-    order: 3;
-    overflow: visible;
-    width: auto;
-    transform: translateY(0%);
-    .small {
       font-size: 0.5em;
       line-height: 1.4;
       @include rem-first(padding-top, 0.5);
@@ -49,6 +36,24 @@
         margin-bottom: 1em;
       }
     }
+    @include bp-tablet--landscape-below {
+      font-size: 0.25em;
+    }
+  }
+  @include bp-tablet--landscape-below {
+    font-size: 0.9em;
+  }
+  @include bp-tablet--landscape-small-below {
+    font-size: 0.75em;
+  }
+  @include bp-tablet--portrait {
+    align-items: stretch;
+    height: auto;
+    flex-wrap: nowrap;
+    order: 3;
+    overflow: visible;
+    width: auto;
+    transform: translateY(0%);
   }
   .chat {
     display: none;
@@ -136,10 +141,12 @@
   }
   .links-sub {
     display: none;
+    left: 0;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     position: absolute;
+    top: 100%;
     transition: max-height 0.3s,
                 margin 0.3s,
                 opacity 0.3s,
@@ -149,6 +156,10 @@
     width: 31.75em;
     @include bp-tablet--portrait {
       display: flex;
+    }
+    &.push { // Orients mega-nav dropdown so that it doesn't overflow page width
+      left: auto;
+      right: 0;
     }
     a {
       color: $color-text-accent-primary;
@@ -196,9 +207,6 @@
     font-weight: bold;
     @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
     text-transform: uppercase;
-  }
-  .push {
-    right: 0;
   }
 }
 

@@ -237,7 +237,7 @@ get_header(); ?>
 				</div>
 
 				<div class="col-2">
-					<a class="link-find-study-space button-primary" href="/study/">Find a study space</a>
+					<a class="link-find-study-space button-primary--green full" href="/study/">Find a study space</a>
 					<?php get_sidebar(); ?>
 				</div>
 		</div>		
