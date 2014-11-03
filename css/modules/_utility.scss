@@ -48,6 +48,12 @@
 	}
 }
 
+@mixin bp-tablet--landscape-below {
+	@media only screen and (max-width: 1023px) {
+		@content;
+	}
+}
+
 @mixin bp-large {
 	@media only screen and (min-width: 769px) {
 		@content;
