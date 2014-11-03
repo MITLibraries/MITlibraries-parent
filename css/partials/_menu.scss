@@ -6,12 +6,16 @@
     background: white;
     box-shadow: 0 3px 3px $color-shadow;
     height: auto;
+    @include rem-first(font-size, 1);
     flex: none;
     @include rem-first--4-values(padding, 0, 0.5, 0.5, 0.5);
     position: absolute;
-    transform: translateY(3em);
+    transform: translateY(2.8em); // Accounts for nav padding
     top: 0;
     width: 100%;
+    a {
+      width: 100%;
+    }
   }
   @include hidden-visually;
   .small {
@@ -37,6 +41,9 @@
     }
   }
   @include bp-tablet--landscape-below {
+    font-size: 0.9em;
+  }
+  @include bp-tablet--landscape-small-below {
     font-size: 0.75em;
   }
   @include bp-tablet--portrait {

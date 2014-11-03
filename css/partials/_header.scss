@@ -1,22 +1,23 @@
 .header-main {
-	align-items: flex-end;
 	background: $color-background--dark;
 	@include span-12-12;
 	@include bp-tablet--portrait {
-		align-items: flex-start;
 		justify-content: space-between;
 		padding: 0 1em;
 	}
 	> [class*="link"] {
 		color: #fff;
-		font-size: 0.4375em;
 		order: 400;
 		text-transform: uppercase;
+		@include bp-mobile--only {
+			font-size: 0.4375em;
+		}
 	}
 	.logo-mit-lib {
 		fill: $color-text--light;
 		svg {
 			max-height: 3em;
+			height: auto;
 		}
 		.arch {
 			display: none;
@@ -30,6 +31,8 @@
 	}
 	.link-logo-mit {
 		display: none;
+		max-width: 59px;
+		@include rem-first(max-width, 3.6875);
 		@include bp-tablet--portrait {
 			align-self: flex-end;
 			display: block;
@@ -38,7 +41,10 @@
 		}
 	}
 	.link-site-search {
-		margin-left: 5.5em;
+		margin-left: 9em; // Magic number. Pushes these links to right edge in mobile
+		@include bp-mobile--landscape {
+			margin-left: 32em; // Magic number. Pushes these links to right edge in mobile
+		}
 	}
 	.link-account,
 	.link-site-search {
@@ -56,6 +62,7 @@
 	}
 	.logo-mit {
 		display: none;
+		margin-left: 0.5em;
 		@include bp-tablet--portrait {
 			display: block;
 			height: auto;
@@ -67,17 +74,24 @@
 		}
 	}
 	.name-site {
-		@include rem-first(font-size, 1);
+		@include rem-first(font-size, 0.9);
 		line-height: 1;
-		margin-top: -1.25em;
-		margin-left: 0.75em;
+		margin-top: -1.25em; // Accounts for removal of SVG arch paths
+		margin-left: 0.75em; // Accounts for hamburger menu on mobile
 		order: 2;
 		@include rem-first(padding-bottom, 0.5);
-		width: 6.4375em;
+		max-width: 6.4375em;
 		@include bp-tablet--portrait {
-			margin-top: 0.5em;
+			@include rem-first(margin-bottom, 0.5); // Matches nav link padding
 			margin-left: 0;
+			padding-top: 0.5em;
 			padding-bottom: 0;
+		}
+		@include bp-tablet--landscape-above {
+			@include rem-first(font-size, 1);
+		}
+		@include bp-tablet--portrait-below {
+			@include rem-first(font-size, 0.75);
 		}
 	}
 }

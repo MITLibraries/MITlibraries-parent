@@ -48,8 +48,20 @@
 	}
 }
 
+@mixin bp-tablet--landscape-small-below {
+	@media only screen and (max-width: 800px) {
+		@content;
+	}
+}
+
 @mixin bp-tablet--landscape-below {
 	@media only screen and (max-width: 1023px) {
+		@content;
+	}
+}
+
+@mixin bp-tablet--landscape-above {
+	@media only screen and (min-width: 1024px) {
 		@content;
 	}
 }
