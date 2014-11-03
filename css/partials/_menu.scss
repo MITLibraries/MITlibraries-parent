@@ -134,10 +134,12 @@
   }
   .links-sub {
     display: none;
+    left: 0;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     position: absolute;
+    top: 100%;
     transition: max-height 0.3s,
                 margin 0.3s,
                 opacity 0.3s,
