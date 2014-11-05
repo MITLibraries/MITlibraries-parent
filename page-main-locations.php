@@ -153,7 +153,6 @@ get_header(); ?>
 							$pageLink = get_permalink($pageID);
 							
 							$temp = $post;
-							$hasHours = hasHours($locationId, date("Y-m-d"));
 							$post = $temp;
 							
 							
@@ -163,13 +162,10 @@ get_header(); ?>
 								<div class="sub"><?php echo $subject ?></div>
 								<?php if ($phone != ""): ?>
 								<?php echo $phone ?>
-								<?php if ($hasHours): ?>
-								<div class="hours">Today&rsquo;s hours: <span data-location-hours="<?php the_title(); ?>"></span></div>
-								<?php else: ?>
-								<div class="hours">TBA</div>
-								<?php endif; ?>
+								<br/>
 								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
 								<?php if ($study24 == 1): ?>
+									<br/>
 									<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 								<?php endif; ?>
 							</li>	
@@ -202,10 +198,7 @@ get_header(); ?>
 						$equipment = cf("equipment");
 						$expert = cf("expert");
 						
-						$noHours = cf("no_hours");
-						
 						$temp = $post;
-						$hasHours = hasHours($locationId, date("Y-m-d"));
 						$post = $temp;
 						
 						$displayPage = get_field("display_page");
@@ -217,17 +210,6 @@ get_header(); ?>
 							<?php if ($phone != ""): ?>
 							<?php echo $phone ?><br/>
 							<?php endif; ?>
-							
-							<?php if ($noHours): ?>
-								<!-- Will never have hours -->
-							<?php else: ?>
-								<?php if ($hasHours): ?>
-								<div class="hours-today">Today&rsquo;s hours: <span data-location-hours="<?php the_title(); ?>"></span></div>
-								<?php else: ?>
-								<div class="hours-today">TBA</div>
-								<?php endif; ?>
-							<?php endif; ?>
-							
 							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
 						</li>
 					
