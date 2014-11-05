@@ -48,7 +48,7 @@ This directory contains third-party Sass.
 
 ### Build process
 
-The `global.css` file is first compiled from a series of Sass files, and is then autoprefixed and minified in separate builds. To date, these builds have been handled using [Grunt.js](http://gruntjs.com/), though there are certainly other ways to handle them. The Grunt tasks in use are checked-in to this repository, at [/tasks/options](/tasks/options) (`/tasks/options`). The Gruntfile is also checked-in, at [Gruntfile.js](Gruntfile.js) (`Gruntfile.js`).
+The `global.css` file is first compiled from a series of Sass files, and is then autoprefixed and minified in separate builds. To date, these builds have been handled using [Grunt.js](http://gruntjs.com/), though there are certainly other ways to handle them. The Grunt tasks in use are checked-in to this repository, at [/tasks/options](/tasks/options) (`/tasks/options`). The Gruntfile is also checked-in, at [Gruntfile.js](/Gruntfile.js) (`Gruntfile.js`).
 
 #### Sass compiling
 
