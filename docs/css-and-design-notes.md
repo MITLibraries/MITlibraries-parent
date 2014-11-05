@@ -48,7 +48,7 @@ This directory contains third-party Sass.
 
 ### Build process
 
-The `global.css` file is first compiled from a series of Sass files, and is then autoprefixed and minified in separate builds. To date, these builds have been handled using [Grunt.js](http://gruntjs.com/), though there are certainly other ways to handle them. The Grunt tasks in use are checked-in to this repository, at [/tasks/options](/tasks/options) (`/tasks/options`). The Gruntfile is also checked-in, at [Gruntfile.js](/Gruntfile.js) (`Gruntfile.js`).
+The `global.css` file is first compiled from a series of Sass files, and is then autoprefixed and minified in separate builds. To date, these builds have been handled using [Grunt.js](http://gruntjs.com/), though there are certainly other ways to handle them. The Grunt tasks in use are checked-in to this repository, at [/tasks/options](/tasks/options) (`/tasks/options`). The Gruntfile is also checked-in, at [Gruntfile.js](/Gruntfile.js) (`/Gruntfile.js`).
 
 #### Sass compiling
 
@@ -56,7 +56,7 @@ The `global.scss` file is first compiled into `/css/build/global.css`.
 
 #### Autoprefixing
 
-This file is then autoprefixed (into `/css/build/prefixed/global.css`), meaning that the Grunt Autoprefixer plugin automatically adds prefixed CSS rules where necessary to the file. Note that this means that prefixes are never hand-written into the CSS. _This step is critically important_ to ensure that the site preforms well and looks good on older browsers.
+This file is then autoprefixed (into `/css/build/prefixed/global.css`), meaning that the Grunt Autoprefixer plugin automatically adds prefixed CSS rules where necessary to the file. Note that this means that prefixes are never hand-written into the CSS. _This step is critically important_ to ensure that the site performs well and looks good on older browsers.
 
 #### Minification
 
@@ -64,4 +64,4 @@ This file is then minified into `css/build/minified/global.css`. This dramatical
 
 ### Loading this file in the theme
 
-This file is properly registered and enqueued, and loaded in the `<head>`, in the [functions.php file](functions.php) (`functions.php`).
+This file is properly registered and enqueued, and loaded in the `<head>`, in [functions.php](/functions.php) (`/functions.php`).
