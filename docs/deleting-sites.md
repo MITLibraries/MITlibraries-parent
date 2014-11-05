@@ -6,4 +6,4 @@ It's a good idea to periodically test for this issue on a development version of
 
 Sites in the multisite network may be safely deactivated, however.
 
-![Don't delete sites from the multisite network!](/img/dont-delete.png).
+![Don't delete sites from the multisite network!](img/dont-delete.png).
