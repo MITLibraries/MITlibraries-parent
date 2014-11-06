@@ -1,3 +1,5 @@
+// Whoa! Heads up--this was built in a hurry. Lots to clean up.
+
 // Today
 var today, d, m, yyyy;
 today = new Date();
@@ -6,8 +8,31 @@ m = today.getMonth() + 1;
 yyyy = today.getFullYear();
 today = m + "/" + d + "/" + yyyy;
 
+// Dates from today
+
+// var date = moment().format('MMM D').toLowerCase()
+// 		date2 = moment().add(1, 'days').format('MMM D').toLowerCase(),
+// 		date3 = moment().add(2, 'days').format('MMM D').toLowerCase(),
+// 		date4 = moment().add(3, 'days').format('MMM D').toLowerCase(),
+// 		date5 = moment().add(4, 'days').format('MMM D').toLowerCase(),
+// 		date6 = moment().add(5, 'days').format('MMM D').toLowerCase(),
+// 		date7 = moment().add(6, 'days').format('MMM D').toLowerCase();
+
 // Day of week
 var day = moment().format('dddd').toLowerCase(); // to match JSON
+		// day2 = moment().add(1, 'days').format('dddd').toLowerCase(),
+		// day3 = moment().add(2, 'days').format('dddd').toLowerCase(),
+		// day4 = moment().add(3, 'days').format('dddd').toLowerCase(),
+		// day5 = moment().add(4, 'days').format('dddd').toLowerCase(),
+		// day6 = moment().add(5, 'days').format('dddd').toLowerCase(),
+		// day7 = moment().add(6, 'days').format('dddd').toLowerCase(),
+		// date = moment().format('MMM D'),
+		// date2 = moment().add(1, 'days').format('MMM D').toLowerCase(),
+		// date3 = moment().add(2, 'days').format('MMM D').toLowerCase(),
+		// date4 = moment().add(3, 'days').format('MMM D').toLowerCase(),
+		// date5 = moment().add(4, 'days').format('MMM D').toLowerCase(),
+		// date6 = moment().add(5, 'days').format('MMM D').toLowerCase(),
+		// date7 = moment().add(6, 'days').format('MMM D').toLowerCase();
 
 var addDay = moment().add('days', 1).format('M/DD/YYYY');
 
@@ -18,7 +43,25 @@ $.ajax({
 	})
 	.done(function(json) {
 		// Append select element
-		$('.entry-content').prepend('Term name: <select id="hours-terms-select" />');
+		$('.entry-content .jump-links').append('<div>Term name: <select id="hours-terms-select" /></div>');
+		// Append an empty table for the seven day view
+		// $('.entry-content').append(
+		// 	'<h2>Hours this week</h2>' +
+		// 	'<table>' +
+		// 		'<tbody class="table-7-days">' +
+		// 			'<tr>' +
+		// 				'<th>Location</th>' +
+		// 				'<th>' + day + '<br />' + date + '</th>' +
+		// 				'<th>' + day2 + '<br />' + date2 + '</th>' +
+		// 				'<th>' + day3 + '<br />' + date3 + '</th>' +
+		// 				'<th>' + day4 + '<br />' + date4 + '</th>' +
+		// 				'<th>' + day5 + '<br />' + date5 + '</th>' +
+		// 				'<th>' + day6 + '<br />' + date6 + '</th>' +
+		// 				'<th>' + day7 + '<br />' + date7 + '</th>' +
+		// 			'</tr>' +
+		// 		'</tbody>' +
+		// 	'</table>'
+		// );
 		// The terms
 		var terms = json.terms,
 		// Active term
@@ -55,7 +98,7 @@ $.ajax({
 
 		$('#hours-terms-select').change(function(){
 			// Remove any hours data that has been loaded
-			$('.ajax-loaded').fadeOut();
+			$('.ajax-loaded').remove();
 			// Get the active term from the selected option
 			termActive = $('option:selected', this).val();
 			// Set the term based on that
@@ -97,8 +140,81 @@ $.ajax({
 						'</td>' +
 					'</tr>'
 				);
+
+				// 7 day template
+				// var check_closed;
+				// var sevenDaysCompiled = _.template(
+				// 			'<tr class="ajax-loaded">' +
+				// 				'<td>' +
+				// 					'<%= locationName %>' +
+				// 				'</td>' +
+				// 				'<td class"day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 				'<td class="day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day2 + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day2 + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 				'<td class="day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day3 + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day3 + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 				'<td class="day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day4 + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day4 + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 				'<td class="day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day5 + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day5 + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 				'<td class="day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day6 + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day6 + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 				'<td class="day-name">' +
+				// 					'<span class="open">' +
+				// 						'<%= ' + day7 + '.open %> - ' +
+				// 					'</span>' +
+				// 					'<span class="closed">' +
+				// 						'<%= ' + day7 + '.closed %>' +
+				// 					'</span>' +
+				// 				'</td>' +
+				// 			'</tr>'
+				// );
+
+				// var sevenDaysTemplate = sevenDaysCompiled(locations[i]);
+				// // Append the 7 day template
+				// $('.entry-content .table-7-days').append(sevenDaysTemplate);
+
+				// Create some IDs for a jump menu
 				var locId = locations[i].locationName.substr(0, locations[i].locationName.indexOf(' ')).toLowerCase();
 				console.log(locId);
+
 				// Location default Mon-Sun hours template
 				var weekCompiled = _.template(
 					'<h2 id="hours-week-' + locId + '" class="name-location ajax-loaded">' +
