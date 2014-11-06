@@ -17,10 +17,18 @@ $.ajax({
 		dataType: "json"
 	})
 	.done(function(json) {
+		// Append select element
+		$('.entry-content').prepend('Term name: <select id="hours-terms-select" />');
 		// The terms
-		var terms = json.terms;
+		var terms = json.terms,
+		// Active term
+				theTerm;
 
 		for (var i = 0; i < terms.length; i++) {
+			// Term name 
+			var termName = terms[i].termName,
+			// Term val
+					termVal = termName.toLowerCase().replace(/ /g, '-');
 			// Check each term for start/end dates
 			var termStart = terms[i].termStart;
 			var termEnd = terms[i].termEnd;
@@ -28,9 +36,18 @@ $.ajax({
 			var termActive = moment.twix(termStart, termEnd, {parseStrict: true}).isCurrent();
 			// Set the active term
 			if (termActive === true) {
-				var theTerm = terms[i];
+				theTerm = terms[i];
 			}
+			// Append term names to select element
+			$('#hours-terms-select').append('<option value="'+termName+'">'+termName+'</option>');
 		};
+		$('#hours-terms-select').change(function(){
+			theTerm = $('option:selected', this).val();
+			$(document).trigger('term-change');
+		});
+		$(document).on('term-change', function(){
+			console.log(theTerm);
+		});
 		// Active term locations
 		var locations = theTerm.locations;
 
