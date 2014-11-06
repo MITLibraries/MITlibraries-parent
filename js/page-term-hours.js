@@ -22,31 +22,45 @@ $.ajax({
 		// The terms
 		var terms = json.terms,
 		// Active term
-				theTerm;
-
-		for (var i = 0; i < terms.length; i++) {
-			// Term name 
-			var termName = terms[i].termName,
-			// Term val
-					termVal = termName.toLowerCase().replace(/ /g, '-');
-			// Check each term for start/end dates
-			var termStart = terms[i].termStart;
-			var termEnd = terms[i].termEnd;
-			// Check the range (using Moment.js w/ Twix plugin)
-			var termActive = moment.twix(termStart, termEnd, {parseStrict: true}).isCurrent();
-			// Set the active term
-			if (termActive === true) {
-				theTerm = terms[i];
+				theTerm,
+				termName;
+		function term_dates() {
+			for (var i = 0; i < terms.length; i++) {
+				// Term name 
+				termName = terms[i].termName;
+				// Append term names to select element
+				$('#hours-terms-select').append('<option value="'+termName+'">'+termName+'</option>');
 			}
-			// Append term names to select element
-			$('#hours-terms-select').append('<option value="'+termName+'">'+termName+'</option>');
-		};
+		}
+
+		term_dates();
+
+		function hours_terms() {
+			for (var i = 0; i < terms.length; i++) {
+				// Term name 
+				termName = terms[i].termName;
+				// Check each term for start/end dates
+				var termStart = terms[i].termStart;
+				var termEnd = terms[i].termEnd;
+				// Check the range (using Moment.js w/ Twix plugin)
+				var termActive = moment.twix(termStart, termEnd, {parseStrict: true}).isCurrent();
+				// Set the active term
+				if (termActive === true) {
+					theTerm = terms[i];
+				}
+			};
+		}
+
+		hours_terms();
+
 		$('#hours-terms-select').change(function(){
-			theTerm = $('option:selected', this).val();
-			$(document).trigger('term-change');
-		});
-		$(document).on('term-change', function(){
-			console.log(theTerm);
+			// Remove any hours data that has been loaded
+			$('.ajax-loaded').fadeOut();
+			// Get the active term from the selected option
+			termActive = $('option:selected', this).val();
+			// Set the term based on that
+			theTerm = _.findWhere(terms, {termName:termActive});
+			// Build new term views
 			build_term_views();
 		});
 
@@ -71,7 +85,7 @@ $.ajax({
 				}
 				// The template for today's hours
 				var dayCompiled = _.template(
-					'<tr>' +
+					'<tr class="ajax-loaded">' +
 						'<td>' +
 							'<%= locationName %>' +
 						'</td>' +
@@ -87,10 +101,10 @@ $.ajax({
 				console.log(locId);
 				// Location default Mon-Sun hours template
 				var weekCompiled = _.template(
-					'<h2 id="hours-week-' + locId + '" class="name-location">' +
+					'<h2 id="hours-week-' + locId + '" class="name-location ajax-loaded">' +
 						'<%= locationName %> Monday - Sunday' +
 					'</h2>' +
-					'<table>' +
+					'<table class="ajax-loaded">' +
 						'<tbody class="table-mon-sun">' +
 							'<tr>' +
 								'<th>Day</th>' +
@@ -179,10 +193,10 @@ $.ajax({
 				);
 				// Location exception template
 				var locationsCompiled = _.template(
-					'<h2 id="hours-exceptions-' + locId + '" class="name-location">' +
+					'<h2 id="hours-exceptions-' + locId + '" class="name-location ajax-loaded">' +
 						'<%= locationName %> exceptions' +
 					'</h2>' +
-					'<table>' +
+					'<table class="ajax-loaded">' +
 						'<tbody class="table-exceptions">' +
 							'<tr>' +
 								'<th>Date</th>' +
@@ -205,7 +219,7 @@ $.ajax({
 				for (var ii = 0; ii < exceptionsPer.length; ii++) {
 					// Template for each exception
 					var exceptionsCompiled = _.template(
-						'<tr>' +
+						'<tr class="ajax-loaded">' +
 							'<td>' +
 								'<%= date %>' +
 							'</td>' +
@@ -229,8 +243,8 @@ $.ajax({
 			};
 
 			// Append term start and end times
-			$('#date-term-begin').text(theTerm.termStart);
-			$('#date-term-end').text(theTerm.termEnd).trigger('hours-loaded');
+			$('#date-term-begin').append('<div class="ajax-loaded" />').text(theTerm.termStart);
+			$('#date-term-end').append('<div class="ajax-loaded" />').text(theTerm.termEnd).trigger('hours-loaded');
 		}
 
 		build_term_views();
