@@ -37,12 +37,11 @@
 	color: $color-text--light;
 	display: block;
 	font-size: 1em;
-	margin: 1em 1.5em;
+	margin: 1em auto;
 	transition: background $timer-primary ease;
 	width: 100%;
 	@include rem-first(max-width, 17);
 	@include bp-tablet--portrait {
-		margin: 1em auto;
 		width: auto;
 		@include rem-first(max-width, 12);
 	}
