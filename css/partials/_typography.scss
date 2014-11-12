@@ -2,7 +2,7 @@ body {
 	color: $black;
 	font-family: $font-family-primary;
 	line-height: $line-height-primary;
-	text-rendering: optimizeLegibility;
+	//text-rendering: optimizeLegibility; // This is a performance drag, and causes blank text in older WebKit Windows browsers
 }
 
 h1 {
