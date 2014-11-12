@@ -1,4 +1,5 @@
 body {
+	color: $black;
 	font-family: $font-family-primary;
 	line-height: $line-height-primary;
 	text-rendering: optimizeLegibility;
@@ -28,8 +29,15 @@ h3 {
 
 a {
 	color: $color-link-primary;
+	text-decoration: none;
 	&:hover {
 		color: darken($color-link-primary, 20%);
+		text-decoration: underline;
+	}
+	&.no-underline {
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 

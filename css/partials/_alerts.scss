@@ -29,13 +29,14 @@
 	display: inline-block;
 	fill: #ed0e0e;
 	filter: drop-shadow(0 0 1px #aaa);
-	max-height: 4em;
+	height: 4em;
 	margin-right: 1em;
-	max-width: 4em;
+	position: relative;
+	width: 4em;
 	@include bp-mobile--only {
-		max-height: 3em;
+		height: 3em;
 		margin-right: 0.75em;
-		max-width: 3em;
+		width: 3em;
 	}
 }
 
@@ -53,7 +54,7 @@
 	right: 0.5em;
 	top: 0.5em;
 	svg {
-		max-height: 2em;
-		max-width: 2em;
+		height: 2em;
+		width: 2em;
 	}
 }
