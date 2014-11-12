@@ -328,6 +328,8 @@
   @include font-size(16px);
   order: 1;
   width: 14.375%;
+  z-index: map-get($zindex, dropdown);
+  @include rem-first(min-width, 3.1875);
   @include bp-tablet--portrait {
     display: none;
   }
