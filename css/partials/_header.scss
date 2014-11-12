@@ -16,7 +16,7 @@
 	.logo-mit-lib {
 		fill: $color-text--light;
 		svg {
-			max-height: 3.75em;
+			@include rem-first(max-height, 2.75);
 			height: auto;
 		}
 		.arch {
