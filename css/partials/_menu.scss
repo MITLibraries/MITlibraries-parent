@@ -23,7 +23,6 @@
     @include bp-tablet--portrait {
       display: block;
       font-size: 0.5em;
-      line-height: 1.4;
       @include rem-first(padding-top, 0.5);
       a {
         align-items: center;
@@ -32,12 +31,21 @@
         text-transform: uppercase;
       }
       svg {
+        display: block;
         fill: #fff;
         margin-bottom: 1em;
       }
     }
     @include bp-tablet--landscape-below {
-      font-size: 0.25em;
+      font-size: 1em;
+      padding-top: 1em;
+      padding-bottom: 0;
+      a {
+        text-transform: none;
+      }
+      svg {
+        display: none;
+      }
     }
   }
   @include bp-tablet--landscape-below {
