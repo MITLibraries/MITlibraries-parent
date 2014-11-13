@@ -1,5 +1,9 @@
 # CSS & design system notes
 
+## Style guide
+
+[A style guide is viewable, here.](http://libraries.mit.edu/style-guide/)
+
 Broadly speaking, there are two main CSS files associated with the Libraries' WordPress theme:
 
 ## [style.css](/style.css) (`/style.css`).
