@@ -1,9 +1,6 @@
 .footer-main {
-	background: lighten($color-primary, 7.8431%);
+	background: $color-primary;
 	flex-wrap: wrap;
-	@include bp-large {
-		background: $color-primary;
-	}
 	@include bp-tablet--portrait {
 		padding: 2em 1.375em;
 	}
@@ -63,7 +60,7 @@
 			padding: 0;
 			z-index: map-get($zindex, main-secondary);
 		}
-		@include bp-tablet--portrait-only { // Prevent these links from overflowing into Social icons
+		@include bp-tablet--landscape-below { // Prevent these links from overflowing into Social icons
 			@include rem-first(margin-top, 1.5);
 			@include rem-first(margin-left, 0);
 		}
@@ -86,7 +83,7 @@
 			}
 		}
 		span:first-of-type {
-			@include bp-tablet--portrait-only {
+			@include bp-tablet--landscape-below {
 				padding-left: 0; // So that primary links are flush with left edge
 			}
 		}
