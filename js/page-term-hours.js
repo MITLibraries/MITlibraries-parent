@@ -332,25 +332,27 @@ $.ajax({
 				
 				// Exceptions per location
 				var exceptionsPer = locations[i].exceptions;
-				for (var ii = 0; ii < exceptionsPer.length; ii++) {
-					// Template for each exception
-					var exceptionsCompiled = _.template(
-						'<tr class="ajax-loaded">' +
-							'<td>' +
-								'<%= date %>' +
-							'</td>' +
-							'<td>' +
-								'<%= open %>' +
-							'</td>' +
-							'<td>' +
-								'<%= closed %>' +
-							'</td>' +
-						'</tr>'
-					);
-					var exceptionsTemplate = exceptionsCompiled(locations[i].exceptions[ii]);
-					// Append each exception to the most recently create location exception list
-					$('.table-exceptions:last').append(exceptionsTemplate);
-				};
+				if (typeof exceptionsPer !== 'undefined') { // Make sure there are exceptions
+					for (var ii = 0; ii < exceptionsPer.length; ii++) {
+						// Template for each exception
+						var exceptionsCompiled = _.template(
+							'<tr class="ajax-loaded">' +
+								'<td>' +
+									'<%= date %>' +
+								'</td>' +
+								'<td>' +
+									'<%= open %>' +
+								'</td>' +
+								'<td>' +
+									'<%= closed %>' +
+								'</td>' +
+							'</tr>'
+						);
+						var exceptionsTemplate = exceptionsCompiled(locations[i].exceptions[ii]);
+						// Append each exception to the most recently create location exception list
+						$('.table-exceptions:last').append(exceptionsTemplate);
+					};
+				}
 				
 				// Set today's hours for each location
 				var dayTemplate = dayCompiled(locations[i]);
