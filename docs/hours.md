@@ -8,7 +8,7 @@ We're currently handling hours two ways on libraries.mit.edu:
 
 __Update 11/13/14__
 
-Recently the /hours page began experiencing some pretty significant issues relating to load time, max exectuion errors, caching errors, and memory leaks. The page now redirects to [libraries.mit.edu/term-hours](http://libraries.mit.edu/term-hours), and all other references to the "Hours" post type have been removed from the theme.
+Recently the /hours page began experiencing some pretty significant issues relating to load time, max exectuion errors, caching errors, other as yet unknown problems. The page now redirects to [libraries.mit.edu/term-hours](http://libraries.mit.edu/term-hours), and all other references to the "Hours" post type have been removed from the theme.
 
 ----
 
