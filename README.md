@@ -1,5 +1,4 @@
 [MIT Libraries](http://libraries.mit.edu) WordPress Theme
-========
 
 This is main WordPress theme for the MIT Libraries.
 
