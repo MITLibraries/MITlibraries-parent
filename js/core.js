@@ -32,7 +32,7 @@ var Core = {
 			});
 
 			$(this).find("td:not(.name)").each(function() {
-				$(this).height(maxHeight);
+				// $(this).height(maxHeight);
 			});
 		});
 	},	

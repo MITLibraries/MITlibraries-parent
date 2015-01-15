@@ -80,6 +80,7 @@ $(function mitlib_alerts(){
 					if (localStorage.getItem('alert_closed-' + alert_ID) !== 'true') {
 						// Append the template
 				  	$(alert_template).prependTo('.wrap-page');
+					$('.gldp-default').animate({"top":"262px"});
 				  	// Remove the necessary transition class with a timeout, so that the animation shows.
 						setTimeout(function() {
 							$('.posts--preview--alerts').removeClass('transition-vertical--hide');
@@ -100,7 +101,8 @@ $(function mitlib_alerts(){
 					$('#close').click(function(){
 						// Add the necessary transition hide class
 				  	$('.posts--preview--alerts').addClass('transition-vertical--hide');
-				  	// If localStorage
+					$('.gldp-default').css({"top":"105px"});
+					// If localStorage
 				  	if (local_storage === true) {
 				  		// Set the localStorage item, using the post ID
 				  		localStorage.setItem('alert_closed-' + alert_ID, 'true');
