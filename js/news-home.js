@@ -4,8 +4,8 @@
 
 $(function(){
 	// Use WP API, don't cache requests
-    // old url: '/news/wp-json/posts',
-    // new url: '/posts-front.json',
+        // old url: '/news/wp-json/posts',
+        // new url: '/posts-front.json',
 	$.ajax({
 		cache: false,
 		url: '/posts-front.json',
@@ -118,8 +118,4 @@ $(function(){
 // Remove HTML "loading" element
 $(document).on('news-loaded', function(){
 	$('.spinner').remove();
-<<<<<<< Updated upstream
 });
-=======
-});
->>>>>>> Stashed changes
