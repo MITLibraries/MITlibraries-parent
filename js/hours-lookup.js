@@ -108,14 +108,19 @@ function loadHoursSingle(data, tabletop) {
     location,
     singleHoursObject;
 
+  // Start by loading the complete hours object for the given date
+  var completeHoursObject = buildCompleteHoursObject(data, date);
+
   jQuery("[data-location-hours]").each(function() {
 
+    // Read the relevant location
     location = jQuery(this).data("location-hours");
 
-    // perform any last minute re-formatting
-    singleHoursObject = buildSingleHoursObject(data,date,location)
+    // Perform any last-minute formatting
+    singleHoursObject = getSingleHoursObject(completeHoursObject,date,location)
         .replace(/:00/g,"");
 
+    // Write out to the page
     jQuery(this).html(singleHoursObject);
 
   });
