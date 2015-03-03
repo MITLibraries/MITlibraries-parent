@@ -43,8 +43,9 @@
 						)
 					),
 				*/
+				'post_type' => array( 'post' , 'spotlights' , 'bibliotech'),
 				'post_status' => 'publish',
-				'posts_per_page' => 10,
+				'posts_per_page' => 50,
 				'orderby' => 'post_date',
 				'order' => 'DESC',
 				'ignore_sticky_posts' => 1
@@ -83,7 +84,13 @@
 							$label = "News";
 						}
 					} else {
-						$label = "Other";
+						if($post->post_type === "spotlights") {
+							$label = $custom["feature_type"][0];
+						} elseif($post->post_type === "bibliotech") {
+							$label = "Bibliotech";
+						} else {
+							$label = "Other";
+						}
 					}
 
 					// card date
@@ -104,7 +111,13 @@
 					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue; margin-top: 1rem;">';
 					echo        '<div class="category-post">' . $label . '</div>';
 					echo        '<div class="href">';
-					the_permalink();
+					if($post->post_type === "post" || $post->post_type === "bibliotech") {
+						the_permalink();
+					} elseif($post->post_type === "spotlights") {
+						echo $custom["external_link"][0];
+					} else {
+
+					}
 					echo  		'</div>';
 					if($post->post_type === "post" && $post->is_event[0] === "1") {
 						echo 	'<div class="datetime">' . $eventDate . '</div>';						
