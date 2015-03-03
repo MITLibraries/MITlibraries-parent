@@ -211,10 +211,10 @@
 						'compare' => '='
 						),
 					),
+				'post_type' => array( 'post' , 'spotlights' , 'bibliotech'),
 				'post_status' => 'publish',
 				'posts_per_page' => 2,
 				'orderby' => 'rand',
-				'order' => 'DESC',
 				'ignore_sticky_posts' => 1
 				);
 			$the_stories = null;
@@ -225,36 +225,73 @@
 					// get custom meta fields
 					$custom = get_post_custom();
 
+					// headline text
+					if($custom["homepage_post_title"][0]) {
+						$headline = $custom["homepage_post_title"][0];
+					} else {
+						$headline = $post->post_title;
+					}
+
 					// determine card label
-					if($post_type)
+					if($post->post_type === "post") {
+						if($post->is_event[0] === "1") {
+							$label = "Event";
+						} else {
+							$label = "News";
+						}
+					} else {
+						if($post->post_type === "spotlights") {
+							$label = $custom["feature_type"][0];
+						} elseif($post->post_type === "bibliotech") {
+							$label = "Bibliotech";
+						} else {
+							$label = "Other";
+						}
+					}
 
-					// var_dump($custom);
-					$image = json_decode($custom["homeImg"][0]);
+					// highlight image
+					$imageElement = "";
+					if($post->post_type === "post" || $post->post_type === "bibliotech") {
+						$image = json_decode($custom["homeImg"][0]);
+						// If you need a hard coded image, use 17616 for $image->cropped_image
+						// We use "original" even though this is already cropped to avoid cropping again
+						$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
+						$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+						$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+					}
 
-					// image 17616
-					$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
-					// var_dump($imageURL);
-					$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
-					// var_dump($imageURL);
+					// event date, if applicable
+					$eventDate = "";
+					if($post->post_type === "post" && $post->is_event[0] === "1") {
+						$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
+						$eventDate = '<div class="date-event"><div class="icon-calendar"> </div>' . date_format($eventDate,'F j');
+						if($post->event_start_time != '') {
+							$eventDate = $eventDate . '<span class="time-event"> ' . $post->event_start_time;
+						};
+						if($post->event_end_time != '') {
+							$eventDate = $eventDate . " - " . $post->event_end_time;
+						};
+						if($post->event_start_time != '') {
+							$eventDate = $eventDate . '</span>';
+						};
+						$eventDate = $eventDate . "</div>";
+					}
 
 					echo '<a class="post--full-bleed no-underline flex-container" href="';
-					the_permalink();
+					if($post->post_type === "post" || $post->post_type === "bibliotech") {
+						the_permalink();
+					} elseif($post->post_type === "spotlights") {
+						echo $custom["external_link"][0];
+					} else {
+
+					}
 					echo '">';
 					echo 	'<div class="excerpt-news">';
-					echo    	'<div class="category-post">News</div>';
-					echo 		'<h3 class="title-post">';
-
-					if($custom["homepage_post_title"][0]) {
-						echo $custom["homepage_post_title"][0];
-					} else {
-						the_title();
-					}
-					echo        '</h3>';
+					echo    	'<div class="category-post">' . $label . '</div>';
+					echo 		'<h3 class="title-post">' . $headline . '</h3>';
+					echo        $eventDate;
 					echo    '</div>';
-					echo    '<div class="image" style="background-image: url(';
-					echo $imageURL;
-					echo    ')">';
-					echo    '</div>';
+					echo 	$imageElement;
 					echo '</a>';
 
 				endwhile;
@@ -268,6 +305,11 @@
 						<div class="excerpt-news">
 							<div class="category-post">News</div>
 							<h3 class="title-post">Things to love at the Libraries this February</h3>
+							<div class="events">
+								<div class="event"> </div>
+		  						March 14, 2015&nbsp;&nbsp; &nbsp; 
+          						<span class="time">3pm - 5</span> 
+				           </div>
 						</div>
 						<div class="image" style="background-image: url('http://libraries-test.mit.edu/news/files/2015/01/book-heart.jpg');"></div>
 					</a>
