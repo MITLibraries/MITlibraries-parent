@@ -241,7 +241,11 @@
 						}
 					} else {
 						if($post->post_type === "spotlights") {
-							$label = $custom["feature_type"][0];
+							if($custom["feature_type"][0] === "fact" || $custom["feature_type"][0] === "tip") {
+								$label = '<div class="info"></div>' . $custom["feature_type"][0];
+							} else {
+								$label = '<div class="or_star-25"></div>Featured ' . $custom["feature_type"][0];
+							}
 						} elseif($post->post_type === "bibliotech") {
 							$label = "Bibliotech";
 						} else {
