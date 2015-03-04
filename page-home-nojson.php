@@ -203,105 +203,320 @@
 			// switch to news blog
 			switch_to_blog(7);
 
-			$args = array(
-				'meta_query' => array(
-					array(
-						'key' => 'featuredArticle',
-						'value' => 'True',
-						'compare' => '='
-						),
-					),
-				'post_type' => array( 'post' , 'spotlights' , 'bibliotech'),
-				'post_status' => 'publish',
-				'posts_per_page' => 2,
-				'orderby' => 'rand',
-				'ignore_sticky_posts' => 1
-				);
-			$the_stories = null;
-			$the_stories = new WP_Query($args);
+			if (mt_rand(0,1)) {
+				// build query for two post/bibliotech articles
 
-			if( $the_stories->have_posts() ) {
-				while ( $the_stories->have_posts() ) : $the_stories->the_post();
-					// get custom meta fields
-					$custom = get_post_custom();
+			} else {
+				// build query for one post/bibliotech, and one spotlight
 
-					// headline text
-					if($custom["homepage_post_title"][0]) {
-						$headline = $custom["homepage_post_title"][0];
-					} else {
-						$headline = $post->post_title;
-					}
-
-					// determine card label
-					if($post->post_type === "post") {
-						if($post->is_event[0] === "1") {
-							$label = "Event";
-						} else {
-							$label = "News";
-						}
-					} else {
-						if($post->post_type === "spotlights") {
-							if($custom["feature_type"][0] === "fact" || $custom["feature_type"][0] === "tip") {
-								$label = '<div class="info"></div>' . $custom["feature_type"][0];
-							} else {
-								$label = '<div class="or_star-25"></div>Featured ' . $custom["feature_type"][0];
-							}
-						} elseif($post->post_type === "bibliotech") {
-							$label = "Bibliotech";
-						} else {
-							$label = "Other";
-						}
-					}
-
-					// highlight image
-					$imageElement = "";
-					if($post->post_type === "post" || $post->post_type === "bibliotech") {
-						$image = json_decode($custom["homeImg"][0]);
-						// If you need a hard coded image, use 17616 for $image->cropped_image
-						// We use "original" even though this is already cropped to avoid cropping again
-						$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
-						$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
-						$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
-					}
-
-					// event date, if applicable
-					$eventDate = "";
-					if($post->post_type === "post" && $post->is_event[0] === "1") {
-						$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
-						$eventDate = '<div class="date-event"><div class="icon-calendar"> </div>' . date_format($eventDate,'F j');
-						if($post->event_start_time != '') {
-							$eventDate = $eventDate . '<span class="time-event"> ' . $post->event_start_time;
-						};
-						if($post->event_end_time != '') {
-							$eventDate = $eventDate . " - " . $post->event_end_time;
-						};
-						if($post->event_start_time != '') {
-							$eventDate = $eventDate . '</span>';
-						};
-						$eventDate = $eventDate . "</div>";
-					}
-
-					echo '<a class="post--full-bleed no-underline flex-container" href="';
-					if($post->post_type === "post" || $post->post_type === "bibliotech") {
-						the_permalink();
-					} elseif($post->post_type === "spotlights") {
-						echo $custom["external_link"][0];
-					} else {
-
-					}
-					echo '">';
-					echo 	'<div class="excerpt-news">';
-					echo    	'<div class="category-post">' . $label . '</div>';
-					echo 		'<h3 class="title-post">' . $headline . '</h3>';
-					echo        $eventDate;
-					echo    '</div>';
-					echo 	$imageElement;
-					echo '</a>';
-
-				endwhile;
 			}
 
-			// switch back to Chomsky site
+			// render resulting recordset
+
+			// flip coin to see if we load a spotlight
+			if (mt_rand(0, 1)) {
+				// no spotlight - just get two post/bibliotech articles
+				$args = array(
+					'meta_query' => array(
+						array(
+							'key' => 'featuredArticle',
+							'value' => 'True',
+							'compare' => '='
+							),
+						),
+					'post_type' => array( 'post' , 'bibliotech'),
+					'post_status' => 'publish',
+					'posts_per_page' => 2,
+					'orderby' => 'rand',
+					'ignore_sticky_posts' => 1
+					);
+				$the_stories = null;
+				$the_stories = new WP_Query($args);
+
+
+				if( $the_stories->have_posts() ) {
+					while ( $the_stories->have_posts() ) : $the_stories->the_post();
+						// get custom meta fields
+						$custom = get_post_custom();
+
+						// headline text
+						if($custom["homepage_post_title"][0]) {
+							$headline = $custom["homepage_post_title"][0];
+						} else {
+							$headline = $post->post_title;
+						}
+
+						// determine card label
+						if($post->post_type === "post") {
+							if($post->is_event[0] === "1") {
+								$label = "Event";
+							} else {
+								$label = "News";
+							}
+						} else {
+							if($post->post_type === "spotlights") {
+								if($custom["feature_type"][0] === "fact" || $custom["feature_type"][0] === "tip") {
+									$label = '<div class="info"></div>' . $custom["feature_type"][0];
+								} else {
+									$label = '<div class="or_star-25"></div>Featured ' . $custom["feature_type"][0];
+								}
+							} elseif($post->post_type === "bibliotech") {
+								$label = "Bibliotech";
+							} else {
+								$label = "Other";
+							}
+						}
+
+						// highlight image
+						$imageElement = "";
+						if($post->post_type === "post" || $post->post_type === "bibliotech") {
+							$image = json_decode($custom["homeImg"][0]);
+							// If you need a hard coded image, use 17616 for $image->cropped_image
+							// We use "original" even though this is already cropped to avoid cropping again
+							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
+							$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+							$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+						}
+
+						// event date, if applicable
+						$eventDate = "";
+						if($post->post_type === "post" && $post->is_event[0] === "1") {
+							$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
+							$eventDate = '<div class="date-event"><div class="icon-calendar"> </div>' . date_format($eventDate,'F j');
+							if($post->event_start_time != '') {
+								$eventDate = $eventDate . '<span class="time-event"> ' . $post->event_start_time;
+							};
+							if($post->event_end_time != '') {
+								$eventDate = $eventDate . " - " . $post->event_end_time;
+							};
+							if($post->event_start_time != '') {
+								$eventDate = $eventDate . '</span>';
+							};
+							$eventDate = $eventDate . "</div>";
+						}
+
+						echo '<a class="post--full-bleed no-underline flex-container" href="';
+						if($post->post_type === "post" || $post->post_type === "bibliotech") {
+							the_permalink();
+						} elseif($post->post_type === "spotlights") {
+							echo $custom["external_link"][0];
+						} else {
+
+						}
+						echo '">';
+						echo 	'<div class="excerpt-news">';
+						echo    	'<div class="category-post">' . $label . '</div>';
+						echo 		'<h3 class="title-post">' . $headline . '</h3>';
+						echo        $eventDate;
+						echo    '</div>';
+						echo 	$imageElement;
+						echo '</a>';
+
+					endwhile;
+				}
+
+			} else {
+				// one spotlight
+				$args = array(
+					'meta_query' => array(
+						array(
+							'key' => 'featuredArticle',
+							'value' => 'True',
+							'compare' => '='
+							),
+						),
+					'post_type' => array( 'post' , 'bibliotech'),
+					'post_status' => 'publish',
+					'posts_per_page' => 1,
+					'orderby' => 'rand',
+					'ignore_sticky_posts' => 1
+					);
+				$the_stories = null;
+				$the_stories = new WP_Query($args);
+
+				if( $the_stories->have_posts() ) {
+					while ( $the_stories->have_posts() ) : $the_stories->the_post();
+						// get custom meta fields
+						$custom = get_post_custom();
+
+						// headline text
+						if($custom["homepage_post_title"][0]) {
+							$headline = $custom["homepage_post_title"][0];
+						} else {
+							$headline = $post->post_title;
+						}
+
+						// determine card label
+						if($post->post_type === "post") {
+							if($post->is_event[0] === "1") {
+								$label = "Event";
+							} else {
+								$label = "News";
+							}
+						} else {
+							if($post->post_type === "spotlights") {
+								if($custom["feature_type"][0] === "fact" || $custom["feature_type"][0] === "tip") {
+									$label = '<div class="info"></div>' . $custom["feature_type"][0];
+								} else {
+									$label = '<div class="or_star-25"></div>Featured ' . $custom["feature_type"][0];
+								}
+							} elseif($post->post_type === "bibliotech") {
+								$label = "Bibliotech";
+							} else {
+								$label = "Other";
+							}
+						}
+
+						// highlight image
+						$imageElement = "";
+						if($post->post_type === "post" || $post->post_type === "bibliotech") {
+							$image = json_decode($custom["homeImg"][0]);
+							// If you need a hard coded image, use 17616 for $image->cropped_image
+							// We use "original" even though this is already cropped to avoid cropping again
+							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
+							$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+							$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+						}
+
+						// event date, if applicable
+						$eventDate = "";
+						if($post->post_type === "post" && $post->is_event[0] === "1") {
+							$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
+							$eventDate = '<div class="date-event"><div class="icon-calendar"> </div>' . date_format($eventDate,'F j');
+							if($post->event_start_time != '') {
+								$eventDate = $eventDate . '<span class="time-event"> ' . $post->event_start_time;
+							};
+							if($post->event_end_time != '') {
+								$eventDate = $eventDate . " - " . $post->event_end_time;
+							};
+							if($post->event_start_time != '') {
+								$eventDate = $eventDate . '</span>';
+							};
+							$eventDate = $eventDate . "</div>";
+						}
+
+						echo '<a class="post--full-bleed no-underline flex-container" href="';
+						if($post->post_type === "post" || $post->post_type === "bibliotech") {
+							the_permalink();
+						} elseif($post->post_type === "spotlights") {
+							echo $custom["external_link"][0];
+						} else {
+
+						}
+						echo '">';
+						echo 	'<div class="excerpt-news">';
+						echo    	'<div class="category-post">' . $label . '</div>';
+						echo 		'<h3 class="title-post">' . $headline . '</h3>';
+						echo        $eventDate;
+						echo    '</div>';
+						echo 	$imageElement;
+						echo '</a>';
+
+					endwhile;
+				}
+
+				$args = array(
+					'meta_query' => array(
+						array(
+							'key' => 'featuredArticle',
+							'value' => 'True',
+							'compare' => '='
+							),
+						),
+					'post_type' => 'spotlights',
+					'post_status' => 'publish',
+					'posts_per_page' => 1,
+					'orderby' => 'rand',
+					'ignore_sticky_posts' => 1
+					);
+				$the_stories = null;
+				$the_stories = new WP_Query($args);
+
+				if( $the_stories->have_posts() ) {
+					while ( $the_stories->have_posts() ) : $the_stories->the_post();
+						// get custom meta fields
+						$custom = get_post_custom();
+
+						// headline text
+						if($custom["homepage_post_title"][0]) {
+							$headline = $custom["homepage_post_title"][0];
+						} else {
+							$headline = $post->post_title;
+						}
+
+						// determine card label
+						if($post->post_type === "post") {
+							if($post->is_event[0] === "1") {
+								$label = "Event";
+							} else {
+								$label = "News";
+							}
+						} else {
+							if($post->post_type === "spotlights") {
+								if($custom["feature_type"][0] === "fact" || $custom["feature_type"][0] === "tip") {
+									$label = '<div class="info"></div>' . $custom["feature_type"][0];
+								} else {
+									$label = '<div class="or_star-25"></div>Featured ' . $custom["feature_type"][0];
+								}
+							} elseif($post->post_type === "bibliotech") {
+								$label = "Bibliotech";
+							} else {
+								$label = "Other";
+							}
+						}
+
+						// highlight image
+						$imageElement = "";
+						if($post->post_type === "post" || $post->post_type === "bibliotech") {
+							$image = json_decode($custom["homeImg"][0]);
+							// If you need a hard coded image, use 17616 for $image->cropped_image
+							// We use "original" even though this is already cropped to avoid cropping again
+							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
+							$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+							$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+						}
+
+						// event date, if applicable
+						$eventDate = "";
+						if($post->post_type === "post" && $post->is_event[0] === "1") {
+							$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
+							$eventDate = '<div class="date-event"><div class="icon-calendar"> </div>' . date_format($eventDate,'F j');
+							if($post->event_start_time != '') {
+								$eventDate = $eventDate . '<span class="time-event"> ' . $post->event_start_time;
+							};
+							if($post->event_end_time != '') {
+								$eventDate = $eventDate . " - " . $post->event_end_time;
+							};
+							if($post->event_start_time != '') {
+								$eventDate = $eventDate . '</span>';
+							};
+							$eventDate = $eventDate . "</div>";
+						}
+
+						echo '<a class="post--full-bleed no-underline flex-container" href="';
+						if($post->post_type === "post" || $post->post_type === "bibliotech") {
+							the_permalink();
+						} elseif($post->post_type === "spotlights") {
+							echo $custom["external_link"][0];
+						} else {
+
+						}
+						echo '">';
+						echo 	'<div class="excerpt-news">';
+						echo    	'<div class="category-post">' . $label . '</div>';
+						echo 		'<h3 class="title-post">' . $headline . '</h3>';
+						echo        $eventDate;
+						echo    '</div>';
+						echo 	$imageElement;
+						echo '</a>';
+
+					endwhile;
+				}
+
+
+			}
+
+			// switch back to parent site
 			restore_current_blog();
 		?>
 					<!-- Reference markup for an article 
