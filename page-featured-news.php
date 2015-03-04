@@ -23,26 +23,6 @@
 						'compare' => '='
 						),
 					),
-				/*
-				'post_type' => array(
-						'relation' => 'OR',
-						array(
-							'key' => 'post_type',
-							'value' => 'post',
-							'compare' => '='
-						),
-						array(
-							'key' => 'post_type',
-							'value' => 'bibliotech',
-							'compare' => '='
-						),
-						array(
-							'key' => 'post_type',
-							'value' => 'spotlight',
-							'compare' => '='
-						)
-					),
-				*/
 				'post_type' => array( 'post' , 'spotlights' , 'bibliotech'),
 				'post_status' => 'publish',
 				'posts_per_page' => 50,
@@ -66,15 +46,9 @@
 					$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
 					// var_dump($imageURL);
 
-					echo '<div class="post--full-bleed no-underline" style="border:1px solid black; margin-bottom: 1rem; padding: 1rem;" href="';
+					echo '<div class="post--full-bleed no-underline" href="';
 					the_permalink();
 					echo '">';
-					echo '<pre style="font-family:monospace;font-size:12px;background-color:#fdd;">';
-					var_dump($post);
-					echo '</pre>';
-					echo '<pre style="font-family:monospace;font-size:12px;background-color:#dfd;">';
-					var_dump($custom);
-					echo '</pre>';
 
 					// card label
 					if($post->post_type === "post") {
@@ -95,9 +69,6 @@
 
 					// card date
 					if($post->post_type === "post" && $post->is_event[0] === "1") {
-						echo 'date ' . $post->event_date . '<br>';
-						echo 'start ' . $post->event_start_time . '<br>';
-						echo 'end ' . $post->event_end_time . '<br>';
 						$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
 						$eventDate = '<span class="date">' . date_format($eventDate,'F j') . '</span>';
 						if($post->event_start_time != '') {
@@ -108,7 +79,7 @@
 						};
 					}
 
-					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue; margin-top: 1rem;">';
+					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo        '<div class="category-post">' . $label . '</div>';
 					echo        '<div class="href">';
 					if($post->post_type === "post" || $post->post_type === "bibliotech") {
@@ -132,23 +103,29 @@
 					echo        '</h3>';
 					echo    	'<img src="' . $imageURL . '" alt="">';
 					echo    '</div>';
+
+					echo '<div class="control" style="background-color:#fdd;">';
+					echo '<span>Post metadata</span><br>';
+					echo '<pre class="toggle meta">';
+					var_dump($post);
+					echo '</pre>';
+					echo '</div>';
+
+					echo '<div class="control" style="background-color:#dfd;">';
+					echo '<span>Custom values</span><br>';
+					echo '<pre class="toggle meta">';
+					var_dump($custom);
+					echo '</pre>';
+					echo '</div>';
+
 					echo '</div>';
 
 				endwhile;
 			}
 
-			// switch back to Chomsky site
+			// switch back to parent site
 			restore_current_blog();
 		?>
-					<!-- Reference markup for an article 
-					<a class="post--full-bleed no-underline flex-container" href="http://libraries.mit.edu/news/things-libraries-february/16987/">
-						<div class="excerpt-news">
-							<div class="category-post">News</div>
-							<h3 class="title-post">Things to love at the Libraries this February</h3>
-						</div>
-						<div class="image" style="background-image: url('http://libraries-test.mit.edu/news/files/2015/01/book-heart.jpg');"></div>
-					</a>
-					-->
 
 				</div>
 			</div><!-- end div.news-events -->
@@ -157,3 +134,34 @@
 <?php 
 	get_footer();
 ?>
+<script>
+jQuery(function() {
+	// This drives the show/hide toggles on post metadata
+	jQuery(".control span").click(function() {
+		jQuery(this).parent().find(".toggle").toggleClass("meta");
+	})
+});
+</script>
+<style type="text/css">
+.post--full-bleed.no-underline {
+	border:1px solid black; 
+	margin-bottom: 1rem; 
+	padding: 1rem;
+	padding-bottom: 0;
+}
+.excerpt-news {
+	margin-bottom: 1rem;
+	background-color: #ddf;
+	border: 1px solid blue;
+}
+.control {
+	margin-bottom: 1rem;
+	font-family: monospace;
+	font-size: 12px;
+}
+.control span {
+	font-size: 1.2rem;
+	padding: 0.5rem;
+
+}
+</style>
