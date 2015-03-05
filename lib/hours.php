@@ -1,7 +1,10 @@
 <?php
 
-if (isset($_GET["cleanCache"]))
+if (isset($_GET["cleanCache"])) {
 	$clean = $_GET["cleanCache"];
+} else {
+	$clean = 0;
+}
 
 $resetCache = 0;
 
