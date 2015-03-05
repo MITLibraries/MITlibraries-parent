@@ -15,6 +15,11 @@
 			// switch to news blog
 			switch_to_blog(7);
 
+			$foo = get_blog_details(7);
+			echo '<pre>';
+			var_dump($foo);
+			echo '</pre>';
+
 			$args = array(
 				'meta_query' => array(
 					array(
@@ -38,8 +43,13 @@
 					// setup_postdata($post);
 					$custom = get_post_custom();
 					// var_dump($custom);
-					$image = json_decode($custom["homeImg"][0]);
 
+					// URL
+					$url = get_permalink($post->id);
+					echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>';
+					echo 'post: ' . post_permalink($post->id) . '<br>';
+
+					$image = json_decode($custom["homeImg"][0]);
 					// image 17616
 					$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
 					// var_dump($imageURL);
@@ -81,6 +91,7 @@
 
 					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo        '<div class="category-post">' . $label . '</div>';
+					echo        '<div class="category-post">' . $url . '</div>';
 					echo        '<div class="href">';
 					if($post->post_type === "post" || $post->post_type === "bibliotech") {
 						the_permalink();
