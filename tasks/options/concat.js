@@ -19,7 +19,6 @@ module.exports = {
       'js/libs/*.js',
       'js/hours-home.js',
       'js/hours-lookup.js',
-      'js/news-home.js',
       'js/guides-home.js',
       'js/experts-home.js',
       'js/ga_discovery.js',
@@ -28,13 +27,13 @@ module.exports = {
     dest: 'js/build/home.js'
   },
   hours: {
-  	src: [
-  		'js/sticky/*.js',
-  		'js/sticky/scrollStick/*.js',
-  		'libs/datepicker/glDatepicker.js',
-  		'js/make.datepicker.js'
-  	],
-  	dest: 'js/build/hours.js'
+    src: [
+      'js/sticky/*.js',
+      'js/sticky/scrollStick/*.js',
+      'libs/datepicker/glDatepicker.js',
+      'js/make.datepicker.js'
+    ],
+    dest: 'js/build/hours.js'
   },
   search: {
     src: [
