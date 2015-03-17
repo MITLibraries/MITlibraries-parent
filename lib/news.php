@@ -11,6 +11,22 @@
 
 $newsBlogID = 7;
 
+function DebugNews() {
+    global $newsBlogID;
+
+    echo '<!-- Loading featured news items -->';
+
+    // Switch context to news site
+    switch_to_blog($newsBlogID);
+
+    $pool = RetrievePool();
+
+    RenderPool($pool);
+
+    // Restore context back to current site
+    restore_current_blog();
+}
+
 function LoadNews() {
     global $newsBlogID;
 
@@ -154,19 +170,21 @@ function RenderPool($items) {
 
         // event date, if applicable
         $eventDate = "";
-        if($post->post_type === "post" && $post->is_event[0] === "1") {
-            $eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
-            $eventDate = '<div class="date-event"><div class="icon-calendar"> </div>' . date_format($eventDate,'F j');
-            if($post->event_start_time != '') {
-                $eventDate = $eventDate . '<span class="time-event"> ' . $post->event_start_time;
-            };
-            if($post->event_end_time != '') {
-                $eventDate = $eventDate . " - " . $post->event_end_time;
-            };
-            if($post->event_start_time != '') {
-                $eventDate = $eventDate . '</span>';
-            };
-            $eventDate = $eventDate . "</div>";
+        if($item->post_type === "post" && array_key_exists('is_event', $custom)) {
+            if($custom["is_event"][0] === "1") {
+                $eventDate = DateTime::createFromFormat('Ymd',$custom["event_date"][0]);
+                $eventDate = '<div class="date-event"><div class="event"> </div>' . date_format($eventDate,'F j');
+                if($custom["event_start_time"][0]!= '') {
+                    $eventDate = $eventDate . '<span class="time-event"> ' . $custom["event_start_time"][0];
+                };
+                if($custom["event_end_time"][0] != '') {
+                    $eventDate = $eventDate . " - " . $custom["event_end_time"][0];
+                };
+                if($custom["event_start_time"][0] != '') {
+                    $eventDate = $eventDate . '</span>';
+                };
+                $eventDate = $eventDate . "</div>";
+            }
         }
 
         // Highlight image
