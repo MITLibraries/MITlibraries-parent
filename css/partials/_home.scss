@@ -269,7 +269,6 @@
 			font-size: 0.625em;
 			font-weight: bold;
 			text-transform: uppercase;
-			vertical-align: top;
 			margin-top: 5px;
 			.info,
 			.or_star-25 {
@@ -277,6 +276,7 @@
 				display: inline-block;
 				margin-top: -5px;
 				margin-right: 5px;
+				vertical-align: top;
 			}
 			.info {
 				background-position: -161px -125px;
@@ -292,6 +292,15 @@
 		.date-event {
 			color: $color-news-events;
 			font-weight: 600;
+			font-size: 0.9375em;
+			.event {
+				background: url(#{$imagesPath}/sprites.png) no-repeat;
+				background-position: -11px -31px;
+				display: inline-block;
+				width: 24px;
+				height: 18px;
+				margin-bottom: -2px;
+			}
 		}
 		.excerpt-news {
 			padding: 0.8125em;
