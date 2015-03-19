@@ -59,12 +59,16 @@
 					// echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>';
 					// echo 'post: ' . post_permalink($post->id) . '<br>';
 
-					$image = json_decode($custom["homeImg"][0]);
-					// image 17616
-					$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
-					// var_dump($imageURL);
-					$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
-					// var_dump($imageURL);
+					// Highlight image - use 17616 for debugging
+					$imageTag = "";
+					if($post->post_type === "post" || $post->post_type === "bibliotech") {
+						if($custom["homeImg"][0] != "") {
+							$image = json_decode($custom["homeImg"][0]);
+							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
+							$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+							$imageTag = '<img src="' . $imageURL . '" alt="">';
+						}
+					}
 
 					echo '<div class="post--full-bleed no-underline" href="';
 					the_permalink();
@@ -122,7 +126,7 @@
 						the_title();
 					}
 					echo        '</h3>';
-					echo    	'<img src="' . $imageURL . '" alt="">';
+					echo    	$imageTag;
 					echo    '</div>';
 
 					echo '<div class="control" style="background-color:#fdd;">';
