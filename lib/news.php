@@ -190,12 +190,13 @@ function RenderPool($items) {
         // Highlight image
         $imageElement = "";
         if($item->post_type === "post" || $item->post_type === "bibliotech") {
-            $image = json_decode($custom["homeImg"][0]);
-            // If you need a hard coded image, use 17616 for $image->cropped_image
-            // We use "original" even though this is already cropped to avoid cropping again
-            $imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
-            $imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
-            $imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+            if($custom["homeImg"][0] != "") {
+                $image = json_decode($custom["homeImg"][0]);
+                // We use "original" even though this is already cropped to avoid cropping again
+                $imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
+                $imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+                $imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+            }
         }
 
         echo '<a class="post--full-bleed no-underline flex-container" href="' . $url . '">';
