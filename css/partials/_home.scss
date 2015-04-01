@@ -1,5 +1,8 @@
 // A lot this--colors especially--could probably be better handles with a function or two.
 .home {
+	h3 {
+		font-weight: 400;
+	}
 	.content-main {
 		flex-wrap: wrap;
 		@include bp-tablet--portrait {
