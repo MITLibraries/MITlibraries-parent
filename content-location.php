@@ -139,7 +139,7 @@
 
 			<div class="tabcontent group <?php echo $noTab ?>">
 
-				<div class="tab active flex-container group" id="tab1">
+				<div class="tab tab1 active flex-container group" id="tab1">
 
 						<div class="flex-item first group <?php if($content1wide): ?>span7 wideColumn<?php else: ?>span4<?php endif; ?>">
 						
@@ -183,16 +183,16 @@
 
 						</div>
 
-						<div class="flexItem second span3">
+						<div class="flex-item second span3">
 							<?php echo $content1 ?>
 						</div>
 
 				</div>
 				<?php if ($title2 != ""): ?>
 				
-				<div class="tab tab2 flexContainer group" id="tab2">
+				<div class="tab tab2 flex-container group" id="tab2">
 
-						<div class="flexItem first <?php if($content2wide): ?>span8 wideColumn<?php else: ?>span2<?php endif; ?>">
+						<div class="flex-item first <?php if($content2wide): ?>span8 wideColumn<?php else: ?>span2<?php endif; ?>">
 						<?php echo $content2left ?>
 						
 						<?php if ($reserveUrl != ""): ?>
@@ -202,7 +202,7 @@
 						
 						</div>
 
-						<div class="flexItem second span6">
+						<div class="flex-item second span6">
 							<?php echo $content2 ?>
 						</div>
 
