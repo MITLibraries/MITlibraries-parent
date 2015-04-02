@@ -1,7 +1,4 @@
 .locationPage {
-	.profile {
-		align-items: flex-start;
-	}
 	.reserve {
 		background: #666;
 		color: #fff;
@@ -32,6 +29,17 @@
 			.second {
 				width: 80%;
 			}
+		}
+		h3,
+		h4,
+		ul.arrows {
+			margin-bottom: 20px;
+		}
+	}
+	.profile {
+		align-items: flex-start;
+		h3 {
+			margin-bottom: 0px;
 		}
 	}
 }
