@@ -263,6 +263,9 @@ function SummarizePool($items) {
     if($summary["news"] === 1) {
         // Only one eligible news item - so we set type to one
         $type = "one";
+    } elseif($summary["spotlights"] === 0) {
+        // No eligible spotlights - so we show two news items
+        $type = "two";
     } else {
         // More than one news item - so we flip a coin for type
         if (mt_rand(0,1)) {
