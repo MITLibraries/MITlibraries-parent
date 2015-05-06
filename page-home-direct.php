@@ -20,7 +20,7 @@
 				<a href="/vera">Vera</a>
 				<a href="/barton">Barton (classic search)</a>
 				<a href="/worldcat">WorldCat</a>
-				<a href="/course-reserves">Course reserves</a>
+				<a href="/reserves">Course reserves</a>
 				<a href="/about/site-search">Site search</a>
 			</div>
 		</div>
