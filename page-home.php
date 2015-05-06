@@ -1,5 +1,5 @@
 <?php 
-	get_header();
+	get_header('home');
 ?>
 
 	<div id="search-main" class="search--lib-resources flex-container">

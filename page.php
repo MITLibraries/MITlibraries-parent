@@ -19,8 +19,12 @@ $isRoot = $section->ID == $post->ID;
 
 
  
-get_header(); ?>
-
+if ( is_home() ) :
+get_header('home');
+else : 
+get_header(); 
+endif;
+?>
 		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
 			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
 		</div>
