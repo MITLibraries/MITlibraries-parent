@@ -37,7 +37,7 @@ endif;
 				<?php if ($isRoot): ?>
 				<h1><?php echo $section->post_title; ?></h1>
 				<?php else: ?>
-				<h1><a href="<?php echo get_permalink($section->ID) ?>"><?php echo $section->post_title; ?></a></h1>
+				<a class="title-page" href="<?php echo get_permalink($section->ID) ?>"><?php echo $section->post_title; ?></a>
 				<?php endif; ?>
 			</div>
 			
