@@ -188,6 +188,13 @@ body:hover .visually-hidden button {
 display: none !important;
 }
 
+/* for screen readers */
+.hidden-text {
+text-indent: -9999px;
+white-space: nowrap;
+overflow: hidden;
+}
+ 
 /* =Repeatable patterns
 -------------------------------------------------------------- */
 
