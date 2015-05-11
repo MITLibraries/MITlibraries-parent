@@ -86,7 +86,7 @@
 					<span class="subject-library"><?php echo $subject ?></span>
 				</h1>
 				<div class="info-more">
-					<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a>
+					<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a> | 
 					<a href="<?php echo $mapPage.$slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
 				</div>
 			</div><!-- end div.libraryContent -->
