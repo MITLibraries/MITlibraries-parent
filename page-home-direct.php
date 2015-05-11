@@ -3,7 +3,7 @@
  * Template Name: Home Page - News Built Directly
  *
  */
-	get_header();
+	get_header('home');
 ?>
 
 	<div id="search-main" class="search--lib-resources flex-container">
@@ -40,8 +40,8 @@
 		<form id="bartonplus" class="input-submit flex-container active no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-1 active" placeholder="ex: carbon nanotubes" autofocus="autofocus" tabindex="1">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+			<button type="submit"><span class="visually-hidden">search</span><!-- per accessibility review/to be clipped via CSS -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" aria-hidden="true" class="icon-search">
 					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z"></path>
 				</svg>
 			</button>
@@ -49,8 +49,8 @@
 		<form id="vera" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-2" placeholder="ex: new eng j of med, AIP conf proc">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+			<button type="submit"><span class="visually-hidden">search</span><!-- per accessibility review/to be clipped via CSS -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" aria-hidden="true" class="icon-search">
 					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z"></path>
 				</svg>
 			</button>
@@ -58,8 +58,8 @@
 		<form id="barton" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-3 searchtext" id="bookrequest" placeholder="ex: carbon nanotubes, game design">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+			<button type="submit"><span class="visually-hidden">search</span><!-- per accessibility review/to be clipped via CSS -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" aria-hidden="true" class="icon-search">
 					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z"></path>
 				</svg>
 			</button>
@@ -67,8 +67,8 @@
 		<form id="worldcat" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-4" placeholder="ex: carbon nanotubes, game design">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+			<button type="submit"><span class="visually-hidden">search</span><!-- per accessibility review/to be clipped via CSS -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" aria-hidden="true" class="icon-search">
 					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z"></path>
 				</svg>
 			</button>
@@ -76,8 +76,8 @@
 		<form id="course-reserves" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" id="coursereservesrequest" value="" class="option-5 searchtext" placeholder="ex: 18.01, STS.320, 21F.108">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+			<button type="submit"><span class="visually-hidden">search</span><!-- per accessibility review/to be clipped via CSS -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" aria-hidden="true" class="icon-search">
 					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z"></path>
 				</svg>
 			</button>
@@ -85,8 +85,8 @@
 		<form id="site-search" class="no-js-hidden">
 			<div class="hidden-fields"></div>
 			<input type="text" class="option-6" placeholder="ex: hours">
-			<button type="submit">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" alt="search" class="icon-search">
+			<button type="submit"><span class="visually-hidden">search</span><!-- per accessibility review/to be clipped via CSS -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="16" viewBox="0 0 12 12" aria-hidden="true" class="icon-search">
 					<path d="M7.273 0.727q1.187 0 2.19 0.585t1.588 1.588 0.585 2.19-0.585 2.19-1.588 1.588-2.19 0.585q-1.278 0-2.33-0.676l-3.284 3.301q-0.295 0.284-0.688 0.284-0.403 0-0.688-0.284t-0.284-0.688 0.284-0.688l3.301-3.284q-0.676-1.051-0.676-2.33 0-1.188 0.585-2.19t1.588-1.588 2.19-0.585zM7.273 8q0.591 0 1.128-0.23t0.929-0.622 0.622-0.929 0.23-1.128-0.23-1.128-0.622-0.929-0.929-0.622-1.128-0.23-1.128 0.23-0.929 0.622-0.622 0.929-0.23 1.128 0.23 1.128 0.622 0.929 0.929 0.622 1.128 0.23z"></path>
 				</svg>
 			</button>
@@ -146,21 +146,21 @@
 	<div class="content-main flex-container">
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
-				<h2>Hours &amp; locations</h2>
+				<h2><a href="/hours">Hours &amp; locations</a></h2>
 				<div class="location">
-					<a href="/barker" class="img-loc barker"></a>
+					<a href="/barker" aria-hidden="true" class="img-loc barker"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"><span data-location-hours="Barker Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!barker-library" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
 					</div>
 				</div>
 				<div class="location">
-					<a href="/dewey" class="img-loc dewey"></a>
+					<a href="/dewey" aria-hidden="true" class="img-loc dewey"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"><span data-location-hours="Dewey Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!dewey-library" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
 					</div>
 				</div>
 				<div class="location">
-					<a href="/hayden" class="img-loc hayden"></a>
+					<a href="/hayden" aria-hidden="true" class="img-loc hayden"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"><span data-location-hours="Hayden Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
@@ -169,19 +169,19 @@
 					<svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More
 				</a>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/archives" class="img-loc archives"></a>
+					<a href="/archives" aria-hidden="true"  class="img-loc archives"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours"><span data-location-hours="Institute Archives & Special Collections"></span> today</div><div class="location-info"><a href="/locations/#!institute-archives-special-collections" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone"><span class="number">617-253-5136</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/music" class="img-loc lewis"></a>
+					<a href="/music" aria-hidden="true"  class="img-loc lewis"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/music">Lewis Music Library</a></h3><div class="hours"><span data-location-hours="Lewis Music Library"></span> today</div><div class="location-info"><a href="/locations/#!lewis-music-library" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/rotch" class="img-loc rotch"></a>
+					<a href="/rotch" aria-hidden="true"  class="img-loc rotch"></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours"><span data-location-hours="Rotch Library"></span> today</div><div class="location-info"><a href="/locations/#!rotch-library" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone"><span class="number">617-258-5592</span></a></div>
 					</div>
@@ -196,7 +196,7 @@
 		</div><!-- end div.col-1 -->
 		<div class="col-2 flex-item">
 			<div id="home-posts-news" class="posts--preview news-events">
-				<h2>News &amp; events</h2>
+				<h2><a href="/news">News &amp; events</a></h2>
 				<div class="flex-container">
 
 		<?php
@@ -208,12 +208,14 @@
 				<a href="/news" class="button-primary--orange link-news">All news &amp; events</a>
 			</div><!-- end div.news-events -->
 			<div class="guides-experts">
-				<h2>Research guides &amp; experts</h2>
+				<h2><a href="/experts">Research guides &amp; experts</a></h2>
+                <h3 class="hidden-text" style="margin-top: -1.5em; padding: 0;">Research guides</h3><!-- per accesibility review for screen readers -->
 				<p class="caption">Specialized guides for every research interest.</p>
 				<p class="caption">Not sure where to start? <a href="/ask" class="link-ask no-underline"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16" height="16" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><path d="M16 5v2c0 2.8-2.2 5-5 5h-1l-5 4v-4c-2.7 0-5-2.2-5-5V5c0-2.7 2.3-5 5-5h6C13.8 0 16 2.3 16 5zM15 5c0-2.2-1.8-4-4-4H5C2.8 1 1 2.8 1 5v2c0 2.2 1.8 4 4 4h1v1 1.9l3.4-2.7L9.6 11H10h1c2.2 0 4-1.8 4-4V5zM13 4.8C13 4.9 12.9 5 12.8 5h-9.5C3.1 5 3 4.9 3 4.8S3.1 4.5 3.3 4.5h9.5C12.9 4.5 13 4.6 13 4.8zM13 7.3c0 0.1-0.1 0.3-0.2 0.3h-9.5C3.1 7.5 3 7.4 3 7.3S3.1 7 3.3 7h9.5C12.9 7 13 7.1 13 7.3z"/></svg> Ask Us</a></p>
 				<div id="guide-list-home" class="guide-list">
 				</div>
 				<div class="experts-group flex-container">
+                	<h3 class="hidden-text">Research experts</h3><!-- per accesibility review for screen readers -->
 					<div class="expert">
 					</div>
 					<div class="expert">

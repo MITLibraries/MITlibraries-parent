@@ -31,7 +31,7 @@ get_header(); ?>
 				<?php if ($isRoot): ?>
 				<h1><?php echo $section->post_title; ?></h1>
 				<?php else: ?>
-				<h1><a href="<?php echo get_permalink($section->ID) ?>"><?php echo $section->post_title; ?></a></h1>
+				<?php  // ?>
 				<?php endif; ?>
 			</div>
 			
