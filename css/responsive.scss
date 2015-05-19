@@ -188,4 +188,12 @@
 		border-right: none;
 	}
 	
+	.hours-locations,
+	.news-events,
+	.guides-experts {
+		h2 {
+			text-align: center !important;
+		}
+	}
+	
 } /* end @media (max-width:480px) */
