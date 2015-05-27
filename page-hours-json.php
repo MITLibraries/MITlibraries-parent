@@ -137,7 +137,7 @@ $thisWeek = date("Y-n-j");
 <div id="content" class="content-main">
   <div id="hourContent" class="content-page">
     <div id="hourNav-sticky-wrapper" class="sticky-wrapper" style="height: 0px;">
-      <div id="hourNav" style="width: 1008px;">
+      <div id="hourNav">
         <div id="prevWeek"> <i class="icon-arrow-left"></i> <a href="<?php echo $path."?d=".$prevWeek; ?>">Previous week</a> </div>
         <div id="thisWeek"> <a href="<?php echo $path."?d=".$thisWeek; ?>">This week</a> </div>
         <div id="nextWeek"> <a href="<?php echo $path."?d=".$nextWeek; ?>">Next week</a> <i class="icon-arrow-right"></i> </div>
@@ -393,10 +393,10 @@ $next = "";
     <!-- TABLE ENDS -->
     
     <div class="locations-more">
-      <h3>Other locations</h3>
-      <h4>Digital Instruction Resource Center (DIRC)</h4>
+      <h3>Locations without set hours</h3>
+      <h4><a href="/dirc">Digital Instruction Resource Center (DIRC)</a></h4>
       <a href="/locations/#!digital-instruction-resource-center-dirc">Map:&nbsp; 14N-132</a>
-      <h4>Information Intersection at Stata Center</h4>
+      <h4><a href="/information-intersection">Information Intersection at Stata Center</a></h4>
       <a href="/locations/#!information-intersection">Map:&nbsp;  32-Student Street</a> </div>
   </div>
   <!-- end div.content-page --> 
