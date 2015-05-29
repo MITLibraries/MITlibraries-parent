@@ -721,6 +721,9 @@ article.sticky .featured-post {
 .mu_register ul {
 	list-style: disc outside;
 }
+.entry-content ul.arrows li{
+	list-style: none !important;
+}
 .entry-content ol,
 .comment-content ol {
 	list-style: decimal outside;

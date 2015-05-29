@@ -194,6 +194,13 @@
 	color: #ffcc33;
 }
 
+div.libraryAlert {
+	border: 1px solid #ccc !important;
+	-webkit-box-shadow: 0 0 5px 2px #eee !important;
+    -moz-box-shadow: 0 0 5px 2px #eee;
+    box-shadow: 0 0 5px 2px #eee !important;
+}
+
 .cal-hours {
 	position: absolute;
 	top: 10px;
