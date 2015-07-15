@@ -1,4 +1,3 @@
 $(function(){
-   var libchat_efc75c55947db323d4faab725b79307f = { iid:59, key:'fb10446730e271c', width:'240' }
-   $.getScript('//mit.libanswers.com/load_chat.php?hash=efc75c55947db323d4faab725b79307f&options=libchat_efc75c55947db323d4faab725b79307f');
+   $.getScript('//v2.libanswers.com/load_chat.php?hash=be2c654b63dd43f31c56295ee5d78d88');
 });
