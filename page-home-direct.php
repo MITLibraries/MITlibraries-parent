@@ -216,7 +216,7 @@
 				<div id="guide-list-home" class="guide-list">
 				</div>
 				<div class="experts-group flex-container">
-                	<h3 class="hidden-text">Research experts</h3><!-- per accesibility review for screen readers -->
+                	<h3 class="hidden-text" style="margin-top: -1.5em; padding: 0;">Research experts</h3><!-- per accesibility review for screen readers -->
 					<div class="expert">
 					</div>
 					<div class="expert">
