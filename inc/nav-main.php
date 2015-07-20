@@ -101,7 +101,7 @@
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary flex-container flex-end">
-    <h2 class="mega-cat"><a href="/about" class="no-underline">About us</a></h2>
+    <a href="/about" class="no-underline">About us</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <h3 class="heading-col">About us</h3>
