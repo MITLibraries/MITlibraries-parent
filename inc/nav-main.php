@@ -33,7 +33,7 @@
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
   <div class="link-primary flex-container flex-end">
-    <h2 class="mega-cat"><a href="/hours" class="no-underline">Hours &amp; locations</a></h2>
+    <a href="/hours" class="no-underline">Hours &amp; locations</a>
     <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <h3 class="heading-col">Locations</h3>
