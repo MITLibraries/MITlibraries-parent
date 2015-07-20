@@ -17,18 +17,7 @@
       width: 100%;
     }
   }
-h2.mega-cat {
-	padding: 0;
-	border-right: none;
-	small {
-		a { 
-			font-size: 9px;
-		}
-	}
-}
-h2.mega-cat.small a {
-	font-size: 9px;
-}
+
   @include hidden-visually;
   .small {
     display: none;
