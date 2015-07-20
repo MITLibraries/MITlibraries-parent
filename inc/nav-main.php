@@ -10,8 +10,8 @@
 </div><!-- end hamburger icon -->
 <nav id="nav-main" class="nav-main flex-container">
   <div class="link-primary flex-container flex-end">
-    <h2 class="mega-cat"><a href="/search" class="no-underline">Search</a></h2>
-    <div class="links-sub flex-container group">
+    <a href="/search" class="no-underline">Search</a>
+        <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <h3 class="heading-col">Start here</h3>
         <a href="/bartonplus">BartonPlus (mega-search) <span class="about">Articles, e-books, &amp; more</span></a>
