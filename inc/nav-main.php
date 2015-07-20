@@ -79,7 +79,7 @@
     </div>
   </div>
   <div class="link-primary flex-container flex-end">
-    <h2 class="mega-cat"><a href="/research-support" class="no-underline">Research support</a></h2>
+    <a href="/research-support" class="no-underline">Research support</a>
     <div class="links-sub flex-container push group">
       <div class="col-1 flex-item">
         <h3 class="heading-col">Help &amp; useful tools</h3>
