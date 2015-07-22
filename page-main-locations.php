@@ -206,7 +206,11 @@ get_header(); ?>
 						$pageLink = get_permalink($pageID);
 					?>
 						<li class="location-secondary">
+							<?php if ($slug === "stata"): ?>
+							<h3 class="name-location--secondary"><?php echo the_title() ?></h3>
+							<?php else: ?>
 							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
+							<?php endif; ?>
 							<?php if ($phone != ""): ?>
 							<?php echo $phone ?><br/>
 							<?php endif; ?>
