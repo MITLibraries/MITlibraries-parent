@@ -197,6 +197,10 @@ height:1px;
 overflow:hidden;
 }
 
+body {
+	font-family: 'Open Sans', Helvetica, sans-serif !important;
+}
+
 /* =Repeatable patterns
 -------------------------------------------------------------- */
 
