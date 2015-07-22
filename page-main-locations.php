@@ -157,7 +157,7 @@ get_header(); ?>
 							
 							
 						?>
-							<li>
+							<li class="location-name">
 								<h2 class="name-location"><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
 								<div class="sub"><?php echo $subject ?></div>
 								<?php if ($phone != ""): ?>
