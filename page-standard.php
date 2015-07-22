@@ -44,7 +44,9 @@ endif;
 		
 		<div id="stage" class="inner" role="main">
 			
-			<?php if (!in_category('page-root')) { ?>
+			<?php if (in_category('shortcrumb')) { ?>
+			<?php get_template_part('inc/self', 'title'); ?>
+			<?php } elseif (!in_category('page-root')) { ?>
 			<?php get_template_part( 'inc/content','root'); ?>
 			<?php } ?>
 			
