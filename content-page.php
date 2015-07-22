@@ -22,11 +22,12 @@ global $isRoot;
 	<div class="content-main flex-container">
 		<div class="col-1 content-page">
 			<div class="entry-content">
+				<div class="entry-page-title">
 				<?php if (!$isRoot): ?>
 				<h1><?php the_title(); ?></h1>
 				<?php endif; ?>
+				</div>
 				<?php the_content(); ?>
-				
 			</div>
 			<footer class="entry-meta">
 				<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
