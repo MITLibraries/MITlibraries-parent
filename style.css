@@ -662,10 +662,16 @@ article.sticky .featured-post {
 	margin: 1.714285714rem 0;
 	line-height: 1.714285714;
 } */
+
+.page-food .entry-content h1 {
+	display: none;
+}
+
+
 .entry-content h1,
 .comment-content h1 {
-	font-size: 21px;
-	font-size: 1.5rem;
+	font-size: 28px;
+	font-size: 2rem;
 	line-height: 1.5;
 }
 .entry-content h2,
