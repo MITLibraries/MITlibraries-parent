@@ -14,6 +14,18 @@
 	}
 }
 
+@media screen and (max-width:568px) {
+	.hours-locations,
+	.news-events {
+		h2 {
+			padding: 15px 0;
+		}
+	}
+	.child-page-title {
+		line-height: 1em;
+	}
+}
+
 /* Landscape phone and down -- MOBILE */
 @media (max-width: 480px) {
 
