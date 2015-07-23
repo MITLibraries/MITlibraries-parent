@@ -177,14 +177,18 @@
 	}
 	h2.name-location {
 		@include rem-first(font-size, 1.375);
-		font-weight: bold;
 		padding-bottom: 0 !important;
+		a {
+		font-weight: 700 !important;			
+		}
 	}
 
 	.name-location--secondary {
 		@include rem-first(font-size, 1.25);
-		font-weight: bold;
 		margin-top: 1em;
+		a {
+		font-weight: 700 !important;				
+		}
 	}
 	.title-page {
 		align-items: center;
