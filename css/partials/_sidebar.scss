@@ -7,16 +7,27 @@
 			border-bottom: none;
 		}
 		.widget-title {
-			color: #111111;
+			color: #111;
 			@include font-size(19px);
-			font-weight: 500;
 			line-height: 1.4;
+			font-weight: 500;
+			@include rem-first--4-values(margin, 0, 0, 0.667, 0);
 			@include rem-first(padding-top, 0);
+			@include rem-first(padding-bottom, 0);
 		}
 		ul li {
-			list-style-image: url(#{$imagesPath}/list-arrow-blue.png);
+			position:relative;
 			margin-bottom: 2px;
 			margin-left: 15px;
+		}
+		ul li:before {
+			position:absolute;
+			top: 5px;
+			left: -15px;
+			font-family:FontAwesome;
+			content:"\f061";
+			color: #338bc5;
+			font-size: .75em;
 		}
 	}
 }

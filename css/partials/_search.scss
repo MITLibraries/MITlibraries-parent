@@ -3,7 +3,7 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	padding: 2em 0.5em;
+	padding: 3em 0.5em !important;
 	position: relative;
 	@include gradient-blue;
 	z-index: map-get($zindex, main);

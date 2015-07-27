@@ -72,8 +72,12 @@ function twentytwelve_setup() {
 	// This theme supports a variety of post formats.
 	//add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
+// Register Custom Navigation Walker
+require_once('navwalker.php');
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
+	register_nav_menu( 'secondary', __( 'Secondary Menu', 'twentytwelve' ) );
 	register_nav_menu( 'footer', __( 'Footer Menu', 'twentytwelve' ) );
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
@@ -109,11 +113,15 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style'), '2.2.0');
 
+
 	wp_enqueue_style('libraries-global');
 
 	wp_register_style('get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array('libraries-global'), '1.0');
 
 	wp_register_style('hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0');
+	
+		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
+
 
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
@@ -125,8 +133,11 @@ function twentytwelve_scripts_styles() {
 
 	// Deregister WP Core jQuery, load Google's
   wp_deregister_script('jquery');
+  
   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
-	
+
+  wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+			
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
 	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true);
@@ -139,7 +150,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script('mapJS', get_template_directory_uri() . '/js/build/map.min.js', array('jquery'), '20140813', true);
 
-	wp_register_script('googleMapsAPI', 'http://maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
+	wp_register_script('googleMapsAPI', '//maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
 	wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true);
 
@@ -192,9 +203,17 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_style('get-it');
 	}
 	
+	if (in_category('has-menu')) {
+		wp_enqueue_style('libraries-global');
+		wp_enqueue_style('bootstrapCSS');
+		wp_enqueue_script('bootstrap-js');
+	}
+	
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
+
+
 
 /**
  * Creates a nicely formatted and more specific title element text
@@ -475,6 +494,8 @@ function twentytwelve_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'twentytwelve_body_class' );
+
+add_filter( 'wp_get_attachment_url', 'set_url_scheme' );
 
 
 

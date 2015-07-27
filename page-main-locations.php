@@ -157,7 +157,7 @@ get_header(); ?>
 							
 							
 						?>
-							<li>
+							<li class="location-name">
 								<h2 class="name-location"><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
 								<div class="sub"><?php echo $subject ?></div>
 								<?php if ($phone != ""): ?>
@@ -206,7 +206,11 @@ get_header(); ?>
 						$pageLink = get_permalink($pageID);
 					?>
 						<li class="location-secondary">
+							<?php if ($slug === "stata"): ?>
+							<h3 class="name-location--secondary"><?php echo the_title() ?></h3>
+							<?php else: ?>
 							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
+							<?php endif; ?>
 							<?php if ($phone != ""): ?>
 							<?php echo $phone ?><br/>
 							<?php endif; ?>

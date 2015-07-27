@@ -2,7 +2,7 @@
 	@include body-text;
 	.timestamp,
 	.callnos {
-		color: $color-text-minor;
+		color: #595959;
 		@include font-size(16px);
 		margin-left: 0;
 	}

@@ -210,10 +210,12 @@ html.no-js .js-hidden {
 			@include rem-first(margin-left, 1);
 		}
 	}
-	> ul {
+}
+.page-template-default {
+	ul.menu {
 		border-top: 1px solid #aaa;
 		border-bottom: 1px solid #aaa;
-		@include rem-first(padding, 1);
+		@include rem-first(padding, 1);		
 	}
 }
 

@@ -40,6 +40,22 @@
 	}
 }
 
+.location--alerts .icon-exclamation-circle {
+	display: flex;
+	fill: #ed0e0e;
+	filter: drop-shadow(0 0 1px #aaa);
+	height: 4em;
+	margin-right: 1em;
+	position: relative;
+	width: 4em;
+	@include bp-mobile--only {
+		height: 3em;
+		margin-right: 0.75em;
+		width: 3em;
+	}
+}
+
+
 .post.alert--critical {
 	align-items: center;
 	position: relative;

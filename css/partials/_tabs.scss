@@ -5,7 +5,6 @@
 	}
 }
 .tabnav {
-	display: none;
 	@include bp-tablet--portrait {
 		align-items: stretch;
 		border-bottom: 1px solid lighten($black, 60%);
@@ -28,7 +27,6 @@
 		}
 	}
 	.title-sub {
-		display: block;
 		font-size: 0.75em;
 		font-weight: normal;
 	}
@@ -37,6 +35,74 @@
 			display: inline-block;
 			font-size: 1.375em;
 			font-weight: 600;
+			padding: 1em 0;
+		}
+	}
+}
+
+
+/* ---- Responsive Styles ---- */
+
+@media screen and (max-width:570px) {
+
+	.tabnav {
+		display: inline;
+		width: 100%;
+		}
+	.tab1st {
+		float: left;
+		padding-bottom: 20px;
+	}
+	.tab2nd {
+		float: right;
+		padding-bottom: 20px;
+	}
+	.hidden-mobile {
+		display: none;
+	}
+	.tabcontent {
+		border-top: 1px solid #dedede;
+		padding-top: 20px;
+		clear: both;
+	}
+	.tabnav {
+			li {
+				display: inline-block;
+				a {
+					font-size: 16px;
+					padding: .5em 1em;
+					border-radius: 3px;
+					text-align: center;
+					text-decoration: none;
+					border: 1px solid #338bc5;
+					-webkit-transition: background .1s ease;
+					transition: background .1s ease;
+					margin: 0 15px;
+				}
+							&.active {
+								a {
+								background: #338bc5;
+								color: white;
+								border: 1px solid #338bc5;
+							}
+						}
+								a {
+									&:hover {
+									background: #338bc5;
+									color: white;
+									border: 1px solid #338bc5;
+							}
+						}
+				}
+		}
+}
+
+@media screen and (max-width:320px) {
+	.tabnav {
+		li {
+			a {
+				font-size: 12px;
+			}
 		}
 	}
 }
