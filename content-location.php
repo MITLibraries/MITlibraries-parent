@@ -45,7 +45,7 @@
 
 
 	$expertAskUrl = get_field("expert_ask_url");
-	if ($expertAskUrl == "") $expertAskUrl = "http://libraries.mit.edu/ask";
+	if ($expertAskUrl == "") $expertAskUrl = "//libraries.mit.edu/ask";
 
 
 	$numMain = 6;

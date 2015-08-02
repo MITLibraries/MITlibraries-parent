@@ -139,10 +139,10 @@ get_header(); ?>
 						<option value="keyword">Keyword</option>
 					</select>
 				</div>
-				<a href="http://libraries.mit.edu/bartonplus-advanced" class="search-advanced bartonplus active">Go to BartonPlus advanced search</a>
-				<a href="http://libraries.mit.edu/barton-advanced" class="search-advanced barton">Go to Barton advanced search</a>
+				<a href="//libraries.mit.edu/bartonplus-advanced" class="search-advanced bartonplus active">Go to BartonPlus advanced search</a>
+				<a href="//libraries.mit.edu/barton-advanced" class="search-advanced barton">Go to Barton advanced search</a>
 				<a href="http://mit.worldcat.org/advancedsearch" class="search-advanced worldcat">Go to WorldCat advanced search</a>
-				<a href="http://libraries.mit.edu/barton-reserves" class="search-advanced course-reserves">Go to Course Reserves advanced search</a>
+				<a href="//libraries.mit.edu/barton-reserves" class="search-advanced course-reserves">Go to Course Reserves advanced search</a>
 			</div><!-- end div.search-main -->
 
 			<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
