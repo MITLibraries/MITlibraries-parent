@@ -96,6 +96,17 @@
 				}
 		}
 }
+@media screen and (max-width:420px) {
+	.page-music {
+		.tabnav {
+			li {
+				a {
+				font-size: 11px;					
+				}
+			}
+		}
+	}	
+}
 
 @media screen and (max-width:320px) {
 	.tabnav {
