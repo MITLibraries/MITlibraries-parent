@@ -3,7 +3,56 @@
 //
 
 $(function(){
-	
+
+	// This saves the current search UI state to localstorage as the form is
+	// submitted, allowing the patron's next visit to start from this point
+	function saveFormState() {
+		"use strict";
+
+		var options = {};
+		var searchTool = '';
+
+		if (Modernizr.localstorage) {
+			searchTool = readToolState();
+			options.tool = searchTool.tool;
+			options.refine = readRefineState();
+			localStorage.setItem('tool',options.tool);
+			localStorage.setItem('refine',options.refine);
+		} else {
+			// This can be removed in the future
+			console.log("LocalStorage not supported - could not save state");
+		}
+	}
+
+	// This looks for a previously-saved search UI state from the patron's
+	// last visit. If found, this will be used as the starting point for this
+	// session.
+	function loadFormState() {
+		"use strict";
+
+		// initial/default values
+		var formState = {};
+		formState.status = 'unsupported';
+		formState.tool = 'bartonplus';
+		formState.refine = '';
+
+		// If localstorage is supportd, look for saved search
+		if (Modernizr.localstorage) {
+			if (localStorage.getItem('tool') !== null) {
+				formState.status = 'return visit';
+				formState.tool = localStorage.getItem('tool');
+				formState.refine = localStorage.getItem('refine');
+			} else {
+				formState.status = 'first visit';
+			}
+		}
+
+		// read option number - this probably needs to be refactored
+		formState.resource = $("#resources").children("."+formState.tool).attr('data-option');
+
+		return formState;
+	}
+
 	// Mimic a <select> element with a <ul>
 	$('#resources').on('click', 'li', function(event) {
 		// All available resources	
@@ -41,6 +90,7 @@ $(function(){
 			// $('#search-main form').attr('id', searchSelected);
 		}
 	});
+
 	// Close the faux select menu when clicking outside it 
 	$(document).on('click', function(event){
 		if(!$('#resources.active').has(event.target).length == 0) {
@@ -50,6 +100,7 @@ $(function(){
 			$('#resources').removeClass('active');
 			$('#search-main .selected').removeClass('active').text('');
 		}
+		searchBySwitch();
 	});
 	
 	// Placeholder text changes
@@ -95,11 +146,11 @@ $(function(){
 			if(optionSelected == 'keyword') {
 				$('input.active').attr('placeholder', 'ex: carbon nanotubes');
 			}
-			if(optionSelected == 'title') {
-				$('input.active').attr('placeholder', 'ex: introduction to fluid mechanics');
-			}
 			if(optionSelected == 'author') {
 				$('input.active').attr('placeholder', 'ex: william shakespeare');
+			}
+			if(optionSelected == 'title') {
+				$('input.active').attr('placeholder', 'ex: introduction to fluid mechanics');
 			}
 		}
 		if ($('#course-reserves.active').length) {
@@ -114,8 +165,6 @@ $(function(){
 			}
 		}
 	}
-	// Run searchby
-	searchBy();
 
 	function searchBySwitch() {
 		// Get the value of the active "search-by" option
@@ -129,8 +178,6 @@ $(function(){
 		});
 
 	}
-
-	searchBySwitch();
 
 	// Handles hidden fields
 	function hiddenFields() {
@@ -163,17 +210,17 @@ $(function(){
 			// Check the select val...
 			if (selectVal == 'contains') {
 				// and append a radio input to the form
-				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="contains" value="contains" checked="checked" class="radio" />')
+				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="contains" value="contains" checked="checked" class="radio" />');
 			}
 			if (selectVal == 'startsWith') {
 				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="startsWith" value="startsWith" class="radio" checked="checked" />');
 			}
 			if (selectVal == 'exactMatch') {
-				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="exactMatch" value="exactMatch" class="radio" checked="checked" />')
+				$('#vera').append('<input type="radio" name="param_textSearchType_value" id="exactMatch" value="exactMatch" class="radio" checked="checked" />');
 			}
 		}
 		if($('#barton.active').length) {
-			$('#barton').append("<input type='hidden' name='func' value='scan'/>")
+			$('#barton').append("<input type='hidden' name='func' value='scan'/>");
 			// Keyword search
 			if (selectVal == 'find_WRD') {
 				$('#barton').append('<input type="radio" name="code" id="bartonkeyword" value="find_WRD" checked="checked" class="radio" />');
@@ -221,29 +268,91 @@ $(function(){
 		}
 	}
 
-	// Handles the toggling of forms
-	$('#search-main').on('click', '#resources', function(event){
+	// This is the initial setup of the search UI, along the lines of what was loaded from localstorage
+	function initSearchUI(state) {
+		resetSearchUI();
+
+		// Faked select box
+		$('#resources li').removeClass('active');
+		// Refine select
+		$('#search-main .keywords.'+state.tool).val(state.refine);
+
+		setSearchState(state);
+
+		searchBy();
+
+		return state;
+	}
+
+	// This reads the current search UI state (from markup), and logs it to the console.
+	// Used only for debugging
+	function logSearchState() {
+		"use strict"
+		var tempState = {};
+		tempState = readToolState();
+		tempState.refine = readRefineState();
+		console.log("Markup is now:");
+		console.log(tempState);
+	}
+
+	function resetSearchUI() {
 		// Hide all forms on option change
 		$('#search-main form').removeClass('input-submit active');
 		// Hide all inputs on option change
 		$('#search-main input').removeClass('active');
-		// Get the value of the selected option...
-		var resourceOption = $('#resources li.active').attr('data-option');
-		// ...and show the corresponding form
-		$('#search-main input.'+resourceOption).parent().addClass('active input-submit');
-		// ...and active input
-		$('#search-main input.'+resourceOption).addClass('active');
 		// Repeat for keyword selects
 		$('.keywords').parent().removeClass('active');
 		$('.keywords').removeClass('active');
-		$('#search-main .keywords.'+resourceOption).addClass('active');
-		$('#search-main .keywords.'+resourceOption).parent().addClass('active');
-		// Trigger option-change (better to use callback function?)
-		$(this).trigger('option-change');
-		// Advanced search
-		var searchSelected = $('#resources li.active').attr('data-target');
 		$('#search-main a.search-advanced').removeClass('active');
-		$('#search-main a.search-advanced.'+searchSelected).addClass('active');
+	}
+
+	function readToolState() {
+		// This looks at the faked selection UI, #resources, and reports back what is active 
+		var state = {};
+		// Get the value of the selected option...
+		state.resource = $('#resources li.active').attr('data-option');
+		// Advanced search
+		// toolname - was .search
+		state.tool = $('#resources li.active').attr('data-target');
+		return state;
+	}
+
+	function readRefineState() {
+		return $('#search-main select.active option:selected').val();
+	}
+
+	// This adds 'active' classes on the three relevant parts of the search
+	// interface: tool, refine, and advanced search link. The placeholder text
+	// is changed after this function
+	function setSearchState(state) {
+		// Faked select box
+		$('#resources li.'+state.tool).addClass('active');
+		// Tool
+		$('#search-main input.'+state.tool).parent().addClass('active input-submit');
+		$('#search-main input.'+state.tool).addClass('active');
+		// Refine
+		$('#search-main .keywords.'+state.tool).addClass('active');
+		$('#search-main .keywords.'+state.tool).parent().addClass('active');
+		// Advanced search
+		$('#search-main a.search-advanced.'+state.tool).addClass('active');
+
+		// Trigger option-change (better to use callback function?)
+		// $(this).trigger('option-change');
+		searchBySwitch();
+		return state;
+	}
+
+	function updateSearchUI() {
+		resetSearchUI();
+
+		state = readToolState();
+
+		setSearchState(state);
+	}
+
+	// Handles the toggling of forms
+	$('#search-main').on('click', '#resources', function(event){
+		updateSearchUI();
 	});
 
 	// Run searchBy on option-change event
@@ -254,6 +363,7 @@ $(function(){
 
 	// On form submit
 	$('#search-main form').on('submit', function(){
+		saveFormState();
 		// Remove added inputs
 		$('#search-main input[type="hidden"], #search-main input[type="radio"]').remove();
 		// Get the query entered...
@@ -387,4 +497,11 @@ $(function(){
 			}
 		}
 	});
+
+    // load previous search state
+    var searchFormState = loadFormState();
+
+    // reset search UI
+    initSearchUI(searchFormState);
+
 });

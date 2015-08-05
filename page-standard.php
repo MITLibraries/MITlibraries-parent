@@ -53,7 +53,11 @@ endif;
 			
 			
 			<div class="content-main">
+				<?php if (in_category('shortcrumb')) { ?>
+				<?php get_template_part( 'content', 'shortcrumb' ); ?>
+				<?php } else { ?>				
 				<?php get_template_part( 'content', 'page' ); ?>
+				<?php } ?>				
 			</div>
 		</div>
 		<?php endwhile; // end of the loop. ?>
