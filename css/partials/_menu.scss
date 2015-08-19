@@ -15,6 +15,9 @@
     width: 100%;
     a {
       width: 100%;
+      &.hover {
+	      color: #fff;
+      }
     }
   }
 

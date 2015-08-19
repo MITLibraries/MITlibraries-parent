@@ -4,17 +4,18 @@
 			background: #ede8e2;
 			border-radius: 3px;
 			box-shadow: 0 0 3px #444;
-			margin: 1em;
+			margin: 1.5%;
 			padding: 1em;
 			position: relative;
 			text-align: center;
-			width: 33%;
+			width: 31%;
+			float: left;
 			&.first {
 				margin-left: 0;
 			}
 			&.second {
 				background: #fff9ef;
-				width: 34%;
+				width: 31%;
 			}
 			&.third {
 				margin-right: 0;
@@ -62,6 +63,9 @@
 	}
 	.postContent {
 		line-height: 1.5;
+		p {
+			padding: 0 16px;
+		}
 	}
 	.postTitle {
 		font-size: 1.5em;
@@ -92,5 +96,13 @@
 			font-size: 1.5em;
 			margin-bottom: 0;
 		}
+	}
+}
+@media screen and (max-width:720px) {
+	.flex-item.first,
+	.flex-item.second,
+	.flex-item.third {
+		width: 95% !important;
+		margin: 2.5% !important;
 	}
 }
