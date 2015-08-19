@@ -201,6 +201,7 @@ body {
 	font-family: 'Open Sans', Helvetica, sans-serif !important;
 }
 
+
 /* =Repeatable patterns
 -------------------------------------------------------------- */
 
@@ -646,7 +647,7 @@ article.sticky .featured-post {
 .comment-content h1 {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
-	line-height: 1.714285714;
+	line-height: 1.25;
 }
 /* .entry-content h2,
 .comment-content h2,
@@ -668,20 +669,22 @@ article.sticky .featured-post {
 .comment-content h1 {
 	font-size: 28px;
 	font-size: 2rem;
-	line-height: 1.5;
+	line-height: 1.25;
 }
 .entry-content h2,
 .comment-content h2,
 .mu_register h2 {
 	font-size: 18px;
 	font-size: 1.285714286rem;
-	line-height: 1.6;
+	line-height: 1.25;
+	margin-bottom: 10px;
 }
 .entry-content h3,
 .comment-content h3 {
 	font-size: 16px;
 	font-size: 1.142857143rem;
-	line-height: 1.846153846;
+	line-height: 1.25;
+	margin-bottom: 10px;
 }
 .entry-content h4,
 .comment-content h4 {
@@ -1240,6 +1243,18 @@ a.comment-edit-link:hover {
 }
 .required {
 	color: red;
+}
+
+
+/* Search Form / 404 page
+-------------------------------------------------------------- */
+
+.error404 form#cse-search-box {
+	margin-bottom: 25px;
+}
+
+.error404 #content {
+	padding: 0 15px;
 }
 
 /* =Media queries

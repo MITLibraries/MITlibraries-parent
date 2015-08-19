@@ -39,12 +39,12 @@ get_header(); ?>
 		<div id="stage" class="inner column1 row">
 
 			<div class="title-page flex-container">
-				<h2><?php the_title(); ?></h2>
+				<h1><?php the_title(); ?></h1>
 			</div>
 			<div class="content-main">
 
 				<div class="postContent"><?php echo the_content(); ?></div>
-				<div class="flex-container group">
+				<div class="group">
 				
 					<div class="flex-item first">
 						<h3><?php echo $altTitle1; ?></h3>
