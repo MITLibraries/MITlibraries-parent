@@ -1,6 +1,5 @@
 <?php
 /**
- * Template Name: Self-Title
  *
  * Unline other pages in the Libraries theme,
  * this page template renders the page title
