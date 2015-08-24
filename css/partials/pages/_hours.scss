@@ -26,6 +26,7 @@
 
 #hourContent {
 	width: 100%;
+	padding-left: 0 !important;
 }	
 
 #hourNav {
@@ -33,6 +34,10 @@
 	margin: 0;
 	position: relative;
 	max-width: 100%;
+}
+
+.libraryContent {
+	padding-right: .5em;
 }
 
 .isSticky #hourNav {
@@ -272,11 +277,22 @@ div.libraryAlert {
 	}
 }
 
-@include bp-mobile--only {
+@media only screen and (max-width : 780px){
+	#hourContent {
+		min-width: auto !important;
+		padding-left: 0 !important;
+	}
+	.middleAlert {
+		font-size: .85em;
+		padding-right: 1em;
+	}
+	.hidden-non-mobile {
+		display: block;
+	}
 	.hrList {
 		display: block;
 		width: 100%;
-	}
+		}
 	
 	.hrList tr {
 		display: block;
@@ -287,23 +303,26 @@ div.libraryAlert {
 		float: left;
 		width: 33px;
 		text-align: center;
-		padding: 10px 5px 10px 5px;
+		padding: 10px 5px;
 	}
 	
 	.hrList td {
 		position: relative;
 		width: 14.28571428571429%;
-		font-size: 10px;
-		line-height: 12px;
 		float: left;
+		font-size: 11px;
 		min-height: 45px;
 		display: block;
-		padding: 10px 5px 10px 5px;
 		text-align: center;
+		font-weight: 600;
+		min-height: 95px ;
+		padding: 10px 5px;
+		line-height: 1.5;	
 	}
 	
-	.hrList td h3 {
-		line-height: 12px;
+
+	.hrList .hidden-mobile {
+		display: none !important;
 	}
 	
 	.fullDay {
@@ -391,5 +410,8 @@ div.libraryAlert {
 	.tdInside {
 		top: 0px;
 		left: 0px;
+	}
+	.locations-more {
+		padding: 0 .5rem;
 	}
 }
