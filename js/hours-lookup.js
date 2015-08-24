@@ -136,7 +136,7 @@ function renderHours(markup, data) {
       var fullEl = document.createElement("span");
       fullEl.setAttribute("class","hidden-mobile");
       var fullText = data[i]
-        .replace("-","- ")
+        .replace("-"," - ")
         .replace(/:00/g,"");
       fullEl.innerHTML = fullText;
       return fullEl;
@@ -146,7 +146,7 @@ function renderHours(markup, data) {
       var mobileEl = document.createElement("span");
       mobileEl.setAttribute("class","hidden-non-mobile");
       var mobileText = data[i]
-        .replace("-","- ")
+        .replace("-"," - ")
         .replace("midnight","midn")
         .replace(/am/g,"a")
         .replace(/pm/g,"p")
