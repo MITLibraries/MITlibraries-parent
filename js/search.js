@@ -50,6 +50,9 @@ $(function(){
 		// read option number - this probably needs to be refactored
 		formState.resource = $("#resources").children("."+formState.tool).attr('data-option');
 
+		// Store what the initial tab is for this session
+		TrackEvent('Discovery','Initial Tab',formState,1);
+
 		return formState;
 	}
 
@@ -314,6 +317,9 @@ $(function(){
 		// Advanced search
 		// toolname - was .search
 		state.tool = $('#resources li.active').attr('data-target');
+		// Record current state to GA		
+		TrackEvent('Discovery','Tab',state,1);
+
 		return state;
 	}
 
@@ -340,6 +346,10 @@ $(function(){
 		// $(this).trigger('option-change');
 		searchBySwitch();
 		return state;
+	}
+
+	function TrackEvent(Category,Action,Label,Value){
+		_gaq.push(['_trackEvent', Category, Action, Label, Value]);
 	}
 
 	function updateSearchUI() {
