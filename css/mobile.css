@@ -102,9 +102,7 @@ gldp-default .monyear span {
 	-ms-flex-direction: column;
 	flex-direction: column;
 }
-.mobileDay {
-	display: none;
-}
+
 .fullDay {
 	display: block;
 }
@@ -141,9 +139,7 @@ gldp-default .monyear span {
 .fullDay {
 	display: block;
 }
-.mobileDay {
-	display: none;
-}
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -213,6 +209,7 @@ gldp-default .monyear span {
 .nameHolder {
 	font-weight: bold;
 	font-size: 14px;
+	line-height: 1.5;
 }
 }
 
