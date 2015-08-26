@@ -199,6 +199,7 @@
 	color: #ffcc33;
 }
 
+
 div.libraryAlert {
 	border: 1px solid #ccc !important;
 	-webkit-box-shadow: 0 0 5px 2px #eee !important;
@@ -310,14 +311,12 @@ div.libraryAlert {
 		position: relative;
 		width: 14.28571428571429%;
 		float: left;
-		font-size: 11px;
 		min-height: 45px;
 		display: block;
 		text-align: center;
 		font-weight: 600;
 		min-height: 95px ;
-		padding: 10px 5px;
-		line-height: 1.5;	
+		line-height: 1.5;
 	}
 	
 
@@ -413,5 +412,21 @@ div.libraryAlert {
 	}
 	.locations-more {
 		padding: 0 .5rem;
+	}
+}
+
+@media only screen and (max-width : 628px){
+	.hrList td {
+		font-size: 11px;
+		padding-top: 10px !important;
+		line-height: 1.7;	
+		line-height: 16px !important;
+	}
+	.nameHolder h3 a {
+		font-size: 16px !important;
+		font-weight: 700;
+	}
+	.middleAlert {
+		width: 100% !important;
 	}
 }
