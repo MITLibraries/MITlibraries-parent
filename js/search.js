@@ -51,7 +51,7 @@ $(function(){
 		formState.resource = $("#resources").children("."+formState.tool).attr('data-option');
 
 		// Store what the initial tab is for this session
-		TrackEvent('Discovery','Initial Tab',formState,1);
+		TrackEvent('Discovery','Initial Tab',JSON.stringify(formState),1);
 
 		return formState;
 	}
@@ -317,8 +317,6 @@ $(function(){
 		// Advanced search
 		// toolname - was .search
 		state.tool = $('#resources li.active').attr('data-target');
-		// Record current state to GA		
-		TrackEvent('Discovery','Tab',state,1);
 
 		return state;
 	}
@@ -349,6 +347,7 @@ $(function(){
 	}
 
 	function TrackEvent(Category,Action,Label,Value){
+		console.log("Recording event: C_" + Category + " A_" + Action + " L_" + Label + " V_" + Value);
 		_gaq.push(['_trackEvent', Category, Action, Label, Value]);
 	}
 
