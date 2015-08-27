@@ -1,8 +1,5 @@
 // A lot this--colors especially--could probably be better handles with a function or two.
 .home {
-	h1, h2, h3 {
-		font-weight: 300;
-	}
 	.content-main {
 		flex-wrap: wrap;
 		@include bp-tablet--portrait {
@@ -254,6 +251,7 @@
 	//
 	.news-events {
 		h2 {
+			font-weight: 300;
 			border-bottom: 1px solid $color-secondary;
 			text-align: center;
 			@include bp-tablet--portrait {
@@ -261,13 +259,10 @@
 			}
 			a {
 				color: $color-news-events;
-				font-weight: 300;
 			}
 		}
 		h3 {
-			a {
-				font-weight: 300;
-			}
+			font-weight: 300;
 		}
 		svg {
 			@include bp-small {
@@ -345,6 +340,10 @@
 		}
 		.title-post {
 			margin: 0.5em 0 0.75em;
+					&:hover {
+						color: #111;
+						text-decoration: underline;
+					}				
 		}
 	}
 	//

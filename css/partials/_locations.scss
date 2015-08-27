@@ -87,12 +87,14 @@
 			width: 33%;
 		}
 	}
+	.locations-main {
+		margin-top: 1.5em;
+	}
 	
 	.map-locations {
 		background: #ccc;
 		height: 340px;
 		position: relative;
-		margin-bottom: 1.5em;
 		width: 100%;
 		@include bp-small {
 			margin: 0 auto;
