@@ -317,7 +317,6 @@ $(function(){
 		// Advanced search
 		// toolname - was .search
 		state.tool = $('#resources li.active').attr('data-target');
-
 		return state;
 	}
 
@@ -347,7 +346,6 @@ $(function(){
 	}
 
 	function TrackEvent(Category,Action,Label,Value){
-		console.log("Recording event: C_" + Category + " A_" + Action + " L_" + Label + " V_" + Value);
 		_gaq.push(['_trackEvent', Category, Action, Label, Value]);
 	}
 
