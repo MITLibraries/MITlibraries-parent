@@ -45,7 +45,7 @@
 
 
 	$expertAskUrl = get_field("expert_ask_url");
-	if ($expertAskUrl == "") $expertAskUrl = "//libraries.mit.edu/ask";
+	if ($expertAskUrl == "") $expertAskUrl = "http://libraries.mit.edu/ask";
 
 
 	$numMain = 6;
@@ -82,46 +82,49 @@
 
 	<div class="title-page libraryTitle flex-container">
 		<div class="flex-item">
-			<div class="libraryContent">
-				<h1>
-					<span class="libraryName"><?php the_title(); ?></span>
-					<span class="subject-library"><?php echo $subject ?></span>
-				</h1>
-				<div class="info-more">
-					<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a> |
-                    	<?php if($email): ?>
-					<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
-                    	<?php endif; ?>
-					<a href="<?php echo $mapPage.$slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
-				</div>
-			</div><!-- end div.libraryContent -->
+			<div class="topLeft">
+				<div class="libraryContent">
+					<h1>
+						<span class="libraryName"><?php the_title(); ?></span>
+						<span class="subject-library"><?php echo $subject ?></span>
+					</h1>
+					<div class="info-more">
+						<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a> |
+	                    	<?php if($email): ?>
+						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
+	                    	<?php endif; ?>
+						<a href="<?php echo $mapPage.$slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+					</div>
+				</div><!-- end div.libraryContent -->
 
-			<div class="hours-today">
-				<span>Today's hours: <strong data-location-hours="<?php the_title(); ?>"></strong></span>
-				<?php if ($study24 == 1): ?>
-					| <a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
-				<?php endif; ?>
-				<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
-			</div>
-
+				<div class="hours-today">
+					<span>Today's hours: <strong data-location-hours="<?php the_title(); ?>"></strong></span>
+					<?php if ($study24 == 1): ?>
+						| <a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+					<?php endif; ?>
+					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
+				</div><!-- end div.hours-today -->
+			</div><!-- end div.topLeft -->
 		</div><!-- end div.flex-item -->
 		<div class="flex-item">
-			<?php
-				include(locate_template('inc/alert.php'));
-				if ($showAlert == 0 && $alertTitle != "") {
-					echo '<div class="libraryAlert">'.'<div class="location--alerts flex-container"><svg class="icon-exclamation-circle width="2048" height="2048" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1024 256q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"/></svg>'.'<div class="alertText">'.'<h3>'.$alertTitle.'</h3>'.'<p>'.$alertContent.'</p>'.'</div>'.'</div>'.'</div>';
-				}
-			 ?>
-			<div class="librarySlideshow">
-				<div class="slideshow">
-					<?php
-						$val = $arMain[array_rand($arMain)];
-					?>
-					<?php if ($val != ""): ?>
-					<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
-					<?php endif; ?>
-				</div>
-			</div><!-- end div.librarySlideshow -->
+			<div class="topRight">
+				<?php
+					include(locate_template('inc/alert.php'));
+					if ($showAlert == 0 && $alertTitle != "") {
+						echo '<div class="libraryAlert">'.'<div class="location--alerts flex-container"><svg class="icon-exclamation-circle width="2048" height="2048" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1024 256q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"/></svg>'.'<div class="alertText">'.'<h3>'.$alertTitle.'</h3>'.'<p>'.$alertContent.'</p>'.'</div>'.'</div>'.'</div>';
+					}
+				?>
+				<div class="librarySlideshow">
+					<div class="slideshow">
+						<?php
+							$val = $arMain[array_rand($arMain)];
+						?>
+						<?php if ($val != ""): ?>
+						<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
+						<?php endif; ?>
+					</div>
+				</div><!-- end div.librarySlideshow -->
+			</div><!-- end div.topRight -->
 		</div><!-- end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 
