@@ -86,6 +86,9 @@ $prevWeek = date("Y-n-j", strtotime("-7 day", $today));
 $nextWeek = date("Y-n-j", strtotime("+7 day", $today));
 $thisWeek = date("Y-n-j");
 
+$alertTitle = cf("alert_title");
+$alertContent = cf("alert_content");
+
  ?>
 
 <div id="stage" class="hoursHeader inner hours group" role="main">
@@ -241,9 +244,10 @@ $mapPage = "/locations/#!";
               <?php if(get_field('study_24', $locationId)){ ?>
               <span class="hidden">|</span> <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
               <?php } ?>
-              <?php if(get_field('alert', $locationId)){ ?>
+              <?php if(get_field('alert_title', $locationId)){ ?>
               <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
-                <?php the_field('alert', $locationId); ?>
+              <div class="la-title"><?php the_field('alert_title', $locationId); ?></div>
+                <?php the_field('alert_content', $locationId); ?>
               </div>
               <?php } ?>
             </div></td>
@@ -363,11 +367,12 @@ $pageLink = get_permalink($pageID);
             <?php if(get_field('study_location', $locationId)){ ?>
             <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7"> | Study 24/7</a>
             <?php } ?>
-            <?php if(get_field('alert', $locationId)){ ?>
-            <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
-              <?php the_field('alert', $locationId); ?>
-            </div>
-            <?php } ?>
+              <?php if(get_field('alert_title', $locationId)){ ?>
+              <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
+              <div class="la-title"><?php the_field('alert_title', $locationId); ?></div>
+                <?php the_field('alert_content', $locationId); ?>
+              </div>
+              <?php } ?>
           </div></td>
         <?php for($i=0;$i<=6;$i++) { ?>
         <?php
