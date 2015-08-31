@@ -81,7 +81,7 @@
 <div id="stage" class="inner row group" role="main">
 
 	<div class="title-page libraryTitle flex-container">
-		<div class="flex-item">
+<!--		<div class="flex-item"> -->
 			<div class="topLeft">
 				<div class="libraryContent">
 					<h1>
@@ -105,8 +105,8 @@
 					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
 				</div><!-- end div.hours-today -->
 			</div><!-- end div.topLeft -->
-		</div><!-- end div.flex-item -->
-		<div class="flex-item">
+		<!-- </div> end div.flex-item -->
+<!--		<div class="flex-item"> -->
 			<div class="topRight">
 				<?php
 					include(locate_template('inc/alert.php'));
@@ -125,7 +125,7 @@
 					</div>
 				</div><!-- end div.librarySlideshow -->
 			</div><!-- end div.topRight -->
-		</div><!-- end div.flex-item -->
+		<!-- </div> end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 
 	<div class="content-main flex-container group <?php echo $strLocation; ?>">
