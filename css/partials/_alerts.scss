@@ -41,7 +41,6 @@
 }
 
 .location--alerts .icon-exclamation-circle {
-	display: flex;
 	fill: #ed0e0e;
 	filter: drop-shadow(0 0 1px #aaa);
 	height: 4em;
@@ -55,6 +54,9 @@
 	}
 }
 
+.location--alerts .alertText {
+	width: 80%;
+}
 
 .post.alert--critical {
 	align-items: center;

@@ -107,3 +107,17 @@
 	font-weight: bold;
 	line-height: 20px;
 }
+
+.topLeft {
+	width: 60%;
+}
+.topRight {
+	width: 40%;
+}
+
+@media screen and (max-width:568px) {
+	.topLeft,
+	.topRight {
+		width: 100%;
+	}
+}
