@@ -27,7 +27,8 @@ $nextMon = "next monday";
 $dt = strtotime($inDate);
 $dtMo = date("n", $dt);
 $dtDay = date("j", $dt);
-$dtYear = date("o", $dt);
+$dtYear = date("Y", $dt);
+$dtISOYear = date("o", $dt);
 $dtWeek = date("W", $dt);
 $dtWeekday = date("N", $dt);
 
@@ -58,13 +59,13 @@ if ($wk == "01" && $dtMo == "12") {
   $dtYear++;
 } 
 
-$mon = strtotime($dtYear."W".$wk."1");
-$tue = strtotime($dtYear."W".$wk."2");
-$wed = strtotime($dtYear."W".$wk."3");
-$thu = strtotime($dtYear."W".$wk."4");
-$fri = strtotime($dtYear."W".$wk."5");
-$sat = strtotime($dtYear."W".$wk."6");
-$sun = strtotime($dtYear."W".$wk."7");
+$mon = strtotime($dtISOYear."W".$wk."1");
+$tue = strtotime($dtISOYear."W".$wk."2");
+$wed = strtotime($dtISOYear."W".$wk."3");
+$thu = strtotime($dtISOYear."W".$wk."4");
+$fri = strtotime($dtISOYear."W".$wk."5");
+$sat = strtotime($dtISOYear."W".$wk."6");
+$sun = strtotime($dtISOYear."W".$wk."7");
 
 $arDays = array();
 
