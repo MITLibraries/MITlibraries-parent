@@ -27,7 +27,7 @@ $nextMon = "next monday";
 $dt = strtotime($inDate);
 $dtMo = date("n", $dt);
 $dtDay = date("j", $dt);
-$dtYear = date("Y", $dt);
+$dtYear = date("o", $dt);
 $dtWeek = date("W", $dt);
 $dtWeekday = date("N", $dt);
 
