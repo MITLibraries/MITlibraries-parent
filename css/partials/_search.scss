@@ -362,7 +362,14 @@
 			@include bp-tablet--landscape {
 				display: inline;
 				max-height: 14px;
-				max-width: 8px;
+				max-width: 13px;
+			}
+		}
+		#resources {
+			.select-arrows {
+				@include bp-tablet--landscape {
+					margin-left: 6px;
+				}
 			}
 		}
 	}
