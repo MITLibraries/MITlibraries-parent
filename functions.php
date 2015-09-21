@@ -775,6 +775,25 @@ if (!function_exists('stop_404_guessing')) {
 	}
 }
 
+
+// First make all metaboxes have 'normal' context
+// If you know the ids of the metaboxes, you could add them here and skip the next function altogether
+add_filter('get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1);
+function one_column_for_all($option) {
+    $result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
+    $result['side'] = '';
+    $result['advanced'] = '';
+    return $result;
+}
+
+// Then we add 'submitdiv' on the bottom, by creating this filter with a low priority
+// It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
+add_filter('get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1);
+function submitdiv_at_top($result){
+    $result['normal'] .= 'submitdiv';
+    return $result;
+}
+
 add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
 function metabox_order( $order ) {
     return array(
@@ -793,6 +812,7 @@ function metabox_order( $order ) {
     );
 }
 
+
 // Add ACF fields to WP REST API JSON output
 
 function wp_api_encode_acf($data,$post,$context){
@@ -803,3 +823,11 @@ function wp_api_encode_acf($data,$post,$context){
 if( function_exists('get_fields') ){
 	add_filter('json_prepare_post', 'wp_api_encode_acf', 10, 3);
 }
+
+// Allows SVGs to be uploaded through media
+
+function cc_mime_types( $mimes ){
+$mimes['svg'] = 'image/svg+xml';
+return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' ); 
