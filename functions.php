@@ -122,7 +122,7 @@ function twentytwelve_scripts_styles() {
 	
 		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
 
-
+wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
@@ -137,7 +137,13 @@ function twentytwelve_scripts_styles() {
   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
 
   wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-			
+
+  wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
+
+  wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+   
+   wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+    			
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
 	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true);
@@ -203,6 +209,13 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_style('get-it');
 	}
 	
+	if (is_page_template('nav-maine')) {
+		wp_enqueue_style('jquery.smartmenus.bootstrap');
+		wp_enqueue_script('bootstrap.min');
+		wp_enqueue_script('jquery.smartmenus.bootstrap.min');
+		wp_enqueue_script('jquery.smartmenus');
+	}
+		
 	if (in_category('has-menu')) {
 		wp_enqueue_style('libraries-global');
 		wp_enqueue_style('bootstrapCSS');
@@ -762,6 +775,44 @@ if (!function_exists('stop_404_guessing')) {
 	}
 }
 
+
+// First make all metaboxes have 'normal' context
+// If you know the ids of the metaboxes, you could add them here and skip the next function altogether
+add_filter('get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1);
+function one_column_for_all($option) {
+    $result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
+    $result['side'] = '';
+    $result['advanced'] = '';
+    return $result;
+}
+
+// Then we add 'submitdiv' on the bottom, by creating this filter with a low priority
+// It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
+add_filter('get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1);
+function submitdiv_at_top($result){
+    $result['normal'] .= 'submitdiv';
+    return $result;
+}
+
+add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
+function metabox_order( $order ) {
+    return array(
+        'normal' => join( 
+            ",", 
+            array(       // vvv  Arrange here as you desire
+                'submitdiv',
+                'pageparentdiv',
+                'dmm-meta-box',
+                'prfx_meta',
+                'categorydiv',
+                'tagsdiv-post_tag',
+                'postimagediv'
+            )
+        ),
+    );
+}
+
+
 // Add ACF fields to WP REST API JSON output
 
 function wp_api_encode_acf($data,$post,$context){
@@ -772,3 +823,11 @@ function wp_api_encode_acf($data,$post,$context){
 if( function_exists('get_fields') ){
 	add_filter('json_prepare_post', 'wp_api_encode_acf', 10, 3);
 }
+
+// Allows SVGs to be uploaded through media
+
+function cc_mime_types( $mimes ){
+$mimes['svg'] = 'image/svg+xml';
+return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' ); 

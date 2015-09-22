@@ -167,8 +167,6 @@
 	display: block;
 	font-size: 1em;
 	margin-top: 0.5em;
-	margin-left: 1em;
-	max-width: 14em;
 	padding: 0.25em 0.25em 0.25em 2em;
 	position: relative;
 }
@@ -176,11 +174,10 @@
 .hrList .libraryAlert .icon-exclamation-sign {
 	color: #ffcc33;
 	float: left;
-	font-size: 1.5em;
-	margin-top: -12px;
-	margin-left: -1.075em;
+	font-size: 2em;
 	position: absolute;
-	top: 50%;
+	top: 0;
+	left: 3.5%;
 }
 
 .hrList .libraryAlert h3 {
@@ -199,8 +196,16 @@
 	color: #ffcc33;
 }
 
+.alertText {
+	font-size: .9em;
+	padding: 2.5% 2.5% 2.5% 5%;
+	font-weight: 400;
+	
+}
+
 .hrList .la-title {
 	color: #fc3;
+	font-weight: 600;
 }
 
 
@@ -361,19 +366,12 @@ div.libraryAlert {
 
 	.hrList .name .libraryAlert {
 		line-height: 1.5;
-		margin: 0.5em 0.5em 0 0.5em;
 		min-height: 2em;
-		padding-top: 0.1em;
+		padding: 0.25em 0;
 	}
 
 	.hrList .name .libraryAlert p {
 		margin: 0 !important;
-	}
-
-	.hrList .name .libraryAlert .icon-exclamation-sign {
-		line-height: 1;
-		margin-top: -8px;
-		padding: 0;
 	}
 	
 	.hrList .mobileToday {
@@ -402,13 +400,29 @@ div.libraryAlert {
 		top: 10px;
 		right: 10px;
 	}
+	
 	.libraryContent a[href^=tel] {
 		color: #424286;
 	}
 	
-	.nameHolder {
-		width: 80%;
+	.alertText {
+		font-size: .9em;
+		padding: 1% 2.5% 2% 3.5%;
+		font-weight: 400;
+		
 	}
+	
+	.hrList .libraryAlert .icon-exclamation-sign {
+		color: #ffcc33;
+		float: left;
+		font-size: 2em;
+		position: absolute;
+		top: 2.5%;
+		left: 2.5%;
+	}	
+/*	.nameHolder {
+		width: 80%;
+	} */
 	
 	.tdInside {
 		top: 0px;
