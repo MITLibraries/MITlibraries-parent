@@ -812,16 +812,20 @@ function metabox_order( $order ) {
     );
 }
 
+/**
+ * Add ACF fields to WP REST API JSON output
+ *
+ * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51
+ */
+function wp_api_encode_acf( $data, $post, $context ) {
+	$customMeta = (array) get_fields( $post['ID'] );
 
-// Add ACF fields to WP REST API JSON output
-
-function wp_api_encode_acf($data,$post,$context){
-	$data['meta'] = array_merge($data['meta'],get_fields($post['ID']));
+	$data['meta'] = array_merge( $data['meta'], $customMeta );
 	return $data;
 }
- 
-if( function_exists('get_fields') ){
-	add_filter('json_prepare_post', 'wp_api_encode_acf', 10, 3);
+
+if ( function_exists( 'get_fields' ) ) {
+	add_filter( 'json_prepare_post', 'wp_api_encode_acf', 10, 3 );
 }
 
 // Allows SVGs to be uploaded through media
