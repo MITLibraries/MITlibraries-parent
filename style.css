@@ -2,7 +2,7 @@
 Theme Name: MIT Libraries
 Author: Lightning Trumpet
 Author URI: http://wordpress.org/
-Version: 1.1.11
+Version: 1.1.14
 
 MIT Libraries theme built for the MIT Libraries website.
 */
@@ -45,6 +45,14 @@ http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
 /* =Reset
 -------------------------------------------------------------- */
 
+html body{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -58,6 +66,12 @@ body {
 ol,
 ul {
 	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: inline;
+	-webkit-padding-start: 0px !important;
+	-webkit-margin-before: 0px !important;
+    -webkit-margin-after: 0px !important;
 }
 blockquote,
 q {
