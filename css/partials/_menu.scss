@@ -103,6 +103,7 @@
   position: relative;
   transition: background-color 0.3s;
   width: 100%;
+  float: right;
   &:first-child {
 	  border-left: 1px solid lighten($color-background--dark, 20%);
   }
