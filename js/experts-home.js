@@ -36,10 +36,10 @@ $(function(){
 			var expertName4 = data[3].title;
 
 			// Expert images
-			var expertPhoto1 = data[0].featured_image.guid;
-			var expertPhoto2 = data[1].featured_image.guid;
-			var expertPhoto3 = data[2].featured_image.guid;
-			var expertPhoto4 = data[3].featured_image.guid;
+			var expertPhoto1 = data[0].featured_image.source;
+			var expertPhoto2 = data[1].featured_image.source;
+			var expertPhoto3 = data[2].featured_image.source;
+			var expertPhoto4 = data[3].featured_image.source;
 
 			// Expert job titles (post excerpts)
 			var expertExcerpt1 = data[0].excerpt;
