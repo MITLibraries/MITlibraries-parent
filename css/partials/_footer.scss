@@ -166,9 +166,6 @@
 	.about-mit {
 		font-size: 0.625em;
 		margin-bottom: 2em;
-		@include bp-tablet--portrait {
-			margin-bottom: 0;
-		}
 		span {
 			color: #eeeeee;
 			text-transform: uppercase;
