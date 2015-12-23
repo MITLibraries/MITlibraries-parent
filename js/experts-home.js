@@ -11,20 +11,20 @@ $(function(){
 			
 			// Fisher–Yates Shuffle
 			function shuffle() {
-			  var m = dataLength, t, i;
+				var m = dataLength, t, i;
 
-			  // While there remain elements to shuffle…
-			  while (m) {
+				// While there remain elements to shuffle…
+				while (m) {
 
-			    // Pick a remaining element…
-			    i = Math.floor(Math.random() * m--);
+					// Pick a remaining element…
+					i = Math.floor(Math.random() * m--);
 
-			    // And swap it with the current element.
-			    t = data[m];
-			    data[m] = data[i];
-			    data[i] = t;
-			  }
-			  return data;
+					// And swap it with the current element.
+					t = data[m];
+					data[m] = data[i];
+					data[i] = t;
+				}
+				return data;
 			}
 			// Shuffle the array
 			shuffle(data);
@@ -36,10 +36,10 @@ $(function(){
 			var expertName4 = data[3].title;
 
 			// Expert images
-			var expertPhoto1 = data[0].featured_image.guid;
-			var expertPhoto2 = data[1].featured_image.guid;
-			var expertPhoto3 = data[2].featured_image.guid;
-			var expertPhoto4 = data[3].featured_image.guid;
+			var expertPhoto1 = data[0].featured_image.source;
+			var expertPhoto2 = data[1].featured_image.source;
+			var expertPhoto3 = data[2].featured_image.source;
+			var expertPhoto4 = data[3].featured_image.source;
 
 			// Expert job titles (post excerpts)
 			var expertExcerpt1 = data[0].excerpt;
@@ -54,7 +54,7 @@ $(function(){
 			var expertURL4 = data[3].meta.expert_url;
 
 			// Append extra markup only if JSON request successful
-			$('.expert').append('<a class="link-profile no-underline">')
+			$('.expert').append('<a class="link-profile no-underline">');
 			// Append expert image div
 			$('.expert .link-profile').append('<img class="expert-photo">');
 			// Append empty spans for expert names

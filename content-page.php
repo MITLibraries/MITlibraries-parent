@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content in page-standard.php
  *
  * @package WordPress
  * @subpackage Twenty_Twelve
@@ -38,6 +38,5 @@ global $isRoot;
 		<?php get_sidebar( 'sidebar-1' ); ?>
 <?php } ?>
 		</div>
-	</div>
-	
+		
 	 
