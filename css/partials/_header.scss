@@ -92,6 +92,7 @@
 		}
 		@include bp-tablet--landscape-below {
 			@include rem-first(margin-left, 1);
+			padding-right: .5em;
 		}
 		@include bp-tablet--landscape-above {
 			@include rem-first(font-size, 1);
