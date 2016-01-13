@@ -381,7 +381,7 @@ $(function(){
 			if ($('#bartonplus.active').length) {
 				// Set the correct action for the BartonPlus form
 				$('#bartonplus')
-					.attr('action', 'http://search.ebscohost.com/login.aspx')
+					.attr('action', 'https://search.ebscohost.com/login.aspx')
 					.attr('method', 'get')
 					.attr('target', '_top');
 				// Add hidden fields
@@ -413,7 +413,7 @@ $(function(){
 				var splitOptions = selectVal.split('_');
 				$('#barton')
 					.addClass('searchform')
-					.attr('action', 'http://library.mit.edu/F/')
+					.attr('action', 'https://library.mit.edu/F/')
 					.attr('name', 'booksearch')
 					.attr('method', 'get');
 
@@ -439,7 +439,7 @@ $(function(){
 			}
 			// Worldcat
 			if($('#worldcat.active').length) {
-				$(this).attr('action', 'http://mit.worldcat.org/search');
+				$(this).attr('action', 'https://mit.worldcat.org/search');
 				// Add hidden fields
 				hiddenFields();
 				$('input.active', this).attr('method','get');
@@ -462,7 +462,7 @@ $(function(){
 				$('#course-reserves')
 					.addClass('searchform')
 					.addClass('barton')
-					.attr('action', 'http://library.mit.edu/F/')
+					.attr('action', 'https://library.mit.edu/F/')
 					.attr('method', 'get')
 					.attr('name', 'getInfo');
 				$('input.active', this)
@@ -486,7 +486,7 @@ $(function(){
 			// Site Search
 			if($('#site-search.active').length) {
 				$(this)
-					.attr('action', 'http://www.google.com/cse');
+					.attr('action', 'https://www.google.com/cse');
 				hiddenFields();
 				$('input.active', this)
 					.attr('name', 'q')
