@@ -34,9 +34,7 @@
 	position: relative;
 	width: 4em;
 	@include bp-mobile--only {
-		height: 3em;
 		margin-right: 0.75em;
-		width: 3em;
 	}
 }
 
@@ -73,9 +71,15 @@
 	}
 }
 
+.alertText h2 {
+	font-size: 21px;
+	font-weight: 600;
+}
+
 
 @media screen and (max-width:820px) {
-	.location--alerts .alertText {
+	.location--alerts .alertText,
+	.post.alert--critical .alertText{
 		width: 80%;
 	}
 }
