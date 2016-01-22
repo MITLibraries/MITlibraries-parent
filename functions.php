@@ -21,25 +21,25 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 /* Globals */
- 
+
 $gStudy24Url = "/study/24x7/";
 
 // use newsBlog for live site
- $newsBlog = 7;
- $mainSite = 1;
+$newsBlog = 7;
+$mainSite = 1;
 
 //$siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
 foreach(glob($siteRoot."/wp-content/themes/libraries/lib/*.php") as $file) require_once($file);
- 
+
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
 	$content_width = 625;
-	
+
 /**
  * Sets up theme defaults and registers the various WordPress features that
  * Twenty Twelve supports.
