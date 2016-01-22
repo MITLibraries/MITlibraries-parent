@@ -1,7 +1,9 @@
 [MIT Libraries](http://libraries.mit.edu) Wordpress Theme
 ========
 
+[![Build Status](https://travis-ci.org/MITLibraries/MITlibraries-parent.svg?branch=master)](https://travis-ci.org/MITLibraries/MITlibraries-parent)
 [![Code Climate](https://codeclimate.com/github/MITLibraries/MITlibraries-parent/badges/gpa.svg)](https://codeclimate.com/github/MITLibraries/MITlibraries-parent)
+[![Stories in Ready](https://badge.waffle.io/mitlibraries/mitlibraries-parent.svg?label=ready&title=Ready)](http://waffle.io/mitlibraries/mitlibraries-parent)
 
 This is the main Wordpress theme for the MIT Libraries.
 
