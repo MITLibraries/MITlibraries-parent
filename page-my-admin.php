@@ -17,20 +17,20 @@ $section = get_post($pageRoot);
 $isRoot = $section->ID == $post->ID;
 
 
- 
+
 get_header(); ?>
 
 	<?php
 
 	$template_page_args = array(
-	    'meta_key' => '_wp_page_template',
-	    'meta_value' => 'page-full.php',
-	    'depth' => -1,
-      'hierarchical' => 0
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'page-full.php',
+		'depth' => -1,
+		'hierarchical' => 0
 	);
 
 	$template_pages = get_pages($template_page_args);
-	
+
 	$template_query_args = array (
 		'meta_key' => '_wp_page_template',
 		'meta_value' => 'page-full.php'
@@ -62,13 +62,13 @@ get_header(); ?>
 			<ul>
 			<?php
 				for ($i = 1; $i <= 30; $i++) {
-    			$blog_details = get_blog_details($i);
-    			if ($blog_details == '') {
-    				echo '<li>There is no blog '.$i.'</li>';
-    			}
-    			else {
-    				echo '<li>Blog '.$blog_details->blog_id.' is called '.$blog_details->blogname.'.</li>';
-    			}
+				$blog_details = get_blog_details($i);
+				if ($blog_details == '') {
+					echo '<li>There is no blog '.$i.'</li>';
+				}
+				else {
+					echo '<li>Blog '.$blog_details->blog_id.' is called '.$blog_details->blogname.'.</li>';
+				}
 				}
 			?>
 			</ul>
