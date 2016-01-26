@@ -164,13 +164,13 @@ function twentytwelve_scripts_styles() {
 	wp_register_script('moment',     '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/moment.js', false, false, true);
 
 	wp_register_script('tabletop',   '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/tabletop.js', false, false, true);
-	
+
 	wp_register_script('underscore', '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/underscore.js', false, false, true);
-	
+
 	wp_register_script('lib-hours',  '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/libhours.js', array('moment','tabletop','underscore'), false, true);
 
 	/* All-site JS */
-	
+
 	wp_enqueue_script('modernizr');
 
 	wp_enqueue_script('lib-hours');
@@ -207,20 +207,20 @@ function twentytwelve_scripts_styles() {
 	if (is_page('getit')) {
 		wp_enqueue_style('get-it');
 	}
-	
+
 	if (is_page_template('nav-maine')) {
 		wp_enqueue_style('jquery.smartmenus.bootstrap');
 		wp_enqueue_script('bootstrap.min');
 		wp_enqueue_script('jquery.smartmenus.bootstrap.min');
 		wp_enqueue_script('jquery.smartmenus');
 	}
-		
+
 	if (in_category('has-menu')) {
 		wp_enqueue_style('libraries-global');
 		wp_enqueue_style('bootstrapCSS');
 		wp_enqueue_script('bootstrap-js');
 	}
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
@@ -487,11 +487,11 @@ function twentytwelve_body_class( $classes ) {
 	if (is_child_theme()) {
 		$classes[] = 'childTheme';
 	}
-	
+
 	if(is_child_page()) {
 		$classes[] = 'childPage';
 	}
-	
+
 	if (is_page_template('page-selfTitle.php')) {
 		$classes[] = 'boxSizingOn';
 	}
@@ -553,22 +553,21 @@ add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 /** Unique for theme **/
 
 function getParent($id) {
-	
+
 }
 function getRoot($post) {
 	$ar = get_post_ancestors($post);
-	
+
 	$is_section = get_post_meta($post->ID, "is_section", 1);
-	
-	
+
 	for($i=0;$i<count($ar);$i++) {
 		$pid = $ar[$i];
 		$is_section = get_post_meta($pid, "is_section", 1);
 		if ($is_section == 1) {
 			return $pid;
-		}	
+		}
 	}
-	
+
 	$max = count($ar)-1;
 
 	if ($max == -1) {
@@ -691,17 +690,17 @@ function remove_template( $files_to_delete = array() ){
 
 function menuWithParent($menu, $par) {
 	$menu_items = wp_get_nav_menu_items($menu);
-	
+
 	$arOut = array();
-	
+
 	foreach($menu_items as $key => $item) {
 		if ($item->menu_item_parent == $par) {
 			array_push($arOut, $item);
 		}
 	}
-	
+
 	return $arOut;
-	
+
 }
 
 function getExpert($expert) {
@@ -709,44 +708,42 @@ function getExpert($expert) {
 		'post_type' => 'expert',
 		'p' => $expert
 	);
-	
-	
-	
+
 	$qExpert = new WP_Query( $args );
-	
+
 	print_r($qExpert);
-	
+
 }
 
 if (!function_exists('better_breadcrumbs')) {
 
 	function better_breadcrumbs() {
 
-	  global $post;
+		global $post;
 
-	  if(is_search()) {
-		echo "<span>Search</span>";
-	  }
+		if(is_search()) {
+			echo "<span>Search</span>";
+		}
 
-	  if(!is_child_page() && is_page() || is_category() || is_single()) {
-		echo "<span>".the_title()."</span>";
-		return;
-	  }
+		if(!is_child_page() && is_page() || is_category() || is_single()) {
+			echo "<span>".the_title()."</span>";
+			return;
+		}
 
-	  if(is_child_page()) {
-		$hideParent = get_field('hide_parent_breadcrumb');
-		$parentLink = get_permalink($post->post_parent);
-		$parentTitle = get_the_title($post->post_parent);
-		$startLink = '<a href="';
-		$endLink = '">';
-		$closeLink = '</a>';
-		$parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
-		$pageTitle = get_the_title($post);
-		$pageLink = get_permalink($post);
-		$childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
+		if(is_child_page()) {
+			$hideParent = get_field('hide_parent_breadcrumb');
+			$parentLink = get_permalink($post->post_parent);
+			$parentTitle = get_the_title($post->post_parent);
+			$startLink = '<a href="';
+			$endLink = '">';
+			$closeLink = '</a>';
+			$parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
+			$pageTitle = get_the_title($post);
+			$pageLink = get_permalink($post);
+			$childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
 
-		  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
-		  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
+				if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
+				if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
 		}
 	}
 
@@ -796,8 +793,8 @@ function submitdiv_at_top($result){
 add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
 function metabox_order( $order ) {
 	return array(
-		'normal' => join( 
-			",", 
+		'normal' => join(
+			",",
 			array(       // vvv  Arrange here as you desire
 				'submitdiv',
 				'pageparentdiv',
@@ -833,4 +830,4 @@ function cc_mime_types( $mimes ){
 $mimes['svg'] = 'image/svg+xml';
 return $mimes;
 }
-add_filter( 'upload_mimes', 'cc_mime_types' ); 
+add_filter( 'upload_mimes', 'cc_mime_types' );

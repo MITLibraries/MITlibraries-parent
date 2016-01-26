@@ -19,47 +19,47 @@ $expireShort = 60*5; // 5 minutes
 date_default_timezone_set("America/New_York");
 
 function getHours() {
-	global $resetCache, $expireLong, $expireShort, $locationReset; 
-	
+	global $resetCache, $expireLong, $expireShort, $locationReset;
+
 	$key = "getHours";
-	$expire = $expireShort; 
+	$expire = $expireShort;
 	$data = get_transient( $key );
-	
+
 	if ($data === false || $resetCache) {
-		
+
 		// gets the entire hours object;
 		global $post;
-		
+
 		$gHours = array();
-		
+
 		$args = array(
 			'post_type' => 'hours',
 			'posts_per_page' => -1,
 			'post_parent' => 0,
 		);
-		
+
 		$hours = new WP_Query( $args );
 		while($hours->have_posts()):
-			
+
 			$hours->the_post();
 			$id = get_the_ID();
-			
-			
+
+
 			$name = get_the_title();
-			
+
 			$description = get_field("description");
 			$description = str_replace(":00", "", $description);
-			
+
 			$start = get_field("start");
 			$end = get_field("end");
-			
+
 			$spanning = get_field("show_spanning");
-			
+
 			$term = get_field("is_term");
-			
+
 			$location = get_field("associated_location");
 			$locationId = $location->ID;
-			
+
 			$arHours[$locationId] = array(
 				'id' => $id,
 				'name' => $name,
@@ -71,48 +71,48 @@ function getHours() {
 				'terms' => getHoursChildren($id)
 			);
 		endwhile;
-		
+
 		wp_reset_query();
-		
+
 		$data = $arHours;
 		set_transient( $key, $data, $expire );
 	}
-		
+
 	return $data;
 }
 
 function getHoursChildren($parent) {
 	$arHours = array();
-	
+
 	$args = array(
 		'post_type' => 'hours',
 		'orderby' => 'date',
-		'order' => 'ASC',		
+		'order' => 'ASC',
 		'posts_per_page' => -1,
 		'post_parent' => $parent
 	);
-	
-	
+
+
 	$hours = new WP_Query( $args );
 
 	while($hours->have_posts()):
-		
+
 		$hours->the_post();
 		$id = get_the_ID();
-		
+
 		$name = get_the_title();
-		
+
 		$description = get_field("description");
-		
+
 		$start = get_field("start");
 		$end = get_field("end");
-		
+
 		$spanning = get_field("show_spanning");
-		
+
 		$term = get_field("is_term");
-		
+
 		$arHours[$id] = array(
-			'id' => $id,		
+			'id' => $id,
 			'name' => $name,
 			'description' => $description,
 			'start' => $start,
@@ -123,18 +123,18 @@ function getHoursChildren($parent) {
 		);
 	endwhile;
 	wp_reset_query();
-	
-	
-	return $arHours;	
+
+
+	return $arHours;
 }
 
 function getHoursToday($locationId) {
-	global $resetCache, $expireLong, $expireShort, $locationReset; 
+	global $resetCache, $expireLong, $expireShort, $locationReset;
 	$date = date("Y-m-d");
 	$key = "getHoursToday-$locationId-$date";
 	$expire = $expireShort;
 	$data = get_transient( $key );
-	
+
 	if ($data === false || $resetCache || $locationReset == $locationId) {
 		$data = getHoursDay($locationId, strtotime("Now"));
 		set_transient( $key, $data, $expire );
@@ -143,28 +143,28 @@ function getHoursToday($locationId) {
 }
 
 function hasHours($locationId, $curDay) {
-	global $resetCache, $expireLong, $expireShort, $locationReset; 
-	
+	global $resetCache, $expireLong, $expireShort, $locationReset;
+
 	$date = date("Y-m-d", strtotime($curDay));
 	$key = "hasHours-$locationId-$date";
 	$expire = $expireShort;
 	$data = get_transient( $key );
-	
+
 	if ($data === false || $resetCache || $locationReset == $locationId) {
 		$arHours = getHours();
-				
+
 		$dt = strtotime($curDay);
-		
+
 		$term = getTerm($arHours, $locationId, $dt);
-		
-	
+
+
 		if (count($term)==0) {
 			// no hours
 			$data = 0;
 		} else {
 			$data = 1;
 		}
-		set_transient( $key, $data, $expire );		
+		set_transient( $key, $data, $expire );
 	}
 	
 	return $data;

@@ -10,18 +10,17 @@
 		$newsVideoURL = get_field("news_video_url");
 		$newsPhoto = get_field("news_photo");
 		$newsUrl = get_field("news_photo_url");
-		
+
 		$newsFeedCount = get_field("news_feed_number");
-		
+
 		$numNews = 3;
-		
+
 		$arNews = array();
 
-		
 		for($i=1;$i<=$numNews;$i++) {
 			$nTitle = get_field("news_".$i);
 			$nUrl = get_field("news_".$i."_url");
-			
+
 			if ($nTitle != "" && $nUrl != "") {
 				$arNews[] = array(
 					"title" => $nTitle,
@@ -80,9 +79,9 @@
 			foreach($arNews as $news):
 				$nTitle = $news["title"];
 				$nUrl = $news["url"];
-				
+
 				echo "<li><a href='$nUrl'>$nTitle</a></li>";
-			
+
 			endforeach;
 		?>
 
@@ -94,9 +93,9 @@
 					'post_type' => 'post',
 					'posts_per_page' => $newsFeedCount
 					);
-			
+
 			$news = new WP_Query( $args );
-			
+
 			while($news->have_posts()):
 				$news->the_post();
 		?>

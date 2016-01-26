@@ -29,7 +29,7 @@
 			}
 		}
 
-		
+
 		if ($alertLink != '') {
 			echo '<div class="libraryAlert"><a href="'.$alertLink.'">'.$alertText.'</a></div>';
 			return;
@@ -38,7 +38,7 @@
 			echo '<div class="libraryAlert">'.$alertText.'</div>';
 			return;
 		}
-		
+
 	}
 
 	else {
