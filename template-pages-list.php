@@ -13,12 +13,12 @@
  */
 
 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 
- 
+
 get_header(); ?>
 
 	<?php
@@ -27,37 +27,35 @@ get_header(); ?>
 	    'meta_key' => '_wp_page_template',
 	    'meta_value' => 'page-full.php',
 	    'depth' => -1,
-      'hierarchical' => 0
+	  'hierarchical' => 0,
 	);
 
-	$template_pages = get_pages($template_page_args);
-	
-	$template_query_args = array (
+	$template_pages = get_pages( $template_page_args );
+
+	$template_query_args = array(
 		'meta_key' => '_wp_page_template',
-		'meta_value' => 'page-full.php'
+		'meta_value' => 'page-full.php',
 	);
-	
-	$template_queries = get_pages($template_query_args);
+
+	$template_queries = get_pages( $template_query_args );
 
 	?>
 
 	<?php
 
-		if(!current_user_can('manage_options')) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			include( get_query_template( '404' ) );
 			exit();
-		}
-
-		else {
+		} else {
 			?>
-			<ul>
+            <ul>
 				<?php
 				foreach ( $template_pages as $template_page ) {
 				    echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title  . '</a></li>';
 				}
 				?>
-			</ul>
-			
+            </ul>
+            
 
 		<?php } ?>
 

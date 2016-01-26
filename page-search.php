@@ -13,35 +13,35 @@
  */
 
 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 
 
 get_header(); ?>
 
-		<div id="stage" class="inner column3 tertiaryPage" role="main">
+        <div id="stage" class="inner column3 tertiaryPage" role="main">
 
-<?php get_template_part('inc/search'); ?>
+<?php get_template_part( 'inc/search' ); ?>
 
-			<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
-				<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
-			</div>
+            <div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
+				<?php wsf_breadcrumbs( ' &raquo; ', '' ); ?>
+            </div>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="title-page">
-				<?php if ($isRoot): ?>
+            <div class="title-page">
+				<?php if ( $isRoot ) : ?>
 				<h1><?php echo $section->post_title; ?></h1>
-				<?php else: ?>
-				<h1><a href="<?php echo get_permalink($section->ID) ?>"><?php echo $section->post_title; ?></a></h1>
+				<?php else : ?>
+				<h1><a href="<?php echo get_permalink( $section->ID ) ?>"><?php echo $section->post_title; ?></a></h1>
 				<?php endif; ?>
-			</div>
+            </div>
 
-			<div class="content-main flex-container">
+            <div class="content-main flex-container">
 				<?php get_template_part( 'content', 'pagefull' ); ?>
-			</div>
-		</div>
+            </div>
+        </div>
 		<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

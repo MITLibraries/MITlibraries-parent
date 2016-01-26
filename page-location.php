@@ -11,34 +11,34 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 get_header(); ?>
-		<!-- Version 1.9 -->
-		<div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
-			<a href="/">Libraries home</a>
+        <!-- Version 1.9 -->
+        <div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
+            <a href="/">Libraries home</a>
 			&raquo; <?php showBreadTitle(); ?>
-		</div>
+        </div>
 
-		<?php 
-			$objs = get_field("page_location");
-			
+		<?php
+			$objs = get_field( 'page_location' );
+
 			$args = array(
 				'p' => $objs->ID,
-				'post_type' => 'any'
+				'post_type' => 'any',
 			);
-			
-			$locPosts = new WP_Query($args);
-			
+
+			$locPosts = new WP_Query( $args );
+
 		?>
-		
+        
 		<?php while ( $locPosts->have_posts() ) : $locPosts->the_post(); ?>
 
 			<?php get_template_part( 'content', 'location' ); ?>
-		
+        
 		<?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>
