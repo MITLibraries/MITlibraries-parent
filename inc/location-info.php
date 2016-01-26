@@ -8,12 +8,12 @@
 						'order' => 'ASC',
 						'no_found_rows' => true,
 						'update_post_term_cache' => false,
-						'update_post_meta_cache' => false
+						'update_post_meta_cache' => false,
 					);
 
-	$locationsQuery = new WP_Query($args);
+	$locationsQuery = new WP_Query( $args );
 
-	while ($locationsQuery->have_posts()) {
+	while ( $locationsQuery->have_posts() ) {
 			$locationsQuery->the_post();
 			echo '<div class="location"><h3>' . get_the_title() . '</h3></div>';
 	}

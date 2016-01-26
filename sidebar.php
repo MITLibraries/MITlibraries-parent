@@ -9,9 +9,9 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-	
-	<div id="sidebarContent" class="sidebar span3">
-		<div class="sidebarWidgets">
+    
+    <div id="sidebarContent" class="sidebar span3">
+        <div class="sidebarWidgets">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</div>
-	</div>		
+        </div>
+    </div>      
