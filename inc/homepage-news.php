@@ -18,7 +18,7 @@
 		$arNews = array();
 
 
-		for ( $i=1;$i<=$numNews;$i++ ) {
+		for ( $i = 1;$i <= $numNews;$i++ ) {
 			$nTitle = get_field("news_".$i);
 			$nUrl = get_field("news_".$i."_url");
 

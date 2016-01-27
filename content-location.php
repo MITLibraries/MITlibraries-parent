@@ -51,7 +51,7 @@
 	$numMain = 6;
 	$arMain = array();
 
-	for ( $i=1;$i<=$numMain;$i++ ) {
+	for ( $i = 1;$i <= $numMain;$i++ ) {
 		$img = get_field("main_image".$i, $locationId);
 		if ($img != "")
 			$arMain[] = $img;
@@ -60,7 +60,7 @@
 	$numSub = 8;
 	$arSub = array();
 	$subs = 0;
-	for ( $i=1;$i<=$numSub;$i++ ) {
+	for ( $i = 1;$i <= $numSub;$i++ ) {
 		$img = get_field("sub_image".$i, $locationId);
 		if ( $img != "" ) {
 			$subs++;

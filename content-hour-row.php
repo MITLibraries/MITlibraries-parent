@@ -33,7 +33,7 @@
 							//if ($hasHours && $noHours != 1):
 							if ( $noHours != 1 ) :
 
-								if ( $rowOdd=="even" ) {
+								if ( $rowOdd == "even" ) {
 									$rowOdd = "";
 								} else {
 									$rowOdd = "even";
@@ -96,7 +96,7 @@
 
 													$end = min($msgEnd, $arDays[6]);
 
-													$diff = floor(($end - $curDay)/(60*60*24))+1;
+													$diff = floor(($end - $curDay) / (60 * 60 * 24)) + 1;
 
 													$msgClass .= " msgSpan".$diff;
 
@@ -117,7 +117,7 @@
 										
 									</td>
 	
-									<?php for ( $i=0;$i<=6;$i++ ) { ?>
+									<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 										<?php
 											$curDay = $arDays[$i];
 
@@ -172,7 +172,7 @@
 
 										$end = min($msgEnd, $arDays[6]);
 
-										$diff = floor(($end - $curDay)/(60*60*24))+1;
+										$diff = floor(($end - $curDay) / (60 * 60 * 24)) + 1;
 
 										$msgClass .= " msgSpan".$diff;
 

@@ -23,7 +23,7 @@ global $isRoot;
 		<div class="col-1 content-page">
 			<div class="entry-content">
 				<div class="entry-page-title">
-				<?php if ( !$isRoot ) : ?>
+				<?php if ( ! $isRoot ) : ?>
 				<h1><?php the_title(); ?></h1>
 				<?php endif; ?>
 				</div>

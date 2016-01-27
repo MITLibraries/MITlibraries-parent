@@ -14,8 +14,8 @@ $halfCache = 0;
 if (isset($_GET["locReset"]))
 	$locationReset = $_GET["locReset"];
 
-$expireLong = 60*5; // 24 hours
-$expireShort = 60*5; // 5 minutes
+$expireLong = 60 * 5; // 24 hours
+$expireShort = 60 * 5; // 5 minutes
 date_default_timezone_set("America/New_York");
 
 function getHours() {
@@ -154,7 +154,7 @@ function hasHours( $locationId, $curDay ) {
 
 		$term = getTerm($arHours, $locationId, $dt);
 
-		if ( count($term)==0 ) {
+		if ( count($term) == 0 ) {
 			// no hours
 			$data = 0;
 		} else {
@@ -187,10 +187,10 @@ function getHoursDay( $locationId, $dt ) {
 		//print_r($term);
 		$hour = getTermHour($term, $dt);
 
-		if ( count($term)==0 ) {
+		if ( count($term) == 0 ) {
 			// no hours
 			$data = "TBA";
-		} else if ( count($hour)==0 ) {
+		} else if ( count($hour) == 0 ) {
 			// no hours
 			$data = "TBA";
 		} else {
@@ -223,10 +223,10 @@ function getMobileHoursDay( $locationId, $dt ) {
 		//print_r($term);
 		$hour = getTermHour($term, $dt);
 
-		if ( count($term)==0 ) {
+		if ( count($term) == 0 ) {
 			// no hours
 			$data = "TBA";
-		} else if ( count($hour)==0 ) {
+		} else if ( count($hour) == 0 ) {
 			// no hours
 			$data = "TBA";
 		} else {
@@ -281,12 +281,12 @@ function getOpen( $locationId ) {
 	$term = getTerm($arHours, $locationId, $dt);
 	$hour = getTermHour($term, $dt);
 
-	if ( count($term)==0 ) {
+	if ( count($term) == 0 ) {
 		// no hours
 		return false;
 	}
 
-	if ( count($hour)==0 ) {
+	if ( count($hour) == 0 ) {
 		// no hours
 		return false;
 	}
@@ -482,8 +482,8 @@ function getTerm( $obj, $location, $dt ) {
 				if ( $start <= $dt && $dt <= $end ) {
 					//echo "FOUND";
 					$data = array(
-						"id"=>$key,
-						"term"=>$term
+						"id" => $key,
+						"term" => $term
 					);
 				}
 }
@@ -743,7 +743,7 @@ function clean_posts( $tag ) {
 function process_semester( $arSheet, $name, $semesterList, $tag ) {
 	$startRow = 4;
 	$started = 0;
-	$foundMaster= 0;
+	$foundMaster = 0;
 
 	$semesterEntry = getSemester($name, $semesterList);
 	$startDate = date("Ymd", $semesterEntry[start]);
@@ -845,7 +845,7 @@ function process_holiday( $arSheet, $tag ) {
 
 	$startRow = 4;
 	$started = 0;
-	$foundMaster= 0;
+	$foundMaster = 0;
 	$foundDate = 0;
 
 	$semesterEntry = getSemester($name, $semesterList);
@@ -900,7 +900,7 @@ function process_holiday( $arSheet, $tag ) {
 
 							echo "Adding Holiday - ".$day." / ".$formatDate." = ".$val."<br>";
 
-							if ( $termId ==0 || $termId == "" ) {
+							if ( $termId == 0 || $termId == "" ) {
 								echo "<b>MISSING Term for: $termDate</b><br>";
 							} else {
 								// OK to insert

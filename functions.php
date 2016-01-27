@@ -177,11 +177,11 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 
 	/* Page-specific JS & CSS */
 
-	if ( !is_front_page() || is_child_theme() ) {
+	if ( ! is_front_page() || is_child_theme() ) {
 		wp_enqueue_script('productionJS');
 	}
 
-	if ( is_front_page() && !is_child_theme() ) {
+	if ( is_front_page() && ! is_child_theme() ) {
 		wp_enqueue_script('homeJS');
 	}
 
@@ -441,7 +441,7 @@ function twentytwelve_entry_meta() {
 }
 endif;
 
-if ( !function_exists('is_child_page') ) {
+if ( ! function_exists('is_child_page') ) {
 	function is_child_page() {
 	global $post;     // if outside the loop
 
@@ -560,7 +560,7 @@ function getRoot( $post ) {
 
 	$is_section = get_post_meta($post->ID, "is_section", 1);
 
-	for ( $i=0;$i<count($ar);$i++ ) {
+	for ( $i = 0;$i < count($ar);$i++ ) {
 		$pid = $ar[$i];
 		$is_section = get_post_meta($pid, "is_section", 1);
 		if ( $is_section == 1 ) {
@@ -568,7 +568,7 @@ function getRoot( $post ) {
 		}
 	}
 
-	$max = count($ar)-1;
+	$max = count($ar) -1;
 
 	if ( $max == -1 ) {
 		return $post->ID;
@@ -579,7 +579,7 @@ function getRoot( $post ) {
 }
 
 function the_breadcrumb() {
-	if ( !is_home() ) {
+	if ( ! is_home() ) {
 		echo '<a href="';
 		echo get_option('home');
 		echo '">';
@@ -598,8 +598,8 @@ function the_breadcrumb() {
 }
 
 function wsf_make_link( $url, $anchortext, $title=null, $nofollow=false ) {
-	if ( $title == null ) $title=$anchortext;
-	$nofollow==true ? $rel=' rel="nofollow"' : $rel = '';
+	if ( $title == null ) $title = $anchortext;
+	$nofollow == true ? $rel = ' rel="nofollow"' : $rel = '';
 
 	$link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
 	return $link;
@@ -624,7 +624,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	// Do not show breadcrumbs on home or front pages.
 	// So we will just return quickly
-	if ((is_home() || is_front_page()) && (!$front_page))
+	if ((is_home() || is_front_page()) && ( ! $front_page))
 	  return;
 
 	// Create a constant for the separator, with space padding.
@@ -715,7 +715,7 @@ function getExpert( $expert ) {
 
 }
 
-if ( !function_exists('better_breadcrumbs') ) {
+if ( ! function_exists('better_breadcrumbs') ) {
 
 	function better_breadcrumbs() {
 
@@ -725,7 +725,7 @@ if ( !function_exists('better_breadcrumbs') ) {
 	    echo "<span>Search</span>";
 	  }
 
-	  if ( !is_child_page() && is_page() || is_category() || is_single() ) {
+	  if ( ! is_child_page() && is_page() || is_category() || is_single() ) {
 	    echo "<span>".the_title()."</span>";
 	    return;
 	  }
@@ -742,7 +742,7 @@ if ( !function_exists('better_breadcrumbs') ) {
 	    $pageLink = get_permalink($post);
 	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
 
-		  if ( $parentBreadcrumb !="" && $hideParent != 1 ) {echo "<span>".$parentBreadcrumb."</span>";}
+		  if ( $parentBreadcrumb != "" && $hideParent != 1 ) {echo "<span>".$parentBreadcrumb."</span>";}
 		  if ( $childBreadcrumb != "" ) {echo "<span>".$pageTitle."</span>";}
 		}
 	}
@@ -752,7 +752,7 @@ if ( !function_exists('better_breadcrumbs') ) {
 
 // Check for performance issues
 function no_post_limit( $query ) {
-	if ( is_home() && !is_child_theme() ) {
+	if ( is_home() && ! is_child_theme() ) {
 	// No post limit on homepage
 	$query->set( 'posts_per_page', -1 );
 	return;
@@ -761,7 +761,7 @@ function no_post_limit( $query ) {
 add_action( 'pre_get_posts', 'no_post_limit', 1 );
 
 // Prevent Wordpress from "guessing" redirects instead of showing a 404 page
-if ( !function_exists('stop_404_guessing') ) {
+if ( ! function_exists('stop_404_guessing') ) {
 	add_filter('redirect_canonical', 'stop_404_guessing');
 	function stop_404_guessing( $url ) {
 		if ( is_404() ) {
