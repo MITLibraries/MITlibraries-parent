@@ -27,8 +27,8 @@
 $gStudy24Url = "/study/24x7/";
 
 // use newsBlog for live site
- $newsBlog = 7;
- $mainSite = 1;
+	$newsBlog = 7;
+	$mainSite = 1;
 
 //$siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
@@ -131,17 +131,17 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	/*  Register JS */
 
 	// Deregister WP Core jQuery, load Google's
-  wp_deregister_script('jquery');
+	wp_deregister_script('jquery');
 
-  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
+	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
 
-  wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
 
-  wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
 
-  wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
 
-   wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
 
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
@@ -446,9 +446,9 @@ if (!function_exists('is_child_page')) {
 	global $post;     // if outside the loop
 
 	if ( is_page() && $post->post_parent ) {
-    return $post->post_parent;
+	return $post->post_parent;
 	} else {
-    return false;
+	return false;
 	}
 }
 }
@@ -598,63 +598,63 @@ function the_breadcrumb() {
 }
 
 function wsf_make_link ( $url, $anchortext, $title=null, $nofollow=false ) {
-   if ( $title == null ) $title=$anchortext;
-   $nofollow==true ? $rel=' rel="nofollow"' : $rel = '';
+	if ( $title == null ) $title=$anchortext;
+	$nofollow==true ? $rel=' rel="nofollow"' : $rel = '';
 
-   $link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
-   return $link;
+	$link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
+	return $link;
 }
 
 function showBreadTitle() {
-   // Wordpess function that echoes your post title.
+	// Wordpess function that echoes your post title.
 	$custom_title = get_post_meta($post->ID, "breadcrumb_override", 1);
 	$custom_title = $custom_title[0];
-   //$custom_title = get_field("breadcrumb_override");
+	//$custom_title = get_field("breadcrumb_override");
 
-   if ($custom_title != "") {
+	if ($custom_title != "") {
 	 echo $custom_title;
-   } else {
-     the_title();
-   }
+	} else {
+	 the_title();
+	}
 }
 
 function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
-    global $post;
+	global $post;
 
-   // Do not show breadcrumbs on home or front pages.
-   // So we will just return quickly
-   if((is_home() || is_front_page()) && (!$front_page))
-      return;
+	// Do not show breadcrumbs on home or front pages.
+	// So we will just return quickly
+	if((is_home() || is_front_page()) && (!$front_page))
+	  return;
 
-    // Create a constant for the separator, with space padding.
-    $SEP = ' ' . $sep . ' ';
+	// Create a constant for the separator, with space padding.
+	$SEP = ' ' . $sep . ' ';
 
-  echo '<div class="breadcrumbs">';
+	echo '<div class="breadcrumbs">';
 
-  echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;
+	echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;
 
-  if(is_single()) {
-    the_category(', '); echo $SEP;
-    }
-    elseif(is_page()) {
-            $parent_id = $post->post_parent;
-            $parents = array();
-            while($parent_id) {
-                $page = get_page($parent_id);
-            $parents[]  = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;
-                $parent_id  = $page->post_parent;
-            }
-            $parents = array_reverse($parents);
-            foreach($parents as $parent) {
-                echo $parent;
-            }
-   }
-   // Wordpess function that echoes your post title.
-   $custom_title = get_field("breadcrumb_override");
+	if(is_single()) {
+	the_category(', '); echo $SEP;
+	}
+	elseif(is_page()) {
+			$parent_id = $post->post_parent;
+			$parents = array();
+			while($parent_id) {
+				$page = get_page($parent_id);
+			$parents[]  = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;
+				$parent_id  = $page->post_parent;
+			}
+			$parents = array_reverse($parents);
+			foreach($parents as $parent) {
+				echo $parent;
+			}
+	}
+	// Wordpess function that echoes your post title.
+	$custom_title = get_field("breadcrumb_override");
 
-   showBreadTitle();
-     echo '</div>';
+	showBreadTitle();
+	 echo '</div>';
 }
 
 function cf($name) {
@@ -662,30 +662,30 @@ function cf($name) {
 }
 
 function remove_template( $files_to_delete = array() ){
-    global $wp_themes;
+	global $wp_themes;
 
-    // As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
-    if ( is_scalar( $files_to_delete ) ) $files_to_delete = array( $files_to_delete );
+	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
+	if ( is_scalar( $files_to_delete ) ) $files_to_delete = array( $files_to_delete );
 
-    // remove TLA if it was provided
-    $files_to_delete = preg_replace( "/\.[^.]+$/", '', $files_to_delete );
+	// remove TLA if it was provided
+	$files_to_delete = preg_replace( "/\.[^.]+$/", '', $files_to_delete );
 
-    // Populate the global $wp_themes array
-    get_themes();
+	// Populate the global $wp_themes array
+	get_themes();
 
-    $current_theme_name = get_current_theme();
+	$current_theme_name = get_current_theme();
 
-    // Note that we're taking a reference to $wp_themes so we can modify it in-place
-    $template_files = &$wp_themes[$current_theme_name]['Template Files'];
+	// Note that we're taking a reference to $wp_themes so we can modify it in-place
+	$template_files = &$wp_themes[$current_theme_name]['Template Files'];
 
-    foreach ( $template_files as $file_path ){
-        foreach( $files_to_delete as $file_name ){
-            if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ){
-                $key = array_search( $file_path, $template_files );
-                if ( $key ) unset ( $template_files[$key] );
-            }
-        }
-    }
+	foreach ( $template_files as $file_path ){
+		foreach( $files_to_delete as $file_name ){
+			if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ){
+				$key = array_search( $file_path, $template_files );
+				if ( $key ) unset ( $template_files[$key] );
+			}
+		}
+	}
 }
 
 function menuWithParent($menu, $par) {
@@ -752,11 +752,11 @@ if (!function_exists('better_breadcrumbs')) {
 
 // Check for performance issues
 function no_post_limit( $query ) {
-  if ( is_home() && !is_child_theme()) {
-    // No post limit on homepage
-    $query->set( 'posts_per_page', -1 );
-    return;
-  }
+	if ( is_home() && !is_child_theme()) {
+	// No post limit on homepage
+	$query->set( 'posts_per_page', -1 );
+	return;
+	}
 }
 add_action( 'pre_get_posts', 'no_post_limit', 1 );
 
@@ -776,36 +776,36 @@ if (!function_exists('stop_404_guessing')) {
 // If you know the ids of the metaboxes, you could add them here and skip the next function altogether
 add_filter('get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1);
 function one_column_for_all($option) {
-    $result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
-    $result['side'] = '';
-    $result['advanced'] = '';
-    return $result;
+	$result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
+	$result['side'] = '';
+	$result['advanced'] = '';
+	return $result;
 }
 
 // Then we add 'submitdiv' on the bottom, by creating this filter with a low priority
 // It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
 add_filter('get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1);
 function submitdiv_at_top($result){
-    $result['normal'] .= 'submitdiv';
-    return $result;
+	$result['normal'] .= 'submitdiv';
+	return $result;
 }
 
 add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
 function metabox_order( $order ) {
-    return array(
-        'normal' => join(
-            ",",
-            array(       // vvv  Arrange here as you desire
-                'submitdiv',
-                'pageparentdiv',
-                'dmm-meta-box',
-                'prfx_meta',
-                'categorydiv',
-                'tagsdiv-post_tag',
-                'postimagediv'
-            )
-        ),
-    );
+	return array(
+		'normal' => join(
+			",",
+			array(       // vvv  Arrange here as you desire
+				'submitdiv',
+				'pageparentdiv',
+				'dmm-meta-box',
+				'prfx_meta',
+				'categorydiv',
+				'tagsdiv-post_tag',
+				'postimagediv'
+			)
+		),
+	);
 }
 
 /**
