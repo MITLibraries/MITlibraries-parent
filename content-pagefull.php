@@ -9,7 +9,7 @@
 global $isRoot;
 ?>
 <div class="col-1 content-page">
-		<?php if (has_post_thumbnail()): ?>
+		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="featuredImage">
 			<?php echo the_post_thumbnail(700, 300); ?>
 		
@@ -18,7 +18,7 @@ global $isRoot;
 		
 		
 		<div class="entry-content">
-			<?php if (!$isRoot): ?>
+			<?php if ( !$isRoot ) : ?>
 			<h2><?php the_title(); ?></h2>
 			<?php endif; ?>
 			<?php the_content(); ?>

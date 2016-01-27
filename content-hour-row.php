@@ -31,9 +31,9 @@
 							$alert = trim(get_field("alert"));
 
 							//if ($hasHours && $noHours != 1):
-							if ($noHours != 1):
+							if ( $noHours != 1 ) :
 
-								if ($rowOdd=="even") {
+								if ( $rowOdd=="even" ) {
 									$rowOdd = "";
 								} else {
 									$rowOdd = "even";
@@ -45,12 +45,12 @@
 									<td class="name">
 										<div class="nameHolder">
 											<h3><a href="<?php echo $pageLink; ?>"><?php the_title(); ?></a></h3>
-											<?php if ($phone != ""): ?>
+											<?php if ( $phone != "" ) : ?>
 												<?php echo $phone ?><br/>
 											<?php endif; ?>
 										</div>
 										<a class="map" href="<?php echo $mapPage.$slug; ?>">Map: <?php echo $building ?></a>									
-										<?php if ($study24 == 1): ?>
+										<?php if ( $study24 == 1 ) : ?>
 											<a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 										<?php endif; ?>
 										<!--
@@ -66,9 +66,9 @@
 
 											$message = getMessageDay($locationId, $today);
 
-											if ($message != "" ) {
+											if ( $message != "" ) {
 
-												if ($showMobileSpecial == 1) {
+												if ( $showMobileSpecial == 1 ) {
 													$showMobileSpecial = 0;
 
 													$msgStart = strtotime($message["start"]);
@@ -78,19 +78,19 @@
 													$msgClass = "message";
 
 
-													if ($msgStart == $curDay) {
+													if ( $msgStart == $curDay ) {
 														$msgClass .= " msgStart";
 													}
 
-													if ($msgStart < $curDay) {
+													if ( $msgStart < $curDay ) {
 														$msgClass .= " msgContinued";
 													}
 
-													if ($msgEnd == $curDay) {
+													if ( $msgEnd == $curDay ) {
 														$msgClass .= " msgEnd";
 													}
 
-													if ($msgEnd <= $arDays[6]) {
+													if ( $msgEnd <= $arDays[6] ) {
 														$msgClass .= " msgEnds";
 													}
 
@@ -109,7 +109,7 @@
 										?>
 										</div>		
 										-->										
-										<?php if ($alert != ""): ?>
+										<?php if ( $alert != "" ) : ?>
 											<div class="libraryAlert">
 												<?php echo '<i class="icon-exclamation-sign"></i>'.$alert; ?>
 											</div>
@@ -117,11 +117,11 @@
 										
 									</td>
 	
-									<?php for($i=0;$i<=6;$i++) { ?>
+									<?php for ( $i=0;$i<=6;$i++ ) { ?>
 										<?php
 											$curDay = $arDays[$i];
 
-											if ($curDay == $now) {
+											if ( $curDay == $now ) {
 												$class = "cur";
 												$next = "curAfter";
 											} else {
@@ -141,9 +141,9 @@
 
 								//print_r($message);
 
-								if ($message != "" ) {
+								if ( $message != "" ) {
 
-									if ($showSpecial == 1) {
+									if ( $showSpecial == 1 ) {
 
 										$showSpecial = 0;
 
@@ -154,19 +154,19 @@
 										$msgClass = "message";
 
 
-										if ($msgStart == $curDay) {
+										if ( $msgStart == $curDay ) {
 											$msgClass .= " msgStart";
 										}
 
-										if ($msgStart < $curDay) {
+										if ( $msgStart < $curDay ) {
 											$msgClass .= " msgContinued";
 										}
 
-										if ($msgEnd == $curDay) {
+										if ( $msgEnd == $curDay ) {
 											$msgClass .= " msgEnd";
 										}
 
-										if ($msgEnd <= $arDays[6]) {
+										if ( $msgEnd <= $arDays[6] ) {
 											$msgClass .= " msgEnds";
 										}
 

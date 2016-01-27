@@ -43,7 +43,7 @@ get_header(); ?>
 
 	<?php
 
-		if(!current_user_can('manage_options')) {
+		if ( !current_user_can('manage_options') ) {
 			include( get_query_template( '404' ) );
 			exit();
 		}

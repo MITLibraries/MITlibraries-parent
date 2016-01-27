@@ -42,7 +42,7 @@ get_header(); ?>
 
 	<?php
 
-		if(!current_user_can('manage_options')) {
+		if ( !current_user_can('manage_options') ) {
 			include( get_query_template( '404' ) );
 			exit();
 		}
@@ -61,9 +61,9 @@ get_header(); ?>
 			<h2>Blog IDs</h2>
 			<ul>
 			<?php
-				for ($i = 1; $i <= 30; $i++) {
+				for ( $i = 1; $i <= 30; $i++ ) {
 				$blog_details = get_blog_details($i);
-				if ($blog_details == '') {
+				if ( $blog_details == '' ) {
 					echo '<li>There is no blog '.$i.'</li>';
 				}
 				else {

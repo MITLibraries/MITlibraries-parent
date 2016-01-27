@@ -32,9 +32,9 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="title-page">
-				<?php if ($isRoot): ?>
+				<?php if ( $isRoot ) : ?>
 				<h1><?php echo $section->post_title; ?></h1>
-				<?php else: ?>
+				<?php else : ?>
 				<h1><a href="<?php echo get_permalink($section->ID) ?>"><?php echo $section->post_title; ?></a></h1>
 				<?php endif; ?>
 			</div>
