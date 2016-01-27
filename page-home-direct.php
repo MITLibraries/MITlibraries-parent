@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: Home Page
  *
@@ -96,6 +96,6 @@
 		</div><!-- end div.col-2 -->
 	</div><!-- end div.content-main -->
 
-<?php 
+<?php
 	get_footer();
 ?>

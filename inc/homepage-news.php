@@ -10,19 +10,19 @@
 		$newsVideoURL = get_field("news_video_url");
 		$newsPhoto = get_field("news_photo");
 		$newsUrl = get_field("news_photo_url");
-		
+
 		$newsFeedCount = get_field("news_feed_number");
-		
+
 		$numNews = 3;
-		
+
 		$arNews = array();
 
-		
-		for($i=1;$i<=$numNews;$i++) {
+
+		for ( $i = 1;$i <= $numNews;$i++ ) {
 			$nTitle = get_field("news_".$i);
 			$nUrl = get_field("news_".$i."_url");
-			
-			if ($nTitle != "" && $nUrl != "") {
+
+			if ( $nTitle != "" && $nUrl != "" ) {
 				$arNews[] = array(
 					"title" => $nTitle,
 					"url" => $nUrl
@@ -33,23 +33,23 @@
 
 	<div class="blockimage">
 
-		<?php if ($newsVideo != ""): ?>
+		<?php if ( $newsVideo != "" ) : ?>
 			<div class="homepageVideo"><?php echo $newsVideo; ?></div>
-		<?php else: ?>
+		<?php else : ?>
 
-			<?php if ($newsPhoto != ""): ?>
+			<?php if ( $newsPhoto != "" ) : ?>
 
-			<?php if ($newsUrl != ""): ?>
+			<?php if ( $newsUrl != "" ) : ?>
 				<a href="<?php echo $newsUrl; ?>">
 			<?php endif; ?>
 
 			<img src="<?php echo $newsPhoto; ?>"  alt="<?php echo $newsTitle; ?>">
 
-			<?php if ($newsUrl != ""): ?>
+			<?php if ( $newsUrl != "" ) : ?>
 					</a>
 			<?php endif; ?>
 
-			<?php else: ?>
+			<?php else : ?>
 			<!-- default news photo -->
 			<a href="/news/finals-survival-libraries/10129/"><img src="/images/features/cookies-with-canines.jpg"  alt="students petting a dog"</a>
 
@@ -59,14 +59,14 @@
 
 	</div> <!-- end blockimage -->
 	
-	<?php if ($newsVideoURL != ""): ?>
+	<?php if ( $newsVideoURL != "" ) : ?>
 		<p><a href="<?php echo $newsVideoURL; ?>"><?php echo $newsVideoTitle; ?></a></p>
-	<?php else: ?>
+	<?php else : ?>
 
-		<?php if ($newsTitle != "" && $newsUrl != ""): ?>
+		<?php if ( $newsTitle != "" && $newsUrl != "" ) : ?>
 	
 			<p><a href="<?php echo $newsUrl; ?>"><?php echo $newsTitle; ?></a></p>
-			<?php else: ?>
+			<?php else : ?>
 			<!-- default news link -->
 			<p><a href="/news/finals-survival-libraries/10129/">Finals week survival kit from the MIT Libraries</a></p>
 		
@@ -77,27 +77,27 @@
 	<ul class="linklist">
 		<!-- custom links -->
 		<?php
-			foreach($arNews as $news):
+			foreach ( $arNews as $news ) :
 				$nTitle = $news["title"];
 				$nUrl = $news["url"];
-				
+
 				echo "<li><a href='$nUrl'>$nTitle</a></li>";
-			
+
 			endforeach;
 		?>
 
 		<!-- Auto links -->
 		<?php
-			if ($newsFeedCount > 0):
+			if ( $newsFeedCount > 0 ) :
 				if ($newsBlog) switch_to_blog($newsBlog);
 					$args = array(
 					'post_type' => 'post',
 					'posts_per_page' => $newsFeedCount
 					);
-			
+
 			$news = new WP_Query( $args );
-			
-			while($news->have_posts()):
+
+			while ( $news->have_posts() ) :
 				$news->the_post();
 		?>
 

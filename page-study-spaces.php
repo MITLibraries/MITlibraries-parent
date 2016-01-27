@@ -11,7 +11,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 $pageRoot = getRoot($post);
 $section = get_post($pageRoot);
 
@@ -44,53 +44,53 @@ get_header(); ?>
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
 								'order' => 'ASC'
-								
-							);							
+
+							);
 							$subList = new WP_Query( $args );
-							
+
 						?>					
 						<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
-						<?php 
+						<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
-							
+
 							$subject = get_field("subject");
 							$phone = get_field("phone");
 							$building = get_field("building");
 							$spaces = get_field("group_spaces");
 							$individual = get_field("individual_spaces");
-							
+
 							$equipment = get_field("equipment");
 							$expert = get_field("expert");
-							
+
 							$title1 = get_field("tab_1_title");
 							$subtitle1 = get_field("tab_1_subtitle");
 							$content1 = get_field("tab_1_content");
-							
+
 							$title2 = get_field("tab_2_title");
 							$subtitle2 = get_field("tab_2_subtitle");
-							$content2 = get_field("tab_2_content");	
+							$content2 = get_field("tab_2_content");
 
 							$studyImage = get_field("study_space_image");
-							
+
 							$study24 = get_field("study_24");
 							$reserveText = get_field("reserve_text");
-							if ($reserveText == "") {
+							if ( $reserveText == "" ) {
 								$reserveText = "Reserve Group Study Space";
 							}
 							$reserveUrl = get_field("reserve_url");
 
 
-							
+
 							$displayPage = get_field("display_page");
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink($pageID);
-							
+
 							$description = get_the_content();
-							
+
 							$temp = $post;
 							$post = $temp;
-							
+
 
 						?>
 							<li class="flex-container study-space">
@@ -100,10 +100,10 @@ get_header(); ?>
 									<div class="description">
 										<?php echo $description; ?>
 									</div>
-									<?php if ($reserveUrl != ""): ?>
+									<?php if ( $reserveUrl != "" ) : ?>
 											<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 									<?php endif; ?>
-									<?php if ($study24 == 1): ?>
+									<?php if ( $study24 == 1 ) : ?>
 										<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 									<?php endif; ?>
 									
@@ -112,30 +112,30 @@ get_header(); ?>
 										
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
-												<?php if ($phone != ""): ?>
+												<?php if ( $phone != "" ) : ?>
 												<?php echo $phone ?><br/>
 												<?php endif; ?>
 												Show on map: <a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
-												<?php if (get_the_title() !== 'Information Intersection at Stata Center'): ?>
+												<?php if ( get_the_title() !== 'Information Intersection at Stata Center' ) : ?>
 													<span class="hours">Open today<br/>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
 												<?php
 													endif;
-													if ($reserveUrl != ""):
+													if ( $reserveUrl != "" ) :
 												?>
 												<a class="mobileReserve visible-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 												<?php endif; ?>
 											</div>
 										</div>
 
-										<?php if ($individual != ""): ?>
+										<?php if ( $individual != "" ) : ?>
 										<div class="col-2">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
 										
-										<?php if ($spaces != ""): ?>
+										<?php if ( $spaces != "" ) : ?>
 										<div class="col-3">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>

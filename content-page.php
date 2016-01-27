@@ -6,16 +6,16 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
 
- 
+
+
 global $isRoot;
 
 
- 
+
 ?>
 
-	<?php if (in_category('has-menu')) { ?>
+	<?php if ( in_category('has-menu') ) { ?>
 		<?php get_template_part('inc/content', 'secmenu'); ?>
 			<?php } ?>
 
@@ -23,7 +23,7 @@ global $isRoot;
 		<div class="col-1 content-page">
 			<div class="entry-content">
 				<div class="entry-page-title">
-				<?php if (!$isRoot): ?>
+				<?php if ( ! $isRoot ) : ?>
 				<h1><?php the_title(); ?></h1>
 				<?php endif; ?>
 				</div>
