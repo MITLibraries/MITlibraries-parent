@@ -43,4 +43,5 @@ ratings:
   - "**.inc"
 exclude_paths:
 - libs/**/*
+- navwalker.php
 - node_modules/**/*
