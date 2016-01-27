@@ -11,7 +11,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 $pageRoot = getRoot($post);
 $section = get_post($pageRoot);
 $isRoot = $section->ID == $post->ID;
@@ -23,16 +23,16 @@ get_header(); ?>
 			&raquo; <?php showBreadTitle(); ?>
 		</div>
 
-		<?php 
+		<?php
 			$objs = get_field("page_location");
-			
+
 			$args = array(
 				'p' => $objs->ID,
 				'post_type' => 'any'
 			);
-			
+
 			$locPosts = new WP_Query($args);
-			
+
 		?>
 		
 		<?php while ( $locPosts->have_posts() ) : $locPosts->the_post(); ?>

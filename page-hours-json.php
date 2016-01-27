@@ -57,7 +57,7 @@ $wk = date("W", $dt);
 
 if ($wk == "01" && $dtMo == "12") {
   $dtYear++;
-} 
+}
 
 $mon = strtotime($dtISOYear."W".$wk."1");
 $tue = strtotime($dtISOYear."W".$wk."2");
@@ -102,7 +102,7 @@ $alertContent = cf("alert_content");
     <div class="middleAlert">
       <?php
     if ( have_posts() ) :
-  while ( have_posts() ) : the_post(); 
+  while ( have_posts() ) : the_post();
           the_content(); ?>
       <?php  endwhile;  endif; wp_reset_query();  ?>
     </div>
@@ -216,9 +216,9 @@ $args = array(
 /*'orderby' => 'menu_order',*/
 'orderby' => 'name',
 'order' => 'ASC'
-);              
+);
 $libraryList = new WP_Query( $args );?>
-        <?php while ( $libraryList->have_posts() ) : $libraryList->the_post(); 
+        <?php while ( $libraryList->have_posts() ) : $libraryList->the_post();
 $locationId = get_the_ID();
 $slug = $post->post_name;
 $mapPage = "/locations/#!";
@@ -227,10 +227,10 @@ $mapPage = "/locations/#!";
         <tr data-location="<?php the_title(); ?>">
           <td width="260" class="name"><div class="nameHolder">
               <h3> <a href="<?php $post_object = get_field('display_page');
-              if( $post_object ): 
+              if( $post_object ):
           // dont even ask why
             $post = $post_object;
-            setup_postdata( $post ); 
+            setup_postdata( $post );
             ?>
             <?php the_permalink(); ?>">
                 <?php the_title(); ?>
@@ -257,7 +257,7 @@ $mapPage = "/locations/#!";
           <?php for($i=0;$i<=6;$i++) { ?>
           <?php
       $curDay = $arDays[$i];
-      
+
       if ($curDay == $now) {
         $class = "cur";
         $next = "curAfter";
@@ -337,11 +337,11 @@ $args = array(
       'value' => 0,
       'compare' => '='
       ),
-    
-    ) 
-);              
+
+    )
+);
 $libraryList2 = new WP_Query( $args );?>
-        <?php while ( $libraryList2->have_posts() ) : $libraryList2->the_post(); 
+        <?php while ( $libraryList2->have_posts() ) : $libraryList2->the_post();
 $locationId = get_the_ID();
 $slug = $post->post_name;
 $mapPage = "/locations/#!";
@@ -351,7 +351,7 @@ $mapPage = "/locations/#!";
         <td width="260"  class="name"><div class="nameHolder">
           
     
-<?php 
+<?php
 $displayPage = get_field("display_page");
 $pageID = $displayPage->ID;
 $pageLink = get_permalink($pageID);

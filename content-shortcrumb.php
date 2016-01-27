@@ -6,13 +6,13 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
 
- 
+
+
 global $isRoot;
 
 
- 
+
 ?>
 
 	<?php if (in_category('has-menu')) { ?>

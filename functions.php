@@ -21,9 +21,9 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 /* Globals */
- 
+
 $gStudy24Url = "/study/24x7/";
 
 // use newsBlog for live site
@@ -33,13 +33,13 @@ $gStudy24Url = "/study/24x7/";
 //$siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
 foreach(glob($siteRoot."/wp-content/themes/libraries/lib/*.php") as $file) require_once($file);
- 
+
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
 	$content_width = 625;
-	
+
 /**
  * Sets up theme defaults and registers the various WordPress features that
  * Twenty Twelve supports.
@@ -113,13 +113,12 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style'), '2.2.0');
 
-
 	wp_enqueue_style('libraries-global');
 
 	wp_register_style('get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array('libraries-global'), '1.0');
 
 	wp_register_style('hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0');
-	
+
 		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
 
 wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
@@ -128,12 +127,12 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	 */
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
-	
+
 	/*  Register JS */
 
 	// Deregister WP Core jQuery, load Google's
   wp_deregister_script('jquery');
-  
+
   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
 
   wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
@@ -141,9 +140,9 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
   wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
 
   wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-   
+
    wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-    			
+
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
 	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true);
@@ -165,13 +164,13 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	wp_register_script('moment',     '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/moment.js', false, false, true);
 
 	wp_register_script('tabletop',   '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/tabletop.js', false, false, true);
-	
+
 	wp_register_script('underscore', '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/underscore.js', false, false, true);
-	
+
 	wp_register_script('lib-hours',  '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/libhours.js', array('moment','tabletop','underscore'), false, true);
 
 	/* All-site JS */
-	
+
 	wp_enqueue_script('modernizr');
 
 	wp_enqueue_script('lib-hours');
@@ -208,20 +207,20 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	if (is_page('getit')) {
 		wp_enqueue_style('get-it');
 	}
-	
+
 	if (is_page_template('nav-maine')) {
 		wp_enqueue_style('jquery.smartmenus.bootstrap');
 		wp_enqueue_script('bootstrap.min');
 		wp_enqueue_script('jquery.smartmenus.bootstrap.min');
 		wp_enqueue_script('jquery.smartmenus');
 	}
-		
+
 	if (in_category('has-menu')) {
 		wp_enqueue_style('libraries-global');
 		wp_enqueue_style('bootstrapCSS');
 		wp_enqueue_script('bootstrap-js');
 	}
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
@@ -488,11 +487,11 @@ function twentytwelve_body_class( $classes ) {
 	if (is_child_theme()) {
 		$classes[] = 'childTheme';
 	}
-	
+
 	if(is_child_page()) {
 		$classes[] = 'childPage';
 	}
-	
+
 	if (is_page_template('page-selfTitle.php')) {
 		$classes[] = 'boxSizingOn';
 	}
@@ -554,22 +553,21 @@ add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 /** Unique for theme **/
 
 function getParent($id) {
-	
+
 }
 function getRoot($post) {
 	$ar = get_post_ancestors($post);
-	
+
 	$is_section = get_post_meta($post->ID, "is_section", 1);
-	
-	
+
 	for($i=0;$i<count($ar);$i++) {
 		$pid = $ar[$i];
 		$is_section = get_post_meta($pid, "is_section", 1);
 		if ($is_section == 1) {
 			return $pid;
-		}	
+		}
 	}
-	
+
 	$max = count($ar)-1;
 
 	if ($max == -1) {
@@ -599,65 +597,65 @@ function the_breadcrumb() {
 	}
 }
 
-function wsf_make_link ( $url, $anchortext, $title=null, $nofollow=false ) {  
-   if ( $title == null ) $title=$anchortext;  
-   $nofollow==true ? $rel=' rel="nofollow"' : $rel = '';   
-   
-   $link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );  
-   return $link;   
-}  
+function wsf_make_link ( $url, $anchortext, $title=null, $nofollow=false ) {
+   if ( $title == null ) $title=$anchortext;
+   $nofollow==true ? $rel=' rel="nofollow"' : $rel = '';
+
+   $link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
+   return $link;
+}
 
 function showBreadTitle() {
-   // Wordpess function that echoes your post title.  
+   // Wordpess function that echoes your post title.
 	$custom_title = get_post_meta($post->ID, "breadcrumb_override", 1);
 	$custom_title = $custom_title[0];
-   //$custom_title = get_field("breadcrumb_override");   
-   
+   //$custom_title = get_field("breadcrumb_override");
+
    if ($custom_title != "") {
 	 echo $custom_title;
    } else {
-     the_title();  
-   }	
+     the_title();
+   }
 }
 
-function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {  
-       
-    global $post;  
-  
-   // Do not show breadcrumbs on home or front pages.  
-   // So we will just return quickly  
-   if((is_home() || is_front_page()) && (!$front_page))  
-      return;  
-  
-    // Create a constant for the separator, with space padding.  
-    $SEP = ' ' . $sep . ' ';  
-  
-  echo '<div class="breadcrumbs">';  
-    
-  echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;  
-       
-  if(is_single()) {  
-    the_category(', '); echo $SEP;   
-    }  
-    elseif(is_page()) {  
-            $parent_id = $post->post_parent;  
-            $parents = array();  
-            while($parent_id) {  
-                $page = get_page($parent_id);  
-            $parents[]  = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;  
-                $parent_id  = $page->post_parent;  
-            }  
-            $parents = array_reverse($parents);  
-            foreach($parents as $parent) {  
-                echo $parent;  
-            }  
-   }  
-   // Wordpess function that echoes your post title.  
+function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
+
+    global $post;
+
+   // Do not show breadcrumbs on home or front pages.
+   // So we will just return quickly
+   if((is_home() || is_front_page()) && (!$front_page))
+      return;
+
+    // Create a constant for the separator, with space padding.
+    $SEP = ' ' . $sep . ' ';
+
+  echo '<div class="breadcrumbs">';
+
+  echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;
+
+  if(is_single()) {
+    the_category(', '); echo $SEP;
+    }
+    elseif(is_page()) {
+            $parent_id = $post->post_parent;
+            $parents = array();
+            while($parent_id) {
+                $page = get_page($parent_id);
+            $parents[]  = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;
+                $parent_id  = $page->post_parent;
+            }
+            $parents = array_reverse($parents);
+            foreach($parents as $parent) {
+                echo $parent;
+            }
+   }
+   // Wordpess function that echoes your post title.
    $custom_title = get_field("breadcrumb_override");
-   
+
    showBreadTitle();
-     echo '</div>';  
-} 
+     echo '</div>';
+}
 
 function cf($name) {
 	return get_post_meta( get_the_ID(), $name, true);
@@ -692,17 +690,17 @@ function remove_template( $files_to_delete = array() ){
 
 function menuWithParent($menu, $par) {
 	$menu_items = wp_get_nav_menu_items($menu);
-	
+
 	$arOut = array();
-	
+
 	foreach($menu_items as $key => $item) {
 		if ($item->menu_item_parent == $par) {
 			array_push($arOut, $item);
 		}
 	}
-	
+
 	return $arOut;
-	
+
 }
 
 function getExpert($expert) {
@@ -710,13 +708,11 @@ function getExpert($expert) {
 		'post_type' => 'expert',
 		'p' => $expert
 	);
-	
-	
-	
+
 	$qExpert = new WP_Query( $args );
-	
+
 	print_r($qExpert);
-	
+
 }
 
 if (!function_exists('better_breadcrumbs')) {
@@ -797,8 +793,8 @@ function submitdiv_at_top($result){
 add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
 function metabox_order( $order ) {
     return array(
-        'normal' => join( 
-            ",", 
+        'normal' => join(
+            ",",
             array(       // vvv  Arrange here as you desire
                 'submitdiv',
                 'pageparentdiv',
@@ -834,4 +830,4 @@ function cc_mime_types( $mimes ){
 $mimes['svg'] = 'image/svg+xml';
 return $mimes;
 }
-add_filter( 'upload_mimes', 'cc_mime_types' ); 
+add_filter( 'upload_mimes', 'cc_mime_types' );

@@ -11,7 +11,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 $pageRoot = getRoot($post);
 $section = get_post($pageRoot);
 
@@ -44,35 +44,35 @@ get_header(); ?>
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
 								'order' => 'ASC'
-								
-							);							
+
+							);
 							$subList = new WP_Query( $args );
-							
+
 						?>					
 						<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
-						<?php 
+						<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
-							
+
 							$subject = get_field("subject");
 							$phone = get_field("phone");
 							$building = get_field("building");
 							$spaces = get_field("group_spaces");
 							$individual = get_field("individual_spaces");
-							
+
 							$equipment = get_field("equipment");
 							$expert = get_field("expert");
-							
+
 							$title1 = get_field("tab_1_title");
 							$subtitle1 = get_field("tab_1_subtitle");
 							$content1 = get_field("tab_1_content");
-							
+
 							$title2 = get_field("tab_2_title");
 							$subtitle2 = get_field("tab_2_subtitle");
-							$content2 = get_field("tab_2_content");	
+							$content2 = get_field("tab_2_content");
 
 							$studyImage = get_field("study_space_image");
-							
+
 							$study24 = get_field("study_24");
 							$reserveText = get_field("reserve_text");
 							if ($reserveText == "") {
@@ -81,16 +81,16 @@ get_header(); ?>
 							$reserveUrl = get_field("reserve_url");
 
 
-							
+
 							$displayPage = get_field("display_page");
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink($pageID);
-							
+
 							$description = get_the_content();
-							
+
 							$temp = $post;
 							$post = $temp;
-							
+
 
 						?>
 							<li class="flex-container study-space">

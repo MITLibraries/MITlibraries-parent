@@ -3,8 +3,8 @@
 * Front page news functions
 *
 * These functions are called by page-home-direct.php, and control the loading
-* of news items from a separate site on the network. This process is 
-* documented online at: 
+* of news items from a separate site on the network. This process is
+* documented online at:
 * https://github.com/mitlibraries-ux/MITlibraries-parent/wiki/News
 *
 */
@@ -38,7 +38,7 @@ function LoadNews() {
     $pool = RetrievePool();
 
     if(count($pool) != 2) {
-        // If there are anything other than two items in the pool, then we 
+        // If there are anything other than two items in the pool, then we
         // summarize the pool and determine query type
         $queryType = SummarizePool($pool);
 
@@ -49,7 +49,7 @@ function LoadNews() {
             $pool = QueryPoolOne();
         }
     }
-    
+
     RenderPool($pool);
 
     // Restore context back to current site
@@ -212,7 +212,7 @@ function RenderPool($items) {
 }
 
 function RetrievePool() {
-    // This characterizes the pool of eligible articles, and then calls the 
+    // This characterizes the pool of eligible articles, and then calls the
     // relevant query builder
 
     // Get all eligible articles
@@ -233,12 +233,12 @@ function RetrievePool() {
     $items = get_posts( $args );
 
     return $items;
-    
+
 }
 
 function SummarizePool($items) {
     // This takes the pool of all eligible news items, determines how many of
-    // each type exist, and determines what type of query is needed to 
+    // each type exist, and determines what type of query is needed to
     // populate the front page.
 
     // Summarize article list

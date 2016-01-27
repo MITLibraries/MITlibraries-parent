@@ -11,7 +11,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 $pageRoot = getRoot($post);
 $section = get_post($pageRoot);
 
@@ -38,57 +38,57 @@ get_header(); ?>
 			<div id="locationsHome">
 				<div id="mapMarkers" class="meta">
 						<?php
-							
+
 							$args = array(
 								'post_type' => 'location',
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
 								'order' => 'ASC'
-							);							
+							);
 							$libraryList = new WP_Query( $args );
 						?>
 						<?php while ( $libraryList->have_posts() ) : $libraryList->the_post(); ?>
-						<?php 
+						<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
-							
+
 							$building = cf("building");
-							
+
 							$numMain = 3;
 							$arMain = array();
-							
+
 							$mapImage = get_field("map_image");
-							
-							
+
+
 							for($i=1;$i<=$numMain;$i++) {
 								$img = get_field("main_image".$i, $locationId);
 								if ($img != "")
 									$arMain[] = $img;
 							}
-							$val = $arMain[array_rand($arMain)];							
-							//$val = $arMain[0];							
-							
+							$val = $arMain[array_rand($arMain)];
+							//$val = $arMain[0];
+
 							if ($mapImage != "") {
 								// user override image;
 								$val = $mapImage;
 							}
-							
+
 							$location = get_field("building_location");
 								$coords = explode(",", $location['coordinates']);
 								$lat = $coords[0];
 								$lng = $coords[1];
 								$address = $location['address'];
-							
+
 							$name = html_entity_decode(get_the_title());
-							
+
 							$displayPage = get_field("display_page");
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink($pageID);
-							
+
 							$directionsUrl = "http://maps.google.com/maps?";
 							$directionsUrl .= "daddr=".$lat.",".$lng;
 							//$directionsUrl .= "daddr=".urlencode($address);
-							
+
 							if ($lat != "" && $lng != ""):
 						?>				
 						<div class="location">
@@ -123,7 +123,7 @@ get_header(); ?>
 				<div class="content-page col-1">
 					<ul class="locations-main flex-container">
 						<?php
-							
+
 							$args = array(
 								'post_type' => 'location',
 								'meta_key' => 'primary_location',
@@ -131,31 +131,31 @@ get_header(); ?>
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
 								'order' => 'ASC'
-							);							
+							);
 							$libraryList = new WP_Query( $args );
 						?>
 						<?php while ( $libraryList->have_posts() ) : $libraryList->the_post(); ?>
-						<?php 
+						<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
-							
+
 							$subject = cf("subject");
 							$phone = cf("phone");
 							$building = cf("building");
 							$spaces = cf("group_spaces");
 							$equipment = cf("equipment");
 							$expert = cf("expert");
-							
+
 							$study24 = get_field("study_24");
 
 							$displayPage = get_field("display_page");
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink($pageID);
-							
+
 							$temp = $post;
 							$post = $temp;
-							
-							
+
+
 						?>
 							<li class="location-name">
 								<h2 class="name-location"><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
@@ -182,25 +182,25 @@ get_header(); ?>
 							'posts_per_page' => -1,
 							'orderby' => 'menu_order',
 							'order' => 'ASC'
-							
-						);							
+
+						);
 						$subList = new WP_Query( $args );
 					?>					
 					<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
-					<?php 
+					<?php
 						$locationId = get_the_ID();
 						$slug = $post->post_name;
-						
+
 						$subject = cf("subject");
 						$phone = cf("phone");
 						$building = cf("building");
 						$spaces = cf("group_spaces");
 						$equipment = cf("equipment");
 						$expert = cf("expert");
-						
+
 						$temp = $post;
 						$post = $temp;
-						
+
 						$displayPage = get_field("display_page");
 						$pageID = $displayPage->ID;
 						$pageLink = get_permalink($pageID);
