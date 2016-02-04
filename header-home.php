@@ -60,7 +60,7 @@
 
 		</header>
 
-		<?php 
+		<?php
 
 			$pageRoot = getRoot($post);
 			$section = get_post($pageRoot);

@@ -1,43 +1,42 @@
-		<?php
+<?php
 			$subject = cf("subject");
 			$phone = cf("phone");
 			$building = cf("building");
 			$spaces = cf("group_spaces");
 			$equipment = cf("equipment");
 			$arexpert = get_field("expert");
-			
+
 			$title1 = cf("tab_1_title");
 			$subtitle1 = cf("tab_1_subtitle");
 			$content1left = get_field("tab_1_content_left");
 			$content1 = get_field("tab_1_content");
-			
+
 			$title2 = cf("tab_2_title");
 			$subtitle2 = cf("tab_2_subtitle");
 			$content2left = get_field("tab_2_content_left");
 			$content2 = get_field("tab_2_content");
-			
+
 			$displayPage = get_field("display_page");
 			$pageID = $displayPage->ID;
 			$pageLink = get_permalink($pageID);
-			
+
 			$alert = get_field("alert");
 		?>
-		
+
 		<div id="stage" class="inner">
-	
+
 			<div class="title libraryTitle">
 				<div class="libraryContent">
 					<h2><?php the_title(); ?></h2>
-					
+
 					<h3><?php echo $subject ?></h3>
 					<div class="sub">
 						<?php echo $phone ?><br/>
 						show on map: <a href="#"><?php echo $building ?> <i class="icon-arrow-right"></i></a>
-						
-						
+
 					</div>
 				</div>
-				
+
 				<div class="librarySlideshow">
 					<div class="slideshow">
 						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-01.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-01.jpg" alt="Rotch Library" />
@@ -48,26 +47,26 @@
 						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-06.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-06.jpg" alt="Rotch Library" />
 					</div>
 					<div id="slideshowNav">
-						
+
 					</div>
 				</div>
-				
+
 				<div class="todayHours">
 					Today's hours:<br/>
 					<b>9am-midnight</b><br/>
 					<a href="#">See all hours <i class="icon-arrow-right"></i></a>
 				</div>				
-				
+
 				<?php if ($alert != ""): ?>
 				<div class="libraryAlert">
 					<?php echo $alert; ?>
 				</div>
 				<?php endif; ?>
 			</div>
-			
+
 			<div id="content" class="locationContent">
 				<div id="mainContent">
-					
+
 					<?php if ($title1 != "" || $title2 != ""): ?>
 						<?php $noTab = "";  ?>
 					<ul class="tabnav">
@@ -85,27 +84,26 @@
 						<div class="tab active" id="tab1">
 							<div class="row">
 								<div class="span4 first">
-								
+
 									<?php
 										if ($arexpert) {
 											$expertIndex = array_rand($arexpert);
 											$expert = $arexpert[$expertIndex];
-											
-											
+
 											$name = $expert->post_title;
 											$bio = $expert->post_excerpt;
 											//$url = $expert->guid;
 											$url = get_post_meta($expert->ID, "expert_url", 1);
-											
+
 											if (has_post_thumbnail($expert->ID)) {
 												$thumb = get_the_post_thumbnail($expert->ID, array(108,108));
 											} else {
 												$thumb = "";
 											}
-											
+
 									?>
 									<div class="profile">
-										<?php if ($thumb != ""): 
+										<?php if ($thumb != ""):
 											echo $thumb;
 										endif; ?>
 										<div class="profileContent">
@@ -124,7 +122,7 @@
 									<?php
 										}
 									?>
-									
+
 									<?php echo $content1left ?>
 								</div>
 								<div class="span3">
@@ -134,7 +132,7 @@
 							</div>
 						</div>
 						<?php if ($title2 != ""): ?>
-						
+
 						<div class="tab" id="tab2">
 							<div class="row">
 								<div class="span2 first">
@@ -188,10 +186,7 @@
 					</div>
 				</div>					
 				-->
-			
-			
-			
-		
+
 			<div class="clear"></div>
-		
+
 		</div>

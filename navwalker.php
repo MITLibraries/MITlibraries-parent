@@ -143,17 +143,17 @@ class navwalker extends Walker_Nav_Menu {
 	 * @return null Null on failure with no changes to parameters.
 	 */
 	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-        if ( ! $element )
-            return;
+		if ( ! $element )
+			return;
 
-        $id_field = $this->db_fields['id'];
+		$id_field = $this->db_fields['id'];
 
-        // Display this element.
-        if ( is_object( $args[0] ) )
-           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+		// Display this element.
+		if ( is_object( $args[0] ) )
+			$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
 
-        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-    }
+		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+	}
 
 	/**
 	 * Menu Fallback

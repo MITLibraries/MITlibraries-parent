@@ -6,13 +6,9 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
 
- 
 global $isRoot;
 
-
- 
 ?>
 
 	<?php if (in_category('has-menu')) { ?>
@@ -22,7 +18,7 @@ global $isRoot;
 	<div class="content-main flex-container">
 		<div class="col-1 content-page">
 			<div class="entry-content">
-			
+
 				<?php the_content(); ?>
 			</div>
 			<footer class="entry-meta">
@@ -34,5 +30,3 @@ global $isRoot;
 		<?php get_sidebar( 'sidebar-1' ); ?>
 <?php } ?>
 		</div>
-		
-	 

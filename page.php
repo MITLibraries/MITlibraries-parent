@@ -21,7 +21,7 @@ $isRoot = $section->ID == $post->ID;
 
 
 
- 
+
 if ( is_home() ) :
 get_header('home');
 else : 

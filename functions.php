@@ -21,25 +21,25 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
- 
+
 /* Globals */
- 
+
 $gStudy24Url = "/study/24x7/";
 
 // use newsBlog for live site
- $newsBlog = 7;
- $mainSite = 1;
+$newsBlog = 7;
+$mainSite = 1;
 
 //$siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
 foreach(glob($siteRoot."/wp-content/themes/libraries/lib/*.php") as $file) require_once($file);
- 
+
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
 	$content_width = 625;
-	
+
 /**
  * Sets up theme defaults and registers the various WordPress features that
  * Twenty Twelve supports.
@@ -113,37 +113,36 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style'), '2.2.0');
 
-
 	wp_enqueue_style('libraries-global');
 
 	wp_register_style('get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array('libraries-global'), '1.0');
 
 	wp_register_style('hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0');
-	
-		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
 
-wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
+	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
+
+	wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
-	
+
 	/*  Register JS */
 
 	// Deregister WP Core jQuery, load Google's
-  wp_deregister_script('jquery');
-  
-  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
+	wp_deregister_script('jquery');
 
-  wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
 
-  wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
 
-  wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-   
-   wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-    			
+	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
+
+	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+
+	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
 	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true);
@@ -165,13 +164,13 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	wp_register_script('moment',     '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/moment.js', false, false, true);
 
 	wp_register_script('tabletop',   '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/tabletop.js', false, false, true);
-	
+
 	wp_register_script('underscore', '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/underscore.js', false, false, true);
-	
+
 	wp_register_script('lib-hours',  '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/libhours.js', array('moment','tabletop','underscore'), false, true);
 
 	/* All-site JS */
-	
+
 	wp_enqueue_script('modernizr');
 
 	wp_enqueue_script('lib-hours');
@@ -208,20 +207,20 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	if (is_page('getit')) {
 		wp_enqueue_style('get-it');
 	}
-	
+
 	if (is_page_template('nav-maine')) {
 		wp_enqueue_style('jquery.smartmenus.bootstrap');
 		wp_enqueue_script('bootstrap.min');
 		wp_enqueue_script('jquery.smartmenus.bootstrap.min');
 		wp_enqueue_script('jquery.smartmenus');
 	}
-		
+
 	if (in_category('has-menu')) {
 		wp_enqueue_style('libraries-global');
 		wp_enqueue_style('bootstrapCSS');
 		wp_enqueue_script('bootstrap-js');
 	}
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
@@ -444,14 +443,14 @@ endif;
 
 if (!function_exists('is_child_page')) {
 	function is_child_page() {
-	global $post;     // if outside the loop
+		global $post;     // if outside the loop
 
-	if ( is_page() && $post->post_parent ) {
-    return $post->post_parent;
-	} else {
-    return false;
+		if ( is_page() && $post->post_parent ) {
+			return $post->post_parent;
+		} else {
+			return false;
+		}
 	}
-}
 }
 
 /**
@@ -488,11 +487,11 @@ function twentytwelve_body_class( $classes ) {
 	if (is_child_theme()) {
 		$classes[] = 'childTheme';
 	}
-	
+
 	if(is_child_page()) {
 		$classes[] = 'childPage';
 	}
-	
+
 	if (is_page_template('page-selfTitle.php')) {
 		$classes[] = 'boxSizingOn';
 	}
@@ -554,22 +553,21 @@ add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 /** Unique for theme **/
 
 function getParent($id) {
-	
+
 }
 function getRoot($post) {
 	$ar = get_post_ancestors($post);
-	
+
 	$is_section = get_post_meta($post->ID, "is_section", 1);
-	
-	
+
 	for($i=0;$i<count($ar);$i++) {
 		$pid = $ar[$i];
 		$is_section = get_post_meta($pid, "is_section", 1);
 		if ($is_section == 1) {
 			return $pid;
-		}	
+		}
 	}
-	
+
 	$max = count($ar)-1;
 
 	if ($max == -1) {
@@ -599,110 +597,110 @@ function the_breadcrumb() {
 	}
 }
 
-function wsf_make_link ( $url, $anchortext, $title=null, $nofollow=false ) {  
-   if ( $title == null ) $title=$anchortext;  
-   $nofollow==true ? $rel=' rel="nofollow"' : $rel = '';   
-   
-   $link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );  
-   return $link;   
-}  
+function wsf_make_link ( $url, $anchortext, $title=null, $nofollow=false ) {
+	if ( $title == null ) $title=$anchortext;
+	$nofollow==true ? $rel=' rel="nofollow"' : $rel = '';
 
-function showBreadTitle() {
-   // Wordpess function that echoes your post title.  
-	$custom_title = get_post_meta($post->ID, "breadcrumb_override", 1);
-	$custom_title = $custom_title[0];
-   //$custom_title = get_field("breadcrumb_override");   
-   
-   if ($custom_title != "") {
-	 echo $custom_title;
-   } else {
-     the_title();  
-   }	
+	$link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
+	return $link;
 }
 
-function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {  
-       
-    global $post;  
-  
-   // Do not show breadcrumbs on home or front pages.  
-   // So we will just return quickly  
-   if((is_home() || is_front_page()) && (!$front_page))  
-      return;  
-  
-    // Create a constant for the separator, with space padding.  
-    $SEP = ' ' . $sep . ' ';  
-  
-  echo '<div class="breadcrumbs">';  
-    
-  echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;  
-       
-  if(is_single()) {  
-    the_category(', '); echo $SEP;   
-    }  
-    elseif(is_page()) {  
-            $parent_id = $post->post_parent;  
-            $parents = array();  
-            while($parent_id) {  
-                $page = get_page($parent_id);  
-            $parents[]  = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;  
-                $parent_id  = $page->post_parent;  
-            }  
-            $parents = array_reverse($parents);  
-            foreach($parents as $parent) {  
-                echo $parent;  
-            }  
-   }  
-   // Wordpess function that echoes your post title.  
-   $custom_title = get_field("breadcrumb_override");
-   
-   showBreadTitle();
-     echo '</div>';  
-} 
+function showBreadTitle() {
+	// Wordpess function that echoes your post title.
+	$custom_title = get_post_meta($post->ID, "breadcrumb_override", 1);
+	$custom_title = $custom_title[0];
+	// $custom_title = get_field("breadcrumb_override");
+
+	if ($custom_title != "") {
+		echo $custom_title;
+	} else {
+		the_title();
+	}
+}
+
+function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
+
+	global $post;
+
+	// Do not show breadcrumbs on home or front pages.
+	// So we will just return quickly
+	if((is_home() || is_front_page()) && (!$front_page))
+		return;
+
+	// Create a constant for the separator, with space padding.
+	$SEP = ' ' . $sep . ' ';
+
+	echo '<div class="breadcrumbs">';
+
+	echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;
+
+	if(is_single()) {
+		the_category(', ');
+		echo $SEP;
+	} elseif(is_page()) {
+		$parent_id = $post->post_parent;
+		$parents = array();
+		while($parent_id) {
+			$page = get_page($parent_id);
+			$parents[] = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;
+			$parent_id = $page->post_parent;
+		}
+		$parents = array_reverse($parents);
+		foreach($parents as $parent) {
+			echo $parent;
+		}
+	}
+	// Wordpess function that echoes your post title.
+	$custom_title = get_field("breadcrumb_override");
+
+	showBreadTitle();
+	echo '</div>';
+}
 
 function cf($name) {
 	return get_post_meta( get_the_ID(), $name, true);
 }
 
 function remove_template( $files_to_delete = array() ){
-    global $wp_themes;
+	global $wp_themes;
 
-    // As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
-    if ( is_scalar( $files_to_delete ) ) $files_to_delete = array( $files_to_delete );
+	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
+	if ( is_scalar( $files_to_delete ) ) $files_to_delete = array( $files_to_delete );
 
-    // remove TLA if it was provided
-    $files_to_delete = preg_replace( "/\.[^.]+$/", '', $files_to_delete );
+	// remove TLA if it was provided
+	$files_to_delete = preg_replace( "/\.[^.]+$/", '', $files_to_delete );
 
-    // Populate the global $wp_themes array
-    get_themes();
+	// Populate the global $wp_themes array
+	get_themes();
 
-    $current_theme_name = get_current_theme();
+	$current_theme_name = get_current_theme();
 
-    // Note that we're taking a reference to $wp_themes so we can modify it in-place
-    $template_files = &$wp_themes[$current_theme_name]['Template Files'];
+	// Note that we're taking a reference to $wp_themes so we can modify it in-place
+	$template_files = &$wp_themes[$current_theme_name]['Template Files'];
 
-    foreach ( $template_files as $file_path ){
-        foreach( $files_to_delete as $file_name ){
-            if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ){
-                $key = array_search( $file_path, $template_files );
-                if ( $key ) unset ( $template_files[$key] );
-            }
-        }
-    }
+	foreach ( $template_files as $file_path ){
+		foreach( $files_to_delete as $file_name ){
+			if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ){
+				$key = array_search( $file_path, $template_files );
+				if ( $key ) unset ( $template_files[$key] );
+			}
+		}
+	}
 }
 
 function menuWithParent($menu, $par) {
 	$menu_items = wp_get_nav_menu_items($menu);
-	
+
 	$arOut = array();
-	
+
 	foreach($menu_items as $key => $item) {
 		if ($item->menu_item_parent == $par) {
 			array_push($arOut, $item);
 		}
 	}
-	
+
 	return $arOut;
-	
+
 }
 
 function getExpert($expert) {
@@ -710,44 +708,42 @@ function getExpert($expert) {
 		'post_type' => 'expert',
 		'p' => $expert
 	);
-	
-	
-	
+
 	$qExpert = new WP_Query( $args );
-	
+
 	print_r($qExpert);
-	
+
 }
 
 if (!function_exists('better_breadcrumbs')) {
 
 	function better_breadcrumbs() {
 
-	  global $post;
+		global $post;
 
-	  if(is_search()) {
-	    echo "<span>Search</span>";
-	  }
+		if(is_search()) {
+			echo "<span>Search</span>";
+		}
 
-	  if(!is_child_page() && is_page() || is_category() || is_single()) {
-	    echo "<span>".the_title()."</span>";
-	    return;
-	  }
+		if(!is_child_page() && is_page() || is_category() || is_single()) {
+			echo "<span>".the_title()."</span>";
+			return;
+		}
 
-	  if(is_child_page()) {
-	  	$hideParent = get_field('hide_parent_breadcrumb');
-	    $parentLink = get_permalink($post->post_parent);
-	    $parentTitle = get_the_title($post->post_parent);
-	    $startLink = '<a href="';
-	    $endLink = '">';
-	    $closeLink = '</a>';
-	    $parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
-	    $pageTitle = get_the_title($post);
-	    $pageLink = get_permalink($post);
-	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
+		if(is_child_page()) {
+			$hideParent = get_field('hide_parent_breadcrumb');
+			$parentLink = get_permalink($post->post_parent);
+			$parentTitle = get_the_title($post->post_parent);
+			$startLink = '<a href="';
+			$endLink = '">';
+			$closeLink = '</a>';
+			$parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
+			$pageTitle = get_the_title($post);
+			$pageLink = get_permalink($post);
+			$childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
 
-		  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
-		  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
+				if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
+				if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
 		}
 	}
 
@@ -756,11 +752,11 @@ if (!function_exists('better_breadcrumbs')) {
 
 // Check for performance issues
 function no_post_limit( $query ) {
-  if ( is_home() && !is_child_theme()) {
-    // No post limit on homepage
-    $query->set( 'posts_per_page', -1 );
-    return;
-  }
+	if ( is_home() && !is_child_theme()) {
+		// No post limit on homepage
+		$query->set( 'posts_per_page', -1 );
+		return;
+	}
 }
 add_action( 'pre_get_posts', 'no_post_limit', 1 );
 
@@ -780,36 +776,36 @@ if (!function_exists('stop_404_guessing')) {
 // If you know the ids of the metaboxes, you could add them here and skip the next function altogether
 add_filter('get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1);
 function one_column_for_all($option) {
-    $result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
-    $result['side'] = '';
-    $result['advanced'] = '';
-    return $result;
+	$result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
+	$result['side'] = '';
+	$result['advanced'] = '';
+	return $result;
 }
 
 // Then we add 'submitdiv' on the bottom, by creating this filter with a low priority
 // It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
 add_filter('get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1);
 function submitdiv_at_top($result){
-    $result['normal'] .= 'submitdiv';
-    return $result;
+	$result['normal'] .= 'submitdiv';
+	return $result;
 }
 
 add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
 function metabox_order( $order ) {
-    return array(
-        'normal' => join( 
-            ",", 
-            array(       // vvv  Arrange here as you desire
-                'submitdiv',
-                'pageparentdiv',
-                'dmm-meta-box',
-                'prfx_meta',
-                'categorydiv',
-                'tagsdiv-post_tag',
-                'postimagediv'
-            )
-        ),
-    );
+	return array(
+		'normal' => join(
+			",",
+			array(       // vvv  Arrange here as you desire
+				'submitdiv',
+				'pageparentdiv',
+				'dmm-meta-box',
+				'prfx_meta',
+				'categorydiv',
+				'tagsdiv-post_tag',
+				'postimagediv'
+			)
+		),
+	);
 }
 
 /**
@@ -834,4 +830,4 @@ function cc_mime_types( $mimes ){
 $mimes['svg'] = 'image/svg+xml';
 return $mimes;
 }
-add_filter( 'upload_mimes', 'cc_mime_types' ); 
+add_filter( 'upload_mimes', 'cc_mime_types' );

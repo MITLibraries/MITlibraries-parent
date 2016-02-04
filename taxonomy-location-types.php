@@ -2,7 +2,7 @@
 /**
  * This is the template that displays all location types.
  */
- 
+
 $pageRoot = getRoot($post);
 $section = get_post($pageRoot);
 
