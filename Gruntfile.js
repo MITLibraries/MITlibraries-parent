@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   // Initial config
   var config = {
     pkg: grunt.file.readJSON('package.json')
-  }
+  };
 
   // Load tasks from the tasks folder
   grunt.loadTasks('tasks');
@@ -33,6 +33,9 @@ module.exports = function(grunt) {
 
   // Default Task is basically a rebuild
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
+
+  // Code analysis is handled via PHP_CodeSniffer
+  grunt.registerTask('analyze', ['phpcs']);
 
   // Moved to the tasks folder:
   // grunt.registerTask('dev', ['connect', 'watch']);
