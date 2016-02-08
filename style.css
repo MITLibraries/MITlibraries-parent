@@ -2,7 +2,7 @@
 Theme Name: MIT Libraries
 Author: Lightning Trumpet
 Author URI: http://wordpress.org/
-Version: 1.2.0-issue41
+Version: 1.2.0
 
 MIT Libraries theme built for the MIT Libraries website.
 */
@@ -65,13 +65,10 @@ body {
 }
 ol,
 ul {
-	list-style: none;
 	padding: 0;
 	margin: 0;
-	display: inline;
 	-webkit-padding-start: 0px !important;
 	-webkit-margin-before: 0px !important;
-    -webkit-margin-after: 0px !important;
 }
 blockquote,
 q {
@@ -761,7 +758,7 @@ article.sticky .featured-post {
 }
 .entry-content ol,
 .comment-content ol {
-	list-style: decimal outside;
+	list-style: decimal outside none;
 }
 .entry-content li,
 .comment-content li,
