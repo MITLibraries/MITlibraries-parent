@@ -38,5 +38,3 @@ global $isRoot;
 		<?php get_sidebar( 'sidebar-1' ); ?>
 <?php } ?>
 		</div>
-		
-	 
