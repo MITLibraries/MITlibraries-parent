@@ -1,4 +1,4 @@
-						<?php 
+<?php 
 							global $rowOdd, $arDays, $today, $now;
 							$mapPage = "/locations/#!";
 							
