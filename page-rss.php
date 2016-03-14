@@ -2,7 +2,6 @@
 /**
  * Template Name: RSS Page
  *
- *
  * @package WordPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0

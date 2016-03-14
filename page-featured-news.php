@@ -1,7 +1,6 @@
 <?php 
 /**
  * Template Name: Featured News Article List
- *
  */
 	get_header();
 ?>
