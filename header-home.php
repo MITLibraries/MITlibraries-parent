@@ -8,6 +8,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+
 ?><!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js lte-ie9" lang="en"><![endif]-->
 <!--[if !(IE 8) | !(IE 9) ]><!-->

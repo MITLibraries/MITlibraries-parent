@@ -2,6 +2,7 @@
 /**
  * Template Name: Home Page
  */
+
 	get_header('home');
 
 	get_template_part('inc/search');

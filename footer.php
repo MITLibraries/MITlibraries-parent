@@ -2,6 +2,7 @@
 /**
  * The template for displaying the footer.
  */
+
 ?>
 
 	<footer class="footer-main flex-container">
