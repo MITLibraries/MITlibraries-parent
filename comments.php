@@ -45,6 +45,7 @@ if ( post_password_required() )
 		<?php endif; // check for comment navigation ?>
 
 		<?php
+
 		/*
 		 * If there are no comments and comments are closed, let's leave a note.
 		 * But we only want the note on posts and pages that had comments in the first place.
