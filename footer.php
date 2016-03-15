@@ -1,6 +1,9 @@
 <?php
 /**
  * The template for displaying the footer.
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 ?>

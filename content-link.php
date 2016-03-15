@@ -2,9 +2,8 @@
 /**
  * The template for displaying posts in the Link post format
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 ?>

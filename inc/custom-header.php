@@ -3,9 +3,8 @@
  * Implements an optional custom header for Twenty Twelve.
  * See http://codex.wordpress.org/Custom_Headers
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 /**

@@ -1,6 +1,9 @@
 <?php 
 /**
  * Template Name: Home Page
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 	get_header('home');

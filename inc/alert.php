@@ -1,4 +1,10 @@
 <?php
+/**
+ * Alert template
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
 
 	$frontpage_id = get_option('page_on_front');
 	$showAlert = get_post_meta($frontpage_id, 'show_alert', true);

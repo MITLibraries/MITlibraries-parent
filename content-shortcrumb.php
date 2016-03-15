@@ -2,9 +2,8 @@
 /**
  * The template used for displaying page content for pages in the shortrumb category in page-standard.php
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 global $isRoot;

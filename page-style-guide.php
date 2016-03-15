@@ -2,9 +2,8 @@
 /**
  * Template Name: Style Guide
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 get_header(); ?>

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Possibly deprecated file to pull location hours from database
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
 
 if (isset($_GET["cleanCache"])) {
 	$clean = $_GET["cleanCache"];

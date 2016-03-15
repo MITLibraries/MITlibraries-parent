@@ -1,6 +1,9 @@
 <?php 
 /**
  * Template Name: Featured News Article List
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 	get_header();

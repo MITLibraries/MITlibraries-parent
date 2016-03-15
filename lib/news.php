@@ -6,6 +6,9 @@
  * of news items from a separate site on the network. This process is
  * documented online at:
  * https://github.com/mitlibraries-ux/MITlibraries-parent/wiki/News
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 $newsBlogID = 7;
