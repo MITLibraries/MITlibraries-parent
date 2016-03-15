@@ -1,4 +1,10 @@
 <?php
+/**
+ * Possibly deprecated file to pull location hours from database
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
 
 if (isset($_GET["cleanCache"])) {
 	$clean = $_GET["cleanCache"];
@@ -634,7 +640,9 @@ function filterText($str) {
 	return $str;
 }
 
-/** Custom Import **/
+/*
+ * Custom Import
+ */
 
 add_action( 'admin_menu', 'libraries_plugin_menu' );
 
@@ -692,6 +700,7 @@ function handle_hours_upload() {
 	clean_posts($tag);
 	
 	/*
+	Removed
 	foreach ($obj->getWorksheetIterator() as $worksheet) {
 		//print_r($worksheet);
 		
@@ -808,8 +817,8 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 				echo "ERROR - Cannot Find Related Location<br/>";
 				
 			} else {
-			
-				/** Check if Semester exists for location **/
+
+				// Check if Semester exists for location.
 				$semId = semesterNameToId($name, $locationId);
 				
 				if ($semId == 0) {
@@ -838,8 +847,7 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 				}
 				
 				
-				/** Look at hours for the semester **/
-				
+				// Look at hours for the semester.
 				foreach($item as $col => $val) {
 					if ($col != 'A') {
 						// not the name
@@ -928,11 +936,7 @@ function process_holiday($arSheet, $tag) {
 				
 			} else {
 			
-
-			
-			
-				/** Look at hours for the semester **/
-				
+				// Look at hours for the semester.
 				foreach($item as $col => $val) {
 					if ($col != 'A') {
 						// not the name
@@ -946,7 +950,7 @@ function process_holiday($arSheet, $tag) {
 						
 						if ($val != "") {
 						
-							/** Check if term exists for location **/
+							// Check if term exists for location.
 							$termId = 0;
 							$term = getTerm($arHours, $locationIdOriginal, $dt);
 							

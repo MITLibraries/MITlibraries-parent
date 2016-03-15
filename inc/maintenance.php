@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template for putting the site under maintenance
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+
+?>
 <div class="siteTitle maintenance group">
 	<h1 class="name-site"><?php bloginfo('name'); ?> <span>is under maintenance.</span></h1>
 </div>

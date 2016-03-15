@@ -2,10 +2,10 @@
 /**
  * The template for displaying a "No posts found" message.
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
+
 ?>
 
 	<article id="post-0" class="post no-results not-found">

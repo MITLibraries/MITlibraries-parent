@@ -6,11 +6,9 @@
  * views, and is only accessible when
  * logged into WP.
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
-
 
 $pageRoot = getRoot($post);
 $section = get_post($pageRoot);

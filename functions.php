@@ -17,9 +17,8 @@
  *
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
  
 /* Globals */
@@ -123,6 +122,7 @@ function twentytwelve_scripts_styles() {
 		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
 
 wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
+
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */

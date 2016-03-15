@@ -7,9 +7,8 @@
  * handled by a callback to twentytwelve_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 /*
@@ -46,6 +45,7 @@ if ( post_password_required() )
 		<?php endif; // check for comment navigation ?>
 
 		<?php
+
 		/*
 		 * If there are no comments and comments are closed, let's leave a note.
 		 * But we only want the note on posts and pages that had comments in the first place.
