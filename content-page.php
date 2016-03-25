@@ -2,13 +2,10 @@
 /**
  * The template used for displaying page content in page-standard.php
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
- 
 
- 
 global $isRoot;
 
 
@@ -38,5 +35,3 @@ global $isRoot;
 		<?php get_sidebar( 'sidebar-1' ); ?>
 <?php } ?>
 		</div>
-		
-	 

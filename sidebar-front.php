@@ -4,9 +4,8 @@
  *
  * If no active widgets in either sidebar, they will be hidden completely.
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 /*

@@ -3,9 +3,8 @@
  * Implements an optional custom header for Twenty Twelve.
  * See http://codex.wordpress.org/Custom_Headers
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 /**
@@ -49,11 +48,10 @@ add_action( 'after_setup_theme', 'twentytwelve_custom_header_setup' );
 /**
  * Styles the header text displayed on the blog.
  *
- * get_header_textcolor() options: 444 is default, hide text (returns 'blank'), or any hex value.
- *
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_header_style() {
+	// Options for get_header_textcolor(): 444 is default, hide text (returns 'blank'), or any hex value.
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail

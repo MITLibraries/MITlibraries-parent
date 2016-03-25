@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template for locations on front page
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
 
 	// Query the locations
 	$args = array(

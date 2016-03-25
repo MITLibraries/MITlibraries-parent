@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying location post information.
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+
 	global $gStudy24Url;
 
 	$mapPage = "/locations/#!";

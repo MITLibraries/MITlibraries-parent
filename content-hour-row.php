@@ -1,4 +1,11 @@
-						<?php 
+<?php 
+/**
+ * This template builds one row of the hours display.
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+
 							global $rowOdd, $arDays, $today, $now;
 							$mapPage = "/locations/#!";
 							

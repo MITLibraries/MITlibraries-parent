@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template for the homepage news and events panel
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+
+?>
 <!-- News and events section -->
 <div class="section">
 

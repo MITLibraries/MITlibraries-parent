@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template for search bar
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+
+?>
 <div id="search-main" class="search--lib-resources flex-container">
 	<h2>Search</h2>
 	<div class="search-options--static flex-container js-hidden">

@@ -1,4 +1,11 @@
-		<?php
+<?php
+/**
+ * The template for displaying the hours grid.
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+
 			$subject = cf("subject");
 			$phone = cf("phone");
 			$building = cf("building");

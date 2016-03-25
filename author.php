@@ -6,9 +6,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 get_header(); ?>
@@ -19,7 +18,9 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php
-				/* Queue the first post, that way we know
+
+				/*
+				 * Queue the first post, that way we know
 				 * what author we're dealing with (if that is the case).
 				 *
 				 * We reset this later so we can run the loop
@@ -33,7 +34,9 @@ get_header(); ?>
 			</header><!-- .archive-header -->
 
 			<?php
-				/* Since we called the_post() above, we need to
+
+				/*
+				 * Since we called the_post() above, we need to
 				 * rewind the loop back to the beginning that way
 				 * we can run the loop properly, in full.
 				 */

@@ -1,6 +1,9 @@
 <?php
 /**
  * This is the template that displays all locations.
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
  
 $pageRoot = getRoot($post);
