@@ -55,5 +55,13 @@ ratings:
   - "**.module"
   - "**.inc"
 exclude_paths:
+- css/bootstrap.css
+- js/jquery.cycle.js
+- js/jquery.js
+- js/libs/**/*
+- js/modernizr.js
+- js/sticky/jquery.sticky.js
+- js/sticky/scrollStick/jquery.cookie.js
+- js/superfish/superfish.min.js
 - libs/**/*
 - navwalker.php
