@@ -18,9 +18,6 @@ $(function(){
 			options.refine = readRefineState();
 			localStorage.setItem('tool',options.tool);
 			localStorage.setItem('refine',options.refine);
-		} else {
-			// This can be removed in the future
-			console.log("LocalStorage not supported - could not save state");
 		}
 	}
 
@@ -291,8 +288,6 @@ $(function(){
 		var tempState = {};
 		tempState = readToolState();
 		tempState.refine = readRefineState();
-		console.log("Markup is now:");
-		console.log(tempState);
 	}
 
 	function resetSearchUI() {
