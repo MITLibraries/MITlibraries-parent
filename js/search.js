@@ -445,11 +445,11 @@ $(function(){
 						.val(searchQuery);
 				}
 				if (selectVal == 'author') {
-					var searchQuery = 'au:'+$('input.active', this).val();
+					searchQuery = 'au:'+$('input.active', this).val();
 					$('#worldcat.active').append('<input type="hidden" name="q" value="'+searchQuery+'" />');
 				}
 				if (selectVal == 'title') {
-					var searchQuery = 'ti:'+$('input.active', this).val();
+					searchQuery = 'ti:'+$('input.active', this).val();
 					$('#worldcat.active').append('<input type="hidden" name="q" value="'+searchQuery+'" />');
 				}
 			}
