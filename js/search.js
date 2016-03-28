@@ -372,6 +372,7 @@ $(function(){
 		else {
 		// Get the value of the "search by" select element
 		var selectVal = $('#search-main select.active').val();
+		var splitOptions = '';
 			// Barton...
 			if ($('#bartonplus.active').length) {
 				// Set the correct action for the BartonPlus form
@@ -405,7 +406,7 @@ $(function(){
 			// Barton
 			if($('#barton.active').length) {
 				// Split the query
-				var splitOptions = selectVal.split('_');
+				splitOptions = selectVal.split('_');
 				$('#barton')
 					.addClass('searchform')
 					.attr('action', 'https://library.mit.edu/F/')
@@ -466,7 +467,7 @@ $(function(){
 				// Add hidden fields
 				hiddenFields();
 				// Split the query
-				var splitOptions = selectVal.split('_');
+				splitOptions = selectVal.split('_');
 				$("#course-reserves input[name = 'code']:checked").val(splitOptions[1]);
 				$("#course-reserves .hidden-fields").append("<input type='hidden' name='local_base' value='u-mit30'/>");
 				if (splitOptions[0] == "find") {	
