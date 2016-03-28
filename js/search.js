@@ -393,7 +393,7 @@ $(function(){
 			if ($('#vera.active').length) {
 				// Vera actions
 				$('#vera')
-					.attr('action', 'http://owens.mit.edu/sfx_local/az/mit_all')
+					.attr('action', 'https://owens.mit.edu/sfx_local/az/mit_all')
 					.attr('name', 'az_user_form')
 					.attr('method', 'get')
 					.attr('accept-charset', 'UTF-8')
