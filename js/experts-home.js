@@ -56,7 +56,7 @@ $(function(){
 			// Append extra markup only if JSON request successful
 			$('.expert').append('<a class="link-profile no-underline">');
 			// Append expert image div
-			$('.expert .link-profile').append('<img class="expert-photo">');
+			$('.expert .link-profile').append('<img alt="" class="expert-photo">');
 			// Append empty spans for expert names
 			$('.expert .link-profile').append('<span class="name"></span>');
 			// Append empty spans for expert titles
