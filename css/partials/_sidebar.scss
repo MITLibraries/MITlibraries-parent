@@ -30,9 +30,6 @@
 			font-size: .75em;
 		}
 	}
-}
-
-.sidebar {
 	.connect-widget,
 	.connect-archnet {
 		div span {
@@ -40,36 +37,36 @@
 			margin-bottom: 2px;
 			margin-left: 20px;
 			font-size: 14px;	
-			}		
-			div span.twitter-connect:before {
-					position:absolute;
-					top: 1px;
-					left: -20px;
-					font-family:FontAwesome;
-					content:"\f099" !important;
-					color: #338bc5;
-					font-size: 1em;
-			}
-			div span.fb-connect:before {
-					position:absolute;
-					top: 2px;
-					left: -20px;
-					font-family:FontAwesome;
-					content:"\f082" !important;
-					color: #338bc5;
-					font-size: 1em;
-			}
-			div span.email-connect:before {
-					position:absolute;
-					top: 3px;
-					left: -20px;
-					font-family:FontAwesome;
-					content:"\f003" !important;
-					color: #338bc5;
-					font-size: 1em;
-			}
+		}		
+		div span.twitter-connect:before {
+			position:absolute;
+			top: 1px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f099" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.fb-connect:before {
+			position:absolute;
+			top: 2px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f082" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.email-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f003" !important;
+			color: #338bc5;
+			font-size: 1em;
 		}
 	}
+}
 
 .ie8 .sidebar .widget {
 	display: block; // Fixes <aside> element non-capatability
