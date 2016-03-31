@@ -705,20 +705,6 @@ function menuWithParent($menu, $par) {
 	
 }
 
-function getExpert($expert) {
-	$args = array(
-		'post_type' => 'expert',
-		'p' => $expert
-	);
-	
-	
-	
-	$qExpert = new WP_Query( $args );
-	
-	print_r($qExpert);
-	
-}
-
 if (!function_exists('better_breadcrumbs')) {
 
 	function better_breadcrumbs() {
