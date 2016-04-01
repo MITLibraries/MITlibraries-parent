@@ -78,8 +78,10 @@ html.no-js .js-hidden {
 	@include bp-tablet--portrait {
 		flex-direction: row;
 	}
+	@include bp-mobile--only {
+		padding: 0 5%;
+	}
 	.content-page {
-		@include rem-first--4-values(margin, 0, 1, 1.5, 1);
 		max-width: 100%;
 		@include bp-tablet--portrait {
 			@include rem-first--4-values(margin, 0, 0, 1.5, 0);
