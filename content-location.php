@@ -139,8 +139,8 @@
 		<!-- </div> end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 
-	<div class="content-main flex-container group <?php echo $strLocation; ?>">
-		<div class="col-1 content-page">
+	<div id="content" class="content <?php echo $strLocation; ?> has-sidebar">
+		<div class="main-content content-main">
 
 			<?php if ($title1 != "" || $title2 != ""): ?>
 				<?php $noTab = "";  ?>
@@ -180,12 +180,16 @@
 									}
 
 							?>
-							<div class="profile flex-container group">
+							<div class="profile-content">
 								<?php if ($thumb != ""):
 									echo $thumb;
 								endif; ?>
-								<div class="profileContent">
-									<h3 class="profileTitle"><span class="intro">Featured expert:</span><span class="name"><?php echo $name; ?></span><span class="bio"><?php echo $bio; ?></span></h3>
+								<div class="profile-content__body">
+									<h3>
+										<span class="intro">Featured expert:</span>
+										<span class="name"><?php echo $name; ?></span>
+										<span class="bio"><?php echo $bio; ?></span>
+									</h3>
 									<div class="links">
 										<a class="primary" href="<?php echo $url; ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
 										<a href="/experts">See all our experts <i class="icon-arrow-right"></i></a>
@@ -232,9 +236,3 @@
 			</div><!-- end div.tabcontent -->
 
 		</div><!-- end div.col-1 -->
-
-		<div class="col-2">
-			<?php get_sidebar(); ?>
-		</div>
-
-</div><!-- end div#stage -->

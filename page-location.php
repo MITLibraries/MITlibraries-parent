@@ -34,10 +34,16 @@ get_header(); ?>
 			
 		?>
 		
+		<div id="stage" class="inner" role="main">
+
 		<?php while ( $locPosts->have_posts() ) : $locPosts->the_post(); ?>
 
-			<?php get_template_part( 'content', 'location' ); ?>
+				<?php get_template_part( 'content', 'location' ); ?>
+
+				<?php get_sidebar(); ?>
 		
 		<?php endwhile; // end of the loop. ?>
+		
+		</div>
 
 <?php get_footer(); ?>
