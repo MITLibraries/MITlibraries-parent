@@ -125,16 +125,14 @@
 		<!-- </div> end div.flex-item -->
 <!--		<div class="flex-item"> -->
 			<div class="topRight">
-				<div class="librarySlideshow">
-					<div class="slideshow">
+				<div class="library-image">
 						<?php
 							$val = $arMain[array_rand($arMain)];
 						?>
 						<?php if ($val != ""): ?>
 						<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
 						<?php endif; ?>
-					</div>
-				</div><!-- end div.librarySlideshow -->
+				</div><!-- end div.library-image -->
 			</div><!-- end div.topRight -->
 		<!-- </div> end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
