@@ -139,7 +139,7 @@ $alertContent = cf("alert_content");
 </script> 
 </div>
 <!--stage ends-->
-<div id="content" class="content-main">
+<div id="content">
   <div id="hourContent" class="content-page">
     <div id="hourNav-sticky-wrapper" class="sticky-wrapper" style="height: 0px;">
       <div id="hourNav" style="width: 1008px;">

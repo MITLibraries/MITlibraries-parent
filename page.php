@@ -29,30 +29,31 @@ endif;
 			<?php if (in_category('shortcrumb')) { ?>
 		<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
 			<?php } else { ?>
-		<?php get_template_part('inc/breadcrumbs'); ?>
+			<?php get_template_part('inc/breadcrumbs'); ?>
 			<?php } ?>
 			
 			<?php while ( have_posts() ) : the_post(); ?>
-			
-		
-		
+
 		<div id="stage" class="inner" role="main">
 			
 			<?php if (in_category('shortcrumb')) { ?>
 			<?php get_template_part('inc/self', 'title'); ?>
 			<?php } elseif (!in_category('page-root')) { ?>
 			<?php get_template_part( 'inc/content','root'); ?>
-			<?php } ?>
+			<?php } ?>	
 			
-			
-			
-			<div class="content-main">
-				<?php if (in_category('shortcrumb')) { ?>
-				<?php get_template_part( 'content', 'shortcrumb' ); ?>
-				<?php } else { ?>				
-				<?php get_template_part( 'content', 'page' ); ?>
-				<?php } ?>				
-			</div>
+			<div id="content" class="content has-sidebar">
+		
+			<?php if (in_category('shortcrumb')) { ?>
+			<?php get_template_part( 'content', 'shortcrumb' ); ?>
+			<?php } else { ?>				
+			<?php get_template_part( 'content', 'page' ); ?>
+			<?php } ?>				
+		
+			<?php get_sidebar(); ?>
+
 		</div>
+		
 		<?php endwhile; // end of the loop. ?>
+
 <?php get_footer(); ?>
