@@ -1,16 +1,14 @@
 .sidebar {
+	padding-right: 1%;
 	.widget {
-		background: $color-background--widget;
-		border-bottom: 2px solid darken($color-background--widget, 20%);
-		padding: 20px;
-		&:last-of-type {
-			border-bottom: none;
-		}
+		border-top: 2px solid #ddd;
+		padding: 10px 0 20px;
+		font-size: 14px;
 		.widget-title {
 			color: #111;
 			@include font-size(19px);
 			line-height: 1.4;
-			font-weight: 500;
+			font-weight: 600;
 			@include rem-first--4-values(margin, 0, 0, 0.667, 0);
 			@include rem-first(padding-top, 0);
 			@include rem-first(padding-bottom, 0);
@@ -22,10 +20,10 @@
 		}
 		ul li:before {
 			position:absolute;
-			top: 5px;
+			top: 4px;
 			left: -15px;
 			font-family:FontAwesome;
-			content:"\f061";
+			content:"\f138";
 			color: #338bc5;
 			font-size: .75em;
 		}
@@ -71,3 +69,12 @@
 .ie8 .sidebar .widget {
 	display: block; // Fixes <aside> element non-capatability
 }
+
+@media screen and (max-width:720px) {
+	.sidebar {
+		padding: 0 5%;
+		width: 100%;
+		margin-bottom: 50px;		
+	}
+}
+
