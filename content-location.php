@@ -85,8 +85,6 @@
 	$alertContent = cf("alert_content");
 ?>
 
-<div id="stage" class="inner row group" role="main">
-
 <div class="libraryAlertTop">
 <?php
 					include(locate_template('inc/alert.php'));
