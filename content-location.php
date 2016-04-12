@@ -184,7 +184,7 @@
 								endif; ?>
 								<div class="profile-content__body">
 									<h3>
-										<span class="intro">Featured expert:</span>
+										<span class="intro">Featured expert</span>
 										<span class="name"><?php echo $name; ?></span>
 										<span class="bio"><?php echo $bio; ?></span>
 									</h3>
