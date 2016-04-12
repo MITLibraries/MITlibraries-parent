@@ -38,17 +38,13 @@
 	}
 }
 
-.location--alerts .icon-exclamation-circle {
-	fill: #ed0e0e;
-	filter: drop-shadow(0 0 1px #aaa);
-	height: 4em;
-	margin-right: 1em;
+.location--alerts .icon-exclamation-sign {
+	color: #ed0e0e;
+	font-size: 3.5em;
+	margin: 0 .5em 0 .25em;
 	position: relative;
-	width: 4em;
 	@include bp-mobile--only {
-		height: 3em;
-		margin-right: 0.75em;
-		width: 3em;
+		font-size: 2.5em;
 	}
 }
 
