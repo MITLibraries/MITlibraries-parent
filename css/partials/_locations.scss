@@ -214,8 +214,8 @@
 	position: relative;
 	flex: 1;
 	top: 0px;
-	left: 20px;
-	width: 150px;
+	left: 15px;
+	padding-right: 15px;
 }
 
 .profile-content__body .intro {
@@ -239,7 +239,7 @@
 
 .profile-content__body .links a {
 	display: block;
-	font-size: 14px;
+	font-size: 13px;
 }
 
 .profile-content__body .links a.primary {
