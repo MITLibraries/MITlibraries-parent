@@ -1,3 +1,13 @@
+.libraryAlert {
+    box-shadow: 0 0 5px 2px #ccc;
+	padding: 15px 10px 10px;
+	margin-top: 15px;
+}
+
+.alertText h3 {
+	padding-bottom: 5px !important;
+}
+
 .posts--preview--alerts:before {
 	background: #ea4848; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #ea4848 0%, #ed0e0e 100%); /* FF3.6+ */
