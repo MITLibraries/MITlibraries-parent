@@ -5,11 +5,8 @@
 }
 
 .alertText h3 {
-	padding-bottom: 5px !important;
-}
-
-.libraryAlert h3 {
 	font-size: 18px;
+	padding-bottom: 5px !important;
 }
 
 .posts--preview--alerts:before {
@@ -39,19 +36,7 @@
 	opacity: 0;
 }
 
-.posts--preview--alerts .icon-exclamation-circle {
-	display: inline-block;
-	fill: #ed0e0e;
-	filter: drop-shadow(0 0 1px #aaa);
-	height: 4em;
-	margin-right: 1em;
-	position: relative;
-	width: 4em;
-	@include bp-mobile--only {
-		margin-right: 0.75em;
-	}
-}
-
+.posts--preview--alerts .icon-exclamation-sign,
 .location--alerts .icon-exclamation-sign {
 	color: #ed0e0e;
 	font-size: 3.5em;
@@ -71,21 +56,15 @@
 }
 
 .action-close {
-	fill: #333;
 	position: absolute;
 	right: 0.5em;
 	top: 0.5em;
-	svg {
-		height: 2em;
-		width: 2em;
-	}
+	.icon-remove-sign {
+    color: #333;
+    font-size: 1.5em;
+    text-decoration: none;
+    }
 }
-
-.alertText h2 {
-	font-size: 21px;
-	font-weight: 600;
-}
-
 
 @media screen and (max-width:820px) {
 	.location--alerts .alertText,
