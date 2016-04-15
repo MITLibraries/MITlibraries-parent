@@ -1,18 +1,8 @@
-.libraryAlert {
-    box-shadow: 0 0 5px 2px #ccc;
-	padding: 15px 10px 10px;
-	margin-top: 15px;
-}
-
-.alertText h3 {
-	padding-bottom: 5px !important;
-}
-
 .title-page {
 	color: $black;
 	justify-content: space-between;
 	padding: 1rem 0;
-	padding-left: 16px;
+	padding-left: 27.5px;
 	font-weight: 1.5rem !important;
 		h1 {
 			line-height: 1.25;
@@ -21,7 +11,7 @@
 		background: none;
 		color: #111;
 		display: block;
-		padding: 1rem;
+		padding: 0 5%;
 	}
 	a.title-page {
 		@include rem-first(font-size, 1.5);
@@ -100,12 +90,6 @@
 	margin-left: 0.5em;
 	text-decoration: none;
 	vertical-align: text-bottom;
-}
-
-.libraryAlert h3 {
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 20px;
 }
 
 .topLeft {

@@ -78,8 +78,10 @@ html.no-js .js-hidden {
 	@include bp-tablet--portrait {
 		flex-direction: row;
 	}
+	@include bp-mobile--only {
+		padding: 0 5%;
+	}
 	.content-page {
-		@include rem-first--4-values(margin, 0, 1, 1.5, 1);
 		max-width: 100%;
 		@include bp-tablet--portrait {
 			@include rem-first--4-values(margin, 0, 0, 1.5, 0);
@@ -109,27 +111,38 @@ html.no-js .js-hidden {
 	}
 }
 
+.main-content {
+	padding-left: 27.5px;
+}
+
 .has-sidebar {
 	.content-main {
 		float: left;
-	  padding-right: 2em;
+		padding-right: 2em;
 		width: 76.05%;
 	}
 	.sidebar {
-		background: #ede8e2;
 		float: left;
 		width: 23.91%;
 	}
-	@include bp-small {
-		.content-main {
+}
+
+@media screen and (max-width: 720px) {
+	.page-title {
+		display: block;
+		padding: 0 5%;		
+	}
+	.has-sidebar {
+		.content-main,
+			.sidebar {
 			float: none;
+			width: 100%;
 			padding-right: 0;
-			width: 100%;
+			padding: 0 5%;
 		}
-		.sidebar {
-			float: none;
-			width: 100%;
-		}
+	}
+	.profile .profileContent {
+		width: auto;
 	}
 }
 

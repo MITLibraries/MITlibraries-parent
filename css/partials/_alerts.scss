@@ -1,3 +1,9 @@
+.libraryAlert {
+    box-shadow: 0 0 5px 2px #ccc;
+	padding: 15px 10px 10px;
+	margin-top: 15px;
+}
+
 .posts--preview--alerts:before {
 	background: #ea4848; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #ea4848 0%, #ed0e0e 100%); /* FF3.6+ */
@@ -76,6 +82,11 @@
 	font-weight: 600;
 }
 
+.alertText h3 {
+	font-size: 18px;
+	font-weight: 400px;
+	padding-bottom: 5px;
+}
 
 @media screen and (max-width:820px) {
 	.location--alerts .alertText,
