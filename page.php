@@ -30,7 +30,7 @@ endif;
 		<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
 			<?php } else { ?>
 
-		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
+		<div id="breadcrumb" class="breadcrumbs inner hidden-phone" role="navigation" aria-label="breadcrumbs">
 			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
 		</div>
 		<?php } ?>

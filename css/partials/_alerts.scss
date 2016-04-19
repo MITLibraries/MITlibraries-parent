@@ -1,3 +1,14 @@
+.libraryAlert {
+    box-shadow: 0 0 5px 2px #ccc;
+	padding: 15px 10px 10px;
+	margin-top: 15px;
+}
+
+.alertText h3 {
+	font-size: 18px;
+	padding-bottom: 5px !important;
+}
+
 .posts--preview--alerts:before {
 	background: #ea4848; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #ea4848 0%, #ed0e0e 100%); /* FF3.6+ */
@@ -25,30 +36,14 @@
 	opacity: 0;
 }
 
-.posts--preview--alerts .icon-exclamation-circle {
-	display: inline-block;
-	fill: #ed0e0e;
-	filter: drop-shadow(0 0 1px #aaa);
-	height: 4em;
-	margin-right: 1em;
+.posts--preview--alerts .icon-exclamation-sign,
+.location--alerts .icon-exclamation-sign {
+	color: #ed0e0e;
+	font-size: 3.5em;
+	margin: 0 .5em 0 .25em;
 	position: relative;
-	width: 4em;
 	@include bp-mobile--only {
-		margin-right: 0.75em;
-	}
-}
-
-.location--alerts .icon-exclamation-circle {
-	fill: #ed0e0e;
-	filter: drop-shadow(0 0 1px #aaa);
-	height: 4em;
-	margin-right: 1em;
-	position: relative;
-	width: 4em;
-	@include bp-mobile--only {
-		height: 3em;
-		margin-right: 0.75em;
-		width: 3em;
+		font-size: 2.5em;
 	}
 }
 
@@ -61,25 +56,25 @@
 }
 
 .action-close {
-	fill: #333;
 	position: absolute;
 	right: 0.5em;
 	top: 0.5em;
-	svg {
-		height: 2em;
-		width: 2em;
-	}
+	.icon-remove-sign {
+    color: #333;
+    font-size: 1.5em;
+    text-decoration: none;
+    }
 }
-
-.alertText h2 {
-	font-size: 21px;
-	font-weight: 600;
-}
-
 
 @media screen and (max-width:820px) {
 	.location--alerts .alertText,
 	.post.alert--critical .alertText{
 		width: 80%;
+	}
+}
+
+@media screen and (max-width:720px) {
+	.libraryAlertTop {
+		padding: 1% 5%;
 	}
 }
