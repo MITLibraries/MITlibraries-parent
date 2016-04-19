@@ -18,9 +18,6 @@ $(function(){
 			options.refine = readRefineState();
 			localStorage.setItem('tool',options.tool);
 			localStorage.setItem('refine',options.refine);
-		} else {
-			// This can be removed in the future
-			console.log("LocalStorage not supported - could not save state");
 		}
 	}
 
@@ -291,8 +288,6 @@ $(function(){
 		var tempState = {};
 		tempState = readToolState();
 		tempState.refine = readRefineState();
-		console.log("Markup is now:");
-		console.log(tempState);
 	}
 
 	function resetSearchUI() {
@@ -377,6 +372,7 @@ $(function(){
 		else {
 		// Get the value of the "search by" select element
 		var selectVal = $('#search-main select.active').val();
+		var splitOptions = '';
 			// Barton...
 			if ($('#bartonplus.active').length) {
 				// Set the correct action for the BartonPlus form
@@ -393,7 +389,7 @@ $(function(){
 			if ($('#vera.active').length) {
 				// Vera actions
 				$('#vera')
-					.attr('action', 'http://owens.mit.edu/sfx_local/az/mit_all')
+					.attr('action', 'https://owens.mit.edu/sfx_local/az/mit_all')
 					.attr('name', 'az_user_form')
 					.attr('method', 'get')
 					.attr('accept-charset', 'UTF-8')
@@ -410,7 +406,7 @@ $(function(){
 			// Barton
 			if($('#barton.active').length) {
 				// Split the query
-				var splitOptions = selectVal.split('_');
+				splitOptions = selectVal.split('_');
 				$('#barton')
 					.addClass('searchform')
 					.attr('action', 'https://library.mit.edu/F/')
@@ -449,11 +445,11 @@ $(function(){
 						.val(searchQuery);
 				}
 				if (selectVal == 'author') {
-					var searchQuery = 'au:'+$('input.active', this).val();
+					searchQuery = 'au:'+$('input.active', this).val();
 					$('#worldcat.active').append('<input type="hidden" name="q" value="'+searchQuery+'" />');
 				}
 				if (selectVal == 'title') {
-					var searchQuery = 'ti:'+$('input.active', this).val();
+					searchQuery = 'ti:'+$('input.active', this).val();
 					$('#worldcat.active').append('<input type="hidden" name="q" value="'+searchQuery+'" />');
 				}
 			}
@@ -471,7 +467,7 @@ $(function(){
 				// Add hidden fields
 				hiddenFields();
 				// Split the query
-				var splitOptions = selectVal.split('_');
+				splitOptions = selectVal.split('_');
 				$("#course-reserves input[name = 'code']:checked").val(splitOptions[1]);
 				$("#course-reserves .hidden-fields").append("<input type='hidden' name='local_base' value='u-mit30'/>");
 				if (splitOptions[0] == "find") {	
