@@ -7,27 +7,16 @@
  */
 
 global $isRoot;
-?>
-<div class="col-1 content-page">
-		<?php if (has_post_thumbnail()): ?>
-		<div class="featuredImage">
-			<?php echo the_post_thumbnail(700, 300); ?>
+?>		
 		
-		</div>	
-		<?php endif; ?>
+		<div class="main-content content-main">
 		
-		
-		<div class="entry-content">
-			<?php if (!$isRoot): ?>
-			<h2><?php the_title(); ?></h2>
-			<?php endif; ?>
-			<?php the_content(); ?>
-			
+			<div class="entry-content">
+				<?php if (!$isRoot): ?>
+				<h2><?php the_title(); ?></h2>
+				<?php endif; ?>
+				<?php the_content(); ?>
+			</div>
+
 		</div>
-		<footer class="entry-meta">
-			<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
-		</footer><!-- .entry-meta -->
-</div>
-<div class="col-2">
-	<?php get_sidebar(); ?>
-</div>
+
