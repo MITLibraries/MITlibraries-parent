@@ -23,7 +23,7 @@ get_header(); ?>
 		var showMap = <?php echo $showMap; ?>;
 	</script>	
 
-		<div id="breadcrumb" class="breadcrumbs inner" role="navigation" aria-label="breadcrumbs">
+		<div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
 			<a href="/">Libraries home</a>
 			&raquo; <?php showBreadTitle(); ?>
 		</div>

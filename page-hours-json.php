@@ -90,11 +90,6 @@ $alertTitle = cf("alert_title");
 $alertContent = cf("alert_content");
 
  ?>
- 
- 		<div id="breadcrumb" class="breadcrumbs inner" role="navigation" aria-label="breadcrumbs">
-			<a href="/">Libraries home</a>
-			&raquo; <?php showBreadTitle(); ?>
-		</div>
 
 <div id="stage" class="hoursHeader inner hours group" role="main">
   <div class="title-page flex-container">
