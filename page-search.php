@@ -23,9 +23,7 @@ get_header(); ?>
 
 <?php get_template_part('inc/search'); ?>
 
-			<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
-				<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
-			</div>
+			<?php get_template_part('inc/breadcrumbs'); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
