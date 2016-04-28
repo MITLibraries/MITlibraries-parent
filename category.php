@@ -12,9 +12,10 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content">
-		<div id="content" role="main">
+	<div id="stage" class="inner" role="main">
+		<div id="content" class="content has-sidebar">
 
+				<div class="content-main main-content">			
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'twentytwelve' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
@@ -44,8 +45,10 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
-
+				</div>
 <?php get_sidebar(); ?>
+
+		</div><!-- #content -->
+	</div>
+
 <?php get_footer(); ?>
