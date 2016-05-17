@@ -16,7 +16,9 @@
     "grunt-contrib-sass": "~0.7.2",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-phpcs": "^0.4.0"
+    "grunt-gitinfo": "^0.1.8",
+    "grunt-phpcs": "^0.4.0",
+    "grunt-replace": "^1.0.1"
   },
   "dependencies": {
     "load-grunt-tasks": "~0.2.0"
