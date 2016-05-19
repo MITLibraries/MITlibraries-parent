@@ -125,6 +125,7 @@
         <a href="/events">Classes & events</a>
         <a href="/news">News</a>
         <a href="/exhibits">Exhibits &amp; galleries</a>
+        <a href="/in-the-media">In the media</a>
       </div>
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
