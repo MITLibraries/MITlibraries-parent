@@ -19,15 +19,16 @@ $isRoot = $section->ID == $post->ID;
 
 get_header(); ?>
 
-		<div id="stage" class="inner column3 tertiaryPage" role="main">
+		<?php get_template_part('inc/search'); ?>
+		
+		<div id="breadcrumb" class="breadcrumbs inner hidden-phone" role="navigation" aria-label="breadcrumbs">
+			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
+		</div>
 
-<?php get_template_part('inc/search'); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			
+		<div id="stage" class="inner" role="main">
 
-			<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
-				<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
-			</div>
-
-			<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="title-page">
 				<?php if ($isRoot): ?>
@@ -37,9 +38,11 @@ get_header(); ?>
 				<?php endif; ?>
 			</div>
 
-			<div class="content-main flex-container">
+			<div id="content" class="content has-sidebar">
 				<?php get_template_part( 'content', 'pagefull' ); ?>
+				<?php get_sidebar(); ?>
 			</div>
 		</div>
 		<?php endwhile; // end of the loop. ?>
-<?php get_footer(); ?>
+
+		<?php get_footer(); ?>

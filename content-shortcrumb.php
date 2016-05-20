@@ -16,18 +16,9 @@ global $isRoot;
 		<?php get_template_part('inc/content', 'secmenu'); ?>
 			<?php } ?>
 
-	<div class="content-main flex-container">
-		<div class="col-1 content-page">
-			<div class="entry-content">
-			
-				<?php the_content(); ?>
+			<div class="main-content content-main">
+				<div class="entry-content">
+					<?php the_content(); ?>
+				</div>
 			</div>
-			<footer class="entry-meta">
-				<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
-			</footer><!-- .entry-meta -->
-		</div>
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-		<div class="col-2">
-		<?php get_sidebar( 'sidebar-1' ); ?>
-<?php } ?>
-		</div>
+
