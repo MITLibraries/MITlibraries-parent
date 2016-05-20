@@ -9,9 +9,15 @@
  */
 
 get_header(); ?>
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+		<div id="stage" class="inner" role="main">
+			
+		<?php get_template_part('inc/postHead'); ?>
+
+			<div id="content" class="content has-sidebar">
+				
+				<div class="main-content content-main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -36,7 +42,7 @@ get_header(); ?>
 							<?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
 						</footer><!-- .entry-meta -->
 
-						<nav id="image-navigation" class="navigation" role="navigation">
+						<nav id="image-navigation" class="image-navigation" role="navigation">
 							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'twentytwelve' ) ); ?></span>
 							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'twentytwelve' ) ); ?></span>
 						</nav><!-- #image-navigation -->
@@ -98,7 +104,11 @@ endif;
 				<?php comments_template(); ?>
 
 			<?php endwhile; // end of the loop. ?>
-
+				
+			</div><!-- .main-content -->
+				
+			<?php get_sidebar(); ?>
+			
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

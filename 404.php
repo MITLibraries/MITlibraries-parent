@@ -8,8 +8,10 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+		<div id="stage" class="inner" role="main">
+			<div id="content" class="content has-sidebar">
+				
+				<div class="main-content content-main">
 
 			<article id="post-0" class="post error404 no-results not-found">
 				<header class="entry-header">
@@ -45,8 +47,12 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 
 			</article><!-- #post-0 -->
+			
+				</div>
+				
+				<?php get_sidebar(); ?>
 
 		</div><!-- #content -->
-	</div><!-- #primary -->
+	</div><!-- #stage -->
 
 <?php get_footer(); ?>
