@@ -37,6 +37,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div id="skip"><a href="#search-main">Skip to Main Content</a></div>
 	<div class="wrap-page">
 		<header class="header-main flex-container flex-end">
 			

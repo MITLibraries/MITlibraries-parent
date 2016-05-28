@@ -108,6 +108,21 @@
 	}
 }
 
+/* for skip-to-main-content link */
+#skip a { 
+	position:absolute; 
+	left:-10000px; 
+	top:auto; 
+	width:1px; 
+	height:1px; 
+	overflow:hidden;
+		&:focus {
+			position:static; 
+			width:auto; 
+			height:auto; 
+			}
+		} 
+
 .no-flexbox.flexboxlegacy {
 	.header-main {
 		.icon-account,
