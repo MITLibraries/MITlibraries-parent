@@ -17,12 +17,9 @@ $section = get_post($pageRoot);
 
 get_header(); ?>
 
-		<div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
-			<a href="/">Libraries home</a>
-			&raquo; <?php showBreadTitle(); ?>
-		</div>
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
-		<div id="stage" role="main">
+		<div id="stage" class="inner" role="main">
 			<div class="title-page flex-container">
 				<h1><?php the_title(); ?></h1>
 				<div class="extraInfo">
@@ -30,8 +27,8 @@ get_header(); ?>
 				</div>
 			</div>
 			
-			<div class="content-main flex-container">
-				<div class="content-page col-1">
+			<div id="content" class="content has-sidebar">
+				<div class="main-content content-main">
 					<?php the_content(); ?>
 					<ul class="list--study-spaces">
 						<?php
@@ -92,29 +89,30 @@ get_header(); ?>
 							
 
 						?>
-							<li class="flex-container study-space">
-								<div class="image-study-space" style="background-image: url(<?php echo $studyImage; ?>);"></div>
-								<div class="content--study-space">
-									<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
-									<div class="description">
-										<?php echo $description; ?>
+							<li class="study-space">
+								<div class="study-space-image" style="background-image: url(<?php echo $studyImage; ?>);"></div>
+								<div class="study-space--content">
+									<div class="study-space--header ss-item">
+										<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
+										<div class="description">
+											<?php echo $description; ?>
+										</div>
+										<?php if ($reserveUrl != ""): ?>
+												<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
+										<?php endif; ?>
+										<?php if ($study24 == 1): ?>
+											<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+										<?php endif; ?>
 									</div>
-									<?php if ($reserveUrl != ""): ?>
-											<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
-									<?php endif; ?>
-									<?php if ($study24 == 1): ?>
-										<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
-									<?php endif; ?>
-									
-									<div class="info--study-space flex-container">
-										<div class="col-1">
+									<div class="study-space--info">
+										<div class="ss-1 ss-item">
 										
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
 												<?php if ($phone != ""): ?>
 												<?php echo $phone ?><br/>
 												<?php endif; ?>
-												Show on map: <a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
+												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
 												<?php if (get_the_title() !== 'Information Intersection at Stata Center'): ?>
 													<span class="hours">Open today<br/>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
@@ -128,31 +126,28 @@ get_header(); ?>
 										</div>
 
 										<?php if ($individual != ""): ?>
-										<div class="col-2">
+										<div class="ss-2 ss-item">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
 										
 										<?php if ($spaces != ""): ?>
-										<div class="col-3">
+										<div class="ss-3 ss-item last">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>
 										</div>
 										<?php endif; ?>
 									</div>
 								</div>
-							</li>
+							</li><!-- end li.study-space -->
 						<?php endwhile; // end of the loop. ?>					
-					</ul>
-					
-				</div>
-				<div class="col-2">
-					<?php get_sidebar(); ?>
-				</div>
-			</div><!-- end div.content-main -->		
-		</div>
-		
+					</ul><!-- end ul.list-study-spaces -->
+				</div><!-- end div.main-content.content-main -->
+				
+				<?php get_sidebar(); ?>
 
+			</div><!-- end div.content.has-sidebar -->		
+		</div><!-- end div#stage -->	
 
 <?php get_footer(); ?>

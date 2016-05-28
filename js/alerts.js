@@ -80,7 +80,7 @@ $(function mitlib_alerts(){
 					if (localStorage.getItem('alert_closed-' + alert_ID) !== 'true') {
 						// Append the template
 				  	$(alert_template).prependTo('.wrap-page');
-					$('.gldp-default').animate({"top":"262px"});
+					$('.gldp-default').animate({"top":"292px"});
 				  	// Remove the necessary transition class with a timeout, so that the animation shows.
 						setTimeout(function() {
 							$('.posts--preview--alerts').removeClass('transition-vertical--hide');

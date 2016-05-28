@@ -17,10 +17,7 @@ $isRoot = $section->ID == $post->ID;
 
 get_header(); ?>
 		<!-- Version 1.9 -->
-		<div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
-			<a href="/">Libraries home</a>
-			&raquo; <?php showBreadTitle(); ?>
-		</div>
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
 		<?php 
 			$objs = get_field("page_location");
