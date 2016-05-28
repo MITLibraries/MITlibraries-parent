@@ -23,10 +23,7 @@ get_header(); ?>
 		var showMap = <?php echo $showMap; ?>;
 	</script>	
 
-		<div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
-			<a href="/">Libraries home</a>
-			&raquo; <?php showBreadTitle(); ?>
-		</div>
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
 		<div id="stage" role="main">
 			<div class="title-page flex-container">
