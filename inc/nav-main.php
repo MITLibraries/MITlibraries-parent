@@ -19,7 +19,7 @@
 </div><!-- end hamburger icon -->
 <nav id="nav-main" class="nav-main flex-container">
   <div class="link-primary flex-container flex-end">
-    <a href="/search" class="no-underline">Search</a>
+    <a href="/search" class="no-underline search-link">Search<span class="screen-reader-text"> navigation menu</span></a>
         <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <h3 class="heading-col">Start here</h3>
