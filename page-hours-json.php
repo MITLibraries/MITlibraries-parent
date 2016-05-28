@@ -89,7 +89,9 @@ $thisWeek = date("Y-n-j");
 $alertTitle = cf("alert_title");
 $alertContent = cf("alert_content");
 
- ?>
+?>
+ 
+<?php get_template_part('inc/breadcrumbs'); ?>
 
 <div id="stage" class="hoursHeader inner hours group" role="main">
   <div class="title-page flex-container">

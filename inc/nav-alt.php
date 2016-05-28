@@ -93,7 +93,7 @@
 						<li><a href="/getit">Get it <span class="about">Understand your options</span></a></li>
 						<li><a href="http://libguides.mit.edu/circfaq">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a></li>
 						<li><a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a></li>
-						<li><a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Boston Library Consortium, etc.</span></a></li>							
+						<li><a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a></li>							
 				        </ul>
 	              </li>
 	           </ul>

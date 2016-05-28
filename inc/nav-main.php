@@ -19,7 +19,7 @@
 </div><!-- end hamburger icon -->
 <nav id="nav-main" class="nav-main flex-container">
   <div class="link-primary flex-container flex-end">
-    <a href="/search" class="no-underline">Search</a>
+    <a href="/search" class="no-underline search-link">Search<span class="screen-reader-text"> navigation menu</span></a>
         <div class="links-sub flex-container group">
       <div class="col-1 flex-item">
         <h3 class="heading-col">Start here</h3>
@@ -83,7 +83,7 @@
         <a href="/getit">Get it <span class="about">Understand your options</span></a>
         <a href="http://libguides.mit.edu/circfaq">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a>
         <a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
-        <a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Boston Library Consortium, etc.</span></a>
+        <a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a>
       </div>
     </div>
   </div>
@@ -125,6 +125,7 @@
         <a href="/events">Classes & events</a>
         <a href="/news">News</a>
         <a href="/exhibits">Exhibits &amp; galleries</a>
+        <a href="/in-the-media">In the media</a>
       </div>
     </div><!-- end div.links-sub -->
   </div><!-- end div.links-primary -->
