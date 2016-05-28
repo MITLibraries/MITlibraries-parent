@@ -487,11 +487,11 @@ img.wp-smiley,
 /* Body, links, basics */
 
 /* Assistive text */
-.assistive-text,
-.site .screen-reader-text {
+.assistive-text {
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
 }
+
 .main-navigation .assistive-text:hover,
 .main-navigation .assistive-text:active,
 .main-navigation .assistive-text:focus {
