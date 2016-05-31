@@ -29,12 +29,8 @@ endif;
 			<?php if (in_category('shortcrumb')) { ?>
 		<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
 			<?php } else { ?>
-
-		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
-			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
-		</div>
-		<?php } ?>
-
+		<?php get_template_part('inc/breadcrumbs'); ?>
+			<?php } ?>
 			
 			<?php while ( have_posts() ) : the_post(); ?>
 			
