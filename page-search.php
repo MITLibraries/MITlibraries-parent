@@ -11,33 +11,26 @@
  * @since 1.2.1
  */
 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
-$isRoot = $section->ID == $post->ID;
-
-
-
 get_header(); ?>
 
-		<div id="stage" class="inner column3 tertiaryPage" role="main">
+		<?php get_template_part('inc/search'); ?>
+		
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
-<?php get_template_part('inc/search'); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			
+		<div id="stage" class="inner" role="main">
 
-			<?php get_template_part('inc/breadcrumbs'); ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-			<div class="title-page">
-				<?php if ($isRoot): ?>
-				<h1><?php echo $section->post_title; ?></h1>
-				<?php else: ?>
-				<h1><a href="<?php echo get_permalink($section->ID) ?>"><?php echo $section->post_title; ?></a></h1>
-				<?php endif; ?>
+			<div id="content" class="content has-sidebar">
+				
+				<?php get_template_part( 'content', 'page' ); ?>
+				
+				<?php get_sidebar(); ?>
+			
 			</div>
-
-			<div class="content-main flex-container">
-				<?php get_template_part( 'content', 'pagefull' ); ?>
-			</div>
+			
 		</div>
+		
 		<?php endwhile; // end of the loop. ?>
-<?php get_footer(); ?>
+
+		<?php get_footer(); ?>

@@ -1,32 +1,49 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ *
+ * This is the template that displays single posts
  *
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
+ 
+$pageRoot = getRoot($post);
+$section = get_post($pageRoot);
+$isRoot = $section->ID == $post->ID;
+
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+<?php get_template_part('inc/breadcrumbs', 'child') ?>
+	
+<div id="stage" class="inner" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php get_template_part('inc/postHead'); ?>
+			
+		<div id="content" class="content has-sidebar">
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<div class="content-main main-content">			
+					
+					<?php while ( have_posts() ) : the_post(); ?>
+					
+						<div class="article-head">
 
-				<nav class="nav-single">
-					<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
-					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'twentytwelve' ) . '</span> %title' ); ?></span>
-					<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentytwelve' ) . '</span>' ); ?></span>
-				</nav><!-- .nav-single -->
+						<h2><?php the_title(); ?></h2>
+						
+						</div>
+						
+						<div class="entry-content">
+							<?php the_content(); ?>
+						</div>					
+								
+					
+									
+					<?php endwhile; // end of the loop. ?>
+				</div>
+				
+				<?php get_sidebar(); ?>					
+		</div>
+		
+</div><!-- end div#stage -->
 
-				<?php comments_template( '', true ); ?>
-
-			<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

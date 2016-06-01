@@ -85,13 +85,11 @@
 	$alertContent = cf("alert_content");
 ?>
 
-<div id="stage" class="inner row group" role="main">
-
 <div class="libraryAlertTop">
 <?php
 					include(locate_template('inc/alert.php'));
 					if ($showAlert == 0 && $alertTitle != "") {
-						echo '<div class="libraryAlert">'.'<div class="location--alerts flex-container"><svg class="icon-exclamation-circle width="2048" height="2048" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg"><path d="M1024 256q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm128 1247v-190q0-14-9-23.5t-22-9.5h-192q-13 0-23 10t-10 23v190q0 13 10 23t23 10h192q13 0 22-9.5t9-23.5zm-2-344l18-621q0-12-10-18-10-8-24-8h-220q-14 0-24 8-10 6-10 18l17 621q0 10 10 17.5t24 7.5h185q14 0 23.5-7.5t10.5-17.5z"/></svg>'.'<div class="alertText">'.'<h3>'.$alertTitle.'</h3>'.'<p>'.$alertContent.'</p>'.'</div>'.'</div>'.'</div>';
+						echo '<div class="libraryAlert">'.'<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>'.'<div class="alertText">'.'<h3>'.$alertTitle.'</h3>'.'<p>'.$alertContent.'</p>'.'</div>'.'</div>'.'</div>';
 					}
 				?>
 </div>				
@@ -125,22 +123,20 @@
 		<!-- </div> end div.flex-item -->
 <!--		<div class="flex-item"> -->
 			<div class="topRight">
-				<div class="librarySlideshow">
-					<div class="slideshow">
+				<div class="library-image">
 						<?php
 							$val = $arMain[array_rand($arMain)];
 						?>
 						<?php if ($val != ""): ?>
 						<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
 						<?php endif; ?>
-					</div>
-				</div><!-- end div.librarySlideshow -->
+				</div><!-- end div.library-image -->
 			</div><!-- end div.topRight -->
 		<!-- </div> end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 
-	<div class="content-main flex-container group <?php echo $strLocation; ?>">
-		<div class="col-1 content-page">
+	<div id="content" class="content <?php echo $strLocation; ?> has-sidebar">
+		<div class="main-content content-main">
 
 			<?php if ($title1 != "" || $title2 != ""): ?>
 				<?php $noTab = "";  ?>
@@ -180,12 +176,16 @@
 									}
 
 							?>
-							<div class="profile flex-container group">
+							<div class="profile-content">
 								<?php if ($thumb != ""):
 									echo $thumb;
 								endif; ?>
-								<div class="profileContent">
-									<h3 class="profileTitle"><span class="intro">Featured expert:</span><span class="name"><?php echo $name; ?></span><span class="bio"><?php echo $bio; ?></span></h3>
+								<div class="profile-content__body">
+									<h3>
+										<span class="intro">Featured expert</span>
+										<span class="name"><?php echo $name; ?></span>
+										<span class="bio"><?php echo $bio; ?></span>
+									</h3>
 									<div class="links">
 										<a class="primary" href="<?php echo $url; ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
 										<a href="/experts">See all our experts <i class="icon-arrow-right"></i></a>
@@ -232,9 +232,3 @@
 			</div><!-- end div.tabcontent -->
 
 		</div><!-- end div.col-1 -->
-
-		<div class="col-2">
-			<?php get_sidebar(); ?>
-		</div>
-
-</div><!-- end div#stage -->
