@@ -27,7 +27,7 @@ get_header();
 endif;
 ?>
 			<?php if (in_category('shortcrumb')) { ?>
-		<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
+			<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
 			<?php } else { ?>
 			<?php get_template_part('inc/breadcrumbs'); ?>
 			<?php } ?>
@@ -42,6 +42,8 @@ endif;
 			<?php get_template_part( 'inc/content','root'); ?>
 			<?php } ?>	
 			
+			<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+
 			<div id="content" class="content has-sidebar">
 		
 			<?php if (in_category('shortcrumb')) { ?>
@@ -52,8 +54,20 @@ endif;
 		
 			<?php get_sidebar(); ?>
 
-		</div>
+			</div><!-- end div.content.has-sidebar -->
+			
+			<?php } else { ?>
+
+			<div id="content" class="content">
+
+			<?php get_template_part( 'content', 'page' ); ?>
+
+			</div><!-- end div.content -->
+
+			<?php } ?>
 		
+		</div><!-- end div#stage -->
+				
 		<?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>
