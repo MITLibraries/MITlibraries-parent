@@ -78,17 +78,18 @@
 }
 
 .study-space--content {
-	flex: 1;
+	width: 100%;
 }
 
 .study-space-image  {
 	width: 150px;
 	height: 300px;
 	background-repeat: no-repeat; 
-	background-position: center center;
+	background-position: center 15px;
 	position: relative;
 	top: 0;
 	left: 0;
+	margin-left: 10px;
 	margin-right: 10px;
 }
 
