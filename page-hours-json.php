@@ -89,7 +89,9 @@ $thisWeek = date("Y-n-j");
 $alertTitle = cf("alert_title");
 $alertContent = cf("alert_content");
 
- ?>
+?>
+ 
+<?php get_template_part('inc/breadcrumbs'); ?>
 
 <div id="stage" class="hoursHeader inner hours group" role="main">
   <div class="title-page flex-container">
@@ -137,7 +139,7 @@ $alertContent = cf("alert_content");
 </script> 
 </div>
 <!--stage ends-->
-<div id="content" class="content-main">
+<div id="content">
   <div id="hourContent" class="content-page">
     <div id="hourNav-sticky-wrapper" class="sticky-wrapper" style="height: 0px;">
       <div id="hourNav" style="width: 1008px;">

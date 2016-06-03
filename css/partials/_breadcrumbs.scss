@@ -2,7 +2,7 @@
 	background: $color-secondary;
 	@include font-size(12px);
 	line-height: 1.5;
-	padding: 5px $margin-left;
+	padding: 5px 27.5px;
 	span {
 		display: block;
 		float: left;
@@ -17,12 +17,12 @@
 //
 // Begin old styles. Clean this stuff up, when time.
 //
-#breadcrumb {
+.breadcrumbs {
 	background: #eceaea;
 	clear: both; /* Fixes IE8 issue */
 	color: #666666;
 	font-size: 12px;
-	@include rem-first--4-values(padding, 0.5, 0.5, 0.5, 3);
+	padding: 8px 8px 8px 27.5px;;
 }
 
 .betterBreadcrumbs {
@@ -32,7 +32,7 @@
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
-	@include rem-first--4-values(padding, 0.5, 0.5, 0.5, 3);
+	padding: 8px 8px 8px 27.5px;;
 	span:not(:last-of-type):after {
 		content: '\00bb';
 		display: inline-block;

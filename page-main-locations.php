@@ -23,10 +23,7 @@ get_header(); ?>
 		var showMap = <?php echo $showMap; ?>;
 	</script>	
 
-		<div id="breadcrumb" class="inner" role="navigation" aria-label="breadcrumbs">
-			<a href="/">Libraries home</a>
-			&raquo; <?php showBreadTitle(); ?>
-		</div>
+		<?php get_template_part('inc/breadcrumbs'); ?>
 
 		<div id="stage" role="main">
 			<div class="title-page flex-container">
@@ -118,8 +115,8 @@ get_header(); ?>
 				<div id="map" class="map-locations"></div>
 			</div>
 			
-			<div class="content-main flex-container">
-				<div class="content-page col-1">
+			<div id="content" class="content has-sidebar">
+				<div class="main-content content-main">
 					<ul class="locations-main flex-container">
 						<?php
 							
@@ -170,8 +167,10 @@ get_header(); ?>
 							</li>	
 						<?php endwhile; // end of the loop. ?>					
 				</ul>
-					<h2 class="more-locations">More Locations</h2>
-					<ul class="locations-secondary flex-container">
+				
+				<h2 class="more-locations">More Locations</h2>
+				
+				<ul class="locations-secondary flex-container">
 					<?php
 						$args = array(
 							'post_type' => 'location',
@@ -217,14 +216,14 @@ get_header(); ?>
 						</li>
 					
 					<?php endwhile; // end of the loop. ?>					
-					</ul>
-					
-				</div>
-
-				<div class="col-2">
+				</ul>
+			</div>
+				
+					<div class="sidebar">
 					<a class="link-find-study-space button-primary--green full" href="/study/">Find a study space</a>
+					</div>
+					
 					<?php get_sidebar(); ?>
-				</div>
 		</div>		
 	</div>
 <?php get_footer(); ?>
