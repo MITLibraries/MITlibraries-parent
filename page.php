@@ -42,17 +42,21 @@ endif;
 			<?php get_template_part( 'inc/content','root'); ?>
 			<?php } ?>	
 			
-			<div id="content" class="content has-sidebar">
+			<div id="content" class="content <?php if (is_active_sidebar( 'sidebar-1' )) { echo "has-sidebar";} ?>">
 		
 			<?php if (in_category('shortcrumb')) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>
 			<?php } else { ?>				
 			<?php get_template_part( 'content', 'page' ); ?>
-			<?php } ?>				
-		
+			<?php } ?>
+							
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			<?php get_sidebar(); ?>
+			<?php endif; ?>
 
-		</div>
+			</div>
+		
+		</div><!-- end div#stage -->
 		
 		<?php endwhile; // end of the loop. ?>
 
