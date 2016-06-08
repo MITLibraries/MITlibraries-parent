@@ -71,10 +71,14 @@
 //
 
 .study-space {
-	display: flex;
-	align-items: flex-start;
+    display: -webkit-box; /* Safari */ 
+    display: -moz-box; /* Firefox 21- */
+    display: -ms-flexbox; /* IE 10+ */
+    display: -webkit-flex; /* Chrome */
+    display: flex; /* Standard (Firefox 22+) */
+   	align-items: flex-start;
 	width: 100%;
-	padding-top: 30px;
+	margin-bottom: 30px;
 }
 
 .study-space--content {
@@ -85,11 +89,10 @@
 	width: 150px;
 	height: 300px;
 	background-repeat: no-repeat; 
-	background-position: center 15px;
+	background-position: center;
 	position: relative;
 	top: 0;
 	left: 0;
-	margin-left: 10px;
 	margin-right: 10px;
 }
 
@@ -110,7 +113,7 @@
 }
 
 .study-space--info .ss-item {
-	flex: 1 0 calc(25% - 10px);
+	flex: 1 0% calc(25% - 10px);
 	box-sizing: border-box;
 	padding: 10px;
 	margin-left: 10px;
@@ -120,17 +123,34 @@
 
 .study-space--info .ss-item.last {
 	border-right: none;
+	padding-right: 0;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/* IE10+ CSS styles go here */
+	.study-space--info {
+		font-size: 12px;
+	}
+	
+	.study-space--info .ss-item {
+		max-width: 165px;
+		flex: none;
+		width: 30%;	
+	}
 }
 
 @media screen and (max-width:720px) {
 	.study-space {
 		flex-direction: column;
+		padding-top: 0;
 	}
 	
 	.study-space-image {
-			height: 200px;
-			min-width: 100% !important;
-			background-position: center top;
+		height: 200px;
+		min-width: 100% !important;
+		background-position: center top;
+		margin-left: 0;
+		margin-right: 0;
 	}
 	
 	.study-space--header,
@@ -141,6 +161,7 @@
 		padding: 10px 20px;
 		border-right: none;
 		margin-bottom: 0;
+		max-width: none;
 	}
 	
 	.study-space--info .ss-item.last {
