@@ -15,8 +15,8 @@
     width: 100%;
     a {
       width: 100%;
-      &.hover {
-	      color: #fff;
+      &:hover {
+	    color: #fff;
       }
     }
   }
@@ -147,6 +147,12 @@
                 inset -1px 0 0 gray,
                 inset 0 1px 0 gray;
 	  }
+	  &.no-underline {
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+			}
+		}
   }
   .col-1 {
     background: #fff;

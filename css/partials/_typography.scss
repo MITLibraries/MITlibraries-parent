@@ -39,11 +39,6 @@ a {
 		color: darken($color-link-primary, 20%);
 		text-decoration: underline;
 	}
-	&.no-underline {
-		&:hover {
-			text-decoration: none;
-		}
-	}
 }
 
 .caption {
