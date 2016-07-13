@@ -197,16 +197,6 @@ body:hover .visually-hidden button {
 display: none !important;
 }
 
-/* for screen readers */
-.hidden-text {
-position:absolute;
-left:-10000px;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;
-}
-
 body {
 	font-family: 'Open Sans', Helvetica, sans-serif !important;
 }
