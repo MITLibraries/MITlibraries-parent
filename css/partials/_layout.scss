@@ -129,6 +129,19 @@ html.no-js .js-hidden {
 	}
 }
 
+/* for screen readers */
+.sr {
+	border: 0 none;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+}
+
 @media screen and (max-width: 720px) {
 	.page-title {
 		display: block;
@@ -286,7 +299,6 @@ html.no-js .js-hidden {
 
 .content {
     margin-top: 36px;
-    clear: both;
       &:after {
 	  	content: '';
 	  	display: table;

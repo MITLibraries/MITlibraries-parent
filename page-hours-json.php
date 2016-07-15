@@ -403,16 +403,21 @@ $next = "";
     
     <!-- TABLE ENDS -->
     
-    <div class="locations-more">
-      <h3>Locations without hours</h3>
-      <h4><a href="/dirc">Digital Instruction Resource Center (DIRC)</a></h4>
-      <a href="/locations/#!digital-instruction-resource-center-dirc">Map:&nbsp; 14N-132</a>
-      <h4>Stata Center Book Drop</h4>
-      <a href="/locations/#!stata">Map:&nbsp;  32-Student Street</a> </div>
-  </div>
-  <!-- end div.content-page --> 
-  
-</div>
-<!-- end div.content-main -->
+		<div class="locations-more">
+			<h3>Locations without hours</h3>
+			<!-- DIRC -->
+			<h4><a href="/dirc">Digital Instruction Resource Center (DIRC)</a></h4>
+			<p><a href="/locations/#!digital-instruction-resource-center-dirc">Map:&nbsp; 14N-132</a></p>
+			<!-- STATA -->
+			<h4>Stata Center Book Drop</h4>
+			<p><a href="/locations/#!stata">Map:&nbsp;  32-Student Street</a></p>
+			<!-- Physics Reading Room -->
+			<h4>Physics Reading Room</h4>
+			<p>Building 4-332 | 617.253.1791<br>
+			<a href="mailto:jytqtran@mit.edu">Tan-Quy Tran</a>, Reading Room Assistant</p>
+		</div>  <!-- end div.locations-more -->
+
+	</div> <!-- end .content-page -->
+</div> <!-- end #content -->
 
 <?php get_footer(); ?>

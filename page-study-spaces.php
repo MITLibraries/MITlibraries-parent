@@ -27,6 +27,12 @@ get_header(); ?>
 				</div>
 			</div>
 			
+			<?php
+			if ( in_category( 'has-menu' ) ) {
+				get_template_part( 'inc/content', 'secmenu' );
+			}
+			?>
+						
 			<div id="content" class="content has-sidebar">
 				<div class="main-content content-main">
 					<?php the_content(); ?>
