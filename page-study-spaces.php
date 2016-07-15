@@ -27,9 +27,9 @@ get_header(); ?>
 				</div>
 			</div>
 			
-		<?php
-			if (in_category ('has-menu') ) {
-		get_template_part('inc/content', 'secmenu');
+			<?php
+			if ( in_category( 'has-menu' ) ) {
+				get_template_part( 'inc/content', 'secmenu' );
 			}
 			?>
 						
