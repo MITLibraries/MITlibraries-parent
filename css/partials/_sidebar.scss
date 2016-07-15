@@ -63,6 +63,42 @@
 			color: #338bc5;
 			font-size: 14px;
 		}
+		div span.instagram-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f16d" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.google-plus-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f0d5" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.pinterest-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f0d2" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.youtube-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f16a" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
 	}
 }
 
