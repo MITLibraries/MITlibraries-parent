@@ -119,10 +119,10 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style('hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0');
 	
-		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
+	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
 
-wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
-
+	wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
+	
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
@@ -135,6 +135,8 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
   wp_deregister_script('jquery');
   
   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
+  
+  wp_register_script('font-awesome', 'https://use.fontawesome.com/2873b047b1.js' , '', '', true);
 
   wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
 
@@ -176,6 +178,8 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 
 	wp_enqueue_script('lib-hours');
 
+	wp_enqueue_script('font-awesome');
+	
 	/* Page-specific JS & CSS */
 
 	if (!is_front_page() || is_child_theme()) {
