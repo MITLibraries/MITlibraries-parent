@@ -43,9 +43,7 @@ get_header(); ?>
 		if ( ! current_user_can( 'manage_options' ) ) {
 			include( get_query_template( '404' ) );
 			exit();
-		}
-
-		else {
+		} else {
 			?>
 			<h1>Admin Views</h1>
 			<h2>Template Pages List</h2>
@@ -63,8 +61,7 @@ get_header(); ?>
 				$blog_details = get_blog_details( $i );
 				if ( $blog_details == '' ) {
 					echo '<li>There is no blog '.$i.'</li>';
-				}
-				else {
+				} else {
 					echo '<li>Blog '.$blog_details->blog_id.' is called '.$blog_details->blogname.'.</li>';
 				}
 				}

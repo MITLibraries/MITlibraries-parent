@@ -17,8 +17,7 @@
 			if ( $alertLink != '' ) {
 				echo '<h1 class="alert"><a href="'.$alertLink.'">'.$alertText.'</a></h1>';
 				return;
-			}
-			else {
+			} else {
 				echo '<h1 class="alert">'.$alertText.'</h1>';
 				return;
 			}
@@ -28,8 +27,7 @@
 			if ( $alertLink != '' ) {
 				echo '<div class="libraryAlert"><span><a href="'.$alertLink.'">'.$alertText.'</a></span></div>';
 				return;
-			}
-			else {
+			} else {
 				echo '<div class="libraryAlert"><span>'.$alertText.'</span></div>';
 				return;
 			}
@@ -39,14 +37,11 @@
 		if ( $alertLink != '' ) {
 			echo '<div class="libraryAlert"><a href="'.$alertLink.'">'.$alertText.'</a></div>';
 			return;
-		}
-		else {
+		} else {
 			echo '<div class="libraryAlert">'.$alertText.'</div>';
 			return;
 		}
-}
-
-	else {
+} else {
 		return;
 	}
 

@@ -134,8 +134,7 @@ function twentytwelve_admin_header_image() {
 	<div id="headimg">
 		<?php
 		if ( ! display_header_text() ) {
-			$style = ' style="display:none;"'; }
-		else {
+			$style = ' style="display:none;"'; } else {
 			$style = ' style="color:#' . get_header_textcolor() . ';"'; }
 		?>
 		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>

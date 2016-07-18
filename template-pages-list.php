@@ -44,9 +44,7 @@ get_header(); ?>
 		if ( ! current_user_can( 'manage_options' ) ) {
 			include( get_query_template( '404' ) );
 			exit();
-		}
-
-		else {
+		} else {
 			?>
 			<ul>
 				<?php

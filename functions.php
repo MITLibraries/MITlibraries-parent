@@ -634,8 +634,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 	if ( is_single() ) {
 	the_category( ', ' );
 echo $SEP;
-	}
-	elseif ( is_page() ) {
+	} elseif ( is_page() ) {
 			$parent_id = $post->post_parent;
 			$parents = array();
 			while ( $parent_id ) {
