@@ -13,14 +13,14 @@
 	<h2><a href="/news">News &amp; events</a></h2>
 		
 	<?php
-		$newsTitle = get_field('news_title');
-		$newsVideo = get_field('news_video');
-		$newsVideoTitle = get_field('news_video_link_text');
-		$newsVideoURL = get_field('news_video_url');
-		$newsPhoto = get_field('news_photo');
-		$newsUrl = get_field('news_photo_url');
+		$newsTitle = get_field( 'news_title' );
+		$newsVideo = get_field( 'news_video' );
+		$newsVideoTitle = get_field( 'news_video_link_text' );
+		$newsVideoURL = get_field( 'news_video_url' );
+		$newsPhoto = get_field( 'news_photo' );
+		$newsUrl = get_field( 'news_photo_url' );
 		
-		$newsFeedCount = get_field('news_feed_number');
+		$newsFeedCount = get_field( 'news_feed_number' );
 		
 		$numNews = 3;
 		
@@ -28,8 +28,8 @@
 
 		
 		for($i=1;$i<=$numNews;$i++) {
-			$nTitle = get_field('news_'.$i);
-			$nUrl = get_field('news_'.$i.'_url');
+			$nTitle = get_field( 'news_'.$i );
+			$nUrl = get_field( 'news_'.$i.'_url' );
 			
 			if ($nTitle != '' && $nUrl != '') {
 				$arNews[] = array(
@@ -98,7 +98,7 @@
 		<!-- Auto links -->
 		<?php
 			if ($newsFeedCount > 0):
-				if ($newsBlog) switch_to_blog($newsBlog);
+				if ($newsBlog) switch_to_blog( $newsBlog );
 					$args = array(
 					'post_type' => 'post',
 					'posts_per_page' => $newsFeedCount

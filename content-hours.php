@@ -6,28 +6,28 @@
  * @since 1.2.1
  */
 
-			$subject = cf('subject');
-			$phone = cf('phone');
-			$building = cf('building');
-			$spaces = cf('group_spaces');
-			$equipment = cf('equipment');
-			$arexpert = get_field('expert');
+			$subject = cf( 'subject' );
+			$phone = cf( 'phone' );
+			$building = cf( 'building' );
+			$spaces = cf( 'group_spaces' );
+			$equipment = cf( 'equipment' );
+			$arexpert = get_field( 'expert' );
 			
-			$title1 = cf('tab_1_title');
-			$subtitle1 = cf('tab_1_subtitle');
-			$content1left = get_field('tab_1_content_left');
-			$content1 = get_field('tab_1_content');
+			$title1 = cf( 'tab_1_title' );
+			$subtitle1 = cf( 'tab_1_subtitle' );
+			$content1left = get_field( 'tab_1_content_left' );
+			$content1 = get_field( 'tab_1_content' );
 			
-			$title2 = cf('tab_2_title');
-			$subtitle2 = cf('tab_2_subtitle');
-			$content2left = get_field('tab_2_content_left');
-			$content2 = get_field('tab_2_content');
+			$title2 = cf( 'tab_2_title' );
+			$subtitle2 = cf( 'tab_2_subtitle' );
+			$content2left = get_field( 'tab_2_content_left' );
+			$content2 = get_field( 'tab_2_content' );
 			
-			$displayPage = get_field('display_page');
+			$displayPage = get_field( 'display_page' );
 			$pageID = $displayPage->ID;
-			$pageLink = get_permalink($pageID);
+			$pageLink = get_permalink( $pageID );
 			
-			$alert = get_field('alert');
+			$alert = get_field( 'alert' );
 		?>
 		
 		<div id="stage" class="inner">
@@ -47,12 +47,12 @@
 				
 				<div class="librarySlideshow">
 					<div class="slideshow">
-						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-01.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-01.jpg" alt="Rotch Library" />
-						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-02.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-02.jpg" alt="Rotch Library" />
-						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-03.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-03.jpg" alt="Rotch Library" />
-						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-04.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-04.jpg" alt="Rotch Library" />
-						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-05.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-05.jpg" alt="Rotch Library" />
-						<img src="<?php bloginfo('template_directory') ?>/images/content/rotch-06.jpg" data-thumb="<?php bloginfo('template_directory') ?>/images/content/rotch-thumb-06.jpg" alt="Rotch Library" />
+						<img src="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-01.jpg" data-thumb="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-thumb-01.jpg" alt="Rotch Library" />
+						<img src="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-02.jpg" data-thumb="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-thumb-02.jpg" alt="Rotch Library" />
+						<img src="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-03.jpg" data-thumb="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-thumb-03.jpg" alt="Rotch Library" />
+						<img src="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-04.jpg" data-thumb="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-thumb-04.jpg" alt="Rotch Library" />
+						<img src="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-05.jpg" data-thumb="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-thumb-05.jpg" alt="Rotch Library" />
+						<img src="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-06.jpg" data-thumb="<?php bloginfo( 'template_directory' ) ?>/images/content/rotch-thumb-06.jpg" alt="Rotch Library" />
 					</div>
 					<div id="slideshowNav">
 						
@@ -95,17 +95,17 @@
 								
 									<?php
 										if ($arexpert) {
-											$expertIndex = array_rand($arexpert);
+											$expertIndex = array_rand( $arexpert );
 											$expert = $arexpert[$expertIndex];
 											
 											
 											$name = $expert->post_title;
 											$bio = $expert->post_excerpt;
 											//$url = $expert->guid;
-											$url = get_post_meta($expert->ID, 'expert_url', 1);
+											$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 											
-											if (has_post_thumbnail($expert->ID)) {
-												$thumb = get_the_post_thumbnail($expert->ID, array(108,108));
+											if (has_post_thumbnail( $expert->ID )) {
+												$thumb = get_the_post_thumbnail( $expert->ID, array(108,108) );
 											} else {
 												$thumb = '';
 											}

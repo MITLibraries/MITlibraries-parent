@@ -6,19 +6,19 @@
  * @since 1.2.1
  */
  
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 
 get_header(); ?>
 
-		<?php get_template_part('inc/breadcrumbs'); ?>
+		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 		<?php
-			$rssLink = get_field('rss_link');
-			$rssScript = get_field('rss_script');
+			$rssLink = get_field( 'rss_link' );
+			$rssScript = get_field( 'rss_script' );
 		?>
 		
 		<div id="stage" class="stage inner border-box group" role="main">

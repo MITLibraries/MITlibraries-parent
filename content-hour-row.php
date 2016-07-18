@@ -14,20 +14,20 @@
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 							
-							$subject = cf('subject');
-							$phone = cf('phone');
-							$building = cf('building');
-							$study24 = get_field('study_24');
+							$subject = cf( 'subject' );
+							$phone = cf( 'phone' );
+							$building = cf( 'building' );
+							$study24 = get_field( 'study_24' );
 							
-							$noHours = cf('no_hours');
+							$noHours = cf( 'no_hours' );
 							
-							$displayPage = get_field('display_page');
+							$displayPage = get_field( 'display_page' );
 							$pageID = $displayPage->ID;
-							$pageLink = get_permalink($pageID);
+							$pageLink = get_permalink( $pageID );
 							
 							$temp = $post;
 
-							$hasHours = hasHours($locationId, date('Y-m-d', $today));
+							$hasHours = hasHours( $locationId, date( 'Y-m-d', $today ) );
 							//$hasHours = 1;
 							//$hoursToday = getHoursToday($locationId);
 							//$isOpen = getOpen($locationId);
@@ -35,7 +35,7 @@
 							
 							$showSpecial = 1;
 							$showMobileSpecial = 1;
-							$alert = trim(get_field('alert'));
+							$alert = trim( get_field( 'alert' ) );
 							
 							//if ($hasHours && $noHours != 1): 
 							if ($noHours != 1): 
@@ -71,15 +71,15 @@
 											
 											//echo "S: ".date("Y-m-d", $today)." ";
 											
-											$message = getMessageDay($locationId, $today);
+											$message = getMessageDay( $locationId, $today );
 											
 											if ($message != '' ) {
 												
 												if ($showMobileSpecial == 1) {
 													$showMobileSpecial = 0;
 																							
-													$msgStart = strtotime($message['start']);
-													$msgEnd = strtotime($message['end']);
+													$msgStart = strtotime( $message['start'] );
+													$msgEnd = strtotime( $message['end'] );
 													$msgName = $message['name'];
 													
 													$msgClass = 'message'; 
@@ -101,16 +101,16 @@
 														$msgClass .= ' msgEnds';
 													}
 													
-													$end = min($msgEnd, $arDays[6]);
+													$end = min( $msgEnd, $arDays[6] );
 													
-													$diff = floor(($end - $curDay)/(60*60*24))+1;
+													$diff = floor( ($end - $curDay)/(60*60*24) )+1;
 													
 													$msgClass .= ' msgSpan'.$diff;
 												
 													echo "<div class='tdInside'><div class='$msgClass'>$msgName</div></div>";
 												}
 											} else {
-												echo getMobileHoursDay($locationId, $curDay);
+												echo getMobileHoursDay( $locationId, $curDay );
 											}
 											$post = $temp;												
 										?>
@@ -144,7 +144,7 @@
 								
 								//echo "B: ".date("Y-m-d", $curDay)." ";
 								
-								$message = getMessageDay($locationId, $curDay);
+								$message = getMessageDay( $locationId, $curDay );
 								
 								//print_r($message);
 								
@@ -154,8 +154,8 @@
 										
 										$showSpecial = 0;
 																				
-										$msgStart = strtotime($message['start']);
-										$msgEnd = strtotime($message['end']);
+										$msgStart = strtotime( $message['start'] );
+										$msgEnd = strtotime( $message['end'] );
 										$msgName = $message['name'];
 										
 										$msgClass = 'message'; 
@@ -177,17 +177,17 @@
 											$msgClass .= ' msgEnds';
 										}
 										
-										$end = min($msgEnd, $arDays[6]);
+										$end = min( $msgEnd, $arDays[6] );
 										
-										$diff = floor(($end - $curDay)/(60*60*24))+1;
+										$diff = floor( ($end - $curDay)/(60*60*24) )+1;
 										
 										$msgClass .= ' msgSpan'.$diff;
 									
 										echo "<div class='tdInside'><div class='$msgClass'>$msgName</div></div>";
 									}
 								} else {
-									echo "<div class='mobileHourDay'><b>".date('D', $curDay).'<br/>'.date('n/j', $curDay).'</b><br/>'.getMobileHoursDay($locationId, $curDay).'</div>';
-									echo "<div class='fullHourDay'>".getHoursDay($locationId, $curDay).'</div>';
+									echo "<div class='mobileHourDay'><b>".date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ).'</b><br/>'.getMobileHoursDay( $locationId, $curDay ).'</div>';
+									echo "<div class='fullHourDay'>".getHoursDay( $locationId, $curDay ).'</div>';
 								}
 								$post = $temp;									
 								?>	

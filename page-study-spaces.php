@@ -11,13 +11,13 @@
  * @since 1.2.1
  */
  
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 
 
 get_header(); ?>
 
-		<?php get_template_part('inc/breadcrumbs'); ?>
+		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<div id="stage" class="inner" role="main">
 			<div class="title-page flex-container">
@@ -56,37 +56,37 @@ get_header(); ?>
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 							
-							$subject = get_field('subject');
-							$phone = get_field('phone');
-							$building = get_field('building');
-							$spaces = get_field('group_spaces');
-							$individual = get_field('individual_spaces');
+							$subject = get_field( 'subject' );
+							$phone = get_field( 'phone' );
+							$building = get_field( 'building' );
+							$spaces = get_field( 'group_spaces' );
+							$individual = get_field( 'individual_spaces' );
 							
-							$equipment = get_field('equipment');
-							$expert = get_field('expert');
+							$equipment = get_field( 'equipment' );
+							$expert = get_field( 'expert' );
 							
-							$title1 = get_field('tab_1_title');
-							$subtitle1 = get_field('tab_1_subtitle');
-							$content1 = get_field('tab_1_content');
+							$title1 = get_field( 'tab_1_title' );
+							$subtitle1 = get_field( 'tab_1_subtitle' );
+							$content1 = get_field( 'tab_1_content' );
 							
-							$title2 = get_field('tab_2_title');
-							$subtitle2 = get_field('tab_2_subtitle');
-							$content2 = get_field('tab_2_content');	
+							$title2 = get_field( 'tab_2_title' );
+							$subtitle2 = get_field( 'tab_2_subtitle' );
+							$content2 = get_field( 'tab_2_content' );	
 
-							$studyImage = get_field('study_space_image');
+							$studyImage = get_field( 'study_space_image' );
 							
-							$study24 = get_field('study_24');
-							$reserveText = get_field('reserve_text');
+							$study24 = get_field( 'study_24' );
+							$reserveText = get_field( 'reserve_text' );
 							if ($reserveText == '') {
 								$reserveText = 'Reserve Group Study Space';
 							}
-							$reserveUrl = get_field('reserve_url');
+							$reserveUrl = get_field( 'reserve_url' );
 
 
 							
-							$displayPage = get_field('display_page');
+							$displayPage = get_field( 'display_page' );
 							$pageID = $displayPage->ID;
-							$pageLink = get_permalink($pageID);
+							$pageLink = get_permalink( $pageID );
 							
 							$description = get_the_content();
 							

@@ -6,10 +6,10 @@
  * @since 1.2.1
  */
 
-	$frontpage_id = get_option('page_on_front');
-	$showAlert = get_post_meta($frontpage_id, 'show_alert', true);
-	$alertText = trim(get_post_meta($frontpage_id, 'alert_text', true));
-	$alertLink = trim(get_post_meta($frontpage_id, 'alert_link', true));
+	$frontpage_id = get_option( 'page_on_front' );
+	$showAlert = get_post_meta( $frontpage_id, 'show_alert', true );
+	$alertText = trim( get_post_meta( $frontpage_id, 'alert_text', true ) );
+	$alertLink = trim( get_post_meta( $frontpage_id, 'alert_link', true ) );
 
 	if ($showAlert == 1 && $alertText != '') {
 
@@ -24,7 +24,7 @@
 			}
 		}
 
-		if(is_page('hours')) {
+		if(is_page( 'hours' )) {
 			if ($alertLink != '') {
 				echo '<div class="libraryAlert"><span><a href="'.$alertLink.'">'.$alertText.'</a></span></div>';
 				return;

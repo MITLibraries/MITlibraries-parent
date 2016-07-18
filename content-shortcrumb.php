@@ -12,8 +12,8 @@ global $isRoot;
  
 ?>
 
-	<?php if (in_category('has-menu')) { ?>
-		<?php get_template_part('inc/content', 'secmenu'); ?>
+	<?php if (in_category( 'has-menu' )) { ?>
+		<?php get_template_part( 'inc/content', 'secmenu' ); ?>
 			<?php } ?>
 
 			<div class="main-content content-main">

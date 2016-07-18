@@ -11,8 +11,8 @@
  * @since 1.2.1
  */
 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 if (!$_GET['d']) {
   $inDate = 'Now';
 } else {
@@ -23,13 +23,13 @@ get_header();
 
 $nextMon = 'next monday';
 
-$dt = strtotime($inDate);
-$dtMo = date('n', $dt);
-$dtDay = date('j', $dt);
-$dtYear = date('Y', $dt);
-$dtISOYear = date('o', $dt);
-$dtWeek = date('W', $dt);
-$dtWeekday = date('N', $dt);
+$dt = strtotime( $inDate );
+$dtMo = date( 'n', $dt );
+$dtDay = date( 'j', $dt );
+$dtYear = date( 'Y', $dt );
+$dtISOYear = date( 'o', $dt );
+$dtWeek = date( 'W', $dt );
+$dtWeekday = date( 'N', $dt );
 
 ?>
 <link rel='stylesheet' id='hours-css'  href='/wp-content/themes/libraries/libs/datepicker/styles/glDatePicker.default.css' type='text/css' media='all' />
@@ -42,29 +42,29 @@ $dtWeekday = date('N', $dt);
 <?php
 
 //$today = strtotime($dtYear."W".$dtWeek.$dtWeekday);
-$today = strtotime($inDate);
-$dtTodayMo = date('n');
-$dtTodayDay = date('j');
-$dtTodayYear = date('Y');
-$dtTodayWeek = date('W');
-$dtTodayWeekday = date('N');
+$today = strtotime( $inDate );
+$dtTodayMo = date( 'n' );
+$dtTodayDay = date( 'j' );
+$dtTodayYear = date( 'Y' );
+$dtTodayWeek = date( 'W' );
+$dtTodayWeekday = date( 'N' );
 
 
-$now = strtotime($dtTodayYear.'W'.$dtTodayWeek.$dtTodayWeekday);
+$now = strtotime( $dtTodayYear.'W'.$dtTodayWeek.$dtTodayWeekday );
 
-$wk = date('W', $dt);
+$wk = date( 'W', $dt );
 
 if ($wk == '01' && $dtMo == '12') {
   $dtYear++;
 } 
 
-$mon = strtotime($dtISOYear.'W'.$wk.'1');
-$tue = strtotime($dtISOYear.'W'.$wk.'2');
-$wed = strtotime($dtISOYear.'W'.$wk.'3');
-$thu = strtotime($dtISOYear.'W'.$wk.'4');
-$fri = strtotime($dtISOYear.'W'.$wk.'5');
-$sat = strtotime($dtISOYear.'W'.$wk.'6');
-$sun = strtotime($dtISOYear.'W'.$wk.'7');
+$mon = strtotime( $dtISOYear.'W'.$wk.'1' );
+$tue = strtotime( $dtISOYear.'W'.$wk.'2' );
+$wed = strtotime( $dtISOYear.'W'.$wk.'3' );
+$thu = strtotime( $dtISOYear.'W'.$wk.'4' );
+$fri = strtotime( $dtISOYear.'W'.$wk.'5' );
+$sat = strtotime( $dtISOYear.'W'.$wk.'6' );
+$sun = strtotime( $dtISOYear.'W'.$wk.'7' );
 
 $arDays = array();
 
@@ -82,16 +82,16 @@ $dfDowMobile = 'M \<\b\r\\/> j';
 
 $path = get_permalink();
 
-$prevWeek = date('Y-n-j', strtotime('-7 day', $today));
-$nextWeek = date('Y-n-j', strtotime('+7 day', $today));
-$thisWeek = date('Y-n-j');
+$prevWeek = date( 'Y-n-j', strtotime( '-7 day', $today ) );
+$nextWeek = date( 'Y-n-j', strtotime( '+7 day', $today ) );
+$thisWeek = date( 'Y-n-j' );
 
-$alertTitle = cf('alert_title');
-$alertContent = cf('alert_content');
+$alertTitle = cf( 'alert_title' );
+$alertContent = cf( 'alert_content' );
 
 ?>
  
-<?php get_template_part('inc/breadcrumbs'); ?>
+<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 <div id="stage" class="hoursHeader inner hours group" role="main">
   <div class="title-page flex-container">
@@ -164,46 +164,46 @@ tr:nth-child(even) td {
       <th class="name">Locations</th>
         <?php $next = ''; ?>
         <?php $i = 0; $day = $arDays[$i]; ?>
-        <th class="fullDay firstDisplay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay firstDisplay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 1; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 2; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 3; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 4; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 5; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 6; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
           </thead>
         </tr>
@@ -227,7 +227,7 @@ $mapPage = '/locations/#!';
 ?>
         <tr data-location="<?php the_title(); ?>">
           <td width="260" class="name"><div class="nameHolder">
-              <h3> <a href="<?php $post_object = get_field('display_page');
+              <h3> <a href="<?php $post_object = get_field( 'display_page' );
               if( $post_object ): 
           // dont even ask why
             $post = $post_object;
@@ -238,19 +238,19 @@ $mapPage = '/locations/#!';
                 </a></h3>
               <?php wp_reset_postdata();  ?>
               <?php endif; ?>
-              <?php the_field('phone', $locationId); ?>
+              <?php the_field( 'phone', $locationId ); ?>
               <br />
               <a class="map" href="<?php echo $mapPage.$slug; ?>">Map:&nbsp;
-              <?php  the_field('building', $locationId); ?>
+              <?php  the_field( 'building', $locationId ); ?>
               </a>
-              <?php if(get_field('study_24', $locationId)){ ?>
+              <?php if(get_field( 'study_24', $locationId )){ ?>
               <span class="hidden">|</span> <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
               <?php } ?>
-              <?php if(get_field('alert_title', $locationId)){ ?>
+              <?php if(get_field( 'alert_title', $locationId )){ ?>
               <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
 	              <div class="alertText">
-              <div class="la-title"><?php the_field('alert_title', $locationId); ?></div>
-                <?php the_field('alert_content', $locationId); ?>
+              <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
+                <?php the_field( 'alert_content', $locationId ); ?>
               </div>
               </div>
               <?php } ?>
@@ -267,7 +267,7 @@ $mapPage = '/locations/#!';
         $next = '';
       }
     ?>
-          <td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date('D', $curDay).'<br/>'.date('n/j', $curDay); ?></span></td>
+          <td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ); ?></span></td>
           <?php } ?>
         </tr>
         <?php wp_reset_postdata(); endwhile;    ?>
@@ -277,46 +277,46 @@ $mapPage = '/locations/#!';
       <th class="name">More Locations</th>
         <?php $next = ''; ?>
         <?php $i = 0; $day = $arDays[$i]; ?>
-        <th class="fullDay firstDisplay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay firstDisplay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 1; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 2; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 3; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 4; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 5; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
         <?php $i = 6; $day = $arDays[$i]; ?>
-        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date('l', $day); ?>
-          <div class='date'><?php echo date($dfDow, $day);?></div>
-          </span> <span class="mobileDay"><?php echo date('D', $day); ?>
-          <div class='date'><?php echo date($dfDowMobile, $day);?></div>
+        <th class="fullDay <?php echo $next; $next=''; if ($now == $day) { echo 'cur'; $next='curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
+          <div class='date'><?php echo date( $dfDow, $day );?></div>
+          </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
+          <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
           </tr>
           </thead>
@@ -353,9 +353,9 @@ $mapPage = '/locations/#!';
           
     
 <?php 
-$displayPage = get_field('display_page');
+$displayPage = get_field( 'display_page' );
 $pageID = $displayPage->ID;
-$pageLink = get_permalink($pageID);
+$pageLink = get_permalink( $pageID );
               ?>
 <h3><a href="<?php echo $pageLink; ?>"><?php the_title(); ?></a></h3>
   
@@ -363,19 +363,19 @@ $pageLink = get_permalink($pageID);
               
               
               
-            <?php the_field('phone', $locationId); ?>
+            <?php the_field( 'phone', $locationId ); ?>
             <br />
             <a class="map" href="<?php echo $mapPage.$slug; ?>">Map:&nbsp;
-            <?php  the_field('building', $locationId); ?>
+            <?php  the_field( 'building', $locationId ); ?>
             </a>
-            <?php if(get_field('study_location', $locationId)){ ?>
+            <?php if(get_field( 'study_location', $locationId )){ ?>
             <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7"> | Study 24/7</a>
             <?php } ?>
-              <?php if(get_field('alert_title', $locationId)){ ?>
+              <?php if(get_field( 'alert_title', $locationId )){ ?>
               <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
 	              <div class="alertText">
-              <div class="la-title"><?php the_field('alert_title', $locationId); ?></div>
-                <?php the_field('alert_content', $locationId); ?>
+              <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
+                <?php the_field( 'alert_content', $locationId ); ?>
               </div>
               </div>
               <?php } ?>
@@ -392,7 +392,7 @@ $class = $next;
 $next = '';
 }
 ?>
-        <td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date('D', $curDay).'<br/>'.date('n/j', $curDay); ?></span></td>
+        <td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ); ?></span></td>
         <?php } ?>
       </tr>
        <?php wp_reset_postdata();  ?>

@@ -10,8 +10,8 @@
  * @since 1.2.1
  */
 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 
@@ -27,20 +27,20 @@ get_header(); ?>
       'hierarchical' => 0
 	);
 
-	$template_pages = get_pages($template_page_args);
+	$template_pages = get_pages( $template_page_args );
 	
 	$template_query_args = array (
 		'meta_key' => '_wp_page_template',
 		'meta_value' => 'page-full.php'
 	);
 	
-	$template_queries = get_pages($template_query_args);
+	$template_queries = get_pages( $template_query_args );
 
 	?>
 
 	<?php
 
-		if(!current_user_can('manage_options')) {
+		if(!current_user_can( 'manage_options' )) {
 			include( get_query_template( '404' ) );
 			exit();
 		}
@@ -60,7 +60,7 @@ get_header(); ?>
 			<ul>
 			<?php
 				for ($i = 1; $i <= 30; $i++) {
-    			$blog_details = get_blog_details($i);
+    			$blog_details = get_blog_details( $i );
     			if ($blog_details == '') {
     				echo '<li>There is no blog '.$i.'</li>';
     			}

@@ -24,7 +24,7 @@
 				<div class="debug">
 		<?php
 			// switch to news blog
-			switch_to_blog(7);
+			switch_to_blog( 7 );
 
 			/*
 			$foo = get_blog_details(7);
@@ -49,7 +49,7 @@
 				'ignore_sticky_posts' => 1
 				);
 			$the_stories = null;
-			$the_stories = new WP_Query($args);
+			$the_stories = new WP_Query( $args );
 
 			if( $the_stories->have_posts() ) {
 				while ( $the_stories->have_posts() ) : $the_stories->the_post();
@@ -58,7 +58,7 @@
 					// var_dump($custom);
 
 					// URL
-					$url = get_permalink($post->id);
+					$url = get_permalink( $post->id );
 					// echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>';
 					// echo 'post: ' . post_permalink($post->id) . '<br>';
 
@@ -66,9 +66,9 @@
 					$imageTag = '';
 					if($post->post_type === 'post' || $post->post_type === 'bibliotech') {
 						if($custom['homeImg'][0] != '') {
-							$image = json_decode($custom['homeImg'][0]);
-							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
-							$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
+							$image = json_decode( $custom['homeImg'][0] );
+							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original' );
+							$imageURL = str_replace( '/wp-content/uploads/','/news/files/',$imageURL[0] );
 							$imageTag = '<img src="' . $imageURL . '" alt="">';
 						}
 					}
@@ -96,8 +96,8 @@
 
 					// card date
 					if($post->post_type === 'post' && $post->is_event[0] === '1') {
-						$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
-						$eventDate = '<span class="date">' . date_format($eventDate,'F j') . '</span>';
+						$eventDate = DateTime::createFromFormat( 'Ymd',$post->event_date );
+						$eventDate = '<span class="date">' . date_format( $eventDate,'F j' ) . '</span>';
 						if($post->event_start_time != '') {
 							$eventDate = $eventDate . ' ' . $post->event_start_time;
 						};
@@ -135,14 +135,14 @@
 					echo '<div class="control" style="background-color:#fdd;">';
 					echo '<span>Post metadata</span><br>';
 					echo '<pre class="toggle meta">';
-					var_dump($post);
+					var_dump( $post );
 					echo '</pre>';
 					echo '</div>';
 
 					echo '<div class="control" style="background-color:#dfd;">';
 					echo '<span>Custom values</span><br>';
 					echo '<pre class="toggle meta">';
-					var_dump($custom);
+					var_dump( $custom );
 					echo '</pre>';
 					echo '</div>';
 

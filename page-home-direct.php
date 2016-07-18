@@ -6,9 +6,9 @@
  * @since 1.2.1
  */
 
-	get_header('home');
+	get_header( 'home' );
 
-	get_template_part('inc/search');
+	get_template_part( 'inc/search' );
 ?>
 
 	<div class="content-main flex-container">

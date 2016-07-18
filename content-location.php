@@ -13,23 +13,23 @@
 	$locationId = get_the_ID();
 	$slug = $post->post_name;
 
-	$subject = cf('subject');
-	$phone = cf('phone');
-	$email = cf('email');
-	$building = cf('building');
-	$spaces = cf('group_spaces');
+	$subject = cf( 'subject' );
+	$phone = cf( 'phone' );
+	$email = cf( 'email' );
+	$building = cf( 'building' );
+	$spaces = cf( 'group_spaces' );
 	//$equipment = cf("equipment");
-	$arexpert = get_field('expert');
+	$arexpert = get_field( 'expert' );
 
-	$title1 = cf('tab_1_title');
-	$subtitle1 = cf('tab_1_subtitle');
-	$content1left = get_field('tab_1_content_left');
-	$content1 = get_field('tab_1_content');
+	$title1 = cf( 'tab_1_title' );
+	$subtitle1 = cf( 'tab_1_subtitle' );
+	$content1left = get_field( 'tab_1_content_left' );
+	$content1 = get_field( 'tab_1_content' );
 
-	$title2 = cf('tab_2_title');
-	$subtitle2 = cf('tab_2_subtitle');
-	$content2left = get_field('tab_2_content_left');
-	$content2 = get_field('tab_2_content');
+	$title2 = cf( 'tab_2_title' );
+	$subtitle2 = cf( 'tab_2_subtitle' );
+	$content2left = get_field( 'tab_2_content_left' );
+	$content2 = get_field( 'tab_2_content' );
 
 	$content2wide = 0;
 	if ($content2 == '') $content2wide = 1;
@@ -37,21 +37,21 @@
 	$content1wide = 0;
 	if ($content1 == '') $content1wide = 1;
 
-	$study24 = get_field('study_24');
+	$study24 = get_field( 'study_24' );
 
 	$temp = $post;
 	$post = $temp;
 
 
-	$reserveText = get_field('reserve_text');
+	$reserveText = get_field( 'reserve_text' );
 	if ($reserveText == '') {
 		$reserveText = 'Reserve Group Study Space';
 	}
-	$reserveUrl = get_field('reserve_url');
+	$reserveUrl = get_field( 'reserve_url' );
 
 
 
-	$expertAskUrl = get_field('expert_ask_url');
+	$expertAskUrl = get_field( 'expert_ask_url' );
 	if ($expertAskUrl == '') $expertAskUrl = 'http://libraries.mit.edu/ask';
 
 
@@ -59,7 +59,7 @@
 	$arMain = array();
 
 	for($i=1;$i<=$numMain;$i++) {
-		$img = get_field('main_image'.$i, $locationId);
+		$img = get_field( 'main_image'.$i, $locationId );
 		if ($img != '')
 			$arMain[] = $img;
 	}
@@ -68,7 +68,7 @@
 	$arSub = array();
 	$subs = 0;
 	for($i=1;$i<=$numSub;$i++) {
-		$img = get_field('sub_image'.$i, $locationId);
+		$img = get_field( 'sub_image'.$i, $locationId );
 		if ($img != '') {
 			$subs++;
 			$arSub[] = $img;
@@ -81,13 +81,13 @@
 	}
 
 
-	$alertTitle = cf('alert_title');
-	$alertContent = cf('alert_content');
+	$alertTitle = cf( 'alert_title' );
+	$alertContent = cf( 'alert_content' );
 ?>
 
 <div class="libraryAlertTop">
 <?php
-					include(locate_template('inc/alert.php'));
+					include( locate_template( 'inc/alert.php' ) );
 					if ($showAlert == 0 && $alertTitle != '') {
 						echo '<div class="libraryAlert">'.'<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>'.'<div class="alertText">'.'<h3>'.$alertTitle.'</h3>'.'<p>'.$alertContent.'</p>'.'</div>'.'</div>'.'</div>';
 					}
@@ -125,7 +125,7 @@
 			<div class="topRight">
 				<div class="library-image">
 						<?php
-							$val = $arMain[array_rand($arMain)];
+							$val = $arMain[array_rand( $arMain )];
 						?>
 						<?php if ($val != ''): ?>
 						<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
@@ -160,17 +160,17 @@
 
 							<?php
 								if ($arexpert) {
-									$expertIndex = array_rand($arexpert);
+									$expertIndex = array_rand( $arexpert );
 									$expert = $arexpert[$expertIndex];
 
 
 									$name = $expert->post_title;
 									$bio = $expert->post_excerpt;
 									//$url = $expert->guid;
-									$url = get_post_meta($expert->ID, 'expert_url', 1);
+									$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
-									if (has_post_thumbnail($expert->ID)) {
-										$thumb = get_the_post_thumbnail($expert->ID, array(108,108));
+									if (has_post_thumbnail( $expert->ID )) {
+										$thumb = get_the_post_thumbnail( $expert->ID, array(108,108) );
 									} else {
 										$thumb = '';
 									}

@@ -9,11 +9,11 @@
  */
 
 get_header(); ?>
-		<?php get_template_part('inc/breadcrumbs'); ?>
+		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<div id="stage" class="inner" role="main">
 			
-		<?php get_template_part('inc/postHead'); ?>
+		<?php get_template_part( 'inc/postHead' ); ?>
 
 			<div id="content" class="content has-sidebar">
 				

@@ -17,7 +17,7 @@
 						'update_post_meta_cache' => false
 					);
 
-	$locationsQuery = new WP_Query($args);
+	$locationsQuery = new WP_Query( $args );
 
 	while ($locationsQuery->have_posts()) {
 			$locationsQuery->the_post();

@@ -19,7 +19,7 @@ get_header(); ?>
 				</header>
 
 				<div class="entry-content">
-					<h2><?php _e('Search the Libraries\' web site:', 'twentytwelve' ); ?></h2>
+					<h2><?php _e( 'Search the Libraries\' web site:', 'twentytwelve' ); ?></h2>
 
 					<form action="http://www.google.com/cse" id="cse-search-box">
 					  <div>
@@ -30,19 +30,19 @@ get_header(); ?>
 					  </div>
 					</form>
 
-					<h2><?php _e('Browse our <a href="/about/site-search">A-Z index of pages</a> on this site.', 'twentytwelve' ); ?></h2>
+					<h2><?php _e( 'Browse our <a href="/about/site-search">A-Z index of pages</a> on this site.', 'twentytwelve' ); ?></h2>
 
-					<p><?php _e('You can also check out these commonly-used resources:', 'twentytwelve'); ?></p>
+					<p><?php _e( 'You can also check out these commonly-used resources:', 'twentytwelve' ); ?></p>
 
 					<ul>
-						<li><?php _e('<a href="//libraries.mit.edu/bartonplus">BartonPlus</a>', 'twentytwelve'); ?></li>
-						<li><?php _e('<a href="//libguides.mit.edu/directory">Staff directory</a>', 'twentytwelve'); ?></li>
-						<li><?php _e('<a href="/research-guides">Research guides - databases by subject</a>', 'twentytwelve'); ?></li>
-						<li><?php _e('<a href="/about/shortcuts/">Shortcuts to frequently used pages</a>', 'twentytwelve'); ?></li>
-						<li><?php _e('<a href="//web.mit.edu/search.html">MIT web site search</a>', 'twentytwelve'); ?></li>
+						<li><?php _e( '<a href="//libraries.mit.edu/bartonplus">BartonPlus</a>', 'twentytwelve' ); ?></li>
+						<li><?php _e( '<a href="//libguides.mit.edu/directory">Staff directory</a>', 'twentytwelve' ); ?></li>
+						<li><?php _e( '<a href="/research-guides">Research guides - databases by subject</a>', 'twentytwelve' ); ?></li>
+						<li><?php _e( '<a href="/about/shortcuts/">Shortcuts to frequently used pages</a>', 'twentytwelve' ); ?></li>
+						<li><?php _e( '<a href="//web.mit.edu/search.html">MIT web site search</a>', 'twentytwelve' ); ?></li>
 					</ul>
 
-					<p><?php _e('<a href="/ask">Need more help? Ask us!</a>', 'twentytwelve'); ?></p>
+					<p><?php _e( '<a href="/ask">Need more help? Ask us!</a>', 'twentytwelve' ); ?></p>
 
 				</div><!-- .entry-content -->
 

@@ -11,8 +11,8 @@
  * @since 1.2.1
  */
  
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 
 $showMap = ($_GET['v'] != '') && ($_GET['v'] == 'map') ? 1 : 0;
 
@@ -23,7 +23,7 @@ get_header(); ?>
 		var showMap = <?php echo $showMap; ?>;
 	</script>	
 
-		<?php get_template_part('inc/breadcrumbs'); ?>
+		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<div id="stage" role="main">
 			<div class="title-page flex-container">
@@ -48,20 +48,20 @@ get_header(); ?>
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 							
-							$building = cf('building');
+							$building = cf( 'building' );
 							
 							$numMain = 3;
 							$arMain = array();
 							
-							$mapImage = get_field('map_image');
+							$mapImage = get_field( 'map_image' );
 							
 							
 							for($i=1;$i<=$numMain;$i++) {
-								$img = get_field('main_image'.$i, $locationId);
+								$img = get_field( 'main_image'.$i, $locationId );
 								if ($img != '')
 									$arMain[] = $img;
 							}
-							$val = $arMain[array_rand($arMain)];							
+							$val = $arMain[array_rand( $arMain )];							
 							//$val = $arMain[0];							
 							
 							if ($mapImage != '') {
@@ -69,17 +69,17 @@ get_header(); ?>
 								$val = $mapImage;
 							}
 							
-							$location = get_field('building_location');
-								$coords = explode(',', $location['coordinates']);
+							$location = get_field( 'building_location' );
+								$coords = explode( ',', $location['coordinates'] );
 								$lat = $coords[0];
 								$lng = $coords[1];
 								$address = $location['address'];
 							
-							$name = html_entity_decode(get_the_title());
+							$name = html_entity_decode( get_the_title() );
 							
-							$displayPage = get_field('display_page');
+							$displayPage = get_field( 'display_page' );
 							$pageID = $displayPage->ID;
-							$pageLink = get_permalink($pageID);
+							$pageLink = get_permalink( $pageID );
 							
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr='.$lat.','.$lng;
@@ -135,18 +135,18 @@ get_header(); ?>
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 							
-							$subject = cf('subject');
-							$phone = cf('phone');
-							$building = cf('building');
-							$spaces = cf('group_spaces');
-							$equipment = cf('equipment');
-							$expert = cf('expert');
+							$subject = cf( 'subject' );
+							$phone = cf( 'phone' );
+							$building = cf( 'building' );
+							$spaces = cf( 'group_spaces' );
+							$equipment = cf( 'equipment' );
+							$expert = cf( 'expert' );
 							
-							$study24 = get_field('study_24');
+							$study24 = get_field( 'study_24' );
 
-							$displayPage = get_field('display_page');
+							$displayPage = get_field( 'display_page' );
 							$pageID = $displayPage->ID;
-							$pageLink = get_permalink($pageID);
+							$pageLink = get_permalink( $pageID );
 							
 							$temp = $post;
 							$post = $temp;
@@ -189,19 +189,19 @@ get_header(); ?>
 						$locationId = get_the_ID();
 						$slug = $post->post_name;
 						
-						$subject = cf('subject');
-						$phone = cf('phone');
-						$building = cf('building');
-						$spaces = cf('group_spaces');
-						$equipment = cf('equipment');
-						$expert = cf('expert');
+						$subject = cf( 'subject' );
+						$phone = cf( 'phone' );
+						$building = cf( 'building' );
+						$spaces = cf( 'group_spaces' );
+						$equipment = cf( 'equipment' );
+						$expert = cf( 'expert' );
 						
 						$temp = $post;
 						$post = $temp;
 						
-						$displayPage = get_field('display_page');
+						$displayPage = get_field( 'display_page' );
 						$pageID = $displayPage->ID;
-						$pageLink = get_permalink($pageID);
+						$pageLink = get_permalink( $pageID );
 					?>
 						<li class="location-secondary">
 							<?php if ($slug === 'stata'): ?>

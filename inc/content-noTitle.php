@@ -14,7 +14,7 @@ global $isRoot;
 	<?php if (has_post_thumbnail()): ?>
 
 		<div class="featuredImage">
-			<?php echo the_post_thumbnail(700, 300); ?>
+			<?php echo the_post_thumbnail( 700, 300 ); ?>
 		
 		</div>
 	

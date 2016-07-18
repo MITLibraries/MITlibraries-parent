@@ -6,8 +6,8 @@
  * @since 1.2.1
  */
  
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 
 
 get_header(); ?>

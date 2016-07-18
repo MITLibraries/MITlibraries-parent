@@ -15,8 +15,8 @@ global $isRoot;
 		<?php
 			//$pageParent = getParent($post->ID);
 			
-			$pageRoot = getRoot($post);
-			$section = get_post($pageRoot);
+			$pageRoot = getRoot( $post );
+			$section = get_post( $pageRoot );
 						
 			$args = array(
 				'child_of' => $pageRoot,
@@ -25,7 +25,7 @@ global $isRoot;
 			
 			$menuName = $section->post_name;
 			
-			$menu = wp_get_nav_menu_items($menuName);
+			$menu = wp_get_nav_menu_items( $menuName );
 			
 			if ($menu) {
 				wp_nav_menu( array( 'menu' => $menuName, 'menu_class' => 'nav-menu' ) ); 
@@ -40,7 +40,7 @@ global $isRoot;
 	
 		<?php if (has_post_thumbnail()): ?>
 		<div class="featuredImage">
-			<?php echo the_post_thumbnail(700, 300); ?>
+			<?php echo the_post_thumbnail( 700, 300 ); ?>
 		
 		</div>	
 		<?php endif; ?>
