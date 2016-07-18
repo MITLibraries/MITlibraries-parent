@@ -56,7 +56,7 @@
 												<?php echo $phone ?><br/>
 											<?php endif; ?>
 										</div>
-										<a class="map" href="<?php echo $mapPage.$slug; ?>">Map: <?php echo $building ?></a>									
+										<a class="map" href="<?php echo $mapPage . $slug; ?>">Map: <?php echo $building ?></a>									
 										<?php if ( $study24 == 1 ) : ?>
 											<a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 										<?php endif; ?>
@@ -104,7 +104,7 @@
 
 													$diff = floor( ($end - $curDay) / (60 * 60 * 24) ) + 1;
 
-													$msgClass .= ' msgSpan'.$diff;
+													$msgClass .= ' msgSpan' . $diff;
 
 													echo "<div class='tdInside'><div class='$msgClass'>$msgName</div></div>";
 												}
@@ -117,7 +117,7 @@
 										-->										
 										<?php if ( $alert != '' ) : ?>
 											<div class="libraryAlert">
-												<?php echo '<i class="icon-exclamation-sign"></i>'.$alert; ?>
+												<?php echo '<i class="icon-exclamation-sign"></i>' . $alert; ?>
 											</div>
 										<?php endif; ?>
 										
@@ -135,7 +135,7 @@
 												$next = '';
 											}
 										?>
-									<td class="<?php echo $class.$firstDay; ?>">
+									<td class="<?php echo $class . $firstDay; ?>">
 										
 								<?php
 								$firstDay = '';
@@ -178,13 +178,13 @@
 
 										$diff = floor( ($end - $curDay) / (60 * 60 * 24) ) + 1;
 
-										$msgClass .= ' msgSpan'.$diff;
+										$msgClass .= ' msgSpan' . $diff;
 
 										echo "<div class='tdInside'><div class='$msgClass'>$msgName</div></div>";
 									}
 								} else {
-									echo "<div class='mobileHourDay'><b>".date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ).'</b><br/>'.getMobileHoursDay( $locationId, $curDay ).'</div>';
-									echo "<div class='fullHourDay'>".getHoursDay( $locationId, $curDay ).'</div>';
+									echo "<div class='mobileHourDay'><b>" . date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ) . '</b><br/>' . getMobileHoursDay( $locationId, $curDay ) . '</div>';
+									echo "<div class='fullHourDay'>" . getHoursDay( $locationId, $curDay ) . '</div>';
 								}
 								$post = $temp;
 								?>	

@@ -28,8 +28,8 @@
 
 
 		for ( $i = 1;$i <= $numNews;$i++ ) {
-			$nTitle = get_field( 'news_'.$i );
-			$nUrl = get_field( 'news_'.$i.'_url' );
+			$nTitle = get_field( 'news_' . $i );
+			$nUrl = get_field( 'news_' . $i . '_url' );
 
 			if ( $nTitle != '' && $nUrl != '' ) {
 				$arNews[] = array(

@@ -50,7 +50,7 @@ get_header(); ?>
 			<ul>
 				<?php
 				foreach ( $template_pages as $template_page ) {
-				    echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title  . '</a></li>';
+				    echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title . '</a></li>';
 				}
 				?>
 			</ul>
@@ -60,9 +60,9 @@ get_header(); ?>
 				for ( $i = 1; $i <= 30; $i++ ) {
 				$blog_details = get_blog_details( $i );
 				if ( $blog_details == '' ) {
-					echo '<li>There is no blog '.$i.'</li>';
+					echo '<li>There is no blog ' . $i . '</li>';
 				} else {
-					echo '<li>Blog '.$blog_details->blog_id.' is called '.$blog_details->blogname.'.</li>';
+					echo '<li>Blog ' . $blog_details->blog_id . ' is called ' . $blog_details->blogname . '.</li>';
 				}
 				}
 			?>

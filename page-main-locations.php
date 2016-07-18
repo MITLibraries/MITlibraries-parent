@@ -57,7 +57,7 @@ get_header(); ?>
 
 
 							for ( $i = 1;$i <= $numMain;$i++ ) {
-								$img = get_field( 'main_image'.$i, $locationId );
+								$img = get_field( 'main_image' . $i, $locationId );
 								if ( $img != '' ) {
 									$arMain[] = $img; }
 							}
@@ -81,7 +81,7 @@ get_header(); ?>
 							$pageLink = get_permalink( $pageID );
 
 							$directionsUrl = 'http://maps.google.com/maps?';
-							$directionsUrl .= 'daddr='.$lat.','.$lng;
+							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
 							// $directionsUrl .= "daddr=".urlencode($address);
 							if ( $lat != '' && $lng != '' ) :
 						?>				

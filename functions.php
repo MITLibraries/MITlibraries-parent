@@ -31,7 +31,7 @@ $gStudy24Url = '/study/24x7/';
 
 // $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
-foreach ( glob( $siteRoot.'/wp-content/themes/libraries/lib/*.php' ) as $file ) { require_once( $file ); }
+foreach ( glob( $siteRoot . '/wp-content/themes/libraries/lib/*.php' ) as $file ) { require_once( $file ); }
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
@@ -677,7 +677,7 @@ function remove_template( $files_to_delete = array() ) {
 
 	foreach ( $template_files as $file_path ) {
 		foreach ( $files_to_delete as $file_name ) {
-			if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ) {
+			if ( preg_match( '/\/' . $file_name . '\.[^.]+$/', $file_path ) ) {
 				$key = array_search( $file_path, $template_files );
 				if ( $key ) { unset( $template_files[ $key ] ); }
 			}
@@ -711,7 +711,7 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 	  }
 
 	  if ( ! is_child_page() && is_page() || is_category() || is_single() ) {
-	    echo '<span>'.the_title().'</span>';
+	    echo '<span>' . the_title() . '</span>';
 	    return;
 	  }
 
@@ -722,13 +722,13 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 	    $startLink = '<a href="';
 	    $endLink = '">';
 	    $closeLink = '</a>';
-	    $parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
+	    $parentBreadcrumb = $startLink . $parentLink . $endLink . $parentTitle . $closeLink;
 	    $pageTitle = get_the_title( $post );
 	    $pageLink = get_permalink( $post );
-	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
+	    $childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
 
-		  if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>'.$parentBreadcrumb.'</span>';}
-		  if ( $childBreadcrumb != '' ) {echo '<span>'.$pageTitle.'</span>';}
+		  if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . $parentBreadcrumb . '</span>';}
+		  if ( $childBreadcrumb != '' ) {echo '<span>' . $pageTitle . '</span>';}
 		}
 	}
 

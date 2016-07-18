@@ -59,7 +59,7 @@
 	$arMain = array();
 
 	for ( $i = 1;$i <= $numMain;$i++ ) {
-		$img = get_field( 'main_image'.$i, $locationId );
+		$img = get_field( 'main_image' . $i, $locationId );
 		if ( $img != '' ) {
 			$arMain[] = $img; }
 	}
@@ -68,7 +68,7 @@
 	$arSub = array();
 	$subs = 0;
 	for ( $i = 1;$i <= $numSub;$i++ ) {
-		$img = get_field( 'sub_image'.$i, $locationId );
+		$img = get_field( 'sub_image' . $i, $locationId );
 		if ( $img != '' ) {
 			$subs++;
 			$arSub[] = $img;
@@ -89,7 +89,7 @@
 <?php
 					include( locate_template( 'inc/alert.php' ) );
 					if ( $showAlert == 0 && $alertTitle != '' ) {
-						echo '<div class="libraryAlert">'.'<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>'.'<div class="alertText">'.'<h3>'.$alertTitle.'</h3>'.'<p>'.$alertContent.'</p>'.'</div>'.'</div>'.'</div>';
+						echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
 					}
 				?>
 </div>				
@@ -108,7 +108,7 @@
 	                    	<?php if ( $email ) : ?>
 						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
 	                    	<?php endif; ?>
-						<a href="<?php echo $mapPage.$slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
 					</div>
 				</div><!-- end div.libraryContent -->
 

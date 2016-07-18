@@ -35,7 +35,7 @@ get_header(); ?>
 				<div class="entry-content content-main">
 					
 					<div class="rss-feed">
-						<?php echo '<script src="'.$rssScript.'" type="text/javascript"></script>'; ?>
+						<?php echo '<script src="' . $rssScript . '" type="text/javascript"></script>'; ?>
 					</div>
 				</div>
 

@@ -50,7 +50,7 @@ $dtTodayWeek = date( 'W' );
 $dtTodayWeekday = date( 'N' );
 
 
-$now = strtotime( $dtTodayYear.'W'.$dtTodayWeek.$dtTodayWeekday );
+$now = strtotime( $dtTodayYear . 'W' . $dtTodayWeek . $dtTodayWeekday );
 
 $wk = date( 'W', $dt );
 
@@ -58,13 +58,13 @@ if ( $wk == '01' && $dtMo == '12' ) {
 	$dtYear++;
 }
 
-$mon = strtotime( $dtISOYear.'W'.$wk.'1' );
-$tue = strtotime( $dtISOYear.'W'.$wk.'2' );
-$wed = strtotime( $dtISOYear.'W'.$wk.'3' );
-$thu = strtotime( $dtISOYear.'W'.$wk.'4' );
-$fri = strtotime( $dtISOYear.'W'.$wk.'5' );
-$sat = strtotime( $dtISOYear.'W'.$wk.'6' );
-$sun = strtotime( $dtISOYear.'W'.$wk.'7' );
+$mon = strtotime( $dtISOYear . 'W' . $wk . '1' );
+$tue = strtotime( $dtISOYear . 'W' . $wk . '2' );
+$wed = strtotime( $dtISOYear . 'W' . $wk . '3' );
+$thu = strtotime( $dtISOYear . 'W' . $wk . '4' );
+$fri = strtotime( $dtISOYear . 'W' . $wk . '5' );
+$sat = strtotime( $dtISOYear . 'W' . $wk . '6' );
+$sun = strtotime( $dtISOYear . 'W' . $wk . '7' );
 
 $arDays = array();
 
@@ -145,9 +145,9 @@ wp_reset_query();  ?>
 	<div id="hourContent" class="content-page">
 	<div id="hourNav-sticky-wrapper" class="sticky-wrapper" style="height: 0px;">
 	  <div id="hourNav" style="width: 1008px;">
-		<div id="prevWeek"> <i class="icon-arrow-left"></i> <a href="<?php echo $path.'?d='.$prevWeek; ?>">Previous week</a> </div>
-		<div id="thisWeek"> <a href="<?php echo $path.'?d='.$thisWeek; ?>">This week</a> </div>
-		<div id="nextWeek"> <a href="<?php echo $path.'?d='.$nextWeek; ?>">Next week</a> <i class="icon-arrow-right"></i> </div>
+		<div id="prevWeek"> <i class="icon-arrow-left"></i> <a href="<?php echo $path . '?d=' . $prevWeek; ?>">Previous week</a> </div>
+		<div id="thisWeek"> <a href="<?php echo $path . '?d=' . $thisWeek; ?>">This week</a> </div>
+		<div id="nextWeek"> <a href="<?php echo $path . '?d=' . $nextWeek; ?>">Next week</a> <i class="icon-arrow-right"></i> </div>
 	  </div>
 	</div>
 	<style type="text/css">
@@ -270,7 +270,7 @@ $mapPage = '/locations/#!';
 			  <?php endif; ?>
 			  <?php the_field( 'phone', $locationId ); ?>
 			  <br />
-			  <a class="map" href="<?php echo $mapPage.$slug; ?>">Map:&nbsp;
+			  <a class="map" href="<?php echo $mapPage . $slug; ?>">Map:&nbsp;
 			  <?php  the_field( 'building', $locationId ); ?>
 			  </a>
 			  <?php if ( get_field( 'study_24', $locationId ) ) { ?>
@@ -297,7 +297,7 @@ $mapPage = '/locations/#!';
 		$next = '';
 	  }
 	?>
-		  <td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ); ?></span></td>
+		  <td data-day="<?php echo $i; ?>" class="<?php echo $class . $firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
 		  <?php } ?>
 		</tr>
 		<?php wp_reset_postdata();
@@ -424,7 +424,7 @@ $pageLink = get_permalink( $pageID );
 			  
 			<?php the_field( 'phone', $locationId ); ?>
 			<br />
-			<a class="map" href="<?php echo $mapPage.$slug; ?>">Map:&nbsp;
+			<a class="map" href="<?php echo $mapPage . $slug; ?>">Map:&nbsp;
 			<?php  the_field( 'building', $locationId ); ?>
 			</a>
 			<?php if ( get_field( 'study_location', $locationId ) ) { ?>
@@ -451,7 +451,7 @@ $class = $next;
 $next = '';
 }
 ?>
-		<td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ); ?></span></td>
+		<td data-day="<?php echo $i; ?>" class="<?php echo $class . $firstDay; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
 		<?php } ?>
 	  </tr>
 	   <?php wp_reset_postdata();  ?>

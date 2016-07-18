@@ -345,7 +345,7 @@ function checkOpen( $hour, $dt ) {
 	$start = strtotime( $arRange[0] );
 
 	if ( $arRange[1] == 'midnight' ) {
-		$end = strtotime( $arRange[1].' + 1 day' );
+		$end = strtotime( $arRange[1] . ' + 1 day' );
 	} else {
 		$end = strtotime( $arRange[1] );
 	}
@@ -376,7 +376,7 @@ function getHourHours( $hour ) {
 	$start = strtotime( $arRange[0] );
 
 	if ( $arRange[1] == 'midnight' ) {
-		$end = strtotime( $arRange[1].' + 1 day' );
+		$end = strtotime( $arRange[1] . ' + 1 day' );
 	} else {
 		$end = strtotime( $arRange[1] );
 	}
@@ -437,7 +437,7 @@ function toDays( $str ) {
 		while ( $currentShort != $endShort ) {
 			$strOut .= $currentShort;
 
-			$current = date( 'l', strtotime( $current.' + 1 day' ) );
+			$current = date( 'l', strtotime( $current . ' + 1 day' ) );
 			$currentShort = dayLookup( $current );
 
 		}
@@ -632,7 +632,7 @@ function import_hours() {
 		}
 		if ( isset( $_POST['tag_delete'] ) && $_POST['tag_delete'] != '' ) {
 			clean_posts( $_POST['tag_delete'] );
-			echo 'Items removed with tag: '.$_POST['tag_delete'];
+			echo 'Items removed with tag: ' . $_POST['tag_delete'];
 		}
 	}
 };
@@ -645,7 +645,7 @@ function handle_hours_upload() {
 
 	$siteRoot = $root;
 
-	require_once $siteRoot.'/wp-content/themes/libraries/libs/PHPExcel-develop/Classes/PHPExcel/IOFactory.php';
+	require_once $siteRoot . '/wp-content/themes/libraries/libs/PHPExcel-develop/Classes/PHPExcel/IOFactory.php';
 
 	$upload = $_FILES['upload']['tmp_name']; // actual file
 	$fileName = $_FILES['upload']['name']; // original file name
@@ -785,7 +785,7 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 					add_post_meta( $semId, 'start', $startDate );
 					add_post_meta( $semId, 'end', $endDate );
 					add_post_meta( $semId, 'is_term', 1 );
-					add_post_meta( $semId, 'tag', 'TERM:'.$tag );
+					add_post_meta( $semId, 'tag', 'TERM:' . $tag );
 
 					echo 'Created New Semester<br/>';
 
@@ -800,7 +800,7 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 						// not the name
 						$day = $masterRow[ $col ];
 						if ( $val != '' ) {
-							echo 'Adding - '.$day.' = '.$val.'<br>';
+							echo 'Adding - ' . $day . ' = ' . $val . '<br>';
 
 							// Insert Post
 							$args = array(
@@ -893,7 +893,7 @@ function process_holiday( $arSheet, $tag ) {
 							// print_r($term[term]);
 							$termId = $term[ term ][ id ];
 
-							echo 'Adding Holiday - '.$day.' / '.$formatDate.' = '.$val.'<br>';
+							echo 'Adding Holiday - ' . $day . ' / ' . $formatDate . ' = ' . $val . '<br>';
 
 							if ( $termId == 0 || $termId == '' ) {
 								echo "<b>MISSING Term for: $termDate</b><br>";
@@ -1087,7 +1087,7 @@ function process_overview( $arSheet ) {
 
 				$temp = array();
 
-				echo "<b>$semester</b>: ".date( 'Y-m-d', $start ).' to '.date( 'Y-m-d', $end ).' <br>';
+				echo "<b>$semester</b>: " . date( 'Y-m-d', $start ) . ' to ' . date( 'Y-m-d', $end ) . ' <br>';
 
 				$temp[ semester ] = $semester;
 				$temp[ start ] = $start;
