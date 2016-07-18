@@ -14,9 +14,9 @@
 $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 if (!$_GET['d']) {
-  $inDate = 'Now';
+	$inDate = 'Now';
 } else {
-  $inDate = $_GET['d'];
+	$inDate = $_GET['d'];
 }
 
 get_header();
@@ -55,7 +55,7 @@ $now = strtotime( $dtTodayYear.'W'.$dtTodayWeek.$dtTodayWeekday );
 $wk = date( 'W', $dt );
 
 if ($wk == '01' && $dtMo == '12') {
-  $dtYear++;
+	$dtYear++;
 }
 
 $mon = strtotime( $dtISOYear.'W'.$wk.'1' );
@@ -102,9 +102,9 @@ $alertContent = cf( 'alert_content' );
     </div>
     <div class="middleAlert">
       <?php
-    if ( have_posts() ) :
-  while ( have_posts() ) : the_post();
-          the_content(); ?>
+	if ( have_posts() ) :
+	while ( have_posts() ) : the_post();
+		  the_content(); ?>
       <?php  endwhile;  endif; wp_reset_query();  ?>
     </div>
     <div class="wrap-cal-hours hidden-phone">
@@ -228,11 +228,11 @@ $mapPage = '/locations/#!';
         <tr data-location="<?php the_title(); ?>">
           <td width="260" class="name"><div class="nameHolder">
               <h3> <a href="<?php $post_object = get_field( 'display_page' );
-              if( $post_object ):
-          // dont even ask why
-            $post = $post_object;
-            setup_postdata( $post );
-            ?>
+			  if( $post_object ):
+		  // dont even ask why
+			$post = $post_object;
+			setup_postdata( $post );
+			?>
             <?php the_permalink(); ?>">
                 <?php the_title(); ?>
                 </a></h3>
@@ -257,16 +257,16 @@ $mapPage = '/locations/#!';
             </div></td>
           <?php for($i=0;$i<=6;$i++) { ?>
           <?php
-      $curDay = $arDays[$i];
+	  $curDay = $arDays[$i];
 
-      if ($curDay == $now) {
-        $class = 'cur';
-        $next = 'curAfter';
-      } else {
-        $class = $next;
-        $next = '';
-      }
-    ?>
+	  if ($curDay == $now) {
+		$class = 'cur';
+		$next = 'curAfter';
+	  } else {
+		$class = $next;
+		$next = '';
+	  }
+	?>
           <td data-day="<?php echo $i; ?>" class="<?php echo $class.$firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ).'<br/>'.date( 'n/j', $curDay ); ?></span></td>
           <?php } ?>
         </tr>
@@ -331,15 +331,15 @@ $args = array(
 'orderby' => 'name',
 'order' => 'ASC',
 //excludes DIRC and Stata
-  'meta_query' => array(
-    'relation' => 'AND',
-    array(
-      'key' => 'no_hours',
-      'value' => 0,
-      'compare' => '='
-      ),
+	'meta_query' => array(
+	'relation' => 'AND',
+	array(
+	  'key' => 'no_hours',
+	  'value' => 0,
+	  'compare' => '='
+	  ),
 
-    )
+	)
 );
 $libraryList2 = new WP_Query( $args );?>
         <?php while ( $libraryList2->have_posts() ) : $libraryList2->the_post();
@@ -356,7 +356,7 @@ $mapPage = '/locations/#!';
 $displayPage = get_field( 'display_page' );
 $pageID = $displayPage->ID;
 $pageLink = get_permalink( $pageID );
-              ?>
+			  ?>
 <h3><a href="<?php echo $pageLink; ?>"><?php the_title(); ?></a></h3>
   
               

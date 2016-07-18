@@ -25,7 +25,7 @@ get_header(); ?>
 	    'meta_key' => '_wp_page_template',
 	    'meta_value' => 'page-full.php',
 	    'depth' => -1,
-      'hierarchical' => 0
+	  'hierarchical' => 0
 	);
 
 	$template_pages = get_pages( $template_page_args );
