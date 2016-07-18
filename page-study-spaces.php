@@ -77,7 +77,7 @@ get_header(); ?>
 
 							$study24 = get_field( 'study_24' );
 							$reserveText = get_field( 'reserve_text' );
-							if ($reserveText == '') {
+							if ( $reserveText == '' ) {
 								$reserveText = 'Reserve Group Study Space';
 							}
 							$reserveUrl = get_field( 'reserve_url' );
@@ -103,10 +103,10 @@ get_header(); ?>
 										<div class="description">
 											<?php echo $description; ?>
 										</div>
-										<?php if ($reserveUrl != ''): ?>
+										<?php if ( $reserveUrl != '' ) : ?>
 												<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 										<?php endif; ?>
-										<?php if ($study24 == 1): ?>
+										<?php if ( $study24 == 1 ) : ?>
 											<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 										<?php endif; ?>
 									</div>
@@ -115,30 +115,30 @@ get_header(); ?>
 										
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
-												<?php if ($phone != ''): ?>
+												<?php if ( $phone != '' ) : ?>
 												<?php echo $phone ?><br/>
 												<?php endif; ?>
 												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
-												<?php if (get_the_title() !== 'Information Intersection at Stata Center'): ?>
+												<?php if ( get_the_title() !== 'Information Intersection at Stata Center' ) : ?>
 													<span class="hours">Open today<br/>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
 												<?php
 													endif;
-													if ($reserveUrl != ''):
+													if ( $reserveUrl != '' ) :
 												?>
 												<a class="mobileReserve visible-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 												<?php endif; ?>
 											</div>
 										</div>
 
-										<?php if ($individual != ''): ?>
+										<?php if ( $individual != '' ) : ?>
 										<div class="ss-2 ss-item">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
 										
-										<?php if ($spaces != ''): ?>
+										<?php if ( $spaces != '' ) : ?>
 										<div class="ss-3 ss-item last">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>

@@ -6,7 +6,7 @@
  * @since 1.2.1
  */
 
-if (isset( $_GET['cleanCache'] )) {
+if ( isset( $_GET['cleanCache'] ) ) {
 	$clean = $_GET['cleanCache'];
 } else {
 	$clean = 0;
@@ -31,7 +31,7 @@ function getHours() {
 	$expire = $expireShort;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache) {
+	if ( $data === false || $resetCache ) {
 
 		// gets the entire hours object;
 		global $post;
@@ -45,7 +45,7 @@ function getHours() {
 		);
 
 		$hours = new WP_Query( $args );
-		while($hours->have_posts()):
+		while ( $hours->have_posts() ) :
 
 			$hours->the_post();
 			$id = get_the_ID();
@@ -86,7 +86,7 @@ function getHours() {
 	return $data;
 }
 
-function getHoursChildren($parent) {
+function getHoursChildren( $parent ) {
 	$arHours = array();
 
 	$args = array(
@@ -99,7 +99,7 @@ function getHoursChildren($parent) {
 
 	$hours = new WP_Query( $args );
 
-	while($hours->have_posts()):
+	while ( $hours->have_posts() ) :
 
 		$hours->the_post();
 		$id = get_the_ID();
@@ -131,21 +131,21 @@ function getHoursChildren($parent) {
 	return $arHours;
 }
 
-function getHoursToday($locationId) {
+function getHoursToday( $locationId ) {
 	global $resetCache, $expireLong, $expireShort, $locationReset;
 	$date = date( 'Y-m-d' );
 	$key = "getHoursToday-$locationId-$date";
 	$expire = $expireShort;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache || $locationReset == $locationId) {
+	if ( $data === false || $resetCache || $locationReset == $locationId ) {
 		$data = getHoursDay( $locationId, strtotime( 'Now' ) );
 		set_transient( $key, $data, $expire );
 	}
 	return $data;
 }
 
-function hasHours($locationId, $curDay) {
+function hasHours( $locationId, $curDay ) {
 	global $resetCache, $expireLong, $expireShort, $locationReset;
 
 	$date = date( 'Y-m-d', strtotime( $curDay ) );
@@ -153,14 +153,14 @@ function hasHours($locationId, $curDay) {
 	$expire = $expireShort;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache || $locationReset == $locationId) {
+	if ( $data === false || $resetCache || $locationReset == $locationId ) {
 		$arHours = getHours();
 
 		$dt = strtotime( $curDay );
 
 		$term = getTerm( $arHours, $locationId, $dt );
 
-		if (count( $term )==0) {
+		if ( count( $term )==0 ) {
 			// no hours
 			$data = 0;
 		} else {
@@ -172,13 +172,13 @@ function hasHours($locationId, $curDay) {
 	return $data;
 }
 
-function getHoursDay($locationId, $dt) {
+function getHoursDay( $locationId, $dt ) {
 	global $resetCache, $expireLong, $expireShort, $locationReset;
 	$key = "getHoursDay-$locationId-$dt";
 	$expire = $expireShort;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache || $locationReset == $locationId) {
+	if ( $data === false || $resetCache || $locationReset == $locationId ) {
 
 		$data = '';
 		$today = $dt;
@@ -193,10 +193,10 @@ function getHoursDay($locationId, $dt) {
 		//print_r($term);
 		$hour = getTermHour( $term, $dt );
 
-		if (count( $term )==0) {
+		if ( count( $term )==0 ) {
 			// no hours
 			$data = 'TBA';
-		} else if (count( $hour )==0) {
+		} else if ( count( $hour )==0 ) {
 			// no hours
 			$data = 'TBA';
 		} else {
@@ -208,13 +208,13 @@ function getHoursDay($locationId, $dt) {
 	return $data;
 }
 
-function getMobileHoursDay($locationId, $dt) {
+function getMobileHoursDay( $locationId, $dt ) {
 	global $resetCache, $expireLong, $expireShort, $locationReset;
 	$key = "getMobileHoursDay-$locationId-$dt";
 	$expire = $expireShort;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache || $locationReset == $locationId) {
+	if ( $data === false || $resetCache || $locationReset == $locationId ) {
 
 		$data = '';
 		$today = $dt;
@@ -229,10 +229,10 @@ function getMobileHoursDay($locationId, $dt) {
 		//print_r($term);
 		$hour = getTermHour( $term, $dt );
 
-		if (count( $term )==0) {
+		if ( count( $term )==0 ) {
 			// no hours
 			$data = 'TBA';
-		} else if (count( $hour )==0) {
+		} else if ( count( $hour )==0 ) {
 			// no hours
 			$data = 'TBA';
 		} else {
@@ -244,13 +244,13 @@ function getMobileHoursDay($locationId, $dt) {
 	return $data;
 }
 
-function getMessageDay($locationId, $dt) {
+function getMessageDay( $locationId, $dt ) {
 	global $resetCache, $expireLong, $expireShort, $locationReset;
 	$key = "getMessageDay-$locationId-$dt";
 	$expire = $expireShort;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache || $locationReset == $locationId) {
+	if ( $data === false || $resetCache || $locationReset == $locationId ) {
 
 		//echo date("Y-m-d", $dt);
 		$data = '';
@@ -268,7 +268,7 @@ function getMessageDay($locationId, $dt) {
 
 		$data = '';
 
-		if ($hour['show_spanning'] == 1) {
+		if ( $hour['show_spanning'] == 1 ) {
 			$data = $hour;
 		}
 
@@ -278,7 +278,7 @@ function getMessageDay($locationId, $dt) {
 }
 
 
-function getOpen($locationId) {
+function getOpen( $locationId ) {
 	$today = strtotime( 'Now' );
 	$dt = $today;
 
@@ -287,12 +287,12 @@ function getOpen($locationId) {
 	$term = getTerm( $arHours, $locationId, $dt );
 	$hour = getTermHour( $term, $dt );
 
-	if (count( $term )==0) {
+	if ( count( $term )==0 ) {
 		// no hours
 		return false;
 	}
 
-	if (count( $hour )==0) {
+	if ( count( $hour )==0 ) {
 		// no hours
 		return false;
 	}
@@ -300,7 +300,7 @@ function getOpen($locationId) {
 	return checkOpen( $hour, $dt );
 }
 
-function checkClosed($str) {
+function checkClosed( $str ) {
 	$str = strtolower( $str );
 	if (
 		strpos( $str, 'closed' ) !== false ||
@@ -312,7 +312,7 @@ function checkClosed($str) {
 	return false;
 }
 
-function checkWeekday($str) {
+function checkWeekday( $str ) {
 	$str = strtolower( $str );
 	if (
 		strpos( $str, 'monday' ) !== false ||
@@ -328,7 +328,7 @@ function checkWeekday($str) {
 	return false;
 }
 
-function checkOpen($hour, $dt) {
+function checkOpen( $hour, $dt ) {
 	$hrs = strtolower( $hour['description'] );
 
 	if (
@@ -346,20 +346,20 @@ function checkOpen($hour, $dt) {
 
 	$start = strtotime( $arRange[0] );
 
-	if ($arRange[1] == 'midnight') {
+	if ( $arRange[1] == 'midnight' ) {
 		$end = strtotime( $arRange[1].' + 1 day' );
 	} else {
 		$end = strtotime( $arRange[1] );
 	}
 
-	if ($start <= $dt && $dt <= $end) {
+	if ( $start <= $dt && $dt <= $end ) {
 		return true;
 	}
 
 	return false;
 }
 
-function getHourHours($hour) {
+function getHourHours( $hour ) {
 	$arOut = array();
 
 	$hrs = strtolower( $hour['description'] );
@@ -377,7 +377,7 @@ function getHourHours($hour) {
 
 	$start = strtotime( $arRange[0] );
 
-	if ($arRange[1] == 'midnight') {
+	if ( $arRange[1] == 'midnight' ) {
 		$end = strtotime( $arRange[1].' + 1 day' );
 	} else {
 		$end = strtotime( $arRange[1] );
@@ -390,10 +390,10 @@ function getHourHours($hour) {
 
 }
 
-function dayLookup($str) {
+function dayLookup( $str ) {
 	$str = strtolower( date( 'l', strtotime( $str ) ) );
 
-	switch($str) {
+	switch ( $str ) {
 		case 'monday':
 			return 'M';
 			break;
@@ -418,8 +418,8 @@ function dayLookup($str) {
 	}
 }
 
-function toDays($str) {
-	if (strpos( $str, '-' ) !== false) {
+function toDays( $str ) {
+	if ( strpos( $str, '-' ) !== false ) {
 		// multi day
 		//echo $str;
 		$arRange = explode( '-', $str );
@@ -436,7 +436,7 @@ function toDays($str) {
 		$strOut = '';
 
 		//echo $currentShort." vs ".$endShort;
-		while($currentShort != $endShort) {
+		while ( $currentShort != $endShort ) {
 			$strOut .= $currentShort;
 
 			$current = date( 'l', strtotime( $current.' + 1 day' ) );
@@ -455,24 +455,24 @@ function toDays($str) {
 	return $str;
 }
 
-function getTerm($obj, $location, $dt) {
+function getTerm( $obj, $location, $dt ) {
 	global $resetCache, $expireLong, $expireShort, $locationReset;
 
 	$key = "getTerm-$location-$dt";
 	$expire = $expireLong;
 	$data = get_transient( $key );
 
-	if ($data === false || $resetCache || $location == $locationReset) {
+	if ( $data === false || $resetCache || $location == $locationReset ) {
 
 		$data = array();
 
-		if ($obj[$location]) {
+		if ( $obj[$location] ) {
 			// location exists
 			$arTerms = $obj[$location]['terms'];
 
 			//echo "[E: ".date("Y-m-d", $dt)." ]";
 
-			foreach($arTerms as $termId => $term) {
+			foreach ( $arTerms as $termId => $term ) {
 				$start = $term['start'];
 				$end = $term['end'];
 
@@ -485,17 +485,15 @@ function getTerm($obj, $location, $dt) {
 
 				//echo "[ ".date("Y-m-d", $start)." ]";
 
-				if ($start <= $dt && $dt <= $end) {
+				if ( $start <= $dt && $dt <= $end ) {
 					//echo "FOUND";
 					$data = array(
 						'id'=>$key,
 						'term'=>$term
 					);
 				}
-
-			}
-
-		} else {
+}
+} else {
 			//echo "TEST";
 		}
 
@@ -507,10 +505,10 @@ function getTerm($obj, $location, $dt) {
 	return $data;
 }
 
-function getTermHour($term, $dt) {
+function getTermHour( $term, $dt ) {
 	// check for special days
 
-	if (count( $term ) == 0) {
+	if ( count( $term ) == 0 ) {
 		return array();
 	}
 
@@ -519,10 +517,10 @@ function getTermHour($term, $dt) {
 	$arHours = $term['term']['hours'];
 
 	// Special days
-	foreach($arHours as $hours) {
+	foreach ( $arHours as $hours ) {
 
 		$start = $hours['start'];
-		if ($start != '') {
+		if ( $start != '' ) {
 
 			$end = $hours['end'];
 
@@ -533,32 +531,32 @@ function getTermHour($term, $dt) {
 			$start = strtotime( $start );
 			$end = strtotime( $end );
 
-			if ($start <= $dt && $dt <= $end) {
+			if ( $start <= $dt && $dt <= $end ) {
 				return $hours;
 			}
 		}
 	}
 
 	// Day match
-	foreach($arHours as $hours) {
+	foreach ( $arHours as $hours ) {
 		$start = $hours['start'];
-		if ($start == '') {
+		if ( $start == '' ) {
 			// only normal days
 			$name = $hours['name'];
-			if ($name == $dtWeek) {
+			if ( $name == $dtWeek ) {
 				return $hours;
 			}
 		}
 	}
 
 	// Day Span Match
-	foreach($arHours as $hours) {
+	foreach ( $arHours as $hours ) {
 		$start = $hours['start'];
-		if ($start == '') {
+		if ( $start == '' ) {
 			// only span days
 			$name = $hours['name'];
-			if (strpos( $name, '-' ) !== false) {
-				if (dateSpanFit( $name, $dtWeek )) {
+			if ( strpos( $name, '-' ) !== false ) {
+				if ( dateSpanFit( $name, $dtWeek ) ) {
 					return $hours;
 				} else {
 				}
@@ -569,7 +567,7 @@ function getTermHour($term, $dt) {
 	return array();
 }
 
-function dateSpanFit($range, $dt) {
+function dateSpanFit( $range, $dt ) {
 	$arRange = explode( '-', $range );
 
 	$start = strtotime( trim( $arRange[0] ) );
@@ -580,14 +578,14 @@ function dateSpanFit($range, $dt) {
 
 	$dtDay = date( 'N', strtotime( $dt ) );
 
-	if ($startDay <= $dtDay && $dtDay <= $endDay) {
+	if ( $startDay <= $dtDay && $dtDay <= $endDay ) {
 		return true;
 	}
 
 	return false;
 }
 
-function hourToMobile($str) {
+function hourToMobile( $str ) {
 	// alters hours for mobile output (replacing long strings with shorter ones)
 	$str = str_replace( 'midnight', 'midn', $str );
 	$str = str_replace( '-', '<br/>', $str );
@@ -598,7 +596,7 @@ function hourToMobile($str) {
 	return $str;
 }
 
-function filterText($str) {
+function filterText( $str ) {
 	// alters hours for mobile output (replacing long strings with shorter ones)
 	//$str = str_replace("midnight", "midn", $str);
 	//$str = str_replace("-", "<br/>", $str);
@@ -636,11 +634,11 @@ function import_hours() {
 		</p>
 	</form>
 <?php
-	if (isset( $_POST['import_spreadsheet'] )) {
-		if (isset( $_FILES['upload'] ) && $_FILES['upload']['name'] != '') {
+	if ( isset( $_POST['import_spreadsheet'] ) ) {
+		if ( isset( $_FILES['upload'] ) && $_FILES['upload']['name'] != '' ) {
 			handle_hours_upload();
 		}
-		if (isset( $_POST['tag_delete'] ) && $_POST['tag_delete'] != '') {
+		if ( isset( $_POST['tag_delete'] ) && $_POST['tag_delete'] != '' ) {
 			clean_posts( $_POST['tag_delete'] );
 			echo 'Items removed with tag: '.$_POST['tag_delete'];
 		}
@@ -686,11 +684,11 @@ function handle_hours_upload() {
 
 	$loadedSheetNames = $obj->getSheetNames();
 
-	foreach($loadedSheetNames as $sheetIndex => $loadedSheetName) {
+	foreach ( $loadedSheetNames as $sheetIndex => $loadedSheetName ) {
 		echo '<p>';
 		$sheet = $obj->getSheet( $sheetIndex )->toArray( null, true, true, true );
 
-		switch(strtolower( $loadedSheetName )) {
+		switch ( strtolower( $loadedSheetName ) ) {
 			case 'semester breakdown':
 				echo '<h3>Semester Overview</h3><br/>';
 
@@ -717,20 +715,19 @@ function handle_hours_upload() {
 
 				break;
 		}
-
-	}
+}
 
 	echo '<p><hr></p><b>Upload Completed</b>';
 }
 
-function getSemester($name, $list) {
-	foreach($list as $index => $item) {
+function getSemester( $name, $list ) {
+	foreach ( $list as $index => $item ) {
 		if ($item[semester] == $name) return $item;
 	}
 	return '';
 }
 
-function clean_posts($tag) {
+function clean_posts( $tag ) {
 	echo 'Removing Earlier Posts<br/>';
 
 	// Insert Post
@@ -743,7 +740,7 @@ function clean_posts($tag) {
 
 	$toDelete = new WP_Query( $args );
 
-	while($toDelete->have_posts()) {
+	while ( $toDelete->have_posts() ) {
 		$toDelete->the_post();
 
 		$deleteId = get_the_ID();
@@ -752,7 +749,7 @@ function clean_posts($tag) {
 	}
 }
 
-function process_semester($arSheet, $name, $semesterList, $tag) {
+function process_semester( $arSheet, $name, $semesterList, $tag ) {
 	$startRow = 4;
 	$started = 0;
 	$foundMaster= 0;
@@ -762,12 +759,12 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 	$endDate = date( 'Ymd', $semesterEntry[end] );
 
 	// get column / day relationship
-	foreach($arSheet as $row => $item) {
-		if (strtolower( $item[A] ) == 'location') {
+	foreach ( $arSheet as $row => $item ) {
+		if ( strtolower( $item[A] ) == 'location' ) {
 			// row before it starts
 			$masterRow = $item;
 			$foundMaster = 1;
-		} else if ($row >= $startRow && $item[A] != '' && $foundMaster) {
+		} else if ( $row >= $startRow && $item[A] != '' && $foundMaster ) {
 			// valid row and we have a master row to compare against
 			$started = 1;
 
@@ -775,7 +772,7 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 			$locationId = locationNameToId( $locationName );
 
 			echo "<br/><b>$locationName</b><br/>";
-			if ($locationId == 0) {
+			if ( $locationId == 0 ) {
 				echo 'ERROR - Cannot Find Related Location<br/>';
 
 			} else {
@@ -783,7 +780,7 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 				// Check if Semester exists for location.
 				$semId = semesterNameToId( $name, $locationId );
 
-				if ($semId == 0) {
+				if ( $semId == 0 ) {
 					echo "Note - Semester Doesn't Exist, Creating New Semester<br/>";
 
 					$args = array(
@@ -808,12 +805,12 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 				}
 
 				// Look at hours for the semester.
-				foreach($item as $col => $val) {
-					if ($col != 'A') {
+				foreach ( $item as $col => $val ) {
+					if ( $col != 'A' ) {
 						// not the name
 
 						$day = $masterRow[$col];
-						if ($val != '') {
+						if ( $val != '' ) {
 							echo 'Adding - '.$day.' = '.$val.'<br>';
 
 							// Insert Post
@@ -832,14 +829,12 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 							add_post_meta( $postId, 'tag', $tag );
 
 						}
-
-					}
+}
 				}
 			}
-
-		} else {
+} else {
 			// catch hidden extra areas
-			if ($started && $item[A] == '') {
+			if ( $started && $item[A] == '' ) {
 				return;
 			}
 		}
@@ -849,7 +844,7 @@ function process_semester($arSheet, $name, $semesterList, $tag) {
 
 
 
-function process_holiday($arSheet, $tag) {
+function process_holiday( $arSheet, $tag ) {
 	global $resetCache;
 
 	$resetCache = 1;
@@ -866,16 +861,16 @@ function process_holiday($arSheet, $tag) {
 	$endDate = date( 'Ymd', $semesterEntry[end] );
 
 	// get column / day relationship
-	foreach($arSheet as $row => $item) {
-		if (strtolower( $item[A] ) == 'holiday') {
+	foreach ( $arSheet as $row => $item ) {
+		if ( strtolower( $item[A] ) == 'holiday' ) {
 			// row before it starts
 			$masterRow = $item;
 			$foundMaster = 1;
-		} else if (strtolower( $item[A] ) == 'date') {
+		} else if ( strtolower( $item[A] ) == 'date' ) {
 			// row before it starts
 			$dateRow = $item;
 			$foundDate = 1;
-		} else if ($row >= $startRow && $item[A] != '' && $foundMaster && foundDate) {
+		} else if ( $row >= $startRow && $item[A] != '' && $foundMaster && foundDate ) {
 			// valid row and we have a master row to compare against
 			$started = 1;
 
@@ -884,14 +879,14 @@ function process_holiday($arSheet, $tag) {
 			$locationIdOriginal = locationNameToIdOriginal( $locationName );
 
 			echo "<b>$locationName </b><br/>";
-			if ($locationId == 0) {
+			if ( $locationId == 0 ) {
 				echo 'ERROR - Cannot Find Related Location<br/>';
 
 			} else {
 
 				// Look at hours for the semester.
-				foreach($item as $col => $val) {
-					if ($col != 'A') {
+				foreach ( $item as $col => $val ) {
+					if ( $col != 'A' ) {
 						// not the name
 
 						// use master row, if not, use previous (for blank entries);
@@ -901,7 +896,7 @@ function process_holiday($arSheet, $tag) {
 						$formatDate = date( 'Ymd', $dt );
 						$termDate = date( 'Y-m-d', $dt );
 
-						if ($val != '') {
+						if ( $val != '' ) {
 
 							// Check if term exists for location.
 							$termId = 0;
@@ -912,7 +907,7 @@ function process_holiday($arSheet, $tag) {
 
 							echo 'Adding Holiday - '.$day.' / '.$formatDate.' = '.$val.'<br>';
 
-							if ($termId ==0 || $termId == '') {
+							if ( $termId ==0 || $termId == '' ) {
 								echo "<b>MISSING Term for: $termDate</b><br>";
 							} else {
 								// OK to insert
@@ -934,16 +929,13 @@ function process_holiday($arSheet, $tag) {
 								add_post_meta( $postId, 'tag', $tag );
 
 							}
-
-						}
-
-					}
+}
+}
 				}
 			}
-
-		} else {
+} else {
 			// catch hidden extra areas
-			if ($started && $item[A] == '') {
+			if ( $started && $item[A] == '' ) {
 				return;
 			}
 		}
@@ -951,7 +943,7 @@ function process_holiday($arSheet, $tag) {
 
 }
 
-function semesterNameToId($name, $locationId) {
+function semesterNameToId( $name, $locationId ) {
 	$args = array(
 		'post_type' => 'hours',
 		'posts_per_page' => -1,
@@ -963,7 +955,7 @@ function semesterNameToId($name, $locationId) {
 	$semList = new WP_Query( $args );
 	remove_filter( 'posts_where', 'title_filter', 10, 2 );
 
-	if ($semList->have_posts()) {
+	if ( $semList->have_posts() ) {
 		$semList -> the_post();
 
 		return get_the_ID();
@@ -973,8 +965,8 @@ function semesterNameToId($name, $locationId) {
 	return 0;
 }
 
-function nameLookup($name) {
-	switch(strtolower( $name )) {
+function nameLookup( $name ) {
+	switch ( strtolower( $name ) ) {
 		case 'barker':
 			$baseName = 'Barker Library';
 			break;
@@ -1028,7 +1020,7 @@ function nameLookup($name) {
 	return $baseName;
 }
 
-function locationNameToId($name) {
+function locationNameToId( $name ) {
 	$baseName = nameLookup( $name );
 	$id = 0;
 
@@ -1043,7 +1035,7 @@ function locationNameToId($name) {
 	$locationList = new WP_Query( $args );
 	remove_filter( 'posts_where', 'title_filter', 10, 2 );
 
-	if ($locationList->have_posts()) {
+	if ( $locationList->have_posts() ) {
 		$locationList -> the_post();
 
 		return get_the_ID();
@@ -1056,7 +1048,7 @@ function locationNameToId($name) {
 }
 
 
-function locationNameToIdOriginal($name) {
+function locationNameToIdOriginal( $name ) {
 	// looks for a manual match to the import name (names are converted to lowercase to eliminate capitalizations changes)
 
 	$baseName = nameLookup( $name );
@@ -1073,7 +1065,7 @@ function locationNameToIdOriginal($name) {
 	$locationList = new WP_Query( $args );
 	remove_filter( 'posts_where', 'title_filter', 10, 2 );
 
-	if ($locationList->have_posts()) {
+	if ( $locationList->have_posts() ) {
 		$locationList -> the_post();
 		$id = get_post_meta( get_the_ID(), 'associated_location', true );
 
@@ -1087,8 +1079,7 @@ function locationNameToIdOriginal($name) {
 }
 
 
-function title_filter( $where, &$wp_query )
-{
+function title_filter( $where, &$wp_query ) {
 	global $wpdb;
 	if ( $search_term = $wp_query->get( 'search_prod_title' ) ) {
 		$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( like_escape( $search_term ) ) . '%\'';
@@ -1096,14 +1087,14 @@ function title_filter( $where, &$wp_query )
 	return $where;
 }
 
-function process_overview($arSheet) {
+function process_overview( $arSheet ) {
 	$startRow = 4;
 
 	$rObj = array();
 
-	foreach($arSheet as $row => $item) {
-		if ($row >= $startRow ) {
-			if ($item[A] != '') {
+	foreach ( $arSheet as $row => $item ) {
+		if ( $row >= $startRow ) {
+			if ( $item[A] != '' ) {
 				$semester = $item[A];
 				$start = strtotime( $item[B] );
 				$end = strtotime( $item[C] );
@@ -1124,7 +1115,7 @@ function process_overview($arSheet) {
 	return $rObj;
 }
 
-function getTermHours($term, $type) {
+function getTermHours( $term, $type ) {
 	$arOut = array();
 
 	$arClosings = array();
@@ -1133,7 +1124,7 @@ function getTermHours($term, $type) {
 
 	$hours = $term[hours];
 
-	foreach($hours as $hour) {
+	foreach ( $hours as $hour ) {
 		//print_r($hour);
 		$name = $hour[name];
 		$desc = $hour[description];
@@ -1141,7 +1132,7 @@ function getTermHours($term, $type) {
 			'start' => date( 'Y-m-d', strtotime( $hour[start] ) )
 		);
 
-		if ($hour[end]) {
+		if ( $hour[end] ) {
 			$dates['end'] = date( 'Y-m-d', strtotime( $hour[end] ) );
 		} else {
 			$dates['end'] = date( 'Y-m-d', strtotime( $hour[start] ) );
@@ -1149,7 +1140,7 @@ function getTermHours($term, $type) {
 
 		$hrs = getHourHours( $hour );
 
-		if (checkClosed( $desc )) {
+		if ( checkClosed( $desc ) ) {
 			//echo "Closed";
 			$arDay = array(
 				'dates' => $dates,
@@ -1159,7 +1150,7 @@ function getTermHours($term, $type) {
 			//print_r($dates);
 			array_push( $arClosings, $arDay );
 
-		} else if (checkWeekday( $name )) {
+		} else if ( checkWeekday( $name ) ) {
 			//echo "Weekday";
 			$arDay = array(
 				'days' => toDays( $name ),
@@ -1179,10 +1170,9 @@ function getTermHours($term, $type) {
 			array_push( $arExceptions, $arDay );
 
 		}
+}
 
-	}
-
-	switch($type) {
+	switch ( $type ) {
 		case 'closings':
 			return $arClosings;
 			break;
@@ -1196,7 +1186,7 @@ function getTermHours($term, $type) {
 
 }
 
-function getExport($location) {
+function getExport( $location ) {
 	$hours = getHours();
 
 	$locationId = locationNameToId( $location );
@@ -1212,7 +1202,7 @@ function getExport($location) {
 
 	$arTerms = array();
 
-	foreach($terms as $term) {
+	foreach ( $terms as $term ) {
 		//print_r($term);
 		$outTerm = array();
 

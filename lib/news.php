@@ -39,13 +39,13 @@ function LoadNews() {
 
 	$pool = RetrievePool();
 
-	if(count( $pool ) != 2) {
+	if ( count( $pool ) != 2 ) {
 		// If there are anything other than two items in the pool, then we
 		// summarize the pool and determine query type
 		$queryType = SummarizePool( $pool );
 
 		// Build the appropriate item pool
-		if($queryType === 'two') {
+		if ( $queryType === 'two' ) {
 			$pool = QueryPoolTwo();
 		} else {
 			$pool = QueryPoolOne();
@@ -123,18 +123,18 @@ function QueryPoolOne() {
 	return $items;
 }
 
-function RenderPool($items) {
+function RenderPool( $items ) {
 	// This takes an input recordset of news items and renders it as HTML
 
-	foreach($items as $item) {
+	foreach ( $items as $item ) {
 		$custom = get_post_custom( $item->ID );
 
 		// URL
-		if($item->post_type === 'post') {
+		if ( $item->post_type === 'post' ) {
 			$url = get_permalink( $item->ID );
-		} elseif($item->post_type === 'bibliotech') {
+		} elseif ( $item->post_type === 'bibliotech' ) {
 			$url = str_replace( '/news/','/news/bibliotech/',get_permalink( $item->ID ) );
-		} elseif($item->post_type === 'spotlights') {
+		} elseif ( $item->post_type === 'spotlights' ) {
 			$url = $custom['external_link'][0];
 		} else {
 			$url = '';
@@ -142,20 +142,20 @@ function RenderPool($items) {
 
 		// Label
 		$label = '<div class="category-post">';
-		if($item->post_type === 'post') {
-			if($item->is_event[0] === '1') {
+		if ( $item->post_type === 'post' ) {
+			if ( $item->is_event[0] === '1' ) {
 				$label .= 'Event';
 			} else {
 				$label .= 'News';
 			}
 		} else {
-			if($item->post_type === 'spotlights') {
-				if($custom['feature_type'][0] === 'fact' || $custom['feature_type'][0] === 'tip') {
+			if ( $item->post_type === 'spotlights' ) {
+				if ( $custom['feature_type'][0] === 'fact' || $custom['feature_type'][0] === 'tip' ) {
 					$label .= '<div class="info"></div>' . $custom['feature_type'][0];
 				} else {
 					$label .= '<div class="or_star-25"></div>Featured ' . $custom['feature_type'][0];
 				}
-			} elseif($item->post_type === 'bibliotech') {
+			} elseif ( $item->post_type === 'bibliotech' ) {
 				$label .= 'Bibliotech';
 			} else {
 				$label .= 'Other';
@@ -164,7 +164,7 @@ function RenderPool($items) {
 		$label .= '</div>';
 
 		// Headline
-		if($custom['homepage_post_title'][0]) {
+		if ( $custom['homepage_post_title'][0] ) {
 			$headline = '<h3 class="title-post">' . $custom['homepage_post_title'][0] . '</h3>';
 		} else {
 			$headline = '<h3 class="title-post">' . $item->post_title . '</h3>';
@@ -172,17 +172,17 @@ function RenderPool($items) {
 
 		// event date, if applicable
 		$eventDate = '';
-		if($item->post_type === 'post' && array_key_exists( 'is_event', $custom )) {
-			if($custom['is_event'][0] === '1') {
+		if ( $item->post_type === 'post' && array_key_exists( 'is_event', $custom ) ) {
+			if ( $custom['is_event'][0] === '1' ) {
 				$eventDate = DateTime::createFromFormat( 'Ymd',$custom['event_date'][0] );
 				$eventDate = '<div class="date-event"><img src="/wp-content/themes/libraries/images/calendar.svg" width="13px" height="13px"><span class="event">' . date_format( $eventDate,'F j' ) . '</span>';
-				if($custom['event_start_time'][0]!= '') {
+				if ( $custom['event_start_time'][0]!= '' ) {
 					$eventDate = $eventDate . '<span class="time-event"> ' . $custom['event_start_time'][0];
 				};
-				if($custom['event_end_time'][0] != '') {
+				if ( $custom['event_end_time'][0] != '' ) {
 					$eventDate = $eventDate . ' - ' . $custom['event_end_time'][0];
 				};
-				if($custom['event_start_time'][0] != '') {
+				if ( $custom['event_start_time'][0] != '' ) {
 					$eventDate = $eventDate . '</span>';
 				};
 				$eventDate = $eventDate . '</div>';
@@ -191,8 +191,8 @@ function RenderPool($items) {
 
 		// Highlight image
 		$imageElement = '';
-		if($item->post_type === 'post' || $item->post_type === 'bibliotech') {
-			if($custom['homeImg'][0] != '') {
+		if ( $item->post_type === 'post' || $item->post_type === 'bibliotech' ) {
+			if ( $custom['homeImg'][0] != '' ) {
 				$image = json_decode( $custom['homeImg'][0] );
 				// We use "original" even though this is already cropped to avoid cropping again
 				$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original' );
@@ -238,7 +238,7 @@ function RetrievePool() {
 
 }
 
-function SummarizePool($items) {
+function SummarizePool( $items ) {
 	// This takes the pool of all eligible news items, determines how many of
 	// each type exist, and determines what type of query is needed to
 	// populate the front page.
@@ -250,10 +250,10 @@ function SummarizePool($items) {
 		'other' => 0,
 		'total' => 0,
 	);
-	foreach($items as $item) {
-		if($item->post_type === 'post' || $item->post_type === 'bibliotech') {
+	foreach ( $items as $item ) {
+		if ( $item->post_type === 'post' || $item->post_type === 'bibliotech' ) {
 			$summary['news']++;
-		} elseif($item->post_type === 'spotlights') {
+		} elseif ( $item->post_type === 'spotlights' ) {
 			$summary['spotlights']++;
 		} else {
 			$summary['other']++;
@@ -262,15 +262,15 @@ function SummarizePool($items) {
 	}
 
 	// Determine query type based on summary results
-	if($summary['news'] === 1) {
+	if ( $summary['news'] === 1 ) {
 		// Only one eligible news item - so we set type to one
 		$type = 'one';
-	} elseif($summary['spotlights'] === 0) {
+	} elseif ( $summary['spotlights'] === 0 ) {
 		// No eligible spotlights - so we show two news items
 		$type = 'two';
 	} else {
 		// More than one news item - so we flip a coin for type
-		if (mt_rand( 0,1 )) {
+		if ( mt_rand( 0,1 ) ) {
 			$type = 'two';
 		} else {
 			$type = 'one';

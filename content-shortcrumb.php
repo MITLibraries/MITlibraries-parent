@@ -12,7 +12,7 @@ global $isRoot;
 
 ?>
 
-	<?php if (in_category( 'has-menu' )) { ?>
+	<?php if ( in_category( 'has-menu' ) ) { ?>
 		<?php get_template_part( 'inc/content', 'secmenu' ); ?>
 			<?php } ?>
 

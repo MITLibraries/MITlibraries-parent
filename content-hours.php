@@ -65,7 +65,7 @@
 					<a href="#">See all hours <i class="icon-arrow-right"></i></a>
 				</div>				
 				
-				<?php if ($alert != ''): ?>
+				<?php if ( $alert != '' ) : ?>
 				<div class="libraryAlert">
 					<?php echo $alert; ?>
 				</div>
@@ -75,17 +75,17 @@
 			<div id="content" class="locationContent">
 				<div id="mainContent">
 					
-					<?php if ($title1 != '' || $title2 != ''): ?>
+					<?php if ( $title1 != '' || $title2 != '' ) : ?>
 						<?php $noTab = '';  ?>
 					<ul class="tabnav">
-						<?php if ($title1 != ''): ?>
+						<?php if ( $title1 != '' ) : ?>
 						<li class="active"><a href="#tab1"><?php echo $title1 ?><div><?php echo $subtitle1 ?></div></a></li>
 						<?php endif; ?>
-						<?php if ($title2 != ''): ?>
+						<?php if ( $title2 != '' ) : ?>
 						<li><a href="#tab2"><?php echo $title2 ?><div><?php echo $subtitle2 ?></div></a></li>
 						<?php endif; ?>
 					</ul>
-					<?php else: ?>
+					<?php else : ?>
 						<?php $noTab = ' noTab';  ?>
 					<?php endif; ?>
 					<div class="tabcontent <?php echo $noTab ?>">
@@ -94,7 +94,7 @@
 								<div class="span4 first">
 								
 									<?php
-										if ($arexpert) {
+										if ( $arexpert ) {
 											$expertIndex = array_rand( $arexpert );
 											$expert = $arexpert[$expertIndex];
 
@@ -104,7 +104,7 @@
 											//$url = $expert->guid;
 											$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
-											if (has_post_thumbnail( $expert->ID )) {
+											if ( has_post_thumbnail( $expert->ID ) ) {
 												$thumb = get_the_post_thumbnail( $expert->ID, array(108,108) );
 											} else {
 												$thumb = '';
@@ -112,7 +112,7 @@
 
 									?>
 									<div class="profile">
-										<?php if ($thumb != ''):
+										<?php if ( $thumb != '' ) :
 											echo $thumb;
 										endif; ?>
 										<div class="profileContent">
@@ -140,7 +140,7 @@
 								</div>
 							</div>
 						</div>
-						<?php if ($title2 != ''): ?>
+						<?php if ( $title2 != '' ) : ?>
 						
 						<div class="tab" id="tab2">
 							<div class="row">
@@ -176,12 +176,12 @@
 								<li><a href="#">Get books, articles, and more...</a></li>
 							</ul>
 						</div>
-						<?php $val = $spaces; if ($val != ''): ?>
+						<?php $val = $spaces; if ( $val != '' ) : ?>
 						<div class="widget">
 							<?php echo $val; ?>
 						</div>
 						<?php endif; ?>
-						<?php $val = $equipment; if ($val != ''): ?>
+						<?php $val = $equipment; if ( $val != '' ) : ?>
 						<div class="widget">
 							<?php echo $val; ?>
 						</div>

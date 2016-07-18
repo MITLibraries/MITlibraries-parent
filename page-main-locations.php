@@ -56,7 +56,7 @@ get_header(); ?>
 							$mapImage = get_field( 'map_image' );
 
 
-							for($i=1;$i<=$numMain;$i++) {
+							for ( $i=1;$i<=$numMain;$i++ ) {
 								$img = get_field( 'main_image'.$i, $locationId );
 								if ($img != '')
 									$arMain[] = $img;
@@ -64,7 +64,7 @@ get_header(); ?>
 							$val = $arMain[array_rand( $arMain )];
 							//$val = $arMain[0];
 
-							if ($mapImage != '') {
+							if ( $mapImage != '' ) {
 								// user override image;
 								$val = $mapImage;
 							}
@@ -85,7 +85,7 @@ get_header(); ?>
 							$directionsUrl .= 'daddr='.$lat.','.$lng;
 							//$directionsUrl .= "daddr=".urlencode($address);
 
-							if ($lat != '' && $lng != ''):
+							if ( $lat != '' && $lng != '' ) :
 						?>				
 						<div class="location">
 							<div class="id"><?php echo $locationId; ?></div>
@@ -96,7 +96,7 @@ get_header(); ?>
 							<div class="address"><?php echo $address; ?></div>
 							<div class="description">
 								<div class="infoContent">
-									<?php if ($val != ''): ?>
+									<?php if ( $val != '' ) : ?>
 									<div class="infoImage" style="background-image: url(<?php echo $val; ?>); background-repeat: no-repeat;"></div>
 									<?php endif; ?>
 									<div class="content">
@@ -156,11 +156,11 @@ get_header(); ?>
 							<li class="location-name">
 								<h2 class="name-location"><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
 								<div class="sub"><?php echo $subject ?></div>
-								<?php if ($phone != ''): ?>
+								<?php if ( $phone != '' ) : ?>
 								<?php echo $phone ?>
 								<br/>
 								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
-								<?php if ($study24 == 1): ?>
+								<?php if ( $study24 == 1 ) : ?>
 									<br/>
 									<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 								<?php endif; ?>
@@ -204,12 +204,12 @@ get_header(); ?>
 						$pageLink = get_permalink( $pageID );
 					?>
 						<li class="location-secondary">
-							<?php if ($slug === 'stata'): ?>
+							<?php if ( $slug === 'stata' ) : ?>
 							<h3 class="name-location--secondary"><?php echo the_title() ?></h3>
-							<?php else: ?>
+							<?php else : ?>
 							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
 							<?php endif; ?>
-							<?php if ($phone != ''): ?>
+							<?php if ( $phone != '' ) : ?>
 							<?php echo $phone ?><br/>
 							<?php endif; ?>
 							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>

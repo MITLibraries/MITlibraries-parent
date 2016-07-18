@@ -12,7 +12,7 @@ global $isRoot;
 		<div class="main-content content-main">
 		
 			<div class="entry-content">
-				<?php if (!$isRoot): ?>
+				<?php if ( !$isRoot ) : ?>
 				<h2><?php the_title(); ?></h2>
 				<?php endif; ?>
 				<?php the_content(); ?>
