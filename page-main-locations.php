@@ -58,8 +58,8 @@ get_header(); ?>
 
 							for ( $i = 1;$i <= $numMain;$i++ ) {
 								$img = get_field( 'main_image'.$i, $locationId );
-								if ($img != '')
-									$arMain[] = $img;
+								if ($img != '') {
+									$arMain[] = $img; }
 							}
 							$val = $arMain[ array_rand( $arMain ) ];
 							// $val = $arMain[0];

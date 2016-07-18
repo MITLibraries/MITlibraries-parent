@@ -14,11 +14,11 @@ if ( isset( $_GET['cleanCache'] ) ) {
 
 $resetCache = 0;
 
-if ($clean == '1') $resetCache = 1;
+if ($clean == '1') { $resetCache = 1; }
 $halfCache = 0;
 
-if (isset( $_GET['locReset'] ))
-	$locationReset = $_GET['locReset'];
+if (isset( $_GET['locReset'] )) {
+	$locationReset = $_GET['locReset']; }
 
 $expireLong = 60 * 5; // 24 hours
 $expireShort = 60 * 5; // 5 minutes
@@ -516,7 +516,7 @@ function getTermHour( $term, $dt ) {
 
 			$end = $hours['end'];
 
-			if ($end == '') $end = $start;
+			if ($end == '') { $end = $start; }
 
 			$dt = strtotime( date( 'Ymd', $dt ) );
 
@@ -712,7 +712,7 @@ function handle_hours_upload() {
 
 function getSemester( $name, $list ) {
 	foreach ( $list as $index => $item ) {
-		if ($item[ semester ] == $name) return $item;
+		if ($item[ semester ] == $name) { return $item; }
 	}
 	return '';
 }
@@ -878,8 +878,8 @@ function process_holiday( $arSheet, $tag ) {
 					if ( $col != 'A' ) {
 						// not the name
 						// use master row, if not, use previous (for blank entries);
-						if ($masterRow[ $col ] != '')
-							$day = $masterRow[ $col ];
+						if ($masterRow[ $col ] != '') {
+							$day = $masterRow[ $col ]; }
 						$dt = strtotime( $dateRow[ $col ] );
 						$formatDate = date( 'Ymd', $dt );
 						$termDate = date( 'Y-m-d', $dt );

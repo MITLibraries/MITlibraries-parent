@@ -31,13 +31,13 @@ $gStudy24Url = '/study/24x7/';
 
 // $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
-foreach (glob( $siteRoot.'/wp-content/themes/libraries/lib/*.php' ) as $file) require_once( $file );
+foreach (glob( $siteRoot.'/wp-content/themes/libraries/lib/*.php' ) as $file) { require_once( $file ); }
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
-	$content_width = 625;
+if ( ! isset( $content_width ) ) {
+	$content_width = 625; }
 
 /**
  * Sets up theme defaults and registers the various WordPress features that
@@ -100,8 +100,8 @@ function twentytwelve_scripts_styles() {
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
 	 */
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' ); }
 
 	/*
 	 * Loads our main stylesheet.
@@ -238,20 +238,20 @@ add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
 function twentytwelve_wp_title( $title, $sep ) {
 	global $paged, $page;
 
-	if ( is_feed() )
-		return $title;
+	if ( is_feed() ) {
+		return $title; }
 
 	// Add the site name.
 	$title .= get_bloginfo( 'name' );
 
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title = "$title $sep $site_description"; }
 
 	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) ); }
 
 	return $title;
 }
@@ -263,8 +263,8 @@ add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
+	if ( ! isset( $args['show_home'] ) ) {
+		$args['show_home'] = true; }
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'twentytwelve_page_menu_args' );
@@ -471,15 +471,15 @@ function twentytwelve_body_class( $classes ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
 	}
 
-	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
-		$classes[] = 'full-width';
+	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) ) {
+		$classes[] = 'full-width'; }
 
 	if ( is_page_template( 'page-templates/front-page.php' ) ) {
 		$classes[] = 'template-front-page';
-		if ( has_post_thumbnail() )
-			$classes[] = 'has-post-thumbnail';
-		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) )
-			$classes[] = 'two-sidebars';
+		if ( has_post_thumbnail() ) {
+			$classes[] = 'has-post-thumbnail'; }
+		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) ) {
+			$classes[] = 'two-sidebars'; }
 	}
 
 	if ( is_child_theme() ) {
@@ -498,8 +498,8 @@ function twentytwelve_body_class( $classes ) {
 		$classes[] = 'locationPage';
 	}
 
-	if ( ! is_multi_author() )
-		$classes[] = 'single-author';
+	if ( ! is_multi_author() ) {
+		$classes[] = 'single-author'; }
 
 	return $classes;
 }
@@ -596,7 +596,7 @@ function the_breadcrumb() {
 }
 
 function wsf_make_link( $url, $anchortext, $title=null, $nofollow=false ) {
-	if ( $title == null ) $title = $anchortext;
+	if ( $title == null ) { $title = $anchortext; }
 	$nofollow == true ? $rel = ' rel="nofollow"' : $rel = '';
 
 	$link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
@@ -621,8 +621,8 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	// Do not show breadcrumbs on home or front pages.
 	// So we will just return quickly
-	if ((is_home() || is_front_page()) && ( ! $front_page))
-	  return;
+	if ((is_home() || is_front_page()) && ( ! $front_page)) {
+	  return; }
 
 	// Create a constant for the separator, with space padding.
 	$SEP = ' ' . $sep . ' ';
@@ -663,7 +663,7 @@ function remove_template( $files_to_delete = array() ) {
 	global $wp_themes;
 
 	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
-	if ( is_scalar( $files_to_delete ) ) $files_to_delete = array( $files_to_delete );
+	if ( is_scalar( $files_to_delete ) ) { $files_to_delete = array( $files_to_delete ); }
 
 	// remove TLA if it was provided
 	$files_to_delete = preg_replace( '/\.[^.]+$/', '', $files_to_delete );
@@ -680,7 +680,7 @@ function remove_template( $files_to_delete = array() ) {
 		foreach ( $files_to_delete as $file_name ) {
 			if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ) {
 				$key = array_search( $file_path, $template_files );
-				if ( $key ) unset( $template_files[ $key ] );
+				if ( $key ) { unset( $template_files[ $key ] ); }
 			}
 		}
 	}

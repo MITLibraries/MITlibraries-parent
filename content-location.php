@@ -32,10 +32,10 @@
 	$content2 = get_field( 'tab_2_content' );
 
 	$content2wide = 0;
-	if ($content2 == '') $content2wide = 1;
+	if ($content2 == '') { $content2wide = 1; }
 
 	$content1wide = 0;
-	if ($content1 == '') $content1wide = 1;
+	if ($content1 == '') { $content1wide = 1; }
 
 	$study24 = get_field( 'study_24' );
 
@@ -52,7 +52,7 @@
 
 
 	$expertAskUrl = get_field( 'expert_ask_url' );
-	if ($expertAskUrl == '') $expertAskUrl = 'http://libraries.mit.edu/ask';
+	if ($expertAskUrl == '') { $expertAskUrl = 'http://libraries.mit.edu/ask'; }
 
 
 	$numMain = 6;
@@ -60,8 +60,8 @@
 
 	for ( $i = 1;$i <= $numMain;$i++ ) {
 		$img = get_field( 'main_image'.$i, $locationId );
-		if ($img != '')
-			$arMain[] = $img;
+		if ($img != '') {
+			$arMain[] = $img; }
 	}
 
 	$numSub = 8;

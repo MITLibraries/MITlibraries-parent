@@ -98,7 +98,7 @@
 		<!-- Auto links -->
 		<?php
 			if ( $newsFeedCount > 0 ) :
-				if ($newsBlog) switch_to_blog( $newsBlog );
+				if ($newsBlog) { switch_to_blog( $newsBlog ); }
 					$args = array(
 					'post_type' => 'post',
 					'posts_per_page' => $newsFeedCount,
@@ -115,7 +115,7 @@
 		<?php
 			endwhile;
 
-			if ($newsBlog) restore_current_blog();
+			if ($newsBlog) { restore_current_blog(); }
 			endif; // news feed count
 		?>
 
