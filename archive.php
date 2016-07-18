@@ -18,11 +18,11 @@
 
 get_header(); ?>
 
-    <section id="primary" class="site-content">
-        <div id="content" role="main">
+	<section id="primary" class="site-content">
+		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
-            <header class="archive-header">
+			<header class="archive-header">
 				<h1 class="archive-title"><?php
 					if ( is_day() ) :
 						printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
@@ -34,7 +34,7 @@ get_header(); ?>
 						_e( 'Archives', 'twentytwelve' );
 					endif;
 				?></h1>
-            </header><!-- .archive-header -->
+			</header><!-- .archive-header -->
 
 			<?php
 			/* Start the Loop */
@@ -56,8 +56,8 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-        </div><!-- #content -->
-    </section><!-- #primary -->
+		</div><!-- #content -->
+	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
