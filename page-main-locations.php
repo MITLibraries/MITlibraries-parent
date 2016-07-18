@@ -56,7 +56,7 @@ get_header(); ?>
 							$mapImage = get_field( 'map_image' );
 
 
-							for ( $i=1;$i<=$numMain;$i++ ) {
+							for ( $i = 1;$i <= $numMain;$i++ ) {
 								$img = get_field( 'main_image'.$i, $locationId );
 								if ($img != '')
 									$arMain[] = $img;

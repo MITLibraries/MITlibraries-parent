@@ -176,7 +176,7 @@ function RenderPool( $items ) {
 			if ( $custom['is_event'][0] === '1' ) {
 				$eventDate = DateTime::createFromFormat( 'Ymd',$custom['event_date'][0] );
 				$eventDate = '<div class="date-event"><img src="/wp-content/themes/libraries/images/calendar.svg" width="13px" height="13px"><span class="event">' . date_format( $eventDate,'F j' ) . '</span>';
-				if ( $custom['event_start_time'][0]!= '' ) {
+				if ( $custom['event_start_time'][0] != '' ) {
 					$eventDate = $eventDate . '<span class="time-event"> ' . $custom['event_start_time'][0];
 				};
 				if ( $custom['event_end_time'][0] != '' ) {
