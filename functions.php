@@ -635,7 +635,8 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 	echo wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP;
 
 	if ( is_single() ) {
-	the_category( ', ' ); echo $SEP;
+	the_category( ', ' );
+echo $SEP;
 	}
 	elseif ( is_page() ) {
 			$parent_id = $post->post_parent;
