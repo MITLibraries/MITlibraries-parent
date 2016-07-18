@@ -65,7 +65,7 @@ function getHours() {
 			$location = get_field( 'associated_location' );
 			$locationId = $location->ID;
 
-			$arHours[$locationId] = array(
+			$arHours[ $locationId ] = array(
 				'id' => $id,
 				'name' => $name,
 				'description' => $description,
@@ -115,7 +115,7 @@ function getHoursChildren( $parent ) {
 
 		$term = get_field( 'is_term' );
 
-		$arHours[$id] = array(
+		$arHours[ $id ] = array(
 			'id' => $id,
 			'name' => $name,
 			'description' => $description,
@@ -383,8 +383,8 @@ function getHourHours( $hour ) {
 		$end = strtotime( $arRange[1] );
 	}
 
-	$arOut[start] = date( 'H:i:s', $start );
-	$arOut[end] = date( 'H:i:s', $end );
+	$arOut[ start ] = date( 'H:i:s', $start );
+	$arOut[ end ] = date( 'H:i:s', $end );
 
 	return $arOut;
 
@@ -466,9 +466,9 @@ function getTerm( $obj, $location, $dt ) {
 
 		$data = array();
 
-		if ( $obj[$location] ) {
+		if ( $obj[ $location ] ) {
 			// location exists
-			$arTerms = $obj[$location]['terms'];
+			$arTerms = $obj[ $location ]['terms'];
 
 			//echo "[E: ".date("Y-m-d", $dt)." ]";
 
@@ -693,7 +693,7 @@ function handle_hours_upload() {
 				echo '<h3>Semester Overview</h3><br/>';
 
 				// main sheet detailing semester breakdowns
-				$yearSpan = explode( '-', $sheet[1][A] );
+				$yearSpan = explode( '-', $sheet[1][ A ] );
 
 				$yearStart = trim( $yearSpan[0] );
 				$yearEnd = trim( $yearSpan[1] );
@@ -708,7 +708,7 @@ function handle_hours_upload() {
 
 				break;
 			default:
-				$semester = $sheet[1][A];
+				$semester = $sheet[1][ A ];
 				echo "<h3>Semester Sheet: $semester</h3>";
 
 				process_semester( $sheet, $semester, $semesters, $tag );
@@ -722,7 +722,7 @@ function handle_hours_upload() {
 
 function getSemester( $name, $list ) {
 	foreach ( $list as $index => $item ) {
-		if ($item[semester] == $name) return $item;
+		if ($item[ semester ] == $name) return $item;
 	}
 	return '';
 }
@@ -755,20 +755,20 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 	$foundMaster = 0;
 
 	$semesterEntry = getSemester( $name, $semesterList );
-	$startDate = date( 'Ymd', $semesterEntry[start] );
-	$endDate = date( 'Ymd', $semesterEntry[end] );
+	$startDate = date( 'Ymd', $semesterEntry[ start ] );
+	$endDate = date( 'Ymd', $semesterEntry[ end ] );
 
 	// get column / day relationship
 	foreach ( $arSheet as $row => $item ) {
-		if ( strtolower( $item[A] ) == 'location' ) {
+		if ( strtolower( $item[ A ] ) == 'location' ) {
 			// row before it starts
 			$masterRow = $item;
 			$foundMaster = 1;
-		} else if ( $row >= $startRow && $item[A] != '' && $foundMaster ) {
+		} else if ( $row >= $startRow && $item[ A ] != '' && $foundMaster ) {
 			// valid row and we have a master row to compare against
 			$started = 1;
 
-			$locationName = $item[A];
+			$locationName = $item[ A ];
 			$locationId = locationNameToId( $locationName );
 
 			echo "<br/><b>$locationName</b><br/>";
@@ -809,7 +809,7 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 					if ( $col != 'A' ) {
 						// not the name
 
-						$day = $masterRow[$col];
+						$day = $masterRow[ $col ];
 						if ( $val != '' ) {
 							echo 'Adding - '.$day.' = '.$val.'<br>';
 
@@ -834,7 +834,7 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 			}
 } else {
 			// catch hidden extra areas
-			if ( $started && $item[A] == '' ) {
+			if ( $started && $item[ A ] == '' ) {
 				return;
 			}
 		}
@@ -857,24 +857,24 @@ function process_holiday( $arSheet, $tag ) {
 	$foundDate = 0;
 
 	$semesterEntry = getSemester( $name, $semesterList );
-	$startDate = date( 'Ymd', $semesterEntry[start] );
-	$endDate = date( 'Ymd', $semesterEntry[end] );
+	$startDate = date( 'Ymd', $semesterEntry[ start ] );
+	$endDate = date( 'Ymd', $semesterEntry[ end ] );
 
 	// get column / day relationship
 	foreach ( $arSheet as $row => $item ) {
-		if ( strtolower( $item[A] ) == 'holiday' ) {
+		if ( strtolower( $item[ A ] ) == 'holiday' ) {
 			// row before it starts
 			$masterRow = $item;
 			$foundMaster = 1;
-		} else if ( strtolower( $item[A] ) == 'date' ) {
+		} else if ( strtolower( $item[ A ] ) == 'date' ) {
 			// row before it starts
 			$dateRow = $item;
 			$foundDate = 1;
-		} else if ( $row >= $startRow && $item[A] != '' && $foundMaster && foundDate ) {
+		} else if ( $row >= $startRow && $item[ A ] != '' && $foundMaster && foundDate ) {
 			// valid row and we have a master row to compare against
 			$started = 1;
 
-			$locationName = $item[A];
+			$locationName = $item[ A ];
 			$locationId = locationNameToId( $locationName );
 			$locationIdOriginal = locationNameToIdOriginal( $locationName );
 
@@ -890,9 +890,9 @@ function process_holiday( $arSheet, $tag ) {
 						// not the name
 
 						// use master row, if not, use previous (for blank entries);
-						if ($masterRow[$col] != '')
-							$day = $masterRow[$col];
-						$dt = strtotime( $dateRow[$col] );
+						if ($masterRow[ $col ] != '')
+							$day = $masterRow[ $col ];
+						$dt = strtotime( $dateRow[ $col ] );
 						$formatDate = date( 'Ymd', $dt );
 						$termDate = date( 'Y-m-d', $dt );
 
@@ -903,7 +903,7 @@ function process_holiday( $arSheet, $tag ) {
 							$term = getTerm( $arHours, $locationIdOriginal, $dt );
 
 							//print_r($term[term]);
-							$termId = $term[term][id];
+							$termId = $term[ term ][ id ];
 
 							echo 'Adding Holiday - '.$day.' / '.$formatDate.' = '.$val.'<br>';
 
@@ -935,7 +935,7 @@ function process_holiday( $arSheet, $tag ) {
 			}
 } else {
 			// catch hidden extra areas
-			if ( $started && $item[A] == '' ) {
+			if ( $started && $item[ A ] == '' ) {
 				return;
 			}
 		}
@@ -1094,18 +1094,18 @@ function process_overview( $arSheet ) {
 
 	foreach ( $arSheet as $row => $item ) {
 		if ( $row >= $startRow ) {
-			if ( $item[A] != '' ) {
-				$semester = $item[A];
-				$start = strtotime( $item[B] );
-				$end = strtotime( $item[C] );
+			if ( $item[ A ] != '' ) {
+				$semester = $item[ A ];
+				$start = strtotime( $item[ B ] );
+				$end = strtotime( $item[ C ] );
 
 				$temp = array();
 
 				echo "<b>$semester</b>: ".date( 'Y-m-d', $start ).' to '.date( 'Y-m-d', $end ).' <br>';
 
-				$temp[semester] = $semester;
-				$temp[start] = $start;
-				$temp[end] = $end;
+				$temp[ semester ] = $semester;
+				$temp[ start ] = $start;
+				$temp[ end ] = $end;
 
 				array_push( $rObj, $temp );
 			}
@@ -1122,20 +1122,20 @@ function getTermHours( $term, $type ) {
 	$arExceptions = array();
 	$arRegular = array();
 
-	$hours = $term[hours];
+	$hours = $term[ hours ];
 
 	foreach ( $hours as $hour ) {
 		//print_r($hour);
-		$name = $hour[name];
-		$desc = $hour[description];
+		$name = $hour[ name ];
+		$desc = $hour[ description ];
 		$dates = array(
-			'start' => date( 'Y-m-d', strtotime( $hour[start] ) )
+			'start' => date( 'Y-m-d', strtotime( $hour[ start ] ) )
 		);
 
-		if ( $hour[end] ) {
-			$dates['end'] = date( 'Y-m-d', strtotime( $hour[end] ) );
+		if ( $hour[ end ] ) {
+			$dates['end'] = date( 'Y-m-d', strtotime( $hour[ end ] ) );
 		} else {
-			$dates['end'] = date( 'Y-m-d', strtotime( $hour[start] ) );
+			$dates['end'] = date( 'Y-m-d', strtotime( $hour[ start ] ) );
 		}
 
 		$hrs = getHourHours( $hour );
@@ -1198,7 +1198,7 @@ function getExport( $location ) {
 	$building = get_post_meta( $locationObjectId, 'building', true );
 	$phone = get_post_meta( $locationObjectId, 'phone', true );
 
-	$terms = $hours[$locationObjectId][terms];
+	$terms = $hours[ $locationObjectId ][ terms ];
 
 	$arTerms = array();
 
@@ -1206,20 +1206,20 @@ function getExport( $location ) {
 		//print_r($term);
 		$outTerm = array();
 
-		$outTerm[name] = $term[name];
+		$outTerm[ name ] = $term[ name ];
 
 		$dates = array();
-		$dates[start] = date( 'Y-m-d', strtotime( $term[start] ) );
-		$dates[end] = date( 'Y-m-d', strtotime( $term[end] ) );
+		$dates[ start ] = date( 'Y-m-d', strtotime( $term[ start ] ) );
+		$dates[ end ] = date( 'Y-m-d', strtotime( $term[ end ] ) );
 
 		$closings = getTermHours( $term, 'closings' );
 		$exceptions = getTermHours( $term, 'exceptions' );
 		$regular = getTermHours( $term, 'regular' );
 
-		$outTerm[dates] = $dates;
-		$outTerm[closings] = $closings;
-		$outTerm[exceptions] = $exceptions;
-		$outTerm[regular] = $regular;
+		$outTerm[ dates ] = $dates;
+		$outTerm[ closings ] = $closings;
+		$outTerm[ exceptions ] = $exceptions;
+		$outTerm[ regular ] = $regular;
 
 		array_push( $arTerms, $outTerm );
 	}

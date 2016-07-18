@@ -126,7 +126,7 @@
 	
 									<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 										<?php
-											$curDay = $arDays[$i];
+											$curDay = $arDays[ $i ];
 
 											if ( $curDay == $now ) {
 												$class = 'cur';

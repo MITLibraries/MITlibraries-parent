@@ -125,7 +125,7 @@
 			<div class="topRight">
 				<div class="library-image">
 						<?php
-							$val = $arMain[array_rand( $arMain )];
+							$val = $arMain[ array_rand( $arMain ) ];
 						?>
 						<?php if ( $val != '' ) : ?>
 						<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
@@ -161,7 +161,7 @@
 							<?php
 								if ( $arexpert ) {
 									$expertIndex = array_rand( $arexpert );
-									$expert = $arexpert[$expertIndex];
+									$expert = $arexpert[ $expertIndex ];
 
 
 									$name = $expert->post_title;

@@ -163,43 +163,43 @@ tr:nth-child(even) td {
         <tr>
       <th class="name">Locations</th>
         <?php $next = ''; ?>
-        <?php $i = 0; $day = $arDays[$i]; ?>
+        <?php $i = 0; $day = $arDays[ $i ]; ?>
         <th class="fullDay firstDisplay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 1; $day = $arDays[$i]; ?>
+        <?php $i = 1; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 2; $day = $arDays[$i]; ?>
+        <?php $i = 2; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 3; $day = $arDays[$i]; ?>
+        <?php $i = 3; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 4; $day = $arDays[$i]; ?>
+        <?php $i = 4; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 5; $day = $arDays[$i]; ?>
+        <?php $i = 5; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 6; $day = $arDays[$i]; ?>
+        <?php $i = 6; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
@@ -257,7 +257,7 @@ $mapPage = '/locations/#!';
             </div></td>
           <?php for ( $i = 0;$i <= 6;$i++ ) { ?>
           <?php
-	  $curDay = $arDays[$i];
+	  $curDay = $arDays[ $i ];
 
 	  if ( $curDay == $now ) {
 		$class = 'cur';
@@ -276,43 +276,43 @@ $mapPage = '/locations/#!';
         <tr>
       <th class="name">More Locations</th>
         <?php $next = ''; ?>
-        <?php $i = 0; $day = $arDays[$i]; ?>
+        <?php $i = 0; $day = $arDays[ $i ]; ?>
         <th class="fullDay firstDisplay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 1; $day = $arDays[$i]; ?>
+        <?php $i = 1; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 2; $day = $arDays[$i]; ?>
+        <?php $i = 2; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 3; $day = $arDays[$i]; ?>
+        <?php $i = 3; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 4; $day = $arDays[$i]; ?>
+        <?php $i = 4; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 5; $day = $arDays[$i]; ?>
+        <?php $i = 5; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
           <div class='date'><?php echo date( $dfDowMobile, $day );?></div>
           </span> </th>
-        <?php $i = 6; $day = $arDays[$i]; ?>
+        <?php $i = 6; $day = $arDays[ $i ]; ?>
         <th class="fullDay <?php echo $next; $next = ''; if ( $now == $day ) { echo 'cur'; $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
           <div class='date'><?php echo date( $dfDow, $day );?></div>
           </span> <span class="mobileDay"><?php echo date( 'D', $day ); ?>
@@ -382,7 +382,7 @@ $pageLink = get_permalink( $pageID );
           </div></td>
         <?php for ( $i = 0;$i <= 6;$i++ ) { ?>
         <?php
-$curDay = $arDays[$i];
+$curDay = $arDays[ $i ];
 
 if ( $curDay == $now ) {
 $class = 'cur';

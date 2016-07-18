@@ -61,7 +61,7 @@ get_header(); ?>
 								if ($img != '')
 									$arMain[] = $img;
 							}
-							$val = $arMain[array_rand( $arMain )];
+							$val = $arMain[ array_rand( $arMain ) ];
 							//$val = $arMain[0];
 
 							if ( $mapImage != '' ) {

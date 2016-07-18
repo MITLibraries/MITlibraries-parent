@@ -96,7 +96,7 @@
 									<?php
 										if ( $arexpert ) {
 											$expertIndex = array_rand( $arexpert );
-											$expert = $arexpert[$expertIndex];
+											$expert = $arexpert[ $expertIndex ];
 
 
 											$name = $expert->post_title;

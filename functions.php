@@ -561,7 +561,7 @@ function getRoot( $post ) {
 	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
 
 	for ( $i = 0;$i < count( $ar );$i++ ) {
-		$pid = $ar[$i];
+		$pid = $ar[ $i ];
 		$is_section = get_post_meta( $pid, 'is_section', 1 );
 		if ( $is_section == 1 ) {
 			return $pid;
@@ -573,7 +573,7 @@ function getRoot( $post ) {
 	if ( $max == -1 ) {
 		return $post->ID;
 	} else {
-		return $ar[$max];
+		return $ar[ $max ];
 	}
 
 }
@@ -676,13 +676,13 @@ function remove_template( $files_to_delete = array() ) {
 	$current_theme_name = get_current_theme();
 
 	// Note that we're taking a reference to $wp_themes so we can modify it in-place
-	$template_files = &$wp_themes[$current_theme_name]['Template Files'];
+	$template_files = &$wp_themes[ $current_theme_name ]['Template Files'];
 
 	foreach ( $template_files as $file_path ) {
 		foreach ( $files_to_delete as $file_name ) {
 			if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ) {
 				$key = array_search( $file_path, $template_files );
-				if ( $key ) unset( $template_files[$key] );
+				if ( $key ) unset( $template_files[ $key ] );
 			}
 		}
 	}
