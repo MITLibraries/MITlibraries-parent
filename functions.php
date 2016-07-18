@@ -595,7 +595,7 @@ function the_breadcrumb() {
 	}
 }
 
-function wsf_make_link( $url, $anchortext, $title=null, $nofollow=false ) {
+function wsf_make_link( $url, $anchortext, $title = null, $nofollow = false ) {
 	if ( $title == null ) { $title = $anchortext; }
 	$nofollow == true ? $rel = ' rel="nofollow"' : $rel = '';
 
@@ -818,6 +818,7 @@ add_filter( 'upload_mimes', 'cc_mime_types' );
 
 /**
  * Force URLs in srcset attributes into HTTPS scheme.
+ *
  * @link https://wordpress.org/support/topic/responsive-images-src-url-is-https-srcset-url-is-http-no-images-loaded?replies=19#post-7767555
  */
 function ssl_srcset( $sources ) {
