@@ -31,7 +31,7 @@ $gStudy24Url = '/study/24x7/';
 
 // $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
-foreach (glob( $siteRoot.'/wp-content/themes/libraries/lib/*.php' ) as $file) { require_once( $file ); }
+foreach ( glob( $siteRoot.'/wp-content/themes/libraries/lib/*.php' ) as $file ) { require_once( $file ); }
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
@@ -621,7 +621,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	// Do not show breadcrumbs on home or front pages.
 	// So we will just return quickly
-	if ((is_home() || is_front_page()) && ( ! $front_page)) {
+	if ( (is_home() || is_front_page()) && ( ! $front_page) ) {
 	  return; }
 
 	// Create a constant for the separator, with space padding.
