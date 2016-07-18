@@ -62,8 +62,7 @@ get_header(); ?>
 									$arMain[] = $img;
 							}
 							$val = $arMain[ array_rand( $arMain ) ];
-							//$val = $arMain[0];
-
+							// $val = $arMain[0];
 							if ( $mapImage != '' ) {
 								// user override image;
 								$val = $mapImage;
@@ -83,8 +82,7 @@ get_header(); ?>
 
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr='.$lat.','.$lng;
-							//$directionsUrl .= "daddr=".urlencode($address);
-
+							// $directionsUrl .= "daddr=".urlencode($address);
 							if ( $lat != '' && $lng != '' ) :
 						?>				
 						<div class="location">

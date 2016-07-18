@@ -18,7 +18,7 @@
 	$email = cf( 'email' );
 	$building = cf( 'building' );
 	$spaces = cf( 'group_spaces' );
-	//$equipment = cf("equipment");
+	// $equipment = cf("equipment");
 	$arexpert = get_field( 'expert' );
 
 	$title1 = cf( 'tab_1_title' );
@@ -166,7 +166,7 @@
 
 									$name = $expert->post_title;
 									$bio = $expert->post_excerpt;
-									//$url = $expert->guid;
+									// $url = $expert->guid;
 									$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
 									if ( has_post_thumbnail( $expert->ID ) ) {

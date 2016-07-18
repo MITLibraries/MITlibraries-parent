@@ -13,8 +13,7 @@ global $isRoot;
 		<div class="pagenav">
 		<ul>
 		<?php
-			//$pageParent = getParent($post->ID);
-
+			// $pageParent = getParent($post->ID);
 			$pageRoot = getRoot( $post );
 			$section = get_post( $pageRoot );
 

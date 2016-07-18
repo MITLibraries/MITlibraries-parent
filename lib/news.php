@@ -60,7 +60,6 @@ function LoadNews() {
 
 function QueryPoolTwo() {
 	// This builds a recordset for two post/bibliotech articles
-
 	$args = array(
 		'meta_query' => array(
 			array(
@@ -82,7 +81,6 @@ function QueryPoolTwo() {
 
 function QueryPoolOne() {
 	// This builds a recordset for one post/bibliotech and one spotlight article
-
 	// Start by getting post/bibliotech
 	$args = array(
 		'meta_query' => array(
@@ -125,7 +123,6 @@ function QueryPoolOne() {
 
 function RenderPool( $items ) {
 	// This takes an input recordset of news items and renders it as HTML
-
 	foreach ( $items as $item ) {
 		$custom = get_post_custom( $item->ID );
 
@@ -216,7 +213,6 @@ function RenderPool( $items ) {
 function RetrievePool() {
 	// This characterizes the pool of eligible articles, and then calls the
 	// relevant query builder
-
 	// Get all eligible articles
 	$args = array(
 		'meta_query' => array(
@@ -242,7 +238,6 @@ function SummarizePool( $items ) {
 	// This takes the pool of all eligible news items, determines how many of
 	// each type exist, and determines what type of query is needed to
 	// populate the front page.
-
 	// Summarize article list
 	$summary = array(
 		'news' => 0,

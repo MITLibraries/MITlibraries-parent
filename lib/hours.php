@@ -182,15 +182,14 @@ function getHoursDay( $locationId, $dt ) {
 
 		$data = '';
 		$today = $dt;
-		//$today = strtotime("2013-04-20");
+		// $today = strtotime("2013-04-20");
 		$dt = $today;
 
-		//echo "{{".date("Y-m-d", $dt)."}}";
-
+		// echo "{{".date("Y-m-d", $dt)."}}";
 		$arHours = getHours();
 
 		$term = getTerm( $arHours, $locationId, $dt );
-		//print_r($term);
+		// print_r($term);
 		$hour = getTermHour( $term, $dt );
 
 		if ( count( $term ) == 0 ) {
@@ -218,15 +217,14 @@ function getMobileHoursDay( $locationId, $dt ) {
 
 		$data = '';
 		$today = $dt;
-		//$today = strtotime("2013-04-20");
+		// $today = strtotime("2013-04-20");
 		$dt = $today;
 
-		//echo "{{".date("Y-m-d", $dt)."}}";
-
+		// echo "{{".date("Y-m-d", $dt)."}}";
 		$arHours = getHours();
 
 		$term = getTerm( $arHours, $locationId, $dt );
-		//print_r($term);
+		// print_r($term);
 		$hour = getTermHour( $term, $dt );
 
 		if ( count( $term ) == 0 ) {
@@ -252,18 +250,18 @@ function getMessageDay( $locationId, $dt ) {
 
 	if ( $data === false || $resetCache || $locationReset == $locationId ) {
 
-		//echo date("Y-m-d", $dt);
+		// echo date("Y-m-d", $dt);
 		$data = '';
 		$today = $dt;
-		//$today = strtotime("2013-04-20");
+		// $today = strtotime("2013-04-20");
 		$dt = $today;
 
 		$arHours = getHours();
 
 		$term = getTerm( $arHours, $locationId, $dt );
 
-		//echo $locationId." - ".$dt."  ";
-		//print_r($term);
+		// echo $locationId." - ".$dt."  ";
+		// print_r($term);
 		$hour = getTermHour( $term, $dt );
 
 		$data = '';
@@ -421,7 +419,7 @@ function dayLookup( $str ) {
 function toDays( $str ) {
 	if ( strpos( $str, '-' ) !== false ) {
 		// multi day
-		//echo $str;
+		// echo $str;
 		$arRange = explode( '-', $str );
 
 		$start = $arRange[0];
@@ -435,7 +433,7 @@ function toDays( $str ) {
 
 		$strOut = '';
 
-		//echo $currentShort." vs ".$endShort;
+		// echo $currentShort." vs ".$endShort;
 		while ( $currentShort != $endShort ) {
 			$strOut .= $currentShort;
 
@@ -449,7 +447,6 @@ function toDays( $str ) {
 		return $strOut;
 	} else {
 		// single day
-
 		return dayLookup( $str );
 	}
 	return $str;
@@ -470,23 +467,20 @@ function getTerm( $obj, $location, $dt ) {
 			// location exists
 			$arTerms = $obj[ $location ]['terms'];
 
-			//echo "[E: ".date("Y-m-d", $dt)." ]";
-
+			// echo "[E: ".date("Y-m-d", $dt)." ]";
 			foreach ( $arTerms as $termId => $term ) {
 				$start = $term['start'];
 				$end = $term['end'];
 
-				//echo "{ $start -> $dt -> $end }";
-
+				// echo "{ $start -> $dt -> $end }";
 				$dt = strtotime( date( 'Y-m-d', $dt ) );
 
 				$start = strtotime( $start );
 				$end = strtotime( $end );
 
-				//echo "[ ".date("Y-m-d", $start)." ]";
-
+				// echo "[ ".date("Y-m-d", $start)." ]";
 				if ( $start <= $dt && $dt <= $end ) {
-					//echo "FOUND";
+					// echo "FOUND";
 					$data = array(
 						'id' => $key,
 						'term' => $term
@@ -494,11 +488,10 @@ function getTerm( $obj, $location, $dt ) {
 				}
 }
 } else {
-			//echo "TEST";
+			// echo "TEST";
 		}
 
-		//print_r($data);
-
+		// print_r($data);
 		set_transient( $key, $data, $expire );
 	}
 
@@ -507,7 +500,6 @@ function getTerm( $obj, $location, $dt ) {
 
 function getTermHour( $term, $dt ) {
 	// check for special days
-
 	if ( count( $term ) == 0 ) {
 		return array();
 	}
@@ -598,10 +590,10 @@ function hourToMobile( $str ) {
 
 function filterText( $str ) {
 	// alters hours for mobile output (replacing long strings with shorter ones)
-	//$str = str_replace("midnight", "midn", $str);
-	//$str = str_replace("-", "<br/>", $str);
-	//$str = str_replace("am", "a", $str);
-	//$str = str_replace("pm", "p", $str);
+	// $str = str_replace("midnight", "midn", $str);
+	// $str = str_replace("-", "<br/>", $str);
+	// $str = str_replace("am", "a", $str);
+	// $str = str_replace("pm", "p", $str);
 	$str = str_replace( 'by appointment only', '', $str );
 	$str = str_replace( '(', '', $str );
 	$str = str_replace( ')', '', $str );
@@ -661,8 +653,7 @@ function handle_hours_upload() {
 	$tag = $fileName;
 
 	$obj = PHPExcel_IOFactory::load( $upload );
-	//$obj->setReadDataOnly(true);
-
+	// $obj->setReadDataOnly(true);
 	echo "Spreadsheet Loaded: <b>$fileName</b> <br/>";
 
 	clean_posts( $tag );
@@ -680,8 +671,7 @@ function handle_hours_upload() {
 	}
 	*/
 
-	//return;
-
+	// return;
 	$loadedSheetNames = $obj->getSheetNames();
 
 	foreach ( $loadedSheetNames as $sheetIndex => $loadedSheetName ) {
@@ -699,7 +689,7 @@ function handle_hours_upload() {
 				$yearEnd = trim( $yearSpan[1] );
 
 				$semesters = process_overview( $sheet );
-				//print_r($semesters);
+				// print_r($semesters);
 				break;
 			case 'holidays & special hours':
 				echo '<h3>Holiday Sheet</h3><br/>';
@@ -808,7 +798,6 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 				foreach ( $item as $col => $val ) {
 					if ( $col != 'A' ) {
 						// not the name
-
 						$day = $masterRow[ $col ];
 						if ( $val != '' ) {
 							echo 'Adding - '.$day.' = '.$val.'<br>';
@@ -888,7 +877,6 @@ function process_holiday( $arSheet, $tag ) {
 				foreach ( $item as $col => $val ) {
 					if ( $col != 'A' ) {
 						// not the name
-
 						// use master row, if not, use previous (for blank entries);
 						if ($masterRow[ $col ] != '')
 							$day = $masterRow[ $col ];
@@ -902,7 +890,7 @@ function process_holiday( $arSheet, $tag ) {
 							$termId = 0;
 							$term = getTerm( $arHours, $locationIdOriginal, $dt );
 
-							//print_r($term[term]);
+							// print_r($term[term]);
 							$termId = $term[ term ][ id ];
 
 							echo 'Adding Holiday - '.$day.' / '.$formatDate.' = '.$val.'<br>';
@@ -911,7 +899,6 @@ function process_holiday( $arSheet, $tag ) {
 								echo "<b>MISSING Term for: $termDate</b><br>";
 							} else {
 								// OK to insert
-
 								// Insert Post
 								$args = array(
 									'post_title' => $day,
@@ -1050,7 +1037,6 @@ function locationNameToId( $name ) {
 
 function locationNameToIdOriginal( $name ) {
 	// looks for a manual match to the import name (names are converted to lowercase to eliminate capitalizations changes)
-
 	$baseName = nameLookup( $name );
 	$id = 0;
 
@@ -1125,7 +1111,7 @@ function getTermHours( $term, $type ) {
 	$hours = $term[ hours ];
 
 	foreach ( $hours as $hour ) {
-		//print_r($hour);
+		// print_r($hour);
 		$name = $hour[ name ];
 		$desc = $hour[ description ];
 		$dates = array(
@@ -1141,17 +1127,17 @@ function getTermHours( $term, $type ) {
 		$hrs = getHourHours( $hour );
 
 		if ( checkClosed( $desc ) ) {
-			//echo "Closed";
+			// echo "Closed";
 			$arDay = array(
 				'dates' => $dates,
 				'reason' => $name
 
 			);
-			//print_r($dates);
+			// print_r($dates);
 			array_push( $arClosings, $arDay );
 
 		} else if ( checkWeekday( $name ) ) {
-			//echo "Weekday";
+			// echo "Weekday";
 			$arDay = array(
 				'days' => toDays( $name ),
 				'hours' => $hrs,
@@ -1160,13 +1146,13 @@ function getTermHours( $term, $type ) {
 			array_push( $arRegular, $arDay );
 
 		} else {
-			//echo "Exception";
+			// echo "Exception";
 			$arDay = array(
 				'dates' => $dates,
 				'reason' => $name,
 				'hours' => $hrs
 			);
-			//print_r($dates);
+			// print_r($dates);
 			array_push( $arExceptions, $arDay );
 
 		}
@@ -1203,7 +1189,7 @@ function getExport( $location ) {
 	$arTerms = array();
 
 	foreach ( $terms as $term ) {
-		//print_r($term);
+		// print_r($term);
 		$outTerm = array();
 
 		$outTerm[ name ] = $term[ name ];
@@ -1231,8 +1217,7 @@ function getExport( $location ) {
 		'terms' => $arTerms
 	);
 
-	//$arExport[name] = $name;
-
+	// $arExport[name] = $name;
 	$export = $arExport;
 	return $export;
 }

@@ -56,12 +56,10 @@
 					// setup_postdata($post);
 					$custom = get_post_custom();
 					// var_dump($custom);
-
 					// URL
 					$url = get_permalink( $post->id );
 					// echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>';
 					// echo 'post: ' . post_permalink($post->id) . '<br>';
-
 					// Highlight image - use 17616 for debugging
 					$imageTag = '';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {

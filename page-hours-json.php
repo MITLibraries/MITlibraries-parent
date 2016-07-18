@@ -41,7 +41,7 @@ $dtWeekday = date( 'N', $dt );
 </script>
 <?php
 
-//$today = strtotime($dtYear."W".$dtWeek.$dtWeekday);
+// $today = strtotime($dtYear."W".$dtWeek.$dtWeekday);
 $today = strtotime( $inDate );
 $dtTodayMo = date( 'n' );
 $dtTodayDay = date( 'j' );
@@ -389,7 +389,7 @@ $args = array(
 /*'orderby' => 'menu_order',*/
 'orderby' => 'name',
 'order' => 'ASC',
-//excludes DIRC and Stata
+// excludes DIRC and Stata
 	'meta_query' => array(
 	'relation' => 'AND',
 	array(

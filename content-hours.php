@@ -101,7 +101,7 @@
 
 											$name = $expert->post_title;
 											$bio = $expert->post_excerpt;
-											//$url = $expert->guid;
+											// $url = $expert->guid;
 											$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
 											if ( has_post_thumbnail( $expert->ID ) ) {

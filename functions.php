@@ -29,7 +29,7 @@ $gStudy24Url = '/study/24x7/';
 	$newsBlog = 7;
 	$mainSite = 1;
 
-//$siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
+// $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
 foreach (glob( $siteRoot.'/wp-content/themes/libraries/lib/*.php' ) as $file) require_once( $file );
 
@@ -69,8 +69,7 @@ function twentytwelve_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme supports a variety of post formats.
-	//add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
-
+	// add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 // Register Custom Navigation Walker
 require_once( 'navwalker.php' );
 
@@ -88,8 +87,7 @@ add_action( 'after_setup_theme', 'twentytwelve_setup' );
 /**
  * Adds support for a custom header image.
  */
-//require( get_template_directory() . '/inc/custom-header.php' );
-
+// require( get_template_directory() . '/inc/custom-header.php' );
 /**
  * Enqueues scripts and styles for front-end.
  *
@@ -609,8 +607,7 @@ function showBreadTitle() {
 	// Wordpess function that echoes your post title.
 	$custom_title = get_post_meta( $post->ID, 'breadcrumb_override', 1 );
 	$custom_title = $custom_title[0];
-	//$custom_title = get_field("breadcrumb_override");
-
+	// $custom_title = get_field("breadcrumb_override");
 	if ( $custom_title != '' ) {
 	 echo $custom_title;
 	} else {
@@ -814,7 +811,6 @@ if ( function_exists( 'get_fields' ) ) {
 }
 
 // Allows SVGs to be uploaded through media
-
 function cc_mime_types( $mimes ) {
 $mimes['svg'] = 'image/svg+xml';
 return $mimes;
