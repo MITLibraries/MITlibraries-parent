@@ -13,14 +13,14 @@
 	<h2><a href="/news">News &amp; events</a></h2>
 		
 	<?php
-		$newsTitle = get_field("news_title");
-		$newsVideo = get_field("news_video");
-		$newsVideoTitle = get_field("news_video_link_text");
-		$newsVideoURL = get_field("news_video_url");
-		$newsPhoto = get_field("news_photo");
-		$newsUrl = get_field("news_photo_url");
+		$newsTitle = get_field('news_title');
+		$newsVideo = get_field('news_video');
+		$newsVideoTitle = get_field('news_video_link_text');
+		$newsVideoURL = get_field('news_video_url');
+		$newsPhoto = get_field('news_photo');
+		$newsUrl = get_field('news_photo_url');
 		
-		$newsFeedCount = get_field("news_feed_number");
+		$newsFeedCount = get_field('news_feed_number');
 		
 		$numNews = 3;
 		
@@ -28,13 +28,13 @@
 
 		
 		for($i=1;$i<=$numNews;$i++) {
-			$nTitle = get_field("news_".$i);
-			$nUrl = get_field("news_".$i."_url");
+			$nTitle = get_field('news_'.$i);
+			$nUrl = get_field('news_'.$i.'_url');
 			
-			if ($nTitle != "" && $nUrl != "") {
+			if ($nTitle != '' && $nUrl != '') {
 				$arNews[] = array(
-					"title" => $nTitle,
-					"url" => $nUrl
+					'title' => $nTitle,
+					'url' => $nUrl
 				);
 			}
 		}
@@ -42,19 +42,19 @@
 
 	<div class="blockimage">
 
-		<?php if ($newsVideo != ""): ?>
+		<?php if ($newsVideo != ''): ?>
 			<div class="homepageVideo"><?php echo $newsVideo; ?></div>
 		<?php else: ?>
 
-			<?php if ($newsPhoto != ""): ?>
+			<?php if ($newsPhoto != ''): ?>
 
-			<?php if ($newsUrl != ""): ?>
+			<?php if ($newsUrl != ''): ?>
 				<a href="<?php echo $newsUrl; ?>">
 			<?php endif; ?>
 
 			<img src="<?php echo $newsPhoto; ?>"  alt="<?php echo $newsTitle; ?>">
 
-			<?php if ($newsUrl != ""): ?>
+			<?php if ($newsUrl != ''): ?>
 					</a>
 			<?php endif; ?>
 
@@ -68,11 +68,11 @@
 
 	</div> <!-- end blockimage -->
 	
-	<?php if ($newsVideoURL != ""): ?>
+	<?php if ($newsVideoURL != ''): ?>
 		<p><a href="<?php echo $newsVideoURL; ?>"><?php echo $newsVideoTitle; ?></a></p>
 	<?php else: ?>
 
-		<?php if ($newsTitle != "" && $newsUrl != ""): ?>
+		<?php if ($newsTitle != '' && $newsUrl != ''): ?>
 	
 			<p><a href="<?php echo $newsUrl; ?>"><?php echo $newsTitle; ?></a></p>
 			<?php else: ?>
@@ -87,8 +87,8 @@
 		<!-- custom links -->
 		<?php
 			foreach($arNews as $news):
-				$nTitle = $news["title"];
-				$nUrl = $news["url"];
+				$nTitle = $news['title'];
+				$nUrl = $news['url'];
 				
 				echo "<li><a href='$nUrl'>$nTitle</a></li>";
 			

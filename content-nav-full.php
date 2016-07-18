@@ -19,8 +19,8 @@ global $isRoot;
 			$section = get_post($pageRoot);
 						
 			$args = array(
-				"child_of" => $pageRoot,
-				"title_li" => "",
+				'child_of' => $pageRoot,
+				'title_li' => '',
 			);
 			
 			$menuName = $section->post_name;

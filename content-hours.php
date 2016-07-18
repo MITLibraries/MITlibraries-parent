@@ -6,28 +6,28 @@
  * @since 1.2.1
  */
 
-			$subject = cf("subject");
-			$phone = cf("phone");
-			$building = cf("building");
-			$spaces = cf("group_spaces");
-			$equipment = cf("equipment");
-			$arexpert = get_field("expert");
+			$subject = cf('subject');
+			$phone = cf('phone');
+			$building = cf('building');
+			$spaces = cf('group_spaces');
+			$equipment = cf('equipment');
+			$arexpert = get_field('expert');
 			
-			$title1 = cf("tab_1_title");
-			$subtitle1 = cf("tab_1_subtitle");
-			$content1left = get_field("tab_1_content_left");
-			$content1 = get_field("tab_1_content");
+			$title1 = cf('tab_1_title');
+			$subtitle1 = cf('tab_1_subtitle');
+			$content1left = get_field('tab_1_content_left');
+			$content1 = get_field('tab_1_content');
 			
-			$title2 = cf("tab_2_title");
-			$subtitle2 = cf("tab_2_subtitle");
-			$content2left = get_field("tab_2_content_left");
-			$content2 = get_field("tab_2_content");
+			$title2 = cf('tab_2_title');
+			$subtitle2 = cf('tab_2_subtitle');
+			$content2left = get_field('tab_2_content_left');
+			$content2 = get_field('tab_2_content');
 			
-			$displayPage = get_field("display_page");
+			$displayPage = get_field('display_page');
 			$pageID = $displayPage->ID;
 			$pageLink = get_permalink($pageID);
 			
-			$alert = get_field("alert");
+			$alert = get_field('alert');
 		?>
 		
 		<div id="stage" class="inner">
@@ -65,7 +65,7 @@
 					<a href="#">See all hours <i class="icon-arrow-right"></i></a>
 				</div>				
 				
-				<?php if ($alert != ""): ?>
+				<?php if ($alert != ''): ?>
 				<div class="libraryAlert">
 					<?php echo $alert; ?>
 				</div>
@@ -75,18 +75,18 @@
 			<div id="content" class="locationContent">
 				<div id="mainContent">
 					
-					<?php if ($title1 != "" || $title2 != ""): ?>
-						<?php $noTab = "";  ?>
+					<?php if ($title1 != '' || $title2 != ''): ?>
+						<?php $noTab = '';  ?>
 					<ul class="tabnav">
-						<?php if ($title1 != ""): ?>
+						<?php if ($title1 != ''): ?>
 						<li class="active"><a href="#tab1"><?php echo $title1 ?><div><?php echo $subtitle1 ?></div></a></li>
 						<?php endif; ?>
-						<?php if ($title2 != ""): ?>
+						<?php if ($title2 != ''): ?>
 						<li><a href="#tab2"><?php echo $title2 ?><div><?php echo $subtitle2 ?></div></a></li>
 						<?php endif; ?>
 					</ul>
 					<?php else: ?>
-						<?php $noTab = " noTab";  ?>
+						<?php $noTab = ' noTab';  ?>
 					<?php endif; ?>
 					<div class="tabcontent <?php echo $noTab ?>">
 						<div class="tab active" id="tab1">
@@ -102,17 +102,17 @@
 											$name = $expert->post_title;
 											$bio = $expert->post_excerpt;
 											//$url = $expert->guid;
-											$url = get_post_meta($expert->ID, "expert_url", 1);
+											$url = get_post_meta($expert->ID, 'expert_url', 1);
 											
 											if (has_post_thumbnail($expert->ID)) {
 												$thumb = get_the_post_thumbnail($expert->ID, array(108,108));
 											} else {
-												$thumb = "";
+												$thumb = '';
 											}
 											
 									?>
 									<div class="profile">
-										<?php if ($thumb != ""): 
+										<?php if ($thumb != ''): 
 											echo $thumb;
 										endif; ?>
 										<div class="profileContent">
@@ -140,7 +140,7 @@
 								</div>
 							</div>
 						</div>
-						<?php if ($title2 != ""): ?>
+						<?php if ($title2 != ''): ?>
 						
 						<div class="tab" id="tab2">
 							<div class="row">
@@ -176,12 +176,12 @@
 								<li><a href="#">Get books, articles, and more...</a></li>
 							</ul>
 						</div>
-						<?php $val = $spaces; if ($val != ""): ?>
+						<?php $val = $spaces; if ($val != ''): ?>
 						<div class="widget">
 							<?php echo $val; ?>
 						</div>
 						<?php endif; ?>
-						<?php $val = $equipment; if ($val != ""): ?>
+						<?php $val = $equipment; if ($val != ''): ?>
 						<div class="widget">
 							<?php echo $val; ?>
 						</div>

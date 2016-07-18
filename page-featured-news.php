@@ -63,10 +63,10 @@
 					// echo 'post: ' . post_permalink($post->id) . '<br>';
 
 					// Highlight image - use 17616 for debugging
-					$imageTag = "";
-					if($post->post_type === "post" || $post->post_type === "bibliotech") {
-						if($custom["homeImg"][0] != "") {
-							$image = json_decode($custom["homeImg"][0]);
+					$imageTag = '';
+					if($post->post_type === 'post' || $post->post_type === 'bibliotech') {
+						if($custom['homeImg'][0] != '') {
+							$image = json_decode($custom['homeImg'][0]);
 							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
 							$imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
 							$imageTag = '<img src="' . $imageURL . '" alt="">';
@@ -78,31 +78,31 @@
 					echo '">';
 
 					// card label
-					if($post->post_type === "post") {
-						if($post->is_event[0] === "1") {
-							$label = "Event";
+					if($post->post_type === 'post') {
+						if($post->is_event[0] === '1') {
+							$label = 'Event';
 						} else {
-							$label = "News";
+							$label = 'News';
 						}
 					} else {
-						if($post->post_type === "spotlights") {
-							$label = $custom["feature_type"][0];
-						} elseif($post->post_type === "bibliotech") {
-							$label = "Bibliotech";
+						if($post->post_type === 'spotlights') {
+							$label = $custom['feature_type'][0];
+						} elseif($post->post_type === 'bibliotech') {
+							$label = 'Bibliotech';
 						} else {
-							$label = "Other";
+							$label = 'Other';
 						}
 					}
 
 					// card date
-					if($post->post_type === "post" && $post->is_event[0] === "1") {
+					if($post->post_type === 'post' && $post->is_event[0] === '1') {
 						$eventDate = DateTime::createFromFormat('Ymd',$post->event_date);
 						$eventDate = '<span class="date">' . date_format($eventDate,'F j') . '</span>';
 						if($post->event_start_time != '') {
-							$eventDate = $eventDate . " " . $post->event_start_time;
+							$eventDate = $eventDate . ' ' . $post->event_start_time;
 						};
 						if($post->event_end_time != '') {
-							$eventDate = $eventDate . " - " . $post->event_end_time;
+							$eventDate = $eventDate . ' - ' . $post->event_end_time;
 						};
 					}
 
@@ -110,21 +110,21 @@
 					echo        '<div class="category-post">' . $label . '</div>';
 					// echo        '<div class="category-post">' . $url . '</div>';
 					echo        '<div class="href">';
-					if($post->post_type === "post" || $post->post_type === "bibliotech") {
+					if($post->post_type === 'post' || $post->post_type === 'bibliotech') {
 						the_permalink();
-					} elseif($post->post_type === "spotlights") {
-						echo $custom["external_link"][0];
+					} elseif($post->post_type === 'spotlights') {
+						echo $custom['external_link'][0];
 					} else {
 
 					}
 					echo  		'</div>';
-					if($post->post_type === "post" && $post->is_event[0] === "1") {
+					if($post->post_type === 'post' && $post->is_event[0] === '1') {
 						echo 	'<div class="datetime">' . $eventDate . '</div>';						
 					}
 					echo 		'<h3 class="title-post">';
 
-					if($custom["homepage_post_title"][0]) {
-						echo $custom["homepage_post_title"][0];
+					if($custom['homepage_post_title'][0]) {
+						echo $custom['homepage_post_title'][0];
 					} else {
 						the_title();
 					}

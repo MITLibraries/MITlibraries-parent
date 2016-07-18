@@ -11,7 +11,7 @@
 	$alertText = trim(get_post_meta($frontpage_id, 'alert_text', true));
 	$alertLink = trim(get_post_meta($frontpage_id, 'alert_link', true));
 
-	if ($showAlert == 1 && $alertText != "") {
+	if ($showAlert == 1 && $alertText != '') {
 
 		if(is_front_page()) {
 			if ($alertLink != '') {

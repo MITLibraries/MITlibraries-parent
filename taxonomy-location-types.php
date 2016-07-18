@@ -30,20 +30,20 @@ get_header(); ?>
 				<ul class="locationMainList">
 						<?php while ( have_posts() ) : the_post(); ?>
 						<?php 
-							$subject = cf("subject");
-							$phone = cf("phone");
-							$building = cf("building");
-							$spaces = cf("group_spaces");
-							$equipment = cf("equipment");
-							$expert = cf("expert");
+							$subject = cf('subject');
+							$phone = cf('phone');
+							$building = cf('building');
+							$spaces = cf('group_spaces');
+							$equipment = cf('equipment');
+							$expert = cf('expert');
 							
-							$title1 = cf("tab_1_title");
-							$subtitle1 = cf("tab_1_subtitle");
-							$content1 = cf("tab_1_content");
+							$title1 = cf('tab_1_title');
+							$subtitle1 = cf('tab_1_subtitle');
+							$content1 = cf('tab_1_content');
 							
-							$title2 = cf("tab_2_title");
-							$subtitle2 = cf("tab_2_subtitle");
-							$content2 = cf("tab_2_content");						
+							$title2 = cf('tab_2_title');
+							$subtitle2 = cf('tab_2_subtitle');
+							$content2 = cf('tab_2_content');						
 						?>
 							<li>
 								<div class="hours">Open today 10am - 6pm</div>
@@ -64,20 +64,20 @@ get_header(); ?>
 					<ul class="locationList">
 						<?php while ( have_posts() ) : the_post(); ?>
 						<?php 
-							$subject = cf("subject");
-							$phone = cf("phone");
-							$building = cf("building");
-							$spaces = cf("group_spaces");
-							$equipment = cf("equipment");
-							$expert = cf("expert");
+							$subject = cf('subject');
+							$phone = cf('phone');
+							$building = cf('building');
+							$spaces = cf('group_spaces');
+							$equipment = cf('equipment');
+							$expert = cf('expert');
 							
-							$title1 = cf("tab_1_title");
-							$subtitle1 = cf("tab_1_subtitle");
-							$content1 = cf("tab_1_content");
+							$title1 = cf('tab_1_title');
+							$subtitle1 = cf('tab_1_subtitle');
+							$content1 = cf('tab_1_content');
 							
-							$title2 = cf("tab_2_title");
-							$subtitle2 = cf("tab_2_subtitle");
-							$content2 = cf("tab_2_content");						
+							$title2 = cf('tab_2_title');
+							$subtitle2 = cf('tab_2_subtitle');
+							$content2 = cf('tab_2_content');						
 						?>
 							<li>
 								<h3><a href="#"><?php echo the_title() ?><i class="icon-arrow-right"></i></a></h3>

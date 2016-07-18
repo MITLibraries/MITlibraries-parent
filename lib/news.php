@@ -130,70 +130,70 @@ function RenderPool($items) {
         $custom = get_post_custom($item->ID);
 
         // URL
-        if($item->post_type === "post") {
+        if($item->post_type === 'post') {
             $url = get_permalink($item->ID);
-        } elseif($item->post_type === "bibliotech") {
+        } elseif($item->post_type === 'bibliotech') {
             $url = str_replace('/news/','/news/bibliotech/',get_permalink($item->ID));
-        } elseif($item->post_type === "spotlights") {
-            $url = $custom["external_link"][0];
+        } elseif($item->post_type === 'spotlights') {
+            $url = $custom['external_link'][0];
         } else {
             $url = '';
         }
 
         // Label
         $label = '<div class="category-post">';
-        if($item->post_type === "post") {
-            if($item->is_event[0] === "1") {
-                $label .= "Event";
+        if($item->post_type === 'post') {
+            if($item->is_event[0] === '1') {
+                $label .= 'Event';
             } else {
-                $label .= "News";
+                $label .= 'News';
             }
         } else {
-            if($item->post_type === "spotlights") {
-                if($custom["feature_type"][0] === "fact" || $custom["feature_type"][0] === "tip") {
-                    $label .= '<div class="info"></div>' . $custom["feature_type"][0];
+            if($item->post_type === 'spotlights') {
+                if($custom['feature_type'][0] === 'fact' || $custom['feature_type'][0] === 'tip') {
+                    $label .= '<div class="info"></div>' . $custom['feature_type'][0];
                 } else {
-                    $label .= '<div class="or_star-25"></div>Featured ' . $custom["feature_type"][0];
+                    $label .= '<div class="or_star-25"></div>Featured ' . $custom['feature_type'][0];
                 }
-            } elseif($item->post_type === "bibliotech") {
-                $label .= "Bibliotech";
+            } elseif($item->post_type === 'bibliotech') {
+                $label .= 'Bibliotech';
             } else {
-                $label .= "Other";
+                $label .= 'Other';
             }
         }
         $label .= '</div>';
 
         // Headline
-        if($custom["homepage_post_title"][0]) {
-            $headline = '<h3 class="title-post">' . $custom["homepage_post_title"][0] . '</h3>';
+        if($custom['homepage_post_title'][0]) {
+            $headline = '<h3 class="title-post">' . $custom['homepage_post_title'][0] . '</h3>';
         } else {
             $headline = '<h3 class="title-post">' . $item->post_title . '</h3>';
         }
 
         // event date, if applicable
-        $eventDate = "";
-        if($item->post_type === "post" && array_key_exists('is_event', $custom)) {
-            if($custom["is_event"][0] === "1") {
-                $eventDate = DateTime::createFromFormat('Ymd',$custom["event_date"][0]);
+        $eventDate = '';
+        if($item->post_type === 'post' && array_key_exists('is_event', $custom)) {
+            if($custom['is_event'][0] === '1') {
+                $eventDate = DateTime::createFromFormat('Ymd',$custom['event_date'][0]);
                 $eventDate = '<div class="date-event"><img src="/wp-content/themes/libraries/images/calendar.svg" width="13px" height="13px"><span class="event">' . date_format($eventDate,'F j') . '</span>';
-                if($custom["event_start_time"][0]!= '') {
-                    $eventDate = $eventDate . '<span class="time-event"> ' . $custom["event_start_time"][0];
+                if($custom['event_start_time'][0]!= '') {
+                    $eventDate = $eventDate . '<span class="time-event"> ' . $custom['event_start_time'][0];
                 };
-                if($custom["event_end_time"][0] != '') {
-                    $eventDate = $eventDate . " - " . $custom["event_end_time"][0];
+                if($custom['event_end_time'][0] != '') {
+                    $eventDate = $eventDate . ' - ' . $custom['event_end_time'][0];
                 };
-                if($custom["event_start_time"][0] != '') {
+                if($custom['event_start_time'][0] != '') {
                     $eventDate = $eventDate . '</span>';
                 };
-                $eventDate = $eventDate . "</div>";
+                $eventDate = $eventDate . '</div>';
             }
         }
 
         // Highlight image
-        $imageElement = "";
-        if($item->post_type === "post" || $item->post_type === "bibliotech") {
-            if($custom["homeImg"][0] != "") {
-                $image = json_decode($custom["homeImg"][0]);
+        $imageElement = '';
+        if($item->post_type === 'post' || $item->post_type === 'bibliotech') {
+            if($custom['homeImg'][0] != '') {
+                $image = json_decode($custom['homeImg'][0]);
                 // We use "original" even though this is already cropped to avoid cropping again
                 $imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original');
                 $imageURL = str_replace('/wp-content/uploads/','/news/files/',$imageURL[0]);
@@ -252,28 +252,28 @@ function SummarizePool($items) {
     );
     foreach($items as $item) {
         if($item->post_type === 'post' || $item->post_type === 'bibliotech') {
-            $summary["news"]++;
+            $summary['news']++;
         } elseif($item->post_type === 'spotlights') {
-            $summary["spotlights"]++;
+            $summary['spotlights']++;
         } else {
-            $summary["other"]++;
+            $summary['other']++;
         };
-        $summary["total"]++;
+        $summary['total']++;
     }
 
     // Determine query type based on summary results
-    if($summary["news"] === 1) {
+    if($summary['news'] === 1) {
         // Only one eligible news item - so we set type to one
-        $type = "one";
-    } elseif($summary["spotlights"] === 0) {
+        $type = 'one';
+    } elseif($summary['spotlights'] === 0) {
         // No eligible spotlights - so we show two news items
-        $type = "two";
+        $type = 'two';
     } else {
         // More than one news item - so we flip a coin for type
         if (mt_rand(0,1)) {
-            $type = "two";
+            $type = 'two';
         } else {
-            $type = "one";
+            $type = 'one';
         }
     }
 

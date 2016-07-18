@@ -85,7 +85,7 @@ get_header(); ?>
 			}
 		</style>
 		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
-			<?php wsf_breadcrumbs(" &raquo; ", ""); ?>
+			<?php wsf_breadcrumbs(' &raquo; ', ''); ?>
 		</div>
 
 		<?php while ( have_posts() ) : the_post(); ?>

@@ -42,7 +42,7 @@ endif;
 			<?php get_template_part( 'inc/content','root'); ?>
 			<?php } ?>	
 			
-			<div id="content" class="content <?php if (is_active_sidebar( 'sidebar-1' )) { echo "has-sidebar";} ?>">
+			<div id="content" class="content <?php if (is_active_sidebar( 'sidebar-1' )) { echo 'has-sidebar';} ?>">
 		
 			<?php if (in_category('shortcrumb')) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>

@@ -20,7 +20,7 @@ get_header(); ?>
 		<?php get_template_part('inc/breadcrumbs'); ?>
 
 		<?php 
-			$objs = get_field("page_location");
+			$objs = get_field('page_location');
 			
 			$args = array(
 				'p' => $objs->ID,

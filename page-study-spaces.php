@@ -56,35 +56,35 @@ get_header(); ?>
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 							
-							$subject = get_field("subject");
-							$phone = get_field("phone");
-							$building = get_field("building");
-							$spaces = get_field("group_spaces");
-							$individual = get_field("individual_spaces");
+							$subject = get_field('subject');
+							$phone = get_field('phone');
+							$building = get_field('building');
+							$spaces = get_field('group_spaces');
+							$individual = get_field('individual_spaces');
 							
-							$equipment = get_field("equipment");
-							$expert = get_field("expert");
+							$equipment = get_field('equipment');
+							$expert = get_field('expert');
 							
-							$title1 = get_field("tab_1_title");
-							$subtitle1 = get_field("tab_1_subtitle");
-							$content1 = get_field("tab_1_content");
+							$title1 = get_field('tab_1_title');
+							$subtitle1 = get_field('tab_1_subtitle');
+							$content1 = get_field('tab_1_content');
 							
-							$title2 = get_field("tab_2_title");
-							$subtitle2 = get_field("tab_2_subtitle");
-							$content2 = get_field("tab_2_content");	
+							$title2 = get_field('tab_2_title');
+							$subtitle2 = get_field('tab_2_subtitle');
+							$content2 = get_field('tab_2_content');	
 
-							$studyImage = get_field("study_space_image");
+							$studyImage = get_field('study_space_image');
 							
-							$study24 = get_field("study_24");
-							$reserveText = get_field("reserve_text");
-							if ($reserveText == "") {
-								$reserveText = "Reserve Group Study Space";
+							$study24 = get_field('study_24');
+							$reserveText = get_field('reserve_text');
+							if ($reserveText == '') {
+								$reserveText = 'Reserve Group Study Space';
 							}
-							$reserveUrl = get_field("reserve_url");
+							$reserveUrl = get_field('reserve_url');
 
 
 							
-							$displayPage = get_field("display_page");
+							$displayPage = get_field('display_page');
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink($pageID);
 							
@@ -103,7 +103,7 @@ get_header(); ?>
 										<div class="description">
 											<?php echo $description; ?>
 										</div>
-										<?php if ($reserveUrl != ""): ?>
+										<?php if ($reserveUrl != ''): ?>
 												<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 										<?php endif; ?>
 										<?php if ($study24 == 1): ?>
@@ -115,7 +115,7 @@ get_header(); ?>
 										
 											<h4><?php echo $subject ?></h4>
 											<div class="sub">
-												<?php if ($phone != ""): ?>
+												<?php if ($phone != ''): ?>
 												<?php echo $phone ?><br/>
 												<?php endif; ?>
 												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
@@ -124,21 +124,21 @@ get_header(); ?>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
 												<?php
 													endif;
-													if ($reserveUrl != ""):
+													if ($reserveUrl != ''):
 												?>
 												<a class="mobileReserve visible-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 												<?php endif; ?>
 											</div>
 										</div>
 
-										<?php if ($individual != ""): ?>
+										<?php if ($individual != ''): ?>
 										<div class="ss-2 ss-item">
 											<h4>Total seats</h4>
 											<?php echo $individual; ?>
 										</div>
 										<?php endif; ?>
 										
-										<?php if ($spaces != ""): ?>
+										<?php if ($spaces != ''): ?>
 										<div class="ss-3 ss-item last">
 											<h4>Group spaces</h4>
 											<?php echo $spaces; ?>

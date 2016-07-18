@@ -7,10 +7,10 @@
  * @since 1.2.1
  */
 
-include("../../../wp-blog-header.php"); ?>
+include('../../../wp-blog-header.php'); ?>
 <?php
 	
-	$location = $_GET["location"];
+	$location = $_GET['location'];
 	
 	$export = getExport($location);
 	
