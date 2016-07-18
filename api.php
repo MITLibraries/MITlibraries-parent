@@ -15,4 +15,3 @@ include( '../../../wp-blog-header.php' ); ?>
 	$export = getExport( $location );
 
 	echo json_encode( $export );
-?>

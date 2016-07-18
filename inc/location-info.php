@@ -23,5 +23,3 @@
 			$locationsQuery->the_post();
 			echo '<div class="location"><h3>' . get_the_title() . '</h3></div>';
 	}
-
-?>
