@@ -11,21 +11,21 @@ global $isRoot;
 ?>
 
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+	<div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
 	  <a class="navbar-brand mobile-display">
-                <?php _e( 'View Menu' ); ?>
-            </a>
-    </div>
+				<?php _e( 'View Menu' ); ?>
+			</a>
+	</div>
 
-        <?php
+		<?php
 			wp_nav_menu( array(
 				'menu'              => 'Secondary Menu',
 				'theme_location'    => 'secondary',
@@ -42,5 +42,5 @@ global $isRoot;
 
 		?>
 
-    </div>
+	</div>
 </nav>
