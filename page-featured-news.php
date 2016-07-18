@@ -38,15 +38,15 @@
 					array(
 						'key' => 'featuredArticle',
 						'value' => 'True',
-						'compare' => '='
+						'compare' => '=',
 						),
 					),
-				'post_type' => array( 'post' , 'spotlights' , 'bibliotech'),
+				'post_type' => array( 'post' , 'spotlights' , 'bibliotech' ),
 				'post_status' => 'publish',
 				'posts_per_page' => 50,
 				'orderby' => 'post_title',
 				'order' => 'ASC',
-				'ignore_sticky_posts' => 1
+				'ignore_sticky_posts' => 1,
 				);
 			$the_stories = null;
 			$the_stories = new WP_Query( $args );

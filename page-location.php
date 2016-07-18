@@ -24,7 +24,7 @@ get_header(); ?>
 
 			$args = array(
 				'p' => $objs->ID,
-				'post_type' => 'any'
+				'post_type' => 'any',
 			);
 
 			$locPosts = new WP_Query( $args );

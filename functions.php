@@ -108,13 +108,13 @@ function twentytwelve_scripts_styles() {
 	 */
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style'), '2.2.0' );
+	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style' ), '2.2.0' );
 
 	wp_enqueue_style( 'libraries-global' );
 
-	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array('libraries-global'), '1.0' );
+	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.0' );
 
-	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0' );
+	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global' ), '1.0' );
 
 		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
 
@@ -133,31 +133,31 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 
 	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false );
 
-	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
 
-	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
 
-	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
 
-	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
-	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true );
+	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr' ), '2.2.0', true );
 
-	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '2.2.0', true );
+	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '2.2.0', true );
 
-	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140312', true );
+	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS' ), '20140312', true );
 
-	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array('jquery', 'modernizr'), '20140811', false );
+	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), '20140811', false );
 
-	wp_register_script( 'mapJS', get_template_directory_uri() . '/js/build/map.min.js', array('jquery'), '20140813', true );
+	wp_register_script( 'mapJS', get_template_directory_uri() . '/js/build/map.min.js', array( 'jquery' ), '20140813', true );
 
 	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
-	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true );
+	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true );
 
-	wp_register_script( 'term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array('jquery', 'productionJS'), false, true );
+	wp_register_script( 'term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array( 'jquery', 'productionJS' ), false, true );
 
 	wp_register_script( 'moment',     '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/moment.js', false, false, true );
 
@@ -165,7 +165,7 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 
 	wp_register_script( 'underscore', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/underscore.js', false, false, true );
 
-	wp_register_script( 'lib-hours',  '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/libhours.js', array('moment','tabletop','underscore'), false, true );
+	wp_register_script( 'lib-hours',  '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
 
 	/* All-site JS */
 
@@ -788,7 +788,7 @@ function metabox_order( $order ) {
 				'prfx_meta',
 				'categorydiv',
 				'tagsdiv-post_tag',
-				'postimagediv'
+				'postimagediv',
 			)
 		),
 	);

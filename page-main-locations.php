@@ -39,7 +39,7 @@ get_header(); ?>
 								'post_type' => 'location',
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
-								'order' => 'ASC'
+								'order' => 'ASC',
 							);
 							$libraryList = new WP_Query( $args );
 						?>
@@ -124,7 +124,7 @@ get_header(); ?>
 								'meta_value' => 1,
 								'posts_per_page' => -1,
 								'orderby' => 'menu_order',
-								'order' => 'ASC'
+								'order' => 'ASC',
 							);
 							$libraryList = new WP_Query( $args );
 						?>
@@ -177,7 +177,7 @@ get_header(); ?>
 							'meta_value' => 1,
 							'posts_per_page' => -1,
 							'orderby' => 'menu_order',
-							'order' => 'ASC'
+							'order' => 'ASC',
 
 						);
 						$subList = new WP_Query( $args );

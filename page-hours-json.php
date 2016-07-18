@@ -246,7 +246,7 @@ $args = array(
 'posts_per_page' => -1,
 /*'orderby' => 'menu_order',*/
 'orderby' => 'name',
-'order' => 'ASC'
+'order' => 'ASC',
 );
 $libraryList = new WP_Query( $args );?>
         <?php while ( $libraryList->have_posts() ) : $libraryList->the_post();
@@ -395,10 +395,10 @@ $args = array(
 	array(
 	  'key' => 'no_hours',
 	  'value' => 0,
-	  'compare' => '='
+	  'compare' => '=',
 	  ),
 
-	)
+	),
 );
 $libraryList2 = new WP_Query( $args );?>
         <?php while ( $libraryList2->have_posts() ) : $libraryList2->the_post();

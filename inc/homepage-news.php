@@ -34,7 +34,7 @@
 			if ( $nTitle != '' && $nUrl != '' ) {
 				$arNews[] = array(
 					'title' => $nTitle,
-					'url' => $nUrl
+					'url' => $nUrl,
 				);
 			}
 		}
@@ -101,7 +101,7 @@
 				if ($newsBlog) switch_to_blog( $newsBlog );
 					$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => $newsFeedCount
+					'posts_per_page' => $newsFeedCount,
 					);
 
 			$news = new WP_Query( $args );

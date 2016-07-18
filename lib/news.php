@@ -65,14 +65,14 @@ function QueryPoolTwo() {
 			array(
 				'key' => 'featuredArticle',
 				'value' => 'True',
-				'compare' => '='
+				'compare' => '=',
 				),
 			),
-		'post_type' => array( 'post' , 'bibliotech'),
+		'post_type' => array( 'post' , 'bibliotech' ),
 		'post_status' => 'publish',
 		'posts_per_page' => 2,
 		'orderby' => 'rand',
-		'ignore_sticky_posts' => 1
+		'ignore_sticky_posts' => 1,
 	);
 	$items = get_posts( $args );
 
@@ -87,14 +87,14 @@ function QueryPoolOne() {
 			array(
 				'key' => 'featuredArticle',
 				'value' => 'True',
-				'compare' => '='
+				'compare' => '=',
 				),
 			),
-		'post_type' => array( 'post' , 'bibliotech'),
+		'post_type' => array( 'post' , 'bibliotech' ),
 		'post_status' => 'publish',
 		'posts_per_page' => 1,
 		'orderby' => 'rand',
-		'ignore_sticky_posts' => 1
+		'ignore_sticky_posts' => 1,
 	);
 	$first = get_posts( $args );
 
@@ -104,14 +104,14 @@ function QueryPoolOne() {
 			array(
 				'key' => 'featuredArticle',
 				'value' => 'True',
-				'compare' => '='
+				'compare' => '=',
 				),
 			),
-		'post_type' => array( 'spotlights'),
+		'post_type' => array( 'spotlights' ),
 		'post_status' => 'publish',
 		'posts_per_page' => 1,
 		'orderby' => 'rand',
-		'ignore_sticky_posts' => 1
+		'ignore_sticky_posts' => 1,
 	);
 	$second = get_posts( $args );
 
@@ -219,14 +219,14 @@ function RetrievePool() {
 			array(
 				'key' => 'featuredArticle',
 				'value' => 'True',
-				'compare' => '='
+				'compare' => '=',
 			),
 		),
 		'post_type' => array( 'post' , 'bibliotech' , 'spotlights' ),
 		'post_status' => 'publish',
 		'posts_per_page' => 99,
 		'orderby' => 'rand',
-		'ignore_sticky_posts' => 1
+		'ignore_sticky_posts' => 1,
 	);
 	$items = get_posts( $args );
 

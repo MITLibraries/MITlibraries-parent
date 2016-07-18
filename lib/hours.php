@@ -73,7 +73,7 @@ function getHours() {
 				'end' => $end,
 				'show_spanning' => $spanning,
 				'term' => $term,
-				'terms' => getHoursChildren( $id )
+				'terms' => getHoursChildren( $id ),
 			);
 		endwhile;
 
@@ -94,7 +94,7 @@ function getHoursChildren( $parent ) {
 		'orderby' => 'date',
 		'order' => 'ASC',
 		'posts_per_page' => -1,
-		'post_parent' => $parent
+		'post_parent' => $parent,
 	);
 
 	$hours = new WP_Query( $args );
@@ -123,7 +123,7 @@ function getHoursChildren( $parent ) {
 			'end' => $end,
 			'show_spanning' => $spanning,
 			'term' => $term,
-			'hours' => getHoursChildren( $id )
+			'hours' => getHoursChildren( $id ),
 		);
 	endwhile;
 	wp_reset_query();
@@ -483,7 +483,7 @@ function getTerm( $obj, $location, $dt ) {
 					// echo "FOUND";
 					$data = array(
 						'id' => $key,
-						'term' => $term
+						'term' => $term,
 					);
 				}
 }
@@ -777,7 +777,7 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 						'post_title' => $name,
 						'post_parent' => $locationId,
 						'post_type' => 'hours',
-						'post_status' => 'publish'
+						'post_status' => 'publish',
 					);
 
 					$semId = wp_insert_post( $args );
@@ -807,7 +807,7 @@ function process_semester( $arSheet, $name, $semesterList, $tag ) {
 								'post_title' => $day,
 								'post_parent' => $semId,
 								'post_type' => 'hours',
-								'post_status' => 'publish'
+								'post_status' => 'publish',
 							);
 
 							$postId = wp_insert_post( $args );
@@ -904,7 +904,7 @@ function process_holiday( $arSheet, $tag ) {
 									'post_title' => $day,
 									'post_parent' => $termId,
 									'post_type' => 'hours',
-									'post_status' => 'publish'
+									'post_status' => 'publish',
 								);
 
 								$postId = wp_insert_post( $args );
@@ -1115,7 +1115,7 @@ function getTermHours( $term, $type ) {
 		$name = $hour[ name ];
 		$desc = $hour[ description ];
 		$dates = array(
-			'start' => date( 'Y-m-d', strtotime( $hour[ start ] ) )
+			'start' => date( 'Y-m-d', strtotime( $hour[ start ] ) ),
 		);
 
 		if ( $hour[ end ] ) {
@@ -1130,7 +1130,7 @@ function getTermHours( $term, $type ) {
 			// echo "Closed";
 			$arDay = array(
 				'dates' => $dates,
-				'reason' => $name
+				'reason' => $name,
 
 			);
 			// print_r($dates);
@@ -1141,7 +1141,7 @@ function getTermHours( $term, $type ) {
 			$arDay = array(
 				'days' => toDays( $name ),
 				'hours' => $hrs,
-				'note' => ''
+				'note' => '',
 			);
 			array_push( $arRegular, $arDay );
 
@@ -1150,7 +1150,7 @@ function getTermHours( $term, $type ) {
 			$arDay = array(
 				'dates' => $dates,
 				'reason' => $name,
-				'hours' => $hrs
+				'hours' => $hrs,
 			);
 			// print_r($dates);
 			array_push( $arExceptions, $arDay );
@@ -1214,7 +1214,7 @@ function getExport( $location ) {
 		'name' => $name,
 		'location' => $building,
 		'phone' => $phone,
-		'terms' => $arTerms
+		'terms' => $arTerms,
 	);
 
 	// $arExport[name] = $name;

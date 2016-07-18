@@ -34,7 +34,8 @@ global $isRoot;
 				'container_id'      => 'bs-example-navbar-collapse-1',
 				'menu_class'        => 'nav navbar-nav nav-second',
 				'fallback_cb'       => false,
-				'walker'            => new navwalker())
+				'walker'            => new navwalker(),
+),
 			);
 
 

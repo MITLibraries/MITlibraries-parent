@@ -14,7 +14,7 @@
 						'order' => 'ASC',
 						'no_found_rows' => true,
 						'update_post_term_cache' => false,
-						'update_post_meta_cache' => false
+						'update_post_meta_cache' => false,
 					);
 
 	$locationsQuery = new WP_Query( $args );

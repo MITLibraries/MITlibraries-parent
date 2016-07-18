@@ -25,14 +25,14 @@ get_header(); ?>
 	    'meta_key' => '_wp_page_template',
 	    'meta_value' => 'page-full.php',
 	    'depth' => -1,
-	  'hierarchical' => 0
+	  'hierarchical' => 0,
 	);
 
 	$template_pages = get_pages( $template_page_args );
 
-	$template_query_args = array (
+	$template_query_args = array(
 		'meta_key' => '_wp_page_template',
-		'meta_value' => 'page-full.php'
+		'meta_value' => 'page-full.php',
 	);
 
 	$template_queries = get_pages( $template_query_args );

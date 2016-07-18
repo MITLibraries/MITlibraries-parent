@@ -170,7 +170,7 @@
 									$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
 									if ( has_post_thumbnail( $expert->ID ) ) {
-										$thumb = get_the_post_thumbnail( $expert->ID, array(108,108) );
+										$thumb = get_the_post_thumbnail( $expert->ID, array( 108, 108 ) );
 									} else {
 										$thumb = '';
 									}
