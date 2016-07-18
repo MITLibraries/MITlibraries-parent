@@ -5,7 +5,7 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- 
+
 global $isRoot;
 
 ?>
@@ -36,8 +36,8 @@ global $isRoot;
                 'fallback_cb'       => false,
                 'walker'            => new navwalker())
             );
-            
-                       
+
+
 
         ?>
 

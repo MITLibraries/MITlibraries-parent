@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: Featured News Article List
  *
@@ -32,7 +32,7 @@
 			var_dump($foo);
 			echo '</pre>';
 			*/
-			
+
 			$args = array(
 				'meta_query' => array(
 					array(
@@ -119,7 +119,7 @@
 					}
 					echo  		'</div>';
 					if($post->post_type === 'post' && $post->is_event[0] === '1') {
-						echo 	'<div class="datetime">' . $eventDate . '</div>';						
+						echo 	'<div class="datetime">' . $eventDate . '</div>';
 					}
 					echo 		'<h3 class="title-post">';
 
@@ -159,7 +159,7 @@
 			</div><!-- end div.news-events -->
 		</div><!-- end div.col-2 -->
 
-<?php 
+<?php
 	get_footer();
 ?>
 <script>

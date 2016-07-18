@@ -16,7 +16,7 @@ $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 
- 
+
 get_header(); ?>
 
 	<?php
@@ -29,12 +29,12 @@ get_header(); ?>
 	);
 
 	$template_pages = get_pages( $template_page_args );
-	
+
 	$template_query_args = array (
 		'meta_key' => '_wp_page_template',
 		'meta_value' => 'page-full.php'
 	);
-	
+
 	$template_queries = get_pages( $template_query_args );
 
 	?>

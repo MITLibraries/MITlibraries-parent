@@ -9,7 +9,7 @@
 global $isRoot;
 
 
- 
+
 ?>
 
 	<?php if (in_category( 'has-menu' )) { ?>

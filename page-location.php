@@ -10,7 +10,7 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- 
+
 $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
@@ -19,16 +19,16 @@ get_header(); ?>
 		<!-- Version 1.9 -->
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
-		<?php 
+		<?php
 			$objs = get_field( 'page_location' );
-			
+
 			$args = array(
 				'p' => $objs->ID,
 				'post_type' => 'any'
 			);
-			
+
 			$locPosts = new WP_Query( $args );
-			
+
 		?>
 		
 		<div id="stage" class="inner" role="main">

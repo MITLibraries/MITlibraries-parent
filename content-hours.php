@@ -12,21 +12,21 @@
 			$spaces = cf( 'group_spaces' );
 			$equipment = cf( 'equipment' );
 			$arexpert = get_field( 'expert' );
-			
+
 			$title1 = cf( 'tab_1_title' );
 			$subtitle1 = cf( 'tab_1_subtitle' );
 			$content1left = get_field( 'tab_1_content_left' );
 			$content1 = get_field( 'tab_1_content' );
-			
+
 			$title2 = cf( 'tab_2_title' );
 			$subtitle2 = cf( 'tab_2_subtitle' );
 			$content2left = get_field( 'tab_2_content_left' );
 			$content2 = get_field( 'tab_2_content' );
-			
+
 			$displayPage = get_field( 'display_page' );
 			$pageID = $displayPage->ID;
 			$pageLink = get_permalink( $pageID );
-			
+
 			$alert = get_field( 'alert' );
 		?>
 		
@@ -97,22 +97,22 @@
 										if ($arexpert) {
 											$expertIndex = array_rand( $arexpert );
 											$expert = $arexpert[$expertIndex];
-											
-											
+
+
 											$name = $expert->post_title;
 											$bio = $expert->post_excerpt;
 											//$url = $expert->guid;
 											$url = get_post_meta( $expert->ID, 'expert_url', 1 );
-											
+
 											if (has_post_thumbnail( $expert->ID )) {
 												$thumb = get_the_post_thumbnail( $expert->ID, array(108,108) );
 											} else {
 												$thumb = '';
 											}
-											
+
 									?>
 									<div class="profile">
-										<?php if ($thumb != ''): 
+										<?php if ($thumb != ''):
 											echo $thumb;
 										endif; ?>
 										<div class="profileContent">

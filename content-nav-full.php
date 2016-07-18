@@ -14,23 +14,23 @@ global $isRoot;
 		<ul>
 		<?php
 			//$pageParent = getParent($post->ID);
-			
+
 			$pageRoot = getRoot( $post );
 			$section = get_post( $pageRoot );
-						
+
 			$args = array(
 				'child_of' => $pageRoot,
 				'title_li' => '',
 			);
-			
+
 			$menuName = $section->post_name;
-			
+
 			$menu = wp_get_nav_menu_items( $menuName );
-			
+
 			if ($menu) {
-				wp_nav_menu( array( 'menu' => $menuName, 'menu_class' => 'nav-menu' ) ); 
+				wp_nav_menu( array( 'menu' => $menuName, 'menu_class' => 'nav-menu' ) );
 			} else {
-				wp_list_pages( $args ); 
+				wp_list_pages( $args );
 			}
 		?>
 		</ul>
