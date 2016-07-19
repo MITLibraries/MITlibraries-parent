@@ -21,7 +21,6 @@
 		<exclude name="Generic.Files.LowercasedFilename.NotFound" />
 		<exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound" />
 		<exclude name="Generic.Strings.UnnecessaryStringConcat.Found" />
-		<exclude name="Squiz.Commenting.FileComment.Missing" />
 		<exclude name="Squiz.Commenting.FunctionComment.Missing" />
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
 		<exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
