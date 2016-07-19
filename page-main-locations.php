@@ -64,7 +64,7 @@ get_header(); ?>
 							$val = $arMain[ array_rand( $arMain ) ];
 							// $val = $arMain[0];
 							if ( $mapImage != '' ) {
-								// user override image;
+								// user override image.
 								$val = $mapImage;
 							}
 

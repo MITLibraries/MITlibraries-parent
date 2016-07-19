@@ -18,14 +18,14 @@ function DebugNews() {
 
 	echo '<!-- Loading featured news items -->';
 
-	// Switch context to news site
+	// Switch context to news site.
 	switch_to_blog( $newsBlogID );
 
 	$pool = RetrievePool();
 
 	RenderPool( $pool );
 
-	// Restore context back to current site
+	// Restore context back to current site.
 	restore_current_blog();
 }
 
@@ -34,17 +34,17 @@ function LoadNews() {
 
 	echo '<!-- Loading featured news items -->';
 
-	// Switch context to news site
+	// Switch context to news site.
 	switch_to_blog( $newsBlogID );
 
 	$pool = RetrievePool();
 
 	if ( count( $pool ) != 2 ) {
-		// If there are anything other than two items in the pool, then we
-		// summarize the pool and determine query type
+		// If there are anything other than two items in the pool, then we...
+		// Summarize the pool and determine query type.
 		$queryType = SummarizePool( $pool );
 
-		// Build the appropriate item pool
+		// Build the appropriate item pool.
 		if ( $queryType === 'two' ) {
 			$pool = QueryPoolTwo();
 		} else {
@@ -54,12 +54,12 @@ function LoadNews() {
 
 	RenderPool( $pool );
 
-	// Restore context back to current site
+	// Restore context back to current site.
 	restore_current_blog();
 }
 
 function QueryPoolTwo() {
-	// This builds a recordset for two post/bibliotech articles
+	// This builds a recordset for two post/bibliotech articles.
 	$args = array(
 		'meta_query' => array(
 			array(
@@ -80,8 +80,8 @@ function QueryPoolTwo() {
 }
 
 function QueryPoolOne() {
-	// This builds a recordset for one post/bibliotech and one spotlight article
-	// Start by getting post/bibliotech
+	// This builds a recordset for one post/bibliotech and one spotlight article.
+	// Start by getting post/bibliotech.
 	$args = array(
 		'meta_query' => array(
 			array(
@@ -98,7 +98,7 @@ function QueryPoolOne() {
 	);
 	$first = get_posts( $args );
 
-	// Then get the spotlight
+	// Then get the spotlight.
 	$args = array(
 		'meta_query' => array(
 			array(
@@ -115,18 +115,18 @@ function QueryPoolOne() {
 	);
 	$second = get_posts( $args );
 
-	// Merge the two
+	// Merge the two.
 	$items = array_merge( $first,$second );
 
 	return $items;
 }
 
 function RenderPool( $items ) {
-	// This takes an input recordset of news items and renders it as HTML
+	// This takes an input recordset of news items and renders it as HTML.
 	foreach ( $items as $item ) {
 		$custom = get_post_custom( $item->ID );
 
-		// URL
+		// URL.
 		if ( $item->post_type === 'post' ) {
 			$url = get_permalink( $item->ID );
 		} elseif ( $item->post_type === 'bibliotech' ) {
@@ -137,7 +137,7 @@ function RenderPool( $items ) {
 			$url = '';
 		}
 
-		// Label
+		// Label.
 		$label = '<div class="category-post">';
 		if ( $item->post_type === 'post' ) {
 			if ( $item->is_event[0] === '1' ) {
@@ -160,14 +160,14 @@ function RenderPool( $items ) {
 		}
 		$label .= '</div>';
 
-		// Headline
+		// Headline.
 		if ( $custom['homepage_post_title'][0] ) {
 			$headline = '<h3 class="title-post">' . $custom['homepage_post_title'][0] . '</h3>';
 		} else {
 			$headline = '<h3 class="title-post">' . $item->post_title . '</h3>';
 		}
 
-		// event date, if applicable
+		// Event date, if applicable.
 		$eventDate = '';
 		if ( $item->post_type === 'post' && array_key_exists( 'is_event', $custom ) ) {
 			if ( $custom['is_event'][0] === '1' ) {
@@ -186,12 +186,12 @@ function RenderPool( $items ) {
 			}
 		}
 
-		// Highlight image
+		// Highlight image.
 		$imageElement = '';
 		if ( $item->post_type === 'post' || $item->post_type === 'bibliotech' ) {
 			if ( $custom['homeImg'][0] != '' ) {
 				$image = json_decode( $custom['homeImg'][0] );
-				// We use "original" even though this is already cropped to avoid cropping again
+				// We use "original" even though this is already cropped to avoid cropping again.
 				$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original' );
 				$imageURL = str_replace( '/wp-content/uploads/','/news/files/',$imageURL[0] );
 				$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
@@ -211,9 +211,9 @@ function RenderPool( $items ) {
 }
 
 function RetrievePool() {
-	// This characterizes the pool of eligible articles, and then calls the
-	// relevant query builder
-	// Get all eligible articles
+	// This characterizes the pool of eligible articles, and then calls the...
+	// relevant query builder.
+	// Get all eligible articles.
 	$args = array(
 		'meta_query' => array(
 			array(
@@ -235,10 +235,10 @@ function RetrievePool() {
 }
 
 function SummarizePool( $items ) {
-	// This takes the pool of all eligible news items, determines how many of
-	// each type exist, and determines what type of query is needed to
+	// This takes the pool of all eligible news items, determines how many of...
+	// each type exist, and determines what type of query is needed to...
 	// populate the front page.
-	// Summarize article list
+	// Summarize article list.
 	$summary = array(
 		'news' => 0,
 		'spotlights' => 0,
@@ -256,15 +256,15 @@ function SummarizePool( $items ) {
 		$summary['total']++;
 	}
 
-	// Determine query type based on summary results
+	// Determine query type based on summary results.
 	if ( $summary['news'] === 1 ) {
-		// Only one eligible news item - so we set type to one
+		// Only one eligible news item - so we set type to one.
 		$type = 'one';
 	} elseif ( $summary['spotlights'] === 0 ) {
-		// No eligible spotlights - so we show two news items
+		// No eligible spotlights - so we show two news items.
 		$type = 'two';
 	} else {
-		// More than one news item - so we flip a coin for type
+		// More than one news item - so we flip a coin for type.
 		if ( mt_rand( 0,1 ) ) {
 			$type = 'two';
 		} else {

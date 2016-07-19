@@ -37,7 +37,7 @@
 							$showMobileSpecial = 1;
 							$alert = trim( get_field( 'alert' ) );
 
-							// if ($hasHours && $noHours != 1):
+							// This was: "if ($hasHours && $noHours != 1):"" .
 							if ( $noHours != 1 ) :
 
 								if ( $rowOdd == 'even' ) {
@@ -69,7 +69,7 @@
 
 											$temp = $post;
 
-											// echo "S: ".date("Y-m-d", $today)." ";
+											// echo "S: ".date("Y-m-d", $today)." "; .
 											$message = getMessageDay( $locationId, $today );
 
 											if ( $message != '' ) {
@@ -141,10 +141,10 @@
 								$firstDay = '';
 								$temp = $post;
 
-								// echo "B: ".date("Y-m-d", $curDay)." ";
+								// echo "B: ".date("Y-m-d", $curDay)." "; .
 								$message = getMessageDay( $locationId, $curDay );
 
-								// print_r($message);
+								// print_r($message); .
 								if ( $message != '' ) {
 
 									if ( $showSpecial == 1 ) {
@@ -194,5 +194,5 @@
 
 								</tr>
 							<?php
-							endif; // has hours
+							endif; // has hours.
 							?>

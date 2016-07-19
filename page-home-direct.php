@@ -69,7 +69,7 @@
 				<div class="flex-container">
 
 		<?php
-			// This calls the news routines that are found in /lib/news.php
+			// This calls the news routines that are found in /lib/news.php.
 			LoadNews();
 		?>
 

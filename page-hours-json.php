@@ -259,7 +259,7 @@ $mapPage = '/locations/#!';
 		  <td width="260" class="name"><div class="nameHolder">
 			  <h3> <a href="<?php $post_object = get_field( 'display_page' );
 			  if ( $post_object ) :
-		  // dont even ask why
+		  // Dont even ask why.
 			$post = $post_object;
 			setup_postdata( $post );
 			?>
@@ -389,7 +389,7 @@ $args = array(
 /*'orderby' => 'menu_order',*/
 'orderby' => 'name',
 'order' => 'ASC',
-// excludes DIRC and Stata
+// Excludes DIRC and Stata.
 	'meta_query' => array(
 	'relation' => 'AND',
 	array(

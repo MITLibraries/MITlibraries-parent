@@ -23,7 +23,7 @@
 				<hr>
 				<div class="debug">
 		<?php
-			// switch to news blog
+			// Switch to news blog.
 			switch_to_blog( 7 );
 
 			/*
@@ -53,14 +53,14 @@
 
 			if ( $the_stories->have_posts() ) {
 				while ( $the_stories->have_posts() ) : $the_stories->the_post();
-					// setup_postdata($post);
+					// This was setup_postdata($post).
 					$custom = get_post_custom();
-					// var_dump($custom);
-					// URL
+					// This was var_dump($custom).
+					// URL.
 					$url = get_permalink( $post->id );
-					// echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>';
-					// echo 'post: ' . post_permalink($post->id) . '<br>';
-					// Highlight image - use 17616 for debugging
+					// This was echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>'.
+					// This was echo 'post: ' . post_permalink($post->id) . '<br>'.
+					// Highlight image - use 17616 for debugging.
 					$imageTag = '';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
 						if ( $custom['homeImg'][0] != '' ) {
@@ -75,7 +75,7 @@
 					the_permalink();
 					echo '">';
 
-					// card label
+					// Card label.
 					if ( $post->post_type === 'post' ) {
 						if ( $post->is_event[0] === '1' ) {
 							$label = 'Event';
@@ -92,7 +92,7 @@
 						}
 					}
 
-					// card date
+					// Card date.
 					if ( $post->post_type === 'post' && $post->is_event[0] === '1' ) {
 						$eventDate = DateTime::createFromFormat( 'Ymd',$post->event_date );
 						$eventDate = '<span class="date">' . date_format( $eventDate,'F j' ) . '</span>';
@@ -106,7 +106,7 @@
 
 					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo        '<div class="category-post">' . $label . '</div>';
-					// echo        '<div class="category-post">' . $url . '</div>';
+					// This was echo        '<div class="category-post">' . $url . '</div>'.
 					echo        '<div class="href">';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
 						the_permalink();
@@ -149,7 +149,7 @@
 				endwhile;
 			}
 
-			// switch back to parent site
+			// Switch back to parent site.
 			restore_current_blog();
 		?>
 					</div><!-- end div.debug -->
@@ -162,7 +162,7 @@
 ?>
 <script>
 jQuery(function() {
-	// This drives the show/hide toggles on post metadata
+	// This drives the show/hide toggles on post metadata.
 	jQuery(".control span").click(function() {
 		jQuery(this).parent().find(".toggle").toggleClass("meta");
 	})

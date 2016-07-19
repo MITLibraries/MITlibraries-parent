@@ -6,7 +6,7 @@
  * @since 1.2.1
  */
 
-	// Query the locations
+	// Query the locations.
 	$args = array(
 						'post_type' => 'location',
 						'posts_per_page' => 6,

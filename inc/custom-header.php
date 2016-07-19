@@ -54,7 +54,7 @@ function twentytwelve_header_style() {
 	// Options for get_header_textcolor(): 444 is default, hide text (returns 'blank'), or any hex value.
 	$text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
+	// If no custom options for text are set, let's bail.
 	if ( $text_color == get_theme_support( 'custom-header', 'default-text-color' ) ) {
 		return; }
 

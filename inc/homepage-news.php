@@ -116,7 +116,7 @@
 			endwhile;
 
 			if ( $newsBlog ) { restore_current_blog(); }
-			endif; // news feed count
+			endif; // End news feed count.
 		?>
 
 		<li><a href="/news/">More news</a> | <a href="/calendar">Calendar of events</a></li>

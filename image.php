@@ -64,17 +64,17 @@ foreach ( $attachments as $k => $attachment ) :
 endforeach;
 
 $k++;
-// If there is more than 1 attachment in a gallery
+// If there is more than 1 attachment in a gallery...
 if ( count( $attachments ) > 1 ) :
 	if ( isset( $attachments[ $k ] ) ) :
-		// get the URL of the next image attachment
+		// Get the URL of the next image attachment...
 		$next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
 	else :
-		// or get the URL of the first image attachment
+		// Or get the URL of the first image attachment...
 		$next_attachment_url = get_attachment_link( $attachments[0]->ID );
 	endif;
 else :
-	// or, if there's only 1 image, get the URL of the image
+	// Or, if there's only 1 image, get the URL of the image.
 	$next_attachment_url = wp_get_attachment_url();
 endif;
 ?>

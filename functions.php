@@ -25,11 +25,11 @@
 
 $gStudy24Url = '/study/24x7/';
 
-// use newsBlog for live site
+// Use newsBlog for live site.
 	$newsBlog = 7;
 	$mainSite = 1;
 
-// $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
+// Sample value: $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries".
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
 foreach ( glob( $siteRoot . '/wp-content/themes/libraries/lib/*.php' ) as $file ) { require_once( $file ); }
 
@@ -70,7 +70,7 @@ function twentytwelve_setup() {
 
 	// This theme supports a variety of post formats.
 	// add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
-// Register Custom Navigation Walker
+// Register Custom Navigation Walker.
 require_once( 'navwalker.php' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -80,14 +80,14 @@ require_once( 'navwalker.php' );
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
+	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop.
 }
 add_action( 'after_setup_theme', 'twentytwelve_setup' );
 
 /**
  * Adds support for a custom header image.
  */
-// require( get_template_directory() . '/inc/custom-header.php' );
+// This was: require( get_template_directory() . '/inc/custom-header.php' ).
 /**
  * Enqueues scripts and styles for front-end.
  *
@@ -128,18 +128,18 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 
 	/*  Register JS */
 
-	// Deregister WP Core jQuery, load Google's
+	// Deregister WP Core jQuery, load Google's.
 	wp_deregister_script( 'jquery' );
 
 	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false );
 
-	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), true ); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
@@ -388,7 +388,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 		</article><!-- #comment-## -->
 	<?php
 		break;
-	endswitch; // end comment_type check
+	endswitch; // End comment_type check.
 }
 endif;
 
@@ -441,7 +441,7 @@ endif;
 
 if ( ! function_exists( 'is_child_page' ) ) {
 	function is_child_page() {
-	global $post;     // if outside the loop
+	global $post;     // If outside the loop.
 
 	if ( is_page() && $post->post_parent ) {
 	return $post->post_parent;
@@ -620,7 +620,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 	global $post;
 
 	// Do not show breadcrumbs on home or front pages.
-	// So we will just return quickly
+	// So we will just return quickly.
 	if ( (is_home() || is_front_page()) && ( ! $front_page) ) {
 	  return; }
 
@@ -661,18 +661,18 @@ function cf( $name ) {
 function remove_template( $files_to_delete = array() ) {
 	global $wp_themes;
 
-	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
+	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array().
 	if ( is_scalar( $files_to_delete ) ) { $files_to_delete = array( $files_to_delete ); }
 
-	// remove TLA if it was provided
+	// Remove TLA if it was provided.
 	$files_to_delete = preg_replace( '/\.[^.]+$/', '', $files_to_delete );
 
-	// Populate the global $wp_themes array
+	// Populate the global $wp_themes array.
 	get_themes();
 
 	$current_theme_name = get_current_theme();
 
-	// Note that we're taking a reference to $wp_themes so we can modify it in-place
+	// Note that we're taking a reference to $wp_themes so we can modify it in-place.
 	$template_files = &$wp_themes[ $current_theme_name ]['Template Files'];
 
 	foreach ( $template_files as $file_path ) {
@@ -735,17 +735,17 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 	add_action( 'after_setup_theme', 'better_breadcrumbs' );
 }
 
-// Check for performance issues
+// Check for performance issues.
 function no_post_limit( $query ) {
 	if ( is_home() && ! is_child_theme() ) {
-	// No post limit on homepage
+	// No post limit on homepage.
 	$query->set( 'posts_per_page', -1 );
 	return;
 	}
 }
 add_action( 'pre_get_posts', 'no_post_limit', 1 );
 
-// Prevent Wordpress from "guessing" redirects instead of showing a 404 page
+// Prevent Wordpress from "guessing" redirects instead of showing a 404 page.
 if ( ! function_exists( 'stop_404_guessing' ) ) {
 	add_filter( 'redirect_canonical', 'stop_404_guessing' );
 	function stop_404_guessing( $url ) {
@@ -757,8 +757,8 @@ if ( ! function_exists( 'stop_404_guessing' ) ) {
 }
 
 
-// First make all metaboxes have 'normal' context
-// If you know the ids of the metaboxes, you could add them here and skip the next function altogether
+// First make all metaboxes have 'normal' context.
+// If you know the ids of the metaboxes, you could add them here and skip the next function altogether.
 add_filter( 'get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1 );
 function one_column_for_all( $option ) {
 	$result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
@@ -767,7 +767,7 @@ function one_column_for_all( $option ) {
 	return $result;
 }
 
-// Then we add 'submitdiv' on the bottom, by creating this filter with a low priority
+// Then we add 'submitdiv' on the bottom, by creating this filter with a low priority.
 // It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
 add_filter( 'get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1 );
 function submitdiv_at_top( $result ) {
@@ -780,7 +780,7 @@ function metabox_order( $order ) {
 	return array(
 		'normal' => join(
 			',',
-			array(       // vvv  Arrange here as you desire
+			array(       // vvv  Arrange here as you desire.
 				'submitdiv',
 				'pageparentdiv',
 				'dmm-meta-box',
@@ -809,7 +809,7 @@ if ( function_exists( 'get_fields' ) ) {
 	add_filter( 'json_prepare_post', 'wp_api_encode_acf', 10, 3 );
 }
 
-// Allows SVGs to be uploaded through media
+// Allows SVGs to be uploaded through media.
 function cc_mime_types( $mimes ) {
 $mimes['svg'] = 'image/svg+xml';
 return $mimes;

@@ -28,8 +28,6 @@
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamName" />
 		<exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing" />
 		<exclude name="Squiz.Commenting.FunctionComment.SpacingAfter" />
-		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-		<exclude name="Squiz.Commenting.InlineComment.NotCapital" />
 		<exclude name="WordPress.CSRF.NonceVerification.NoNonceVerification" />
 		<exclude name="WordPress.NamingConventions.ValidVariableName.NotSnakeCase" />
 		<exclude name="WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid" />
