@@ -13,24 +13,23 @@ global $isRoot;
 		<div class="pagenav">
 		<ul>
 		<?php
-			//$pageParent = getParent($post->ID);
-			
-			$pageRoot = getRoot($post);
-			$section = get_post($pageRoot);
-						
+			// $pageParent = getParent($post->ID);
+			$pageRoot = getRoot( $post );
+			$section = get_post( $pageRoot );
+
 			$args = array(
-				"child_of" => $pageRoot,
-				"title_li" => "",
+				'child_of' => $pageRoot,
+				'title_li' => '',
 			);
-			
+
 			$menuName = $section->post_name;
-			
-			$menu = wp_get_nav_menu_items($menuName);
-			
-			if ($menu) {
-				wp_nav_menu( array( 'menu' => $menuName, 'menu_class' => 'nav-menu' ) ); 
+
+			$menu = wp_get_nav_menu_items( $menuName );
+
+			if ( $menu ) {
+				wp_nav_menu( array( 'menu' => $menuName, 'menu_class' => 'nav-menu' ) );
 			} else {
-				wp_list_pages( $args ); 
+				wp_list_pages( $args );
 			}
 		?>
 		</ul>
@@ -38,16 +37,16 @@ global $isRoot;
 	</div>
 	<div id="mainContent" class="span9">
 	
-		<?php if (has_post_thumbnail()): ?>
+		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="featuredImage">
-			<?php echo the_post_thumbnail(700, 300); ?>
+			<?php echo the_post_thumbnail( 700, 300 ); ?>
 		
 		</div>	
 		<?php endif; ?>
 		
 		
 		<div class="entry-content">
-			<?php if (!$isRoot): ?>
+			<?php if ( ! $isRoot ) : ?>
 			<h2><?php the_title(); ?></h2>
 			<?php endif; ?>
 			

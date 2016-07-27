@@ -8,7 +8,7 @@
 
 ?>
 <div class="siteTitle maintenance group">
-	<h1 class="name-site"><?php bloginfo('name'); ?> <span>is under maintenance.</span></h1>
+	<h1 class="name-site"><?php bloginfo( 'name' ); ?> <span>is under maintenance.</span></h1>
 </div>
 <div id="content" class="content maintenance group">
 	<div class="message-maintenance">

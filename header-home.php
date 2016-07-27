@@ -27,9 +27,9 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 <?php
-		//$askUrl = get_post_meta($post->ID, "ask_us_override", 1);
-		$askUrl = "";
-		if ($askUrl == "") $askUrl = "/ask";
+		// $askUrl = get_post_meta($post->ID, "ask_us_override", 1);
+		$askUrl = '';
+		if ( $askUrl == '' ) { $askUrl = '/ask'; }
 ?>
 	<script>
 		todayDate="";
@@ -47,7 +47,7 @@
 				</a><!-- End MIT Libraries Logo -->
 			</h1><!-- End H1.name-site -->
 
-			<?php get_template_part('inc/nav', 'main'); ?>
+			<?php get_template_part( 'inc/nav', 'main' ); ?>
 			
 			<a class="link-logo-mit" href="http://www.mit.edu" alt="Massaschusetts Institute of Technology logo"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="54" height="28" viewBox="0 0 54 28" enable-background="new 0 0 54 28" xml:space="preserve" class="logo-mit"><rect x="28.9" y="8.9" width="5.8" height="19.1" class="color"/><rect width="5.8" height="28"/><rect x="9.6" width="5.8" height="18.8"/><rect x="19.3" width="5.8" height="28"/><rect x="38.5" y="8.9" width="5.8" height="19.1"/><rect x="38.8" width="15.2" height="5.6"/><rect x="28.9" width="5.8" height="5.6"/></svg>
 				<span class="sr">MIT Logo</span>
@@ -65,9 +65,9 @@
 
 		</header>
 
-		<?php 
+		<?php
 
-			$pageRoot = getRoot($post);
-			$section = get_post($pageRoot);
+			$pageRoot = getRoot( $post );
+			$section = get_post( $pageRoot );
 
 		?>

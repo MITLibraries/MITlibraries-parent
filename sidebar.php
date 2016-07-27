@@ -14,4 +14,4 @@
 		<div class="sidebarWidgets">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</div>
-	</div>		
+	</div>      

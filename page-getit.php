@@ -7,32 +7,32 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
 
 get_header(); ?>
 
-		<?php get_template_part('inc/breadcrumbs', 'noChild'); ?>
+		<?php get_template_part( 'inc/breadcrumbs', 'noChild' ); ?>
 
 		<?php while ( have_posts() ) : the_post();?>
 		
 			<?php
 
-				$altTitle1 = get_field('alt_search_1_title');
-				$altSearch1 = get_field('alt_search_1');
-				$moreTitle1 = get_field('more_options_1_title');
-				$moreOptions1 = get_field('more_options_1');
-				$altTitle2 = get_field('alt_search_2_title');
-				$altSearch2 = get_field('alt_search_2');
-				$moreTitle2 = get_field('more_options_2_title');
-				$moreOptions2 = get_field('more_options_2');
-				$altTitle3 = get_field('alt_search_3_title');
-				$altSearch3 = get_field('alt_search_3');
-				$moreTitle3 = get_field('more_options_3_title');
-				$moreOptions3 = get_field('more_options_3');
+				$altTitle1 = get_field( 'alt_search_1_title' );
+				$altSearch1 = get_field( 'alt_search_1' );
+				$moreTitle1 = get_field( 'more_options_1_title' );
+				$moreOptions1 = get_field( 'more_options_1' );
+				$altTitle2 = get_field( 'alt_search_2_title' );
+				$altSearch2 = get_field( 'alt_search_2' );
+				$moreTitle2 = get_field( 'more_options_2_title' );
+				$moreOptions2 = get_field( 'more_options_2' );
+				$altTitle3 = get_field( 'alt_search_3_title' );
+				$altSearch3 = get_field( 'alt_search_3' );
+				$moreTitle3 = get_field( 'more_options_3_title' );
+				$moreOptions3 = get_field( 'more_options_3' );
 
 			?>
 		<div id="stage" class="inner column1 row">

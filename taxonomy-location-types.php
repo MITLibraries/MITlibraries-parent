@@ -5,9 +5,9 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 
 
 get_header(); ?>
@@ -29,21 +29,21 @@ get_header(); ?>
 			<div class="preContent" id="locationsHome">
 				<ul class="locationMainList">
 						<?php while ( have_posts() ) : the_post(); ?>
-						<?php 
-							$subject = cf("subject");
-							$phone = cf("phone");
-							$building = cf("building");
-							$spaces = cf("group_spaces");
-							$equipment = cf("equipment");
-							$expert = cf("expert");
-							
-							$title1 = cf("tab_1_title");
-							$subtitle1 = cf("tab_1_subtitle");
-							$content1 = cf("tab_1_content");
-							
-							$title2 = cf("tab_2_title");
-							$subtitle2 = cf("tab_2_subtitle");
-							$content2 = cf("tab_2_content");						
+						<?php
+							$subject = cf( 'subject' );
+							$phone = cf( 'phone' );
+							$building = cf( 'building' );
+							$spaces = cf( 'group_spaces' );
+							$equipment = cf( 'equipment' );
+							$expert = cf( 'expert' );
+
+							$title1 = cf( 'tab_1_title' );
+							$subtitle1 = cf( 'tab_1_subtitle' );
+							$content1 = cf( 'tab_1_content' );
+
+							$title2 = cf( 'tab_2_title' );
+							$subtitle2 = cf( 'tab_2_subtitle' );
+							$content2 = cf( 'tab_2_content' );
 						?>
 							<li>
 								<div class="hours">Open today 10am - 6pm</div>
@@ -63,21 +63,21 @@ get_header(); ?>
 					<h2>More Locations</h2>
 					<ul class="locationList">
 						<?php while ( have_posts() ) : the_post(); ?>
-						<?php 
-							$subject = cf("subject");
-							$phone = cf("phone");
-							$building = cf("building");
-							$spaces = cf("group_spaces");
-							$equipment = cf("equipment");
-							$expert = cf("expert");
-							
-							$title1 = cf("tab_1_title");
-							$subtitle1 = cf("tab_1_subtitle");
-							$content1 = cf("tab_1_content");
-							
-							$title2 = cf("tab_2_title");
-							$subtitle2 = cf("tab_2_subtitle");
-							$content2 = cf("tab_2_content");						
+						<?php
+							$subject = cf( 'subject' );
+							$phone = cf( 'phone' );
+							$building = cf( 'building' );
+							$spaces = cf( 'group_spaces' );
+							$equipment = cf( 'equipment' );
+							$expert = cf( 'expert' );
+
+							$title1 = cf( 'tab_1_title' );
+							$subtitle1 = cf( 'tab_1_subtitle' );
+							$content1 = cf( 'tab_1_content' );
+
+							$title2 = cf( 'tab_2_title' );
+							$subtitle2 = cf( 'tab_2_subtitle' );
+							$content2 = cf( 'tab_2_content' );
 						?>
 							<li>
 								<h3><a href="#"><?php echo the_title() ?><i class="icon-arrow-right"></i></a></h3>
@@ -92,7 +92,7 @@ get_header(); ?>
 				</div>
 				
 				<div id="sidebarContent">
-					<a href="#" class="widgetButton"><img src="<?php bloginfo('template_directory') ?>/images/btn-study-space.png" alt="Find a Study Space" /></a>
+					<a href="#" class="widgetButton"><img src="<?php bloginfo( 'template_directory' ) ?>/images/btn-study-space.png" alt="Find a Study Space" /></a>
 					<div class="sidebarWidgets">
 						<div class="widget">
 							<h3>In the libraries</h3>

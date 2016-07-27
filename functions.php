@@ -20,25 +20,25 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- 
+
 /* Globals */
- 
-$gStudy24Url = "/study/24x7/";
 
-// use newsBlog for live site
- $newsBlog = 7;
- $mainSite = 1;
+$gStudy24Url = '/study/24x7/';
 
-//$siteRoot = "/var/www/vhosts/seangw.com/mitlibraries";
+// Use newsBlog for live site.
+	$newsBlog = 7;
+	$mainSite = 1;
+
+// Sample value: $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries".
 $siteRoot = $_SERVER['DOCUMENT_ROOT'];
-foreach(glob($siteRoot."/wp-content/themes/libraries/lib/*.php") as $file) require_once($file);
- 
+foreach ( glob( $siteRoot . '/wp-content/themes/libraries/lib/*.php' ) as $file ) { require_once( $file ); }
+
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
-	$content_width = 625;
-	
+if ( ! isset( $content_width ) ) {
+	$content_width = 625; }
+
 /**
  * Sets up theme defaults and registers the various WordPress features that
  * Twenty Twelve supports.
@@ -69,10 +69,9 @@ function twentytwelve_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme supports a variety of post formats.
-	//add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
-
-// Register Custom Navigation Walker
-require_once('navwalker.php');
+	// add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+// Register Custom Navigation Walker.
+require_once( 'navwalker.php' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
@@ -81,15 +80,14 @@ require_once('navwalker.php');
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
+	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop.
 }
 add_action( 'after_setup_theme', 'twentytwelve_setup' );
 
 /**
  * Adds support for a custom header image.
  */
-//require( get_template_directory() . '/inc/custom-header.php' );
-
+// This was: require( get_template_directory() . '/inc/custom-header.php' ).
 /**
  * Enqueues scripts and styles for front-end.
  *
@@ -102,24 +100,23 @@ function twentytwelve_scripts_styles() {
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
 	 */
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' ); }
 
 	/*
 	 * Loads our main stylesheet.
 	 */
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style('libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array('twentytwelve-style'), '2.2.0');
+	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style' ), '2.2.0' );
 
+	wp_enqueue_style( 'libraries-global' );
 
-	wp_enqueue_style('libraries-global');
+	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.0' );
 
-	wp_register_style('get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array('libraries-global'), '1.0');
+	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global' ), '1.0' );
 
-	wp_register_style('hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array('libraries-global'), '1.0');
-	
-		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
+		wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
 
 wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
 
@@ -128,100 +125,100 @@ wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.sma
 	 */
 	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
 	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
-	
+
 	/*  Register JS */
 
-	// Deregister WP Core jQuery, load Google's
-  wp_deregister_script('jquery');
-  
-  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false);
+	// Deregister WP Core jQuery, load Google's.
+	wp_deregister_script( 'jquery' );
 
-  wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false );
 
-  wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array('jquery'), true); // all the bootstrap javascript goodness
+	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-  wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-   
-   wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-    			
-	wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
+	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array('jquery', 'modernizr'), '2.2.0', true);
+	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'), '2.2.0', true);
+	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array('jquery', 'productionJS'), '20140312', true);
+	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
-	wp_register_script('searchJS', get_template_directory_uri() . '/js/build/search.min.js', array('jquery', 'modernizr'), '20140811', false);
+	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr' ), '2.2.0', true );
 
-	wp_register_script('mapJS', get_template_directory_uri() . '/js/build/map.min.js', array('jquery'), '20140813', true);
+	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '2.2.0', true );
 
-	wp_register_script('googleMapsAPI', '//maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
+	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS' ), '20140312', true );
 
-	wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array('googleMapsAPI'), '1.1.12', true);
+	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), '20140811', false );
 
-	wp_register_script('term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array('jquery', 'productionJS'), false, true);
+	wp_register_script( 'mapJS', get_template_directory_uri() . '/js/build/map.min.js', array( 'jquery' ), '20140813', true );
 
-	wp_register_script('moment',     '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/moment.js', false, false, true);
+	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
-	wp_register_script('tabletop',   '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/tabletop.js', false, false, true);
-	
-	wp_register_script('underscore', '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/vendor/underscore.js', false, false, true);
-	
-	wp_register_script('lib-hours',  '//' . $_SERVER["SERVER_NAME"] . '/app/libhours/js/libhours.js', array('moment','tabletop','underscore'), false, true);
+	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true );
+
+	wp_register_script( 'term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array( 'jquery', 'productionJS' ), false, true );
+
+	wp_register_script( 'moment',     '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/moment.js', false, false, true );
+
+	wp_register_script( 'tabletop',   '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/tabletop.js', false, false, true );
+
+	wp_register_script( 'underscore', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/underscore.js', false, false, true );
+
+	wp_register_script( 'lib-hours',  '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
 
 	/* All-site JS */
-	
-	wp_enqueue_script('modernizr');
 
-	wp_enqueue_script('lib-hours');
+	wp_enqueue_script( 'modernizr' );
+
+	wp_enqueue_script( 'lib-hours' );
 
 	/* Page-specific JS & CSS */
 
-	if (!is_front_page() || is_child_theme()) {
-		wp_enqueue_script('productionJS');
+	if ( ! is_front_page() || is_child_theme() ) {
+		wp_enqueue_script( 'productionJS' );
 	}
 
-	if (is_front_page() && !is_child_theme()) {
-		wp_enqueue_script('homeJS');
+	if ( is_front_page() && ! is_child_theme() ) {
+		wp_enqueue_script( 'homeJS' );
 	}
 
-	if (is_page('hours')) {
-		wp_enqueue_style('hours');
-		wp_enqueue_script('hoursJS');
+	if ( is_page( 'hours' ) ) {
+		wp_enqueue_style( 'hours' );
+		wp_enqueue_script( 'hoursJS' );
 	}
 
-	if (is_page('locations')) {
-		wp_enqueue_script('googleMapsAPI');
-		wp_enqueue_script('mapJS');
-		wp_enqueue_script('infobox');
+	if ( is_page( 'locations' ) ) {
+		wp_enqueue_script( 'googleMapsAPI' );
+		wp_enqueue_script( 'mapJS' );
+		wp_enqueue_script( 'infobox' );
 	}
 
-	if (is_page('search')) {
-		wp_enqueue_script('searchJS');
+	if ( is_page( 'search' ) ) {
+		wp_enqueue_script( 'searchJS' );
 	}
 
-	if (is_page('term-hours')) {
-		wp_enqueue_script('term-hours');
+	if ( is_page( 'term-hours' ) ) {
+		wp_enqueue_script( 'term-hours' );
 	}
 
-	if (is_page('getit')) {
-		wp_enqueue_style('get-it');
+	if ( is_page( 'getit' ) ) {
+		wp_enqueue_style( 'get-it' );
 	}
-	
-	if (is_page_template('nav-maine')) {
-		wp_enqueue_style('jquery.smartmenus.bootstrap');
-		wp_enqueue_script('bootstrap.min');
-		wp_enqueue_script('jquery.smartmenus.bootstrap.min');
-		wp_enqueue_script('jquery.smartmenus');
+
+	if ( is_page_template( 'nav-maine' ) ) {
+		wp_enqueue_style( 'jquery.smartmenus.bootstrap' );
+		wp_enqueue_script( 'bootstrap.min' );
+		wp_enqueue_script( 'jquery.smartmenus.bootstrap.min' );
+		wp_enqueue_script( 'jquery.smartmenus' );
 	}
-		
-	if (in_category('has-menu')) {
-		wp_enqueue_style('libraries-global');
-		wp_enqueue_style('bootstrapCSS');
-		wp_enqueue_script('bootstrap-js');
+
+	if ( in_category( 'has-menu' ) ) {
+		wp_enqueue_style( 'libraries-global' );
+		wp_enqueue_style( 'bootstrapCSS' );
+		wp_enqueue_script( 'bootstrap-js' );
 	}
-	
+
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
@@ -241,20 +238,20 @@ add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
 function twentytwelve_wp_title( $title, $sep ) {
 	global $paged, $page;
 
-	if ( is_feed() )
-		return $title;
+	if ( is_feed() ) {
+		return $title; }
 
 	// Add the site name.
 	$title .= get_bloginfo( 'name' );
 
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title = "$title $sep $site_description"; }
 
 	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) ); }
 
 	return $title;
 }
@@ -266,8 +263,8 @@ add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
+	if ( ! isset( $args['show_home'] ) ) {
+		$args['show_home'] = true; }
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'twentytwelve_page_menu_args' );
@@ -391,7 +388,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 		</article><!-- #comment-## -->
 	<?php
 		break;
-	endswitch; // end comment_type check
+	endswitch; // End comment_type check.
 }
 endif;
 
@@ -442,14 +439,14 @@ function twentytwelve_entry_meta() {
 }
 endif;
 
-if (!function_exists('is_child_page')) {
+if ( ! function_exists( 'is_child_page' ) ) {
 	function is_child_page() {
-	global $post;     // if outside the loop
+	global $post;     // If outside the loop.
 
 	if ( is_page() && $post->post_parent ) {
-    return $post->post_parent;
+	return $post->post_parent;
 	} else {
-    return false;
+	return false;
 	}
 }
 }
@@ -474,35 +471,35 @@ function twentytwelve_body_class( $classes ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
 	}
 
-	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
-		$classes[] = 'full-width';
+	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) ) {
+		$classes[] = 'full-width'; }
 
 	if ( is_page_template( 'page-templates/front-page.php' ) ) {
 		$classes[] = 'template-front-page';
-		if ( has_post_thumbnail() )
-			$classes[] = 'has-post-thumbnail';
-		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) )
-			$classes[] = 'two-sidebars';
+		if ( has_post_thumbnail() ) {
+			$classes[] = 'has-post-thumbnail'; }
+		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) ) {
+			$classes[] = 'two-sidebars'; }
 	}
 
-	if (is_child_theme()) {
+	if ( is_child_theme() ) {
 		$classes[] = 'childTheme';
 	}
-	
-	if(is_child_page()) {
+
+	if ( is_child_page() ) {
 		$classes[] = 'childPage';
 	}
-	
-	if (is_page_template('page-selfTitle.php')) {
+
+	if ( is_page_template( 'page-selfTitle.php' ) ) {
 		$classes[] = 'boxSizingOn';
 	}
 
-	if (is_page_template('page-location.php')) {
+	if ( is_page_template( 'page-location.php' ) ) {
 		$classes[] = 'locationPage';
 	}
 
-	if ( ! is_multi_author() )
-		$classes[] = 'single-author';
+	if ( ! is_multi_author() ) {
+		$classes[] = 'single-author'; }
 
 	return $classes;
 }
@@ -553,208 +550,206 @@ add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
 /** Unique for theme **/
 
-function getParent($id) {
-	
-}
-function getRoot($post) {
-	$ar = get_post_ancestors($post);
-	
-	$is_section = get_post_meta($post->ID, "is_section", 1);
-	
-	
-	for($i=0;$i<count($ar);$i++) {
-		$pid = $ar[$i];
-		$is_section = get_post_meta($pid, "is_section", 1);
-		if ($is_section == 1) {
-			return $pid;
-		}	
-	}
-	
-	$max = count($ar)-1;
+function getParent( $id ) {
 
-	if ($max == -1) {
+}
+function getRoot( $post ) {
+	$ar = get_post_ancestors( $post );
+
+	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
+
+	for ( $i = 0;$i < count( $ar );$i++ ) {
+		$pid = $ar[ $i ];
+		$is_section = get_post_meta( $pid, 'is_section', 1 );
+		if ( $is_section == 1 ) {
+			return $pid;
+		}
+	}
+
+	$max = count( $ar ) -1;
+
+	if ( $max == -1 ) {
 		return $post->ID;
 	} else {
-		return $ar[$max];
+		return $ar[ $max ];
 	}
 
 }
 
 function the_breadcrumb() {
-	if (!is_home()) {
+	if ( ! is_home() ) {
 		echo '<a href="';
-		echo get_option('home');
+		echo get_option( 'home' );
 		echo '">';
-		bloginfo('name');
-		echo "</a> &raquo; ";
-		if (is_category() || is_single()) {
-			the_category('title_li=');
-			if (is_single()) {
-				echo " &raquo; ";
+		bloginfo( 'name' );
+		echo '</a> &raquo; ';
+		if ( is_category() || is_single() ) {
+			the_category( 'title_li=' );
+			if ( is_single() ) {
+				echo ' &raquo; ';
 				the_title();
 			}
-		} elseif (is_page()) {
+		} elseif ( is_page() ) {
 			echo the_title();
 		}
 	}
 }
 
-function wsf_make_link ( $url, $anchortext, $title=null, $nofollow=false ) {  
-   if ( $title == null ) $title=$anchortext;  
-   $nofollow==true ? $rel=' rel="nofollow"' : $rel = '';   
-   
-   $link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );  
-   return $link;   
-}  
+function wsf_make_link( $url, $anchortext, $title = null, $nofollow = false ) {
+	if ( $title == null ) { $title = $anchortext; }
+	$nofollow == true ? $rel = ' rel="nofollow"' : $rel = '';
+
+	$link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
+	return $link;
+}
 
 function showBreadTitle() {
-   // Wordpess function that echoes your post title.  
-	$custom_title = get_post_meta($post->ID, "breadcrumb_override", 1);
+	// Wordpess function that echoes your post title.
+	$custom_title = get_post_meta( $post->ID, 'breadcrumb_override', 1 );
 	$custom_title = $custom_title[0];
-   //$custom_title = get_field("breadcrumb_override");   
-   
-   if ($custom_title != "") {
+	// $custom_title = get_field("breadcrumb_override");
+	if ( $custom_title != '' ) {
 	 echo $custom_title;
-   } else {
-     the_title();  
-   }	
+	} else {
+	 the_title();
+	}
 }
 
-function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {  
-       
-    global $post;  
-  
-   // Do not show breadcrumbs on home or front pages.  
-   // So we will just return quickly  
-   if((is_home() || is_front_page()) && (!$front_page))  
-      return;  
-  
-    // Create a constant for the separator, with space padding.  
-    $SEP = ' ' . $sep . ' ';  
-  
-  echo '<div class="breadcrumbs">';  
-    
-  echo wsf_make_link( get_bloginfo('url'), 'Home', get_bloginfo('name'), true ) . $SEP;  
-       
-  if(is_single()) {  
-    the_category(', '); echo $SEP;   
-    }  
-    elseif(is_page()) {  
-            $parent_id = $post->post_parent;  
-            $parents = array();  
-            while($parent_id) {  
-                $page = get_page($parent_id);  
-            $parents[]  = wsf_make_link( get_permalink($page->ID), get_the_title($page->ID) ) . $SEP;  
-                $parent_id  = $page->post_parent;  
-            }  
-            $parents = array_reverse($parents);  
-            foreach($parents as $parent) {  
-                echo $parent;  
-            }  
-   }  
-   // Wordpess function that echoes your post title.  
-   $custom_title = get_field("breadcrumb_override");
-   
-   showBreadTitle();
-     echo '</div>';  
-} 
+function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
-function cf($name) {
-	return get_post_meta( get_the_ID(), $name, true);
+	global $post;
+
+	// Do not show breadcrumbs on home or front pages.
+	// So we will just return quickly.
+	if ( (is_home() || is_front_page()) && ( ! $front_page) ) {
+	  return; }
+
+	// Create a constant for the separator, with space padding.
+	$SEP = ' ' . $sep . ' ';
+
+	echo '<div class="breadcrumbs">';
+
+	echo wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP;
+
+	if ( is_single() ) {
+	the_category( ', ' );
+echo $SEP;
+	} elseif ( is_page() ) {
+			$parent_id = $post->post_parent;
+			$parents = array();
+			while ( $parent_id ) {
+				$page = get_page( $parent_id );
+			$parents[]  = wsf_make_link( get_permalink( $page->ID ), get_the_title( $page->ID ) ) . $SEP;
+				$parent_id  = $page->post_parent;
+			}
+			$parents = array_reverse( $parents );
+			foreach ( $parents as $parent ) {
+				echo $parent;
+			}
+	}
+	// Wordpess function that echoes your post title.
+	$custom_title = get_field( 'breadcrumb_override' );
+
+	showBreadTitle();
+	 echo '</div>';
 }
 
-function remove_template( $files_to_delete = array() ){
-    global $wp_themes;
-
-    // As convenience, allow a single value to be used as a scalar without wrapping it in a useless array()
-    if ( is_scalar( $files_to_delete ) ) $files_to_delete = array( $files_to_delete );
-
-    // remove TLA if it was provided
-    $files_to_delete = preg_replace( "/\.[^.]+$/", '', $files_to_delete );
-
-    // Populate the global $wp_themes array
-    get_themes();
-
-    $current_theme_name = get_current_theme();
-
-    // Note that we're taking a reference to $wp_themes so we can modify it in-place
-    $template_files = &$wp_themes[$current_theme_name]['Template Files'];
-
-    foreach ( $template_files as $file_path ){
-        foreach( $files_to_delete as $file_name ){
-            if ( preg_match( '/\/'.$file_name.'\.[^.]+$/', $file_path ) ){
-                $key = array_search( $file_path, $template_files );
-                if ( $key ) unset ( $template_files[$key] );
-            }
-        }
-    }
+function cf( $name ) {
+	return get_post_meta( get_the_ID(), $name, true );
 }
 
-function menuWithParent($menu, $par) {
-	$menu_items = wp_get_nav_menu_items($menu);
-	
-	$arOut = array();
-	
-	foreach($menu_items as $key => $item) {
-		if ($item->menu_item_parent == $par) {
-			array_push($arOut, $item);
+function remove_template( $files_to_delete = array() ) {
+	global $wp_themes;
+
+	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array().
+	if ( is_scalar( $files_to_delete ) ) { $files_to_delete = array( $files_to_delete ); }
+
+	// Remove TLA if it was provided.
+	$files_to_delete = preg_replace( '/\.[^.]+$/', '', $files_to_delete );
+
+	// Populate the global $wp_themes array.
+	get_themes();
+
+	$current_theme_name = get_current_theme();
+
+	// Note that we're taking a reference to $wp_themes so we can modify it in-place.
+	$template_files = &$wp_themes[ $current_theme_name ]['Template Files'];
+
+	foreach ( $template_files as $file_path ) {
+		foreach ( $files_to_delete as $file_name ) {
+			if ( preg_match( '/\/' . $file_name . '\.[^.]+$/', $file_path ) ) {
+				$key = array_search( $file_path, $template_files );
+				if ( $key ) { unset( $template_files[ $key ] ); }
+			}
 		}
 	}
-	
-	return $arOut;
-	
 }
 
-if (!function_exists('better_breadcrumbs')) {
+function menuWithParent( $menu, $par ) {
+	$menu_items = wp_get_nav_menu_items( $menu );
+
+	$arOut = array();
+
+	foreach ( $menu_items as $key => $item ) {
+		if ( $item->menu_item_parent == $par ) {
+			array_push( $arOut, $item );
+		}
+	}
+
+	return $arOut;
+
+}
+
+if ( ! function_exists( 'better_breadcrumbs' ) ) {
 
 	function better_breadcrumbs() {
 
 	  global $post;
 
-	  if(is_search()) {
-	    echo "<span>Search</span>";
+	  if ( is_search() ) {
+	    echo '<span>Search</span>';
 	  }
 
-	  if(!is_child_page() && is_page() || is_category() || is_single()) {
-	    echo "<span>".the_title()."</span>";
+	  if ( ! is_child_page() && is_page() || is_category() || is_single() ) {
+	    echo '<span>' . the_title() . '</span>';
 	    return;
 	  }
 
-	  if(is_child_page()) {
-	  	$hideParent = get_field('hide_parent_breadcrumb');
-	    $parentLink = get_permalink($post->post_parent);
-	    $parentTitle = get_the_title($post->post_parent);
+	  if ( is_child_page() ) {
+	  	$hideParent = get_field( 'hide_parent_breadcrumb' );
+	    $parentLink = get_permalink( $post->post_parent );
+	    $parentTitle = get_the_title( $post->post_parent );
 	    $startLink = '<a href="';
 	    $endLink = '">';
 	    $closeLink = '</a>';
-	    $parentBreadcrumb = $startLink.$parentLink.$endLink.$parentTitle.$closeLink;
-	    $pageTitle = get_the_title($post);
-	    $pageLink = get_permalink($post);
-	    $childBreadcrumb = $startLink.$pageLink.$endLink.$pageTitle.$closeLink;
+	    $parentBreadcrumb = $startLink . $parentLink . $endLink . $parentTitle . $closeLink;
+	    $pageTitle = get_the_title( $post );
+	    $pageLink = get_permalink( $post );
+	    $childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
 
-		  if ($parentBreadcrumb !="" && $hideParent != 1) {echo "<span>".$parentBreadcrumb."</span>";}
-		  if ($childBreadcrumb != "") {echo "<span>".$pageTitle."</span>";}
+		  if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . $parentBreadcrumb . '</span>';}
+		  if ( $childBreadcrumb != '' ) {echo '<span>' . $pageTitle . '</span>';}
 		}
 	}
 
-	add_action('after_setup_theme', 'better_breadcrumbs');
+	add_action( 'after_setup_theme', 'better_breadcrumbs' );
 }
 
-// Check for performance issues
+// Check for performance issues.
 function no_post_limit( $query ) {
-  if ( is_home() && !is_child_theme()) {
-    // No post limit on homepage
-    $query->set( 'posts_per_page', -1 );
-    return;
-  }
+	if ( is_home() && ! is_child_theme() ) {
+	// No post limit on homepage.
+	$query->set( 'posts_per_page', -1 );
+	return;
+	}
 }
 add_action( 'pre_get_posts', 'no_post_limit', 1 );
 
-// Prevent Wordpress from "guessing" redirects instead of showing a 404 page
-if (!function_exists('stop_404_guessing')) {
-	add_filter('redirect_canonical', 'stop_404_guessing');
-	function stop_404_guessing($url) {
-		if (is_404()) {
+// Prevent Wordpress from "guessing" redirects instead of showing a 404 page.
+if ( ! function_exists( 'stop_404_guessing' ) ) {
+	add_filter( 'redirect_canonical', 'stop_404_guessing' );
+	function stop_404_guessing( $url ) {
+		if ( is_404() ) {
 			return false;
 		}
 		return $url;
@@ -762,40 +757,40 @@ if (!function_exists('stop_404_guessing')) {
 }
 
 
-// First make all metaboxes have 'normal' context
-// If you know the ids of the metaboxes, you could add them here and skip the next function altogether
-add_filter('get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1);
-function one_column_for_all($option) {
-    $result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
-    $result['side'] = '';
-    $result['advanced'] = '';
-    return $result;
+// First make all metaboxes have 'normal' context.
+// If you know the ids of the metaboxes, you could add them here and skip the next function altogether.
+add_filter( 'get_user_option_meta-box-order_post', 'one_column_for_all', 10, 1 );
+function one_column_for_all( $option ) {
+	$result['normal'] = 'submitdev, postexcerpt,formatdiv,trackbacksdiv,tagsdiv,post_tag,categorydiv,postimagediv,postcustom,commentstatusdiv,slugdiv,authordiv';
+	$result['side'] = '';
+	$result['advanced'] = '';
+	return $result;
 }
 
-// Then we add 'submitdiv' on the bottom, by creating this filter with a low priority
+// Then we add 'submitdiv' on the bottom, by creating this filter with a low priority.
 // It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
-add_filter('get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1);
-function submitdiv_at_top($result){
-    $result['normal'] .= 'submitdiv';
-    return $result;
+add_filter( 'get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1 );
+function submitdiv_at_top( $result ) {
+	$result['normal'] .= 'submitdiv';
+	return $result;
 }
 
 add_filter( 'get_user_option_meta-box-order_{page}', 'metabox_order' );
 function metabox_order( $order ) {
-    return array(
-        'normal' => join( 
-            ",", 
-            array(       // vvv  Arrange here as you desire
-                'submitdiv',
-                'pageparentdiv',
-                'dmm-meta-box',
-                'prfx_meta',
-                'categorydiv',
-                'tagsdiv-post_tag',
-                'postimagediv'
-            )
-        ),
-    );
+	return array(
+		'normal' => join(
+			',',
+			array(       // vvv  Arrange here as you desire.
+				'submitdiv',
+				'pageparentdiv',
+				'dmm-meta-box',
+				'prfx_meta',
+				'categorydiv',
+				'tagsdiv-post_tag',
+				'postimagediv',
+			)
+		),
+	);
 }
 
 /**
@@ -814,16 +809,16 @@ if ( function_exists( 'get_fields' ) ) {
 	add_filter( 'json_prepare_post', 'wp_api_encode_acf', 10, 3 );
 }
 
-// Allows SVGs to be uploaded through media
-
-function cc_mime_types( $mimes ){
+// Allows SVGs to be uploaded through media.
+function cc_mime_types( $mimes ) {
 $mimes['svg'] = 'image/svg+xml';
 return $mimes;
 }
-add_filter( 'upload_mimes', 'cc_mime_types' ); 
+add_filter( 'upload_mimes', 'cc_mime_types' );
 
 /**
  * Force URLs in srcset attributes into HTTPS scheme.
+ *
  * @link https://wordpress.org/support/topic/responsive-images-src-url-is-https-srcset-url-is-http-no-images-loaded?replies=19#post-7767555
  */
 function ssl_srcset( $sources ) {

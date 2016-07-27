@@ -13,9 +13,9 @@
 
 get_header(); ?>
 
-		<?php get_template_part('inc/search'); ?>
+		<?php get_template_part( 'inc/search' ); ?>
 		
-		<?php get_template_part('inc/breadcrumbs'); ?>
+		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			

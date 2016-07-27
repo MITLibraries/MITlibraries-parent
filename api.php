@@ -7,12 +7,11 @@
  * @since 1.2.1
  */
 
-include("../../../wp-blog-header.php"); ?>
-<?php
-	
-	$location = $_GET["location"];
-	
-	$export = getExport($location);
-	
-	echo json_encode($export);
-?>
+// Load the blog header.
+include( '../../../wp-blog-header.php' );
+
+$location = $_GET['location'];
+
+$export = getExport( $location );
+
+echo json_encode( $export );

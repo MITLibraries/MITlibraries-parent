@@ -9,9 +9,9 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- 
-$pageRoot = getRoot($post);
-$section = get_post($pageRoot);
+
+$pageRoot = getRoot( $post );
+$section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 ?>
 
