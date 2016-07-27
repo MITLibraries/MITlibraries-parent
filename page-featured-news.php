@@ -26,13 +26,6 @@
 			// Switch to news blog.
 			switch_to_blog( 7 );
 
-			/*
-			$foo = get_blog_details(7);
-			echo '<pre>';
-			var_dump($foo);
-			echo '</pre>';
-			*/
-
 			$args = array(
 				'meta_query' => array(
 					array(
@@ -53,13 +46,11 @@
 
 			if ( $the_stories->have_posts() ) {
 				while ( $the_stories->have_posts() ) : $the_stories->the_post();
-					// This was setup_postdata($post).
 					$custom = get_post_custom();
-					// This was var_dump($custom).
+
 					// URL.
 					$url = get_permalink( $post->id );
-					// This was echo 'get blog: ' . get_blog_permalink(7, $post->id ) . '<br>'.
-					// This was echo 'post: ' . post_permalink($post->id) . '<br>'.
+
 					// Highlight image - use 17616 for debugging.
 					$imageTag = '';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
@@ -106,7 +97,6 @@
 
 					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo        '<div class="category-post">' . $label . '</div>';
-					// This was echo        '<div class="category-post">' . $url . '</div>'.
 					echo        '<div class="href">';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
 						the_permalink();

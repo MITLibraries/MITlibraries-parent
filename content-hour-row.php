@@ -28,16 +28,12 @@
 							$temp = $post;
 
 							$hasHours = hasHours( $locationId, date( 'Y-m-d', $today ) );
-							// $hasHours = 1;
-							// $hoursToday = getHoursToday($locationId);
-							// $isOpen = getOpen($locationId);
 							$post = $temp;
 
 							$showSpecial = 1;
 							$showMobileSpecial = 1;
 							$alert = trim( get_field( 'alert' ) );
 
-							// This was: "if ($hasHours && $noHours != 1):"" .
 							if ( $noHours != 1 ) :
 
 								if ( $rowOdd == 'even' ) {
@@ -69,7 +65,6 @@
 
 											$temp = $post;
 
-											// echo "S: ".date("Y-m-d", $today)." "; .
 											$message = getMessageDay( $locationId, $today );
 
 											if ( $message != '' ) {
@@ -141,10 +136,8 @@
 								$firstDay = '';
 								$temp = $post;
 
-								// echo "B: ".date("Y-m-d", $curDay)." "; .
 								$message = getMessageDay( $locationId, $curDay );
 
-								// print_r($message); .
 								if ( $message != '' ) {
 
 									if ( $showSpecial == 1 ) {
