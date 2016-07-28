@@ -147,10 +147,16 @@ function RenderPool( $items ) {
 			}
 		} else {
 			if ( $item->post_type === 'spotlights' ) {
-				if ( $custom['feature_type'][0] === 'fact' || $custom['feature_type'][0] === 'tip' ) {
-					$label .= '<div class="info"></div>' . $custom['feature_type'][0];
+				if ( 'tip' === $custom['feature_type'][0] ) {
+					$label .= $custom['feature_type'][0];
+				} elseif ( 'update' === $custom['feature_type'][0] ) {
+					$label .= $custom['feature_type'][0];
+				} elseif ( 'check' === $custom['feature_type'][0] ) {
+					$label .= 'Check it out';
+				} elseif ( 'media' === $custom['feature_type'][0] ) {
+					$label .= 'In the media';
 				} else {
-					$label .= '<div class="or_star-25"></div>Featured ' . $custom['feature_type'][0];
+					$label .= 'Featured ' . $custom['feature_type'][0];
 				}
 			} elseif ( $item->post_type === 'bibliotech' ) {
 				$label .= 'Bibliotech';
@@ -207,7 +213,6 @@ function RenderPool( $items ) {
 		echo $imageElement;
 		echo '</a>';
 	}
-
 }
 
 function RetrievePool() {
