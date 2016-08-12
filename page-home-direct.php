@@ -10,8 +10,7 @@
 
 	get_template_part('inc/search');
 ?>
-
-	<div class="content-main flex-container">
+	<div class="content-main flex-container libraries-home">
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
 				<h2><a href="/hours">Hours &amp; locations</a></h2>
