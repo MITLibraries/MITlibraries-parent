@@ -1,8 +1,12 @@
-// A lot this--colors especially--could probably be better handles with a function or two.
-.home {
+// A lot of this - colors especially - could probably be better handled with a function or two.
+
+// this rule restricts old and poorly scoped header styling to the main libraries homepage
+.libraries-home {
 	h1, h2, h3 {
 		font-weight: 300;
-	}
+	}	
+}
+.home {
 	.content-main {
 		flex-wrap: wrap;
 		@include bp-tablet--portrait {
