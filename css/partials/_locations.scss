@@ -208,6 +208,8 @@
 .profile-content img {
 	position: relative;
 	border: 1px solid #999999;
+	min-width: 100px;
+	max-width: 100px;
 }
 
 .profile-content__body {
