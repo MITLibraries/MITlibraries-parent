@@ -820,20 +820,97 @@ function metabox_order( $order ) {
 	);
 }
 
+
 /**
- * Add ACF fields to WP REST API JSON output
+ * Add custom fields to 'post' API endpoint
  *
  * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51
+ *
+ * @param Object $data The data being added to the post object.
+ * @param Object $post The post being augmented.
+ * @param String $context Unused.
  */
-function wp_api_encode_acf( $data, $post, $context ) {
+function mitlib_api_v1_alter( $data, $post, $context ) {
 	$customMeta = (array) get_fields( $post['ID'] );
 
 	$data['meta'] = array_merge( $data['meta'], $customMeta );
 	return $data;
 }
 
-if ( function_exists( 'get_fields' ) ) {
-	add_filter( 'json_prepare_post', 'wp_api_encode_acf', 10, 3 );
+/**
+ * Adds custom fields to 'post' and 'experts' API endpoints
+ *
+ * @link http://v2.wp-api.org/extending/modifying/
+ * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51#gistcomment-1622466
+ */
+function mitlib_api_v2_alter() {
+	// Add custom fields to posts endpoint.
+	register_rest_field( 'post',
+		'meta',
+		array(
+			'get_callback'    => function( $data, $field, $request, $type ) {
+				if ( function_exists( 'get_fields' ) ) {
+					return get_fields( $data['id'] );
+				}
+				return array();
+			},
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	// Add custom fields to experts endpoint.
+	register_rest_field( 'experts',
+		'meta',
+		array(
+			'get_callback'    => function( $data, $field, $request, $type ) {
+				if ( function_exists( 'get_fields' ) ) {
+					return get_fields( $data['id'] );
+				}
+				return array();
+			},
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	// Switch featured_media field from media ID to URL of the image.
+	register_rest_field( 'experts',
+		'featured_media',
+		array(
+			'get_callback'    => 'mitlib_api_get_image',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+
+
+/**
+ * This construct will swap between augmentation of the V1 and V2 API.
+ */
+if ( function_exists( 'register_rest_field' ) ) {
+	// The register_rest_field function was introduced in the v2 API.
+	// If that exists, then we call the function to augment that API.
+	add_action( 'rest_api_init', 'mitlib_api_v2_alter' );
+} else {
+	// If that function does not exist, then we call the old API augmentation.
+	if ( function_exists( 'get_fields' ) ) {
+		add_filter( 'json_prepare_post', 'mitlib_api_v1_alter', 10, 3 );
+	}
+}
+
+/**
+ * Get the value of a specified field for use in the API
+ *
+ * @param array  $object Details of current post.
+ * @param string $field_name Name of field.
+ *
+ * @return mixed
+ */
+function mitlib_api_get_image( $object, $field_name ) {
+	$link = wp_get_attachment_image_src( $object[ $field_name ], 'thumbnail-size' );
+	return $link[0];
 }
 
 // Allows SVGs to be uploaded through media.
