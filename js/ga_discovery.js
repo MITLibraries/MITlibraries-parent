@@ -38,9 +38,13 @@ function InitAnalytics(){
 					optTarget = 'Site search';
 					intValue = 6;
 					break;
+				case 'option-7':
+					optTarget = 'Bento';
+					intValue = 7;
+					break;
 				default:
 					optTarget = 'Unknown option';
-					intValue = 7;
+					intValue = 99;
 					break;
 			}
 			TrackEvent('Discovery','Tab',optTarget,intValue);
@@ -80,9 +84,13 @@ function InitAnalytics(){
 					optTarget = 'Site search';
 					intValue = 6;
 					break;
+				case 'bento':
+					optTarget = 'Bento';
+					intValue = 7;
+					break;
 				default:
 					optTarget = 'Unknown option';
-					intValue = 7;
+					intValue = 99;
 					break;
 			}
 			TrackEvent('Discovery','Tab',optTarget,intValue);
@@ -211,6 +219,12 @@ function InitAnalytics(){
 				strSearchString = $('#search-main input.active').val();
 				intValue = 501;
 				strSearchString = 'f1_'+strSearchString;
+				break;
+
+			case 'bento':
+				strSearchString = $('#search-main input.active').val();
+				intValue = 601;
+				strSearchString = 'g1_'+strSearchString;
 				break;
 
 		}
