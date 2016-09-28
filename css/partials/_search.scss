@@ -44,24 +44,17 @@
 		}
 	}
 	form {
-		display: none;
-		input {
-			display: none;
+		display: flex;
+		button {
+			display: block;
 		}
-		&.active {
-			display: flex;
-			button {
-				display: block;
-			}
-			input.active {
-				display: block;
-			}
+		input {
+			display: block;
 		}
 	}
 	input {
 		border: 1px solid white;
 		border-radius: 5px 0 0 0;
-		display: none;
 		font-size: 1em;
 		margin: 0; // Corrects some browser defaults
 		padding: 0.5em;
