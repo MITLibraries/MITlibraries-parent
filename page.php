@@ -25,6 +25,13 @@ get_header( 'home' );
 else :
 get_header();
 endif;
+
+if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+	<div id="sidebar-search" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-search' ); ?>
+	</div>
+<?php
+endif;
 ?>
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
 		<?php get_template_part( 'inc/breadcrumbs', 'noChild' ); ?>

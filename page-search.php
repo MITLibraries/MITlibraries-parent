@@ -11,10 +11,14 @@
  * @since 1.2.1
  */
 
-get_header(); ?>
+get_header();
 
-		<?php get_template_part( 'inc/search' ); ?>
-		
+if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+	<div id="sidebar-search" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-search' ); ?>
+	</div>
+<?php endif; ?>
+
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>

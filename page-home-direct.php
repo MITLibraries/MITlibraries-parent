@@ -8,8 +8,11 @@
 
 	get_header( 'home' );
 
-	get_template_part( 'inc/search' );
-?>
+if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+	<div id="sidebar-search" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-search' ); ?>
+	</div>
+<?php endif; ?>
 	<div class="content-main flex-container libraries-home">
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
