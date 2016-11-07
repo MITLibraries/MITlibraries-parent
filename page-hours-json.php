@@ -32,10 +32,6 @@ $dtWeek = date( 'W', $dt );
 $dtWeekday = date( 'N', $dt );
 
 ?>
-<link rel='stylesheet' id='hours-css'  href='/wp-content/themes/libraries/libs/datepicker/styles/glDatePicker.default.css' type='text/css' media='all' />
-<link rel='stylesheet' id='hours-css'  href='/wp-content/themes/libraries/css/build/minified/hours.min.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id=''  href='/wp-content/themes/libraries/css/mobile.css' type='text/css' media='all' />
-<script src="<?php echo get_template_directory_uri(); ?>/libs/datepicker/glDatePicker.min.js"></script>
 <script>
 	todayDate = new Date(<?php echo $dtYear; ?>,<?php echo ($dtMo -1); ?>,<?php echo $dtDay; ?>);
 </script>
