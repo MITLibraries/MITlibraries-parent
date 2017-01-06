@@ -1029,7 +1029,7 @@ function locationNameToIdOriginal( $name ) {
 function title_filter( $where, &$wp_query ) {
 	global $wpdb;
 	if ( $search_term = $wp_query->get( 'search_prod_title' ) ) {
-		$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( like_escape( $search_term ) ) . '%\'';
+		$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( $wpdb->esc_like( $search_term ) ) . '%\'';
 	}
 	return $where;
 }
