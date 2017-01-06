@@ -676,9 +676,9 @@ function remove_template( $files_to_delete = array() ) {
 	$files_to_delete = preg_replace( '/\.[^.]+$/', '', $files_to_delete );
 
 	// Populate the global $wp_themes array.
-	get_themes();
+	wp_get_themes();
 
-	$current_theme_name = get_current_theme();
+	$current_theme_name = wp_get_theme();
 
 	// Note that we're taking a reference to $wp_themes so we can modify it in-place.
 	$template_files = &$wp_themes[ $current_theme_name ]['Template Files'];
