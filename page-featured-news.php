@@ -123,14 +123,14 @@
 					echo '<div class="control" style="background-color:#fdd;">';
 					echo '<span>Post metadata</span><br>';
 					echo '<pre class="toggle meta">';
-					var_dump( $post );
+					print_r( $post );
 					echo '</pre>';
 					echo '</div>';
 
 					echo '<div class="control" style="background-color:#dfd;">';
 					echo '<span>Custom values</span><br>';
 					echo '<pre class="toggle meta">';
-					var_dump( $custom );
+					print_r( $custom );
 					echo '</pre>';
 					echo '</div>';
 
