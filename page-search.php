@@ -13,8 +13,14 @@
 
 get_header(); ?>
 
+	<?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+		<div id="sidebar-search" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-search' ); ?>
+		</div>
+	<?php else : ?>
 		<?php get_template_part( 'inc/search' ); ?>
-		
+	<?php endif; ?>
+
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
