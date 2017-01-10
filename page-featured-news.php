@@ -120,20 +120,6 @@
 					echo    	$imageTag;
 					echo    '</div>';
 
-					echo '<div class="control" style="background-color:#fdd;">';
-					echo '<span>Post metadata</span><br>';
-					echo '<pre class="toggle meta">';
-					print_r( $post );
-					echo '</pre>';
-					echo '</div>';
-
-					echo '<div class="control" style="background-color:#dfd;">';
-					echo '<span>Custom values</span><br>';
-					echo '<pre class="toggle meta">';
-					print_r( $custom );
-					echo '</pre>';
-					echo '</div>';
-
 					echo '</div>';
 
 				endwhile;
@@ -150,14 +136,6 @@
 <?php
 	get_footer();
 ?>
-<script>
-jQuery(function() {
-	// This drives the show/hide toggles on post metadata.
-	jQuery(".control span").click(function() {
-		jQuery(this).parent().find(".toggle").toggleClass("meta");
-	})
-});
-</script>
 <style type="text/css">
 .debug .post--full-bleed.no-underline {
 	border:1px solid black; 
@@ -169,15 +147,5 @@ jQuery(function() {
 	margin-bottom: 1rem;
 	background-color: #ddf;
 	border: 1px solid blue;
-}
-.debug .control {
-	margin-bottom: 1rem;
-	font-family: monospace;
-	font-size: 12px;
-}
-.debug .control span {
-	font-size: 1.2rem;
-	padding: 0.5rem;
-
 }
 </style>
