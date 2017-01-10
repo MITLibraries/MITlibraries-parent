@@ -76,7 +76,9 @@
 				<div id="mainContent">
 					
 					<?php if ( $title1 != '' || $title2 != '' ) : ?>
-						<?php $noTab = '';  ?>
+						<?php
+						$noTab = '';
+						?>
 					<ul class="tabnav">
 						<?php if ( $title1 != '' ) : ?>
 						<li class="active"><a href="#tab1"><?php echo $title1 ?><div><?php echo $subtitle1 ?></div></a></li>
@@ -85,9 +87,9 @@
 						<li><a href="#tab2"><?php echo $title2 ?><div><?php echo $subtitle2 ?></div></a></li>
 						<?php endif; ?>
 					</ul>
-					<?php else : ?>
-						<?php $noTab = ' noTab';  ?>
-					<?php endif; ?>
+					<?php else :
+						$noTab = ' noTab';
+					endif; ?>
 					<div class="tabcontent <?php echo $noTab ?>">
 						<div class="tab active" id="tab1">
 							<div class="row">
