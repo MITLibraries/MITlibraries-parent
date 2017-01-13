@@ -32,10 +32,14 @@
 	$content2 = get_field( 'tab_2_content' );
 
 	$content2wide = 0;
-	if ( $content2 == '' ) { $content2wide = 1; }
+	if ( $content2 == '' ) {
+		$content2wide = 1;
+	}
 
 	$content1wide = 0;
-	if ( $content1 == '' ) { $content1wide = 1; }
+	if ( $content1 == '' ) {
+		$content1wide = 1;
+	}
 
 	$study24 = get_field( 'study_24' );
 
@@ -52,7 +56,9 @@
 
 
 	$expertAskUrl = get_field( 'expert_ask_url' );
-	if ( $expertAskUrl == '' ) { $expertAskUrl = 'http://libraries.mit.edu/ask'; }
+	if ( $expertAskUrl == '' ) {
+		$expertAskUrl = 'http://libraries.mit.edu/ask';
+	}
 
 
 	$numMain = 6;
@@ -138,8 +144,10 @@
 	<div id="content" class="content <?php echo $strLocation; ?> has-sidebar">
 		<div class="main-content content-main">
 
-			<?php if ( $title1 != '' || $title2 != '' ) : ?>
-				<?php $noTab = '';  ?>
+			<?php
+			if ( $title1 != '' || $title2 != '' ) :
+				$noTab = '';
+			?>
 			<ul class="tabnav">
 				<?php if ( $title1 != '' ) : ?>
 				<li class="active tab1st"><h2 class="title-tab"><a href="#tab1"><?php echo $title1 ?><span class="title-sub hidden-mobile"><?php echo $subtitle1 ?></span class="title-sub"></a></h2></li>
@@ -148,9 +156,11 @@
 				<li class="tab2nd"><h2 class="title-tab"><a href="#tab2"><?php echo $title2 ?><span class="title-sub hidden-mobile"><?php echo $subtitle2 ?></span class="title-sub"></a></h2></li>
 				<?php endif; ?>
 			</ul>
-			<?php else : ?>
-				<?php $noTab = ' noTab';  ?>
-			<?php endif; ?>
+			<?php
+			else :
+				$noTab = ' noTab';
+			endif;
+			?>
 
 			<div class="tabcontent group <?php echo $noTab ?>">
 

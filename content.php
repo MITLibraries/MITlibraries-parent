@@ -20,7 +20,10 @@
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php else : ?>
 			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php
+					// Translators: Permalink text.
+					echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?>
+				</a>
 			</h1>
 			<?php endif; // is_single(). ?>
 			<?php if ( comments_open() ) : ?>
@@ -50,11 +53,16 @@
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 68 ) ); ?>
 					</div><!-- .author-avatar -->
 					<div class="author-description">
-						<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
+						<h2><?php
+							// Translators: About the author.
+							printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?>
+						</h2>
 						<p><?php the_author_meta( 'description' ); ?></p>
 						<div class="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
+								<?php
+								// Translators: View all posts by author.
+								printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
 							</a>
 						</div><!-- .author-link -->
 					</div><!-- .author-description -->

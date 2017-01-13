@@ -139,7 +139,8 @@ function twentytwelve_admin_header_image() {
 		?>
 		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<h2 id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
-		<?php $header_image = get_header_image();
+		<?php
+		$header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
 			<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 		<?php endif; ?>

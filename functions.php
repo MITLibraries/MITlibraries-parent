@@ -259,7 +259,9 @@ function twentytwelve_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) ); }
+		// Translators: Page number for multi-page content.
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+	}
 
 	return $title;
 }
@@ -424,16 +426,20 @@ function twentytwelve_entry_meta() {
 
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		// Translators: View all posts by a given author.
 		esc_attr( sprintf( __( 'View all posts by %s', 'twentytwelve' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
+		// Translators: Category, tag, date, and author values.
 		$utility_text = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
 	} elseif ( $categories_list ) {
+		// Translators: Category, date, and author values.
 		$utility_text = __( 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
 	} else {
+		// Translators: Date and author values.
 		$utility_text = __( 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
 	}
 
@@ -604,7 +610,9 @@ function the_breadcrumb() {
 }
 
 function wsf_make_link( $url, $anchortext, $title = null, $nofollow = false ) {
-	if ( $title == null ) { $title = $anchortext; }
+	if ( $title == null ) {
+		$title = $anchortext;
+	}
 	$nofollow == true ? $rel = ' rel="nofollow"' : $rel = '';
 
 	$link = sprintf( '<a href="%s" title="%s" %s="">%s</a>', $url, $title, $rel, $anchortext );
@@ -670,7 +678,9 @@ function remove_template( $files_to_delete = array() ) {
 	global $wp_themes;
 
 	// As convenience, allow a single value to be used as a scalar without wrapping it in a useless array().
-	if ( is_scalar( $files_to_delete ) ) { $files_to_delete = array( $files_to_delete ); }
+	if ( is_scalar( $files_to_delete ) ) {
+		$files_to_delete = array( $files_to_delete );
+	}
 
 	// Remove TLA if it was provided.
 	$files_to_delete = preg_replace( '/\.[^.]+$/', '', $files_to_delete );
