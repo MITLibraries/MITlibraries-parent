@@ -610,7 +610,7 @@ function the_breadcrumb() {
 }
 
 function wsf_make_link( $url, $anchortext, $title = null, $nofollow = false ) {
-	if ( $title == null ) {
+	if ( null === $title ) {
 		$title = $anchortext;
 	}
 	$nofollow == true ? $rel = ' rel="nofollow"' : $rel = '';

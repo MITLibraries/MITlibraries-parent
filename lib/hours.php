@@ -14,7 +14,7 @@ if ( isset( $_GET['cleanCache'] ) ) {
 
 $resetCache = 0;
 
-if ( $clean == '1' ) {
+if ( '1' === $clean ) {
 	$resetCache = 1;
 }
 $halfCache = 0;
@@ -500,7 +500,7 @@ function getTermHour( $term, $dt ) {
 
 			$end = $hours['end'];
 
-			if ( $end == '' ) {
+			if ( '' === $end ) {
 				$end = $start;
 			}
 
