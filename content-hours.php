@@ -76,7 +76,9 @@
 				<div id="mainContent">
 					
 					<?php if ( $title1 != '' || $title2 != '' ) : ?>
-						<?php $noTab = '';  ?>
+						<?php
+						$noTab = '';
+						?>
 					<ul class="tabnav">
 						<?php if ( $title1 != '' ) : ?>
 						<li class="active"><a href="#tab1"><?php echo $title1 ?><div><?php echo $subtitle1 ?></div></a></li>
@@ -85,9 +87,9 @@
 						<li><a href="#tab2"><?php echo $title2 ?><div><?php echo $subtitle2 ?></div></a></li>
 						<?php endif; ?>
 					</ul>
-					<?php else : ?>
-						<?php $noTab = ' noTab';  ?>
-					<?php endif; ?>
+					<?php else :
+						$noTab = ' noTab';
+					endif; ?>
 					<div class="tabcontent <?php echo $noTab ?>">
 						<div class="tab active" id="tab1">
 							<div class="row">
@@ -164,40 +166,6 @@
 					</div>
 				</div>
 				<?php get_sidebar(); ?>
-				<!--
-				<div id="sidebarContent">
-					<div class="sidebarWidgets">
-						<div class="widget">
-							<h3>Help with renewing, fines, requests...</h3>
-							<ul>
-								<li><a href="#">Circulation FAQ</a></li>
-								<li><a href="#">Reserves FAQ</a></li>
-								<li><a href="#">Other FAQs</a></li>
-								<li><a href="#">Get books, articles, and more...</a></li>
-							</ul>
-						</div>
-						<?php $val = $spaces; if ( $val != '' ) : ?>
-						<div class="widget">
-							<?php echo $val; ?>
-						</div>
-						<?php endif; ?>
-						<?php $val = $equipment; if ( $val != '' ) : ?>
-						<div class="widget">
-							<?php echo $val; ?>
-						</div>
-						<?php endif; ?>
-						<div class="widget">
-							<h3>See also</h3>
-							<ul>
-								<li><a href="#">School of Architecture &amp; Planning</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>					
-				-->
-			
-			
-			
 		
 			<div class="clear"></div>
 		

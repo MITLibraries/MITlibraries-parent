@@ -28,7 +28,9 @@
 <?php
 		// $askUrl = get_post_meta($post->ID, "ask_us_override", 1);
 		$askUrl = '';
-		if ( $askUrl == '' ) { $askUrl = '/ask'; }
+		if ( '' === $askUrl ) {
+			$askUrl = '/ask';
+		}
 ?>
 	<script>
 		todayDate="";

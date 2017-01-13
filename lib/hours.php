@@ -14,7 +14,9 @@ if ( isset( $_GET['cleanCache'] ) ) {
 
 $resetCache = 0;
 
-if ( $clean == '1' ) { $resetCache = 1; }
+if ( '1' === $clean ) {
+	$resetCache = 1;
+}
 $halfCache = 0;
 
 if ( isset( $_GET['locReset'] ) ) {
@@ -498,7 +500,9 @@ function getTermHour( $term, $dt ) {
 
 			$end = $hours['end'];
 
-			if ( $end == '' ) { $end = $start; }
+			if ( '' === $end ) {
+				$end = $start;
+			}
 
 			$dt = strtotime( date( 'Ymd', $dt ) );
 
@@ -1028,8 +1032,8 @@ function locationNameToIdOriginal( $name ) {
 
 function title_filter( $where, &$wp_query ) {
 	global $wpdb;
-	if ( $search_term = $wp_query->get( 'search_prod_title' ) ) {
-		$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( like_escape( $search_term ) ) . '%\'';
+	if ( $search_term == $wp_query->get( 'search_prod_title' ) ) {
+		$where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( $wpdb->esc_like( $search_term ) ) . '%\'';
 	}
 	return $where;
 }
