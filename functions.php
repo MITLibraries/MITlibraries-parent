@@ -284,7 +284,7 @@ add_filter( 'wp_page_menu_args', 'twentytwelve_page_menu_args' );
  *
  * @since Twenty Twelve 1.0
  */
-function twentytwelve_widgets_init() {
+function mitlib_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'twentytwelve' ),
 		'id' => 'sidebar-1',
@@ -314,8 +314,17 @@ function twentytwelve_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Masthead Search Bar', 'twentytwelve' ),
+		'id' => 'sidebar-search',
+		'description' => __( 'Appears under the MIT Libraries masthead, and houses the search interface', 'twentytwelve' ),
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		'class' => '',
+	) );
 }
-add_action( 'widgets_init', 'twentytwelve_widgets_init' );
+add_action( 'widgets_init', 'mitlib_widgets_init' );
 
 if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
 /**
