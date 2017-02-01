@@ -822,28 +822,12 @@ function metabox_order( $order ) {
 
 
 /**
- * Add custom fields to 'post' API endpoint
- *
- * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51
- *
- * @param Object $data The data being added to the post object.
- * @param Object $post The post being augmented.
- * @param String $context Unused.
- */
-function mitlib_api_v1_alter( $data, $post, $context ) {
-	$customMeta = (array) get_fields( $post['ID'] );
-
-	$data['meta'] = array_merge( $data['meta'], $customMeta );
-	return $data;
-}
-
-/**
  * Adds custom fields to 'post' and 'experts' API endpoints
  *
  * @link http://v2.wp-api.org/extending/modifying/
  * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51#gistcomment-1622466
  */
-function mitlib_api_v2_alter() {
+function mitlib_api_alter() {
 	// Add custom fields to posts endpoint.
 	register_rest_field( 'post',
 		'meta',
@@ -892,12 +876,7 @@ function mitlib_api_v2_alter() {
 if ( function_exists( 'register_rest_field' ) ) {
 	// The register_rest_field function was introduced in the v2 API.
 	// If that exists, then we call the function to augment that API.
-	add_action( 'rest_api_init', 'mitlib_api_v2_alter' );
-} else {
-	// If that function does not exist, then we call the old API augmentation.
-	if ( function_exists( 'get_fields' ) ) {
-		add_filter( 'json_prepare_post', 'mitlib_api_v1_alter', 10, 3 );
-	}
+	add_action( 'rest_api_init', 'mitlib_api_alter' );
 }
 
 /**
