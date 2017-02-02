@@ -24,11 +24,12 @@
 			}
 		}
 		.col-2 {
-			border-left: 1px solid $color-secondary;
+			border-left: none;
 			@include bp-tablet--portrait {
 				margin-left: 0; // Creates full bleed
 				width: 67.915%; // Corrects grid for zero margin
 				-ms-flex: 0 1 auto; // Corrects IE10 bug
+				border-left: 1px solid $color-secondary;
 			}
 		}
 	}
@@ -120,6 +121,7 @@
 			}
 		}
 		.location {
+			position: relative;
 			color: #111;
 			font-weight: 300;
 			padding: 0;
@@ -199,6 +201,7 @@
 				margin-left: 1em;
 				position: absolute;
 				right: 0.25em;
+				top: 35%;
 				@include bp-tablet--portrait {
 					content: url(#{$imagesPath}/phone-sfw.svg);
 					position: relative;
