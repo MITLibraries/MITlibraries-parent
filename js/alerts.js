@@ -61,44 +61,7 @@ function setClosable(alert_ID) {
 	});
 }
 
-function showAlertsV1(json) {
-	var alert_posts_arr = [],
-		alert_ID,
-		alert_template;
-
-	alert_posts_arr = filterAlerts(json)
-
-	// If there is an alert post
-	if (alert_posts_arr.length) {
-
-		// Check for empty title
-		if ('' === alert_posts_arr[0].title) {
-			alert_posts_arr[0].title = 'Alert!';
-		}
-
-		// Alert post ID
-		alert_ID = alert_posts_arr[0].id;
-
-		// Alert HTML template
-		alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
-			'<div class="post alert--critical flex-container">' +
-				'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
-				'<div class="content-post alertText">' +
-					'<h3>' + alert_posts_arr[0].title + '</h3> ' + alert_posts_arr[0].content +
-				'</div>' +
-			'</div>' +
-		'</div>';
-
-		renderAlert(alert_template,alert_ID);
-
-		// If this is a closable alert
-		if (true === alert_posts_arr[0].meta.closable) {
-			setClosable(alert_ID);
-		}
-	}
-}
-
-function showAlertsV2(json) {
+function showAlerts(json) {
 	var alert_posts_arr = [],
 		alert_ID,
 		alert_template;
@@ -136,16 +99,12 @@ function showAlertsV2(json) {
 }
 
 $(function(){
-	// This is a temporary construct to make transitioning between API endpoints seamless.
-	// It tries the v1 endpoint first, and if that fails then falls back to the v2 endpoint.
-	$.getJSON('/wp-json/posts')
+
+	// This retrieves a list of posts, with additional parsing to determine if
+	// any are displayable alerts.
+	$.getJSON('/wp-json/wp/v2/posts')
 		.done(function(data){
-			showAlertsV1(data);
-		})
-		.fail(function(){
-			$.getJSON('/wp-json/wp/v2/posts')
-				.done(function(data){
-					showAlertsV2(data);
-				});
+			showAlerts(data);
 		});
+
 });
