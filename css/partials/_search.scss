@@ -428,6 +428,22 @@
 	}
 }
 
+.bento-beta {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: #fff;
+	font-size: 12px;
+
+	&:after {
+		content: ' » ';
+	}
+
+	&:hover {
+		color: #fff;
+	}
+}
+
 .no-js {
 	.search--lib-resources {
 		align-items: flex-start;
