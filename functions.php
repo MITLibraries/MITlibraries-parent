@@ -106,7 +106,7 @@ function twentytwelve_scripts_styles() {
 	/*
 	 * Loads our main stylesheet.
 	 */
-	wp_register_style( 'font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic', false, null, all );
+	wp_register_style( 'font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic', false, null, 'all' );
 
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
@@ -116,9 +116,9 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.0' );
 
-	wp_register_style( 'hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', false, null, all );
+	wp_register_style( 'hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', false, null, 'all' );
 
-	wp_register_style( 'hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', false, null, all );
+	wp_register_style( 'hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', false, null, 'all' );
 
 	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), '1.0' );
 
