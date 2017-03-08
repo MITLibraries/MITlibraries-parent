@@ -263,6 +263,7 @@ $(function(){
 				.append('<input type="hidden" name="cx" value="016240528703941589557:i7wrbu9cdxu" />')
 				.append('<input type="hidden" name="ie" value="UTF-8" />');
 		}
+		// Bento has no hidden fields
 	}
 
 	// This is the initial setup of the search UI, along the lines of what was loaded from localstorage
@@ -490,6 +491,15 @@ $(function(){
 				$('button', this)
 					.attr('name', 'sa')
 					.attr('value', 'Search');
+			}
+			// Bento
+			if($('#bento.active').length) {
+				$(this)
+					.attr('action', 'https://mit-bento.herokuapp.com/search/bento');
+				// No hidden fields for Bento (yet?)
+				$('input.active', this)
+					.attr('name', 'q')
+					.val(searchQuery);
 			}
 		}
 	});
