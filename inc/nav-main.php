@@ -117,6 +117,7 @@
 		<a href="/contact">Contact us</a>
 		<a href="/use-policies">Library use policy</a>
 		<a href="/jobs">Jobs</a>
+		<a href="/about/experiments/">Experiments at the Libraries</a>
 		<a href="/giving">Giving to the MIT Libraries</a>
 		<a href="/about" class="bottom">More about us</a>
 	  </div>
