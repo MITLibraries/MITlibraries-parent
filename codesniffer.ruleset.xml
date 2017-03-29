@@ -28,7 +28,10 @@
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamName" />
 		<exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing" />
 		<exclude name="Squiz.Commenting.FunctionComment.SpacingAfter" />
+		<exclude name="Squiz.PHP.DisallowSizeFunctionsInLoops.Found" />
+		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
 		<exclude name="WordPress.CSRF.NonceVerification.NoNonceVerification" />
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
 		<exclude name="WordPress.NamingConventions.ValidVariableName.NotSnakeCase" />
 		<exclude name="WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid" />
 		<exclude name="WordPress.NamingConventions.ValidVariableName.StringNotSnakeCase" />
@@ -37,12 +40,12 @@
 		<exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotSanitized" />
 		<exclude name="WordPress.VIP.ValidatedSanitizedInput.MissingUnslash" />
 		<exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotValidated" />
-		<exclude name="WordPress.VIP.PostsPerPage.posts_per_page" />
+		<exclude name="WordPress.VIP.PostsPerPage.posts_per_page_posts_per_page" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.error_log" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.get_pages" />
-		<exclude name="WordPress.VIP.RestrictedFunctions.switch_to_blog" />
-		<exclude name="WordPress.VIP.OrderByRand.orderby" />
-		<exclude name="WordPress.VIP.TimezoneChange.date_default_timezone_set" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.switch_to_blog_switch_to_blog" />
+		<exclude name="WordPress.VIP.OrderByRand.orderby_orderby" />
+		<exclude name="WordPress.VIP.TimezoneChange.timezone_change_date_default_timezone_set" />
 		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" />
 		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedScript" />
 		<exclude name="WordPress.WP.I18n.MissingSingularPlaceholder" />
