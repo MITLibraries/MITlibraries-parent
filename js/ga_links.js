@@ -11,8 +11,13 @@ $(function() {
 		var linkInfo = 'mega-nav_sub_' + linkText + '_' + linkHref;
 		TrackEvent('link', 'click', linkInfo, 1);
 	});
-	function TrackEvent(Category,Action,Label, Value){
-		_gaq.push(['_trackEvent', Category, Action, Label, Value]);
+	function TrackEvent(Category,Action,Label,Value){
+		ga('send', {
+			hitType: 'event',
+			eventCategory: Category,
+			eventAction: Action,
+			eventLabel: Label,
+			eventValue: Value
+		});
 	}
 });
-
