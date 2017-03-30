@@ -220,7 +220,13 @@ function InitAnalytics(){
 }
 
 function TrackEvent(Category,Action,Label,Value){
-	_gaq.push(['_trackEvent', Category, Action, Label, Value]);
+	ga('send', {
+		hitType: 'event',
+		eventCategory: Category,
+		eventAction: Action,
+		eventLabel: Label,
+		eventValue: Value
+	});
 	// alert('Click tracked: C'+Category+' _ A'+Action+' _ L'+Label+' _ V'+Value);
 }
 
