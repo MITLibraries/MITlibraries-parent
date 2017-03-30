@@ -110,17 +110,17 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '2.2.0' );
+	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '1.5.5' );
 
 	wp_enqueue_style( 'libraries-global' );
 
-	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.0' );
+	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.5.5' );
 
 	wp_register_style( 'hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', false, null, 'all' );
 
 	wp_register_style( 'hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', false, null, 'all' );
 
-	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), '1.0' );
+	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), '1.5.5' );
 
 	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
 
@@ -149,17 +149,17 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
-	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr' ), '2.2.0', true );
+	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr' ), '1.5.5', true );
 
-	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '2.2.0', true );
+	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '1.5.5', true );
 
 	wp_register_script( 'hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true );
 
-	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '20140312', true );
+	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '1.5.5', true );
 
-	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), '20140811', false );
+	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), '1.5.5', false );
 
-	wp_register_script( 'mapJS', get_template_directory_uri() . '/js/build/map.min.js', array( 'jquery' ), '20140813', true );
+	wp_register_script( 'mapJS', get_template_directory_uri() . '/js/build/map.min.js', array( 'jquery' ), '1.5.5', true );
 
 	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?sensor=false', array(), false, true );
 
