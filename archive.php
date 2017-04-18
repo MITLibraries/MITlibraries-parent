@@ -13,7 +13,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @since 1.4.0
  */
 
 get_header(); ?>
