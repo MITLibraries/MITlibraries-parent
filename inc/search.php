@@ -23,7 +23,7 @@
 			<a href="/worldcat">WorldCat</a>
 			<a href="/reserves">Course reserves</a>
 			<a href="/about/site-search">Site search</a>
-			<a href="https://lib.mit.edu">Try our new search</a>
+			<a href="https://lib.mit.edu">It's coming in June! Try our new search early</a>
 		</div>
 	</div>
 	<div class="wrap-select--resources no-js-hidden">
@@ -144,5 +144,7 @@
 	<a href="https://libraries.mit.edu/barton-advanced" class="search-advanced barton no-js-hidden">Go to Barton advanced search</a>
 	<a href="https://mit.worldcat.org/advancedsearch" class="search-advanced worldcat no-js-hidden">Go to WorldCat advanced search</a>
 	<a href="https://libraries.mit.edu/barton-reserves" class="search-advanced course-reserves no-js-hidden">Go to Course Reserves advanced search</a>
-	<a class="bento-beta no-js-hidden" href="https://lib.mit.edu">Try our new search</a>
+	<div class="wrap-bento-beta no-js-hidden">
+		<p>It's coming in June! <a class="bento-beta-link" href="https://lib.mit.edu">Try our new search early</a></p>
+	</div>
 </div><!-- end div.search-main -->
