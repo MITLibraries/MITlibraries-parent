@@ -3,7 +3,7 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	padding: 3em 0.5em !important;
+	padding: 3em 0.5em 4em 0.5em!important;
 	position: relative;
 	@include gradient-blue;
 	z-index: map-get($zindex, main);
@@ -306,7 +306,7 @@
 		}
 	}
 	.search-advanced {
-		bottom: 1rem;
+		bottom: 2.5rem;
 		display: none;
 		font-size: 0.75em;
 		font-weight: 300;
@@ -324,7 +324,7 @@
 			}
 			// Magic numbers.
 			&.bartonplus.active {
-				right: 218px;
+				right: 205px;
 			}
 			&.barton.active {
 				right: 187px;
@@ -428,19 +428,32 @@
 	}
 }
 
-.bento-beta {
+.wrap-bento-beta {
 	position: absolute;
-	top: 15px;
-	right: 15px;
-	color: #fff;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #9c3273;
+	padding: 5px 15px;
+	color: #E5CEDC;
 	font-size: 12px;
+	font-weight: 600;
+	text-align: right;
 
-	&:after {
-		content: ' » ';
+	p {
+		margin-bottom: 0 !important;
 	}
 
-	&:hover {
+	.bento-beta-link {
 		color: #fff;
+
+		&:after {
+			content: ' » ';
+		}
+
+		&:hover {
+			color: #fff;
+		}
 	}
 }
 
