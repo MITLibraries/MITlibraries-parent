@@ -247,7 +247,7 @@ $mapPage = '/locations/#!';
 		$next = '';
 	  }
 	?>
-		  <td data-day="<?php echo $i; ?>" class="<?php echo $class . $firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
+		  <td data-day="<?php echo $i; ?>" class="<?php echo $class; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
 		  <?php } ?>
 		</tr>
 		<?php wp_reset_postdata();
@@ -357,7 +357,7 @@ $class = $next;
 $next = '';
 }
 ?>
-		<td data-day="<?php echo $i; ?>" class="<?php echo $class . $firstDay; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
+		<td data-day="<?php echo $i; ?>" class="<?php echo $class; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
 		<?php } ?>
 	  </tr>
 	   <?php wp_reset_postdata();  ?>
