@@ -249,7 +249,11 @@ $mapPage = '/locations/#!';
 		$next = '';
 	  }
 	?>
-		  <td data-day="<?php echo $i; ?>" class="<?php echo $class; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
+		<td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?>" data-foo="bar">
+			<span class="hidden-non-mobile date-label">
+				<?php echo esc_html( date( 'D', $curDay ) ) . '<br/>' . esc_html( date( 'n/j', $curDay ) ); ?>
+			</span>
+		</td>
 		  <?php } ?>
 		</tr>
 		<?php wp_reset_postdata();
@@ -359,7 +363,11 @@ $class = $next;
 $next = '';
 }
 ?>
-		<td data-day="<?php echo $i; ?>" class="<?php echo $class; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
+		<td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?> noPadding">
+			<span class="hidden-non-mobile date-label">
+				<?php echo esc_html( date( 'D', $curDay ) ) . '<br/>' . esc_html( date( 'n/j', $curDay ) ); ?>
+			</span>
+		</td>
 		<?php } ?>
 	  </tr>
 	   <?php wp_reset_postdata();  ?>
