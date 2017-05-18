@@ -70,7 +70,7 @@ get_header(); ?>
 							}
 
 								$location = get_field( 'coordinates' );
-								$coords = explode( ",", $location );
+								$coords = explode( ',', $location );
 								$lat = $coords[0];
 								$lng = $coords[1];
 								$address = get_field( 'address' );	
