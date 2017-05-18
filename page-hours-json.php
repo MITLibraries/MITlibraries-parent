@@ -157,7 +157,9 @@ tr:nth-child(even) td {
 		<thead>
 			<tr>
 				<th class="name">Locations</th>
-				<?php for ( $i = 0;$i <= 6;$i++ ) {
+				<?php
+				$next = '';
+				for ( $i = 0;$i <= 6;$i++ ) {
 					$day = $arr_days[ $i ];
 					// Now we build the list of classes for this header cell.
 					$th_classes = 'fullDay';
