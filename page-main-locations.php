@@ -46,15 +46,16 @@ get_header(); ?>
 						<?php while ( $libraryList->have_posts() ) : $libraryList->the_post(); ?>
 						<?php
 							$locationId = get_the_ID();
+							
 							$slug = $post->post_name;
 
 							$building = cf( 'building' );
-
+						
 							$numMain = 3;
 							$arMain = array();
 
 							$mapImage = get_field( 'map_image' );
-
+							
 
 							for ( $i = 1;$i <= $numMain;$i++ ) {
 								$img = get_field( 'main_image' . $i, $locationId );
@@ -68,21 +69,22 @@ get_header(); ?>
 								$val = $mapImage;
 							}
 
-							$location = get_field( 'building_location' );
-								$coords = explode( ',', $location['coordinates'] );
+								$location = get_field( 'coordinates' );
+								$coords = explode( ",", $location );
 								$lat = $coords[0];
 								$lng = $coords[1];
-								$address = $location['address'];
+								$address = get_field( 'address' );	
 
 							$name = html_entity_decode( get_the_title() );
 
 							$displayPage = get_field( 'display_page' );
 							$pageID = $displayPage->ID;
 							$pageLink = get_permalink( $pageID );
-
+							
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
 							// $directionsUrl .= "daddr=".urlencode($address);
+							
 							if ( $lat != '' && $lng != '' ) :
 						?>				
 						<div class="location">
