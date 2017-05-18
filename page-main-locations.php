@@ -53,7 +53,7 @@ get_header(); ?>
 							$arMain = array();
 
 							$mapImage = get_field( 'map_image' );
-							
+
 							for ( $i = 1;$i <= $numMain;$i++ ) {
 								$img = get_field( 'main_image' . $i, $locationId );
 								if ( $img != '' ) {
@@ -70,7 +70,7 @@ get_header(); ?>
 								$coords = explode( ',', $location );
 								$lat = $coords[0];
 								$lng = $coords[1];
-								$address = get_field( 'address' );	
+								$address = get_field( 'address' );
 
 							$name = html_entity_decode( get_the_title() );
 
@@ -79,7 +79,6 @@ get_header(); ?>
 							$pageLink = get_permalink( $pageID );
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
-							// $directionsUrl .= "daddr=".urlencode($address);
 							
 							if ( $lat != '' && $lng != '' ) :
 						?>				
