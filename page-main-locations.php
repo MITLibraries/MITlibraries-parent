@@ -79,7 +79,6 @@ get_header(); ?>
 							$pageLink = get_permalink( $pageID );
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
-							
 							if ( $lat != '' && $lng != '' ) :
 						?>				
 						<div class="location">
