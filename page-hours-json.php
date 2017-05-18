@@ -62,15 +62,15 @@ $fri = strtotime( $dtISOYear . 'W' . $wk . '5' );
 $sat = strtotime( $dtISOYear . 'W' . $wk . '6' );
 $sun = strtotime( $dtISOYear . 'W' . $wk . '7' );
 
-$arDays = array();
+$arr_days = array();
 
-$arDays[] = $mon;
-$arDays[] = $tue;
-$arDays[] = $wed;
-$arDays[] = $thu;
-$arDays[] = $fri;
-$arDays[] = $sat;
-$arDays[] = $sun;
+$arr_days[] = $mon;
+$arr_days[] = $tue;
+$arr_days[] = $wed;
+$arr_days[] = $thu;
+$arr_days[] = $fri;
+$arr_days[] = $sat;
+$arr_days[] = $sun;
 
 $dfDow = 'M j';
 $dfDowMobile = 'M \<\b\r\\/> j';
@@ -164,7 +164,7 @@ tr:nth-child(even) td {
 		$next = '';
 
 		$i = 0;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay firstDisplay <?php echo $next;
 $next = '';
@@ -176,7 +176,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 1;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -188,7 +188,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 2;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -200,7 +200,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 3;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -212,7 +212,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 4;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -224,7 +224,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 5;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -236,7 +236,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 6;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -299,17 +299,17 @@ $mapPage = '/locations/#!';
 			</div></td>
 		  <?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 		  <?php
-	  $curDay = $arDays[ $i ];
+			$current_day = $arr_days[ $i ];
 
-	  if ( $curDay == $now ) {
-		$class = 'cur';
-		$next = 'curAfter';
-	  } else {
-		$class = $next;
-		$next = '';
-	  }
+			if ( $current_day === $now ) {
+				$class = 'cur';
+				$next = 'curAfter';
+			} else {
+				$class = $next;
+				$next = '';
+			}
 	?>
-		  <td data-day="<?php echo $i; ?>" class="<?php echo $class . $firstDay; ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
+		  <td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo esc_html( date( 'D', $current_day ) ) . '<br/>' . esc_html( date( 'n/j', $current_day ) ); ?></span></td>
 		  <?php } ?>
 		</tr>
 		<?php wp_reset_postdata();
@@ -322,7 +322,7 @@ endwhile;    ?>
 		$next = '';
 
 		$i = 0;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay firstDisplay <?php echo $next;
 $next = '';
@@ -334,7 +334,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 1;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -346,7 +346,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 2;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -358,7 +358,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 3;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -370,7 +370,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 4;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -382,7 +382,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 5;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -394,7 +394,7 @@ $next = 'curAfter';} ?>"> <span class="fullDay"><?php echo date( 'l', $day ); ?>
 		  </span> </th>
 		<?php
 		$i = 6;
-		$day = $arDays[ $i ];
+		$day = $arr_days[ $i ];
 		?>
 		<th class="fullDay <?php echo $next;
 $next = '';
@@ -468,17 +468,17 @@ $pageLink = get_permalink( $pageID );
 		  </div></td>
 		<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 		<?php
-$curDay = $arDays[ $i ];
+		$current_day = $arr_days[ $i ];
 
-if ( $curDay == $now ) {
-$class = 'cur';
-$next = 'curAfter';
-} else {
-$class = $next;
-$next = '';
-}
+		if ( $current_day === $now ) {
+			$class = 'cur';
+			$next = 'curAfter';
+		} else {
+			$class = $next;
+			$next = '';
+		}
 ?>
-		<td data-day="<?php echo $i; ?>" class="<?php echo $class . $firstDay; ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo date( 'D', $curDay ) . '<br/>' . date( 'n/j', $curDay ); ?></span></td>
+		<td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo esc_html( date( 'D', $current_day ) ) . '<br/>' . esc_html( date( 'n/j', $current_day ) ); ?></span></td>
 		<?php } ?>
 	  </tr>
 	   <?php wp_reset_postdata();  ?>
