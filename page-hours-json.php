@@ -299,15 +299,15 @@ $mapPage = '/locations/#!';
 			</div></td>
 		  <?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 		  <?php
-	  $current_day = $arr_days[ $i ];
+			$current_day = $arr_days[ $i ];
 
-	  if ( $current_day == $now ) {
-		$class = 'cur';
-		$next = 'curAfter';
-	  } else {
-		$class = $next;
-		$next = '';
-	  }
+			if ( $current_day === $now ) {
+				$class = 'cur';
+				$next = 'curAfter';
+			} else {
+				$class = $next;
+				$next = '';
+			}
 	?>
 		  <td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?>" data-foo="bar"><span class="hidden-non-mobile date-label"><?php echo esc_html( date( 'D', $current_day ) ) . '<br/>' . esc_html( date( 'n/j', $current_day ) ); ?></span></td>
 		  <?php } ?>
@@ -468,15 +468,15 @@ $pageLink = get_permalink( $pageID );
 		  </div></td>
 		<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 		<?php
-$current_day = $arr_days[ $i ];
+		$current_day = $arr_days[ $i ];
 
-if ( $current_day == $now ) {
-$class = 'cur';
-$next = 'curAfter';
-} else {
-$class = $next;
-$next = '';
-}
+		if ( $current_day === $now ) {
+			$class = 'cur';
+			$next = 'curAfter';
+		} else {
+			$class = $next;
+			$next = '';
+		}
 ?>
 		<td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?> noPadding"><span class="hidden-non-mobile date-label"><?php echo esc_html( date( 'D', $current_day ) ) . '<br/>' . esc_html( date( 'n/j', $current_day ) ); ?></span></td>
 		<?php } ?>
