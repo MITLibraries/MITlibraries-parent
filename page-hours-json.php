@@ -230,7 +230,7 @@ $mapPage = '/locations/#!';
 			  <?php } ?>
 			  <?php if ( get_field( 'alert_title', $locationId ) ) { ?>
 			  <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
-	              <div class="alertText">
+				<div class="alertText">
 			  <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
 				<?php the_field( 'alert_content', $locationId ); ?>
 			  </div>
@@ -343,7 +343,7 @@ $pageLink = get_permalink( $pageID );
 			<?php } ?>
 			  <?php if ( get_field( 'alert_title', $locationId ) ) { ?>
 			  <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
-	              <div class="alertText">
+				<div class="alertText">
 			  <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
 				<?php the_field( 'alert_content', $locationId ); ?>
 			  </div>
