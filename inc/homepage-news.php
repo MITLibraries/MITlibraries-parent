@@ -100,8 +100,8 @@
 			if ( $newsFeedCount > 0 ) :
 				if ( $newsBlog ) { switch_to_blog( $newsBlog ); }
 					$args = array(
-					'post_type' => 'post',
-					'posts_per_page' => $newsFeedCount,
+						'post_type' => 'post',
+						'posts_per_page' => $newsFeedCount,
 					);
 
 			$news = new WP_Query( $args );

@@ -191,13 +191,13 @@ tr:nth-child(even) td {
 	  <tbody>
 		<?php
 $args = array(
-'post_type' => 'location',
-'meta_key' => 'primary_location',
-'meta_value' => 1,
-'posts_per_page' => -1,
-/*'orderby' => 'menu_order',*/
-'orderby' => 'name',
-'order' => 'ASC',
+	'post_type' => 'location',
+	'meta_key' => 'primary_location',
+	'meta_value' => 1,
+	'posts_per_page' => -1,
+	/*'orderby' => 'menu_order',*/
+	'orderby' => 'name',
+	'order' => 'ASC',
 );
 $libraryList = new WP_Query( $args );?>
 		<?php while ( $libraryList->have_posts() ) : $libraryList->the_post();
@@ -294,22 +294,21 @@ endwhile;    ?>
 		<?php
 
 $args = array(
-'post_type' => 'location',
-'meta_key' => 'primary_location',
-'meta_value' => 0,
-'posts_per_page' => -1,
-/*'orderby' => 'menu_order',*/
-'orderby' => 'name',
-'order' => 'ASC',
-// Excludes DIRC and Stata.
+	'post_type' => 'location',
+	'meta_key' => 'primary_location',
+	'meta_value' => 0,
+	'posts_per_page' => -1,
+	/*'orderby' => 'menu_order',*/
+	'orderby' => 'name',
+	'order' => 'ASC',
+	// Excludes DIRC and Stata.
 	'meta_query' => array(
-	'relation' => 'AND',
-	array(
-	  'key' => 'no_hours',
-	  'value' => 0,
-	  'compare' => '=',
-	),
-
+		'relation' => 'AND',
+		array(
+			'key' => 'no_hours',
+			'value' => 0,
+			'compare' => '=',
+		),
 	),
 );
 $libraryList2 = new WP_Query( $args );?>
