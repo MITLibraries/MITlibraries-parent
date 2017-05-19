@@ -32,15 +32,15 @@
 						'key' => 'featuredArticle',
 						'value' => 'True',
 						'compare' => '=',
-						),
 					),
+				),
 				'post_type' => array( 'post' , 'spotlights' , 'bibliotech' ),
 				'post_status' => 'publish',
 				'posts_per_page' => 50,
 				'orderby' => 'post_title',
 				'order' => 'ASC',
 				'ignore_sticky_posts' => 1,
-				);
+			);
 			$the_stories = null;
 			$the_stories = new WP_Query( $args );
 

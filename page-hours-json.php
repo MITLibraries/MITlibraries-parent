@@ -308,7 +308,7 @@ $args = array(
 	  'key' => 'no_hours',
 	  'value' => 0,
 	  'compare' => '=',
-	  ),
+	),
 
 	),
 );
