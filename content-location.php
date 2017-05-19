@@ -111,9 +111,9 @@
 					</h1>
 					<div class="info-more">
 						<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a> |
-	                    	<?php if ( $email ) : ?>
+							<?php if ( $email ) : ?>
 						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
-	                    	<?php endif; ?>
+							<?php endif; ?>
 						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
 					</div>
 				</div><!-- end div.libraryContent -->

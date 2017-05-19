@@ -21,10 +21,10 @@ get_header(); ?>
 	<?php
 
 	$template_page_args = array(
-	    'meta_key' => '_wp_page_template',
-	    'meta_value' => 'page-full.php',
-	    'depth' => -1,
-	  'hierarchical' => 0,
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'page-full.php',
+		'depth' => -1,
+		'hierarchical' => 0,
 	);
 
 	$template_pages = get_pages( $template_page_args );
@@ -50,7 +50,7 @@ get_header(); ?>
 			<ul>
 				<?php
 				foreach ( $template_pages as $template_page ) {
-				    echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title . '</a></li>';
+					echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title . '</a></li>';
 				}
 				?>
 			</ul>

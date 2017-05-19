@@ -219,27 +219,27 @@ get_header(); ?>
 						<h1 class="title-section">Lists</h1>
 						<h2 class="title-part">Standard list</h2>
 						<ul>
-						  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-						  <li>Aliquam tincidunt mauris eu risus.</li>
-						  <li>Vestibulum auctor dapibus neque.</li>
-						  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-						  <li>Aliquam tincidunt mauris eu risus.</li>
-						  <li>Vestibulum auctor dapibus neque.</li>
+							<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+							<li>Aliquam tincidunt mauris eu risus.</li>
+							<li>Vestibulum auctor dapibus neque.</li>
+							<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+							<li>Aliquam tincidunt mauris eu risus.</li>
+							<li>Vestibulum auctor dapibus neque.</li>
 						</ul>
 						<h2 class="title-part">Nested list</h2>
 						<ul>
-						  <li>
-						  	<ul>
-								  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-								  <li>Aliquam tincidunt mauris eu risus.</li>
-								  <li>Vestibulum auctor dapibus neque.</li>
+							<li>
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+									<li>Aliquam tincidunt mauris eu risus.</li>
+									<li>Vestibulum auctor dapibus neque.</li>
 								</ul>
 							</li>
-						  <li>Aliquam tincidunt mauris eu risus.</li>
-						  <li>Vestibulum auctor dapibus neque.</li>
-						  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-						  <li>Aliquam tincidunt mauris eu risus.</li>
-						  <li>Vestibulum auctor dapibus neque.</li>
+							<li>Aliquam tincidunt mauris eu risus.</li>
+							<li>Vestibulum auctor dapibus neque.</li>
+							<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+							<li>Aliquam tincidunt mauris eu risus.</li>
+							<li>Vestibulum auctor dapibus neque.</li>
 						</ul>
 						<h2 class="title-section">...with class <code>entry-content</code></h2>
 						<div class="entry-content">
@@ -254,18 +254,18 @@ get_header(); ?>
 							</ul>
 							<h3 class="title-part">Nested list</h3>
 							<ul>
-							  <li>
-							  	<ul>
-									  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-									  <li>Aliquam tincidunt mauris eu risus.</li>
-									  <li>Vestibulum auctor dapibus neque.</li>
+								<li>
+									<ul>
+										<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+										<li>Aliquam tincidunt mauris eu risus.</li>
+										<li>Vestibulum auctor dapibus neque.</li>
 									</ul>
 								</li>
-							  <li>Aliquam tincidunt mauris eu risus.</li>
-							  <li>Vestibulum auctor dapibus neque.</li>
-							  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-							  <li>Aliquam tincidunt mauris eu risus.</li>
-							  <li>Vestibulum auctor dapibus neque.</li>
+								<li>Aliquam tincidunt mauris eu risus.</li>
+								<li>Vestibulum auctor dapibus neque.</li>
+								<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+								<li>Aliquam tincidunt mauris eu risus.</li>
+								<li>Vestibulum auctor dapibus neque.</li>
 							</ul>
 						</div>
 					</article>
@@ -308,58 +308,58 @@ get_header(); ?>
 					<article id="guide-tables">
 						<h1 class="title-section">Tables</h1>
 						<table class="data">
-						  <tr>
-						    <th>Entry Header 1</th>
-						    <th>Entry Header 2</th>
-						    <th>Entry Header 3</th>
-						    <th>Entry Header 4</th>
-						  </tr>
-						  <tr>
-						    <td>Entry First Line 1</td>
-						    <td>Entry First Line 2</td>
-						    <td>Entry First Line 3</td>
-						    <td>Entry First Line 4</td>
-						  </tr>
-						  <tr>
-						    <td>Entry Line 1</td>
-						    <td>Entry Line 2</td>
-						    <td>Entry Line 3</td>
-						    <td>Entry Line 4</td>
-						  </tr>
-						  <tr>
-						    <td>Entry Last Line 1</td>
-						    <td>Entry Last Line 2</td>
-						    <td>Entry Last Line 3</td>
-						    <td>Entry Last Line 4</td>
-						  </tr>
+							<tr>
+								<th>Entry Header 1</th>
+								<th>Entry Header 2</th>
+								<th>Entry Header 3</th>
+								<th>Entry Header 4</th>
+							</tr>
+							<tr>
+								<td>Entry First Line 1</td>
+								<td>Entry First Line 2</td>
+								<td>Entry First Line 3</td>
+								<td>Entry First Line 4</td>
+							</tr>
+							<tr>
+								<td>Entry Line 1</td>
+								<td>Entry Line 2</td>
+								<td>Entry Line 3</td>
+								<td>Entry Line 4</td>
+							</tr>
+							<tr>
+								<td>Entry Last Line 1</td>
+								<td>Entry Last Line 2</td>
+								<td>Entry Last Line 3</td>
+								<td>Entry Last Line 4</td>
+							</tr>
 						</table>
 						<h2 class="title-section">...with class <code>entry-content</code></h2>
 						<div class="entry-content">
 							<table class="data">
-							  <tr>
-							    <th>Entry Header 1</th>
-							    <th>Entry Header 2</th>
-							    <th>Entry Header 3</th>
-							    <th>Entry Header 4</th>
-							  </tr>
-							  <tr>
-							    <td>Entry First Line 1</td>
-							    <td>Entry First Line 2</td>
-							    <td>Entry First Line 3</td>
-							    <td>Entry First Line 4</td>
-							  </tr>
-							  <tr>
-							    <td>Entry Line 1</td>
-							    <td>Entry Line 2</td>
-							    <td>Entry Line 3</td>
-							    <td>Entry Line 4</td>
-							  </tr>
-							  <tr>
-							    <td>Entry Last Line 1</td>
-							    <td>Entry Last Line 2</td>
-							    <td>Entry Last Line 3</td>
-							    <td>Entry Last Line 4</td>
-							  </tr>
+								<tr>
+									<th>Entry Header 1</th>
+									<th>Entry Header 2</th>
+									<th>Entry Header 3</th>
+									<th>Entry Header 4</th>
+								</tr>
+								<tr>
+									<td>Entry First Line 1</td>
+									<td>Entry First Line 2</td>
+									<td>Entry First Line 3</td>
+									<td>Entry First Line 4</td>
+								</tr>
+								<tr>
+									<td>Entry Line 1</td>
+									<td>Entry Line 2</td>
+									<td>Entry Line 3</td>
+									<td>Entry Line 4</td>
+								</tr>
+								<tr>
+									<td>Entry Last Line 1</td>
+									<td>Entry Last Line 2</td>
+									<td>Entry Last Line 3</td>
+									<td>Entry Last Line 4</td>
+								</tr>
 							</table>
 						</div>
 					</article>
@@ -367,82 +367,82 @@ get_header(); ?>
 						<h1 class="title-section">Form elements</h1>
 						<form action="#">
 						  <div>
-						    <label for="name">Text Input:</label>
-						    <input type="text" name="name" id="name" placeholder="John Smith" />
+							<label for="name">Text Input:</label>
+							<input type="text" name="name" id="name" placeholder="John Smith" />
 						  </div>
 
 						  <fieldset>
-						    <legend>Radio Button Choice</legend>
+							<legend>Radio Button Choice</legend>
 
-						    <label for="radio-choice-1">Choice 1</label>
-						    <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
+							<label for="radio-choice-1">Choice 1</label>
+							<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
 
-						    <label for="radio-choice-2">Choice 2</label>
-						    <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
+							<label for="radio-choice-2">Choice 2</label>
+							<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
 						  </fieldset>
 
 						  <div>
-						    <label for="select-choice">Select Dropdown Choice:</label>
-						    <select name="select-choice" id="select-choice">
-						      <option value="Choice 1">Choice 1</option>
-						      <option value="Choice 2">Choice 2</option>
-						      <option value="Choice 3">Choice 3</option>
-						    </select>
+							<label for="select-choice">Select Dropdown Choice:</label>
+							<select name="select-choice" id="select-choice">
+							  <option value="Choice 1">Choice 1</option>
+							  <option value="Choice 2">Choice 2</option>
+							  <option value="Choice 3">Choice 3</option>
+							</select>
 						  </div>
 
 						  <div>
-						    <label for="textarea">Textarea:</label>
-						    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+							<label for="textarea">Textarea:</label>
+							<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
 						  </div>
 
 						  <div>
-						    <label for="checkbox">Checkbox:</label>
-						    <input type="checkbox" name="checkbox" id="checkbox" />
+							<label for="checkbox">Checkbox:</label>
+							<input type="checkbox" name="checkbox" id="checkbox" />
 						  </div>
 
 						  <div>
-						    <input type="submit" value="Submit" />
+							<input type="submit" value="Submit" />
 						  </div>
 						</form>
 						<h2 class="title-section">...with class <code>entry-content</code></h2>
 						<div class="entry-content">
 							<form action="#">
 							  <div>
-							    <label for="name">Text Input:</label>
-							    <input type="text" name="name" id="name" placeholder="John Smith" />
+								<label for="name">Text Input:</label>
+								<input type="text" name="name" id="name" placeholder="John Smith" />
 							  </div>
 
 							  <fieldset>
-							    <legend>Radio Button Choice</legend>
+								<legend>Radio Button Choice</legend>
 
-							    <label for="radio-choice-1">Choice 1</label>
-							    <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
+								<label for="radio-choice-1">Choice 1</label>
+								<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
 
-							    <label for="radio-choice-2">Choice 2</label>
-							    <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
+								<label for="radio-choice-2">Choice 2</label>
+								<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
 							  </fieldset>
 
 							  <div>
-							    <label for="select-choice">Select Dropdown Choice:</label>
-							    <select name="select-choice" id="select-choice">
-							      <option value="Choice 1">Choice 1</option>
-							      <option value="Choice 2">Choice 2</option>
-							      <option value="Choice 3">Choice 3</option>
-							    </select>
+								<label for="select-choice">Select Dropdown Choice:</label>
+								<select name="select-choice" id="select-choice">
+								  <option value="Choice 1">Choice 1</option>
+								  <option value="Choice 2">Choice 2</option>
+								  <option value="Choice 3">Choice 3</option>
+								</select>
 							  </div>
 
 							  <div>
-							    <label for="textarea">Textarea:</label>
-							    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+								<label for="textarea">Textarea:</label>
+								<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
 							  </div>
 
 							  <div>
-							    <label for="checkbox">Checkbox:</label>
-							    <input type="checkbox" name="checkbox" id="checkbox" />
+								<label for="checkbox">Checkbox:</label>
+								<input type="checkbox" name="checkbox" id="checkbox" />
 							  </div>
 
 							  <div>
-							    <input type="submit" value="Submit" />
+								<input type="submit" value="Submit" />
 							  </div>
 							</form>
 						</div>
