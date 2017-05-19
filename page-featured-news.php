@@ -95,7 +95,7 @@
 						};
 					}
 
-					echo 	'<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
+					echo '<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo        '<div class="category-post">' . $label . '</div>';
 					echo        '<div class="href">';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
@@ -105,11 +105,11 @@
 					} else {
 
 					}
-					echo  		'</div>';
+					echo        '</div>';
 					if ( $post->post_type === 'post' && $post->is_event[0] === '1' ) {
-						echo 	'<div class="datetime">' . $eventDate . '</div>';
+						echo '<div class="datetime">' . $eventDate . '</div>';
 					}
-					echo 		'<h3 class="title-post">';
+					echo        '<h3 class="title-post">';
 
 					if ( $custom['homepage_post_title'][0] ) {
 						echo $custom['homepage_post_title'][0];
@@ -117,7 +117,7 @@
 						the_title();
 					}
 					echo        '</h3>';
-					echo    	$imageTag;
+					echo        $imageTag;
 					echo    '</div>';
 
 					echo '</div>';

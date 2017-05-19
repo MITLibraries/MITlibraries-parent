@@ -46,7 +46,7 @@ if ( ! isset( $content_width ) ) {
  * @uses load_theme_textdomain() For translation/localization support.
  * @uses add_editor_style() To add a Visual Editor stylesheet.
  * @uses add_theme_support() To add support for post thumbnails, automatic feed links,
- * 	custom background, and post formats.
+ *       custom background, and post formats.
  * @uses register_nav_menu() To add support for navigation menus.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
