@@ -913,3 +913,39 @@ function ssl_srcset( $sources ) {
 }
 add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
 
+/**
+ * Add settings page for search UI
+ */
+function search_menu() {
+	// Call register settings.
+	add_action( 'admin_init', 'register_search_settings' );
+
+	// Create settings page under 'Settings' in WP admin.
+	add_options_page( 'Library Search Options', 'Library Search', 'manage_options', 'mitlib-search', 'search_options' );
+}
+add_action( 'admin_menu', 'search_menu' );
+
+/**
+ * Options form for search UI
+ */
+function register_search_settings() {
+	register_setting( 'mitlib-search-group', 'foo' );
+}
+
+/**
+ * Options form for search UI
+ */
+function search_options() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+?>
+	<div class="wrap">
+		<h1>Search Interface Options</h1>
+		<p>Use this page to control the behavior of the embedded search interface.</p>
+		<form method="post" action="options.php">
+			<?php settings_fields( 'mitlib-search-group' ); ?>
+		</form>
+	</div>
+<?php
+}
