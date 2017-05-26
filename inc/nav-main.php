@@ -17,7 +17,7 @@
 	c0.197,0,0.367,0.072,0.512,0.217c0.145,0.144,0.216,0.314,0.216,0.511s-0.071,0.366-0.216,0.511S20.561,19.636,20.363,19.636z"/>
 	</svg>
 </div><!-- end hamburger icon -->
-<nav id="nav-main" class="nav-main flex-container">
+<nav id="nav-main" class="nav-main flex-container" aria-label="Primary">
 	<div class="link-primary flex-container flex-end">
 		<h2 class="header-nav-section"><a href="/search" class="no-underline search-link">Search<span class="sr"> navigation menu</span></a></h2>
 		<div class="links-sub flex-container group">
@@ -28,7 +28,7 @@
 		<a href="/barton">Barton catalog (classic search) <span class="about">Books &amp; more at MIT</span></a>
 		<a href="http://mit.worldcat.org">WorldCat<span class="about">Books &amp; more worldwide</span></a>
 		<a href="/barton-reserves">Course reserves</a>
-		<a href="/search" class="bottom extra"><span>More search tools & help</span> <span class="about">Images, data, DSpace, etc.</span></a>
+		<a href="/search" class="bottom extra"><span>More search tools &amp; help</span> <span class="about">Images, data, DSpace, etc.</span></a>
 	  </div>
 	  <div class="col-2 flex-item">
 		<h3 class="heading-col">Also try</h3>
