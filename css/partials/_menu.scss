@@ -129,7 +129,15 @@
                   padding-bottom 0.3s;
     }
   }
-  > a {
+  .header-nav-section {
+    font-size: 1rem;
+
+    &.nav-ask,
+    &.nav-account {
+      font-size: .5rem;
+    }
+  }
+  .header-nav-section a {
     display: block;
     @include rem-first(padding, 0.5);
     position: relative;

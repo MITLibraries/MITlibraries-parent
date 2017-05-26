@@ -8,7 +8,7 @@
 
 ?>
 
-	<footer class="footer-main flex-container">
+	<div class="footer-main flex-container">
 		<div class="links-all flex-container">
 			<div class="flex-item">
 				<h4><a href="/search">Search</a></h4>
@@ -49,7 +49,7 @@
 				<h4><a href="/about">About us</a></h4>
 				<a href="/contact" class="link-sub">Contact us</a>
 				<a href="/news" class="link-sub">News</a>
-				<a href="/events" class="link-sub">Classes & events</a>
+				<a href="/events" class="link-sub">Classes &amp; events</a>
 				<a href="/use-policies" class="link-sub">Use policy</a>
 				<a href="/about/site-search/" class="link-sub">Services A-Z</a>
 				<a href="/about" class="link-sub">More about us</a>
@@ -103,7 +103,7 @@
 			</div><!-- End div.links-primary -->
 			
 		</div><!-- End div.identity -->
-	</footer>
+	</div>
 	
 	<footer class="footer-info-institute">
 		<a class="link-logo-mit" href="//www.mit.edu" alt="Massachusetts Institute of Technology Logo">
