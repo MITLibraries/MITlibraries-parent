@@ -130,12 +130,8 @@
     }
   }
   .header-nav-section {
-    font-size: 1rem;
-
-    &.nav-ask,
-    &.nav-account {
-      font-size: .5rem;
-    }
+    height: 100%;
+    font-size: 100%;
   }
   .header-nav-section a {
     display: block;
