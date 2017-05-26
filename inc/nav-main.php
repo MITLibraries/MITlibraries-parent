@@ -19,30 +19,30 @@
 </div><!-- end hamburger icon -->
 <nav id="nav-main" class="nav-main flex-container" aria-label="Primary">
 	<div class="link-primary flex-container flex-end">
-		<h2 class="header-nav-section"><a href="/search" class="no-underline search-link">Search<span class="sr"> navigation menu</span></a></h2>
+		<a href="/search" class="no-underline search-link main-nav-link">Search<span class="sr"> navigation menu</span></a>
 		<div class="links-sub flex-container group">
-	  <div class="col-1 flex-item">
-		<h3 class="heading-col">Start here</h3>
-		<a href="/bartonplus">BartonPlus (mega-search) <span class="about">Articles, e-books, &amp; more</span></a>
-		<a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a>
-		<a href="/barton">Barton catalog (classic search) <span class="about">Books &amp; more at MIT</span></a>
-		<a href="http://mit.worldcat.org">WorldCat<span class="about">Books &amp; more worldwide</span></a>
-		<a href="/barton-reserves">Course reserves</a>
-		<a href="/search" class="bottom extra"><span>More search tools &amp; help</span> <span class="about">Images, data, DSpace, etc.</span></a>
-	  </div>
-	  <div class="col-2 flex-item">
-		<h3 class="heading-col">Also try</h3>
-		<a href="/fulltext">FullText Finder <span class="about">Find specific citations</span></a>
-		<a href="http://libguides.mit.edu/google/googlescholar">Google Scholar for MIT <span class="about">Change settings to get better access</span></a>
-		<a href="/libx">LibX <span class="about">Search/authenticate via browser</span></a>
-		<a href="http://dspace.mit.edu/">DSpace@MIT <span class="about">MIT research</span></a>
-		<a href="http://dome.mit.edu/">Dome <span class="about">MIT-digitized images, maps, etc.</span></a>
-		<a href="/about/site-search">Site search</a>
-	  </div>
-	</div><!-- end div.links-sub -->
+		  <div class="col-1 flex-item">
+				<h3 class="heading-col">Start here</h3>
+				<a href="/bartonplus">BartonPlus (mega-search) <span class="about">Articles, e-books, &amp; more</span></a>
+				<a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a>
+				<a href="/barton">Barton catalog (classic search) <span class="about">Books &amp; more at MIT</span></a>
+				<a href="http://mit.worldcat.org">WorldCat<span class="about">Books &amp; more worldwide</span></a>
+				<a href="/barton-reserves">Course reserves</a>
+				<a href="/search" class="bottom extra"><span>More search tools &amp; help</span> <span class="about">Images, data, DSpace, etc.</span></a>
+		  </div>
+		  <div class="col-2 flex-item">
+				<h3 class="heading-col">Also try</h3>
+				<a href="/fulltext">FullText Finder <span class="about">Find specific citations</span></a>
+				<a href="http://libguides.mit.edu/google/googlescholar">Google Scholar for MIT <span class="about">Change settings to get better access</span></a>
+				<a href="/libx">LibX <span class="about">Search/authenticate via browser</span></a>
+				<a href="http://dspace.mit.edu/">DSpace@MIT <span class="about">MIT research</span></a>
+				<a href="http://dome.mit.edu/">Dome <span class="about">MIT-digitized images, maps, etc.</span></a>
+				<a href="/about/site-search">Site search</a>
+		  </div>
+		</div><!-- end div.links-sub -->
 	</div><!-- end div.links-primary -->
 	<div class="link-primary flex-container flex-end">
-	<h2 class="header-nav-section"><a href="/hours" class="no-underline">Hours &amp; locations</a></h2>
+	<a href="/hours" class="no-underline main-nav-link">Hours &amp; locations</a>
 	<div class="links-sub flex-container group">
 	  <div class="col-1 flex-item">
 		<h3 class="heading-col">Locations</h3>
@@ -59,6 +59,7 @@
 		<h3 class="heading-col">Using the Libraries</h3>
 		<a href="/locations">Map of locations</a>
 		<a href="/study">Study spaces</a>
+		<a href="/disabilities">Persons with disabilities</a>
 		<a href="/copying">Scan, copy, print</a>
 		<a href="/exhibits">Exhibits &amp; galleries</a>
 		<a href="/visitors">Non-MIT visitors</a>
@@ -67,7 +68,7 @@
 	</div><!-- end div.links-sub -->
 	</div><!-- end div.links-primary -->
 	<div class="link-primary flex-container flex-end">
-	<h2 class="header-nav-section"><a href="/borrow" class="no-underline">Borrow &amp; request</a></h2>
+	<a href="/borrow" class="no-underline main-nav-link">Borrow &amp; request</a>
 	<div class="links-sub flex-container group">
 	  <div class="col-1 flex-item">
 		<h3 class="heading-col">Renew, request, suggest</h3>
@@ -88,7 +89,7 @@
 	</div>
 	</div>
 	<div class="link-primary flex-container flex-end">
-	<h2 class="header-nav-section"><a href="/research-support" class="no-underline">Research support</a></h2>
+	<a href="/research-support" class="no-underline main-nav-link">Research support</a>
 	<div class="links-sub flex-container push group">
 	  <div class="col-1 flex-item">
 		<h3 class="heading-col">Help &amp; useful tools</h3>
@@ -110,7 +111,7 @@
 	</div><!-- end div.links-sub -->
 	</div><!-- end div.links-primary -->
 	<div class="link-primary flex-container flex-end">
-	<h2 class="header-nav-section"><a href="/about" class="no-underline">About us</a></h2>
+	<a href="/about" class="no-underline main-nav-link">About us</a>
 	<div class="links-sub flex-container push group">
 	  <div class="col-1 flex-item">
 		<h3 class="heading-col">About us</h3>
@@ -131,7 +132,7 @@
 	</div><!-- end div.links-sub -->
 	</div><!-- end div.links-primary -->
 	<div class="link-primary flex-container flex-end small chat push">
-	<h2 class="header-nav-section"><a href="/ask" class="no-underline"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.593px" height="16px" viewBox="0 0 16.593 16" enable-background="new 0 0 16.593 16" xml:space="preserve"><path d="M16.593 6.278c0 1.074-0.074 2.148-0.241 3.185 -0.204 1.353-1.722 2.574-3.055 2.722 -1.353 0.131-2.686 0.204-4.02 0.223L5.74 15.833C5.63 15.944 5.481 16 5.334 16c-0.094 0-0.167-0.019-0.241-0.037C4.871 15.87 4.74 15.647 4.74 15.407V12.37c-0.481-0.036-0.963-0.055-1.443-0.111 -1.334-0.148-2.853-1.443-3.074-2.796C0.074 8.426 0 7.352 0 6.296c0-1.092 0.074-2.185 0.223-3.24 0.222-1.352 1.74-2.648 3.074-2.797C4.963 0.093 6.63 0 8.297 0s3.333 0.093 5 0.259c1.333 0.149 2.851 1.445 3.055 2.797C16.519 4.111 16.593 5.204 16.593 6.278"/></svg><span>Ask Us</span></a></h2>
+	<a href="/ask" class="no-underline main-nav-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.593px" height="16px" viewBox="0 0 16.593 16" enable-background="new 0 0 16.593 16" xml:space="preserve"><path d="M16.593 6.278c0 1.074-0.074 2.148-0.241 3.185 -0.204 1.353-1.722 2.574-3.055 2.722 -1.353 0.131-2.686 0.204-4.02 0.223L5.74 15.833C5.63 15.944 5.481 16 5.334 16c-0.094 0-0.167-0.019-0.241-0.037C4.871 15.87 4.74 15.647 4.74 15.407V12.37c-0.481-0.036-0.963-0.055-1.443-0.111 -1.334-0.148-2.853-1.443-3.074-2.796C0.074 8.426 0 7.352 0 6.296c0-1.092 0.074-2.185 0.223-3.24 0.222-1.352 1.74-2.648 3.074-2.797C4.963 0.093 6.63 0 8.297 0s3.333 0.093 5 0.259c1.333 0.149 2.851 1.445 3.055 2.797C16.519 4.111 16.593 5.204 16.593 6.278"/></svg><span>Ask Us</span></a>
 	<div class="links-sub push">
 	  <div class="wrap-button-chat">
 		<div id='libchat_be2c654b63dd43f31c56295ee5d78d88'></div>
@@ -139,7 +140,6 @@
 	  <a class="more" href="/ask">More ways to ask us</a>
 	</div>
 	</div>
-	<div class="link-primary flex-container flex-end small">
-	<h2 class="header-nav-section"><a href="/barton-account" class="no-underline account-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="15.4" height="16" viewBox="0 0 15.4 16" enable-background="new 0 0 15.445 16" xml:space="preserve"><path d="M13.4 15.7C12.2 15.9 10.4 16 7.7 16c-5.4 0-7.3-0.6-7.3-0.6 -0.3-0.1-0.4-0.4-0.4-0.7 0.3-1.6 1.2-2.5 2.5-3.3 0.3-0.2 0.8-0.4 1.2-0.6 0.8-0.3 1.8-0.7 2-1.3C5.8 9.2 5.7 8.6 5.2 7.9c-1.4-2.3-1.7-4.3-0.8-5.9C5.1 0.7 6.4 0 7.7 0c1.4 0 2.6 0.7 3.3 2 0.9 1.6 0.7 3.6-0.8 5.9C9.8 8.6 9.6 9.2 9.8 9.6c0.2 0.6 1.2 1 2 1.3 0.4 0.2 0.9 0.4 1.2 0.6 1.2 0.8 2.1 1.6 2.5 3.3 0.1 0.3-0.1 0.6-0.4 0.7C15 15.4 14.5 15.6 13.4 15.7"/></svg><span>Account</span></a></h2>
+	<a href="/barton-account" class="no-underline account-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="15.4" height="16" viewBox="0 0 15.4 16" enable-background="new 0 0 15.445 16" xml:space="preserve"><path d="M13.4 15.7C12.2 15.9 10.4 16 7.7 16c-5.4 0-7.3-0.6-7.3-0.6 -0.3-0.1-0.4-0.4-0.4-0.7 0.3-1.6 1.2-2.5 2.5-3.3 0.3-0.2 0.8-0.4 1.2-0.6 0.8-0.3 1.8-0.7 2-1.3C5.8 9.2 5.7 8.6 5.2 7.9c-1.4-2.3-1.7-4.3-0.8-5.9C5.1 0.7 6.4 0 7.7 0c1.4 0 2.6 0.7 3.3 2 0.9 1.6 0.7 3.6-0.8 5.9C9.8 8.6 9.6 9.2 9.8 9.6c0.2 0.6 1.2 1 2 1.3 0.4 0.2 0.9 0.4 1.2 0.6 1.2 0.8 2.1 1.6 2.5 3.3 0.1 0.3-0.1 0.6-0.4 0.7C15 15.4 14.5 15.6 13.4 15.7"/></svg><span>Account</span></a>
 	</div>
 </nav>
