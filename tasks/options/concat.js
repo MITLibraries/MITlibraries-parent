@@ -16,6 +16,7 @@ module.exports = {
       'js/dev.js',
       'js/search-ie.js',
       'js/search.js',
+      'js/menu.toggle.js',
       'js/libs/*.js',
       'js/hours-home.js',
       'js/hours-lookup.js',

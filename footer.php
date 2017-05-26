@@ -7,16 +7,16 @@
  */
 
 ?>
-
-	<footer class="footer-main flex-container">
+<footer>
+	<div class="footer-main flex-container">
 		<div class="links-all flex-container">
 			<div class="flex-item">
 				<h4><a href="/search">Search</a></h4>
-				<a href="/bartonplus" class="link-sub">BartonPlus</a>
+				<a href="https://libraries.mit.edu/quicksearch" class="link-sub">Quick search</a>
 				<a href="/barton" class="link-sub">Barton catalog</a>
 				<a href="/vera" class="link-sub">Vera: E-journals &amp; databases</a>
 				<a href="/worldcat" class="link-sub">WorldCat</a>
-				<a href="/reserves" class="link-sub">Course reserves</a>
+				<a href="/barton-reserves" class="link-sub">Course reserves</a>
 				<a href="/about/site-search" class="link-sub">Site search</a>
 				<a href="/search" class="link-sub">More search options</a>
 			</div>
@@ -49,7 +49,7 @@
 				<h4><a href="/about">About us</a></h4>
 				<a href="/contact" class="link-sub">Contact us</a>
 				<a href="/news" class="link-sub">News</a>
-				<a href="/events" class="link-sub">Classes & events</a>
+				<a href="/events" class="link-sub">Classes &amp; events</a>
 				<a href="/use-policies" class="link-sub">Use policy</a>
 				<a href="/about/site-search/" class="link-sub">Services A-Z</a>
 				<a href="/about" class="link-sub">More about us</a>
@@ -103,10 +103,11 @@
 			</div><!-- End div.links-primary -->
 			
 		</div><!-- End div.identity -->
-	</footer>
+	</div>
 	
-	<footer class="footer-info-institute">
-		<a class="link-logo-mit" href="//www.mit.edu" alt="Massachusetts Institute of Technology Logo">
+	<div class="footer-info-institute">
+		<a class="link-logo-mit" href="//www.mit.edu">
+			<span class="sr">MIT</span>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="54" height="28" viewBox="0 0 54 28" enable-background="new 0 0 54 28" xml:space="preserve" class="logo-mit"><rect x="28.9" y="8.9" width="5.8" height="19.1" class="color"/><rect width="5.8" height="28"/><rect x="9.6" width="5.8" height="18.8"/><rect x="19.3" width="5.8" height="28"/><rect x="38.5" y="8.9" width="5.8" height="19.1"/><rect x="38.8" width="15.2" height="5.6"/><rect x="28.9" width="5.8" height="5.6"/></svg>
 		</a><!-- End MIT Logo -->
 		
@@ -118,17 +119,11 @@
 		
 		<div class="license">Licensed under the <a href="http://creativecommons.org/licenses/by-nc/2.0/" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted. <a href="/research-support/notices/copyright-notify/">Notify us about copyright concerns</a>.
 		</div><!-- End footer.footer-info-institure -->
-	</footer>
+	</div>
+</footer>
 	
 
 </div><!-- End div.wrap-page -->
-
-<script>
-	$('header .menu--toggle').click(function(){
-		$('#nav-main').toggleClass('active');
-		$('.wrap-page').toggleClass('mobile-nav-active');
-	});
-</script>
 
 <?php wp_footer(); ?>
 </body>
