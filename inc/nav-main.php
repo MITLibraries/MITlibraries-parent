@@ -18,7 +18,8 @@
 	</svg>
 </div><!-- end hamburger icon -->
 <nav id="nav-main" class="nav-main flex-container" aria-label="Primary">
-	<div class="link-primary flex-container flex-end">
+<ul class="nav-main-list">
+	<li class="link-primary flex-container flex-end">
 		<a href="/search" class="no-underline search-link main-nav-link">Search<span class="sr"> navigation menu</span></a>
 		<div class="links-sub flex-container group">
 		  <div class="col-1 flex-item">
@@ -40,106 +41,108 @@
 				<a href="/about/site-search">Site search</a>
 		  </div>
 		</div><!-- end div.links-sub -->
-	</div><!-- end div.links-primary -->
-	<div class="link-primary flex-container flex-end">
-	<a href="/hours" class="no-underline main-nav-link">Hours &amp; locations</a>
-	<div class="links-sub flex-container group">
-	  <div class="col-1 flex-item">
-		<h3 class="heading-col">Locations</h3>
-		<a href="/barker">Barker Library</a>
-		<a href="/dewey">Dewey Library</a>
-		<a href="/hayden">Hayden Library</a>
-		<a href="/archives">Institute Archives &amp; Special Collections</a>
-		<a href="/music">Lewis Music Library</a>
-		<a href="/lsa">Library Storage Annex</a>
-		<a href="/rotch">Rotch Library</a>
-		<a href="/hours" class="bottom">All hours &amp; locations</a>
-	  </div>
-	  <div class="col-2 flex-item">
-		<h3 class="heading-col">Using the Libraries</h3>
-		<a href="/locations">Map of locations</a>
-		<a href="/study">Study spaces</a>
-		<a href="/disabilities">Persons with disabilities</a>
-		<a href="/copying">Scan, copy, print</a>
-		<a href="/exhibits">Exhibits &amp; galleries</a>
-		<a href="/visitors">Non-MIT visitors</a>
-		<a href="/use-policies">Library use policy</a>
-	  </div>
-	</div><!-- end div.links-sub -->
-	</div><!-- end div.links-primary -->
-	<div class="link-primary flex-container flex-end">
-	<a href="/borrow" class="no-underline main-nav-link">Borrow &amp; request</a>
-	<div class="links-sub flex-container group">
-	  <div class="col-1 flex-item">
-		<h3 class="heading-col">Renew, request, suggest</h3>
-		<a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a>
-		<a href="http://library.mit.edu">Barton catalog <span class="about">Request items owned by MIT</span></a>
-		<a href="http://mit.worldcat.org">WorldCat <span class="about">Request items not owned by MIT</span></a>
-		<a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a>
-		<a href="/suggest-purchase">Suggest a purchase</a>
-		<a href="/borrow" class="bottom">More options &amp; help</a>
-	  </div>
-	  <div class="col-2 flex-item">
-		<h3 class="heading-col">More information</h3>
-		<a href="/getit">Get it <span class="about">Understand your options</span></a>
-		<a href="http://libguides.mit.edu/circfaq">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a>
-		<a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
-		<a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a>
-	  </div>
-	</div>
-	</div>
-	<div class="link-primary flex-container flex-end">
-	<a href="/research-support" class="no-underline main-nav-link">Research support</a>
-	<div class="links-sub flex-container push group">
-	  <div class="col-1 flex-item">
-		<h3 class="heading-col">Help &amp; useful tools</h3>
-		<a href="/ask">Ask us <span class="about">Email, chat, call, drop by</span></a>
-		<a href="/experts">Research guides &amp; expert librarians <span class="about">For every research interest</span></a>
-		<a href="/offcampus">Connect from on and off-campus <span class="about">Tips &amp; tricks</span></a>
-		<a href="/productivity-tools">Productivity tools <span class="about">Apps, LibX, RSS, etc.</span></a>
-		<a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a>
-		<a href="/research-support" class="bottom">More research support</a>
-	  </div>
-	  <div class="col-2 flex-item">
-		<h3 class="heading-col">Publishing &amp; content management</h3>
-		<a href="/references">Citation software <span class="about">EndNote, Mendeley, &amp; Zotero</span></a>
-		<a href="http://libguides.mit.edu/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a>
-		<a href="http://libguides.mit.edu/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a>
-		<a href="http://libguides.mit.edu/publishing">Getting published <span class="about">Tools &amp; help</span></a>
-		<a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a>
-	  </div>
-	</div><!-- end div.links-sub -->
-	</div><!-- end div.links-primary -->
-	<div class="link-primary flex-container flex-end">
-	<a href="/about" class="no-underline main-nav-link">About us</a>
-	<div class="links-sub flex-container push group">
-	  <div class="col-1 flex-item">
-		<h3 class="heading-col">About us</h3>
-		<a href="/contact">Contact us</a>
-		<a href="/use-policies">Library use policy</a>
-		<a href="/jobs">Jobs</a>
-		<a href="/about/experiments/">Experiments at the Libraries</a>
-		<a href="/giving">Giving to the MIT Libraries</a>
-		<a href="/about" class="bottom">More about us</a>
-	  </div>
-	  <div class="col-2 flex-item">
-		<h3 class="heading-col">News, events, &amp; exhibits</h3>
-		<a href="/events">Classes &amp; events</a>
-		<a href="/news">News</a>
-		<a href="/exhibits">Exhibits &amp; galleries</a>
-		<a href="/news/in-the-media">In the media</a>
-	  </div>
-	</div><!-- end div.links-sub -->
-	</div><!-- end div.links-primary -->
-	<div class="link-primary flex-container flex-end small chat push">
-	<a href="/ask" class="no-underline main-nav-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.593px" height="16px" viewBox="0 0 16.593 16" enable-background="new 0 0 16.593 16" xml:space="preserve"><path d="M16.593 6.278c0 1.074-0.074 2.148-0.241 3.185 -0.204 1.353-1.722 2.574-3.055 2.722 -1.353 0.131-2.686 0.204-4.02 0.223L5.74 15.833C5.63 15.944 5.481 16 5.334 16c-0.094 0-0.167-0.019-0.241-0.037C4.871 15.87 4.74 15.647 4.74 15.407V12.37c-0.481-0.036-0.963-0.055-1.443-0.111 -1.334-0.148-2.853-1.443-3.074-2.796C0.074 8.426 0 7.352 0 6.296c0-1.092 0.074-2.185 0.223-3.24 0.222-1.352 1.74-2.648 3.074-2.797C4.963 0.093 6.63 0 8.297 0s3.333 0.093 5 0.259c1.333 0.149 2.851 1.445 3.055 2.797C16.519 4.111 16.593 5.204 16.593 6.278"/></svg><span>Ask Us</span></a>
-	<div class="links-sub push">
-	  <div class="wrap-button-chat">
-		<div id='libchat_be2c654b63dd43f31c56295ee5d78d88'></div>
-	  </div>
-	  <a class="more" href="/ask">More ways to ask us</a>
-	</div>
-	</div>
-	<a href="/barton-account" class="no-underline account-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="15.4" height="16" viewBox="0 0 15.4 16" enable-background="new 0 0 15.445 16" xml:space="preserve"><path d="M13.4 15.7C12.2 15.9 10.4 16 7.7 16c-5.4 0-7.3-0.6-7.3-0.6 -0.3-0.1-0.4-0.4-0.4-0.7 0.3-1.6 1.2-2.5 2.5-3.3 0.3-0.2 0.8-0.4 1.2-0.6 0.8-0.3 1.8-0.7 2-1.3C5.8 9.2 5.7 8.6 5.2 7.9c-1.4-2.3-1.7-4.3-0.8-5.9C5.1 0.7 6.4 0 7.7 0c1.4 0 2.6 0.7 3.3 2 0.9 1.6 0.7 3.6-0.8 5.9C9.8 8.6 9.6 9.2 9.8 9.6c0.2 0.6 1.2 1 2 1.3 0.4 0.2 0.9 0.4 1.2 0.6 1.2 0.8 2.1 1.6 2.5 3.3 0.1 0.3-0.1 0.6-0.4 0.7C15 15.4 14.5 15.6 13.4 15.7"/></svg><span>Account</span></a>
-	</div>
+	</li><!-- end div.links-primary -->
+	<li class="link-primary flex-container flex-end">
+		<a href="/hours" class="no-underline main-nav-link">Hours &amp; locations</a>
+		<div class="links-sub flex-container group">
+		  <div class="col-1 flex-item">
+				<h3 class="heading-col">Locations</h3>
+				<a href="/barker">Barker Library</a>
+				<a href="/dewey">Dewey Library</a>
+				<a href="/hayden">Hayden Library</a>
+				<a href="/archives">Institute Archives &amp; Special Collections</a>
+				<a href="/music">Lewis Music Library</a>
+				<a href="/lsa">Library Storage Annex</a>
+				<a href="/rotch">Rotch Library</a>
+				<a href="/hours" class="bottom">All hours &amp; locations</a>
+		  </div>
+		  <div class="col-2 flex-item">
+				<h3 class="heading-col">Using the Libraries</h3>
+				<a href="/locations">Map of locations</a>
+				<a href="/study">Study spaces</a>
+				<a href="/disabilities">Persons with disabilities</a>
+				<a href="/copying">Scan, copy, print</a>
+				<a href="/exhibits">Exhibits &amp; galleries</a>
+				<a href="/visitors">Non-MIT visitors</a>
+				<a href="/use-policies">Library use policy</a>
+		  </div>
+		</div><!-- end div.links-sub -->
+	</li><!-- end div.links-primary -->
+	<li class="link-primary flex-container flex-end">
+		<a href="/borrow" class="no-underline main-nav-link">Borrow &amp; request</a>
+		<div class="links-sub flex-container group">
+		  <div class="col-1 flex-item">
+				<h3 class="heading-col">Renew, request, suggest</h3>
+				<a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a>
+				<a href="http://library.mit.edu">Barton catalog <span class="about">Request items owned by MIT</span></a>
+				<a href="http://mit.worldcat.org">WorldCat <span class="about">Request items not owned by MIT</span></a>
+				<a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a>
+				<a href="/suggest-purchase">Suggest a purchase</a>
+				<a href="/borrow" class="bottom">More options &amp; help</a>
+		  </div>
+		  <div class="col-2 flex-item">
+				<h3 class="heading-col">More information</h3>
+				<a href="/getit">Get it <span class="about">Understand your options</span></a>
+				<a href="http://libguides.mit.edu/circfaq">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a>
+				<a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a>
+				<a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a>
+		  </div>
+		</div>
+	</li>
+	<li class="link-primary flex-container flex-end">
+		<a href="/research-support" class="no-underline main-nav-link">Research support</a>
+		<div class="links-sub flex-container push group">
+		  <div class="col-1 flex-item">
+				<h3 class="heading-col">Help &amp; useful tools</h3>
+				<a href="/ask">Ask us <span class="about">Email, chat, call, drop by</span></a>
+				<a href="/experts">Research guides &amp; expert librarians <span class="about">For every research interest</span></a>
+				<a href="/offcampus">Connect from on and off-campus <span class="about">Tips &amp; tricks</span></a>
+				<a href="/productivity-tools">Productivity tools <span class="about">Apps, LibX, RSS, etc.</span></a>
+				<a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a>
+				<a href="/research-support" class="bottom">More research support</a>
+		  </div>
+		  <div class="col-2 flex-item">
+				<h3 class="heading-col">Publishing &amp; content management</h3>
+				<a href="/references">Citation software <span class="about">EndNote, Mendeley, &amp; Zotero</span></a>
+				<a href="http://libguides.mit.edu/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a>
+				<a href="http://libguides.mit.edu/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a>
+				<a href="http://libguides.mit.edu/publishing">Getting published <span class="about">Tools &amp; help</span></a>
+				<a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a>
+		  </div>
+		</div><!-- end div.links-sub -->
+	</li><!-- end div.links-primary -->
+	<li class="link-primary flex-container flex-end">
+		<a href="/about" class="no-underline main-nav-link">About us</a>
+		<div class="links-sub flex-container push group">
+		  <div class="col-1 flex-item">
+				<h3 class="heading-col">About us</h3>
+				<a href="/contact">Contact us</a>
+				<a href="/use-policies">Library use policy</a>
+				<a href="/jobs">Jobs</a>
+				<a href="/about/experiments/">Experiments at the Libraries</a>
+				<a href="/giving">Giving to the MIT Libraries</a>
+				<a href="/about" class="bottom">More about us</a>
+		  </div>
+		  <div class="col-2 flex-item">
+				<h3 class="heading-col">News, events, &amp; exhibits</h3>
+				<a href="/events">Classes &amp; events</a>
+				<a href="/news">News</a>
+				<a href="/exhibits">Exhibits &amp; galleries</a>
+				<a href="/news/in-the-media">In the media</a>
+		  </div>
+		</div><!-- end div.links-sub -->
+	</li><!-- end div.links-primary -->
+	<li class="link-primary flex-container flex-end small chat push">
+		<a href="/ask" class="no-underline main-nav-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16.593px" height="16px" viewBox="0 0 16.593 16" enable-background="new 0 0 16.593 16" xml:space="preserve"><path d="M16.593 6.278c0 1.074-0.074 2.148-0.241 3.185 -0.204 1.353-1.722 2.574-3.055 2.722 -1.353 0.131-2.686 0.204-4.02 0.223L5.74 15.833C5.63 15.944 5.481 16 5.334 16c-0.094 0-0.167-0.019-0.241-0.037C4.871 15.87 4.74 15.647 4.74 15.407V12.37c-0.481-0.036-0.963-0.055-1.443-0.111 -1.334-0.148-2.853-1.443-3.074-2.796C0.074 8.426 0 7.352 0 6.296c0-1.092 0.074-2.185 0.223-3.24 0.222-1.352 1.74-2.648 3.074-2.797C4.963 0.093 6.63 0 8.297 0s3.333 0.093 5 0.259c1.333 0.149 2.851 1.445 3.055 2.797C16.519 4.111 16.593 5.204 16.593 6.278"/></svg><span>Ask Us</span></a>
+		<div class="links-sub push">
+		  <div class="wrap-button-chat">
+			<div id='libchat_be2c654b63dd43f31c56295ee5d78d88'></div>
+		  </div>
+		  <a class="more" href="/ask">More ways to ask us</a>
+		</div>
+	</li>
+	<li class="link-primary flex-container flex-end small">
+		<a href="/barton-account" class="no-underline account-link"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="15.4" height="16" viewBox="0 0 15.4 16" enable-background="new 0 0 15.445 16" xml:space="preserve"><path d="M13.4 15.7C12.2 15.9 10.4 16 7.7 16c-5.4 0-7.3-0.6-7.3-0.6 -0.3-0.1-0.4-0.4-0.4-0.7 0.3-1.6 1.2-2.5 2.5-3.3 0.3-0.2 0.8-0.4 1.2-0.6 0.8-0.3 1.8-0.7 2-1.3C5.8 9.2 5.7 8.6 5.2 7.9c-1.4-2.3-1.7-4.3-0.8-5.9C5.1 0.7 6.4 0 7.7 0c1.4 0 2.6 0.7 3.3 2 0.9 1.6 0.7 3.6-0.8 5.9C9.8 8.6 9.6 9.2 9.8 9.6c0.2 0.6 1.2 1 2 1.3 0.4 0.2 0.9 0.4 1.2 0.6 1.2 0.8 2.1 1.6 2.5 3.3 0.1 0.3-0.1 0.6-0.4 0.7C15 15.4 14.5 15.6 13.4 15.7"/></svg><span>Account</span></a>
+	</li>
+</ul>
 </nav>
