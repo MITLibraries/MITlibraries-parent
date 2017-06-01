@@ -129,11 +129,7 @@
                   padding-bottom 0.3s;
     }
   }
-  .header-nav-section {
-    height: 100%;
-    font-size: 100%;
-  }
-  .header-nav-section a {
+  .main-nav-link {
     display: block;
     @include rem-first(padding, 0.5);
     position: relative;
