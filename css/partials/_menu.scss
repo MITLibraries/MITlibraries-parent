@@ -129,6 +129,12 @@
                   padding-bottom 0.3s;
     }
   }
+
+  .main-nav-header {
+    height: 100%;
+    font-size: 100%;
+  }
+
   .main-nav-link {
     display: block;
     @include rem-first(padding, 0.5);
@@ -231,6 +237,18 @@
     padding-bottom: 0;
   }
 }
+
+.link-primary {
+
+  .links-sub {
+    display: none;
+  }
+
+  &.open .links-sub {
+    display: flex;
+  }
+}
+
 .nav-page {
   margin-bottom: 1rem !important;
 }
