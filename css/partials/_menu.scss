@@ -117,7 +117,12 @@
   }
 
   .nav-main-list {
-    align-items: flex-end;
+    display: block;
+
+    @include bp-tablet--portrait {
+      display: flex;
+      align-items: stretch;
+    }
   }
 
   // wrapper around the main nav links
@@ -182,6 +187,7 @@
   		&:hover {
   			text-decoration: none;
   			color: #fff;
+        background-color: #007db8;
   		}
 		}
 
@@ -225,12 +231,21 @@
   }
 
   // show sub menu when main nav item is hovered or focused via open class
-  .link-primary.open .links-sub {
-    display: flex;
-    box-shadow: 0 0 2px #444;
-    max-height: 1000px;
-    opacity: 1;
-    overflow: visible;
+  .link-primary.open {
+
+    .main-nav-link {
+      @include bp-tablet--portrait {
+        background: $color-link-primary;
+      }
+    }
+
+    .links-sub {
+      display: flex;
+      box-shadow: 0 0 2px #444;
+      max-height: 1000px;
+      opacity: 1;
+      overflow: visible;
+    }
   }
   
   .links-sub {
