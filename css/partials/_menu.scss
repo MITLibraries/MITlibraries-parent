@@ -218,10 +218,6 @@
                 padding-bottom 0.3s;
     width: 31.75em;
 
-    @include bp-tablet--portrait {
-      display: flex;
-    }
-
     &.push { // don't let menu overflow page width on right items
       left: auto;
       right: 0;
