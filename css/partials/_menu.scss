@@ -19,7 +19,8 @@
     a {
       width: 100%;
 
-      &:hover {
+      &:hover, 
+      &:focus {
         color: #fff;
       }
     }
@@ -91,7 +92,8 @@
         flex-wrap: wrap;
         width: auto;
 
-        a:hover {
+        a:hover, 
+        a:focus {
           background: none;
         }
       }
@@ -184,14 +186,16 @@
 
 	  &.no-underline {
 
-  		&:hover {
+  		&:hover,
+      &:focus {
   			text-decoration: none;
   			color: #fff;
         background-color: #007db8;
   		}
 		}
 
-    &:hover {
+    &:hover, 
+    &:focus {
       @include bp-tablet--portrait {
         background: $color-link-primary;
       }
@@ -271,7 +275,8 @@
       font-weight: 600;
       padding: 0.5em;
 
-      &:hover {
+      &:hover, 
+      &:focus {
         background: darken($color-background-secondary, 10%);
       }
     }
@@ -344,7 +349,8 @@
       width: 0;
     }
 
-    &:hover .links-sub {
+    &:hover .links-sub, 
+    &:focus .links-sub {
         height: auto;
         margin: auto;
         overflow: visible;
@@ -478,7 +484,8 @@
 }
 
 .no-flexbox {
-  .link-primary.chat:hover {
+  .link-primary.chat:hover, 
+  .link-primary.chat:focus {
 
     .links-sub {
       display: block;
