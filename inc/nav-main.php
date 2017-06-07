@@ -25,9 +25,9 @@
 		  <div class="col-1 flex-item">
 				<h3 class="heading-col">Start here</h3>
 				<ul class="list-unbulleted">
-					<li><a href="/bartonplus">BartonPlus (mega-search) <span class="about">Articles, e-books, &amp; more</span></a></li>
+					<li><a href="https://lib.mit.edu">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
 					<li><a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a></li>
-					<li><a href="/barton">Barton catalog (classic search) <span class="about">Books &amp; more at MIT</span></a></li>
+					<li><a href="/barton">Barton catalog <span class="about">Classic catalog search</span></a></li>
 					<li><a href="http://mit.worldcat.org">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
 					<li><a href="/barton-reserves">Course reserves</a></li>
 					<li><a href="/search" class="bottom extra"><span>More search tools &amp; help</span> <span class="about">Images, data, DSpace, etc.</span></a></li>

@@ -12,7 +12,7 @@
 		<div class="links-all flex-container">
 			<div class="flex-item">
 				<h4><a href="/search">Search</a></h4>
-				<a href="/bartonplus" class="link-sub">BartonPlus</a>
+				<a href="https://lib.mit.edu" class="link-sub">Quick search</a>
 				<a href="/barton" class="link-sub">Barton catalog</a>
 				<a href="/vera" class="link-sub">Vera: E-journals &amp; databases</a>
 				<a href="/worldcat" class="link-sub">WorldCat</a>
