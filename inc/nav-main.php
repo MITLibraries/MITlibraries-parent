@@ -25,7 +25,7 @@
 		  <div class="col-1 flex-item">
 				<h3 class="heading-col">Start here</h3>
 				<ul class="list-unbulleted">
-					<li><a href="https://lib.mit.edu">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
+					<li><a href="https://libraries.mit.edu/quicksearch">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
 					<li><a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a></li>
 					<li><a href="/barton">Barton catalog <span class="about">Classic catalog search</span></a></li>
 					<li><a href="http://mit.worldcat.org">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
