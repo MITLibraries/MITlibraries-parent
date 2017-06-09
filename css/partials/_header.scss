@@ -1,4 +1,5 @@
 .header-main {
+	position: relative;
 	background: $color-background--dark;
 	@include span-12-12;
 	@include bp-tablet--portrait {
