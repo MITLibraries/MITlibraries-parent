@@ -35,7 +35,7 @@ get_header(); ?>
 							<p><?php _e( 'You can also check out these commonly-used resources:', 'twentytwelve' ); ?></p>
 
 							<ul>
-								<li><?php _e( '<a href="//libraries.mit.edu/bartonplus">BartonPlus</a>', 'twentytwelve' ); ?></li>
+								<li><?php _e( '<a href="//libraries.mit.edu/quicksearch">Quick search: Books, articles, &amp; more at MIT</a>', 'twentytwelve' ); ?></li>
 								<li><?php _e( '<a href="//libguides.mit.edu/directory">Staff directory</a>', 'twentytwelve' ); ?></li>
 								<li><?php _e( '<a href="/research-guides">Research guides - databases by subject</a>', 'twentytwelve' ); ?></li>
 								<li><?php _e( '<a href="/about/shortcuts/">Shortcuts to frequently used pages</a>', 'twentytwelve' ); ?></li>
