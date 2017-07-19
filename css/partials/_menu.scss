@@ -160,6 +160,15 @@
   .main-nav-header {
     height: 100%;
     font-size: 100%;
+
+    button {
+      border: 0;
+      background: inherit;
+      background-image: none;
+      font-size: inherit;
+      padding: 0;
+    }
+
   }
 
   // actual main nav links

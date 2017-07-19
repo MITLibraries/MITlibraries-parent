@@ -21,39 +21,48 @@ $('header .menu--toggle').click(function(){
 
 $( '.link-primary' ).bind( "mouseenter", function() {	
 	$( '.link-primary' ).removeClass( 'open' );
-	$(this).find( '.main-nav-link' ).attr('aria-expanded', 'true');
+	$(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
 	$(this).closest( '.link-primary' ).addClass( 'open' );
 });
 $( '.link-primary' ).bind( "mouseleave", function() {	
-	$(this).find( '.main-nav-link' ).attr('aria-expanded', 'false');
+	$(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
 	$( '.link-primary' ).removeClass( 'open' );
 });
 
-
-$('#nav-main').keydown(function(e) {
-	var $focused = document.activeElement;
-
-	switch(e.keyCode)
-	{
-		// user presses the "space"
-		case 32:		showMenu(e, $focused);
-								break;
-
-		// user presses the "esc" key
-		case 27:		hideMenu(e);
-								break;
+// make esc close all menus
+$( '#nav-main' ).on( 'keydown' , function(e) {
+	if (e.keyCode == 27) {
+		hideMenu(e);
 	}
 });
 
-/* show/hide the menu on click */
-function showMenu(e, focused) {
-	$( '.link-primary' ).removeClass( 'open' );
-	$(focused).closest( '.link-primary' ).addClass( 'open' );
-	$(focused).attr('aria-expanded', 'true');
-	event.preventDefault();
-	event.stopPropagation();
-}
 function hideMenu() {
 	$( '.link-primary' ).removeClass( 'open' );
-	$( '.main-nav-link' ).attr('aria-expanded', 'false');
+	$( '.menu-control' ).attr('aria-expanded', 'false');
+	$( '.links-sub' ).attr( 'aria-hidden', 'true' );
 }
+
+// thanks to http://heydonworks.com/practical_aria_examples/
+$('.main-nav-header').each(function() {
+
+	var $this = $(this);
+
+	// create unique id for a11y relationship
+	var id = 'collapsible-' + $( '#nav-main h2' ).index(this);
+
+	// identify panel and make it focusable
+	var panel = $(this).next( '.links-sub' ).attr( 'aria-hidden', 'true' ).attr( 'id', id);
+
+	// Add default aria states to button
+	$this.children( '.menu-control' ).attr( 'aria-expanded', 'false' ).attr( 'aria-controls', id);
+	var button = $this.children( '.menu-control' );
+
+	// Toggle the state properties
+	button.on( 'click', function() {
+		$(this).closest( '.link-primary' ).toggleClass( 'open' );
+		var state = $(this).attr( 'aria-expanded' ) === 'false' ? true : false;
+		$(this).attr( 'aria-expanded', state );
+		panel.attr( 'aria-hidden', !state );
+	});
+
+});
