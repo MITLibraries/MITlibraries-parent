@@ -17,24 +17,24 @@ if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
 		get_template_part( 'inc/search' );
 endif; ?>
 
-	<div class="content-main flex-container libraries-home">
+	<div class="content-main flex-container libraries-home" role="main">
 		<div class="col-1 flex-item">
 			<div class="hours-locations">
 				<h2><a href="/hours">Hours &amp; locations</a></h2>
 				<div class="location">
-					<a href="/barker" aria-hidden="true" class="img-loc barker"></a>
+					<a href="/barker" aria-hidden="true" class="img-loc barker"><span class="sr">Barker Library</span></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"><span data-location-hours="Barker Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!barker-library" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
 					</div>
 				</div>
 				<div class="location">
-					<a href="/dewey" aria-hidden="true" class="img-loc dewey"></a>
+					<a href="/dewey" aria-hidden="true" class="img-loc dewey"><span class="sr">Dewey Library</span></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"><span data-location-hours="Dewey Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!dewey-library" class="map-location">E53-100</a><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a></div>
 					</div>
 				</div>
 				<div class="location">
-					<a href="/hayden" aria-hidden="true" class="img-loc hayden"></a>
+					<a href="/hayden" aria-hidden="true" class="img-loc hayden"><span class="sr">Hayden Library</span></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"><span data-location-hours="Hayden Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
@@ -43,19 +43,19 @@ endif; ?>
 					<svg class="icon-arrow-down" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="16.3" height="9.4" viewBox="2.7 8.3 16.3 9.4" enable-background="new 2.7 8.3 16.3 9.4" xml:space="preserve"><path d="M18.982 9.538l-8.159 8.159L2.665 9.538l1.284-1.283 6.875 6.875 6.875-6.875L18.982 9.538z"/></svg>Show 3 More
 				</a>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/archives" aria-hidden="true"  class="img-loc archives"></a>
+					<a href="/archives" aria-hidden="true"  class="img-loc archives"><span class="sr">Institute Archives &amp; Special Collections</span></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/archives">Institute Archives &amp; Special Collections</a></h3><div class="hours"><span data-location-hours="Institute Archives & Special Collections"></span> today</div><div class="location-info"><a href="/locations/#!institute-archives-special-collections" class="map-location">14N-118</a><a href="tel:617-253-5136" class="phone"><span class="number">617-253-5136</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/music" aria-hidden="true"  class="img-loc lewis"></a>
+					<a href="/music" aria-hidden="true"  class="img-loc lewis"><span class="sr">Lewis Music Library</span></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/music">Lewis Music Library</a></h3><div class="hours"><span data-location-hours="Lewis Music Library"></span> today</div><div class="location-info"><a href="/locations/#!lewis-music-library" class="map-location">14E-109</a><a href="tel:617-253-5689" class="phone"><span class="number">617-253-5689</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/rotch" aria-hidden="true"  class="img-loc rotch"></a>
+					<a href="/rotch" aria-hidden="true"  class="img-loc rotch"><span class="sr">Rotch Library</span></a>
 					<div class="wrap-loc-info">
 						<h3><a class="name-location" href="/rotch">Rotch Library</a></h3><div class="hours"><span data-location-hours="Rotch Library"></span> today</div><div class="location-info"><a href="/locations/#!rotch-library" class="map-location">7-238</a><a href="tel:617-258-5592" class="phone"><span class="number">617-258-5592</span></a></div>
 					</div>
