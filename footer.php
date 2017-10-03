@@ -12,7 +12,7 @@
 		<div class="links-all flex-container">
 			<div class="flex-item">
 				<h4><a href="/search">Search</a></h4>
-				<a href="https://libraries.mit.edu/quicksearch" class="link-sub">Quick search</a>
+				<a href="/quicksearch" class="link-sub">Quick search</a>
 				<a href="/barton" class="link-sub">Barton catalog</a>
 				<a href="/vera" class="link-sub">Vera: E-journals &amp; databases</a>
 				<a href="/worldcat" class="link-sub">WorldCat</a>
@@ -69,7 +69,7 @@
 						<span class="sr">Twitter</span>
 					</a><!-- End Twitter -->
 					
-					<a href="//libraries.mit.edu/facebook" title="Facebook">
+					<a href="/facebook" title="Facebook">
 						<svg class="icon-social--facebook" width="2048" height="2048" viewBox="-640 -384 2048 2048" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 -1) translate(0 -1280)"><path d="M511 980h257l-30 -284h-227v-824h-341v824h-170v284h170v171q0 182 86 275.5t283 93.5h227v-284h-142q-39 0 -62.5 -6.5t-34 -23.5t-13.5 -34.5t-3 -49.5v-142z" fill="black" /></g></svg>
 						<span class="sr">Facebook</span>
 					</a><!-- End Facebook -->

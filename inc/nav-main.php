@@ -28,10 +28,10 @@
 		  <div class="col-1 flex-item">
 				<h3 class="heading-col">Start here</h3>
 				<ul class="list-unbulleted">
-					<li><a href="https://libraries.mit.edu/quicksearch">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
+					<li><a href="/quicksearch">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
 					<li><a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a></li>
 					<li><a href="/barton">Barton catalog <span class="about">Classic catalog search</span></a></li>
-					<li><a href="http://mit.worldcat.org">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
+					<li><a href="/worldcat">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
 					<li><a href="/barton-reserves">Course reserves</a></li>
 					<li><a href="/search" class="bottom extra"><span>More search tools &amp; help</span> <span class="about">Images, data, DSpace, etc.</span></a></li>
 				</ul>
@@ -40,10 +40,10 @@
 				<h3 class="heading-col">Also try</h3>
 				<ul class="list-unbulleted">
 					<li><a href="/fulltext">FullText Finder <span class="about">Find specific citations</span></a></li>
-					<li><a href="http://libguides.mit.edu/google/googlescholar">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
+					<li><a href="/google-scholar-tips">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
 					<li><a href="/libx">LibX <span class="about">Search/authenticate via browser</span></a></li>
-					<li><a href="http://dspace.mit.edu/">DSpace@MIT <span class="about">MIT research</span></a></li>
-					<li><a href="http://dome.mit.edu/">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
+					<li><a href="/dspace">DSpace@MIT <span class="about">MIT research</span></a></li>
+					<li><a href="/dome">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
 					<li><a href="/about/site-search">Site search</a></li>
 				</ul>
 		  </div>
@@ -92,8 +92,8 @@
 				<h3 class="heading-col">Renew, request, suggest</h3>
 				<ul class="list-unbulleted">
 					<li><a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a></li>
-					<li><a href="http://library.mit.edu">Barton catalog <span class="about">Request items owned by MIT</span></a></li>
-					<li><a href="http://mit.worldcat.org">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
+					<li><a href="/barton">Barton catalog <span class="about">Request items owned by MIT</span></a></li>
+					<li><a href="/worlcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
 					<li><a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a></li>
 					<li><a href="/suggest-purchase">Suggest a purchase</a></li>
 					<li><a href="/borrow" class="bottom">More options &amp; help</a></li>
@@ -103,8 +103,8 @@
 				<h3 class="heading-col">More information</h3>
 				<ul class="list-unbulleted">
 					<li><a href="/getit">Get it <span class="about">Understand your options</span></a></li>
-					<li><a href="http://libguides.mit.edu/circfaq">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a></li>
-					<li><a href="http://libguides.mit.edu/reserves">Course reserves &amp; TIP FAQ</a></li>
+					<li><a href="/circ">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a></li>
+					<li><a href="/reserves">Course reserves &amp; TIP FAQ</a></li>
 					<li><a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a></li>
 				</ul>
 		  </div>
@@ -131,9 +131,9 @@
 				<h3 class="heading-col">Publishing &amp; content management</h3>
 				<ul class="list-unbulleted">
 					<li><a href="/references">Citation software <span class="about">EndNote, Mendeley, &amp; Zotero</span></a></li>
-					<li><a href="http://libguides.mit.edu/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
-					<li><a href="http://libguides.mit.edu/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a></li>
-					<li><a href="http://libguides.mit.edu/publishing">Getting published <span class="about">Tools &amp; help</span></a></li>
+					<li><a href="/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
+					<li><a href="/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a></li>
+					<li><a href="/publishing">Getting published <span class="about">Tools &amp; help</span></a></li>
 					<li><a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a></li>
 				</ul>
 		  </div>

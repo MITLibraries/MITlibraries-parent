@@ -23,7 +23,7 @@
 			<a href="/worldcat">WorldCat</a>
 			<a href="/reserves">Course reserves</a>
 			<a href="/about/site-search">Site search</a>
-			<a href="https://libraries.mit.edu/quicksearch">It's coming in June! Try our new search early</a>
+			<a href="/quicksearch">It's coming in June! Try our new search early</a>
 		</div>
 	</div>
 	<div class="wrap-select--resources no-js-hidden">
@@ -140,11 +140,11 @@
 			<option value="keyword" selected="selected">Keyword</option>
 		</select>
 	</div>
-	<a href="https://libraries.mit.edu/bartonplus-advanced" class="search-advanced bartonplus active no-js-hidden">Go to BartonPlus advanced search</a>
-	<a href="https://libraries.mit.edu/barton-advanced" class="search-advanced barton no-js-hidden">Go to Barton advanced search</a>
+	<a href="/bartonplus-advanced" class="search-advanced bartonplus active no-js-hidden">Go to BartonPlus advanced search</a>
+	<a href="/barton-advanced" class="search-advanced barton no-js-hidden">Go to Barton advanced search</a>
 	<a href="https://mit.worldcat.org/advancedsearch" class="search-advanced worldcat no-js-hidden">Go to WorldCat advanced search</a>
-	<a href="https://libraries.mit.edu/barton-reserves" class="search-advanced course-reserves no-js-hidden">Go to Course Reserves advanced search</a>
+	<a href="/barton-reserves" class="search-advanced course-reserves no-js-hidden">Go to Course Reserves advanced search</a>
 	<div class="wrap-bento-beta no-js-hidden">
-		<p>It's coming in June! <a class="bento-beta-link" href="https://libraries.mit.edu/quicksearch">Try our new search early</a></p>
+		<p>It's coming in June! <a class="bento-beta-link" href="/quicksearch">Try our new search early</a></p>
 	</div>
 </div><!-- end div.search-main -->
