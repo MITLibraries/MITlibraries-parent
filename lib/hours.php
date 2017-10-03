@@ -908,7 +908,7 @@ function semesterNameToId( $name, $locationId ) {
 	remove_filter( 'posts_where', 'title_filter', 10, 2 );
 
 	if ( $semList->have_posts() ) {
-		$semList -> the_post();
+		$semList->the_post();
 
 		return get_the_ID();
 
@@ -988,7 +988,7 @@ function locationNameToId( $name ) {
 	remove_filter( 'posts_where', 'title_filter', 10, 2 );
 
 	if ( $locationList->have_posts() ) {
-		$locationList -> the_post();
+		$locationList->the_post();
 
 		return get_the_ID();
 
@@ -1017,7 +1017,7 @@ function locationNameToIdOriginal( $name ) {
 	remove_filter( 'posts_where', 'title_filter', 10, 2 );
 
 	if ( $locationList->have_posts() ) {
-		$locationList -> the_post();
+		$locationList->the_post();
 		$id = get_post_meta( get_the_ID(), 'associated_location', true );
 
 		return $id;
