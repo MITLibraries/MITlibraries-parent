@@ -50,14 +50,5 @@ module.exports = {
   map: {
     src: 'js/map.js',
     dest: 'js/build/map.js'
-  },
-  termHours: {
-    src: [
-      'js/libs/underscrore.js',
-      'js/libs/moment.min.js',
-      'js/libs/twix.min.js',
-      'js/page-term-hours.js'
-    ],
-    dest: 'js/build/term-hours.js'
   }
 }
