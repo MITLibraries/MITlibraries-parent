@@ -18,9 +18,6 @@ $isRoot = $section->ID == $post->ID;
 get_header('slim');
 
 ?>
-<link rel='stylesheet' id='forms-css'  href='/wp-content/themes/libraries/css/forms.css'type='text/css' media='all' />
-<script type="text/javascript" 
-src="/scripts/login_functions.js"></script>
 <script language="JavaScript" type="text/javascript">
   <!--
   /** Add any load time jquery actions here */
