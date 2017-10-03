@@ -60,7 +60,6 @@
 		<exclude name="WordPress.VIP.RestrictedFunctions.switch_to_blog_switch_to_blog" />
 		<exclude name="WordPress.VIP.OrderByRand.orderby_orderby" />
 		<exclude name="WordPress.VIP.TimezoneChange.timezone_change_date_default_timezone_set" />
-		<exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter" />
 		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" />
 		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedScript" />
 		<exclude name="WordPress.WP.I18n.MissingSingularPlaceholder" />

@@ -589,7 +589,7 @@ function getRoot( $post ) {
 		}
 	}
 
-	$max = count( $ar ) -1;
+	$max = count( $ar ) - 1;
 
 	if ( $max == -1 ) {
 		return $post->ID;
