@@ -6,12 +6,14 @@
 //
 //   
 
+var hostName = window.location.hostname;
+
 var loginFunctions = {};
-loginFunctions.lookupURL = "https://libraries.mit.edu/ldaplookup.cgi?";
+loginFunctions.lookupURL = "https://" +hostName +"/ldaplookup.cgi?";
 mail = "";
 
 loginFunctions.cookieString = "";
-loginFunctions.formsUri = "https://libraries.mit.edu/forms-mit/utils/authenticate.html?pid=";
+loginFunctions.formsUri = "https://" +hostName +"/forms-mit/utils/authenticate.html?pid=";
 
 function setCookie(name,value,days) {
 	if (days) {
@@ -43,13 +45,13 @@ loginFunctions.getUserData = function(eperson) {
 					if (subkey == "cn") {
 						commonName = value;
 					} else if (subkey == "givenname") {	
-					    document.getElementById("firstname").value = value;
+					    document.getElementsByName("firstname")[0].value = value;
 					} else if (subkey == "sn") {	
-					    document.getElementById("lastname").value = value;
+					    document.getElementsByName("lastname")[0].value = value;
 					} else if (subkey == "mail") {
-						document.getElementById("email").value = value;
+						document.getElementsByName("email")[0].value = value;
 					} else if (subkey == "edupersonprimaryaffiliation") {
-						obj = (document.getElementById("status") != null) ? obj = document.getElementById("status") : null;
+						obj = (document.getElementsByName("status")[0] != null) ? obj = document.getElementById("status") : null;
 						if (obj != null) {
 						    for (var i = 0; i < obj.length; i++) {
 								if (obj.options[i].value == value) {
@@ -58,12 +60,12 @@ loginFunctions.getUserData = function(eperson) {
 						    }
 						}
 					} else if (subkey == "telephonenumber") {
-						document.getElementById("phone").value = value;
+						document.getElementsByName("phone")[0].value = value;
 					} else if (subkey == "roomnumber") {
-						document.getElementById("address").value = value;
+						document.getElementsByName("address")[0].value = value;
 					} else if (subkey == "ou") {
 
-document.getElementById("department").value = loginFunctions.toLowerCase(value);
+document.getElementsByName("department")[0].value = loginFunctions.toLowerCase(value);
 					}
 				});
     		}); 
@@ -348,8 +350,8 @@ cookie_functions.setDocumentValues = function (name, delimiter, separator) {
 	cookie= cookieValue.split(delimiter);
 	for (var i = 0; i < cookie.length; i++) {
 		splitCookies = cookie[i].split(separator);
-		obj = (document.getElementById(splitCookies[0]) != null) ?
-		    document.getElementById(splitCookies[0]) : null;
+		obj = (document.getElementsByName(splitCookies[0])[0] != null) ?
+		    document.getElementsByName(splitCookies[0])[0] : null;
 		if (obj != null)
 			obj.value = splitCookies[1];
 	}
