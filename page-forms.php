@@ -27,7 +27,9 @@ get_header('slim');
     }
 });
 
-  ga( 'send', 'event', 'Contact Form', 'submit' );
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    ga( 'send', 'event', 'Form', 'submit' );
+}, false );
 //-->
 </script>
 	<?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
