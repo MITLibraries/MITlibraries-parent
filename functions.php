@@ -177,7 +177,6 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'forms', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
 
-
 	/* All-site JS */
 
 	wp_enqueue_script( 'modernizr' );

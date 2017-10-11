@@ -1489,10 +1489,6 @@ a.comment-edit-link:hover {
     color: #fff;
     margin-top:10px;
 }
-.wpcf7 label {
-    font-weight: 400; 
-}
-
 .wpcf7  fieldset {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
@@ -1500,7 +1496,6 @@ a.comment-edit-link:hover {
 	padding: 1rem 1.5rem; 
 	width:75%;
 }
-
 .wpcf7  legend {
 	padding: 0 1rem;
 	font-size: .9rem;
@@ -1508,27 +1503,21 @@ a.comment-edit-link:hover {
 	text-transform: uppercase;
 }
 
-.button-primary.green:focus, .button-primary.green:hover, .wrap-outer-header-local .green.action-auth:focus, .wrap-outer-header-local .green.action-auth:hover {
+.wpcf7  .button-primary.green:focus, .button-primary.green:hover, .wrap-outer-header-local .green.action-auth:focus, .wrap-outer-header-local .green.action-auth:hover {
 
     background-color: #2ea76a;
     border-color: #43926a;
 
 }
-.button-primary.green, .wrap-outer-header-local .green.action-auth {
+.wpcf7  .button-primary.green, .wrap-outer-header-local .green.action-auth {
 
     border: 1px solid #3b815d;
-        border-top-color: rgb(59, 129, 93);
-        border-right-color: rgb(59, 129, 93);
-        border-bottom-color: rgb(59, 129, 93);
-        border-left-color: rgb(59, 129, 93);
+    border-top-color: rgb(59, 129, 93);
+    border-right-color: rgb(59, 129, 93);
+    border-bottom-color: rgb(59, 129, 93);
+    border-left-color: rgb(59, 129, 93);
     background-color: #43926a;
-
-}
-.button-primary:focus, .button-primary:hover, .wrap-outer-header-local .action-auth:focus, .wrap-outer-header-local .action-auth:hover {
-
-    background-color: #0ea6ec;
-    border-color: #0ea6ec;
-    color: #fafafa;
-    text-decoration: none;
+    margin: 0;
+    max-width: 15rem;
 
 }

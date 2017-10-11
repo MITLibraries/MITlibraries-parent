@@ -15,20 +15,20 @@ $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
-get_header('slim');
+get_header();
 
 ?>
 <script language="JavaScript" type="text/javascript">
   <!--
   /** Add any load time jquery actions here */
   $(document).ready(function() {
-    if (cookie_functions.readCookie("libForma") != null) {
-     cookie_functions.setDocumentValues("libForma", ",", "=");
+  	if (cookie_functions.readCookie("libForma") != null) {
+    	cookie_functions.setDocumentValues("libForma", ",", "=");
     }
 });
 
 document.addEventListener( 'wpcf7mailsent', function( event ) {
-    ga( 'send', 'event', 'Form', 'submit' );
+	ga( 'send', 'event', 'Form', 'submit' );
 }, false );
 //-->
 </script>
@@ -38,18 +38,17 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 		</div>
 	<?php endif; ?>
 
-			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-		<?php get_template_part( 'inc/breadcrumbs', 'noChild' ); ?>
-			<?php } else { ?>
-			<?php get_template_part( 'inc/breadcrumbs' ); ?>
-			<?php } ?>
-			
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php 
+	if ( in_category( 'shortcrumb' ) ) {
+		get_template_part( 'inc/breadcrumbs', 'noChild' ); 
+	} else {
+		get_template_part( 'inc/breadcrumbs' ); 
+	} 
+	while ( have_posts() ) : the_post(); ?>
 
 		<div id="stage" class="inner" role="main">
-			
-			
-			<div id="content" class="content <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'has-sidebar';} ?>">
+		
+		<div id="content" class="content <?php if ( is_active_sidebar( 'sidebar-1' ) ) echo 'has-sidebar'; ?>">
 		
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>
@@ -65,6 +64,6 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 		
 		</div><!-- end div#stage -->
 		
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; ?>
 
 <?php get_footer(); ?>

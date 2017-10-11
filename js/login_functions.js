@@ -10,18 +10,17 @@ var hostName = window.location.hostname;
 
 var loginFunctions = {};
 loginFunctions.lookupURL = "https://" +hostName +"/ldaplookup.cgi?";
-mail = "";
+var mail = "";
 
 loginFunctions.cookieString = "";
 loginFunctions.formsUri = "https://" +hostName +"/forms-mit/utils/authenticate.html?pid=";
 
 function setCookie(name,value,days) {
+	var expires = "";
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	} else {
-		var expires = "";
+		expires = "; expires="+date.toGMTString();
 	}
 	value = Base64.encode(value);
 	document.cookie = name + "=" + value + expires + "; path=/;" + "secure=true;";
@@ -43,34 +42,34 @@ loginFunctions.getUserData = function(eperson) {
 			$.each(json, function(key, val) {
 				$.each(val, function(subkey, value) {
 					if (subkey == "cn") {
-						commonName = value;
+						var commonName = value;
 					} else if (subkey == "givenname") {	
-					    document.getElementsByName("firstname")[0].value = value;
+						document.getElementsByName("firstname")[0].value = value;
 					} else if (subkey == "sn") {	
-					    document.getElementsByName("lastname")[0].value = value;
+						document.getElementsByName("lastname")[0].value = value;
 					} else if (subkey == "mail") {
 						document.getElementsByName("email")[0].value = value;
 					} else if (subkey == "edupersonprimaryaffiliation") {
+						var obj;
 						obj = (document.getElementsByName("status")[0] != null) ? obj = document.getElementById("status") : null;
 						if (obj != null) {
-						    for (var i = 0; i < obj.length; i++) {
+							for (var i = 0; i < obj.length; i++) {
 								if (obj.options[i].value == value) {
 									obj.options[i].selected = true;
 								}
-						    }
+							}
 						}
 					} else if (subkey == "telephonenumber") {
 						document.getElementsByName("phone")[0].value = value;
 					} else if (subkey == "roomnumber") {
 						document.getElementsByName("address")[0].value = value;
 					} else if (subkey == "ou") {
-
-document.getElementsByName("department")[0].value = loginFunctions.toLowerCase(value);
+						document.getElementsByName("department")[0].value = loginFunctions.toLowerCase(value);
 					}
 				});
-    		}); 
-    	});
-    }
+			});
+		});
+	}
 
   /** getCookieString
    *
@@ -95,7 +94,7 @@ document.getElementsByName("department")[0].value = loginFunctions.toLowerCase(v
     *
     */
     loginFunctions.toLowerCase = function(obj) {
-	stringValue = new String(obj);
+	var stringValue = new String(obj);
 	return stringValue.toLowerCase();
     }
    
@@ -107,7 +106,6 @@ document.getElementsByName("department")[0].value = loginFunctions.toLowerCase(v
 		$.getJSON(loginFunctions.lookupURL,{"id":eperson},function(json) {
 			var lastname = "";
 			var firstname = "";
-			var fullname = "";
 			var kvPair = "";
 			$.each(json, function(key, val) {
 				$.each(val, function(subkey, value) {
@@ -136,26 +134,24 @@ document.getElementsByName("department")[0].value = loginFunctions.toLowerCase(v
 						kvPair = "address=" + value;
 						break;
 					case "ou":
-						kvPair = "department=" + 
-loginFunctions.toLowerCase(value);
+						kvPair = "department=" + loginFunctions.toLowerCase(value);
 						break;
 					default:
 						break;
-				    	}
+					}
 					if (kvPair != "") loginFunctions.setCookieString(kvPair);
 					kvPair = "";
 				});
-    		});
-		loginFunctions.setCookieString("fullname=" + firstname + " " + lastname);
-setCookie("libForma", loginFunctions.cookieString, "");
-    	});
-    	if (arguments.length > 1)
-    		setTimeout("location.href=\"" + xhref + "\"",1000);
-    }
-    
-    loginFunctions.doLoginAndRedirect = function (pid) {
-    	location.href = loginFunctions.formsUri + pid;
-    }
+			});
+			loginFunctions.setCookieString("fullname=" + firstname + " " + lastname);
+			setCookie("libForma", loginFunctions.cookieString, "");
+		});
+		if (arguments.length > 1)
+			setTimeout("location.href=\"" + xhref + "\"",1000);
+	}
+	loginFunctions.doLoginAndRedirect = function (pid) {
+		location.href = loginFunctions.formsUri + pid;
+	}
 
 /** Base64 encoding inner class */
 /**
@@ -271,7 +267,9 @@ var Base64 = {
 	_utf8_decode : function (utftext) {
 		var string = "";
 		var i = 0;
-		var c = c1 = c2 = 0;
+		var c =  0;
+		var c1 = 0;
+		var c2 = 0;
  
 		while ( i < utftext.length ) {
  
@@ -328,7 +326,7 @@ cookie_functions.readCookie = function(name) {
 *
 */
 cookie_functions.getCookie = function (cookieName, isEncrypted) {
-	cookieValue = (isEncrypted == "true") ? Base64.decode(cookie_functions.readCookie(cookieName)) : cookie_functions.readCookie(cookieName);
+	var cookieValue = (isEncrypted == "true") ? Base64.decode(cookie_functions.readCookie(cookieName)) : cookie_functions.readCookie(cookieName);
 	return cookieValue;
 }
 		
@@ -347,11 +345,11 @@ cookie_functions.getCookie = function (cookieName, isEncrypted) {
 cookie_functions.setDocumentValues = function (name, delimiter, separator) {
 	var cookieValue = cookie_functions.getCookie(name, 
 "true");
-	cookie= cookieValue.split(delimiter);
+	var cookie= cookieValue.split(delimiter);
 	for (var i = 0; i < cookie.length; i++) {
-		splitCookies = cookie[i].split(separator);
-		obj = (document.getElementsByName(splitCookies[0])[0] != null) ?
-		    document.getElementsByName(splitCookies[0])[0] : null;
+		var splitCookies = cookie[i].split(separator);
+		var obj = (document.getElementsByName(splitCookies[0])[0] != null) ? 
+		document.getElementsByName(splitCookies[0])[0] : null;
 		if (obj != null)
 			obj.value = splitCookies[1];
 	}
