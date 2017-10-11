@@ -10,7 +10,6 @@ var hostName = window.location.hostname;
 
 var loginFunctions = {};
 loginFunctions.lookupURL = "https://" +hostName +"/ldaplookup.cgi?";
-var mail = "";
 
 loginFunctions.cookieString = "";
 loginFunctions.formsUri = "https://" +hostName +"/forms-mit/utils/authenticate.html?pid=";
@@ -268,9 +267,8 @@ var Base64 = {
 		var string = "";
 		var i = 0;
 		var c =  0;
-		var c1 = 0;
 		var c2 = 0;
- 
+		var c3 = 0;
 		while ( i < utftext.length ) {
  
 			c = utftext.charCodeAt(i);

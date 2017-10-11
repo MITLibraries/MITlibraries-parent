@@ -23,8 +23,8 @@ get_header();
   /** Add any load time jquery actions here */
   $(document).ready(function() {
   	if (cookie_functions.readCookie("libForma") != null) {
-    	cookie_functions.setDocumentValues("libForma", ",", "=");
-    }
+  		cookie_functions.setDocumentValues("libForma", ",", "=");
+  	}
 });
 
 document.addEventListener( 'wpcf7mailsent', function( event ) {
@@ -38,17 +38,23 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 		</div>
 	<?php endif; ?>
 
-	<?php 
+	<?php
 	if ( in_category( 'shortcrumb' ) ) {
-		get_template_part( 'inc/breadcrumbs', 'noChild' ); 
+		get_template_part( 'inc/breadcrumbs', 'noChild' );
 	} else {
-		get_template_part( 'inc/breadcrumbs' ); 
-	} 
-	while ( have_posts() ) : the_post(); ?>
+		get_template_part( 'inc/breadcrumbs' );
+	}
+	while ( have_posts() ) : the_post(); 
+
+		$has_Sidebar = "";
+		if ( is_active_sidebar( 'sidebar-1' ) ) {
+ 			$has_Sidebar = ' has-sidebar'; 
+		} 
+		?>
 
 		<div id="stage" class="inner" role="main">
 		
-		<div id="content" class="content <?php if ( is_active_sidebar( 'sidebar-1' ) ) echo 'has-sidebar'; ?>">
+		<div id="content" class="content<?php echo $has_Sidebar; ?>">
 		
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>
