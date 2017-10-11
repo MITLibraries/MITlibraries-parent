@@ -22,9 +22,9 @@ get_header();
   <!--
   /** Add any load time jquery actions here */
   $(document).ready(function() {
-  	if (cookie_functions.readCookie("libForma") != null) {
-  		cookie_functions.setDocumentValues("libForma", ",", "=");
-  	}
+	if (cookie_functions.readCookie("libForma") != null) {
+		cookie_functions.setDocumentValues("libForma", ",", "=");
+	}
 });
 
 document.addEventListener( 'wpcf7mailsent', function( event ) {
@@ -44,17 +44,17 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 	} else {
 		get_template_part( 'inc/breadcrumbs' );
 	}
-	while ( have_posts() ) : the_post(); 
+	while ( have_posts() ) : the_post();
 
-		$has_Sidebar = "";
+		$has_sidebar = '';
 		if ( is_active_sidebar( 'sidebar-1' ) ) {
- 			$has_Sidebar = ' has-sidebar'; 
-		} 
+			$has_sidebar = ' has-sidebar';
+		}
 		?>
 
 		<div id="stage" class="inner" role="main">
 		
-		<div id="content" class="content<?php echo $has_Sidebar; ?>">
+		<div id="content" class="content<?php echo esc_html($has_sidebar); ?>">
 		
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>
