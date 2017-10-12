@@ -33,7 +33,7 @@ $dtWeekday = date( 'N', $dt );
 
 ?>
 <script>
-	todayDate = new Date(<?php echo $dtYear; ?>,<?php echo ($dtMo -1); ?>,<?php echo $dtDay; ?>);
+	todayDate = new Date(<?php echo $dtYear; ?>,<?php echo ($dtMo - 1); ?>,<?php echo $dtDay; ?>);
 </script>
 <?php
 
