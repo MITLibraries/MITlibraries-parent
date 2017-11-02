@@ -57,7 +57,7 @@
 						if ( $custom['homeImg'][0] != '' ) {
 							$image = json_decode( $custom['homeImg'][0] );
 							$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original' );
-							$imageURL = str_replace( '/wp-content/uploads/','/news/files/',$imageURL[0] );
+							$imageURL = str_replace( '/wp-content/uploads/', '/news/files/', $imageURL[0] );
 							$imageTag = '<img src="' . $imageURL . '" alt="">';
 						}
 					}
@@ -85,8 +85,8 @@
 
 					// Card date.
 					if ( $post->post_type === 'post' && $post->is_event[0] === '1' ) {
-						$eventDate = DateTime::createFromFormat( 'Ymd',$post->event_date );
-						$eventDate = '<span class="date">' . date_format( $eventDate,'F j' ) . '</span>';
+						$eventDate = DateTime::createFromFormat( 'Ymd', $post->event_date );
+						$eventDate = '<span class="date">' . date_format( $eventDate, 'F j' ) . '</span>';
 						if ( $post->event_start_time != '' ) {
 							$eventDate = $eventDate . ' ' . $post->event_start_time;
 						};
@@ -96,8 +96,8 @@
 					}
 
 					echo '<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
-					echo        '<div class="category-post">' . $label . '</div>';
-					echo        '<div class="href">';
+					echo '    <div class="category-post">' . $label . '</div>';
+					echo '    <div class="href">';
 					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
 						the_permalink();
 					} elseif ( $post->post_type === 'spotlights' ) {
@@ -105,20 +105,20 @@
 					} else {
 
 					}
-					echo        '</div>';
+					echo '    </div>';
 					if ( $post->post_type === 'post' && $post->is_event[0] === '1' ) {
 						echo '<div class="datetime">' . $eventDate . '</div>';
 					}
-					echo        '<h3 class="title-post">';
+					echo '    <h3 class="title-post">';
 
 					if ( $custom['homepage_post_title'][0] ) {
 						echo $custom['homepage_post_title'][0];
 					} else {
 						the_title();
 					}
-					echo        '</h3>';
-					echo        $imageTag;
-					echo    '</div>';
+					echo '    </h3>';
+					echo $imageTag;
+					echo '</div>';
 
 					echo '</div>';
 

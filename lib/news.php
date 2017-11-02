@@ -116,7 +116,7 @@ function QueryPoolOne() {
 	$second = get_posts( $args );
 
 	// Merge the two.
-	$items = array_merge( $first,$second );
+	$items = array_merge( $first, $second );
 
 	return $items;
 }
@@ -130,7 +130,7 @@ function RenderPool( $items ) {
 		if ( $item->post_type === 'post' ) {
 			$url = get_permalink( $item->ID );
 		} elseif ( $item->post_type === 'bibliotech' ) {
-			$url = str_replace( '/news/','/news/bibliotech/',get_permalink( $item->ID ) );
+			$url = str_replace( '/news/', '/news/bibliotech/', get_permalink( $item->ID ) );
 		} elseif ( $item->post_type === 'spotlights' ) {
 			$url = $custom['external_link'][0];
 		} else {
@@ -177,8 +177,8 @@ function RenderPool( $items ) {
 		$eventDate = '';
 		if ( $item->post_type === 'post' && array_key_exists( 'is_event', $custom ) ) {
 			if ( $custom['is_event'][0] === '1' ) {
-				$eventDate = DateTime::createFromFormat( 'Ymd',$custom['event_date'][0] );
-				$eventDate = '<div class="date-event"><img alt="calendar icon" src="/wp-content/themes/libraries/images/calendar.svg" width="13px" height="13px" ><span class="event">' . date_format( $eventDate,'F j' ) . '</span>';
+				$eventDate = DateTime::createFromFormat( 'Ymd', $custom['event_date'][0] );
+				$eventDate = '<div class="date-event"><img alt="calendar icon" src="/wp-content/themes/libraries/images/calendar.svg" width="13px" height="13px" ><span class="event">' . date_format( $eventDate, 'F j' ) . '</span>';
 				if ( $custom['event_start_time'][0] != '' ) {
 					$eventDate = $eventDate . '<span class="time-event"> ' . $custom['event_start_time'][0];
 				};
@@ -199,7 +199,7 @@ function RenderPool( $items ) {
 				$image = json_decode( $custom['homeImg'][0] );
 				// We use "original" even though this is already cropped to avoid cropping again.
 				$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original' );
-				$imageURL = str_replace( '/wp-content/uploads/','/news/files/',$imageURL[0] );
+				$imageURL = str_replace( '/wp-content/uploads/', '/news/files/', $imageURL[0] );
 				$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
 			}
 		}
@@ -270,7 +270,7 @@ function SummarizePool( $items ) {
 		$type = 'two';
 	} else {
 		// More than one news item - so we flip a coin for type.
-		if ( mt_rand( 0,1 ) ) {
+		if ( mt_rand( 0, 1 ) ) {
 			$type = 'two';
 		} else {
 			$type = 'one';

@@ -167,13 +167,13 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array( 'jquery', 'productionJS' ), false, true );
 
-	wp_register_script( 'moment',     '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/moment.js', false, false, true );
+	wp_register_script( 'moment', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/moment.js', false, false, true );
 
-	wp_register_script( 'tabletop',   '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/tabletop.js', false, false, true );
+	wp_register_script( 'tabletop', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/tabletop.js', false, false, true );
 
 	wp_register_script( 'underscore', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/underscore.js', false, false, true );
 
-	wp_register_script( 'lib-hours',  '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
+	wp_register_script( 'lib-hours', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
 
 	wp_register_script( 'forms', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
 
@@ -650,7 +650,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	// Do not show breadcrumbs on home or front pages.
 	// So we will just return quickly.
-	if ( (is_home() || is_front_page()) && ( ! $front_page) ) {
+	if ( ( is_home() || is_front_page() ) && ( ! $front_page ) ) {
 	  return; }
 
 	// Create a constant for the separator, with space padding.
@@ -800,7 +800,7 @@ function one_column_for_all( $option ) {
 
 // Then we add 'submitdiv' on the bottom, by creating this filter with a low priority.
 // It feels a bit like overkill, because it assumes other plug-ins might be using the same filter, but still...
-add_filter( 'get_user_option_meta-box-order_post','submitdiv_at_top', 1, 1 );
+add_filter( 'get_user_option_meta-box-order_post', 'submitdiv_at_top', 1, 1 );
 function submitdiv_at_top( $result ) {
 	$result['normal'] .= 'submitdiv';
 	return $result;
