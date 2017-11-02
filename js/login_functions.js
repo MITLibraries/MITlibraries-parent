@@ -12,7 +12,7 @@ var loginFunctions = {};
 loginFunctions.lookupURL = "https://" +hostName +"/ldaplookup.cgi?";
 
 loginFunctions.cookieString = "";
-loginFunctions.formsUri = "https://" +hostName +"/forms-mit/authenticate.php?pid=";
+loginFunctions.formsUri = "https://" +hostName +"/forms-mit/?pid=";
 
 function setCookie(name,value,days) {
 	var expires = "";
@@ -343,6 +343,7 @@ cookie_functions.getCookie = function (cookieName, isEncrypted) {
 cookie_functions.setDocumentValues = function (name, delimiter, separator) {
 	var cookieValue = cookie_functions.getCookie(name, 
 "true");
+
 	var cookie= cookieValue.split(delimiter);
 	for (var i = 0; i < cookie.length; i++) {
 		var splitCookies = cookie[i].split(separator);
