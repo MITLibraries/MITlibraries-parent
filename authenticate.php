@@ -1,3 +1,13 @@
+
+<?php
+/**
+ * Template Name: Authenticate
+ *
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
+ */
+ ?>
+
 <script type="text/javascript" src="/wp-content/themes/libraries/js/login_functions.js"></script>
 <script type="text/javascript">
 function getCookie(name)
