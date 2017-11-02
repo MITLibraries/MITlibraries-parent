@@ -1462,3 +1462,64 @@ a.comment-edit-link:hover {
 		margin-left: 3.57142857rem;
 	}
 }
+
+/* =Forms
+----------------------------------------------- */
+
+
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea
+{
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+}
+.wpcf7 input[type="submit"]
+{
+    -webkit-appearance: none;
+    transition: background-color .25s, border .25s;
+    border: 1px solid #338bc5;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background-color: #338bc5;
+    background-image: none;
+    font-size: 1rem;
+    color: #fff;
+    margin-top:10px;
+}
+.wpcf7  fieldset {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	border: 1px solid #ccc;
+	padding: 1rem 1.5rem; 
+	width:75%;
+}
+.wpcf7  legend {
+	padding: 0 1rem;
+	font-size: .9rem;
+	color: #595959;
+	text-transform: uppercase;
+}
+
+.wpcf7  .button-primary.green:focus, .wpcf7 .button-primary.green:hover, .wrap-outer-header-local .green.action-auth:focus, .wrap-outer-header-local .green.action-auth:hover {
+
+    background-color: #2ea76a;
+    border-color: #43926a;
+
+}
+.wpcf7 .button-primary.green, .wpcf7 .wrap-outer-header-local .green.action-auth {
+
+    border: 1px solid #3b815d;
+    border-top-color: rgb(59, 129, 93);
+    border-right-color: rgb(59, 129, 93);
+    border-bottom-color: rgb(59, 129, 93);
+    border-left-color: rgb(59, 129, 93);
+    background-color: #43926a;
+    margin: 0;
+    max-width: 15rem;
+
+}
+
+span.wpcf7-list-item { display: block; }
