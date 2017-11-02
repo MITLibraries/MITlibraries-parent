@@ -1503,13 +1503,13 @@ a.comment-edit-link:hover {
 	text-transform: uppercase;
 }
 
-.wpcf7  .button-primary.green:focus, .button-primary.green:hover, .wrap-outer-header-local .green.action-auth:focus, .wrap-outer-header-local .green.action-auth:hover {
+.wpcf7  .button-primary.green:focus, .wpcf7 .button-primary.green:hover, .wrap-outer-header-local .green.action-auth:focus, .wrap-outer-header-local .green.action-auth:hover {
 
     background-color: #2ea76a;
     border-color: #43926a;
 
 }
-.wpcf7  .button-primary.green, .wrap-outer-header-local .green.action-auth {
+.wpcf7 .button-primary.green, .wpcf7 .wrap-outer-header-local .green.action-auth {
 
     border: 1px solid #3b815d;
     border-top-color: rgb(59, 129, 93);
@@ -1521,3 +1521,5 @@ a.comment-edit-link:hover {
     max-width: 15rem;
 
 }
+
+span.wpcf7-list-item { display: block; }

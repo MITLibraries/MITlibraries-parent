@@ -54,7 +54,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 		<div id="stage" class="inner" role="main">
 		
-		<div id="content" class="content<?php echo esc_html($has_sidebar); ?>">
+		<div id="content" class="content<?php echo esc_html( $has_sidebar ); ?>">
 		
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>
