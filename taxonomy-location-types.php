@@ -81,9 +81,9 @@ get_header(); ?>
 						?>
 							<li>
 								<h3><a href="#"><?php echo the_title() ?><i class="icon-arrow-right"></i></a></h3>
-								<?= $phone ?><br/>
+								<?php echo esc_html( $phone ); ?><br/>
 								Open today 9am-5pm by appointment only<br/>
-								<a href="#">Map: <?= $building ?> <i class="icon-arrow-right"></i></a>
+								<a href="#">Map: <?php echo esc_html( $building ); ?> <i class="icon-arrow-right"></i></a>
 							</li>
 						
 						<?php endwhile; // end of the loop. ?>					
