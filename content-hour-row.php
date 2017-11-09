@@ -97,7 +97,7 @@
 
 													$end = min( $msgEnd, $arDays[6] );
 
-													$diff = floor( ($end - $curDay) / (60 * 60 * 24) ) + 1;
+													$diff = floor( ( $end - $curDay ) / ( 60 * 60 * 24 ) ) + 1;
 
 													$msgClass .= ' msgSpan' . $diff;
 
@@ -169,7 +169,7 @@
 
 										$end = min( $msgEnd, $arDays[6] );
 
-										$diff = floor( ($end - $curDay) / (60 * 60 * 24) ) + 1;
+										$diff = floor( ( $end - $curDay ) / ( 60 * 60 * 24 ) ) + 1;
 
 										$msgClass .= ' msgSpan' . $diff;
 

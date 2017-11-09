@@ -14,7 +14,7 @@
 $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 
-$showMap = ($_GET['v'] != '') && ($_GET['v'] == 'map') ? 1 : 0;
+$showMap = ( $_GET['v'] != '' ) && ( $_GET['v'] == 'map' ) ? 1 : 0;
 
 
 
