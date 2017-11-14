@@ -93,7 +93,7 @@
 				<ul class="list-unbulleted">
 					<li><a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a></li>
 					<li><a href="/barton">Barton catalog <span class="about">Request items owned by MIT</span></a></li>
-					<li><a href="/worlcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
+					<li><a href="/worldcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
 					<li><a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a></li>
 					<li><a href="/suggest-purchase">Suggest a purchase</a></li>
 					<li><a href="/borrow" class="bottom">More options &amp; help</a></li>
