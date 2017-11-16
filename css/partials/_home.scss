@@ -1,5 +1,76 @@
 // A lot of this - colors especially - could probably be better handled with a function or two.
 
+body#libraries-homepage {
+	background-color: #000;
+	color: #fff;
+}
+
+.brand-splash {
+  color: #fff;
+  font-family: 'Helvetica Neue', 'Khula', 'Helvetica', sans-serif;
+  padding: 10% 4% 4.5% 4%; // big
+
+	.lead {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1em;
+  }
+
+  .cta {
+    text-align: right;
+  }
+
+  .logo {
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  .tag {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: .75em;
+  }
+
+	.cta-link {
+	  font-size: 30px;
+	  font-weight: 600;
+	  color: #fff;
+	}
+
+	@media screen and (max-width:568px) {
+		.lead {
+			font-size: 46px;
+		}
+	}
+
+	// adjustments for compact version
+	&.compact {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding: 2% 4% 1% 4%;
+
+		.wrap-lead {
+
+		}
+
+		.wrap-cta {
+
+		}
+
+		.lead {
+			font-size: 46px;
+		}
+	}
+
+}
+
 // this rule restricts old and poorly scoped header styling to the main libraries homepage
 .libraries-home {
 	h1, h2, h3 {
@@ -8,6 +79,8 @@
 }
 .home {
 	.content-main {
+		background-color: $white;
+		color: $black;
 		flex-wrap: wrap;
 		@include bp-tablet--portrait {
 			flex-wrap: nowrap;
