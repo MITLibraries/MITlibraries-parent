@@ -1,6 +1,6 @@
 .header-main {
 	position: relative;
-	background: $color-background--dark;
+	background: $black;
 	@include span-12-12;
 	@include bp-tablet--portrait {
 		justify-content: space-between;
