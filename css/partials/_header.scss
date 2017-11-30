@@ -17,13 +17,12 @@
 	.logo-mit-lib {
 		fill: $color-text--light;
 		svg {
-			@include rem-first(max-height, 2.75);
+			@include rem-first(max-height, 1.75);
 			height: auto;
-		}
-		.arch {
-			display: none;
+
 			@include bp-tablet--portrait {
-				display: block;
+				@include rem-first(max-height, 2.75);
+				width: 90px;
 			}
 		}
 	}
