@@ -101,11 +101,13 @@
 		svg {
 			max-height: 4em;
 			max-width: 9.5em;
+			fill: #fff;
 		}
 	}
 	.text-find-us {
 		color: #ebebeb;
 		display: none;
+		margin-bottom: 0 !important;
 		font-size: 0.625em;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -121,7 +123,7 @@
 		width: auto;
 		@include bp-tablet--portrait {
 			flex-wrap: nowrap;
-			margin-bottom: -0.8em;
+			margin-bottom: .2em;
 			z-index: map-get($zindex, main);
 		}
 		a {
