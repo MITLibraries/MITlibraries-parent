@@ -6,7 +6,9 @@
  * @package MIT_Libraries_Parent
  * @since 1.2.1
  */
- ?>
+get_header(); 
+?>
+
 
 <script type="text/javascript" src="/wp-content/themes/libraries/js/login_functions.js"></script>
 <script type="text/javascript">
@@ -33,7 +35,7 @@ for (i = 0;i < ARRcookies.length;i++)
 			start = location.href.indexOf("pid");
 	        newlocation = location.href.substr(start);
 			redirecTo = newlocation.substr(newlocation.indexOf("=")+1);
-            eppn = '<!--#echo var="eppn" -->';
+            eppn = '<?php echo $_SERVER["REDIRECT_eppn"]; ?>';
         	loginFunctions.doAuthenticate(eppn, redirecTo);
 	     }
 	});
@@ -70,10 +72,13 @@ for (i = 0;i < ARRcookies.length;i++)
 	    margin-right:auto;<br />
 	}<br />
     </style>
+ 
+ <br/>
 
-&nbsp;
 <div class="loading" align="center">
 <div class="inner">Loading,
 please wait . . .
 <img class="loading" src="/images/load.gif" /></div>
 </div>
+</body>
+</html>
