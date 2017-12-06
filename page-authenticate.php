@@ -42,35 +42,35 @@ for (i = 0;i < ARRcookies.length;i++)
 </script>
 
 <style type="text/css">
-	div.loading {<br />
-	    display:block;<br />
-            width:100%;<br />
-	    height:100%;<br />
-	    margin-left:auto;<br />
-	    margin-right:auto;<br />
-            vertical-align:middle;<br />
-	    text-align:center;<br />
-	}<br />
-	div.inner {<br />
-	    display:block;<br />
-            border:thin solid #659EC7;<br />
-	    margin-top:20%;<br />
-	    margin-left:auto;<br />
-	    margin-right:auto;<br />
-            width:33%;<br />
-	    padding:1em;<br />
-            font-family: 'verdana', 'sans serif', 'helvetica';<br />
-	    font-weight:600;<br />
-            font-size:.75em;<br />
-	    color:#659EC7;<br />
-	}<br />
-	img.loading {<br />
-	    display:block;<br />
-	    clear:both;<br />
-            top:1%;<br />
-	    margin-left:auto;<br />
-	    margin-right:auto;<br />
-	}<br />
+	div.loading {
+	    display:block;
+            width:100%;
+	    height:100%;	
+	    margin-left:auto;	
+	    margin-right:auto;	
+            vertical-align:middle;	
+	    text-align:center;	
+	}
+	div.inner {
+	    display:block;
+            border:thin solid #659EC7;	
+	    margin-top:20%;	
+	    margin-left:auto;	
+	    margin-right:auto;	
+            width:33%;	
+	    padding:1em;
+            font-family: 'verdana', 'sans serif', 'helvetica';	
+	    font-weight:600;
+            font-size:.75em;
+	    color:#659EC7;
+	}
+	img.loading {
+	    display:block;
+	    clear:both;
+            top:1%;
+	    margin-left:auto;
+	    margin-right:auto;
+	}
     </style>
  
  <br/>
