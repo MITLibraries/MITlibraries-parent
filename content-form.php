@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page-standard.php
+ * The template used for displaying forms
  *
  * @package MIT_Libraries_Parent
  * @since 1.2.1
