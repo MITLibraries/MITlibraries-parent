@@ -72,7 +72,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 		
 		<?php endwhile; ?>
 <form id="loginForm">
-	<input type="hidden" id="eppn" name="eppn" value="<?php echo $_SERVER["REDIRECT_eppn"]; ?>">
+	<input type="hidden" id="eppn" name="eppn" value="<?php echo htmlspecialchars($_SERVER["REDIRECT_eppn"]); ?>">
 </form>
 
 <script type="text/javascript">
