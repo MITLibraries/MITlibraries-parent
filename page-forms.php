@@ -71,5 +71,24 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 		</div><!-- end div#stage -->
 		
 		<?php endwhile; ?>
+<form id="loginForm">
+	<input type="hidden" id="eppn" name="eppn" value="<?php echo htmlspecialchars($_SERVER["REDIRECT_eppn"]); ?>">
+</form>
 
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+
+	eppn = document.getElementById("eppn").value;
+	if (eppn) {
+
+  		loginFunctions.doAuthenticate(eppn);
+  		var timeout = setTimeout('cookie_functions.setDocumentValues("libForma",",","=")',5000);
+
+	}
+
+});
+
+-->
+</script>
 <?php get_footer(); ?>
