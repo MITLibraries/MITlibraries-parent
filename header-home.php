@@ -75,7 +75,7 @@
 		?>
 
 		<div class="brand-splash big">
-			<a class="btn-minimize" href=""><span class="sr">Minimize</span><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+			<a class="btn-minimize" title="minimize" href=""><span class="sr">Minimize</span><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 
 			<div class="wrap-lead">
 				<h2 class="lead">The future of knowledge depends on libraries. That future starts here.</h2>
@@ -88,7 +88,7 @@
 						<span class="sr">MIT Libraries</span>
 					</span>
 					<span class="tag">Saving the world, bit by bit.</span>
-					<span class="cta-box"><a class="cta-link" href="/about/">Join us</a> &gt;</span>
+					<span class="cta-link-box"><a class="cta-link" href="/about/">Join us</a> &gt;</span>
 				</p>
 			</div>
 
