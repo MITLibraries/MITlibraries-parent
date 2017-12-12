@@ -1,6 +1,6 @@
 .header-main {
 	position: relative;
-	background: $black;
+	background: $black url(#{$imagesPath}/vi-shape7-tp.png) no-repeat center center;
 	@include span-12-12;
 
 	@include bp-tablet--portrait {
