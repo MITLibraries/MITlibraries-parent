@@ -121,21 +121,34 @@ function QueryPoolOne() {
 	return $items;
 }
 
+/**
+ * This function takes a WordPress post object, inspects the relevant fields,
+ * and returns the appropriate URL for use in the front page card markup.
+ *
+ * @param object $item A WordPress post object.
+ * @param array  $custom An array of custom post values.
+ */
+function build_url( $item, $custom ) {
+	$url = get_permalink( $item->ID );
+	if ( array_key_exists( 'calendar_url', $custom ) ) {
+		if ( 0 < strlen( $custom['calendar_url'][0] ) ) {
+			$url = $custom['calendar_url'][0];
+		}
+	} elseif ( 'bibliotech' === $item->post_type ) {
+		$url = str_replace( '/news/', '/news/bibliotech/', get_permalink( $item->ID ) );
+	} elseif ( 'spotlights' === $item->post_type ) {
+		$url = $custom['external_link'][0];
+	}
+	return $url;
+}
+
 function RenderPool( $items ) {
 	// This takes an input recordset of news items and renders it as HTML.
 	foreach ( $items as $item ) {
 		$custom = get_post_custom( $item->ID );
 
 		// URL.
-		if ( $item->post_type === 'post' ) {
-			$url = get_permalink( $item->ID );
-		} elseif ( $item->post_type === 'bibliotech' ) {
-			$url = str_replace( '/news/', '/news/bibliotech/', get_permalink( $item->ID ) );
-		} elseif ( $item->post_type === 'spotlights' ) {
-			$url = $custom['external_link'][0];
-		} else {
-			$url = '';
-		}
+		$url = build_url( $item, $custom );
 
 		// Label.
 		$label = '<div class="category-post">';
