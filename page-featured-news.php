@@ -49,7 +49,7 @@
 					$custom = get_post_custom();
 
 					// URL.
-					$url = get_permalink( $post->id );
+					$url = build_url( $post, $custom );
 
 					// Highlight image - use 17616 for debugging.
 					$imageTag = '';
@@ -97,15 +97,7 @@
 
 					echo '<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo '    <div class="category-post">' . $label . '</div>';
-					echo '    <div class="href">';
-					if ( $post->post_type === 'post' || $post->post_type === 'bibliotech' ) {
-						the_permalink();
-					} elseif ( $post->post_type === 'spotlights' ) {
-						echo $custom['external_link'][0];
-					} else {
-
-					}
-					echo '    </div>';
+					echo '    <div class="href">' . esc_url( $url ) . '</div>';
 					if ( $post->post_type === 'post' && $post->is_event[0] === '1' ) {
 						echo '<div class="datetime">' . $eventDate . '</div>';
 					}
