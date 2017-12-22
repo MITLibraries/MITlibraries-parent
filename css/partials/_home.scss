@@ -31,9 +31,16 @@ body#libraries-homepage {
 
 	.tag {
 		display: block;
-		font-weight: 500;
-		font-size: 14px;
 		margin-bottom: .75em;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 1.1;
+		text-align: left;
+	}
+
+	.wrap-cta {
+		display: flex;
+		justify-content: flex-end;
 	}
 
 	.cta {
@@ -46,6 +53,7 @@ body#libraries-homepage {
 		font-size: 30px;
 		line-height: 1.5;
 		font-weight: 600;
+		text-align: right;
 
 		&:hover {
 			background-color: #FF2DF6;
@@ -117,6 +125,7 @@ body#libraries-homepage {
 
 		.tag {
 			margin-bottom: 0;
+			text-align: left;
 		}
 
 		.cta-link-box {
@@ -143,6 +152,7 @@ body#libraries-homepage {
 
 			.tag {
 				margin-bottom: 0;
+				text-align: left;
 			}
 
 			.cta-link-box {
