@@ -10,7 +10,8 @@
 
 <div id="wrap-content">
 <?php
-if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+if ( is_active_sidebar( 'sidebar-search' ) ) :
+?>
 	<div id="sidebar-search" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-search' ); ?>
 	</div>

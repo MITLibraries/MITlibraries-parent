@@ -32,7 +32,6 @@
 			$askUrl = '/ask';
 		}
 ?>
-<link href="https://fonts.googleapis.com/css?family=Khula:700" rel="stylesheet">
 	<script>
 		todayDate="";
 	</script>
