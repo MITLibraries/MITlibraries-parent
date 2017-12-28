@@ -919,3 +919,15 @@ function ssl_srcset( $sources ) {
 }
 add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
 
+/**
+ * Returns a sanitized version of the Shibboleth EPPN value.
+ *
+ * @link https://wiki.shibboleth.net/confluence/display/SHIB/EduPersonPrincipalName
+ */
+function shibboleth_eppn() {
+	$eppn = '';
+	if ( isset( $_SERVER['REDIRECT_eppn'] ) ) {
+		$eppn = sanitize_email( wp_unslash( $_SERVER['REDIRECT_eppn'] ) );
+	}
+	return $eppn;
+}
