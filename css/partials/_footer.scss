@@ -1,12 +1,12 @@
 .footer-main {
-	background: $color-primary;
+	background: $black url(#{$imagesPath}/vi-shape7-tp.png) no-repeat 10% center;
 	flex-wrap: wrap;
 	@include bp-tablet--portrait {
 		padding: 2em 1.375em;
 	}
 	@include span-12-12;
 	a {
-		color: $color-secondary;
+		color: $gray-light;
 	}
 	.identity {
 		flex-wrap: wrap;
@@ -101,11 +101,13 @@
 		svg {
 			max-height: 4em;
 			max-width: 9.5em;
+			fill: #fff;
 		}
 	}
 	.text-find-us {
 		color: #ebebeb;
 		display: none;
+		margin-bottom: 0 !important;
 		font-size: 0.625em;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -121,7 +123,7 @@
 		width: auto;
 		@include bp-tablet--portrait {
 			flex-wrap: nowrap;
-			margin-bottom: -0.8em;
+			margin-bottom: .2em;
 			z-index: map-get($zindex, main);
 		}
 		a {
@@ -155,7 +157,7 @@
 } // End .footer-main
 .footer-info-institute {
 	align-items: baseline;
-	background: #595959;
+	background: $gray-dark;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
