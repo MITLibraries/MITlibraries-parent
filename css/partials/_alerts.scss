@@ -15,8 +15,8 @@
 }
 
 .home .wrap-page .posts--preview--alerts:before, 
-.posts--preview--alerts.inactive:before, 
-.post.alert--critical {
+.home .posts--preview--alerts.inactive:before, 
+.home .post.alert--critical {
 	box-shadow: none;
 }
 
