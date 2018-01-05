@@ -108,7 +108,7 @@ function twentytwelve_scripts_styles() {
 	 */
 	wp_register_style( 'font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic', false, null, 'all' );
 
-	wp_register_style( 'font-khula', '//fonts.googleapis.com/css?family=Khula:700', false, null, 'all' );
+	wp_register_style( 'font-khula', '//fonts.googleapis.com/css?family=Khula:400,400italic,600,600italic,700,700italic', false, null, 'all' );
 
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
