@@ -44,7 +44,8 @@
 	}
 
 	.link-account,
-	.link-site-search {
+	.link-site-search,
+	.link-contact {
 		align-self: flex-end;
 		display: flex;
 		flex-direction: column;
@@ -70,7 +71,8 @@
 		margin-left: auto;
 	}
 
-	.link-account {
+	.link-account,
+	.link-contact {
 		margin-right: 1em;
 		margin-left: 2em;
 	}

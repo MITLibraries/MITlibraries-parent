@@ -141,15 +141,15 @@
 	</li><!-- end div.links-primary -->
 	<li class="link-primary flex-end">
 		<h2 class="main-nav-header">
-			<a id="main-nav-aboutmenu-title" href="/about" class="no-underline main-nav-link">About us</a>
-			<button class="menu-control sr">About us menu</button>
+			<a id="main-nav-aboutmenu-title" href="/about" class="no-underline main-nav-link">About</a>
+			<button class="menu-control sr">About menu</button>
 		</h2>
 		<div aria-labelledby="main-nav-aboutmenu-title" id="main-nav-aboutmenu" class="links-sub flex-container push group">
 		  <div class="col-1 flex-item">
-				<h3 class="heading-col">About us</h3>
+				<h3 class="heading-col">About the Libraries</h3>
 				<ul class="list-unbulleted">
+					<li><a href="/use-policies">About our organization</a></li>
 					<li><a href="/contact">Contact us</a></li>
-					<li><a href="/use-policies">Library use policy</a></li>
 					<li><a href="/jobs">Jobs</a></li>
 					<li><a href="/about/experiments/">Experiments at the Libraries</a></li>
 					<li><a href="/giving">Giving to the MIT Libraries</a></li>
