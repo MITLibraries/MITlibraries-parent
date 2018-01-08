@@ -20,6 +20,11 @@ body#libraries-homepage {
 		margin-bottom: 1em;
 	}
 
+	.wrap-cta {
+		display: flex;
+		justify-content: flex-end;
+	}
+
 	.logo {
 		font-weight: 800;
 		letter-spacing: -1px;
@@ -38,11 +43,6 @@ body#libraries-homepage {
 		text-align: left;
 	}
 
-	.wrap-cta {
-		display: flex;
-		justify-content: flex-end;
-	}
-
 	.cta {
 		text-align: right;
 	}
@@ -51,7 +51,7 @@ body#libraries-homepage {
 		padding: 2px 7px;
 		display: inline-block;
 		font-size: 30px;
-		line-height: 1.5;
+		line-height: 1.2;
 		font-weight: 600;
 		text-align: right;
 
@@ -113,7 +113,11 @@ body#libraries-homepage {
 		align-items: center;
 		background-position: right 80%;
 		padding: 5% 4% 1% 4%;
-		
+
+		.wrap-lead {
+			flex-basis: 70%;
+		}
+
 		.lead {
 			font-size: 36px;
 		}
@@ -124,7 +128,7 @@ body#libraries-homepage {
 		}
 
 		.tag {
-			margin-bottom: 0;
+			margin-bottom: .5rem;
 			text-align: left;
 		}
 
