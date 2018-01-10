@@ -148,7 +148,7 @@
 		  <div class="col-1 flex-item">
 				<h3 class="heading-col">About the Libraries</h3>
 				<ul class="list-unbulleted">
-					<li><a href="/use-policies">About our organization</a></li>
+					<li><a href="/about/organization">About our organization</a></li>
 					<li><a href="/contact">Contact us</a></li>
 					<li><a href="/jobs">Jobs</a></li>
 					<li><a href="/about/experiments/">Experiments at the Libraries</a></li>
