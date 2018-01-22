@@ -7,7 +7,8 @@ module.exports = {
       'js/menu.toggle.js',
       'js/libs/*.js',
       'js/hours-lookup.js',
-      'js/alerts.js'
+      'js/alerts.js',
+      'js/fonts.js'
     ],
     dest: 'js/build/production.js'
   },
@@ -24,7 +25,8 @@ module.exports = {
       'js/experts-home.js',
       'js/ga_discovery.js',
       'js/alerts.js',
-      'js/brand.js'
+      'js/brand.js',
+      'js/fonts.js'
     ],
     dest: 'js/build/home.js'
   },

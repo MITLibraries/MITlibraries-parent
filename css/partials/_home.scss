@@ -10,12 +10,12 @@ body#libraries-homepage {
 	background: #000 url(#{$imagesPath}/vi-shape5d.png) no-repeat right bottom;
 	background-size: cover;
 	color: #fff;
-	font-family: 'Helvetica Neue', 'Khula', 'Helvetica', sans-serif;
+	font-family: 'NHaasGroteskDisp', 'Helvetica Neue', 'Khula', 'Helvetica', sans-serif;
 	padding: 12% 4% 8% 4%; // big
 
 	.lead {
 		font-size: 54px;
-		font-weight: 800;
+		font-weight: 600;
 		line-height: 1.1;
 		margin-bottom: 1em;
 	}
@@ -23,6 +23,7 @@ body#libraries-homepage {
 	.wrap-cta {
 		display: flex;
 		justify-content: flex-end;
+		font-family: 'NHaasGroteskTxt', 'Helvetica Neue', 'Khula', 'Helvetica', sans-serif;
 	}
 
 	.logo {
@@ -37,7 +38,7 @@ body#libraries-homepage {
 	.tag {
 		display: block;
 		margin-bottom: .75em;
-		font-weight: 500;
+		font-weight: 600;
 		font-size: 18px;
 		line-height: 1.1;
 		text-align: left;
