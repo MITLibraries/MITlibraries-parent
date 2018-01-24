@@ -134,12 +134,7 @@
     width: 100%;
 
     @include bp-tablet--portrait {
-      border-right: 1px solid lighten($color-background--dark, 20%);
       width: auto;
-
-      &:first-child {
-        border-left: 1px solid lighten($color-background--dark, 20%);    
-      }
     }
 
     .links-sub {

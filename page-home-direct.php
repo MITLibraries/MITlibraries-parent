@@ -6,10 +6,12 @@
  * @since 1.2.1
  */
 
-	get_header( 'home' );
+	get_header( 'home' ); ?>
 
-
-if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+<div id="wrap-content">
+<?php
+if ( is_active_sidebar( 'sidebar-search' ) ) :
+?>
 	<div id="sidebar-search" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-search' ); ?>
 	</div>
@@ -108,3 +110,6 @@ endif; ?>
 <?php
 	get_footer();
 ?>
+
+</div>
+<!-- end #wrap-content -->
