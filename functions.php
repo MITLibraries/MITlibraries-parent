@@ -169,13 +169,13 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'term-hours', get_template_directory_uri() . '/js/build/term-hours.min.js', array( 'jquery', 'productionJS' ), false, true );
 
-	wp_register_script( 'moment', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/moment.js', false, false, true );
+	wp_register_script( 'moment', get_site_url( 1 ) . '/app/libhours/js/vendor/moment.js', false, false, true );
 
-	wp_register_script( 'tabletop', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/tabletop.js', false, false, true );
+	wp_register_script( 'tabletop', get_site_url( 1 ) . '/app/libhours/js/vendor/tabletop.js', false, false, true );
 
-	wp_register_script( 'underscore', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/vendor/underscore.js', false, false, true );
+	wp_register_script( 'underscore', get_site_url( 1 ) . '/app/libhours/js/vendor/underscore.js', false, false, true );
 
-	wp_register_script( 'lib-hours', '//' . $_SERVER['SERVER_NAME'] . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
+	wp_register_script( 'lib-hours', get_site_url( 1 ) . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
 
 	wp_register_script( 'forms', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
 
@@ -919,3 +919,15 @@ function ssl_srcset( $sources ) {
 }
 add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
 
+/**
+ * Returns a sanitized version of the Shibboleth EPPN value.
+ *
+ * @link https://wiki.shibboleth.net/confluence/display/SHIB/EduPersonPrincipalName
+ */
+function shibboleth_eppn() {
+	$eppn = '';
+	if ( isset( $_SERVER['REDIRECT_eppn'] ) ) {
+		$eppn = sanitize_email( wp_unslash( $_SERVER['REDIRECT_eppn'] ) );
+	}
+	return $eppn;
+}
