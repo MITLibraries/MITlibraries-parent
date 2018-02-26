@@ -47,7 +47,7 @@ function renderAlert(markup,id) {
 
 function setClosable(alert_ID) {
 	// Add a Close icon/svg/button
-	$('.posts--preview--alerts .post').append('<a href="#0" id="close" class="action-close"><span class="sr">Dismiss</span><i class="icon-remove-sign" aria-hidden="true"></i></a>');
+	$('.posts--preview--alerts .post').append('<a href="#0" id="close" class="action-close"><span class="sr">Dismiss</span><i class="fas fa-times-circle"></i></a>');
 	// On click
 	$('#close').click(function(){
 		// Add the necessary transition hide class

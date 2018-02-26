@@ -112,7 +112,7 @@
 										-->										
 										<?php if ( $alert != '' ) : ?>
 											<div class="libraryAlert">
-												<?php echo '<i class="icon-exclamation-sign"></i>' . $alert; ?>
+												<?php echo '<i class="fas fa-exclamation-triangle"></i>' . $alert; ?>
 											</div>
 										<?php endif; ?>
 										

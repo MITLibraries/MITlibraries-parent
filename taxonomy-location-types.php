@@ -21,7 +21,7 @@ get_header(); ?>
 			<div class="title">
 				<h2>Locations</h2>
 				<div class="extraInfo">
-					<a href="#"><i class="icon-arrow-right"></i> See all library Hours</a>
+					<a href="#"><i class="fas fa-arrow-right"></i> See all library Hours</a>
 					<a class="btn btn-warning btnShow" href="#">Show Map</a>
 				</div>
 			</div>
@@ -47,9 +47,9 @@ get_header(); ?>
 						?>
 							<li>
 								<div class="hours">Open today 10am - 6pm</div>
-								<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?><i class="icon-arrow-right"></i></a></h3>
+								<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?><i class="fas fa-arrow-right"></i></a></h3>
 								<div class="sub"><?php echo $subject ?></div>
-								<?php echo $phone ?> <a class="map" href="#">Map: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+								<?php echo $phone ?> <a class="map" href="#">Map: <?php echo $building ?> <i class="fas fa-arrow-right"></i></a>
 							</li>	
 						
 						<?php endwhile; // end of the loop. ?>					
@@ -80,10 +80,10 @@ get_header(); ?>
 							$content2 = cf( 'tab_2_content' );
 						?>
 							<li>
-								<h3><a href="#"><?php echo the_title() ?><i class="icon-arrow-right"></i></a></h3>
+								<h3><a href="#"><?php echo the_title() ?><i class="fas fa-arrow-right"></i></a></h3>
 								<?php echo esc_html( $phone ); ?><br/>
 								Open today 9am-5pm by appointment only<br/>
-								<a href="#">Map: <?php echo esc_html( $building ); ?> <i class="icon-arrow-right"></i></a>
+								<a href="#">Map: <?php echo esc_html( $building ); ?> <i class="fas fa-arrow-right"></i></a>
 							</li>
 						
 						<?php endwhile; // end of the loop. ?>					
@@ -104,7 +104,7 @@ get_header(); ?>
 							</ul>
 						</div>
 						<div class="widget">
-							<h3><a href="#">Campus Map <i class="icon-arrow-right"></i></a></h3>
+							<h3><a href="#">Campus Map <i class="fas fa-arrow-right"></i></a></h3>
 							<ul class="checklist">
 								<li>Bike racks</li>
 								<li>Accessible entrances &amp; ramps</li>

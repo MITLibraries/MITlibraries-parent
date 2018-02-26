@@ -23,7 +23,7 @@ get_header(); ?>
 			<div class="title-page flex-container">
 				<h1><?php the_title(); ?></h1>
 				<div class="extraInfo">
-					<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
+					<a href="/hours/">See all library hours <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 			
