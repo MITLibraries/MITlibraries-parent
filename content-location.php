@@ -95,7 +95,7 @@
 <?php
 					include( locate_template( 'inc/alert.php' ) );
 					if ( $showAlert == 0 && $alertTitle != '' ) {
-						echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
+						echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="fas fa-exclamation-triangle"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
 					}
 				?>
 </div>				
@@ -114,7 +114,7 @@
 							<?php if ( $email ) : ?>
 						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
 							<?php endif; ?>
-						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building ?> <i class="fas fa-arrow-right"></i></a>
 					</div>
 				</div><!-- end div.libraryContent -->
 
@@ -123,7 +123,7 @@
 					<?php if ( $study24 == 1 ) : ?>
 						| <a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 					<?php endif; ?>
-					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
+					<a href="/hours" class="link-hours-all">See all hours <i class="fas fa-arrow-right"></i></a>
 				</div><!-- end div.hours-today -->
 			</div><!-- end div.topLeft -->
 		<!-- </div> end div.flex-item -->
@@ -197,8 +197,8 @@
 										<span class="bio"><?php echo $bio; ?></span>
 									</h3>
 									<div class="links">
-										<a class="primary" href="<?php echo $url; ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
-										<a href="/experts">See all our experts <i class="icon-arrow-right"></i></a>
+										<a class="primary" href="<?php echo $url; ?>" target="_blank">How can I help? <i class="fas fa-arrow-right"></i></a>
+										<a href="/experts">See all our experts <i class="fas fa-arrow-right"></i></a>
 									</div>
 
 								</div>

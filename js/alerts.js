@@ -79,7 +79,7 @@ function showAlerts(json) {
 		// Alert HTML template
 		alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
 			'<div class="post alert--critical flex-container">' +
-				'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
+				'<i class="fas fa-exclamation-triangle"></i>' +
 				'<div class="content-post alertText">' +
 					'<h3>' + alert_posts_arr[0].title.rendered + '</h3> ' + alert_posts_arr[0].content.rendered +
 				'</div>' +
