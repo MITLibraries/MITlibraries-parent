@@ -185,6 +185,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_script( 'modernizr' );
 
+	wp_enqueue_script( 'font-awesome-js' );
+
 	wp_enqueue_script( 'lib-hours' );
 
 	wp_enqueue_script( 'forms' );
