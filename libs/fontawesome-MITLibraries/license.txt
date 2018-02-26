@@ -1,6 +1,0 @@
-Icon Set:	fontawesome-MITLibraries -- http://fortawesome.github.io/Font-Awesome/
-License:	MIT License -- http://fortawesome.github.io/Font-Awesome/license/
-
-
-Icon Set:	Font Awesome -- http://fortawesome.github.com/Font-Awesome/
-License:	SIL -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL

@@ -39,7 +39,7 @@
 					<h3><?php echo $subject ?></h3>
 					<div class="sub">
 						<?php echo $phone ?><br/>
-						show on map: <a href="#"><?php echo $building ?> <i class="icon-arrow-right"></i></a>
+						show on map: <a href="#"><?php echo $building ?> <i class="fas fa-arrow-right"></i></a>
 						
 						
 					</div>
@@ -62,7 +62,7 @@
 				<div class="todayHours">
 					Today's hours:<br/>
 					<b>9am-midnight</b><br/>
-					<a href="#">See all hours <i class="icon-arrow-right"></i></a>
+					<a href="#">See all hours <i class="fas fa-arrow-right"></i></a>
 				</div>				
 				
 				<?php if ( $alert != '' ) : ?>
@@ -122,8 +122,8 @@
 											<h3><?php echo $name; ?></h3>
 											<div class="bio"><?php echo $bio; ?></div>
 											<div class="links">
-												<a class="primary" href="<?php echo $url; ?>" target="_blank">profile <i class="icon-arrow-right"></i></a>
-												<a href="http://libguides.mit.edu/content.php?pid=110460&sid=1651114" target="_blank">see all our experts <i class="icon-arrow-right"></i></a>
+												<a class="primary" href="<?php echo $url; ?>" target="_blank">profile <i class="fas fa-arrow-right"></i></a>
+												<a href="http://libguides.mit.edu/content.php?pid=110460&sid=1651114" target="_blank">see all our experts <i class="fas fa-arrow-right"></i></a>
 											</div>
 											<a class="btn btn-warning" href="#">Ask Us!</a>
 											<div class="clear"></div>
