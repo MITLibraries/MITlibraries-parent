@@ -178,10 +178,10 @@
 .hrList .libraryAlert .fa-exclamation-triangle {
 	color: #ffcc33;
 	float: left;
-	font-size: 2em;
+	font-size: 1em;
 	position: absolute;
-	top: 0;
-	left: 3.5%;
+	top: .75em;
+	left: .75em;
 }
 
 .hrList .libraryAlert h3 {
@@ -420,8 +420,8 @@ div.libraryAlert {
 		float: left;
 		font-size: 1.5em;
 		position: absolute;
-		top: 2.5%;
-		left: 2.5%;
+		top: .75em;
+		left: 1%;
 	}	
 /*	.nameHolder {
 		width: 80%;
