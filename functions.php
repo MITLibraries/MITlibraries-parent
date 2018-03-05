@@ -175,6 +175,12 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'forms', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
 
+	// Login functions
+	wp_register_script( 'base64', '/js/base64.js', array(), '1.0.0', false );
+	wp_register_script( 'cookies', '/js/cookies.js', array(), '1.0.0', false );
+	wp_register_script( 'logins', 'js/logins.js', array( 'cookies', 'base64' ), '1.0.0', false );
+	wp_enqueue_script( 'logins' );
+
 	/* All-site JS */
 
 	wp_enqueue_script( 'modernizr' );
