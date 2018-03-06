@@ -24,7 +24,13 @@ $(document).ready(function() {
 		eppn = '<?php echo esc_js( $eppn ); ?>';
 		console.log( 'We would look up ' + eppn + '...' );
 		console.log( '...and then redirect to ' + redirecTo );
-		logins.doAuthenticate(eppn, redirecTo);
+		Foo = new Submitter();
+		Foo.doAuthenticate(eppn, redirecTo);
+		/*
+		Login = new logins;
+		Login.init();
+		Login.doAuthenticate(eppn, redirecTo);
+		*/
 	} else {
 		console.log( 'No referrer' );
 	}

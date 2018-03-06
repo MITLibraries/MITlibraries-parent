@@ -176,7 +176,8 @@ function twentytwelve_scripts_styles() {
 	// These are specific to login functions.
 	wp_register_script( 'base64', get_template_directory_uri() . '/js/base64.js', array(), '1.0.0', false );
 	wp_register_script( 'cookies', get_template_directory_uri() . '/js/cookies.js', array(), '1.0.0', false );
-	wp_register_script( 'logins', get_template_directory_uri() . '/js/logins.js', array( 'cookies', 'base64' ), '1.0.0', false );
+	wp_register_script( 'submitter', get_template_directory_uri() . '/js/submitter.js', array(), '1.0.0', false );
+	wp_register_script( 'logins', get_template_directory_uri() . '/js/logins.js', array( 'submitter', 'cookies', 'base64' ), '1.0.0', false );
 
 	/* All-site JS */
 

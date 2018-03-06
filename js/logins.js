@@ -13,8 +13,19 @@ var logins = {
 	 */
 	_cookieString : "",
 	_hostname : window.location.hostname,
-	_formsUri : "https://" + this._hostname + "/forms-mit/?pid=",
+	_formsURL : "https://" + this._hostname + "/forms-mit/?pid=",
 	_lookupURL : "https://" + this._hostname + "/ldaplookup.cgi?",
+
+	/* Initialize
+	*
+	*/
+	init : function() {
+		console.log( "Initializing" );
+		this._cookieString = "";
+		this._hostname = window.location.hostname;
+		this.formsURL = "https://" + this._hostname + "/forms-mit/?pid=";
+		this.lookupURL = "https://" + this._hostname + "/ldaplookup.cgi?";
+	}
 
 	/* getUserData
 	*
@@ -54,7 +65,7 @@ var logins = {
 					} else if (subkey == "roomnumber") {
 						document.getElementsByName("address")[0].value = value;
 					} else if (subkey == "ou") {
-						document.getElementsByName("department")[0].value = logins.toLowerCase(value);
+						document.getElementsByName("department")[0].value = this.toLowerCase(value);
 					}
 				});
 			});
@@ -66,10 +77,10 @@ var logins = {
 	* @author Wendy Bossons
 	*/
 	setCookieString : function(jsonValue) {
-		if (logins._cookieString == "") {
-			logins._cookieString += jsonValue;
+		if (this._cookieString == "") {
+			this._cookieString += jsonValue;
 		} else {
-			logins._cookieString += "," + jsonValue;
+			this._cookieString += "," + jsonValue;
 		}
 	},
 
@@ -129,17 +140,17 @@ var logins = {
 						kvPair = "address=" + value;
 						break;
 					case "ou":
-						kvPair = "department=" + logins.toLowerCase(value);
+						kvPair = "department=" + this.toLowerCase(value);
 						break;
 					default:
 						break;
 					}
-					if (kvPair != "") logins.setCookieString(kvPair);
+					if (kvPair != "") this.setCookieString(kvPair);
 					kvPair = "";
 				});
 			});
-			logins.setCookieString("fullname=" + firstname + " " + lastname);
-			cookies.setCookie("libForma", logins.cookieString, "");
+			this.setCookieString("fullname=" + firstname + " " + lastname);
+			cookies.setCookie("libForma", this.cookieString, "");
 		})
 		.fail(function( jqxhr, textStatus, error ) {
 			var err = textStatus + ", " + error;
@@ -152,6 +163,6 @@ var logins = {
 	},
 
 	doLoginAndRedirect : function (pid) {
-		location.href = this._formsUri + pid;
+		location.href = this._formsURL + pid;
 	}
 }
