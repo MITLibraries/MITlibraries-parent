@@ -21,7 +21,49 @@ Submitter.prototype.doAuthenticate = function(eperson, xhref) {
 	$.getJSON( this._lookupURL, {"id":eperson}, function( json ){
 		console.log( 'Request received:' );
 		console.log( json );
-
+		var lastname = "";
+		var firstname = "";
+		var kvPair = "";
+		$.each(json, function(key, val) {
+			$.each(val, function(subkey, value) {
+				console.log( 'key: ' + subkey );
+				console.log( 'val: ' + value );
+				switch (subkey) {
+				case "cn":
+					kvPair = value;
+					break;
+				case "givenname":
+					kvPair = "firstname=" +  value;
+					firstname = value;
+					break;
+				case "sn":
+					kvPair =  "lastname=" + value;
+					lastname = value;
+					break;
+				case "mail":
+					kvPair = "email=" + value;
+					break;
+				case "edupersonprimaryaffiliation":
+					kvPair = "status=" + value;
+					break;
+				case "telephonenumber":
+					kvPair = "phone=" + value;
+					break;
+				case "roomnumber":
+					kvPair = "address=" + value;
+					break;
+				case "ou":
+					kvPair = "department=" + this.toLowerCase(value);
+					break;
+				default:
+					break;
+				}
+				if (kvPair != "") this.setCookieString(kvPair);
+				kvPair = "";
+			});
+		});
+		this.setCookieString("fullname=" + firstname + " " + lastname);
+		cookies.setCookie("libForma", this.cookieString, "");
 	})
 	.fail(function( jqxhr, textStatus, error ) {
 		var err = textStatus + ", " + error;
