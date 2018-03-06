@@ -25,8 +25,8 @@ get_header();
   <!--
   /** Add any load time jquery actions here */
   $(document).ready(function() {
-	if (cookie_functions.readCookie("libForma") != null) {
-		cookie_functions.setDocumentValues("libForma", ",", "=");
+	if (cookies.readCookie("libForma") != null) {
+		cookies.setDocumentValues("libForma", ",", "=");
 	}
 });
 
@@ -85,9 +85,12 @@ $(document).ready(function() {
 	eppn = document.getElementById("eppn").value;
 	if (eppn) {
 
-		loginFunctions.doAuthenticate(eppn);
-		var timeout = setTimeout('cookie_functions.setDocumentValues("libForma",",","=")',5000);
+		console.log( 'Authenticating _' + eppn + '_' );
+		logins.doAuthenticate(eppn);
+		var timeout = setTimeout('cookies.setDocumentValues("libForma",",","=")',5000);
 
+	} else {
+		console.log( 'EPPN not found' );
 	}
 
 });
