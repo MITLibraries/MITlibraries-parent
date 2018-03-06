@@ -5,7 +5,7 @@
 *  @author wbossons
 */
 
-var cookie_functions = {
+var cookies = {
 
 	/**
 	* readCookie
@@ -29,8 +29,24 @@ var cookie_functions = {
 	* return a cookie value based on whether or not it's encrypted
 	*/
 	getCookie : function (cookieName, isEncrypted) {
-		var cookieValue = (isEncrypted == "true") ? Base64.decode(cookie_functions.readCookie(cookieName)) : cookie_functions.readCookie(cookieName);
+		var cookieValue = (isEncrypted == "true") ? base64.decode(cookies.readCookie(cookieName)) : cookies.readCookie(cookieName);
 		return cookieValue;
+	},
+
+	/**
+	* setCookie
+	*
+	* Undocumented by previous developer
+	*/
+	setCookie : function (name,value,days) {
+		var expires = "";
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			expires = "; expires="+date.toGMTString();
+		}
+		value = base64.encode(value);
+		document.cookie = name + "=" + value + expires + "; path=/;" + "secure=true;";
 	},
 
 	/**
@@ -45,7 +61,7 @@ var cookie_functions = {
 	* Example ...setDocumentValues("userData", ",", "=") . . .
 	*/
 	setDocumentValues : function (name, delimiter, separator) {
-		var cookieValue = cookie_functions.getCookie(name, "true");
+		var cookieValue = cookies.getCookie(name, "true");
 		var cookie= cookieValue.split(delimiter);
 		for (var i = 0; i < cookie.length; i++) {
 			var splitCookies = cookie[i].split(separator);

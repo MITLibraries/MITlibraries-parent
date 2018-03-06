@@ -176,10 +176,9 @@ function twentytwelve_scripts_styles() {
 	wp_register_script( 'forms', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
 
 	// Login functions
-	wp_register_script( 'base64', '/js/base64.js', array(), '1.0.0', false );
-	wp_register_script( 'cookies', '/js/cookies.js', array(), '1.0.0', false );
-	wp_register_script( 'logins', 'js/logins.js', array( 'cookies', 'base64' ), '1.0.0', false );
-	wp_enqueue_script( 'logins' );
+	wp_register_script( 'base64', get_template_directory_uri() . '/js/base64.js', array(), '1.0.0', false );
+	wp_register_script( 'cookies', get_template_directory_uri() . '/js/cookies.js', array(), '1.0.0', false );
+	wp_register_script( 'logins', get_template_directory_uri() . '/js/logins.js', array( 'cookies', 'base64' ), '1.0.0', false );
 
 	/* All-site JS */
 
@@ -229,6 +228,10 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_style( 'libraries-global' );
 		wp_enqueue_style( 'bootstrapCSS' );
 		wp_enqueue_script( 'bootstrap-js' );
+	}
+
+	if ( is_page_template( 'page-authenticate.php' ) ) {
+		wp_enqueue_script( 'logins' );
 	}
 
 }
