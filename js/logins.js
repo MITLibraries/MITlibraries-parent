@@ -28,6 +28,7 @@ var logins = {
 	getUserData : function(eperson) {
 		eperson = eperson.substr(0, eperson.indexOf("@"));
 		$.getJSON(this._lookupURL,{"id":eperson}, function(json) {
+			console.log(json);
 			$.each(json, function(key, val) {
 				$.each(val, function(subkey, value) {
 					if (subkey == "cn") {
@@ -91,8 +92,11 @@ var logins = {
     */
 	doAuthenticate : function(eperson, xhref) {
 		console.log( 'Authenticating ' + eperson );
+		console.log( 'from ' + this._lookupURL );
 		eperson = eperson.substr(0, eperson.indexOf("@"));
 		$.getJSON(this._lookupURL,{"id":eperson},function(json) {
+			console.log( "Request received:" );
+			console.log( json );
 			var lastname = "";
 			var firstname = "";
 			var kvPair = "";
@@ -136,6 +140,10 @@ var logins = {
 			});
 			logins.setCookieString("fullname=" + firstname + " " + lastname);
 			cookies.setCookie("libForma", logins.cookieString, "");
+		})
+		.fail(function( jqxhr, textStatus, error ) {
+			var err = textStatus + ", " + error;
+			console.log( "Request Failed: " + err );
 		});
 		console.log( 'Cookie set' );
 		if (arguments.length > 1)
