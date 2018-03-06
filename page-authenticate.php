@@ -47,6 +47,7 @@ $(document).ready(function() {
 		margin-top:20%;
 		margin-left:auto;
 		margin-right:auto;
+		margin-bottom: 20%;
 		width:33%;
 		padding:1em;
 		font-family: 'verdana', 'sans serif', 'helvetica';
