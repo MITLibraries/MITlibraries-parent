@@ -63,12 +63,11 @@ $(document).ready(function() {
 	}
 	</style>
  
- <br/>
+<br/>
 
 <div class="loading" align="center">
-<div class="inner">Loading,
-please wait . . .
-<img class="loading" src="/images/load.gif" /></div>
+	<div class="inner">Loading, please wait . . .
+		<img class="loading" src="/images/load.gif" />
+	</div>
 </div>
-</body>
-</html>
+<?php get_footer(); ?>
