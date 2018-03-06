@@ -67,7 +67,7 @@ $(document).ready(function() {
 
 <div class="loading" align="center">
 	<div class="inner">Loading, please wait . . .
-		<img class="loading" src="/images/load.gif" />
+		<img class="loading" src="/images/load.gif" alt="" />
 	</div>
 </div>
 <?php get_footer(); ?>
