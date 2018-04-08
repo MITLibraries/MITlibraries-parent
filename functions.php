@@ -578,9 +578,9 @@ function getRoot( $post ) {
 	$ar = get_post_ancestors( $post );
 
 	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
-	
+
 	$count_ar = count( $ar );
-	
+
 	for ( $i = 0;$i < $count_ar;$i++ ) {
 		$pid = $ar[ $i ];
 		$is_section = get_post_meta( $pid, 'is_section', 1 );
