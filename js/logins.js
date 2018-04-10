@@ -25,7 +25,7 @@ var logins = {
 		this._hostname = window.location.hostname;
 		this.formsURL = "https://" + this._hostname + "/forms-mit/?pid=";
 		this.lookupURL = "https://" + this._hostname + "/ldaplookup.cgi?";
-	}
+	},
 
 	/* getUserData
 	*
