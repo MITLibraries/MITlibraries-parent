@@ -12,31 +12,28 @@ $eppn = shibboleth_eppn();
 get_header();
 ?>
 
-<script type="text/javascript" src="/wp-content/themes/libraries/js/login_functions.js"></script>
 <script type="text/javascript">
-function getCookie(name) {
-	var i,x,y,ARRcookies = document.cookie.split(";");
-	for (i = 0;i < ARRcookies.length;i++) {
-		x = ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-		y = ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-		x = x.replace(/^\s+|\s+$/g,"");
-		if (x == name) {
-			return unescape(y);
-		}
-	}
-}
-
 var referer = document.referer;
 var redirecTo = "";
 
 $(document).ready(function() {
-	if (referer != "" && referer != "undefined") {
+	if ( referer != "" && referer != "undefined") {
 		start = location.href.indexOf("pid");
 		newlocation = location.href.substr(start);
 		redirecTo = newlocation.substr(newlocation.indexOf("=")+1);
 		eppn = '<?php echo esc_js( $eppn ); ?>';
-		loginFunctions.doAuthenticate(eppn, redirecTo);
-	 }
+		console.log( 'We would look up ' + eppn + '...' );
+		console.log( '...and then redirect to ' + redirecTo );
+		Foo = new Submitter();
+		Foo.doAuthenticate(eppn, redirecTo);
+		/*
+		Login = new logins;
+		Login.init();
+		Login.doAuthenticate(eppn, redirecTo);
+		*/
+	} else {
+		console.log( 'No referrer' );
+	}
 });
 </script>
 
@@ -56,6 +53,7 @@ $(document).ready(function() {
 		margin-top:20%;
 		margin-left:auto;
 		margin-right:auto;
+		margin-bottom: 20%;
 		width:33%;
 		padding:1em;
 		font-family: 'verdana', 'sans serif', 'helvetica';
@@ -72,12 +70,11 @@ $(document).ready(function() {
 	}
 	</style>
  
- <br/>
+<br/>
 
 <div class="loading" align="center">
-<div class="inner">Loading,
-please wait . . .
-<img class="loading" src="/images/load.gif" /></div>
+	<div class="inner">Loading, please wait . . .
+		<img class="loading" src="/images/load.gif" alt="" />
+	</div>
 </div>
-</body>
-</html>
+<?php get_footer(); ?>
