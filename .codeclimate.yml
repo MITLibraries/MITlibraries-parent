@@ -53,6 +53,8 @@ engines:
         enabled: false
       Controversial/CamelCaseVariableName:
         enabled: false
+  scss-lint:
+    enabled: true
 ratings:
   paths:
   - "**.css"
