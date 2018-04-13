@@ -3,6 +3,10 @@ module.exports = {
     src: 'js/build/production.js',
     dest: 'js/build/production.min.js'
   },
+  forms: {
+    src: 'js/build/forms.js',
+    dest: 'js/build/forms.min.js'
+  },
   home: {
   	src: 'js/build/home.js',
   	dest: 'js/build/home.min.js'
