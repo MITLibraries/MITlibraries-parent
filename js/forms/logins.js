@@ -12,7 +12,7 @@ var loginFunctions = {};
 loginFunctions.lookupURL = "https://" +hostName +"/ldaplookup.cgi?";
 
 loginFunctions.cookieString = "";
-loginFunctions.formsUri = "https://" +hostName +"/forms-mit/?pid=";
+loginFunctions.formsUri = "https://" +hostName +"/forms-private/?pid=";
 
 function setCookie(name,value,days) {
 	var expires = "";
