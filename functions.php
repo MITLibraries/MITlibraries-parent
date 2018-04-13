@@ -114,6 +114,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_style( 'libraries-global' );
 
+	wp_register_style( 'mitlib-forms', get_template_directory_uri() . '/css/build/minified/forms.min.css', array( 'libraries-global' ), '1.7.0' );
+
 	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.5.5' );
 
 	wp_register_style( 'hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', false, null, 'all' );
@@ -173,15 +175,13 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'lib-hours', get_site_url( 1 ) . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
 
-	wp_register_script( 'forms', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
+	wp_register_script( 'formsJS', get_template_directory_uri() . '/js/login_functions.js', array(), '1.0.0', false );
 
 	/* All-site JS */
 
 	wp_enqueue_script( 'modernizr' );
 
 	wp_enqueue_script( 'lib-hours' );
-
-	wp_enqueue_script( 'forms' );
 
 	/* Page-specific JS & CSS */
 
@@ -191,6 +191,11 @@ function twentytwelve_scripts_styles() {
 
 	if ( is_front_page() && ! is_child_theme() ) {
 		wp_enqueue_script( 'homeJS' );
+	}
+
+	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) ) {
+		wp_enqueue_style( 'mitlib-forms' );
+		wp_enqueue_script( 'formsJS' );
 	}
 
 	if ( is_page( 'hours' ) ) {

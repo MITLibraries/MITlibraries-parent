@@ -2,8 +2,22 @@
 /**
  * Template Name: Authenticate
  *
+ * This page template is used to implement a lookup feature that is desired by
+ * some users. It should be used by one Page on WordPress, and placed on a
+ * path that is protected by Shibboleth / Touchstone.
+ *
+ * The page using this template will have no content - all code is contained in
+ * this template. It will read the user's username (provided by Shibboleth),
+ * and use this to request (via curl) a lookup service for additional
+ * information about the user. Returned data will be set as a cookie in the
+ * user's browser.
+ *
+ * After the cookie has been set, the user is redirected to whatever page sent
+ * them here. The cookie that is set will then be read to populate various
+ * form fields for them.
+ *
  * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @since 1.7.0
  */
 
 // Read and treat Shibboleth EPPN value for use in page.
@@ -12,7 +26,6 @@ $eppn = shibboleth_eppn();
 get_header();
 ?>
 
-<script type="text/javascript" src="/wp-content/themes/libraries/js/login_functions.js"></script>
 <script type="text/javascript">
 function getCookie(name) {
 	var i,x,y,ARRcookies = document.cookie.split(";");
@@ -40,44 +53,10 @@ $(document).ready(function() {
 });
 </script>
 
-<style type="text/css">
-	div.loading {
-		display:block;
-		width:100%;
-		height:100%;
-		margin-left:auto;
-		margin-right:auto;
-		vertical-align:middle;
-		text-align:center;
-	}
-	div.inner {
-		display:block;
-		border:thin solid #659EC7;
-		margin-top:20%;
-		margin-left:auto;
-		margin-right:auto;
-		width:33%;
-		padding:1em;
-		font-family: 'verdana', 'sans serif', 'helvetica';
-		font-weight:600;
-		font-size:.75em;
-		color:#659EC7;
-	}
-	img.loading {
-		display:block;
-		clear:both;
-		top:1%;
-		margin-left:auto;
-		margin-right:auto;
-	}
-	</style>
- 
- <br/>
-
-<div class="loading" align="center">
-<div class="inner">Loading,
-please wait . . .
-<img class="loading" src="/images/load.gif" /></div>
+<div class="loading-container" align="center">
+	<div class="inner">Loading, please wait . . .
+		<img class="loading" src="/images/load.gif" alt="Loading..." />
+	</div>
 </div>
 </body>
 </html>
