@@ -62,7 +62,7 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
 			<?php get_template_part( 'content', 'shortcrumb' ); ?>
 			<?php } else { ?>				
-			<?php get_template_part( 'content', 'form' ); ?>
+			<?php get_template_part( 'content', 'page' ); ?>
 			<?php } ?>
 							
 			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
