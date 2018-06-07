@@ -57,17 +57,23 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 		<div id="stage" class="inner" role="main">
 		
-		<div id="content" class="content<?php echo esc_html( $has_sidebar ); ?>">
-		
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-			<?php get_template_part( 'content', 'shortcrumb' ); ?>
-			<?php } else { ?>				
-			<?php get_template_part( 'content', 'page' ); ?>
+			<?php get_template_part( 'inc/self', 'title' ); ?>
+			<?php } elseif ( ! in_category( 'page-root' ) ) { ?>
+			<?php get_template_part( 'inc/content', 'root' ); ?>
 			<?php } ?>
-							
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-			<?php get_sidebar(); ?>
-			<?php endif; ?>
+
+			<div id="content" class="content<?php echo esc_html( $has_sidebar ); ?>">
+
+				<?php if ( in_category( 'shortcrumb' ) ) { ?>
+				<?php get_template_part( 'content', 'shortcrumb' ); ?>
+				<?php } else { ?>
+				<?php get_template_part( 'content', 'page' ); ?>
+				<?php } ?>
+
+				<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+				<?php get_sidebar(); ?>
+				<?php endif; ?>
 
 			</div>
 		
