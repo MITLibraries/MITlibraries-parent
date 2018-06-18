@@ -21,7 +21,7 @@ get_header(); ?>
 						<div class="entry-content">
 							<h2><?php _e( 'Search the Libraries\' web site:', 'twentytwelve' ); ?></h2>
 
-							<form action="http://www.google.com/cse" id="cse-search-box">
+							<form action="https://www.google.com/cse" id="cse-search-box">
 								<div>
 									<input type="hidden" name="cx" value="012139403769412284441:qmnizspyywg">
 									<input type="hidden" name="ie" value="UTF-8">

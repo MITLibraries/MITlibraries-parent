@@ -22,7 +22,7 @@
 <meta property="og:title" content="MIT Libraries"/>
 <meta property="og:image" content="//libraries.mit.edu/wp-content/themes/libraries/images/mit-libraries-logo-bg-black-1200-1200.png"/>
 <meta property="og:url" content="//libraries.mit.edu">
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
 <?php
