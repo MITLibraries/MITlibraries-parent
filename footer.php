@@ -42,7 +42,7 @@
 				<a href="/experts" class="link-sub">Research guides &amp; expert librarians</a>
 				<a href="/productivity-tools" class="link-sub">Productivity tools</a>
 				<a href="/scholarly" class="link-sub">Scholarly publishing</a>
-				<a href="/references" class="link-sub">Citation software</a>
+				<a href="/references" class="link-sub">Citation &amp; writing software</a>
 				<a href="/research-support" class="link-sub">More research support options</a>
 			</div>
 			<div class="flex-item">

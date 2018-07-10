@@ -130,7 +130,7 @@
 		  <div class="col-2 flex-item">
 				<h3 class="heading-col">Publishing &amp; content management</h3>
 				<ul class="list-unbulleted">
-					<li><a href="/references">Citation software <span class="about">EndNote, Mendeley, &amp; Zotero</span></a></li>
+					<li><a href="/references">Citation &amp; writing tools <span class="about">Mendeley, Zotero, &amp; Overleaf</span></a></li>
 					<li><a href="/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
 					<li><a href="/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a></li>
 					<li><a href="/publishing">Getting published <span class="about">Tools &amp; help</span></a></li>

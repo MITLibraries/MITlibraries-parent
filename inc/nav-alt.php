@@ -114,7 +114,7 @@
 				  <li class="col-sm-6 col-2" style="padding: 0;">
 					<ul class="multi-column-dropdown">
 						<li><h3 class="heading-col">Publishing &amp; content management</h3></li>
-						<li><a href="/references">Citation software <span class="about">EndNote, Mendeley, &amp; Zotero</span></a></li>
+						<li><a href="/references">Citation &amp; writing tools <span class="about">Mendeley, Zotero, &amp; Overleaf</span></a></li>
 						<li><a href="/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
 						<li><a href="/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a></li>
 						<li><a href="/publishing">Getting published <span class="about">Tools &amp; help</span></a></li>
