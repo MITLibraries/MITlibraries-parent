@@ -24,7 +24,7 @@ $maroon:  #85144B;
 $white:  #fff;
 $silver: #ddd;
 $gray:   #aaa;
-$black:  #111;
+$black:  #000;
 
 // More grays
 
@@ -49,6 +49,32 @@ $orange-dark: #ca5000;
 
 $yellow: hsla(45, 100.0000%, 60.0000%, 1.0000); // #ffcc33
 
+
+// update August 2018
+// pentagram colors - named
+$magenta:                       #FF00FF;
+$red:                           #FF0000;
+$orange:                        #FF7700;
+$yellow:                        #FFC800;
+$green:                         #00C800;
+$blue:                          #0000FF;
+$blue-bright:                   #00C8FF;
+
+// pentagram colors secondary
+$magenta-muted:                 #C702C7;
+$red-muted:                     #D50606;
+$orange-muted:                  #E46212;
+$yellow-muted:                  #FFC422;
+$green-muted:                   #008700;
+$blue-muted:                    #1A1A83;
+$blue-bright-muted:             #04A6CF;
+
+// colors - brand
+$brand-primary:                 $black;
+$brand-primary-accent:          $blue;
+$brand-primary2:                $blue-bright; // accessible on dark 
+$brand-secondary:               $magenta-muted;
+
 // Assignments
 
 $color-primary: $gray-dark;
@@ -64,10 +90,10 @@ $color-text-minor: $gray-medium;
 $color-background--widget: $beige;
 $color-background-secondary: $gray-light;
 
-$color-link-primary: $blue-royal;
+$color-link-primary: $blue-muted;
+
 
 // Color modules
-
 @mixin color-bg--beige {
 	background-color: $beige;
 }
