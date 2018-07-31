@@ -91,11 +91,6 @@
         background: #f3f3f3;
         flex-wrap: wrap;
         width: auto;
-
-        a:hover, 
-        a:focus {
-          background: none;
-        }
       }
 
       .more {
@@ -193,26 +188,27 @@
   		&:hover,
       &:focus {
   			text-decoration: none;
-  			color: #fff;
-        background-color: #007db8;
+  			color: $white;
+        background-color: $brand-secondary;
   		}
 		}
 
     &:hover, 
     &:focus {
       @include bp-tablet--portrait {
-        background: $color-link-primary;
+        background: $brand-secondary;
       }
     }
   }
 
   // sub menu drop-down cols
   .col-1 {
-    background: #fff;
+    background: $white;
   }
 
   .col-2 {
-    background: $color-background-secondary;
+    border-left: 1px solid $black;
+    background: $white;
   }
 
   // wrapper for sub menus
@@ -243,7 +239,7 @@
 
     .main-nav-link {
       @include bp-tablet--portrait {
-        background: $color-link-primary;
+        background: $brand-secondary;
       }
     }
 
@@ -278,14 +274,16 @@
     */
 
     a {
-      color: $color-text-accent-primary;
+      color: $brand-primary;
       display: block;
       font-weight: 600;
       padding: 0.5em;
 
       &:hover, 
       &:focus {
-        background: darken($color-background-secondary, 10%);
+        background-color: $brand-secondary;
+        color: $white;
+        text-decoration: none;
       }
     }
 
@@ -300,7 +298,7 @@
     }
 
     .bottom {
-      border-top: 1px solid $color-secondary;
+      border-top: 1px solid $black;
 
       &.extra {
         span:first-of-type:after {
@@ -329,7 +327,7 @@
   // sub menu col headers
   .heading-col {
     @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
-    color: #7c7c7d;
+    color: $black;
     display: block;
     font-size: 0.6em;
     font-weight: bold;
@@ -461,7 +459,7 @@
 }
 
 .nav-second>li>a:hover {
-	color: #338bc5 !important;
+	color: $brand-primary-accent !important;
 	text-decoration: underline;
 }
 

@@ -33,7 +33,7 @@ h3 {
 }
 
 a {
-	color: $color-link-primary;
+	color: $brand-primary-accent;
 	text-decoration: none;
 	&:hover {
 		color: darken($color-link-primary, 20%);
