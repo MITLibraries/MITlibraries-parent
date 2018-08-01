@@ -21,7 +21,7 @@
 }
 
 .specialHours b {
-	color: #ca3;
+	color: $yellow;
 }
 
 #hourContent {
@@ -30,7 +30,7 @@
 }	
 
 #hourNav {
-	background: #fff;
+	background: $white;
 	margin: 0;
 	position: relative;
 	max-width: 100%;
@@ -41,7 +41,7 @@
 }
 
 .isSticky #hourNav {
-	border-bottom: 3px solid #333;
+	border-bottom: 3px solid $black;
 	box-shadow: 0 8px 6px -6px black;
 	margin-right: 1rem;
 	z-index: 11;
@@ -112,23 +112,23 @@
 }
 
 .hrList th.cur {
-	border-left: 1px solid #cca329;
-	background: #cca329;
-	border-bottom: 5px solid #cca329;
+	border-left: 1px solid #E7BA3E;
+	background: #E7BA3E;
+	border-bottom: 5px solid #E7BA3E;
 }
 .hrList th.curAfter {
-	border-left: 1px solid #cca329;
+	border-left: 1px solid #E7BA3E;
 }
 
 .hrList td.cur {
-	border-left: 1px solid #cca329;
-	background: #ffcc33;
-	border-bottom: 5px solid #cca329;
+	border-left: 1px solid #E7BA3E;
+	background: $yellow;
+	border-bottom: 5px solid #E7BA3E;
 	z-index: 10;
 }
 
 .hrList td.curAfter {
-	border-left: 1px solid #cca329;
+	border-left: 1px solid #E7BA3E;
 }
 
 .hrList td {
@@ -144,11 +144,11 @@
 }
 
 .hrList .even td.cur {
-	background: #ecbb2f;
+	background: #E7BA3E;
 }
 
 .hrList th.name {
-	color: #000;
+	color: $black;
 	font-weight: bold;
 	border-left: none;
 	font-size: 20px;
@@ -164,10 +164,10 @@
 }
 
 .hrList .name .libraryAlert {
-	background: #333;
+	background: $black;
 	border: none;
 	bottom: auto;
-	color: #f7f7f7;
+	color: $white;
 	display: block;
 	font-size: 1em;
 	margin-top: 0.5em;
@@ -176,7 +176,7 @@
 }
 
 .hrList .libraryAlert .icon-exclamation-sign {
-	color: #ffcc33;
+	color: $yellow;
 	float: left;
 	font-size: 2em;
 	position: absolute;
@@ -213,10 +213,6 @@
 }
 
 div.libraryAlert {
-	border: 1px solid #ccc !important;
-	-webkit-box-shadow: 0 0 5px 2px #eee !important;
-    -moz-box-shadow: 0 0 5px 2px #eee;
-    box-shadow: 0 0 5px 2px #eee !important;
 }
 
 .cal-hours {
@@ -384,7 +380,7 @@ div.libraryAlert {
 		right: 10px;
 		width: 33px;
 		font-size: 8px;
-		background: #ecbb2f;
+		background: $yellow;
 		padding: 5px 5px 10px 5px;
 		text-align: center;
 		
@@ -416,7 +412,7 @@ div.libraryAlert {
 	}
 	
 	.hrList .libraryAlert .icon-exclamation-sign {
-		color: #ffcc33;
+		color: $yellow;
 		float: left;
 		font-size: 1.5em;
 		position: absolute;

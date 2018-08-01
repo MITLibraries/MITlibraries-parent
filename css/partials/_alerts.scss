@@ -1,5 +1,6 @@
 .libraryAlert {
-    box-shadow: 0 0 5px 2px #ccc;
+	border: 1px solid $black;
+	border-top: 3px solid $black;
 	padding: 15px 10px 10px;
 	margin-top: 15px;
 }
@@ -10,7 +11,7 @@
 }
 
 .home .wrap-page .posts--preview--alerts {
-	background: #000;
+	background: $black;
 	border-bottom: 0;
 }
 
@@ -21,9 +22,8 @@
 }
 
 .posts--preview--alerts:before {
-	background: #ed0e0e;
-	box-shadow: 0 3px 3px #ccc;
-	color: #fff;
+	background: $red;
+	color: $white;
 	content: '';
 	display: block;
 	height: 1em;
@@ -35,14 +35,13 @@
 }
 
 .posts--preview--alerts.inactive:before {
-	box-shadow: 0 0 0 #ccc;
 	max-height: 0px;
 	opacity: 0;
 }
 
 .posts--preview--alerts .icon-exclamation-sign,
 .location--alerts .icon-exclamation-sign {
-	color: #ed0e0e;
+	color: $red;
 	font-size: 3.5em;
 	margin: 0 .5em 0 .25em;
 	position: relative;
@@ -64,7 +63,7 @@
 	right: 0.5em;
 	top: 0.5em;
 	.icon-remove-sign {
-    color: #333;
+    color: $black;
     font-size: 1.5em;
     text-decoration: none;
     }
