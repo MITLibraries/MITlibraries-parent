@@ -15,9 +15,9 @@
 // Primary button color classes
 
 .button-primary--green {
-	@include color-button-primary($green-sea);
+	@include color-button-primary($green);
 	&.border {
-		@include color-button-primary--border($green-sea)
+		@include color-button-primary--border($green)
 	}
 }
 
@@ -29,23 +29,23 @@
 }
 
 .button-primary--magenta {
-	@include color-button-primary($magenta-dark);
+	@include color-button-primary($magenta-muted);
 	&.border {
-		@include color-button-primary--border($magenta-dark)
+		@include color-button-primary--border($magenta-muted)
 	}
 }
 
 .button-primary--blue {
-	@include color-button-primary($blue-royal);
+	@include color-button-primary($blue);
 	&.border {
-		@include color-button-primary--border($blue-royal)
+		@include color-button-primary--border($blue)
 	}
 }
 
 // Secondary button color classes
 
 .button-secondary--green {
-	@include color-button-secondary($green-sea);
+	@include color-button-secondary($green);
 }
 
 .button-secondary--orange {
@@ -53,9 +53,9 @@
 }
 
 .button-secondary--magenta {
-	@include color-button-secondary($magenta-dark);
+	@include color-button-secondary($magenta-muted);
 }
 
 .button-secondary--blue {
-	@include color-button-secondary($blue-royal);
+	@include color-button-secondary($blue);
 }
