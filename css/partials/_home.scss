@@ -172,7 +172,7 @@ body#libraries-homepage {
 // this rule restricts old and poorly scoped header styling to the main libraries homepage
 .libraries-home {
 	h1, h2, h3 {
-		font-weight: 300;
+		font-weight: 600;
 	}	
 }
 .home {
@@ -217,19 +217,23 @@ body#libraries-homepage {
 				padding: 0.5em .5em 0.25em;
 			}
 			a {
-			color: $color-hours-locations;
-			font-weight: 300;
+			color: $black;
+			font-weight: 600;
+
+				&:hover {
+					color: $color-hours-locations;
+				}
 			}
 		}
 		h3 {
 			a {
-				font-weight: 300;
+				font-weight: 400;
 			}
 		}
 		p {
 			color: darken($color-background-secondary, 70%);
 			font-size: 0.875em;
-			font-weight: 300;
+			font-weight: 400;
 		}
 		svg {
 			@include bp-small {
@@ -262,7 +266,7 @@ body#libraries-homepage {
 			}
 		}
 		.hours {
-			color: #7b7b7b;
+			color: $black;
 			display: inline-block;
 			font-size: 0.875em;
 			font-weight: normal;
@@ -275,12 +279,12 @@ body#libraries-homepage {
 		}
 		.link-map,
 		.link-study {
-			color: $color-hours-locations;
-			font-weight: 300;
+			color: $black;
+			font-weight: 400;
 			&:hover {
-				color: darken($color-hours-locations, 15%);
+				color: $color-hours-locations;
 				svg {
-					fill: darken($color-hours-locations, 15%);
+					fill: $color-hours-locations;
 				}
 			}
 			@include bp-tablet--portrait {
@@ -288,13 +292,13 @@ body#libraries-homepage {
 				font-weight: 600;
 			}
 			svg {
-				fill: $color-hours-locations;
+				fill: $black;
 			}
 		}
 		.location {
 			position: relative;
 			color: #111;
-			font-weight: 300;
+			font-weight: 400;
 			padding: 0;
 			transition: background 0.1s ease;
 			@include bp-mobile--only {
@@ -312,12 +316,12 @@ body#libraries-homepage {
 			}
 		}
 		.location-info {
-			color: #7b7b7b;
+			color: $black;
 			font-size: 0.875em;
 			font-weight: normal;
 		}
 		.map-location {
-			color: #7b7b7b;
+			color: $black;
 			&::before {
 				content: url(#{$imagesPath}/pin-sfw.svg);
 				display: inline-block;
@@ -355,7 +359,7 @@ body#libraries-homepage {
 			}
 		}
 		.name-location {
-			color: #111;
+			color: $black;
 		}
 		.number {
 			display: none;
@@ -364,7 +368,7 @@ body#libraries-homepage {
 			}
 		}
 		.phone {
-			color: #7b7b7b;
+			color: $black;
 			&:before {
 				content: url(#{$imagesPath}/phone-mobile-sfw.svg);
 				display: inline-block;
@@ -381,18 +385,18 @@ body#libraries-homepage {
 			}
 		}
 		.show-more {
-			background: $color-secondary;
-			color: $color-hours-locations;
-			fill: $color-hours-locations;
-			font-weight: 300;
-			padding: 1.5em 0;
+			background: $black;
+			color: $white;
+			fill: $white;
+			font-weight: 400;
+			padding: .5em 0;
 			text-align: center;
 		}
 		.special {
 			color: #ababab;
 			font-size: 0.875em;
 			@include bp-tablet--portrait {
-				color: $color-hours-locations;
+				color: $black;
 			}
 		}
 		.wrap-loc-info {
@@ -439,12 +443,12 @@ body#libraries-homepage {
 			}
 			a {
 				color: $color-news-events;
-				font-weight: 300;
+				font-weight: 600;
 			}
 		}
 		h3 {
 			a {
-				font-weight: 300;
+				font-weight: 400;
 			}
 		}
 
@@ -536,10 +540,14 @@ body#libraries-homepage {
 		}
 		h2 {
 			text-align: left;
-			padding: 1em .5em;
+			padding: 1em .5em .5em .5em;
 			a {
-				color: $color-guides-experts;
-				font-weight: 300;
+				color: $black;
+				font-weight: 600;
+
+				&:hover {
+					color: $color-guides-experts;
+				}
 			}
 		}
 		p {
@@ -588,7 +596,7 @@ body#libraries-homepage {
 			margin: 0 1em;
 		}
 		.link-ask {
-			color: $color-guides-experts;
+			color: $black;
 			font-weight: 700;
 			&:after {
 				content: url(#{$imagesPath}/arrow-right-sfw.svg);
@@ -596,13 +604,13 @@ body#libraries-homepage {
 				margin-left: 0.25em;
 			}
 			&:hover {
-				color: darken($color-guides-experts, 15%);
+				color: $color-guides-experts;
 				svg {
-					fill: darken($color-guides-experts, 15%);
+					fill: $color-guides-experts;
 				}
 			}
 			svg {
-				fill: $color-guides-experts;
+				fill: $black;
 				display: inline-block;
 				margin-left: 0.5em;
 			}
@@ -610,8 +618,7 @@ body#libraries-homepage {
 		.link-profile {
 			display: block;
 			&:hover {
-				.name {
-					color: darken($color-text-accent-primary, 20%);
+				.name {;
 					text-decoration: underline;
 				}
 			}
@@ -623,7 +630,7 @@ body#libraries-homepage {
 			text-align: center;
 		}
 		.title-job {
-			color: #767676;
+			color: $black;
 			display: block;
 			font-size: 0.625em;
 			margin-top: 1em;
