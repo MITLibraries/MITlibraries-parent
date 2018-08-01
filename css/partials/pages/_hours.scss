@@ -367,6 +367,7 @@ div.libraryAlert {
 		line-height: 1.5;
 		min-height: 2em;
 		padding: 0.25em 0;
+		margin-left: 0;
 	}
 
 	.hrList .name .libraryAlert p {
@@ -406,7 +407,7 @@ div.libraryAlert {
 	
 	.alertText {
 		font-size: .9em;
-		padding: 1% 2.5% 2% 3.5%;
+		padding: 1% 2.5% 2% 2rem;
 		font-weight: 400;
 		
 	}
