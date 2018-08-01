@@ -39,7 +39,7 @@
 		@include rem-first(font-size, 1.5);
 		font-weight: 500;
 		padding-left: 0;
-		color: #338bc5;
+		color: $color-link-primary;
 	}
 	.hours-today {
 		margin-top: 1em;

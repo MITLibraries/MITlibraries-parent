@@ -19,7 +19,7 @@
 				margin-left: 1em;
 			}
 			&.active {
-				border-bottom: 4px solid #5889c2;
+				border-bottom: 4px solid $black;
 				a {
 					color: $black;
 				}
@@ -74,23 +74,23 @@
 					border-radius: 3px;
 					text-align: center;
 					text-decoration: none;
-					border: 1px solid #338bc5;
+					border: 1px solid $black;
 					-webkit-transition: background .1s ease;
 					transition: background .1s ease;
 					margin: 0 15px;
 				}
 							&.active {
 								a {
-								background: #338bc5;
-								color: white;
-								border: 1px solid #338bc5;
+								background: $black;
+								color: $white;
+								border: 1px solid $black;
 							}
 						}
 								a {
 									&:hover {
-									background: #338bc5;
-									color: white;
-									border: 1px solid #338bc5;
+									background: $blue;
+									color: $white;
+									border: 1px solid $blue;
 							}
 						}
 				}

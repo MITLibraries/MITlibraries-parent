@@ -14,7 +14,7 @@
 			line-height: 1.5;
 			display: flex;
 			a {
-				color: $color-text-accent-primary;
+				color: $color-link-primary;
 				font-weight: 400;
 				flex-direction: column;
 			}
@@ -22,7 +22,7 @@
 				font-family:FontAwesome;
 				content:"\f0da";
 				margin-right: 1em;
-				color: #338bc5;
+				color: $color-link-primary;
 				flex-direction: column;
 			}
 		}
