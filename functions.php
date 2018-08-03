@@ -103,6 +103,13 @@ function twentytwelve_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' ); }
 
+	/* 
+	 * Vendor styles 
+	 */
+	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
+
+	wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
+
 	/*
 	 * Loads our main stylesheet.
 	 */
@@ -110,9 +117,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '1.5.5' );
-
-	wp_enqueue_style( 'libraries-global' );
+	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '1.5.6' );
 
 	wp_register_style( 'mitlib-forms', get_template_directory_uri() . '/css/build/minified/forms.min.css', array( 'libraries-global' ), '1.7.0' );
 
@@ -124,9 +129,6 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), '1.5.5' );
 
-	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
-
-	wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
 
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
@@ -229,6 +231,8 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_style( 'bootstrapCSS' );
 		wp_enqueue_script( 'bootstrap-js' );
 	}
+
+	wp_enqueue_style( 'libraries-global' );
 
 }
 
