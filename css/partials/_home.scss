@@ -530,17 +530,21 @@ body#libraries-homepage {
 		.title-post {
 			margin: 0.5em 0 0.75em;
 		}
-			}
+
+		.link-news {
+			margin: 5px auto;
+		}
+	}
 	//
 	// Guides & Experts
 	//
 	.guides-experts {
 		@include bp-tablet--portrait {
-			padding: 0 1.25em 2.5em;
+			padding: 0 1em 2.5em;
 		}
 		h2 {
 			text-align: left;
-			padding: 1em .5em .5em .5em;
+			padding: 1em .5em .25em .5em;
 			a {
 				color: $black;
 				font-weight: 600;
@@ -552,6 +556,7 @@ body#libraries-homepage {
 		}
 		p {
 			margin: 0 1em;
+			color: $black;
 		}
 		svg {
 			@include bp-small {
@@ -593,7 +598,7 @@ body#libraries-homepage {
 			margin: 0 auto;
 		}
 		.guide-list {
-			margin: 0 1em;
+			margin: 1.5em 1em;
 		}
 		.link-ask {
 			color: $black;

@@ -1,19 +1,19 @@
 @mixin color-button-primary($color) {
-	background: $color;
+	background: $black;
 	&:hover {
-		background: darken($color, 15%);
+		background: $color;
 	}
 }
 
 @mixin color-button-primary--border($color) { // Matches button-primary size when inline with button secondary
-	border: 2px solid $color;
+	border: 2px solid $black;
 	&:hover {
-		border-color: darken($color, 15%);
+		border-color: $color;
 	}
 }
 
 @mixin color-button-secondary($color) {
-	color: $color;
+	color: $black;
 	&:hover {
 		background: $color;
 		border-color: $color;
