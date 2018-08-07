@@ -103,8 +103,8 @@ function twentytwelve_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' ); }
 
-	/* 
-	 * Vendor styles 
+	/*
+	 * Vendor styles
 	 */
 	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
 
@@ -128,7 +128,6 @@ function twentytwelve_scripts_styles() {
 	wp_register_style( 'hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', false, null, 'all' );
 
 	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), '1.5.5' );
-
 
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
