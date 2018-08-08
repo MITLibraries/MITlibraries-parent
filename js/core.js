@@ -59,13 +59,16 @@ var Core = {
 		if($('.tabnav').length) {
 			// Store a var
 			var tabnav = $('.tabnav');
+			var tabcontent = $('.tabcontent');
 			// Check if URL has hash
 			if(window.location.hash) {
 			  var hash = window.location.hash;
-			  // Remove all active classes from tabnav
+			  // Remove all active classes from tabnav and tabcontent
 			  $('> li', tabnav).removeClass('active');
-			  // Add active class to tab that contains the hash
+			  $('.tab', tabcontent).removeClass('active');
+			  // Add active class to tab and tabcontent that matches the hash
 			  $('h2 a[href="'+hash+'"]', tabnav).parent().parent().addClass('active');
+			  $('.tab'+hash, tabcontent).addClass('active');
 			  // Get the top offset of the active tab
 			 	var activePos = $('li.active', tabnav).offset().top;
 			 	// ...and scroll down to it
