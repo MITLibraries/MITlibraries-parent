@@ -34,7 +34,7 @@ get_header(); ?>
 						// Translators: Today's year.
 						printf( __( 'Yearly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
 					else :
-						_e( 'Archives', 'twentytwelve' );
+						esc_html( 'Archives' );
 					endif;
 				?></h1>
 			</header><!-- .archive-header -->
