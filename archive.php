@@ -25,14 +25,11 @@ get_header(); ?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php
 					if ( is_day() ) :
-						// Translators: Today's date.
-						printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
+						printf( 'Daily Archives: %s', '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						// Translators: Today's month.
-						printf( __( 'Monthly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
+						printf( 'Monthly Archives: %s', '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
 					elseif ( is_year() ) :
-						// Translators: Today's year.
-						printf( __( 'Yearly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
+						printf( 'Yearly Archives: %s', '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
 					else :
 						esc_html( 'Archives' );
 					endif;
