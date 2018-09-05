@@ -52,15 +52,13 @@
 					</div><!-- .author-avatar -->
 					<div class="author-description">
 						<h2><?php
-							// Translators: About the author.
-							printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?>
+							printf( 'About %s', get_the_author() ); ?>
 						</h2>
 						<p><?php the_author_meta( 'description' ); ?></p>
 						<div class="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 								<?php
-								// Translators: View all posts by author.
-								printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
+								printf( 'View all posts by %s <span class="meta-nav">&rarr;</span>', get_the_author() ); ?>
 							</a>
 						</div><!-- .author-link -->
 					</div><!-- .author-description -->
