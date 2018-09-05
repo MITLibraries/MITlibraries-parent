@@ -341,11 +341,11 @@ function twentytwelve_content_nav( $html_id ) {
 	$html_id = esc_attr( $html_id );
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
+		<nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
 			<h3 class="assistive-text">Post navigation</h3>
 			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
 			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
-		</nav><!-- #<?php echo $html_id; ?> .navigation -->
+		</nav><!-- #<?php echo esc_attr( $html_id ); ?> .navigation -->
 	<?php endif;
 }
 endif;
@@ -438,7 +438,7 @@ function twentytwelve_entry_meta() {
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		// Translators: View all posts by a given author.
 		esc_attr( sprintf( __( 'View all posts by %s', 'twentytwelve' ), get_the_author() ) ),
-		get_the_author()
+		esc_html( get_the_author() )
 	);
 
 	if ( $tag_list ) {
@@ -601,7 +601,7 @@ function getRoot( $post ) {
 function the_breadcrumb() {
 	if ( ! is_home() ) {
 		echo '<a href="';
-		echo get_option( 'home' );
+		echo esc_url( get_option( 'home' ) );
 		echo '">';
 		bloginfo( 'name' );
 		echo '</a> &raquo; ';
@@ -633,7 +633,7 @@ function showBreadTitle() {
 	$custom_title = $custom_title[0];
 	// $custom_title = get_field("breadcrumb_override");
 	if ( $custom_title != '' ) {
-	 echo $custom_title;
+	 echo esc_html( $custom_title );
 	} else {
 	 the_title();
 	}
@@ -656,8 +656,8 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 	echo wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP;
 
 	if ( is_single() ) {
-	the_category( ', ' );
-echo $SEP;
+		the_category( ', ' );
+		echo esc_html( $SEP );
 	} elseif ( is_page() ) {
 			$parent_id = $post->post_parent;
 			$parents = array();
