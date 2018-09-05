@@ -389,8 +389,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
+						sprintf( '%1$s at %2$s', get_comment_date(), get_comment_time() )
 					);
 				?>
 			</header><!-- .comment-meta -->
