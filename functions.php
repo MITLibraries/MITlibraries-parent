@@ -449,12 +449,28 @@ function twentytwelve_entry_meta() {
 		$utility_text = 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.';
 	}
 
+	$allowed = array(
+		'a' => array(
+			'class' => array(),
+			'href'  => array(),
+			'rel'   => array(),
+			'title' => array(),
+		),
+		'span' => array(
+			'class' => array(),
+		),
+		'time' => array(
+			'class'    => array(),
+			'datetime' => array(),
+		),
+	);
+
 	printf(
-		$utility_text,
-		$categories_list,
-		$tag_list,
-		$date,
-		$author
+		wp_kses( $utility_text, $allowed ),
+		wp_kses( $categories_list, $allowed ),
+		wp_kses( $tag_list, $allowed ),
+		wp_kses( $date, $allowed ),
+		wp_kses( $author, $allowed )
 	);
 }
 endif;
@@ -643,6 +659,14 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	global $post;
 
+	$allowed = array(
+		'a' => array(
+			'href' => array(),
+			'rel' => array(),
+			'title' => array(),
+		),
+	);
+
 	// Do not show breadcrumbs on home or front pages.
 	// So we will just return quickly.
 	if ( ( is_home() || is_front_page() ) && ( ! $front_page ) ) {
@@ -653,7 +677,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	echo '<div class="breadcrumbs">';
 
-	echo wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP;
+	echo wp_kses( wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP, $allowed );
 
 	if ( is_single() ) {
 		the_category( ', ' );
@@ -668,7 +692,7 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 			}
 			$parents = array_reverse( $parents );
 			foreach ( $parents as $parent ) {
-				echo $parent;
+				echo wp_kses( $parent, $allowed );
 			}
 	}
 	// Wordpess function that echoes your post title.
@@ -732,6 +756,13 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 
 		global $post;
 
+		$allowed = array(
+			'a' => array(
+				'href' => array(),
+			),
+			'span' => array(),
+		);
+
 		if ( is_search() ) {
 			echo '<span>Search</span>';
 		}
@@ -753,8 +784,8 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 			$pageLink = get_permalink( $post );
 			$childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
 
-			if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . $parentBreadcrumb . '</span>';}
-			if ( $childBreadcrumb != '' ) {echo '<span>' . $pageTitle . '</span>';}
+			if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo wp_kses( '<span>' . $parentBreadcrumb . '</span>', $allowed );}
+			if ( $childBreadcrumb != '' ) {echo wp_kses( '<span>' . $pageTitle . '</span>', $allowed );}
 		}
 	}
 
