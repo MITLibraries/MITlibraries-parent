@@ -89,13 +89,40 @@
 
 	$alertTitle = cf( 'alert_title' );
 	$alertContent = cf( 'alert_content' );
+
+	// Define the allowed markup tags / attributes.
+	$allowed = array(
+		'a'  => array(
+			'href'  => array(),
+			'title' => array(),
+		),
+		'h3'  => array(),
+		'h4'  => array(),
+		'img' => array(
+			'alt'    => array(),
+			'class'  => array(),
+			'height' => array(),
+			'src'    => array(),
+			'width'  => array(),
+		),
+		'li'  => array(
+			'class' => array(),
+		),
+		'ol'  => array(
+			'class' => array(),
+		),
+		'p'  => array(),
+		'ul' => array(
+			'class' => array(),
+		),
+	);
 ?>
 
 <div class="libraryAlertTop">
 <?php
 					include( locate_template( 'inc/alert.php' ) );
 					if ( $showAlert == 0 && $alertTitle != '' ) {
-						echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
+						echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . esc_html( $alertTitle ) . '</h3>' . '<p>' . esc_html( $alertContent ) . '</p>' . '</div>' . '</div>' . '</div>';
 					}
 				?>
 </div>				
@@ -107,21 +134,21 @@
 				<div class="libraryContent">
 					<h1>
 						<span class="libraryName"><?php the_title(); ?></span>
-						<span class="subject-library"><?php echo $subject ?></span>
+						<span class="subject-library"><?php echo esc_html( $subject ); ?></span>
 					</h1>
 					<div class="info-more">
-						<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a> |
+						<a href="tel:<?php echo esc_attr( $phone ); ?>" class="phone"><?php echo esc_html( $phone ); ?></a> |
 							<?php if ( $email ) : ?>
-						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
+						<a href="mailto:<?php echo esc_attr( $email ); ?>" class="email"><?php echo esc_html( $email ); ?></a> |
 							<?php endif; ?>
-						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+						<a href="<?php echo esc_url( $mapPage . $slug ); ?>">Room: <?php echo esc_html( $building ); ?> <i class="icon-arrow-right"></i></a>
 					</div>
 				</div><!-- end div.libraryContent -->
 
 				<div class="hours-today">
 					<span>Today's hours: <strong data-location-hours="<?php the_title(); ?>"></strong></span>
 					<?php if ( $study24 == 1 ) : ?>
-						| <a class="study-24-7" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+						| <a class="study-24-7" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 					<?php endif; ?>
 					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
 				</div><!-- end div.hours-today -->
@@ -134,14 +161,14 @@
 							$val = $arMain[ array_rand( $arMain ) ];
 						?>
 						<?php if ( $val != '' ) : ?>
-						<img src="<?php echo $val; ?>" data-thumb="<?php echo $val; ?>" alt="<?php the_title(); ?>" />
+						<img src="<?php echo esc_url( $val ); ?>" data-thumb="<?php echo esc_attr( $val ); ?>" alt="<?php the_title(); ?>" />
 						<?php endif; ?>
 				</div><!-- end div.library-image -->
 			</div><!-- end div.topRight -->
 		<!-- </div> end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 
-	<div id="content" class="content <?php echo $strLocation; ?> has-sidebar">
+	<div id="content" class="content <?php echo esc_attr( $strLocation ); ?> has-sidebar">
 		<div class="main-content content-main">
 
 			<?php
@@ -150,10 +177,10 @@
 			?>
 			<ul class="tabnav">
 				<?php if ( '' != $title1 ) : ?>
-				<li class="active tab1st"><h2 class="title-tab"><a href="#tab1"><?php echo $title1 ?><span class="title-sub hidden-mobile"><?php echo $subtitle1 ?></span class="title-sub"></a></h2></li>
+				<li class="active tab1st"><h2 class="title-tab"><a href="#tab1"><?php echo esc_html( $title1 ); ?><span class="title-sub hidden-mobile"><?php echo esc_html( $subtitle1 ); ?></span class="title-sub"></a></h2></li>
 				<?php endif; ?>
 				<?php if ( '' != $title2 ) : ?>
-				<li class="tab2nd"><h2 class="title-tab"><a href="#tab2"><?php echo $title2 ?><span class="title-sub hidden-mobile"><?php echo $subtitle2 ?></span class="title-sub"></a></h2></li>
+				<li class="tab2nd"><h2 class="title-tab"><a href="#tab2"><?php echo esc_html( $title2 ); ?><span class="title-sub hidden-mobile"><?php echo esc_html( $subtitle2 ); ?></span class="title-sub"></a></h2></li>
 				<?php endif; ?>
 			</ul>
 			<?php
@@ -162,7 +189,7 @@
 			endif;
 			?>
 
-			<div class="tabcontent group <?php echo $noTab ?>">
+			<div class="tabcontent group <?php echo esc_attr( $noTab ); ?>">
 
 				<div class="tab tab1 active flex-container group" id="tab1">
 
@@ -188,16 +215,16 @@
 							?>
 							<div class="profile-content">
 								<?php if ( $thumb != '' ) :
-									echo $thumb;
+									echo wp_kses( $thumb, $allowed );
 								endif; ?>
 								<div class="profile-content__body">
 									<h3>
 										<span class="intro">Featured expert</span>
-										<span class="name"><?php echo $name; ?></span>
-										<span class="bio"><?php echo $bio; ?></span>
+										<span class="name"><?php echo esc_html( $name ); ?></span>
+										<span class="bio"><?php echo esc_html( $bio ); ?></span>
 									</h3>
 									<div class="links">
-										<a class="primary" href="<?php echo $url; ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
+										<a class="primary" href="<?php echo esc_url( $url ); ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
 										<a href="/experts">See all our experts <i class="icon-arrow-right"></i></a>
 									</div>
 
@@ -207,13 +234,13 @@
 
 							<?php
 								}
-									echo $content1left;
+									echo wp_kses( $content1left, $allowed );
 								?>
 
 						</div>
 
 						<div class="flex-item second span3">
-							<?php echo $content1 ?>
+							<?php echo wp_kses( $content1, $allowed ); ?>
 						</div>
 
 				</div>
@@ -222,17 +249,17 @@
 				<div class="tab tab2 flex-container group" id="tab2">
 
 						<div class="flex-item first <?php if ( $content2wide ) : ?>span8 wideColumn<?php else : ?>span2<?php endif; ?>">
-						<?php echo $content2left ?>
+						<?php echo wp_kses( $content2left, $allowed ); ?>
 						
 						<?php if ( $reserveUrl != '' ) : ?>
-									<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
+									<a class="reserve hidden-phone" href="<?php echo esc_url( $reserveUrl ); ?>"><?php echo esc_html( $reserveText ); ?></a>
 						<?php endif; ?>
 
 						
 						</div>
 
 						<div class="flex-item second span6">
-							<?php echo $content2 ?>
+							<?php echo wp_kses( $content2, $allowed ); ?>
 						</div>
 
 				</div>
