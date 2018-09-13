@@ -77,7 +77,7 @@ function twentytwelve_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo $text_color; ?> !important;
+			color: #<?php echo esc_attr( $text_color ); ?> !important;
 		}
 	<?php endif; ?>
 	</style>
@@ -117,7 +117,7 @@ function twentytwelve_admin_header_style() {
 		margin-bottom: 24px;
 	}
 	#headimg img {
-		max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
+		max-width: <?php echo esc_attr( get_theme_support( 'custom-header', 'max-width' ) ); ?>px;
 	}
 	</style>
 <?php
@@ -130,19 +130,18 @@ function twentytwelve_admin_header_style() {
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_admin_header_image() {
+	$style = 'color: #' . get_header_textcolor() . ';';
+	if ( ! display_header_text() ) {
+		$style = 'display: none;';
+	}
 	?>
 	<div id="headimg">
-		<?php
-		if ( ! display_header_text() ) {
-			$style = ' style="display:none;"'; } else {
-			$style = ' style="color:#' . get_header_textcolor() . ';"'; }
-		?>
-		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<h2 id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
+		<h1><a id="name" style="<?php echo esc_attr( $style ); ?>" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<h2 id="desc" style="<?php echo esc_attr( $style ); ?>"><?php bloginfo( 'description' ); ?></h2>
 		<?php
 		$header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
-			<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+			<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="" />
 		<?php endif; ?>
 	</div>
 <?php }
