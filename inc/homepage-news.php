@@ -43,16 +43,16 @@
 	<div class="blockimage">
 
 		<?php if ( $newsVideo != '' ) : ?>
-			<div class="homepageVideo"><?php echo $newsVideo; ?></div>
+			<div class="homepageVideo"><?php echo esc_html( $newsVideo ); ?></div>
 		<?php else : ?>
 
 			<?php if ( $newsPhoto != '' ) : ?>
 
 			<?php if ( $newsUrl != '' ) : ?>
-				<a href="<?php echo $newsUrl; ?>">
+				<a href="<?php echo esc_url( $newsUrl ); ?>">
 			<?php endif; ?>
 
-			<img src="<?php echo $newsPhoto; ?>"  alt="<?php echo $newsTitle; ?>">
+			<img src="<?php echo esc_url( $newsPhoto ); ?>"  alt="<?php echo esc_attr( $newsTitle ); ?>">
 
 			<?php if ( $newsUrl != '' ) : ?>
 					</a>
@@ -69,12 +69,12 @@
 	</div> <!-- end blockimage -->
 	
 	<?php if ( $newsVideoURL != '' ) : ?>
-		<p><a href="<?php echo $newsVideoURL; ?>"><?php echo $newsVideoTitle; ?></a></p>
+		<p><a href="<?php echo esc_url( $newsVideoURL ); ?>"><?php echo esc_html( $newsVideoTitle ); ?></a></p>
 	<?php else : ?>
 
 		<?php if ( $newsTitle != '' && $newsUrl != '' ) : ?>
 	
-			<p><a href="<?php echo $newsUrl; ?>"><?php echo $newsTitle; ?></a></p>
+			<p><a href="<?php echo esc_url( $newsUrl ); ?>"><?php echo esc_html( $newsTitle ); ?></a></p>
 			<?php else : ?>
 			<!-- default news link -->
 			<p><a href="/news/finals-survival-libraries/10129/">Finals week survival kit from the MIT Libraries</a></p>
@@ -90,7 +90,7 @@
 				$nTitle = $news['title'];
 				$nUrl = $news['url'];
 
-				echo "<li><a href='$nUrl'>$nTitle</a></li>";
+				echo "<li><a href='" . esc_url( $nUrl ) . "'>" . esc_html( $nTitle ) . '</a></li>';
 
 			endforeach;
 		?>
