@@ -15,30 +15,30 @@
 
 		if ( is_front_page() ) {
 			if ( $alertLink != '' ) {
-				echo '<h1 class="alert"><a href="' . $alertLink . '">' . $alertText . '</a></h1>';
+				echo '<h1 class="alert"><a href="' . esc_url( $alertLink ) . '">' . esc_html( $alertText ) . '</a></h1>';
 				return;
 			} else {
-				echo '<h1 class="alert">' . $alertText . '</h1>';
+				echo '<h1 class="alert">' . esc_html( $alertText ) . '</h1>';
 				return;
 			}
 		}
 
 		if ( is_page( 'hours' ) ) {
 			if ( $alertLink != '' ) {
-				echo '<div class="libraryAlert"><span><a href="' . $alertLink . '">' . $alertText . '</a></span></div>';
+				echo '<div class="libraryAlert"><span><a href="' . esc_url( $alertLink ) . '">' . esc_html( $alertText ) . '</a></span></div>';
 				return;
 			} else {
-				echo '<div class="libraryAlert"><span>' . $alertText . '</span></div>';
+				echo '<div class="libraryAlert"><span>' . esc_html( $alertText ) . '</span></div>';
 				return;
 			}
 		}
 
 
 		if ( $alertLink != '' ) {
-			echo '<div class="libraryAlert"><a href="' . $alertLink . '">' . $alertText . '</a></div>';
+			echo '<div class="libraryAlert"><a href="' . esc_url( $alertLink ) . '">' . esc_html( $alertText ) . '</a></div>';
 			return;
 		} else {
-			echo '<div class="libraryAlert">' . $alertText . '</div>';
+			echo '<div class="libraryAlert">' . esc_html( $alertText ) . '</div>';
 			return;
 		}
 } else {
