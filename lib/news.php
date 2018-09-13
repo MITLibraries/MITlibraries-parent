@@ -217,13 +217,13 @@ function RenderPool( $items ) {
 			}
 		}
 
-		echo '<a class="post--full-bleed no-underline flex-container" href="' . $url . '">';
+		echo '<a class="post--full-bleed no-underline flex-container" href="' . esc_url( $url ) . '">';
 		echo '<div class="excerpt-news">';
-		echo $label;
-		echo $headline;
-		echo $eventDate;
+		echo esc_html( $label );
+		echo esc_html( $headline );
+		echo esc_html( $eventDate );
 		echo '</div>';
-		echo $imageElement;
+		echo esc_html( $imageElement );
 		echo '</a>';
 	}
 }
