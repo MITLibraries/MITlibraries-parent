@@ -33,11 +33,11 @@ get_header(); ?>
 
 			<article id="post-0" class="post no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentytwelve' ); ?></h1>
+					<h1 class="entry-title">Nothing Found</h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentytwelve' ); ?></p>
+					<p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->

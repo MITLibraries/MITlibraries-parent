@@ -341,11 +341,11 @@ function twentytwelve_content_nav( $html_id ) {
 	$html_id = esc_attr( $html_id );
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
+		<nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
+			<h3 class="assistive-text">Post navigation</h3>
 			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
 			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
-		</nav><!-- #<?php echo $html_id; ?> .navigation -->
+		</nav><!-- #<?php echo esc_attr( $html_id ); ?> .navigation -->
 	<?php endif;
 }
 endif;
@@ -369,7 +369,7 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'twentytwelve' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -384,19 +384,18 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span> Post author</span>' : ''
 					);
 					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
+						esc_attr( get_comment_time( 'c' ) ),
+						sprintf( '%1$s at %2$s', esc_html( get_comment_date() ), esc_html( get_comment_time() ) )
 					);
 				?>
 			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
+				<p class="comment-awaiting-moderation">Your comment is awaiting moderation.</p>
 			<?php endif; ?>
 
 			<section class="comment-content comment">
@@ -423,11 +422,9 @@ if ( ! function_exists( 'twentytwelve_entry_meta' ) ) :
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_entry_meta() {
-	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'twentytwelve' ) );
+	$categories_list = get_the_category_list( ', ' );
 
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
+	$tag_list = get_the_tag_list( '', ', ' );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -440,27 +437,39 @@ function twentytwelve_entry_meta() {
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		// Translators: View all posts by a given author.
 		esc_attr( sprintf( __( 'View all posts by %s', 'twentytwelve' ), get_the_author() ) ),
-		get_the_author()
+		esc_html( get_the_author() )
 	);
 
-	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		// Translators: Category, tag, date, and author values.
-		$utility_text = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
+		$utility_text = 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.';
 	} elseif ( $categories_list ) {
-		// Translators: Category, date, and author values.
-		$utility_text = __( 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
+		$utility_text = 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.';
 	} else {
-		// Translators: Date and author values.
-		$utility_text = __( 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
+		$utility_text = 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.';
 	}
 
+	$allowed = array(
+		'a' => array(
+			'class' => array(),
+			'href'  => array(),
+			'rel'   => array(),
+			'title' => array(),
+		),
+		'span' => array(
+			'class' => array(),
+		),
+		'time' => array(
+			'class'    => array(),
+			'datetime' => array(),
+		),
+	);
+
 	printf(
-		$utility_text,
-		$categories_list,
-		$tag_list,
-		$date,
-		$author
+		wp_kses( $utility_text, $allowed ),
+		wp_kses( $categories_list, $allowed ),
+		wp_kses( $tag_list, $allowed ),
+		wp_kses( $date, $allowed ),
+		wp_kses( $author, $allowed )
 	);
 }
 endif;
@@ -607,7 +616,7 @@ function getRoot( $post ) {
 function the_breadcrumb() {
 	if ( ! is_home() ) {
 		echo '<a href="';
-		echo get_option( 'home' );
+		echo esc_url( get_option( 'home' ) );
 		echo '">';
 		bloginfo( 'name' );
 		echo '</a> &raquo; ';
@@ -639,7 +648,7 @@ function showBreadTitle() {
 	$custom_title = $custom_title[0];
 	// $custom_title = get_field("breadcrumb_override");
 	if ( $custom_title != '' ) {
-	 echo $custom_title;
+	 echo esc_html( $custom_title );
 	} else {
 	 the_title();
 	}
@@ -648,6 +657,14 @@ function showBreadTitle() {
 function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	global $post;
+
+	$allowed = array(
+		'a' => array(
+			'href' => array(),
+			'rel' => array(),
+			'title' => array(),
+		),
+	);
 
 	// Do not show breadcrumbs on home or front pages.
 	// So we will just return quickly.
@@ -659,11 +676,11 @@ function wsf_breadcrumbs( $sep = '/', $label = 'Browsing' ) {
 
 	echo '<div class="breadcrumbs">';
 
-	echo wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP;
+	echo wp_kses( wsf_make_link( get_bloginfo( 'url' ), 'Home', get_bloginfo( 'name' ), true ) . $SEP, $allowed );
 
 	if ( is_single() ) {
-	the_category( ', ' );
-echo $SEP;
+		the_category( ', ' );
+		echo esc_html( $SEP );
 	} elseif ( is_page() ) {
 			$parent_id = $post->post_parent;
 			$parents = array();
@@ -674,7 +691,7 @@ echo $SEP;
 			}
 			$parents = array_reverse( $parents );
 			foreach ( $parents as $parent ) {
-				echo $parent;
+				echo wp_kses( $parent, $allowed );
 			}
 	}
 	// Wordpess function that echoes your post title.
@@ -738,6 +755,13 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 
 		global $post;
 
+		$allowed = array(
+			'a' => array(
+				'href' => array(),
+			),
+			'span' => array(),
+		);
+
 		if ( is_search() ) {
 			echo '<span>Search</span>';
 		}
@@ -759,8 +783,8 @@ if ( ! function_exists( 'better_breadcrumbs' ) ) {
 			$pageLink = get_permalink( $post );
 			$childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
 
-			if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . $parentBreadcrumb . '</span>';}
-			if ( $childBreadcrumb != '' ) {echo '<span>' . $pageTitle . '</span>';}
+			if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo wp_kses( '<span>' . $parentBreadcrumb . '</span>', $allowed );}
+			if ( $childBreadcrumb != '' ) {echo wp_kses( '<span>' . $pageTitle . '</span>', $allowed );}
 		}
 	}
 
