@@ -60,9 +60,7 @@ get_header(); ?>
 					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 60 ) ); ?>
 				</div><!-- .author-avatar -->
 				<div class="author-description">
-					<h2><?php
-						printf( 'About %s', get_the_author() ); ?>
-					</h2>
+					<h2><?php printf( 'About %s', get_the_author() ); ?></h2>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->

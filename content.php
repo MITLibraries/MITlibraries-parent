@@ -51,9 +51,7 @@
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 68 ) ); ?>
 					</div><!-- .author-avatar -->
 					<div class="author-description">
-						<h2><?php
-							printf( 'About %s', get_the_author() ); ?>
-						</h2>
+						<h2><?php printf( 'About %s', get_the_author() ); ?></h2>
 						<p><?php the_author_meta( 'description' ); ?></p>
 						<div class="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
