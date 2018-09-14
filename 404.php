@@ -19,7 +19,7 @@ get_header(); ?>
 						</header>
 
 						<div class="entry-content">
-							<h2>Search the Libraries\' web site:</h2>
+							<h2>Search the Libraries' web site:</h2>
 
 							<form action="https://www.google.com/cse" id="cse-search-box">
 								<div>

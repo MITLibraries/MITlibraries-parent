@@ -34,7 +34,7 @@ get_header(); ?>
 					Author Archives:
 					<span class="vcard">
 						<a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>" rel="me">
-							<?php get_the_author(); ?>
+							<?php the_author(); ?>
 						</a>
 					</span>
 				</h1>
