@@ -20,9 +20,7 @@ global $isRoot;
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand mobile-display">
-			<?php _e( 'View Menu' ); ?>
-		</a>
+		<a class="navbar-brand mobile-display">View Menu</a>
 	</div>
 
 	<?php

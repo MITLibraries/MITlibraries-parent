@@ -20,8 +20,7 @@ get_header(); ?>
 			<header class="archive-header">
 				<h1 class="archive-title">
 					<?php
-					// Translators: Category name.
-					printf( __( 'Category Archives: %s', 'twentytwelve' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+					printf( 'Category Archives: %s', '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
 				</h1>
 
 			<?php if ( category_description() ) : // Show an optional category description. ?>

@@ -15,11 +15,11 @@ get_header(); ?>
 
 					<article id="post-0" class="post error404 no-results not-found">
 						<header class="entry-header">
-							<h1 class="entry-title"><?php _e( 'This file was not found.', 'twentytwelve' ); ?></h1>
+							<h1 class="entry-title">This file was not found.</h1>
 						</header>
 
 						<div class="entry-content">
-							<h2><?php _e( 'Search the Libraries\' web site:', 'twentytwelve' ); ?></h2>
+							<h2>Search the Libraries\' web site:</h2>
 
 							<form action="https://www.google.com/cse" id="cse-search-box">
 								<div>
@@ -30,19 +30,19 @@ get_header(); ?>
 								</div>
 							</form>
 
-							<h2><?php _e( 'Browse our <a href="/about/site-search">A-Z index of pages</a> on this site.', 'twentytwelve' ); ?></h2>
+							<h2>Browse our <a href="/about/site-search">A-Z index of pages</a> on this site.</h2>
 
-							<p><?php _e( 'You can also check out these commonly-used resources:', 'twentytwelve' ); ?></p>
+							<p>You can also check out these commonly-used resources:</p>
 
 							<ul>
-								<li><?php _e( '<a href="//libraries.mit.edu/quicksearch">Quick search: Books, articles, &amp; more at MIT</a>', 'twentytwelve' ); ?></li>
-								<li><?php _e( '<a href="//libguides.mit.edu/directory">Staff directory</a>', 'twentytwelve' ); ?></li>
-								<li><?php _e( '<a href="/research-guides">Research guides - databases by subject</a>', 'twentytwelve' ); ?></li>
-								<li><?php _e( '<a href="/about/shortcuts/">Shortcuts to frequently used pages</a>', 'twentytwelve' ); ?></li>
-								<li><?php _e( '<a href="//web.mit.edu/search.html">MIT web site search</a>', 'twentytwelve' ); ?></li>
+								<li><a href="//libraries.mit.edu/quicksearch">Quick search: Books, articles, &amp; more at MIT</a></li>
+								<li><a href="//libguides.mit.edu/directory">Staff directory</a></li>
+								<li><a href="/research-guides">Research guides - databases by subject</a></li>
+								<li><a href="/about/shortcuts/">Shortcuts to frequently used pages</a></li>
+								<li><a href="//web.mit.edu/search.html">MIT web site search</a></li>
 							</ul>
 
-							<p><?php _e( '<a href="/ask">Need more help? Ask us!</a>', 'twentytwelve' ); ?></p>
+							<p><a href="/ask">Need more help? Ask us!</a></p>
 
 						</div><!-- .entry-content -->
 
