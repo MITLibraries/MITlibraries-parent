@@ -14,8 +14,8 @@ $isRoot = $section->ID == $post->ID;
 
 <div class="title-page">
 				<?php if ( $isRoot ) : ?>
-				<h1><?php echo $section->post_title; ?></h1>
+				<h1><?php echo esc_html( $section->post_title ); ?></h1>
 				<?php else : ?>
-				<a class="title-page-link" href="<?php echo get_permalink( $section->ID ) ?>"><?php echo $section->post_title; ?></a>
+				<a class="title-page-link" href="<?php echo esc_url( get_permalink( $section->ID ) ); ?>"><?php echo esc_html( $section->post_title ); ?></a>
 				<?php endif; ?>
 			</div>
