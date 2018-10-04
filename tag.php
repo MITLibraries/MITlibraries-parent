@@ -17,9 +17,8 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php
-					// Translators: Tag archives fora given tag.
-					printf( __( 'Tag Archives: %s', 'twentytwelve' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+				<h1 class="archive-title">
+					<?php printf( 'Tag Archives: %s', '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 				</h1>
 
 			<?php if ( tag_description() ) : // Show an optional tag description. ?>
