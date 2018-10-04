@@ -41,7 +41,6 @@
 				<ul class="list-unbulleted">
 					<li><a href="/fulltext">FullText Finder <span class="about">Find specific citations</span></a></li>
 					<li><a href="/google-scholar-tips">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
-					<li><a href="/libx">LibX <span class="about">Search/authenticate via browser</span></a></li>
 					<li><a href="/dspace">DSpace@MIT <span class="about">MIT research</span></a></li>
 					<li><a href="/dome">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
 					<li><a href="/about/site-search">Site search</a></li>
@@ -122,7 +121,7 @@
 					<li><a href="/ask">Ask us <span class="about">Email, chat, call, drop by</span></a></li>
 					<li><a href="/experts">Research guides &amp; expert librarians <span class="about">For every research interest</span></a></li>
 					<li><a href="/offcampus">Connect from on and off-campus <span class="about">Tips &amp; tricks</span></a></li>
-					<li><a href="/productivity-tools">Productivity tools <span class="about">Apps, LibX, RSS, etc.</span></a></li>
+					<li><a href="/productivity-tools">Productivity tools <span class="about">Apps, RSS, etc.</span></a></li>
 					<li><a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a></li>
 					<li><a href="/research-support" class="bottom">More research support</a></li>
 				</ul>
@@ -162,6 +161,7 @@
 				<a href="/news">News</a>
 				<a href="/exhibits">Exhibits &amp; galleries</a>
 				<a href="/news/in-the-media">In the media</a>
+				<a href="/mit-reads/">MIT Reads</a>
 		  </div>
 		</div><!-- end div.links-sub -->
 	</li><!-- end div.links-primary -->
