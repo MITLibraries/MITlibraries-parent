@@ -896,3 +896,13 @@ function ssl_srcset( $sources ) {
 	return $sources;
 }
 add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
+
+/**
+ * Add background-image to the list of allowed inline style rules.
+ *
+ * @link https://wordpress.stackexchange.com/questions/173526/why-is-wp-kses-not-keeping-style-attributes-as-expected/195433#195433
+ */
+add_filter( 'safe_style_css', function( $styles ) {
+	$styles[] = 'background-image';
+	return $styles;
+} );
