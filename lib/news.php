@@ -236,7 +236,7 @@ function RenderPool( $items ) {
 				// We use "original" even though this is already cropped to avoid cropping again.
 				$imageURL = wp_get_attachment_image_src( $image->cropped_image, 'original' );
 				$imageURL = str_replace( '/wp-content/uploads/', '/news/files/', $imageURL[0] );
-				$imageElement = '<div class="image" style="background-image: url(' . $imageURL . ')"></div>';
+				$imageElement = '<div class="image" style="background: url(' . $imageURL . ')"></div>';
 			}
 		}
 
