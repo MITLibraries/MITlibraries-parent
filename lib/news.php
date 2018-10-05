@@ -143,6 +143,29 @@ function build_url( $item, $custom ) {
 }
 
 function RenderPool( $items ) {
+	$allowed_html = array(
+		'a'    => array(
+			'class' => array(),
+			'href' => array(),
+		),
+		'div'  => array(
+			'class' => array(),
+			'style' => array(),
+		),
+		'h3'   => array(
+			'class' => array(),
+		),
+		'img'  => array(
+			'alt' => array(),
+			'height' => array(),
+			'src' => array(),
+			'weight' => array(),
+		),
+		'span' => array(
+			'class' => array(),
+		),
+	);
+
 	// This takes an input recordset of news items and renders it as HTML.
 	foreach ( $items as $item ) {
 		$custom = get_post_custom( $item->ID );
@@ -217,13 +240,13 @@ function RenderPool( $items ) {
 			}
 		}
 
-		echo '<a class="post--full-bleed no-underline flex-container" href="' . $url . '">';
+		echo '<a class="post--full-bleed no-underline flex-container" href="' . esc_url( $url ) . '">';
 		echo '<div class="excerpt-news">';
-		echo $label;
-		echo $headline;
-		echo $eventDate;
+		echo wp_kses( $label, $allowed_html );
+		echo wp_kses( $headline, $allowed_html );
+		echo wp_kses( $eventDate, $allowed_html );
 		echo '</div>';
-		echo $imageElement;
+		echo wp_kses( $imageElement, $allowed_html );
 		echo '</a>';
 	}
 }
