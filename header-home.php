@@ -78,8 +78,7 @@
 
 		?>
 
-		<div class="brand-splash big">
-			<a class="btn-minimize" title="minimize" href=""><span class="sr">Minimize</span><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+		<div class="brand-splash compact">
 
 			<div class="wrap-lead">
 				<h2 class="lead">The future of knowledge depends on libraries. That future starts here.</h2>

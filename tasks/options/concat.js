@@ -33,7 +33,6 @@ module.exports = {
       'js/experts-home.js',
       'js/ga_discovery.js',
       'js/alerts.js',
-      'js/brand.js',
       'js/fonts.js'
     ],
     dest: 'js/build/home.js'
