@@ -1265,12 +1265,24 @@ a.comment-edit-link:hover {
 /* Search Form / 404 page
 -------------------------------------------------------------- */
 
-.error404 form#cse-search-box {
-	margin-bottom: 25px;
+.error404 .entry-header {
+	margin: 3rem 0;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 2rem;
 }
 
-.error404 #content {
-	padding: 0 15px;
+.error404 .entry-content h2 {
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 1em;
+}
+
+.error404 .entry-content form {
+	margin-bottom: 2r em;
+}
+
+.error404 p {
+	margin: 1em 0;
 }
 
 /* =Media queries
