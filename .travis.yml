@@ -21,13 +21,9 @@ matrix:
   include:
     # Declare versions of PHP to use. Use one decimal max.
     - php: '5.3'
-      env: PHPCS_BRANCH=2.9.1
-      env: PHPCS_SCRIPT=scripts
-      env: SNIFF=1
+      env: PHPCS_BRANCH=2.9.1 PHPCS_SCRIPT=scripts SNIFF=1
     - php: '7.1'
-      env: PHPCS_BRANCH=master
-      env: PHPCS_SCRIPT=bin
-      env: SNIFF=1
+      env: PHPCS_BRANCH=master PHPCS_SCRIPT=bin SNIFF=1
     - php: 'nightly'
 
   allow_failures:
