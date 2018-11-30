@@ -45,13 +45,13 @@ before_script:
   - export WPCS_DIR=/tmp/wpcs
   - export WPCS_BRANCH=master
   # Install WordPress Coding Standards (master branch, not develop).
-  - if [[ "$SNIFF" == "1" ]]; git clone -b $WPCS_BRANCH https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
+  - if [[ "$SNIFF" == "1" ]]; then git clone -b $WPCS_BRANCH https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
   # Install CodeSniffer for WordPress Coding Standards checks (pre 3.x version).
-  - if [[ "$SNIFF" == "1" ]]; git clone -b $PHPCS_BRANCH https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
-  - if [[ "$SNIFF" == "1" ]]; $PHPCS/bin/phpcs --version; fi
+  - if [[ "$SNIFF" == "1" ]]; then git clone -b $PHPCS_BRANCH https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
+  - if [[ "$SNIFF" == "1" ]]; then $PHPCS/bin/phpcs --version; fi
   # Set install path for WordPress Coding Standards.
   # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-  - if [[ "$SNIFF" == "1" ]]; $PHPCS/bin/phpcs --config-set installed_paths $WPCS_DIR; fi
+  - if [[ "$SNIFF" == "1" ]]; then $PHPCS/bin/phpcs --config-set installed_paths $WPCS_DIR; fi
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash
 
@@ -73,7 +73,7 @@ script:
   # --extensions: Only sniff PHP files.
   # --report=source: Return summary table
   # --report=full: Returns verbose list of problems by test and line
-  - if [[ "$SNIFF" == "1" ]]; $PHPCS_DIR/bin/phpcs -p -s -v -n . --standard=./codesniffer.mitlib.xml --extensions=php --report=source --report=full; fi
+  - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p -s -v -n . --standard=./codesniffer.mitlib.xml --extensions=php --report=source --report=full; fi
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
