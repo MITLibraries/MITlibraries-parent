@@ -33,11 +33,20 @@ h3 {
 }
 
 a {
-	color: $brand-primary-accent;
+	color: $brand-primary;
 	text-decoration: none;
 	&:hover {
-		color: darken($color-link-primary, 20%);
+		color: $brand-primary-accent;
 		text-decoration: underline;
+	}
+}
+
+.content a {
+	color: $brand-primary;
+	text-decoration: underline;
+	&:hover {
+		color: $brand-primary-accent;
+		text-decoration: none;
 	}
 }
 
