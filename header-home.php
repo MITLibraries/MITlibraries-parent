@@ -18,6 +18,7 @@
 <!-- <meta name="format-detection" content="telephone=no"> -->
 <!--<meta name="viewport" content="width=device-width" />-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The libraries of the Massachusetts Institute of Technology - Search, Visit, Research, Explore" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <meta property="og:title" content="MIT Libraries"/>
 <meta property="og:image" content="//libraries.mit.edu/wp-content/themes/libraries/images/mit-libraries-logo-bg-black-1200-1200.png"/>
