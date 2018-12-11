@@ -1,14 +1,23 @@
 // Main button styles
 
-[class*="button-primary"] {
+[class*="button-primary"], 
+.wrap-page [class*="button-primary"] {
 	@extend %button-primary;
+	&:hover {
+		color: $color-text--light;
+	}
 }
 
-[class*="button-secondary"] {
+[class*="button-secondary"], 
+.wrap-page [class*="button-secondary"] {
 	@extend %button-secondary;
+	&:hover {
+		color: $color-text--light;
+	}
 }
 
-[class*="button-tertiary"] {
+[class*="button-tertiary"],
+.wrap-page [class*="button-tertiary"] {
 	@extend %button-tertiary;
 }
 
@@ -17,28 +26,28 @@
 .button-primary--green {
 	@include color-button-primary($green-sea);
 	&.border {
-		@include color-button-primary--border($green-sea)
+		@include color-button-primary--border($green-sea);
 	}
 }
 
 .button-primary--orange {
 	@include color-button-primary($orange-dark);
 	&.border {
-		@include color-button-primary--border($orange-dark)
+		@include color-button-primary--border($orange-dark);
 	}
 }
 
 .button-primary--magenta {
 	@include color-button-primary($magenta-dark);
 	&.border {
-		@include color-button-primary--border($magenta-dark)
+		@include color-button-primary--border($magenta-dark);
 	}
 }
 
 .button-primary--blue {
 	@include color-button-primary($blue-royal);
 	&.border {
-		@include color-button-primary--border($blue-royal)
+		@include color-button-primary--border($blue-royal);
 	}
 }
 

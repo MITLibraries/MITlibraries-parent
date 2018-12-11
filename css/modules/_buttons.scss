@@ -37,6 +37,8 @@
 	color: $color-text--light;
 	display: block;
 	font-size: 1em;
+	font-weight: 600;
+	text-decoration: none;
 	margin: 1em auto;
 	transition: background $timer-primary ease;
 	width: 100%;
@@ -80,6 +82,7 @@
 	display: inline-block;
 	font-size: 0.875em;
 	font-weight: 600;
+	text-decoration: none;
 	transition: background $timer-primary ease,
 							border-color $timer-primary ease,
 							color $timer-primary ease;
