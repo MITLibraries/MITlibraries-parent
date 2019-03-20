@@ -151,10 +151,11 @@
   .main-nav-header {
     height: 100%;
     font-size: 100%;
-
+    
+    //accessible menu opener buttons
     button {
       border: 0;
-      background: inherit;
+      background: #fff;
       background-image: none;
       font-size: inherit;
       padding: 0;
