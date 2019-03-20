@@ -53,7 +53,7 @@
 		@include rem-first(padding-bottom, 0.4); // Matches logo padding
 		color: $white;
 		text-transform: uppercase;
-		font-size: 0.5rem;
+		font-size: 0.75rem;
 
 		svg {
 			fill: #c8c8c8;
@@ -123,6 +123,10 @@
 	width:1px; 
 	height:1px; 
 	overflow:hidden;
+	background: #fff;
+	color: blue;
+	display: block;
+	padding: 10px;
 		&:focus {
 			position:static; 
 			width:auto; 
