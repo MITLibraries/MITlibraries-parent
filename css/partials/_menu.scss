@@ -53,7 +53,7 @@
       font-size: 0.75em;
 
       a {
-        @include rem-first(padding, 1 0.5 0.5 0.5);
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
         align-items: center;
         flex-direction: column;
         text-transform: uppercase;
