@@ -262,7 +262,7 @@ body#libraries-homepage {
 			}
 		}
 		.hours {
-			color: #7b7b7b;
+			color: #555;
 			display: inline-block;
 			font-size: 0.875em;
 			font-weight: normal;
@@ -312,12 +312,12 @@ body#libraries-homepage {
 			}
 		}
 		.location-info {
-			color: #7b7b7b;
+			color: #555;
 			font-size: 0.875em;
 			font-weight: normal;
 		}
 		.map-location {
-			color: #7b7b7b;
+			color: #555;
 			&::before {
 				content: url(#{$imagesPath}/pin-sfw.svg);
 				display: inline-block;
@@ -364,7 +364,7 @@ body#libraries-homepage {
 			}
 		}
 		.phone {
-			color: #7b7b7b;
+			color: #555;
 			&:before {
 				content: url(#{$imagesPath}/phone-mobile-sfw.svg);
 				display: inline-block;

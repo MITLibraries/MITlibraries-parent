@@ -50,10 +50,10 @@
 
     @include bp-tablet--portrait {
       display: block;
-      font-size: 0.5em;
+      font-size: 0.75em;
 
       a {
-        @include rem-first(padding-bottom, 0.5);
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
         align-items: center;
         flex-direction: column;
         text-transform: uppercase;
@@ -62,7 +62,7 @@
       svg {
         display: block;
         fill: #fff;
-        margin-bottom: 1em;
+        margin-bottom: .4em;
       }
     }
 
@@ -71,6 +71,7 @@
 
       a {
         text-transform: none;
+        padding-top: 2em;
       }
 
       svg {
@@ -150,10 +151,11 @@
   .main-nav-header {
     height: 100%;
     font-size: 100%;
-
+    
+    //accessible menu opener buttons
     button {
       border: 0;
-      background: inherit;
+      background: #fff;
       background-image: none;
       font-size: inherit;
       padding: 0;
@@ -329,7 +331,7 @@
     @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
     color: $black;
     display: block;
-    font-size: 0.6em;
+    font-size: 0.75em;
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 0;
