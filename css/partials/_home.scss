@@ -299,12 +299,12 @@ body#libraries-homepage {
 			transition: background 0.1s ease;
 			@include bp-mobile--only {
 				&:not(.hidden-mobile) {
-					border-bottom: 1px solid $color-secondary;
+					border-top: 1px solid $color-secondary;
 					display: flex;
 				}
 			}
 			@include bp-tablet--portrait {
-				border-bottom: 1px solid $color-secondary;
+				border-top: 1px solid $color-secondary;
 				padding: 1em;
 				&:not(.show-more) {
 					display: flex;
@@ -324,9 +324,24 @@ body#libraries-homepage {
 				margin-right: 0.25em; 
 			}
 		}
+		.location-hayden-reno {
+			padding: .5rem 1em;
+			color: #008700;
+			margin: 0;
+			p {
+				margin-bottom: 0 !important;
+				font-weight: 600;
+			}
+			a {
+				color: #008700;
+			}
+			a:after {
+				content: ' »';
+			}
+		}
 		.more {
 			align-items: center;
-			border-bottom: 1px solid $color-secondary;
+			border-top: 1px solid $color-secondary;
 			display: flex;
 			justify-content: center;
 			text-align: center;
