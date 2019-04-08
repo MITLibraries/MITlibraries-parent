@@ -38,7 +38,7 @@
 
 			@include bp-tablet--portrait {
 				@include rem-first(max-height, 2.75);
-				width: auto;
+				width: 120px;
 			}
 		}
 		title {
