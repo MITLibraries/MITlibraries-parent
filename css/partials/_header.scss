@@ -106,17 +106,13 @@
 	}
 
 	.logo-mit {
-		display: none;
+		display: block;
 		height: auto;
 		@include rem-first(max-height, 2.8125);
 		fill: #b9b7b6;
 
 		.color {
 			fill: #fff;
-		}
-
-		@include bp-tablet--portrait {
-			display: block;
 		}
 	}
 }
