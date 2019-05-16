@@ -93,28 +93,30 @@
 
 	.link-logo-mit {
 		display: none;
-		max-width: 59px;
+		align-self: flex-end;
+		order: 4;
+		@include rem-first(margin-bottom, 0.5);
 		margin-left: 0.5em;
+		max-width: 59px;
 		@include rem-first(max-width, 3.6875);
 
 		@include bp-tablet--portrait {
-			align-self: flex-end;
 			display: block;
-			order: 4;
-			@include rem-first(margin-bottom, 0.5);
 		}
 	}
 
 	.logo-mit {
 		display: none;
+		height: auto;
+		@include rem-first(max-height, 2.8125);
+		fill: #b9b7b6;
+
+		.color {
+			fill: #fff;
+		}
+
 		@include bp-tablet--portrait {
 			display: block;
-			height: auto;
-			@include rem-first(max-height, 2.8125);
-			fill: #b9b7b6;
-			.color {
-				fill: #fff;
-			}
 		}
 	}
 }
