@@ -60,7 +60,7 @@
 					<li><a href="/barker">Barker Library</a></li>
 					<li><a href="/dewey">Dewey Library</a></li>
 					<li><a href="/hayden">Hayden Library</a></li>
-					<li><a href="/archives">Institute Archives &amp; Special Collections</a></li>
+					<li><a href="/archives">Distinctive Collections</a></li>
 					<li><a href="/music">Lewis Music Library</a></li>
 					<li><a href="/lsa">Library Storage Annex</a></li>
 					<li><a href="/rotch">Rotch Library</a></li>
