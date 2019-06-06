@@ -15,21 +15,11 @@ $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
-// Read and treat Shibboleth EPPN value for use in page.
-$eppn = shibboleth_eppn();
-
 get_header();
 
 ?>
 <script language="JavaScript" type="text/javascript">
-  <!--
-  /** Add any load time jquery actions here */
-  $(document).ready(function() {
-	if (cookie_functions.readCookie("libForma") != null) {
-		cookie_functions.setDocumentValues("libForma", ",", "=");
-	}
-});
-
+<!--
 document.addEventListener( 'wpcf7mailsent', function( event ) {
 	ga( 'send', 'event', 'Form', 'submit' );
 }, false );
@@ -80,24 +70,4 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 		</div><!-- end div#stage -->
 		
 		<?php endwhile; ?>
-<form id="loginForm">
-	<input type="hidden" id="eppn" name="eppn" value="<?php echo esc_attr( $eppn ); ?>">
-</form>
-
-<script type="text/javascript">
-<!--
-$(document).ready(function() {
-
-	eppn = document.getElementById("eppn").value;
-	if (eppn) {
-
-		loginFunctions.doAuthenticate(eppn);
-		var timeout = setTimeout('cookie_functions.setDocumentValues("libForma",",","=")',5000);
-
-	}
-
-});
-
--->
-</script>
 <?php get_footer(); ?>
