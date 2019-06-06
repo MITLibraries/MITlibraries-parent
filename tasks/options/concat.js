@@ -12,14 +12,6 @@ module.exports = {
     ],
     dest: 'js/build/production.js'
   },
-  forms: {
-    src: [
-      'js/forms/logins.js',
-      'js/forms/base64.js',
-      'js/forms/cookies.js'
-    ],
-    dest: 'js/build/forms.js'
-  },
   home: {
     src: [
       'js/dev.js',
