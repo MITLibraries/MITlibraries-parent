@@ -20,43 +20,18 @@
  * @since 1.7.0
  */
 
-// Read and treat Shibboleth EPPN value for use in page.
-$eppn = shibboleth_eppn();
-
+// I am 99% certain that this template is no longer needed.
 get_header();
 ?>
-
-<script type="text/javascript">
-function getCookie(name) {
-	var i,x,y,ARRcookies = document.cookie.split(";");
-	for (i = 0;i < ARRcookies.length;i++) {
-		x = ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-		y = ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-		x = x.replace(/^\s+|\s+$/g,"");
-		if (x == name) {
-			return unescape(y);
-		}
-	}
-}
-
-var referer = document.referer;
-var redirecTo = "";
-
-$(document).ready(function() {
-	if (referer != "" && referer != "undefined") {
-		start = location.href.indexOf("pid");
-		newlocation = location.href.substr(start);
-		redirecTo = newlocation.substr(newlocation.indexOf("=")+1);
-		eppn = '<?php echo esc_js( $eppn ); ?>';
-		loginFunctions.doAuthenticate(eppn, redirecTo);
-	 }
-});
-</script>
 
 <div class="loading-container" align="center">
 	<div class="inner">Loading, please wait . . .
 		<img class="loading" src="/images/load.gif" alt="Loading..." />
 	</div>
 </div>
+
+<?php
+get_footer();
+?>
 </body>
 </html>
