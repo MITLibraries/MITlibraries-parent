@@ -14,11 +14,21 @@ get_header(); ?>
 				<div class="main-content content-main">
 
 					<article id="post-0" class="post error404 no-results not-found">
-						<header class="entry-header">
-							<h1 class="entry-title">This file was not found.</h1>
-						</header>
 
-						<?php get_template_part( 'inc/site-search' ); ?>
+						<?php if ( is_active_sidebar( 'sidebar-404' ) ) { ?>
+
+							<div id="sidebar-404" class="widget-area" role="complementary">
+								<?php dynamic_sidebar( 'sidebar-404' ); ?>
+							</div>
+
+						<?php } else { ?>
+
+							<header class="entry-header">
+								<h1 class="entry-title">The requested content was not found.</h1>
+							</header>
+							<?php get_template_part( 'inc/site-search' ); ?>
+
+						<?php } ?>
 
 					</article><!-- #post-0 -->
 
