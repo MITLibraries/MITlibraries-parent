@@ -412,54 +412,19 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 endif;
 
 if ( ! function_exists( 'twentytwelve_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
- *
- * Create your own twentytwelve_entry_meta() to override in a child theme.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_entry_meta() {
-	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'twentytwelve' ) );
-
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
-
-	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
-
-	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		// Translators: View all posts by a given author.
-		esc_attr( sprintf( __( 'View all posts by %s', 'twentytwelve' ), get_the_author() ) ),
-		get_the_author()
-	);
-
-	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
-	if ( $tag_list ) {
-		// Translators: Category, tag, date, and author values.
-		$utility_text = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
-	} elseif ( $categories_list ) {
-		// Translators: Category, date, and author values.
-		$utility_text = __( 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
-	} else {
-		// Translators: Date and author values.
-		$utility_text = __( 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.', 'twentytwelve' );
+	/**
+	 * Normally this function prints HTML with meta information for current
+	 * post: categories, tags, permalink, author, and date. HOWEVER, our theme
+	 * makes no use of this feature by design, and in its unaltered form there
+	 * is a downside to having this code in place.
+	 *
+	 * We've thus removed the function almost entirely.
+	 *
+	 * @since Twenty Twelve 1.0
+	 */
+	function twentytwelve_entry_meta() {
+		return false;
 	}
-
-	printf(
-		$utility_text,
-		$categories_list,
-		$tag_list,
-		$date,
-		$author
-	);
-}
 endif;
 
 if ( ! function_exists( 'is_child_page' ) ) {
