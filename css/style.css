@@ -1265,24 +1265,37 @@ a.comment-edit-link:hover {
 /* Search Form / 404 page
 -------------------------------------------------------------- */
 
-.error404 .entry-header {
+article.error404 .entry-header,
+article.error404 h2.widget-title {
 	margin: 3rem 0;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 2rem;
 }
 
-.error404 .entry-content h2 {
-	font-size: 18px;
+article.error404 h2.widget-title,
+article.error404 h1.entry-title {
+	font-size: 25px;
 	font-weight: normal;
 	margin-top: 1em;
 }
 
-.error404 .entry-content form {
-	margin-bottom: 2r em;
+article.error404 .entry-content form {
+	margin-bottom: 2rem;
 }
 
-.error404 p {
+article.error404 p {
 	margin: 1em 0;
+}
+
+article.error404 ul {
+	margin-bottom: 10px;
+}
+
+article.error404 ul li {
+	list-style: disc;
+	margin-left: 40px;
+	margin-bottom: 5px;
+	line-height: 23px;
 }
 
 /* =Media queries
