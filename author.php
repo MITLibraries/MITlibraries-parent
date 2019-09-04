@@ -10,75 +10,52 @@
  * @since 1.2.1
  */
 
-get_header(); ?>
+get_header();
 
-	<section id="primary" class="site-content">
-		<div id="content" role="main">
+$sidebar_class = '';
+if ( is_active_sidebar( 'sidebar-1' ) ) {
+	$sidebar_class = 'has-sidebar';
+}
+?>
 
-		<?php if ( have_posts() ) : ?>
+<div id="stage" class="inner" role="main">
+	<div id="content" class="content <?php echo esc_attr( $sidebar_class ); ?>">
 
-			<?php
+		<div class="content-main main-content">
 
-				/*
-				 * Queue the first post, that way we know
-				 * what author we're dealing with (if that is the case).
-				 *
-				 * We reset this later so we can run the loop
-				 * properly with a call to rewind_posts().
-				 */
-				the_post();
-			?>
+			<?php if ( have_posts() ) : ?>
+				<?php
 
-			<header class="archive-header">
-				<h1 class="archive-title">
-					Author Archives:
-					<span class="vcard">
-						<a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>" rel="me">
+					/*
+					 * Queue the first post, that way we know
+					 * what author we're dealing with (if that is the case).
+					 *
+					 * We reset this later so we can run the loop
+					 * properly with a call to rewind_posts().
+					 */
+					the_post();
+				?>
+				<header class="archive-header">
+					<h1 class="archive-title">
+						Author Archives:
+						<span class="vcard">
 							<?php the_author(); ?>
-						</a>
-					</span>
-				</h1>
-			</header><!-- .archive-header -->
-
-			<?php
-
-				/*
-				 * Since we called the_post() above, we need to
-				 * rewind the loop back to the beginning that way
-				 * we can run the loop properly, in full.
-				 */
-				rewind_posts();
-			?>
-
-			<?php twentytwelve_content_nav( 'nav-above' ); ?>
-
-			<?php
-			// If a user has filled out their description, show a bio on their entries.
-			if ( get_the_author_meta( 'description' ) ) : ?>
-			<div class="author-info">
-				<div class="author-avatar">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 60 ) ); ?>
-				</div><!-- .author-avatar -->
-				<div class="author-description">
-					<h2><?php printf( 'About %s', get_the_author() ); ?></h2>
-					<p><?php the_author_meta( 'description' ); ?></p>
-				</div><!-- .author-description	-->
-			</div><!-- .author-info -->
+						</span>
+					</h1>
+				</header><!-- .archive-header -->
 			<?php endif; ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+			<?php
+			/* We removed the loop because we don't use this display template. */
+			?>
 
-			<?php twentytwelve_content_nav( 'nav-below' ); ?>
+		</div>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+			<?php get_sidebar(); ?>
 		<?php endif; ?>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
+	</div>
+</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
