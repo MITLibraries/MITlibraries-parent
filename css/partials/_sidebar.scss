@@ -100,6 +100,12 @@
 			font-size: 1em;
 		}
 	}
+	.no-top-border {
+		border-top: none;
+	}
+	.collapse-top-margin {
+		margin-top: -30px;
+	}
 }
 
 .ie8 .sidebar .widget {

@@ -1,0 +1,73 @@
+.entry-content {
+
+	table.pentagram {
+
+		thead {
+
+			tr {
+
+				th {
+					background: black;
+					color: white;
+					padding: 8px;
+				}
+			}
+		}
+
+		tbody {
+
+			tr {
+
+				background: white;
+				color: black;
+
+				&:nth-of-type(even) {
+					background: #eee;
+				}
+
+				td {
+					padding: 8px;
+				}
+
+				th {
+					padding: 8px;
+				}
+			}
+		}
+
+		border-bottom: 1px solid black;
+	}
+
+	// This style will right-align all cells except the first column.
+	// It assumes that tbody rows have a th element to start.
+	table.right-aligned {
+
+		thead {
+
+			tr {
+
+				th {
+					text-align: right;
+
+					&:first-of-type {
+						text-align: left;
+					}
+				}
+			}
+		}
+
+		tbody {
+
+			tr {
+
+				th {
+					text-align: left;
+				}
+
+				td {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

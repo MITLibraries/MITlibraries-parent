@@ -191,7 +191,7 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_script( 'homeJS' );
 	}
 
-	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) ) {
+	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) || is_page_template( 'page.php' ) ) {
 		wp_enqueue_style( 'mitlib-forms' );
 		wp_enqueue_script( 'formsJS' );
 	}
