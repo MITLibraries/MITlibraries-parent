@@ -150,7 +150,6 @@
 					<li><a href="/about/organization">About our organization</a></li>
 					<li><a href="/contact">Contact us</a></li>
 					<li><a href="/jobs">Jobs</a></li>
-					<li><a href="/about/experiments/">Experiments at the Libraries</a></li>
 					<li><a href="/giving">Giving to the MIT Libraries</a></li>
 					<li><a href="/about" class="bottom">More about us</a></li>
 				</ul>
