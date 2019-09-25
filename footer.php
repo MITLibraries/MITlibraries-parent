@@ -17,7 +17,7 @@
 				<a href="/vera" class="link-sub">Vera: E-journals &amp; databases</a>
 				<a href="/worldcat" class="link-sub">WorldCat</a>
 				<a href="/barton-reserves" class="link-sub">Course reserves</a>
-				<a href="/about/site-search" class="link-sub">Site search</a>
+				<a href="/site-search" class="link-sub">Site search</a>
 				<a href="/search" class="link-sub">More search options</a>
 			</div>
 			<div class="flex-item">
@@ -51,7 +51,7 @@
 				<a href="/news" class="link-sub">News</a>
 				<a href="/events" class="link-sub">Classes &amp; events</a>
 				<a href="/use-policies" class="link-sub">Use policy</a>
-				<a href="/about/site-search/" class="link-sub">Services A-Z</a>
+				<a href="/site-search/" class="link-sub">Services A-Z</a>
 				<a href="/about" class="link-sub">More about us</a>
 			</div>
 		</div><!-- end div.links-all -->

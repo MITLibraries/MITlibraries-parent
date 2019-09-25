@@ -20,7 +20,7 @@
 		</div>
 	</form>
 
-	<h2>Browse our <a href="/about/site-search">A-Z index of pages</a> on this site.</h2>
+	<h2>Browse our <a href="/site-search">A-Z index of pages</a> on this site.</h2>
 
 	<p>You can also check out these commonly-used resources:</p>
 

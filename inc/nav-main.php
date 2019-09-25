@@ -43,7 +43,7 @@
 					<li><a href="/google-scholar-tips">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
 					<li><a href="/dspace">DSpace@MIT <span class="about">MIT research</span></a></li>
 					<li><a href="/dome">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
-					<li><a href="/about/site-search">Site search</a></li>
+					<li><a href="/site-search">Site search</a></li>
 				</ul>
 		  </div>
 		</div><!-- end div.links-sub -->
