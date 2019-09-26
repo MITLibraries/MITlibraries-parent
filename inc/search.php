@@ -22,7 +22,7 @@
 			<a href="/barton">Barton (classic search)</a>
 			<a href="/worldcat">WorldCat</a>
 			<a href="/reserves">Course reserves</a>
-			<a href="/about/site-search">Site search</a>
+			<a href="/site-search">Site search</a>
 			<a href="/quicksearch">It's coming in June! Try our new search early</a>
 		</div>
 	</div>

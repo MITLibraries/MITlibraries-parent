@@ -43,7 +43,7 @@
 					<li><a href="/google-scholar-tips">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
 					<li><a href="/dspace">DSpace@MIT <span class="about">MIT research</span></a></li>
 					<li><a href="/dome">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
-					<li><a href="/about/site-search">Site search</a></li>
+					<li><a href="/site-search">Site search</a></li>
 				</ul>
 		  </div>
 		</div><!-- end div.links-sub -->
@@ -61,7 +61,7 @@
 					<li><a href="/dewey">Dewey Library</a></li>
 					<li><a href="/hayden">Hayden Library</a></li>
 					<li><a href="/rotch">Rotch Library</a></li>
-					<li><a href="/archives">Distinctive Collections</a></li>
+					<li><a href="/distinctive-collections">Distinctive Collections</a></li>
 					<li><a href="/music">Lewis Music Library</a></li>
 					<li><a href="/lsa">Library Storage Annex</a></li>
 					<li><a href="/hours" class="bottom">All hours &amp; locations</a></li>

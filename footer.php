@@ -17,7 +17,7 @@
 				<a href="/vera" class="link-sub">Vera: E-journals &amp; databases</a>
 				<a href="/worldcat" class="link-sub">WorldCat</a>
 				<a href="/barton-reserves" class="link-sub">Course reserves</a>
-				<a href="/about/site-search" class="link-sub">Site search</a>
+				<a href="/site-search" class="link-sub">Site search</a>
 				<a href="/search" class="link-sub">More search options</a>
 			</div>
 			<div class="flex-item">
@@ -51,7 +51,7 @@
 				<a href="/news" class="link-sub">News</a>
 				<a href="/events" class="link-sub">Classes &amp; events</a>
 				<a href="/use-policies" class="link-sub">Use policy</a>
-				<a href="/about/site-search/" class="link-sub">Services A-Z</a>
+				<a href="/site-search/" class="link-sub">Services A-Z</a>
 				<a href="/about" class="link-sub">More about us</a>
 			</div>
 		</div><!-- end div.links-all -->
@@ -88,16 +88,16 @@
 
 					</a><!-- End Instagram -->
 					
+					<a href="//www.youtube.com/user/MITLibraries" title="YouTube">
+						<svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon-social--youtube"><path fill="black" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" class=""></path></svg>
+						<span class="sr">YouTube</span>
+					</a><!-- End YouTube -->
+
 					<a href="//libguides.mit.edu/mit-feeds" title="RSS">
 						<svg class="icon-social--rss" width="2048" height="2048" viewBox="-320 -384 2048 2048" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 -1) translate(0 -1280)"><path d="M384 192q0 -80 -56 -136t-136 -56t-136 56t-56 136t56 136t136 56t136 -56t56 -136zM896 69q2 -28 -17 -48q-18 -21 -47 -21h-135q-25 0 -43 16.5t-20 41.5q-22 229 -184.5 391.5t-391.5 184.5q-25 2 -41.5 20t-16.5 43v135q0 29 21 47q17 17 43 17h5q160 -13 306 -80.5 t259 -181.5q114 -113 181.5 -259t80.5 -306zM1408 67q2 -27 -18 -47q-18 -20 -46 -20h-143q-26 0 -44.5 17.5t-19.5 42.5q-12 215 -101 408.5t-231.5 336t-336 231.5t-408.5 102q-25 1 -42.5 19.5t-17.5 43.5v143q0 28 20 46q18 18 44 18h3q262 -13 501.5 -120t425.5 -294 q187 -186 294 -425.5t120 -501.5z" fill="black" /></g></svg>
 						<span class="sr">RSS</span>
 					</a><!-- End RSS -->
-					
-					<a href="//www.flickr.com/photos/mit-libraries/" title="Flickr">
-						<svg class="icon-social--flickr" width="2048" height="2048" viewBox="-320 -384 2048 2048" enable-background="new 0 -128 1536 1536" xml:space="preserve"><path d="M698 640c0-58.7-20.7-108.7-62-150s-91.3-62-150-62 -108.7 20.7-150 62 -62 91.3-62 150 20.7 108.7 62 150 91.3 62 150 62 108.7-20.7 150-62S698 698.7 698 640zM1262 640c0-58.7-20.7-108.7-62-150s-91.3-62-150-62 -108.7 20.7-150 62 -62 91.3-62 150 20.7 108.7 62 150 91.3 62 150 62 108.7-20.7 150-62S1262 698.7 1262 640z"/></svg>
-						<span class="sr">Flickr</span>
-					</a><!-- End Flickr -->
-					
+
 			</div><!-- end div.social -->
 			
 			<div class="links-primary flex-container">

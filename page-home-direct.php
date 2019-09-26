@@ -55,9 +55,9 @@ endif; ?>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
-					<a href="/archives" aria-hidden="true"  class="img-loc archives"><span class="sr">Distinctive Collections Reading Room</span></a>
+					<a href="/distinctive-collections" aria-hidden="true"  class="img-loc archives"><span class="sr">Distinctive Collections Reading Room</span></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/archives">Distinctive Collections Reading Room</a></h3><div class="hours"><span data-location-hours="Distinctive Collections"></span> today</div><div class="location-info"><a href="/locations/#!distinctive-collections" class="map-location">14N-118</a><a href="tel:617-253-5690" class="phone"><span class="number">617-253-5690</span></a></div>
+						<h3><a class="name-location" href="/distinctive-collections">Distinctive Collections Reading Room</a></h3><div class="hours"><span data-location-hours="Distinctive Collections"></span> today</div><div class="location-info"><a href="/locations/#!distinctive-collections" class="map-location">14N-118</a><a href="tel:617-253-5690" class="phone"><span class="number">617-253-5690</span></a></div>
 					</div>
 				</div>
 				<div class="location hidden-mobile inactive-mobile">
