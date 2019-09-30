@@ -136,11 +136,6 @@ function twentytwelve_scripts_styles() {
 
 	/*  Register JS */
 
-	// Deregister WP Core jQuery, load Google's.
-	wp_deregister_script( 'jquery' );
-
-	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false );
-
 	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
 	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
