@@ -44,6 +44,6 @@ function oldIESearch() {
 	}
 }
 // Run
-$(function(){
+jQuery(function(){
 	oldIESearch();
 });
