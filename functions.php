@@ -139,7 +139,7 @@ function twentytwelve_scripts_styles() {
 	// Deregister WP Core jQuery, load Google's.
 	wp_deregister_script( 'jquery' );
 
-	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1', false );
+	wp_register_script( 'jquery', get_template_directory_uri() . '/js/libs/jquery-1.11.1.min.js', array(), '1.11.1-local', false );
 
 	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
