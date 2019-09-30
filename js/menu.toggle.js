@@ -1,4 +1,4 @@
-$(function(){
+jQuery(function(){
 	$('#menu--toggle').click(function(){
 		$(this).toggleClass('active');
 		$(this).next().toggleClass('active');
@@ -13,24 +13,24 @@ $(function(){
 });
 
 // why are there two of these toggles?
-$('header .menu--toggle').click(function(){
+jQuery('header .menu--toggle').click(function(){
 	$('#nav-main').toggleClass('active');
 	$('.wrap-page').toggleClass('mobile-nav-active');
 });
 
 
-$( '.link-primary' ).bind( "mouseenter", function() {	
+jQuery( '.link-primary' ).bind( "mouseenter", function() {
 	$( '.link-primary' ).removeClass( 'open' );
 	$(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
 	$(this).closest( '.link-primary' ).addClass( 'open' );
 });
-$( '.link-primary' ).bind( "mouseleave", function() {	
+jQuery( '.link-primary' ).bind( "mouseleave", function() {
 	$(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
 	$( '.link-primary' ).removeClass( 'open' );
 });
 
 // make esc close all menus
-$( '#nav-main' ).on( 'keydown' , function(e) {
+jQuery( '#nav-main' ).on( 'keydown' , function(e) {
 	if (e.keyCode == 27) {
 		hideMenu(e);
 	}
@@ -43,7 +43,7 @@ function hideMenu() {
 }
 
 // thanks to http://heydonworks.com/practical_aria_examples/
-$('.main-nav-header').each(function() {
+jQuery('.main-nav-header').each(function() {
 
 	var $this = $(this);
 
