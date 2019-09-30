@@ -1,4 +1,4 @@
-$("#hourCalendar").glDatePicker({
+jQuery("#hourCalendar").glDatePicker({
 	showAlways: true,
 	selectedDate: todayDate,
 	

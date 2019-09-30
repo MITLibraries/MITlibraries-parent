@@ -1,13 +1,13 @@
-$(function(){
+jQuery(function(){
 
-	$(function(buildMarkers) {
-		$("#mapMarkers .location").each(function() {
-			var name = $(this).find(".name").html();
+	jQuery(function(buildMarkers) {
+		jQuery("#mapMarkers .location").each(function() {
+			var name = jQuery(this).find(".name").html();
 			name = name.replace("&amp;", "&");
-			var lat = parseFloat($(this).find(".lat").html());
-			var lng = parseFloat($(this).find(".lng").html());
-			var description = $(this).find(".description").html();
-			var id = $(this).find(".id").html();
+			var lat = parseFloat(jQuery(this).find(".lat").html());
+			var lng = parseFloat(jQuery(this).find(".lng").html());
+			var description = jQuery(this).find(".description").html();
+			var id = jQuery(this).find(".id").html();
 			
 			var latlng = new google.maps.LatLng(lat, lng);
 			//var latlng = new google.maps.LatLng(42.358330, -71.093173)
@@ -83,7 +83,7 @@ $(function(){
 		});
 	});
 
-		$(function(initMap) {
+		jQuery(function(initMap) {
 		var canvas = document.getElementById('map');
 		var opts = {
 			center: new google.maps.LatLng(42.35978069999999, -71.09360909999998),
@@ -101,20 +101,20 @@ $(function(){
 		
 	});
 
-	$(function(buildMap) {
-		$(".map").click(function(e) {
+	jQuery(function(buildMap) {
+		jQuery(".map").click(function(e) {
 			//e.preventDefault();
-			var stage = $("#stage");
+			var stage = jQuery("#stage");
 			if (needMap) initMap();
 
 			if (stage.hasClass("activeMap")) {
 				// map open
 			} else {
 				// open map
-				$("#showMap").click();
+				jQuery("#showMap").click();
 			}
 			
-			var id = $(this).attr("data-target");
+			var id = jQuery(this).attr("data-target");
 			
 			
 			for(i=0;i<arMarkers.length;i++) {
@@ -129,7 +129,7 @@ $(function(){
 			}
 
 			
-			$("html, body").animate({scrollTop: 0}, 500);
+			jQuery("html, body").animate({scrollTop: 0}, 500);
 			
 
 
@@ -139,33 +139,33 @@ $(function(){
 		});
 	});
 
-			$(function(showMap) {
-		$("#map").slideDown(200, function() {
+			jQuery(function(showMap) {
+		jQuery("#map").slideDown(200, function() {
 			google.maps.event.trigger(map, 'resize');
 		});
 	});
 	
-	$(function(hideMap) {
-		$("#map").slideUp(200);
+	jQuery(function(hideMap) {
+		jQuery("#map").slideUp(200);
 	});
 		
-		$("#showMap").click(function(e) {
+		jQuery("#showMap").click(function(e) {
 			e.preventDefault();
 			if (needMap) initMap();
 			
-			if ($(this).hasClass("btn-warning")) {
-				$(this).toggleClass("btn-warning", false);
-				$(this).html("Hide map");
-				$("#stage").toggleClass("activeMap", true);
+			if (jQuery(this).hasClass("btn-warning")) {
+				jQuery(this).toggleClass("btn-warning", false);
+				jQuery(this).html("Hide map");
+				jQuery("#stage").toggleClass("activeMap", true);
 				showMap();
 				location.hash = "!map";
 				
 
 				
 			} else {
-				$(this).toggleClass("btn-warning", true);
-				$(this).html("Show map");
-				$("#stage").toggleClass("activeMap", false);
+				jQuery(this).toggleClass("btn-warning", true);
+				jQuery(this).html("Show map");
+				jQuery("#stage").toggleClass("activeMap", false);
 				hideMap();
 				// reset hash
 				location.hash = "!";
@@ -174,15 +174,15 @@ $(function(){
 		
 		
 		if (showMap) {
-			$("#showMap").click();
+			jQuery("#showMap").click();
 		}
 		
 		var hash = location.hash.substr(2);
 		if (hash != "") {
 			if (hash == "map") {
-				$("#showMap").click();
+				jQuery("#showMap").click();
 			} else {
-				$("a[href='#!"+hash+"']").click();
+				jQuery("a[href='#!"+hash+"']").click();
 			}
 		}
 

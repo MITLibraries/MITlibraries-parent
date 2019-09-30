@@ -2,7 +2,7 @@
 // News
 //
 
-$(function(){
+jQuery(function(){
 	// Use WP API, don't cache requests
         // old url: '/news/wp-json/posts',
         // new url: '/posts-front.json',
@@ -109,13 +109,13 @@ $(function(){
 			);
 
 			var newsPostsTemplate = newsPostsCompiled(postsArr[i]);
-			$('#home-posts-news > .flex-container').append(newsPostsTemplate).trigger('news-loaded');
+			jQuery('#home-posts-news > .flex-container').append(newsPostsTemplate).trigger('news-loaded');
 		};
 
 	});
 	
 });
 // Remove HTML "loading" element
-$(document).on('news-loaded', function(){
-	$('.spinner').remove();
+jQuery(document).on('news-loaded', function(){
+	jQuery('.spinner').remove();
 });

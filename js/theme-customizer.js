@@ -9,12 +9,12 @@
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).html( to );
+			jQuery( '.site-title a' ).html( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-description' ).html( to );
+			jQuery( '.site-description' ).html( to );
 		} );
 	} );
 
@@ -22,11 +22,11 @@
 	wp.customize( 'background_color', function( value ) {
 		value.bind( function( to ) {
 			if ( '#ffffff' == to || '#fff' == to )
-				$( 'body' ).addClass( 'custom-background-white' );
+				jQuery( 'body' ).addClass( 'custom-background-white' );
 			else if ( '' == to )
-				$( 'body' ).addClass( 'custom-background-empty' );
+				jQuery( 'body' ).addClass( 'custom-background-empty' );
 			else
-				$( 'body' ).removeClass( 'custom-background-empty custom-background-white' );
+				jQuery( 'body' ).removeClass( 'custom-background-empty custom-background-white' );
 		} );
 	} );
 } )( jQuery );

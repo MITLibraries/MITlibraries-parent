@@ -1,5 +1,5 @@
 // Look up hours information in the Tabletop system
-$(function loadHours() {
+jQuery(function loadHours() {
 
   // look for data-location-hours attributes
   if ( jQuery("[data-location-hours]").length > 0 ) {

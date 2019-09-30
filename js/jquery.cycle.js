@@ -46,12 +46,12 @@ $.fn.cycle = function(options, arg2) {
 	if (this.length === 0 && options != 'stop') {
 		if (!$.isReady && o.s) {
 			log('DOM not ready, queuing slideshow');
-			$(function() {
-				$(o.s,o.c).cycle(options,arg2);
+			jQuery(function() {
+				jQuery(o.s,o.c).cycle(options,arg2);
 			});
 			return this;
 		}
-		// is your DOM ready?  http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+		// is your DOM ready?  http://docs.jquery.com/Tutorials:Introducing_jQuery(document).ready()
 		log('terminating; zero elements found by selector' + ($.isReady ? '' : ' (DOM not ready)'));
 		return this;
 	}
@@ -69,8 +69,8 @@ $.fn.cycle = function(options, arg2) {
 			clearTimeout(this.cycleTimeout);
 		this.cycleTimeout = this.cyclePause = 0;
 
-		var $cont = $(this);
-		var $slides = opts.slideExpr ? $(opts.slideExpr, this) : $cont.children();
+		var $cont = jQuery(this);
+		var $slides = opts.slideExpr ? jQuery(opts.slideExpr, this) : $cont.children();
 		var els = $slides.get();
 
 		var opts2 = buildOptions($cont, $slides, els, opts, o);
@@ -96,7 +96,7 @@ $.fn.cycle = function(options, arg2) {
 };
 
 function triggerPause(cont, byHover, onPager) {
-	var opts = $(cont).data('cycle.opts');
+	var opts = jQuery(cont).data('cycle.opts');
 	var paused = !!cont.cyclePause;
 	if (paused && opts.paused)
 		opts.paused(cont, opts, byHover, onPager);
@@ -114,15 +114,15 @@ function handleArguments(cont, options, arg2) {
 		switch(options) {
 		case 'destroy':
 		case 'stop':
-			var opts = $(cont).data('cycle.opts');
+			var opts = jQuery(cont).data('cycle.opts');
 			if (!opts)
 				return false;
 			cont.cycleStop++; // callbacks look for change
 			if (cont.cycleTimeout)
 				clearTimeout(cont.cycleTimeout);
 			cont.cycleTimeout = 0;
-			opts.elements && $(opts.elements).stop();
-			$(cont).removeData('cycle.opts');
+			opts.elements && jQuery(opts.elements).stop();
+			jQuery(cont).removeData('cycle.opts');
 			if (options == 'destroy')
 				destroy(opts);
 			return false;
@@ -142,7 +142,7 @@ function handleArguments(cont, options, arg2) {
 			return false;
 		case 'prev':
 		case 'next':
-			var opts = $(cont).data('cycle.opts');
+			var opts = jQuery(cont).data('cycle.opts');
 			if (!opts) {
 				log('options not found, "prev/next" ignored');
 				return false;
@@ -157,7 +157,7 @@ function handleArguments(cont, options, arg2) {
 	else if (options.constructor == Number) {
 		// go to the requested slide
 		var num = options;
-		options = $(cont).data('cycle.opts');
+		options = jQuery(cont).data('cycle.opts');
 		if (!options) {
 			log('options not found, can not advance slide');
 			return false;
@@ -180,7 +180,7 @@ function handleArguments(cont, options, arg2) {
 	
 	function checkInstantResume(isPaused, arg2, cont) {
 		if (!isPaused && arg2 === true) { // resume now!
-			var options = $(cont).data('cycle.opts');
+			var options = jQuery(cont).data('cycle.opts');
 			if (!options) {
 				log('options not found, can not resume');
 				return false;
@@ -204,9 +204,9 @@ function removeFilter(el, opts) {
 // unbind event handlers
 function destroy(opts) {
 	if (opts.next)
-		$(opts.next).unbind(opts.prevNextEvent);
+		jQuery(opts.next).unbind(opts.prevNextEvent);
 	if (opts.prev)
-		$(opts.prev).unbind(opts.prevNextEvent);
+		jQuery(opts.prev).unbind(opts.prevNextEvent);
 	
 	if (opts.pager || opts.pagerAnchorBuilder)
 		$.each(opts.pagerAnchors || [], function() {
@@ -299,11 +299,11 @@ function buildOptions($cont, $slides, els, options, o) {
 			z = first ? i <= first ? els.length + (i-first) : first-i : els.length-i;
 		else
 			z = first ? i >= first ? els.length - (i-first) : first-i : els.length-i;
-		$(this).css('z-index', z)
+		jQuery(this).css('z-index', z)
 	});
 
 	// make sure first slide is visible
-	$(els[first]).css('opacity',1).show(); // opacity bit needed to handle restart use case
+	jQuery(els[first]).css('opacity',1).show(); // opacity bit needed to handle restart use case
 	removeFilter(els[first], opts);
 
 	// stretch slides
@@ -315,7 +315,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	            $slides.height(opts.height);
 		} else {
 			$slides.each(function(){
-				var $slide = $(this);
+				var $slide = jQuery(this);
 				var ratio = (opts.aspect === true) ? $slide.width()/$slide.height() : opts.aspect;
 				if( opts.width && $slide.width() != opts.width ) {
 					$slide.width( opts.width );
@@ -332,7 +332,7 @@ function buildOptions($cont, $slides, els, options, o) {
 
 	if (opts.center && ((!opts.fit) || opts.aspect)) {
 		$slides.each(function(){
-			var $slide = $(this);
+			var $slide = jQuery(this);
 			$slide.css({
 				"margin-left": opts.width ?
 					((opts.width - $slide.width()) / 2) + "px" :
@@ -346,7 +346,7 @@ function buildOptions($cont, $slides, els, options, o) {
 
 	if (opts.center && !opts.fit && !opts.slideResize) {
 	  	$slides.each(function(){
-	    	var $slide = $(this);
+	    	var $slide = jQuery(this);
 	    	$slide.css({
 	      		"margin-left": opts.width ? ((opts.width - $slide.width()) / 2) + "px" : 0,
 	      		"margin-top": opts.height ? ((opts.height - $slide.height()) / 2) + "px" : 0
@@ -359,7 +359,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	if (reshape) { // do this only if container has no size http://tinyurl.com/da2oa9
 		var maxw = 0, maxh = 0;
 		for(var j=0; j < els.length; j++) {
-			var $e = $(els[j]), e = $e[0], w = $e.outerWidth(), h = $e.outerHeight();
+			var $e = jQuery(els[j]), e = $e[0], w = $e.outerWidth(), h = $e.outerHeight();
 			if (!w) w = e.offsetWidth || e.width || $e.attr('width');
 			if (!h) h = e.offsetHeight || e.height || $e.attr('height');
 			maxw = w > maxw ? w : maxw;
@@ -392,7 +392,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	options.requeueAttempts = options.requeueAttempts || 0;
 	$slides.each(function() {
 		// try to get height/width of each slide
-		var $el = $(this);
+		var $el = jQuery(this);
 		this.cycleH = (opts.fit && opts.height) ? opts.height : ($el.height() || this.offsetHeight || this.height || $el.attr('height') || 0);
 		this.cycleW = (opts.fit && opts.width) ? opts.width : ($el.width() || this.offsetWidth || this.width || $el.attr('width') || 0);
 
@@ -408,7 +408,7 @@ function buildOptions($cont, $slides, els, options, o) {
 			if (loadingIE || loadingFF || loadingOp || loadingOther) {
 				if (o.s && opts.requeueOnImageNotLoaded && ++options.requeueAttempts < 100) { // track retry count so we don't loop forever
 					log(options.requeueAttempts,' - img slide not loaded, requeuing slideshow: ', this.src, this.cycleW, this.cycleH);
-					setTimeout(function() {$(o.s,o.c).cycle(options)}, opts.requeueTimeout);
+					setTimeout(function() {jQuery(o.s,o.c).cycle(options)}, opts.requeueTimeout);
 					requeue = true;
 					return false; // break each loop
 				}
@@ -430,7 +430,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	opts.animOut = opts.animOut || {};
 
 	$slides.not(':eq('+first+')').css(opts.cssBefore);
-	$($slides[first]).css(opts.cssFirst);
+	jQuery($slides[first]).css(opts.cssFirst);
 
 	if (opts.timeout) {
 		opts.timeout = parseInt(opts.timeout,10);
@@ -483,9 +483,9 @@ function buildOptions($cont, $slides, els, options, o) {
 			opts.after[0].apply(e0, [e0, e0, opts, true]);
 	}
 	if (opts.next)
-		$(opts.next).bind(opts.prevNextEvent,function(){return advance(opts,1)});
+		jQuery(opts.next).bind(opts.prevNextEvent,function(){return advance(opts,1)});
 	if (opts.prev)
-		$(opts.prev).bind(opts.prevNextEvent,function(){return advance(opts,0)});
+		jQuery(opts.prev).bind(opts.prevNextEvent,function(){return advance(opts,0)});
 	if (opts.pager || opts.pagerAnchorBuilder)
 		buildPager(els,opts);
 
@@ -551,7 +551,7 @@ function supportMultiTransitions(opts) {
 // provide a mechanism for adding slides after the slideshow has started
 function exposeAddSlide(opts, els) {
 	opts.addSlide = function(newSlide, prepend) {
-		var $s = $(newSlide), s = $s[0];
+		var $s = jQuery(newSlide), s = $s[0];
 		if (!opts.autostopCount)
 			opts.countdown++;
 		els[prepend?'unshift':'push'](s);
@@ -586,7 +586,7 @@ function exposeAddSlide(opts, els) {
 		$s.css(opts.cssBefore);
 
 		if (opts.pager || opts.pagerAnchorBuilder)
-			$.fn.cycle.createPagerAnchor(els.length-1, s, $(opts.pager), els, opts);
+			$.fn.cycle.createPagerAnchor(els.length-1, s, jQuery(opts.pager), els, opts);
 
 		if ($.isFunction(opts.onAddSlide))
 			opts.onAddSlide($s);
@@ -610,7 +610,7 @@ $.fn.cycle.resetState = function(opts, fx) {
 	// re-init
 	var init = $.fn.cycle.transitions[fx];
 	if ($.isFunction(init))
-		init(opts.$cont, $(opts.elements), opts);
+		init(opts.$cont, jQuery(opts.elements), opts);
 };
 
 // this is the main engine fn, it handles the timeouts, callbacks and slide index mgmt
@@ -619,7 +619,7 @@ function go(els, opts, manual, fwd) {
 	if (manual && opts.busy && opts.manualTrump) {
 		// let manual transitions requests trump active ones
 		debug('manualTrump in go(), stopping active transition');
-		$(els).stop(true,true);
+		jQuery(els).stop(true,true);
 		opts.busy = 0;
 	}
 	// don't begin another timeout-based transition if there is one active
@@ -649,10 +649,10 @@ function go(els, opts, manual, fwd) {
 		changed = true;
 		var fx = opts.fx;
 		// keep trying to get the slide size if we don't have it yet
-		curr.cycleH = curr.cycleH || $(curr).height();
-		curr.cycleW = curr.cycleW || $(curr).width();
-		next.cycleH = next.cycleH || $(next).height();
-		next.cycleW = next.cycleW || $(next).width();
+		curr.cycleH = curr.cycleH || jQuery(curr).height();
+		curr.cycleW = curr.cycleW || jQuery(curr).width();
+		next.cycleH = next.cycleH || jQuery(next).height();
+		next.cycleW = next.cycleW || jQuery(next).width();
 
 		// support multiple transition types
 		if (opts.multiFx) {
@@ -663,7 +663,7 @@ function go(els, opts, manual, fwd) {
 			fx = opts.fxs[opts.lastFx];
 		}
 
-		// one-time fx overrides apply to:  $('div').cycle(3,'zoom');
+		// one-time fx overrides apply to:  jQuery('div').cycle(3,'zoom');
 		if (opts.oneTimeFx) {
 			fx = opts.oneTimeFx;
 			opts.oneTimeFx = null;
@@ -764,8 +764,8 @@ function go(els, opts, manual, fwd) {
 
 // invoked after transition
 $.fn.cycle.updateActivePagerLink = function(pager, currSlide, clsName) {
-   $(pager).each(function() {
-       $(this).children().removeClass(clsName).eq(currSlide).addClass(clsName);
+   jQuery(pager).each(function() {
+       jQuery(this).children().removeClass(clsName).eq(currSlide).addClass(clsName);
    });
 };
 
@@ -828,7 +828,7 @@ function advance(opts, moveForward) {
 };
 
 function buildPager(els, opts) {
-	var $p = $(opts.pager);
+	var $p = jQuery(opts.pager);
 	$.each(els, function(i,o) {
 		$.fn.cycle.createPagerAnchor(i,o,$p,els,opts);
 	});
@@ -846,17 +846,17 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 		
 	if (!a)
 		return;
-	var $a = $(a);
+	var $a = jQuery(a);
 	// don't reparent if anchor is in the dom
 	if ($a.parents('body').length === 0) {
 		var arr = [];
 		if ($p.length > 1) {
 			$p.each(function() {
 				var $clone = $a.clone(true);
-				$(this).append($clone);
+				jQuery(this).append($clone);
 				arr.push($clone[0]);
 			});
-			$a = $(arr);
+			$a = jQuery(arr);
 		}
 		else {
 			$a.appendTo($p);
@@ -937,12 +937,12 @@ function clearTypeFix($slides) {
 		}
 		return '#ffffff';
 	};
-	$slides.each(function() { $(this).css('background-color', getBg(this)); });
+	$slides.each(function() { jQuery(this).css('background-color', getBg(this)); });
 };
 
 // reset common props before the next transition
 $.fn.cycle.commonReset = function(curr,next,opts,w,h,rev) {
-	$(opts.elements).not(curr).hide();
+	jQuery(opts.elements).not(curr).hide();
 	if (typeof opts.cssBefore.opacity == 'undefined')
 		opts.cssBefore.opacity = 1;
 	opts.cssBefore.display = 'block';
@@ -952,13 +952,13 @@ $.fn.cycle.commonReset = function(curr,next,opts,w,h,rev) {
 		opts.cssBefore.height = next.cycleH;
 	opts.cssAfter = opts.cssAfter || {};
 	opts.cssAfter.display = 'none';
-	$(curr).css('zIndex',opts.slideCount + (rev === true ? 1 : 0));
-	$(next).css('zIndex',opts.slideCount + (rev === true ? 0 : 1));
+	jQuery(curr).css('zIndex',opts.slideCount + (rev === true ? 1 : 0));
+	jQuery(next).css('zIndex',opts.slideCount + (rev === true ? 0 : 1));
 };
 
 // the actual fn for effecting a transition
 $.fn.cycle.custom = function(curr, next, opts, cb, fwd, speedOverride) {
-	var $l = $(curr), $n = $(next);
+	var $l = jQuery(curr), $n = jQuery(next);
 	var speedIn = opts.speedIn, speedOut = opts.speedOut, easeIn = opts.easeIn, easeOut = opts.easeOut;
 	$n.css(opts.cssBefore);
 	if (speedOverride) {
@@ -1081,8 +1081,8 @@ $.fn.cycle.defaults = {
 //
 $.fn.cycle.transitions.none = function($cont, $slides, opts) {
 	opts.fxFn = function(curr,next,opts,after){
-		$(next).show();
-		$(curr).hide();
+		jQuery(next).show();
+		jQuery(curr).hide();
 		after();
 	};
 };
@@ -1091,8 +1091,8 @@ $.fn.cycle.transitions.none = function($cont, $slides, opts) {
 $.fn.cycle.transitions.fadeout = function($cont, $slides, opts) {
 	$slides.not(':eq('+opts.currSlide+')').css({ display: 'block', 'opacity': 1 });
 	opts.before.push(function(curr,next,opts,w,h,rev) {
-		$(curr).css('zIndex',opts.slideCount + (!rev === true ? 1 : 0));
-		$(next).css('zIndex',opts.slideCount + (!rev === true ? 0 : 1));
+		jQuery(curr).css('zIndex',opts.slideCount + (!rev === true ? 1 : 0));
+		jQuery(next).css('zIndex',opts.slideCount + (!rev === true ? 0 : 1));
 	});
 	opts.animIn.opacity = 1;
 	opts.animOut.opacity = 0;
@@ -1174,7 +1174,7 @@ $.fn.cycle.transitions.scrollVert = function($cont, $slides, opts) {
 // slideX/slideY
 $.fn.cycle.transitions.slideX = function($cont, $slides, opts) {
 	opts.before.push(function(curr, next, opts) {
-		$(opts.elements).not(curr).hide();
+		jQuery(opts.elements).not(curr).hide();
 		$.fn.cycle.commonReset(curr,next,opts,false,true);
 		opts.animIn.width = next.cycleW;
 	});
@@ -1186,7 +1186,7 @@ $.fn.cycle.transitions.slideX = function($cont, $slides, opts) {
 };
 $.fn.cycle.transitions.slideY = function($cont, $slides, opts) {
 	opts.before.push(function(curr, next, opts) {
-		$(opts.elements).not(curr).hide();
+		jQuery(opts.elements).not(curr).hide();
 		$.fn.cycle.commonReset(curr,next,opts,true,false);
 		opts.animIn.height = next.cycleH;
 	});
@@ -1222,8 +1222,8 @@ $.fn.cycle.transitions.shuffle = function($cont, $slides, opts) {
 	opts.fxFn = function(curr, next, opts, cb, fwd) {
 		if (opts.rev)
 			fwd = !fwd;
-		var $el = fwd ? $(curr) : $(next);
-		$(next).css(opts.cssBefore);
+		var $el = fwd ? jQuery(curr) : jQuery(next);
+		jQuery(next).css(opts.cssBefore);
 		var count = opts.slideCount;
 		$el.animate(opts.shuffle, opts.speedIn, opts.easeIn, function() {
 			var hops = $.fn.cycle.hopsFromLast(opts, fwd);
@@ -1231,14 +1231,14 @@ $.fn.cycle.transitions.shuffle = function($cont, $slides, opts) {
 				fwd ? opts.els.push(opts.els.shift()) : opts.els.unshift(opts.els.pop());
 			if (fwd) {
 				for (var i=0, len=opts.els.length; i < len; i++)
-					$(opts.els[i]).css('z-index', len-i+count);
+					jQuery(opts.els[i]).css('z-index', len-i+count);
 			}
 			else {
-				var z = $(curr).css('z-index');
+				var z = jQuery(curr).css('z-index');
 				$el.css('z-index', parseInt(z,10)+1+count);
 			}
 			$el.animate({left:0, top:0}, opts.speedOut, opts.easeOut, function() {
-				$(fwd ? this : curr).hide();
+				jQuery(fwd ? this : curr).hide();
 				if (cb) cb();
 			});
 		});
@@ -1507,7 +1507,7 @@ $.fn.cycle.transitions.wipe = function($cont, $slides, opts) {
 
 	opts.before.push(function(curr, next, opts) {
 		if (curr == next) return;
-		var $curr = $(curr), $next = $(next);
+		var $curr = jQuery(curr), $next = jQuery(next);
 		$.fn.cycle.commonReset(curr,next,opts,true,true,false);
 		opts.cssAfter.display = 'block';
 

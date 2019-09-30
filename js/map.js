@@ -1,13 +1,13 @@
-$(function(){
+jQuery(function(){
 	var map;
 	var arMarkers = new Array();
 	var focusMarker;
 	var lastMarker = "";
 	var mapIconBase = '/wp-content/themes/libraries/images/';
 	function buildMap() {
-		$(".map").click(function(e) {
+		jQuery(".map").click(function(e) {
 			
-			var id = $(this).attr("data-target");
+			var id = jQuery(this).attr("data-target");
 			
 			for(i=0;i<arMarkers.length;i++) {
 				var marker = arMarkers[i];
@@ -20,29 +20,29 @@ $(function(){
 				}
 			}
 			
-			$("html, body").animate({scrollTop: 0}, 500);
+			jQuery("html, body").animate({scrollTop: 0}, 500);
 				
 		});
 		
 		var hash = location.hash.substr(2);
 		if (hash != "") {
 			if (hash == "map") {
-				$("#showMap").click();
+				jQuery("#showMap").click();
 			} else {
-				$("a[href='#!"+hash+"']").click();
+				jQuery("a[href='#!"+hash+"']").click();
 			}
 		}
 		
 	}
 	
 	function buildMarkers() {
-		$("#mapMarkers .location").each(function() {
-			var name = $(this).find(".name").html();
+		jQuery("#mapMarkers .location").each(function() {
+			var name = jQuery(this).find(".name").html();
 			name = name.replace("&amp;", "&");
-			var lat = parseFloat($(this).find(".lat").html());
-			var lng = parseFloat($(this).find(".lng").html());
-			var description = $(this).find(".description").html();
-			var id = $(this).find(".id").html();
+			var lat = parseFloat(jQuery(this).find(".lat").html());
+			var lng = parseFloat(jQuery(this).find(".lng").html());
+			var description = jQuery(this).find(".description").html();
+			var id = jQuery(this).find(".id").html();
 			
 			var latlng = new google.maps.LatLng(lat, lng);
 			//var latlng = new google.maps.LatLng(42.358330, -71.093173)

@@ -1,18 +1,18 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
 	InitAnalytics();
 });
 
 function InitAnalytics(){
 
 	// Check for old IE
-	if($('html').hasClass('lte-ie9')) {
+	if(jQuery('html').hasClass('lte-ie9')) {
 		// Store initial tab state
-		var startOption = $('#resources-select option:selected');
+		var startOption = jQuery('#resources-select option:selected');
 		TrackEvent('Discovery','Initial Tab',startOption,1);
 		
 		// Loading a different tab
-		$('#resources-select').change(function(){
-			var optTarget = $('#resources-select option:selected').val();
+		jQuery('#resources-select').change(function(){
+			var optTarget = jQuery('#resources-select option:selected').val();
 			switch (optTarget) {
 				case 'option-1':
 					optTarget = 'Articles, e-books, & more';
@@ -48,13 +48,13 @@ function InitAnalytics(){
 	}
 	// All other browsers
 	else {
-		var startOption = $('#resources li').attr('data-target');
+		var startOption = jQuery('#resources li').attr('data-target');
 		TrackEvent('Discovery','Initial Tab',startOption,1);
 
 		// Loading a different tab
 		// Using custom event from search.js
-		$('#resources').on('option-change', function(){
-			var optTarget = $('#resources li.active').attr('data-target');
+		jQuery('#resources').on('option-change', function(){
+			var optTarget = jQuery('#resources li.active').attr('data-target');
 			switch (optTarget) {
 				case 'bartonplus':
 					optTarget = 'Articles, e-books, & more';
@@ -90,16 +90,16 @@ function InitAnalytics(){
 	}
 
 	// Submitting a search form
-	$('#search-main form').on('submit', function(e) {
+	jQuery('#search-main form').on('submit', function(e) {
 		var thisForm, strSearchString, intValue, strOption, strAltSearchString, strSearchType, strArticles;
 		intValue = -1;
-		thisForm = $(this).attr('id');
+		thisForm = jQuery(this).attr('id');
 		switch (thisForm) {
 
 			case 'bartonplus':
 				intValue = 100; // fallback value - shouldn't be needed
-				strSearchString = $('#search-main input.active').val();
-				strSearchType = $('#search-main select.active option:selected').val();
+				strSearchString = jQuery('#search-main input.active').val();
+				strSearchType = jQuery('#search-main select.active option:selected').val();
 				switch (strSearchType) {
 					case 'TI ':
 						// Title search
@@ -120,9 +120,9 @@ function InitAnalytics(){
 				break;
 
 			case 'vera':
-				strSearchString = $('#search-main input.active').val();
+				strSearchString = jQuery('#search-main input.active').val();
 				intValue = 200; // fallback value - shouldn't be needed
-				strSearchType = $('#search-main form.active input[name="param_textSearchType_value"]:checked').val();
+				strSearchType = jQuery('#search-main form.active input[name="param_textSearchType_value"]:checked').val();
 				switch(strSearchType) {
 					case 'contains':
 						intValue = 201;
@@ -143,9 +143,9 @@ function InitAnalytics(){
 				break;
 
 			case 'barton':
-				strSearchString = $('#search-main input.active').val();
+				strSearchString = jQuery('#search-main input.active').val();
 				intValue = 300; // fallback value - shouldn't be needed
-				strSearchType = $('#search-main form.active input[name="code"]:checked').val();
+				strSearchType = jQuery('#search-main form.active input[name="code"]:checked').val();
 				switch(strSearchType) {
 					case 'scan_TTL':
 						intValue = 310;
@@ -167,9 +167,9 @@ function InitAnalytics(){
 				break;
 
 			case 'worldcat':
-				strSearchString = $('#search-main input.active').val();
+				strSearchString = jQuery('#search-main input.active').val();
 				intValue = 300; // fallback value - shouldn't be needed
-				strSearchType = $('#search-main select.active option:selected').val();
+				strSearchType = jQuery('#search-main select.active option:selected').val();
 				switch(strSearchType) {
 					case 'author':
 						intValue = 353;
@@ -188,9 +188,9 @@ function InitAnalytics(){
 				break;
 
 			case 'course-reserves':
-				strSearchString = $('#search-main input.active').val();
+				strSearchString = jQuery('#search-main input.active').val();
 				intValue = 400; // fallback value - shouldn't be needed
-				strSearchType = $('#search-main form.active input[name="code"]:checked').val();
+				strSearchType = jQuery('#search-main form.active input[name="code"]:checked').val();
 				switch(strSearchType){
 					case 'find_WIN':
 						intValue = 414;
@@ -208,7 +208,7 @@ function InitAnalytics(){
 				break;
 
 			case 'site-search':
-				strSearchString = $('#search-main input.active').val();
+				strSearchString = jQuery('#search-main input.active').val();
 				intValue = 501;
 				strSearchString = 'f1_'+strSearchString;
 				break;
@@ -232,7 +232,7 @@ function TrackEvent(Category,Action,Label,Value){
 
 function showSubmitted(formname){
 	// Used only for debugging - not in production
-	$("form#"+formname+" :input").each(function(index, elm){
+	jQuery("form#"+formname+" :input").each(function(index, elm){
 		alert(index+' | '+elm.name+' | '+elm.value);
 	});	
 }

@@ -1,20 +1,20 @@
-$(function(){
+jQuery(function(){
   
   // Toggle "visually-hidden" class
-  $('.link-primary').hover(function(){
-     $(this).find('.links-sub').toggleClass('visually-hidden');
-     $('>a',this).toggleClass('active');
+  jQuery('.link-primary').hover(function(){
+     jQuery(this).find('.links-sub').toggleClass('visually-hidden');
+     jQuery('>a',this).toggleClass('active');
   });
 
   // Calc nav and div.links-sub width
-  var navWidth = $('.nav-main').width();
-  var subWidth = $('.links-sub').width(); 
+  var navWidth = jQuery('.nav-main').width();
+  var subWidth = jQuery('.links-sub').width(); 
      
-  $('.link-primary').each(function(){
-    //$(this).find('.links-sub').toggleClass('active');
-    var linkPos = $(this).position();
+  jQuery('.link-primary').each(function(){
+    //jQuery(this).find('.links-sub').toggleClass('active');
+    var linkPos = jQuery(this).position();
     if (linkPos.left+subWidth >= navWidth) {
-      $(this).toggleClass('push');
+      jQuery(this).toggleClass('push');
     }
   });
   
