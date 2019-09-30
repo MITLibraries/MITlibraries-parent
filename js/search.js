@@ -2,7 +2,7 @@
 // Search
 //
 
-$(function(){
+jQuery(function(){
 
 	// This saves the current search UI state to localstorage as the form is
 	// submitted, allowing the patron's next visit to start from this point
