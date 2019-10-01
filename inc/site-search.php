@@ -28,7 +28,7 @@
 		<li><a href="//libraries.mit.edu/quicksearch">Quick search: Books, articles, &amp; more at MIT</a></li>
 		<li><a href="//libguides.mit.edu/directory">Staff directory</a></li>
 		<li><a href="/research-guides">Research guides - databases by subject</a></li>
-		<li><a href="/about/shortcuts/">Shortcuts to frequently used pages</a></li>
+		<li><a href="/shortcuts/">Shortcuts to frequently used pages</a></li>
 		<li><a href="//web.mit.edu/search.html">MIT web site search</a></li>
 	</ul>
 
