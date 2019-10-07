@@ -601,6 +601,10 @@ body#libraries-homepage {
 		}
 		.guide-list {
 			margin: 0 1em;
+
+			li {
+				display: inline-block;
+			}
 		}
 		.link-ask {
 			color: $color-guides-experts;
