@@ -96,14 +96,12 @@ endif; ?>
 				</div>
 				<div class="experts-group flex-container">
 					<h3 class="hidden-text" style="margin-top: -1.5em; padding: 0;">Research experts</h3><!-- per accesibility review for screen readers -->
-					<div class="expert">
-					</div>
-					<div class="expert">
-					</div>
-					<div class="expert">
-					</div>
-					<div class="expert">
-					</div>
+					<ul>
+						<li class="expert"></li>
+						<li class="expert"></li>
+						<li class="expert"></li>
+						<li class="expert"></li>
+					</ul>
 				</div>
 				<a href="/experts" class="button-primary--magenta view-experts">All <span class="count">32</span> experts</a>
 			</div><!-- end div.guides-experts -->
