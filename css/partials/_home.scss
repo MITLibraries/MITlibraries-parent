@@ -575,7 +575,7 @@ body#libraries-homepage {
 			margin-left: -4px; // Fights inline-block space
 		}
 		.expert {
-			width: 50%;
+			width: 49%;
 			&:nth-child(3) {
 				display: none;
 			}
@@ -583,9 +583,9 @@ body#libraries-homepage {
 				display: none;
 			}
 			@include bp-tablet--portrait {
-				width: 25%;
+				width: 24%;
 				&:nth-child(n) {
-					display: block;
+					display: inline-block;
 				}
 			}
 		}
@@ -593,6 +593,13 @@ body#libraries-homepage {
 			justify-content: space-between;
 			min-height: 7.625em;
 			margin: 2em 0;
+			ul {
+				width: 100%;
+				li {
+					display: inline-block;
+					vertical-align: top;
+				}
+			}
 		}
 		.expert-photo {
 			border-radius: 50%;
@@ -601,6 +608,10 @@ body#libraries-homepage {
 		}
 		.guide-list {
 			margin: 0 1em;
+
+			li {
+				display: inline-block;
+			}
 		}
 		.link-ask {
 			color: $color-guides-experts;
