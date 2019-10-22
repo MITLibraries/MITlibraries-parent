@@ -6,9 +6,9 @@
  * @since 1.2.1
  */
 
-	get_header( 'home' ); ?>
+	get_header(); ?>
 
-<div id="wrap-content">
+<div id="content">
 <?php
 if ( is_active_sidebar( 'sidebar-search' ) ) :
 ?>
@@ -113,4 +113,4 @@ endif; ?>
 ?>
 
 </div>
-<!-- end #wrap-content -->
+<!-- end #content -->
