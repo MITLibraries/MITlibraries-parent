@@ -15,16 +15,7 @@ $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
 
-
-
-
-
-
-if ( is_home() ) :
-get_header( 'home' );
-else :
 get_header();
-endif;
 ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
