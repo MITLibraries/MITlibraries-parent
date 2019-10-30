@@ -29,9 +29,11 @@ $gStudy24Url = '/study/24x7/';
 	$newsBlog = 7;
 	$mainSite = 1;
 
-// Sample value: $siteRoot = "/var/www/vhosts/seangw.com/mitlibraries".
-$siteRoot = $_SERVER['DOCUMENT_ROOT'];
-foreach ( glob( $siteRoot . '/wp-content/themes/libraries/lib/*.php' ) as $file ) { require_once( $file ); }
+// Load the libraries contained in /lib directory.
+$theme_root = get_template_directory();
+foreach ( glob( $theme_root . '/lib/*.php' ) as $file ) {
+	require_once $file;
+}
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
