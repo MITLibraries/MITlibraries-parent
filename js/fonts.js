@@ -28,7 +28,7 @@ MTFontIds.push("5549029"); // Neue Haas Grotesk™ Display W01 Display 55 Roman
 	var mtTracking = document.createElement('script');
 	mtTracking.type='text/javascript';
 	mtTracking.async='true';
-	mtTracking.src='/wp-content/themes/libraries/libs/FontShop/mtiFontTrackingCode.js';
+	mtTracking.src = mitlib.themeUrl + '/libs/FontShop/mtiFontTrackingCode.js';
 
 	(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
 })();
