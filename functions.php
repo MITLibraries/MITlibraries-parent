@@ -189,10 +189,17 @@ function twentytwelve_scripts_styles() {
 
 	if ( ! is_front_page() || is_child_theme() ) {
 		wp_enqueue_script( 'productionJS' );
+		// Replace mitlib.themeUrl with local path to theme.
+		wp_localize_script( 'productionJS', 'mitlib', array(
+			'themeUrl' => get_template_directory_uri(),
+		));
 	}
 
 	if ( is_front_page() && ! is_child_theme() ) {
 		wp_enqueue_script( 'homeJS' );
+		wp_localize_script( 'homeJS', 'mitlib', array(
+			'themeUrl' => get_template_directory_uri(),
+		));
 	}
 
 	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) || is_page_template( 'page.php' ) ) {
@@ -208,6 +215,9 @@ function twentytwelve_scripts_styles() {
 	if ( is_page( 'locations' ) ) {
 		wp_enqueue_script( 'googleMapsAPI' );
 		wp_enqueue_script( 'mapJS' );
+		wp_localize_script( 'mapJS', 'mitlib', array(
+			'themeUrl' => get_template_directory_uri(),
+		));
 		wp_enqueue_script( 'infobox' );
 	}
 
