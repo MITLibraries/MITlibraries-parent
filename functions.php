@@ -32,7 +32,7 @@ $gStudy24Url = '/study/24x7/';
 // Load the libraries contained in /lib directory.
 $theme_root = get_template_directory();
 foreach ( glob( $theme_root . '/lib/*.php' ) as $file ) {
-	require_once( $file );
+	require_once $file;
 }
 
 /**
