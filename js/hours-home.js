@@ -17,5 +17,5 @@ $(document).on('more-locs', function(){
 // Location Images
 //
 $(function(){
-	$('.img-loc').css('background-image', 'url(/wp-content/themes/libraries/images/locations-sprite-74.png)').trigger('image-ready');
+	$('.img-loc').css('background-image', 'url(' + mitlib.themeUrl + '/images/locations-sprite-74.png)').trigger('image-ready');
 });
