@@ -22,7 +22,6 @@ $(function(){
 				maxWidth: 280,
 				pixelOffset: new google.maps.Size(-140,-181),
 				boxStyle: {
-					//background: 'url(http://mitlibraries.seangw.com/wp-content/themes/libraries/images/infobox.png)',
 					opacity: 1,
 					
 					//width: "280px",
