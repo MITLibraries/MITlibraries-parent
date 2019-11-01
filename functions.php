@@ -215,6 +215,9 @@ function twentytwelve_scripts_styles() {
 	if ( is_page( 'locations' ) ) {
 		wp_enqueue_script( 'googleMapsAPI' );
 		wp_enqueue_script( 'mapJS' );
+		wp_localize_script( 'mapJS', 'mitlib', array(
+			'themeUrl' => get_template_directory_uri(),
+		));
 		wp_enqueue_script( 'infobox' );
 	}
 

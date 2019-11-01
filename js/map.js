@@ -3,7 +3,7 @@ $(function(){
 	var arMarkers = new Array();
 	var focusMarker;
 	var lastMarker = "";
-	var mapIconBase = '/wp-content/themes/libraries/images/';
+	var mapIconBase = mitlib.themeUrl + '/images/';
 	function buildMap() {
 		$(".map").click(function(e) {
 			
