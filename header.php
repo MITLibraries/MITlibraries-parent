@@ -21,7 +21,11 @@
 <meta name="description" content="The libraries of the Massachusetts Institute of Technology - Search, Visit, Research, Explore" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <meta property="og:title" content="MIT Libraries"/>
-<meta property="og:image" content="//libraries.mit.edu/wp-content/themes/libraries/images/mit-libraries-logo-bg-black-1200-1200.png"/>
+<meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() . '/images/mit-libraries-logo-black-yellow-1800-1800.png', 'https' ); ?>"/>
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1800" />
+<meta property="og:image:height" content="1800" />
+<meta property="og:image:alt" content="MIT Libraries logo" />
 <meta property="og:url" content="//libraries.mit.edu">
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
