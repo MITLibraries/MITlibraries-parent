@@ -147,11 +147,10 @@
 		  <div class="col-1 flex-item">
 				<h3 class="heading-col">About the Libraries</h3>
 				<ul class="list-unbulleted">
-					<li><a href="/about/organization">About our organization</a></li>
+					<li><a href="/about/">About us</a></li>
 					<li><a href="/contact">Contact us</a></li>
 					<li><a href="/jobs">Jobs</a></li>
 					<li><a href="/giving">Giving to the MIT Libraries</a></li>
-					<li><a href="/about" class="bottom">More about us</a></li>
 				</ul>
 		  </div>
 		  <div class="col-2 flex-item">
