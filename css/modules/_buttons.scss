@@ -1,20 +1,23 @@
 @mixin color-button-primary($color) {
 	background: $color;
-	&:hover {
+	&:hover,
+	&:focus {
 		background: darken($color, 15%);
 	}
 }
 
 @mixin color-button-primary--border($color) { // Matches button-primary size when inline with button secondary
 	border: 2px solid $color;
-	&:hover {
+	&:hover,
+	&:focus {
 		border-color: darken($color, 15%);
 	}
 }
 
 @mixin color-button-secondary($color) {
 	color: $color;
-	&:hover {
+	&:hover,
+	&:focus {
 		background: $color;
 		border-color: $color;
 	}
@@ -27,7 +30,8 @@
 	@include bp-tablet--portrait {
 		padding: 0.5em 1em;
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 	}
 }
@@ -47,7 +51,8 @@
 		width: auto;
 		@include rem-first(max-width, 12);
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $color-text--light;
 	}
 	&.inline { // Display primary buttons inline with secondary buttons
@@ -86,7 +91,8 @@
 	transition: background $timer-primary ease,
 							border-color $timer-primary ease,
 							color $timer-primary ease;
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $color-text--light;
 	}
 	@include bp-tablet--portrait {
@@ -99,7 +105,8 @@
 		background: #fff;
 		padding: 0.75em;
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 	}
 }
