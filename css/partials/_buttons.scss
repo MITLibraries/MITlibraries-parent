@@ -3,7 +3,8 @@
 [class*="button-primary"], 
 .wrap-page [class*="button-primary"] {
 	@extend %button-primary;
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $color-text--light;
 	}
 }
@@ -11,7 +12,8 @@
 [class*="button-secondary"], 
 .wrap-page [class*="button-secondary"] {
 	@extend %button-secondary;
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $color-text--light;
 	}
 }
