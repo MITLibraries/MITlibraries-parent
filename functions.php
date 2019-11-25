@@ -215,7 +215,7 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_style( 'get-it' );
 	}
 
-	if ( is_page_template( 'nav-maine' ) ) {
+	if ( is_page( 'smartmenus' ) ) {
 		wp_enqueue_style( 'jquery.smartmenus.bootstrap' );
 		wp_enqueue_script( 'bootstrap.min' );
 		wp_enqueue_script( 'jquery.smartmenus.bootstrap.min' );
