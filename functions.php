@@ -126,7 +126,11 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
 
-	wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
+	wp_register_style( 'jquery.smartmenus.styles', get_stylesheet_directory_uri() . '/libs/smartmenus/sm-core-css.css', false, false );
+
+	wp_register_style( 'jquery.smartmenus.helper', get_stylesheet_directory_uri() . '/libs/smartmenus/smartmenus.css', array( 'jquery.smartmenus.styles' ), false );
+
+	wp_register_style( 'jquery.smartmenus.mitlib', get_stylesheet_directory_uri() . '/libs/smartmenus/sm-mitlib2.css', array( 'jquery.smartmenus.styles' ), false );
 
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
@@ -143,11 +147,9 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script( 'jquery.smartmenus', '/js/bootstrap-js/jquery.smartmenus.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
+	wp_register_script( 'jquery.smartmenus.js', get_template_directory_uri() . '/libs/smartmenus/jquery.smartmenus.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script( 'bootstrap-min', '/js/bootstrap-js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
-
-	wp_register_script( 'jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
+	wp_register_script( 'jquery.smartmenus.invoke', get_template_directory_uri() . '/libs/smartmenus/smartmenus.js', array( 'jquery.smartmenus.js' ), true ); // All the bootstrap javascript goodness.
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
@@ -216,10 +218,11 @@ function twentytwelve_scripts_styles() {
 	}
 
 	if ( is_page( 'smartmenus' ) ) {
-		wp_enqueue_style( 'jquery.smartmenus.bootstrap' );
-		wp_enqueue_script( 'bootstrap.min' );
-		wp_enqueue_script( 'jquery.smartmenus.bootstrap.min' );
-		wp_enqueue_script( 'jquery.smartmenus' );
+		wp_enqueue_style( 'jquery.smartmenus.styles' );
+		wp_enqueue_style( 'jquery.smartmenus.helper' );
+		wp_enqueue_style( 'jquery.smartmenus.mitlib' );
+		wp_enqueue_script( 'jquery.smartmenus.js' );
+		wp_enqueue_script( 'jquery.smartmenus.invoke' );
 	}
 
 	if ( in_category( 'has-menu' ) ) {

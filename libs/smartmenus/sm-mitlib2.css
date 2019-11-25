@@ -1,0 +1,258 @@
+
+/* Your rules to style the menu in mobile view (collapsible mode) here... */
+.sm-mitlib {
+  border: 1px solid #bbbbbb;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.sm-mitlib a, .sm-mitlib a:hover, .sm-mitlib a:focus, .sm-mitlib a:active {
+  padding: 13px 20px;
+  /* make room for the toggle button (sub indicator) */
+  padding-right: 58px;
+  color: #555555;
+  font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 17px;
+  text-decoration: none;
+}
+.sm-mitlib a.current {
+  background: #555555;
+  color: #fff;
+}
+.sm-mitlib a.disabled {
+  color: #cccccc;
+}
+.sm-mitlib a .sub-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: auto;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  font: bold 14px/34px monospace !important;
+  text-align: center;
+  text-shadow: none;
+  background: rgba(0, 0, 0, 0.08);
+}
+.sm-mitlib a .sub-arrow::before {
+  content: '\25bc';
+}
+.sm-mitlib li {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.sm-mitlib > li:first-child {
+  border-top: 0;
+}
+.sm-mitlib ul {
+  background: rgba(179, 179, 179, 0.1);
+}
+.sm-mitlib ul a, .sm-mitlib ul a:hover, .sm-mitlib ul a:focus, .sm-mitlib ul a:active {
+  font-size: 14px;
+  border-left: 8px solid transparent;
+}
+.sm-mitlib ul ul a,
+.sm-mitlib ul ul a:hover,
+.sm-mitlib ul ul a:focus,
+.sm-mitlib ul ul a:active {
+  border-left: 16px solid transparent;
+}
+.sm-mitlib ul ul ul a,
+.sm-mitlib ul ul ul a:hover,
+.sm-mitlib ul ul ul a:focus,
+.sm-mitlib ul ul ul a:active {
+  border-left: 24px solid transparent;
+}
+.sm-mitlib ul ul ul ul a,
+.sm-mitlib ul ul ul ul a:hover,
+.sm-mitlib ul ul ul ul a:focus,
+.sm-mitlib ul ul ul ul a:active {
+  border-left: 32px solid transparent;
+}
+.sm-mitlib ul ul ul ul ul a,
+.sm-mitlib ul ul ul ul ul a:hover,
+.sm-mitlib ul ul ul ul ul a:focus,
+.sm-mitlib ul ul ul ul ul a:active {
+  border-left: 40px solid transparent;
+}
+
+
+@media (min-width: 768px) {
+
+  /* Switch to desktop layout
+  -----------------------------------------------
+     These transform the menu tree from
+     collapsible to desktop (navbar + dropdowns)
+  -----------------------------------------------*/
+  /* start... (it's not recommended editing these rules) */
+  .sm-mitlib ul {
+    position: absolute;
+    width: 12em;
+  }
+
+  .sm-mitlib li {
+    float: left;
+  }
+
+  .sm-mitlib.sm-rtl li {
+    float: right;
+  }
+
+  .sm-mitlib ul li, .sm-mitlib.sm-rtl ul li, .sm-mitlib.sm-vertical li {
+    float: none;
+  }
+
+  .sm-mitlib a {
+    white-space: nowrap;
+  }
+
+  .sm-mitlib ul a, .sm-mitlib.sm-vertical a {
+    white-space: normal;
+  }
+
+  .sm-mitlib .sm-nowrap > li > a, .sm-mitlib .sm-nowrap > li > :not(ul) a {
+    white-space: nowrap;
+  }
+  /* ...end */
+
+	.sm-mitlib {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+	}
+	.sm-mitlib a,
+	.sm-mitlib a:hover,
+	.sm-mitlib a:focus,
+	.sm-mitlib a:active,
+	.sm-mitlib a.highlighted {
+		color: white;
+		line-height: 1.4;
+		padding: 32px 8px 8px 8px;
+		text-decoration: none;
+	}
+	.sm-mitlib a:hover,
+	.sm-mitlib a:focus,
+	.sm-mitlib a:active,
+	.sm-mitlib a.highlighted {
+		background-color: #c702c7;
+	}
+	.sm-mitlib a.current {
+		background-color: #c702c7;
+		color: #fff;
+	}
+	/* Probably not needed */
+	.sm-mitlib a.disabled {
+		background: #fff;
+		color: #cccccc;
+	}
+
+	.sm-mitlib a.has-submenu {
+		padding-right: 8px;
+	}
+	/* TODO: review these */
+	.sm-mitlib a .sub-arrow {
+		top: 50%;
+		margin-top: -8px;
+		right: 20px;
+		width: 8px;
+		height: 16px;
+		font: 14px/16px monospace !important;
+		background: transparent;
+	}
+	.sm-mitlib > li {
+		vertical-align: bottom;
+	}
+  .sm-mitlib ul {
+    border: 1px solid #bbbbbb;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  .sm-mitlib ul a {
+    border: 0 !important;
+  }
+  .sm-mitlib ul a.has-submenu {
+    padding-right: 20px;
+  }
+  .sm-mitlib ul a .sub-arrow {
+    left: 8px;
+    right: auto;
+  }
+  .sm-mitlib ul > li {
+    border-left: 0;
+    border-top: 1px solid #eeeeee;
+  }
+  .sm-mitlib ul > li:first-child {
+    border-top: 0;
+  }
+  .sm-mitlib .scroll-up,
+  .sm-mitlib .scroll-down {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    background: #fff;
+    height: 20px;
+  }
+  .sm-mitlib .scroll-up-arrow,
+  .sm-mitlib .scroll-down-arrow {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 8px;
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent #555555 transparent;
+  }
+  .sm-mitlib .scroll-down-arrow {
+    top: 6px;
+    border-style: solid dashed dashed dashed;
+    border-color: #555555 transparent transparent transparent;
+  }
+  .sm-mitlib.sm-rtl a.has-submenu {
+    padding-right: 20px;
+    padding-left: 32px;
+  }
+  .sm-mitlib.sm-rtl a .sub-arrow {
+    left: 20px;
+    right: auto;
+  }
+  .sm-mitlib.sm-rtl.sm-vertical a.has-submenu {
+    padding: 11px 20px;
+  }
+  .sm-mitlib.sm-rtl.sm-vertical a .sub-arrow {
+    left: auto;
+    right: 8px;
+  }
+  .sm-mitlib.sm-rtl > li:first-child {
+    border-left: 1px solid #eeeeee;
+  }
+  .sm-mitlib.sm-rtl > li:last-child {
+    border-left: 0;
+  }
+  .sm-mitlib.sm-rtl ul a.has-submenu {
+    padding: 11px 20px;
+  }
+  .sm-mitlib.sm-rtl ul a .sub-arrow {
+    left: auto;
+    right: 8px;
+  }
+  .sm-mitlib.sm-vertical a .sub-arrow {
+    left: 8px;
+    right: auto;
+  }
+  .sm-mitlib.sm-vertical li {
+    border-left: 0;
+    border-top: 1px solid #eeeeee;
+  }
+  .sm-mitlib.sm-vertical > li:first-child {
+    border-top: 0;
+  }
+
+	/* Your rules to style the menu in desktop view here... */
+
+}
