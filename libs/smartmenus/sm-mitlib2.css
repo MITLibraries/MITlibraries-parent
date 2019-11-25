@@ -39,6 +39,7 @@
 }
 .sm-mitlib a .sub-arrow::before {
   content: '\25bc';
+  content: url('../../images/arrow-down-clean.svg');
 }
 .sm-mitlib li {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -129,7 +130,7 @@
 	.sm-mitlib a.highlighted {
 		color: white;
 		line-height: 1.4;
-		padding: 32px 8px 8px 8px;
+		padding: 32px 6px 8px 6px;
 		text-decoration: none;
 	}
 	.sm-mitlib a:hover,
@@ -149,15 +150,15 @@
 	}
 
 	.sm-mitlib a.has-submenu {
-		padding-right: 8px;
+		padding-right: 22px;
 	}
 	/* TODO: review these */
 	.sm-mitlib a .sub-arrow {
-		top: 50%;
+		top: 73%;
 		margin-top: -8px;
-		right: 20px;
-		width: 8px;
-		height: 16px;
+		right: 8px;
+		width: 10px;
+		height: 10px;
 		font: 14px/16px monospace !important;
 		background: transparent;
 	}
