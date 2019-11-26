@@ -39,7 +39,7 @@
 }
 .sm-mitlib a .sub-arrow::before {
   content: '\25bc';
-  content: url('../../images/arrow-down-clean.svg');
+  content: url('../../images/arrow-down.svg');
 }
 .sm-mitlib li {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -154,11 +154,11 @@
 	}
 	/* TODO: review these */
 	.sm-mitlib a .sub-arrow {
-		top: 73%;
+		top: 70%;
 		margin-top: -8px;
 		right: 8px;
 		width: 10px;
-		height: 10px;
+		height: 14px;
 		font: 14px/16px monospace !important;
 		background: transparent;
 	}

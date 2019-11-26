@@ -130,7 +130,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style( 'jquery.smartmenus.helper', get_stylesheet_directory_uri() . '/libs/smartmenus/smartmenus.css', array( 'jquery.smartmenus.styles' ), '1.10.0' );
 
-	wp_register_style( 'jquery.smartmenus.mitlib', get_stylesheet_directory_uri() . '/libs/smartmenus/sm-mitlib2.css', array( 'jquery.smartmenus.styles' ), '1.10.0' );
+	wp_register_style( 'jquery.smartmenus.mitlib', get_stylesheet_directory_uri() . '/libs/smartmenus/sm-mitlib.css', array( 'jquery.smartmenus.styles' ), '1.10.0' );
 
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
