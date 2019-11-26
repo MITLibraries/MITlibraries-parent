@@ -147,9 +147,9 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), true ); // All the bootstrap javascript goodness.
 
-	wp_register_script( 'jquery.smartmenus.js', get_template_directory_uri() . '/libs/smartmenus/jquery.smartmenus.min.js', array( 'jquery' ), '1.10.0' ); // Smartmenus plugin.
+	wp_register_script( 'jquery.smartmenus.js', get_template_directory_uri() . '/libs/smartmenus/jquery.smartmenus.min.js', array( 'jquery' ), '1.10.0', true ); // Smartmenus plugin.
 
-	wp_register_script( 'jquery.smartmenus.invoke', get_template_directory_uri() . '/libs/smartmenus/smartmenus.js', array( 'jquery.smartmenus.js' ), '1.10.0' ); // Smartmenus invocation.
+	wp_register_script( 'jquery.smartmenus.invoke', get_template_directory_uri() . '/libs/smartmenus/smartmenus.js', array( 'jquery.smartmenus.js' ), '1.10.0', true ); // Smartmenus invocation.
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
