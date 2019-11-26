@@ -26,24 +26,24 @@
 		<li><a href="#">Search</a>
 			<ul class="mega-menu">
 				<li>
-					<div class="column-1-2">
+					<div class="column-1-2 border-right">
 						<h2>Start here</h2>
 						<ul>
-							<li><a href="#">Quicksearch</a></li>
-							<li><a href="#">Vera</a></li>
-							<li><a href="#">Barton catalog</a></li>
-							<li><a href="#">WorldCat</a></li>
+							<li><a href="#">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
+							<li><a href="#">Vera <span class="about">E-journals & databases</span></a></li>
+							<li><a href="#">Barton catalog <span class="about">Classic catalog search</span></a></li>
+							<li><a href="#">WorldCat <span class="about">Books & more worldwide</span></a></li>
 							<li><a href="#">Course reserves</a></li>
-							<li><a href="#">More search tools & help</a></li>
+							<li><a href="#" class="bottom extra">More search tools & help <span class="about">Images, data, DSpace, etc.</span></a></li>
 						</ul>
 					</div>
 					<div class="column-1-2">
 						<h2>Also try</h2>
 						<ul>
-							<li><a href="#">FullText Finder</a></li>
-							<li><a href="#">Google Scholar for MIT</a></li>
-							<li><a href="#">DSpace@MIT</a></li>
-							<li><a href="#">Dome</a></li>
+							<li><a href="#">FullText Finder <span class="about">Find specific citations</span></a></li>
+							<li><a href="#">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
+							<li><a href="#">DSpace@MIT <span class="about">MIT research</span></a></li>
+							<li><a href="#">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
 							<li><a href="#">Site search</a></li>
 						</ul>
 					</div>
@@ -55,7 +55,7 @@
 		<li><a href="#">Hours & locations</a>
 			<ul class="mega-menu">
 				<li>
-					<div class="column-1-2">
+					<div class="column-1-2 border-right">
 						<h2>Locations</h2>
 							<ul>
 								<li><a href="#">Barker Library</a></li>
@@ -88,7 +88,7 @@
 		<li><a href="/borrow">Borrow & request</a>
 			<ul class="mega-menu">
 				<li>
-					<div class="column-1-2">
+					<div class="column-1-2 border-right">
 						<h2>Renew, request, suggest</h2>
 						<ul>
 							<li><a href="#">Your account</a></li>
@@ -116,7 +116,7 @@
 		<li><a href="/research">Research support</a>
 			<ul class="mega-menu push">
 				<li>
-					<div class="column-1-2">
+					<div class="column-1-2 border-right">
 						<h2>Help & useful tools</h2>
 						<ul>
 							<li><a href="#">Ask us</a></li>
@@ -154,7 +154,7 @@
 							<li><a href="#">Giving to the MIT Libraries</a></li>
 						</ul>
 					</div>
-					<div class="column-1-2">
+					<div class="column-1-2 border-left">
 						<h2>News, events, & exhibits</h2>
 						<ul>
 							<li><a href="#">Classes & events</a></li>
