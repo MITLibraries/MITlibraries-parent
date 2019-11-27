@@ -1,4 +1,5 @@
 $(function(){
+	// Activate hamburger menu on mobile displays.
 	// Why are there two of these toggles?
 	$('header .menu--toggle').click(function(){
 		console.log('Activating hamburger menu');
@@ -6,7 +7,8 @@ $(function(){
 		$('.wrap-page').toggleClass('mobile-nav-active');
 	});
 
-	// Show or hide the flyout menus on main navigation.
+	// Show or hide the flyout menus on main navigation in response to
+	// mouseenter / mouseleave
 	$( '.link-primary' ).bind( "mouseenter", function() {
 		console.log('Show flyout menu')
 		$( '.link-primary' ).removeClass( 'open' );
@@ -20,6 +22,8 @@ $(function(){
 	});
 
 	// Make ESC close all menus.
+	// TODO: when the user has NVDA open, this will not work - but menus can
+	// still be closed by pressing "enter" on the parent item.
 	$( '#nav-main' ).on( 'keydown' , function(e) {
 		if (e.keyCode == 27) {
 			console.log('Closing all menus because ESC was pressed');
