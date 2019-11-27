@@ -1,46 +1,35 @@
 $(function(){
-	$('#menu--toggle').click(function(){
-		$(this).toggleClass('active');
-		$(this).next().toggleClass('active');
-		console.log('clicked');
-		if ($(this).hasClass('active')) {
-			$(this).text('Hide Menu');
-		}
-		else {
-			$(this).text('View Menu');
+	// Why are there two of these toggles?
+	$('header .menu--toggle').click(function(){
+		console.log('Activating hamburger menu');
+		$('#nav-main').toggleClass('active');
+		$('.wrap-page').toggleClass('mobile-nav-active');
+	});
+
+	// Show or hide the flyout menus on main navigation.
+	$( '.link-primary' ).bind( "mouseenter", function() {
+		console.log('Show flyout menu')
+		$( '.link-primary' ).removeClass( 'open' );
+		$(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
+		$(this).closest( '.link-primary' ).addClass( 'open' );
+	});
+	$( '.link-primary' ).bind( "mouseleave", function() {
+		console.log('Hiding flyout menu');
+		$(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
+		$( '.link-primary' ).removeClass( 'open' );
+	});
+
+	// Make ESC close all menus.
+	$( '#nav-main' ).on( 'keydown' , function(e) {
+		if (e.keyCode == 27) {
+			console.log('Closing all menus because ESC was pressed');
+			$( '.link-primary' ).removeClass( 'open' );
+			$( '.menu-control' ).attr('aria-expanded', 'false');
+			$( '.links-sub' ).attr( 'aria-hidden', 'true' );
 		}
 	});
-});
 
-// why are there two of these toggles?
-$('header .menu--toggle').click(function(){
-	$('#nav-main').toggleClass('active');
-	$('.wrap-page').toggleClass('mobile-nav-active');
 });
-
-
-$( '.link-primary' ).bind( "mouseenter", function() {	
-	$( '.link-primary' ).removeClass( 'open' );
-	$(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
-	$(this).closest( '.link-primary' ).addClass( 'open' );
-});
-$( '.link-primary' ).bind( "mouseleave", function() {	
-	$(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
-	$( '.link-primary' ).removeClass( 'open' );
-});
-
-// make esc close all menus
-$( '#nav-main' ).on( 'keydown' , function(e) {
-	if (e.keyCode == 27) {
-		hideMenu(e);
-	}
-});
-
-function hideMenu() {
-	$( '.link-primary' ).removeClass( 'open' );
-	$( '.menu-control' ).attr('aria-expanded', 'false');
-	$( '.links-sub' ).attr( 'aria-hidden', 'true' );
-}
 
 // thanks to http://heydonworks.com/practical_aria_examples/
 $('.main-nav-header').each(function() {
