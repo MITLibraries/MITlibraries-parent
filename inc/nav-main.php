@@ -17,7 +17,16 @@
 	c0.197,0,0.367,0.072,0.512,0.217c0.145,0.144,0.216,0.314,0.216,0.511s-0.071,0.366-0.216,0.511S20.561,19.636,20.363,19.636z"/>
 	</svg>
 </div><!-- end hamburger icon -->
-<nav id="nav-main" class="nav-main" aria-label="Primary">
+<nav id="nav-main" class="nav-main hidden-non-mobile" aria-hidden="true">
+	<ul>
+		<li><a href="/search">Search</a></li>
+		<li><a href="/hours">Hours & locations</a></li>
+		<li><a href="/borrow">Borrow & request</a></li>
+		<li><a href="/research-support">Research support</a></li>
+		<li><a href="/about">About</a></li>
+	</ul>
+</nav>
+<nav class="nav-main" aria-label="Primary">
 <ul class="nav-main-list flex-container">
 	<li class="link-primary flex-end">
 		<h2 class="main-nav-header">
