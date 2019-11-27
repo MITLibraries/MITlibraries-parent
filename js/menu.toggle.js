@@ -31,6 +31,7 @@ $(function(){
 
 });
 
+// This initializes the ARIA labels for the main navigation.
 // thanks to http://heydonworks.com/practical_aria_examples/
 $('.main-nav-header').each(function() {
 
@@ -48,10 +49,12 @@ $('.main-nav-header').each(function() {
 
 	// Toggle the state properties
 	button.on( 'click', function() {
+		console.log('Button clicked');
 		$(this).closest( '.link-primary' ).toggleClass( 'open' );
 		var state = $(this).attr( 'aria-expanded' ) === 'false' ? true : false;
 		$(this).attr( 'aria-expanded', state );
 		panel.attr( 'aria-hidden', !state );
 	});
 
+	console.log('End of main-nav-header each loop');
 });
