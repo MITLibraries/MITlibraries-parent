@@ -1,8 +1,16 @@
 $(function(){
-    // Activate hamburger menu on mobile displays.
-    // Why are there two of these toggles?
+    var mobile_menu = $("#nav-main");
+
+    // Toggle hamburger menu on mobile displays.
     $('header .menu--toggle').click(function(){
-        $('#nav-main').toggleClass('active');
+        // This toggles the aria-hidden value on the mobile menu.
+        mobile_menu.attr("aria-hidden", function (i, attr) {
+            return (
+                "true" === attr ? "false" : "true"
+            );
+        })
+        // These toggle the CSS classes controlling menu visibility.
+        mobile_menu.toggleClass('active');
         $('.wrap-page').toggleClass('mobile-nav-active');
     });
 
