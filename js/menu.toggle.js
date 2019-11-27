@@ -2,7 +2,6 @@ $(function(){
 	// Activate hamburger menu on mobile displays.
 	// Why are there two of these toggles?
 	$('header .menu--toggle').click(function(){
-		console.log('Activating hamburger menu');
 		$('#nav-main').toggleClass('active');
 		$('.wrap-page').toggleClass('mobile-nav-active');
 	});
@@ -10,13 +9,11 @@ $(function(){
 	// Show or hide the flyout menus on main navigation in response to
 	// mouseenter / mouseleave
 	$( '.link-primary' ).bind( "mouseenter", function() {
-		console.log('Show flyout menu')
 		$( '.link-primary' ).removeClass( 'open' );
 		$(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
 		$(this).closest( '.link-primary' ).addClass( 'open' );
 	});
 	$( '.link-primary' ).bind( "mouseleave", function() {
-		console.log('Hiding flyout menu');
 		$(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
 		$( '.link-primary' ).removeClass( 'open' );
 	});
@@ -26,7 +23,6 @@ $(function(){
 	// still be closed by pressing "enter" on the parent item.
 	$( '#nav-main' ).on( 'keydown' , function(e) {
 		if (e.keyCode == 27) {
-			console.log('Closing all menus because ESC was pressed');
 			$( '.link-primary' ).removeClass( 'open' );
 			$( '.menu-control' ).attr('aria-expanded', 'false');
 			$( '.links-sub' ).attr( 'aria-hidden', 'true' );
@@ -53,12 +49,10 @@ $('.main-nav-header').each(function() {
 
 	// Toggle the state properties
 	button.on( 'click', function() {
-		console.log('Button clicked');
 		$(this).closest( '.link-primary' ).toggleClass( 'open' );
 		var state = $(this).attr( 'aria-expanded' ) === 'false' ? true : false;
 		$(this).attr( 'aria-expanded', state );
 		panel.attr( 'aria-hidden', !state );
 	});
 
-	console.log('End of main-nav-header each loop');
 });
