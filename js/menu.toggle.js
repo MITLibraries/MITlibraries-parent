@@ -14,29 +14,29 @@ $(function(){
         $('.wrap-page').toggleClass('mobile-nav-active');
     });
 
-    // Show or hide the flyout menus on main navigation in response to
-    // mouseenter / mouseleave
-    $( '.link-primary' ).bind( "mouseenter", function() {
-        $( '.link-primary' ).removeClass( 'open' );
-        $(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
-        $(this).closest( '.link-primary' ).addClass( 'open' );
-    });
-    $( '.link-primary' ).bind( "mouseleave", function() {
-        $(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
-        $( '.link-primary' ).removeClass( 'open' );
-    });
+});
 
-    // Make ESC close all menus.
-    // TODO: when the user has NVDA open, this will not work - but menus can
-    // still be closed by pressing "enter" on the parent item.
-    $( '#nav-main' ).on( 'keydown' , function(e) {
-        if (e.keyCode == 27) {
-            $( '.link-primary' ).removeClass( 'open' );
-            $( '.menu-control' ).attr('aria-expanded', 'false');
-            $( '.links-sub' ).attr( 'aria-hidden', 'true' );
-        }
-    });
+// Show or hide the flyout menus on main navigation in response to
+// mouseenter / mouseleave
+$( '.link-primary' ).bind( "mouseenter", function() {
+    $( '.link-primary' ).removeClass( 'open' );
+    $(this).find( '.menu-control' ).attr( 'aria-expanded', 'true' );
+    $(this).closest( '.link-primary' ).addClass( 'open' );
+});
+$( '.link-primary' ).bind( "mouseleave", function() {
+    $(this).find( '.menu-control' ).attr( 'aria-expanded', 'false' );
+    $( '.link-primary' ).removeClass( 'open' );
+});
 
+// Make ESC close all menus.
+// TODO: when the user has NVDA open, this will not work - but menus can
+// still be closed by pressing "enter" on the parent item.
+$( '#nav-main' ).on( 'keydown' , function(e) {
+    if (e.keyCode == 27) {
+        $( '.link-primary' ).removeClass( 'open' );
+        $( '.menu-control' ).attr('aria-expanded', 'false');
+        $( '.links-sub' ).attr( 'aria-hidden', 'true' );
+    }
 });
 
 // This initializes the ARIA labels for the main navigation.
