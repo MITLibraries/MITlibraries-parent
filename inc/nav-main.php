@@ -40,12 +40,12 @@
 			  <div class="col-1 flex-item">
 					<h3 class="heading-col">Start here</h3>
 					<ul class="list-unbulleted">
+						<li><a href="/search">Search tools home</a></li>
 						<li><a href="/quicksearch">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
 						<li><a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a></li>
 						<li><a href="/barton">Barton catalog <span class="about">Classic catalog search</span></a></li>
 						<li><a href="/worldcat">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
 						<li><a href="/barton-reserves">Course reserves</a></li>
-						<li><a href="/search" class="bottom extra"><span>More search tools &amp; help</span> <span class="about">Images, data, DSpace, etc.</span></a></li>
 					</ul>
 			  </div>
 			  <div class="col-2 flex-item">
@@ -68,6 +68,7 @@
 			  <div class="col-1 flex-item">
 					<h3 class="heading-col">Locations</h3>
 					<ul class="list-unbulleted">
+						<li><a href="/hours">Hours and locations home</a></li>
 						<li><a href="/barker">Barker Library</a></li>
 						<li><a href="/dewey">Dewey Library</a></li>
 						<li><a href="/hayden">Hayden Library</a></li>
@@ -75,7 +76,6 @@
 						<li><a href="/distinctive-collections">Distinctive Collections</a></li>
 						<li><a href="/music">Lewis Music Library</a></li>
 						<li><a href="/lsa">Library Storage Annex</a></li>
-						<li><a href="/hours" class="bottom">All hours &amp; locations</a></li>
 					</ul>
 			  </div>
 			  <div class="col-2 flex-item">
@@ -100,12 +100,12 @@
 			  <div class="col-1 flex-item">
 					<h3 class="heading-col">Renew, request, suggest</h3>
 					<ul class="list-unbulleted">
+						<li><a href="/borrow">Borrow &amp; request home</a></li>
 						<li><a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a></li>
 						<li><a href="/barton">Barton catalog <span class="about">Request items owned by MIT</span></a></li>
 						<li><a href="/worldcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
 						<li><a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a></li>
 						<li><a href="/suggest-purchase">Suggest a purchase</a></li>
-						<li><a href="/borrow" class="bottom">More options &amp; help</a></li>
 					</ul>
 			  </div>
 			  <div class="col-2 flex-item">
@@ -127,12 +127,12 @@
 			  <div class="col-1 flex-item">
 					<h3 class="heading-col">Help &amp; useful tools</h3>
 					<ul class="list-unbulleted">
+						<li><a href="/research-support">Research support home</a></li>
 						<li><a href="/ask">Ask us <span class="about">Email, chat, call, drop by</span></a></li>
 						<li><a href="/experts">Research guides &amp; expert librarians <span class="about">For every research interest</span></a></li>
 						<li><a href="/offcampus">Connect from on and off-campus <span class="about">Tips &amp; tricks</span></a></li>
 						<li><a href="/productivity-tools">Productivity tools <span class="about">Apps, RSS, etc.</span></a></li>
 						<li><a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a></li>
-						<li><a href="/research-support" class="bottom">More research support</a></li>
 					</ul>
 			  </div>
 			  <div class="col-2 flex-item">
@@ -155,7 +155,7 @@
 			  <div class="col-1 flex-item">
 					<h3 class="heading-col">About the Libraries</h3>
 					<ul class="list-unbulleted">
-						<li><a href="/about/">About us</a></li>
+						<li><a href="/about/">About us home</a></li>
 						<li><a href="/contact">Contact us</a></li>
 						<li><a href="/jobs">Jobs</a></li>
 						<li><a href="/giving">Giving to the MIT Libraries</a></li>
