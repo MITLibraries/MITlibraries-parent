@@ -31,8 +31,8 @@ $( '.link-primary' ).bind( "mouseleave", function() {
 // Make ESC close all menus.
 // TODO: when the user has NVDA open, this will not work - but menus can
 // still be closed by pressing "enter" on the parent item.
-$( '#nav-main' ).on( 'keydown' , function(e) {
-    if (e.keyCode == 27) {
+$(document).keyup(function(e) {
+    if (e.keyCode === 27) {
         $( '.link-primary' ).removeClass( 'open' );
         $( '.menu-control' ).attr('aria-expanded', 'false');
         $( '.links-sub' ).attr( 'aria-hidden', 'true' );
@@ -57,6 +57,13 @@ $('.main-nav-header').each(function() {
 
     // Toggle the state properties
     button.on( 'click', function() {
+
+        // first close any currently open flyouts
+        $( '.link-primary' ).removeClass( 'open' );
+        $( '.menu-control' ).attr('aria-expanded', 'false');
+        $( '.links-sub' ).attr( 'aria-hidden', 'true' );
+
+        // now open the appropriate flyout
         $(this).closest( '.link-primary' ).toggleClass( 'open' );
         var state = $(this).attr( 'aria-expanded' ) === 'false' ? true : false;
         $(this).attr( 'aria-expanded', state );
