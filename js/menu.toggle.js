@@ -1,19 +1,18 @@
-$(function(){
-    var mobile_menu = $("#nav-main");
+// Toggle hamburger menu on mobile displays.
+$('header .menu--toggle').click(function(){
+    // This toggles the aria-hidden value on the mobile menu.
+    $("#nav-mobile").attr("aria-hidden", function (i, attr) {
+        return (
+            "true" === attr ? "false" : "true"
+        );
+    })
+    // These toggle the CSS classes controlling mobile menu visibility.
+    $("#nav-mobile").toggleClass('active');
+    $('.wrap-page').toggleClass('mobile-nav-active');
 
-    // Toggle hamburger menu on mobile displays.
-    $('header .menu--toggle').click(function(){
-        // This toggles the aria-hidden value on the mobile menu.
-        mobile_menu.attr("aria-hidden", function (i, attr) {
-            return (
-                "true" === attr ? "false" : "true"
-            );
-        })
-        // These toggle the CSS classes controlling menu visibility.
-        mobile_menu.toggleClass('active');
-        $('.wrap-page').toggleClass('mobile-nav-active');
-    });
-
+    // toggle link visibility (important to keep them out of tabindex until needed)
+    $(".mobile-nav-link").toggleClass('hide-mobile-nav-link');
+    $(".mobile-nav-link").toggleClass('main-nav-link');
 });
 
 // Show or hide the flyout menus on main navigation in response to
@@ -33,9 +32,16 @@ $( '.link-primary' ).bind( "mouseleave", function() {
 // still be closed by pressing "enter" on the parent item.
 $(document).keyup(function(e) {
     if (e.keyCode === 27) {
+        // Close all desktop menu flyouts
         $( '.link-primary' ).removeClass( 'open' );
         $( '.menu-control' ).attr('aria-expanded', 'false');
         $( '.links-sub' ).attr( 'aria-hidden', 'true' );
+
+        // Close mobile menu
+        $("#nav-mobile").removeClass('active');
+        $('.wrap-page').removeClass('mobile-nav-active');
+        $(".mobile-nav-link").addClass('hide-mobile-nav-link');
+        $(".mobile-nav-link").removeClass('main-nav-link');
     }
 });
 
