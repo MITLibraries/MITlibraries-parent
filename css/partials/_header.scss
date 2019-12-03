@@ -45,6 +45,14 @@
 			color: #000;
 			background-color: #fff;
 		}
+
+		&:hover {
+  			background-color: $brand-secondary;
+		}
+		
+		&:focus {
+			background-color: $brand-secondary;
+		}
 	}
 
 	.link-account,
@@ -102,6 +110,14 @@
 
 		@include bp-tablet--portrait {
 			display: block;
+		}
+
+		&:hover {
+			background-color: $brand-secondary;
+		}
+		
+		&:focus {
+			background-color: $brand-secondary;
 		}
 	}
 
