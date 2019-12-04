@@ -1,3 +1,21 @@
+body.user-is-tabbing *.nav-main {
+  .main-nav-link {
+	  &.no-underline {     
+      &:focus {
+        text-decoration: none;
+        color: $white;
+        background-color: $brand-secondary;
+      }
+    }
+    
+    &:focus {
+      @include bp-tablet--portrait {
+        background: $brand-secondary;
+      }    
+    }
+  }
+}
+
 .nav-main {
   flex-wrap: wrap;
   transform: translateY(-1000%);
@@ -185,21 +203,18 @@
                 inset 0 1px 0 gray;
 	  }
 
-	  &.no-underline {
-
-  		&:hover,
-      &:focus {
+	  &.no-underline {     
+      &:hover {
   			text-decoration: none;
   			color: $white;
         background-color: $brand-secondary;
   		}
 		}
-
-    &:hover, 
-    &:focus {
+    
+    &:hover {
       @include bp-tablet--portrait {
         background: $brand-secondary;
-      }
+      }    
     }
   }
 

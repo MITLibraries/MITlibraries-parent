@@ -1,3 +1,16 @@
+// Detect keyboard navigation to setup pseudo classes for focus to allow for
+// only setting focus for keyboard nav
+// https://medium.com/hackernoon/removing-that-ugly-focus-ring-and-keeping-it-too-6c8727fefcd2
+// This works in conjunction with adding a focus element for .main-nav-link
+// if this `user-is-tabbing` exists on body.
+function handleFirstTab(e) {
+    if (e.keyCode === 9) { // the "I am a keyboard user" key
+        document.body.classList.add('user-is-tabbing');
+        window.removeEventListener('keydown', handleFirstTab);
+    }
+  } 
+window.addEventListener('keydown', handleFirstTab);
+
 // Toggle hamburger menu on mobile displays.
 $('header .menu--toggle').click(function(){
     // This toggles the aria-hidden value on the mobile menu.
