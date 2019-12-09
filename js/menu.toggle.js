@@ -41,8 +41,6 @@ $( '.link-primary' ).bind( "mouseleave", function() {
 });
 
 // Make ESC close all menus.
-// TODO: when the user has NVDA open, this will not work - but menus can
-// still be closed by pressing "enter" on the parent item.
 $(document).keyup(function(e) {
     if (e.keyCode === 27) {
         // Close all desktop menu flyouts
