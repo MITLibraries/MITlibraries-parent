@@ -38,11 +38,11 @@ endif; ?>
 				<div class="location">
 					<a href="/hayden" aria-labelledby="hayden" class="img-loc hayden"><span class="sr" id="hayden">Hayden Library</span></a>
 					<div class="wrap-loc-info">
-						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"><span data-location-hours="Hayden Library"></span> today,</div> <a href="/study/24x7/" class="special">24/7 Study</a><div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
+						<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours">Closed for renovation</div> <div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a></div>
 					</div>
 				</div>
 				<div class="location-hayden-reno">
-					<p><a href="/future-spaces/">Upcoming Hayden renovation details</a>
+					<p><a href="/future-spaces/">Hayden renovation details</a>
 					</p>
 				</div>
 				<a href="#0" class="show-more hidden-non-mobile">
