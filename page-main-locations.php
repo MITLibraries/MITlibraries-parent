@@ -154,6 +154,9 @@ get_header(); ?>
 								<?php echo $phone ?>
 								<br/>
 								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
+								<?php if ( 'hayden-library' === $slug ) : ?>
+									<br/><span style="margin-bottom: 0 !important; font-weight: 600;"><a href="/future-spaces/" style="color: #008700;">Hayden closed for renovation until Fall 2020 »</a></span>
+								<?php endif; ?>
 								<?php if ( $study24 == 1 ) : ?>
 									<br/>
 									<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>

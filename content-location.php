@@ -146,7 +146,7 @@
 
 			<?php if ( is_page( 'hayden' ) ) : ?>
 				<div class="location-extra-content-top" style="padding: 1em 0;margin: 0;color: #008700;font-weight: 600;">
-					<p style="margin-bottom: 0 !important;">We're renovating Hayden in 2020. <a href="/future-spaces/" style="color: #008700;">Get the details »</a>
+					<p style="margin-bottom: 0 !important;">Hayden closed for renovation until Fall 2020. <a href="/future-spaces/" style="color: #008700;">Get the details »</a>
 					</p>
 				</div>
 			<?php endif; ?>
