@@ -30,7 +30,6 @@
 			<div class="flex-item">
 				<h4><a href="/borrow">Borrow &amp; request</a></h4>
 				<a href="/barton-account" class="link-sub">Your Account</a>
-				<a href="/getit" class="link-sub">Get it: options for getting books &amp; articles</a>
 				<a href="/circ" class="link-sub">Circulation FAQ</a>
 				<a href="/reserves" class="link-sub">Reserves &amp; TIP FAQ</a>
 				<a href="/otherlibraries" class="link-sub">Visit non-MIT libraries</a>
