@@ -1,0 +1,13 @@
+{
+    "name": "mitlibraries/mitlibraries-parent",
+    "description": "A parent theme for the MIT Libraries",
+    "type": "project",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Matt Bernhardt",
+            "email": "mjbernha@mit.edu"
+        }
+    ],
+    "require": {}
+}
