@@ -102,7 +102,26 @@ class RoboFile extends \Robo\Tasks
 
     private function buildJavascriptUglify()
     {
-        $this->say("JS uglification isn't implemented yet...");
+        $this->taskMinify('js/build/production.js')
+        ->to('js/build/min/production.js')
+        ->singleLine(true)
+        ->run();
+
+        $this->taskMinify('js/build/home.js')
+        ->to('js/build/min/home.js')
+        ->run();
+
+        $this->taskMinify('js/build/hours.js')
+        ->to('js/build/min/hours.js')
+        ->run();
+
+        $this->taskMinify('js/build/search.js')
+        ->to('js/build/min/search.js')
+        ->run();
+
+        $this->taskMinify('js/build/map.js')
+        ->to('js/build/min/map.js')
+        ->run();
     }
 
     private function buildStylesSass()
