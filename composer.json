@@ -11,5 +11,8 @@
     ],
     "require": {
         "consolidation/robo": "^2.0"
+    },
+    "scripts": {
+        "build": "robo build"
     }
 }
