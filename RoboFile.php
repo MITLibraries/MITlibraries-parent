@@ -30,9 +30,9 @@ class RoboFile extends \Robo\Tasks
     public function buildStyles()
     {
         $this->say("Building stylesheets...");
-        // Sass
+        $this->buildStylesSass();
         // Autoprefixer
-        // CSSmin
+        $this->buildStylesMin();
     }
 
     public function buildRelease()
@@ -103,5 +103,36 @@ class RoboFile extends \Robo\Tasks
     private function buildJavascriptUglify()
     {
         $this->say("JS uglification isn't implemented yet...");
+    }
+
+    private function buildStylesSass()
+    {
+        $this->taskScss([
+            'css/global.scss' => 'css/build/global.css',
+            'css/forms.scss'  => 'css/build/forms.css',
+            'css/get-it.scss' => 'css/build/get-it.css',
+            'css/hours.scss'  => 'css/build/hours.css'
+        ])
+        ->importDir('css/')
+        ->run();
+    }
+
+    private function buildStylesMin()
+    {
+        $this->taskMinify('css/build/global.css')
+        ->to('css/build/min/global.min.css')
+        ->run();
+
+        $this->taskMinify('css/build/forms.css')
+        ->to('css/build/min/forms.min.css')
+        ->run();
+
+        $this->taskMinify('css/build/get-it.css')
+        ->to('css/build/min/get-it.min.css')
+        ->run();
+
+        $this->taskMinify('css/build/hours.css')
+        ->to('css/build/min/hours.min.css')
+        ->run();
     }
 }

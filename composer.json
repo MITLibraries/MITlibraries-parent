@@ -10,7 +10,9 @@
         }
     ],
     "require": {
-        "consolidation/robo": "^2.0"
+        "consolidation/robo": "^2.0",
+        "scssphp/scssphp": "^1.0",
+        "natxet/cssmin": "^3.0"
     },
     "scripts": {
         "build": "robo build"
