@@ -78,6 +78,7 @@ script:
   # --report=source: Return summary table
   # --report=full: Returns verbose list of problems by test and line
   - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/$PHPCS_SCRIPT/phpcs -p -s -v -n . --standard=./codesniffer.mitlib.xml --extensions=php --report=source --report=full; fi
+  - composer install
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
