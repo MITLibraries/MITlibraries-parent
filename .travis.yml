@@ -23,6 +23,7 @@ matrix:
     # We sniff the current and +1 release of PHP, and just run syntax checking
     # for others.
     - php: 'nightly'
+    - php: '7.4'
     - php: '7.3'
     - php: '7.2'
       env: PHPCS_BRANCH=master PHPCS_SCRIPT=bin SNIFF=1
@@ -31,6 +32,7 @@ matrix:
 
   allow_failures:
     - php: "nightly"
+    - php: "7.4"
     - php: "7.3"
     - php: "7.2"
 
