@@ -55,17 +55,17 @@ class RoboFile extends \Robo\Tasks {
 	 */
 	public function buildRelease() {
 		$this->say( 'Building release...' );
-		// Gitinfo.
+		// Load git release info.
 		$theme_version = $this->taskGitStack()
 		->exec( 'describe --tags' )
 		->result( '' )
 		->run()
 		->getMessage();
 		$this->say( $theme_version );
-		// Replace.
-		$this->taskReplaceInFile('style.css')
-		->from( '@@theme-version' )
-		->to( $theme_version )
+		// Replace version string.
+		$this->taskReplaceInFile( 'style.css' )
+		->regex( "~Version: (.*)\n~" )
+		->to( 'Version: ' . $theme_version )
 		->run();
 	}
 
