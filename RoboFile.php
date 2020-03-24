@@ -132,24 +132,24 @@ class RoboFile extends \Robo\Tasks {
 	 */
 	private function buildJavascriptUglify() {
 		$this->taskMinify( 'js/build/production.js' )
-		->to( 'js/build/min/production.js' )
+		->to( 'js/build/production.min.js' )
 		->singleLine( true )
 		->run();
 
 		$this->taskMinify( 'js/build/home.js' )
-		->to( 'js/build/min/home.js' )
+		->to( 'js/build/home.min.js' )
 		->run();
 
 		$this->taskMinify( 'js/build/hours.js' )
-		->to( 'js/build/min/hours.js' )
+		->to( 'js/build/hours.min.js' )
 		->run();
 
 		$this->taskMinify( 'js/build/search.js' )
-		->to( 'js/build/min/search.js' )
+		->to( 'js/build/search.min.js' )
 		->run();
 
 		$this->taskMinify( 'js/build/map.js' )
-		->to( 'js/build/min/map.js' )
+		->to( 'js/build/map.min.js' )
 		->run();
 	}
 
@@ -172,19 +172,19 @@ class RoboFile extends \Robo\Tasks {
 	 */
 	private function buildStylesMin() {
 		$this->taskMinify( 'css/build/global.css' )
-		->to( 'css/build/min/global.min.css' )
+		->to( 'css/build/minified/global.css' )
 		->run();
 
 		$this->taskMinify( 'css/build/forms.css' )
-		->to( 'css/build/min/forms.min.css' )
+		->to( 'css/build/minified/forms.min.css' )
 		->run();
 
 		$this->taskMinify( 'css/build/get-it.css' )
-		->to( 'css/build/min/get-it.min.css' )
+		->to( 'css/build/minified/get-it.min.css' )
 		->run();
 
 		$this->taskMinify( 'css/build/hours.css' )
-		->to( 'css/build/min/hours.min.css' )
+		->to( 'css/build/minified/hours.min.css' )
 		->run();
 	}
 }
