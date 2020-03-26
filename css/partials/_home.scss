@@ -72,11 +72,6 @@ body.page-home {
 				@include svg-max-height-width;
 			}
 		}
-		aside {
-			.textwidget {
-				padding: 1.0625em;
-			}
-		}
 		.active {
 			display: block;
 			opacity: 1;
@@ -253,6 +248,54 @@ body.page-home {
 		}
 		.wrap-loc-info {
 			-ms-flex: 0 1 auto; // Corrects IE10 bug
+		}
+		//
+		// Widget styles in hours sidebar
+		//
+		aside {
+			.widget-title {
+				color: $green-sea;
+			}
+			.textwidget {
+				padding: 1.0625em;
+				font-size: 0.875em;
+				font-weight: 300;
+				a {
+					text-decoration: underline;
+					&:hover,
+					&:focus {
+						text-decoration: none;
+						color: $blue;
+					}
+				}
+				li {
+					list-style: disc;
+				}
+				ul {
+					margin: 0 0 0.625em 1.0625em;
+				}
+			}
+
+			&.callout {
+				background: $green-sea;
+				border-radius: 3px;
+				color: white;
+				margin: 8px;
+				.widget-title {
+					color: white;
+					border-bottom: 1px solid white;
+					padding: 9px 9px 0 9px;
+				}
+				.textwidget {
+					padding: 9px;
+					p {
+						color: white;
+					}
+					a {
+						color: white;
+					}
+				}
+			}
 		}
 	}
 	.img-loc {
