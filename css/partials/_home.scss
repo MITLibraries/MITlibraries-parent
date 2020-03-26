@@ -72,6 +72,11 @@ body.page-home {
 				@include svg-max-height-width;
 			}
 		}
+		aside {
+			.textwidget {
+				padding: 1.0625em;
+			}
+		}
 		.active {
 			display: block;
 			opacity: 1;
