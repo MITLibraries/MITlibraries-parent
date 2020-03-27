@@ -266,7 +266,6 @@ body.page-home {
 					&:focus {
 						text-decoration: none;
 						color: $blue;
-						font-weight: bold;
 					}
 				}
 				h3 {
@@ -300,6 +299,10 @@ body.page-home {
 					}
 					a {
 						color: white;
+						&:hover,
+						&:focus {
+							font-weight: bold;
+						}
 					}
 				}
 			}
