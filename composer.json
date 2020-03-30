@@ -1,7 +1,7 @@
 {
     "name": "mitlibraries/mitlibraries-parent",
     "description": "A parent theme for the MIT Libraries",
-    "type": "project",
+    "type": "wordpress-theme",
     "license": "GPLv3",
     "authors": [
         {
