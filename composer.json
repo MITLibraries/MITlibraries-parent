@@ -16,6 +16,7 @@
         "patchwork/jsqueeze": "^2.0"
     },
     "scripts": {
-        "build": "robo build"
+        "build": "robo build",
+        "post-install-cmd": "@build"
     }
 }
