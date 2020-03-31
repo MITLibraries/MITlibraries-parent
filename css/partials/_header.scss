@@ -103,8 +103,10 @@
 		display: none;
 		align-self: flex-end;
 		order: 4;
-		@include rem-first(margin-bottom, 0.5);
-		margin-left: 0.5em;
+		@include rem-first(padding-top, 2);
+		@include rem-first(padding-bottom, 0.5);
+		padding-left: 0.5em;
+		padding-right: 0.5em;
 		max-width: 59px;
 		@include rem-first(max-width, 3.6875);
 
