@@ -17,9 +17,8 @@
 
 		@include bp-tablet--portrait {
 			@include rem-first(max-width, 6.5);
-			@include rem-first(margin-bottom, 0.5); // Matches nav link padding
 			margin-left: 1.5%;
-			padding: 5px 5px 0 0;
+			padding: 0;
 		}
 
 		a {
@@ -30,6 +29,7 @@
 
 	.logo-mit-lib {
 		fill: $color-text--light;
+		padding: 8px;
 
 		svg {
 			@include rem-first(max-height, 1.75);
