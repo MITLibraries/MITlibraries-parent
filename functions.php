@@ -110,7 +110,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '1.5.5' );
+	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '1.9.1' );
 
 	wp_enqueue_style( 'libraries-global' );
 
