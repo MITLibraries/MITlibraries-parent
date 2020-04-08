@@ -304,9 +304,11 @@ body.page-home {
 					}
 					a {
 						color: white;
+						font-weight: bold;
+						text-decoration: none;
 						&:hover,
 						&:focus {
-							font-weight: bold;
+							text-decoration: underline;
 						}
 					}
 				}
