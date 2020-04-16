@@ -62,10 +62,15 @@
 		display: flex;
 		flex-direction: column;
 		order: 1000; // make them last
-		@include rem-first(padding-bottom, 0.4); // Matches logo padding
+		@include rem-first(padding, 0.4); // Matches logo padding
 		color: $white;
 		text-transform: uppercase;
 		font-size: 0.75rem;
+		
+		&:hover,
+		&:focus {
+			background-color: $brand-secondary;
+		}
 
 		svg {
 			fill: #c8c8c8;
@@ -90,13 +95,13 @@
 	}
 
 	.link-account {
-		margin-right: 1em;
-		margin-left: 2em;
+		margin-left: 0.6rem;
+		margin-right: 0.6rem;
+
 	}
 
 	.link-contact {
-		margin-right: 1em;
-		margin-left: 1em;
+		margin-right: auto;
 	}
 
 	.link-logo-mit {
