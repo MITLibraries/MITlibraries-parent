@@ -509,6 +509,12 @@ body.user-is-tabbing *.nav-main {
     display: block;
     margin: 1em auto;
   }
+
+  &:hover,
+  &:focus {
+    background-color: $brand-secondary;
+    background-image: none;
+  }
 }
 
 .no-flexbox {
