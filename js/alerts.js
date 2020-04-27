@@ -71,30 +71,33 @@ function showAlerts(json) {
 	// If there is an alert post
 	if (alert_posts_arr.length) {
 
-		// Check for empty title
-		if ('' === alert_posts_arr[0].title.rendered) {
-			alert_posts_arr[0].title.rendered = 'Alert!';
-		}
+		for (i = 0; i < alert_posts_arr.length; i++) {
+			// Check for empty title
+			if ('' === alert_posts_arr[i].title.rendered) {
+				alert_posts_arr[i].title.rendered = 'Alert!';
+			}
 
-		// Alert HTML template
-		alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
-			'<div class="post alert--critical flex-container">' +
-				'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
-				'<div class="content-post alertText">' +
-					'<h3>' + alert_posts_arr[0].title.rendered + '</h3> ' + alert_posts_arr[0].content.rendered +
+			// Alert HTML template
+			alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
+				'<div class="post alert--critical flex-container">' +
+					'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
+					'<div class="content-post alertText">' +
+						'<h3>' + alert_posts_arr[i].title.rendered + '</h3> ' + alert_posts_arr[i].content.rendered +
+					'</div>' +
 				'</div>' +
-			'</div>' +
-		'</div>';
+			'</div>';
 
-		// Alert post ID
-		alert_ID = alert_posts_arr[0].id;
+			// Alert post ID
+			alert_ID = alert_posts_arr[i].id;
 
-		renderAlert(alert_template,alert_ID);
+			renderAlert(alert_template,alert_ID);
 
-		// If this is a closable alert
-		if (true === alert_posts_arr[0].meta.closable) {
-			setClosable(alert_ID);
+			// If this is a closable alert
+			if (true === alert_posts_arr[i].meta.closable) {
+				setClosable(alert_ID);
+			}
 		}
+
 	}
 }
 
