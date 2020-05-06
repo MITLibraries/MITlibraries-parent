@@ -30,7 +30,8 @@ function renderAlert(markup,id) {
 		if (localStorage.getItem('alert_closed-' + id) !== 'true') {
 			// Append the template
 			$(markup).prependTo('.wrap-page');
-			$('.gldp-default').animate({"top":"292px"});
+			// Bump the hours calendar down, if it is present.
+			$('.gldp-default').position({top: $('.gldp-default').position().top + 152});
 			// Remove the necessary transition class with a timeout, so that the animation shows.
 			setTimeout(function() {
 				$('.posts--preview--alerts').removeClass('transition-vertical--hide');
@@ -52,7 +53,8 @@ function setClosable(alert_ID) {
 	$('#close').click(function(){
 		// Add the necessary transition hide class
 		$('.posts--preview--alerts').addClass('transition-vertical--hide');
-		$('.gldp-default').css({"top":"105px"});
+		// Bump the hours calendar down, if it is present.
+		$('.gldp-default').position({top: $('.gldp-default').position().top - 152});
 		// If localStorage
 		if (Modernizr.localstorage) {
 			// Set the localStorage item, using the post ID
