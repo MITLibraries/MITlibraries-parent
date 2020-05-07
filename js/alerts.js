@@ -23,6 +23,19 @@ function filterAlerts(posts) {
 	return filtered;
 }
 
+// This is needed because, for some reason, the hours screen uses a navigation
+// element that is absolutely positioned. Thus, as alerts are added or closed,
+// we need to explicitly reposition that element.
+function moveCalendar(stepSize) {
+	if ( ! $('.gldp-default').position() ) {
+		console.log('Calendar not present');
+		return;
+	}
+	oldTop = $('.gldp-default').position().top;
+	console.log('Calendar exists at ' + oldTop);
+	$('.gldp-default').animate({top: oldTop + stepSize});
+}
+
 function renderAlert(markup,id) {
 	// If localStorage
 	if (Modernizr.localstorage) {
@@ -31,7 +44,7 @@ function renderAlert(markup,id) {
 			// Append the template
 			$(markup).prependTo('.wrap-page');
 			// Bump the hours calendar down, if it is present.
-			$('.gldp-default').position({top: $('.gldp-default').position().top + 152});
+			moveCalendar(152);
 			// Remove the necessary transition class with a timeout, so that the animation shows.
 			setTimeout(function() {
 				$('.posts--preview--alerts').removeClass('transition-vertical--hide');
@@ -52,9 +65,9 @@ function setClosable(alert_ID) {
 	// On click
 	$('#close').click(function(){
 		// Add the necessary transition hide class
-		$('.posts--preview--alerts').addClass('transition-vertical--hide');
+		$(this).closest('.posts--preview--alerts').addClass('transition-vertical--hide');
 		// Bump the hours calendar down, if it is present.
-		$('.gldp-default').position({top: $('.gldp-default').position().top - 152});
+		moveCalendar(-152);
 		// If localStorage
 		if (Modernizr.localstorage) {
 			// Set the localStorage item, using the post ID
@@ -66,6 +79,7 @@ function setClosable(alert_ID) {
 function showAlerts(json) {
 	var alert_posts_arr = [],
 		alert_ID,
+		alert_title,
 		alert_template;
 
 	alert_posts_arr = filterAlerts(json)
@@ -74,23 +88,21 @@ function showAlerts(json) {
 	if (alert_posts_arr.length) {
 
 		for (i = 0; i < alert_posts_arr.length; i++) {
+			// Alert post ID
+			alert_ID = alert_posts_arr[i].id;
+
 			// Check for empty title
-			if ('' === alert_posts_arr[i].title.rendered) {
-				alert_posts_arr[i].title.rendered = 'Alert!';
-			}
+			alert_title = ('' === alert_posts_arr[i].title.rendered) ? 'Alert!' : alert_posts_arr[i].title.rendered;
 
 			// Alert HTML template
 			alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
 				'<div class="post alert--critical flex-container">' +
 					'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
 					'<div class="content-post alertText">' +
-						'<h3>' + alert_posts_arr[i].title.rendered + '</h3> ' + alert_posts_arr[i].content.rendered +
+						'<h3>' + alert_title + '</h3> ' + alert_posts_arr[i].content.rendered +
 					'</div>' +
 				'</div>' +
 			'</div>';
-
-			// Alert post ID
-			alert_ID = alert_posts_arr[i].id;
 
 			renderAlert(alert_template,alert_ID);
 
