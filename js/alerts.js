@@ -43,8 +43,6 @@ function renderAlert(markup,id) {
 		if (localStorage.getItem('alert_closed-' + id) !== 'true') {
 			// Append the template
 			$(markup).prependTo('.wrap-page');
-			// Bump the hours calendar down, if it is present.
-			moveCalendar(152);
 			// Remove the necessary transition class with a timeout, so that the animation shows.
 			setTimeout(function() {
 				$('.posts--preview--alerts').removeClass('transition-vertical--hide');
@@ -111,6 +109,9 @@ function showAlerts(json) {
 				setClosable(alert_ID);
 			}
 		}
+
+		// Bump the hours calendar down, if it is present.
+		moveCalendar(alert_posts_arr.length * 152);
 
 	}
 }
