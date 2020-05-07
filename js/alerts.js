@@ -26,7 +26,8 @@ function filterAlerts(posts) {
 
 		// If user has already dismissed this alert, skip it
 		if (Modernizr.localstorage) {
-			if ( true === localStorage.getItem('alert_closed-' + post.id) ) {
+
+			if ( 'true' === localStorage.getItem('alert_closed-' + post.id) ) {
 				console.log('Skipping post ' + post.id + ' because user has closed it');
 				continue;
 			}
