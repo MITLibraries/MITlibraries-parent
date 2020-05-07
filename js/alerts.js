@@ -6,34 +6,28 @@ function filterAlerts(posts) {
 		post_meta,
 		i;
 
-	// Each post
+	// For each post...
 	for (i = 0; i < posts.length; i++) {
 		post = posts[i];
 
-		console.log(post);
-
-		// If the post has no meta fields, skip it
+		// If the post has no meta fields, skip it.
 		if ( ! $(post.meta).length ) {
-			console.log('Skipping post without meta fields');
 			continue;
 		}
 
-		// If post is not flagged, and confirmed, as an alert, skip it
+		// If post is not flagged, and confirmed, as an alert, skip it.
 		if ( ! ($(post.meta.alert).length && true === post.meta.alert && true === post.meta.confirm_alert ) ) {
-			console.log('Skipping post not flagged and confirmed as an alert');
 			continue;
 		}
 
-		// If user has already dismissed this alert, skip it
+		// If user has already dismissed this alert, skip it.
 		if (Modernizr.localstorage) {
-
 			if ( 'true' === localStorage.getItem('alert_closed-' + post.id) ) {
-				console.log('Skipping post ' + post.id + ' because user has closed it');
 				continue;
 			}
 		}
 
-		console.log('Adding post to filtered list');
+		// Still here? Add post to list for processing.
 		filtered.push(post);
 
 	};
@@ -46,11 +40,9 @@ function filterAlerts(posts) {
 // we need to explicitly reposition that element.
 function moveCalendar(stepSize) {
 	if ( ! $('.gldp-default').position() ) {
-		console.log('Calendar not present');
 		return;
 	}
 	oldTop = $('.gldp-default').position().top;
-	console.log('Calendar exists at ' + oldTop);
 	$('.gldp-default').animate({top: oldTop + stepSize});
 }
 
@@ -89,37 +81,38 @@ function showAlerts(json) {
 	alert_posts_arr = filterAlerts(json)
 
 	// If there is an alert post
-	if (alert_posts_arr.length) {
-
-		for (i = 0; i < alert_posts_arr.length; i++) {
-			// Alert post ID
-			alert_ID = alert_posts_arr[i].id;
-
-			// Check for empty title
-			alert_title = ('' === alert_posts_arr[i].title.rendered) ? 'Alert!' : alert_posts_arr[i].title.rendered;
-
-			// Alert HTML template
-			alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
-				'<div class="post alert--critical flex-container">' +
-					'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
-					'<div class="content-post alertText">' +
-						'<h3>' + alert_title + '</h3> ' + alert_posts_arr[i].content.rendered +
-					'</div>' +
-				'</div>' +
-			'</div>';
-
-			renderAlert(alert_template,alert_ID);
-
-			// If this is a closable alert
-			if (true === alert_posts_arr[i].meta.closable) {
-				setClosable(alert_ID);
-			}
-		}
-
-		// Bump the hours calendar down, if it is present.
-		moveCalendar(alert_posts_arr.length * 152);
-
+	if ( ! alert_posts_arr.length) {
+		return
 	}
+
+	for (i = 0; i < alert_posts_arr.length; i++) {
+		// Alert post ID
+		alert_ID = alert_posts_arr[i].id;
+
+		// Check for empty title
+		alert_title = ('' === alert_posts_arr[i].title.rendered) ? 'Alert!' : alert_posts_arr[i].title.rendered;
+
+		// Alert HTML template
+		alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
+			'<div class="post alert--critical flex-container">' +
+				'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
+				'<div class="content-post alertText">' +
+					'<h3>' + alert_title + '</h3> ' + alert_posts_arr[i].content.rendered +
+				'</div>' +
+			'</div>' +
+		'</div>';
+
+		renderAlert(alert_template,alert_ID);
+
+		// If this is a closable alert
+		if (true === alert_posts_arr[i].meta.closable) {
+			setClosable(alert_ID);
+		}
+	}
+
+	// Bump the hours calendar down, if it is present.
+	moveCalendar(alert_posts_arr.length * 152);
+
 }
 
 $(function(){
