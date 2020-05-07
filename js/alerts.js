@@ -6,18 +6,35 @@ function filterAlerts(posts) {
 		post_meta,
 		i;
 
+	// Each post
 	for (i = 0; i < posts.length; i++) {
-		// Each post
 		post = posts[i];
-		// Make sure the field exists
-		if ($(post.meta).length) {
-			// Post meta fields
-			post_meta = post.meta;
-			// Make sure the field exists, is an alert, and is confirmed
-			if ($(post_meta.alert).length && true === post_meta.alert && true === post_meta.confirm_alert ) {
-				filtered.push(post);
+
+		console.log(post);
+
+		// If the post has no meta fields, skip it
+		if ( ! $(post.meta).length ) {
+			console.log('Skipping post without meta fields');
+			continue;
+		}
+
+		// If post is not flagged, and confirmed, as an alert, skip it
+		if ( ! ($(post.meta.alert).length && true === post.meta.alert && true === post.meta.confirm_alert ) ) {
+			console.log('Skipping post not flagged and confirmed as an alert');
+			continue;
+		}
+
+		// If user has already dismissed this alert, skip it
+		if (Modernizr.localstorage) {
+			if ( true === localStorage.getItem('alert_closed-' + post.id) ) {
+				console.log('Skipping post ' + post.id + ' because user has closed it');
+				continue;
 			}
 		}
+
+		console.log('Adding post to filtered list');
+		filtered.push(post);
+
 	};
 
 	return filtered;
@@ -37,24 +54,12 @@ function moveCalendar(stepSize) {
 }
 
 function renderAlert(markup,id) {
-	// If localStorage
-	if (Modernizr.localstorage) {
-		// Check for the localStorage alert ID item
-		if (localStorage.getItem('alert_closed-' + id) !== 'true') {
-			// Append the template
-			$(markup).prependTo('.wrap-page');
-			// Remove the necessary transition class with a timeout, so that the animation shows.
-			setTimeout(function() {
-				$('.posts--preview--alerts').removeClass('transition-vertical--hide');
-			}, 300);
-		}
-	} else { // No localStorage
-		// Append the template, etc.
-		$(markup).prependTo('.wrap-page');
-		setTimeout(function() {
-			$('.posts--preview--alerts').removeClass('transition-vertical--hide');
-		}, 300);
-	}
+	// Append the template
+	$(markup).prependTo('.wrap-page');
+	// Remove the necessary transition class with a timeout, so that the animation shows.
+	setTimeout(function() {
+		$('.posts--preview--alerts').removeClass('transition-vertical--hide');
+	}, 300);
 }
 
 function setClosable(alert_ID) {
