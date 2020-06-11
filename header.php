@@ -20,13 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The libraries of the Massachusetts Institute of Technology - Search, Visit, Research, Explore" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<meta property="og:title" content="MIT Libraries"/>
-<meta property="og:image" content="<?php echo esc_url( get_template_directory_uri() . '/images/mit-libraries-logo-black-yellow-1200-1200.png', 'https' ); ?>"/>
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="1200" />
-<meta property="og:image:alt" content="MIT Libraries logo" />
-<meta property="og:url" content="//libraries.mit.edu">
+<?php get_template_part( 'inc/header', 'opengraph' ); ?>
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
