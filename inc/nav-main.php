@@ -118,8 +118,7 @@
 					<ul class="list-unbulleted">
 						<li><a href="/references">Citation &amp; writing tools <span class="about">Mendeley, Zotero, &amp; Overleaf</span></a></li>
 						<li><a href="/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
-						<li><a href="/manage-info">Manage your info &amp; data <span class="about">Organize your data, files, and more</span></a></li>
-						<li><a href="/publishing">Getting published <span class="about">Tools &amp; help</span></a></li>
+						<li><a href="/data-services">Data services <span class="about">GIS, data management, statistical support</span></a></li>
 						<li><a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a></li>
 					</ul>
 			  </div>
