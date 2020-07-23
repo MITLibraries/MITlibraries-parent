@@ -100,6 +100,20 @@
 			font-size: 1em;
 		}
 	}
+	.callout.widget {
+		background: #e4e4e4 ;
+		border-top: 2px solid #c63 ;
+		padding-left: 20px ;
+		padding-right: 20px ;
+		padding-top: 15px ;
+		padding-bottom: 15px ;
+		margin-bottom: 20px;
+	}
+	.hide-title {
+		.widget-title {
+			display: none;
+		}
+	}
 	.no-top-border {
 		border-top: none;
 	}
