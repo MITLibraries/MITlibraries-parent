@@ -151,9 +151,15 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
-	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr' ), '1.5.5', true );
+	wp_register_script( 'moment', get_template_directory_uri() . '/js/libs/moment.min.js', array(), '2.9.0', true );
 
-	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '1.5.5', true );
+	wp_register_script( 'tabletop', get_template_directory_uri() . '/js/libs/tabletop.js', array(), false, true );
+
+	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.js', array(), '1.7.0', true );
+
+	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'tabletop', 'underscore' ), '1.5.5', true );
+
+	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'tabletop', 'underscore' ), '1.5.5', true );
 
 	wp_register_script( 'hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true );
 
@@ -167,19 +173,9 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true );
 
-	wp_register_script( 'moment', get_site_url( 1 ) . '/app/libhours/js/vendor/moment.js', false, false, true );
-
-	wp_register_script( 'tabletop', get_site_url( 1 ) . '/app/libhours/js/vendor/tabletop.js', false, false, true );
-
-	wp_register_script( 'underscore', get_site_url( 1 ) . '/app/libhours/js/vendor/underscore.js', false, false, true );
-
-	wp_register_script( 'lib-hours', get_site_url( 1 ) . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
-
 	/* All-site JS */
 
 	wp_enqueue_script( 'modernizr' );
-
-	wp_enqueue_script( 'lib-hours' );
 
 	/* Page-specific JS & CSS */
 
