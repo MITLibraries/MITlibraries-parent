@@ -169,7 +169,22 @@ function renderHours(markup, data) {
 // monday-sunday of the week of the 16th, same if you pass in December 17,
 // since that is in the same week.
 function buildCompleteHoursObject(data, date) {
+
+    // =======================================================================
+    // Log initial inputs
+
     console.log('new libhours: buildCompleteHoursObject');
+
+    console.log('Input: data');
+    console.log(data);
+    console.log('\n----------\n');
+    console.log('Input: date');
+    console.log(date);
+    console.log('\n----------\n');
+
+    // =======================================================================
+    // Define needed variables
+
     // moment will accept lots of different date formats
     var moment_date = moment(date);
 
@@ -205,6 +220,9 @@ function buildCompleteHoursObject(data, date) {
     // hash of hours data for "this" week
     var hours = {};
 
+    // =======================================================================
+    // Build exceptions hash
+
     // exceptions must be accessed by date, then location
     // we have to do some strange iterations because of the format
     // of the spreadsheet
@@ -227,6 +245,13 @@ function buildCompleteHoursObject(data, date) {
         });
     });
 
+    console.log('exceptions');
+    console.log(exceptions);
+    console.log('\n----------\n');
+
+    // =======================================================================
+    // Build hours_data hash
+
     // hours_data must be access by semester, then location, then by day
     _.each(data['Semester Breakdown'].elements, function(semester) {
         hours_data[semester.semestername] = {};
@@ -237,6 +262,13 @@ function buildCompleteHoursObject(data, date) {
             });
         }
     });
+
+    console.log('hours_data');
+    console.log(hours_data);
+    console.log('\n----------\n');
+
+    // =======================================================================
+    // Build... not sure?
 
     // run through each DOW for "this" week
     // determine what date the day is
@@ -256,6 +288,13 @@ function buildCompleteHoursObject(data, date) {
             }
         }));
     }
+
+    console.log('semester_per_day');
+    console.log(semester_per_day);
+    console.log('\n----------\n');
+
+    // =======================================================================
+    // Build final hash of hours
 
     // build hash of arrays (weekly hours) for display in template
     // lib name as key, value as array of hours for each DOW
@@ -286,6 +325,8 @@ function buildCompleteHoursObject(data, date) {
     });
 
     console.log(hours);
+    console.log('\n----------\n');
+
     return hours;
 }
 
