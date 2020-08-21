@@ -7,6 +7,7 @@ module.exports = {
       'js/menu.toggle.js',
       'js/libs/*.js',
       'js/hours-lookup.js',
+      'js/hours-loader.js',
       'js/alerts.js',
       'js/fonts.js'
     ],
@@ -21,6 +22,7 @@ module.exports = {
       'js/libs/*.js',
       'js/hours-home.js',
       'js/hours-lookup.js',
+      'js/hours-loader.js',
       'js/guides-home.js',
       'js/experts-home.js',
       'js/ga_discovery.js',
