@@ -161,6 +161,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'tabletop', 'underscore' ), '1.5.5', true );
 
+	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore'), '1.5.5', true);
+
 	wp_register_script( 'hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true );
 
 	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '1.5.5', true );
@@ -176,6 +178,8 @@ function twentytwelve_scripts_styles() {
 	/* All-site JS */
 
 	wp_enqueue_script( 'modernizr' );
+
+	wp_enqueue_script( 'hours-loader' );
 
 	/* Page-specific JS & CSS */
 
