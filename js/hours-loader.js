@@ -8,73 +8,264 @@ var HoursLoader = {
 
 	debug: true,
 
-	locations: {},
+	exceptions: [],
 
-	semesters: {},	
+	hours: {},
+
+	locations: [],
+
+	markers: [
+		"table.hrList tr",
+		"[data-location-hours]",
+	],
+
+	semesters: [],
 
 	step: 0,
 
-	// This method assembles the complete record of library hours from the
-	// local cache. This cache has been populated by the MITlib Pull Hours
-	// plugin.
-	assembleHoursObject: function() {
-		// First we build the list of possible semesters and their dates.
-		this.loadCacheFile('semester-breakdown.json', this.assembleSemesters);
-		this.loadCacheFile('default-hours.json', this.assembleLocations);
-		console.log('This is after both Semesters and Locations are assembled');
-	},
+	week: [],
 
-	// This method populates the list of locations for which we have hours.
-	assembleLocations: function(response) {
-		console.log('This is assembleLocations');
-		var haystack, sample, locs;
-		locs = {};
-		if (response.target.readyState !== 4 || response.target.status !== 200 ) {
-			console.error('Unexpected response received!');
-			return;
-		}
-		haystack = response.target.response;
-		haystack.map(function(i) {
-			if ('Location' === i[0]) {
-				return;
+	// This method transposes the exceptions array of arrays
+	// From https://stackoverflow.com/a/17428779/2245617
+	assembleExceptions: function() {
+		console.log('Assembling relevant exceptions');
+		var testweek;
+		rebuild = [];
+		testweek = this.week;
+		this.exceptions = _.zip.apply(_, this.exceptions);
+		// Now we filter the exceptions array for only those events within our target week...
+		_.each(this.exceptions, function(except) {
+			except_date = new Date(except[1]);
+			if (except_date <= testweek[6] && except_date >= testweek[0]) {
+				rebuild.push(except);
 			}
-			sample = {}
-			sample[0] = i[1];
-			sample[1] = i[2];
-			sample[2] = i[3];
-			sample[3] = i[4];
-			sample[4] = i[5];
-			sample[5] = i[6];
-			sample[6] = i[7];
-			locs[i[0]] = sample;
 		});
-		console.log(locs);
+		console.log(rebuild);
 	},
 
-	// This method populates the list of semesters for which we have hours
-	// information.
-	assembleSemesters: function(response) {
-		console.log('This is assembleSemesters');
-		var drydock = {};
-		if (response.target.readyState !== 4 || response.target.status !== 200 ) {
-			console.error('Unexpected response received!');
-			return;
+	// This assembles the final hours information from all previous data.
+	assembleHours: function() {
+		console.log('Assembling final hours object');
+		testhours = {};
+		var loc, testexceptions, testlocations, testsemesters, testweek;
+		testexceptions = this.exceptions;
+		testlocations = this.locations;
+		testsemesters = this.semesters;
+		testweek = this.week;
+		// For each location...
+		_.each(testlocations, function(location) {
+			console.log(location);
+			loc = [];
+			locname = location[0];
+			loc = location.slice(1);
+			testhours[locname] = loc;
+		});
+		console.log(testhours);
+		this.hours = testhours;
+
+	},
+
+	// This iterates over the assembled week, loading each day's hours from the relevant semester.
+	assembleSemesterHours: function() {
+		console.log('Loading appropriate semester hours for each day of the week');
+		var testweek;
+		testweek = this.week;
+		console.log(testweek);
+		_.each(testweek, function(dayofweek) {
+			console.log(dayofweek);
+		});
+	},
+
+	assembleWeek: function() {
+		console.log('Assembling semester information about target week');
+		var regex, testday, testweek, testsemesters, semester_cache, semester_start, semester_end, rebuildsemesters, rebuildweek;
+		rebuildsemesters = [];
+		rebuildweek = [];
+		regex = / /gi;
+		testweek = this.week;
+		testsemesters = this.semesters;
+		// For each date in the week...
+		_.each(testweek, function(dayofweek) {
+			testday = new Date(dayofweek);
+			rebuildsemester = [];
+			// Cycle through each term, determining which it belongs to.
+			// (This is inefficient, I know...)
+			_.each(testsemesters, function(semester) {
+				semester_start = new Date(semester[1]);
+				semester_end = new Date(semester[2]);
+				if ( semester[0] !== 'Default Hours' && testday >= semester_start && testday <= semester_end ) {
+					rebuildsemester = semester;
+					semester_cache = semester[0].replace(regex, '-') + '.json'
+					testday.semestername = semester[0];
+					testday.start = semester[1];
+					testday.end = semester[2];
+				}
+			});
+			rebuildsemester.push(semester_cache);
+			rebuildsemesters.push(rebuildsemester);
+			rebuildweek.push(testday);
+		});
+		console.log('Rebuilt semesters array is:');
+		console.log(rebuildsemesters);
+		this.semesters = _.uniq(rebuildsemesters);
+		console.log('Trimmed semesters list is now:');
+		console.log(this.semesters);
+		this.week = rebuildweek;
+	},
+
+	init: function() {
+		// Setup phase
+		// Define any needed properties
+		this.setTestDate();
+		this.setWeek();
+
+		// Load all required files, then take further action
+		files = [
+			'default-hours.json',
+			'semester-breakdown.json',
+			'holidays-and-special-hours.json'
+		];
+
+		Promise.all([
+			this.loadCacheFile(files[0]),
+			this.loadCacheFile(files[1]),
+			this.loadCacheFile(files[2])
+		])
+		.then(
+			this.setData.bind(this)
+		)
+		.then(
+			this.assembleWeek.bind(this)
+		)
+		.then(
+			this.loadSemesterHours.bind(this)
+		)
+		.catch(function(error) {
+			console.error('Error encountered loading required data files:')
+			console.error(error);
+		});
+
+	},
+
+	log: function(message) {
+		if ( this.debug ) {
+			console.log( this.step + ':\n');
+			console.log( message );
+			console.log('\n==============================\n\n');
+			this.step++;
 		}
-		console.log(response);
-		console.log(response.target.response);
-		drydock = response.target.response;
-
-		this.semesters = drydock;
 	},
 
-	// This method builds the object describing a single location and its
-	// hours for a week.
-	buildLocation: function() {
+	// This method loads a file inside the cache directory, using a Promise
+	loadCacheFile: function(path) {
+		var url = this.cache + path;
+		return new Promise( function( resolve, reject ) {
+			var request = new XMLHttpRequest();
+			request.responseType = 'json';
+			request.open('GET', url);
+			request.onload = function() {
+				if ( 200 == request.status ) {
+					resolve( request.response );
+				} else {
+					reject( Error( request.statusText ) );
+				}
+			};
+			request.onerror = function() {
+				reject( Error( "Network Error" ) );
+			};
+			request.send();
+		});
+	},
 
+	// This is the second part of the loading and rendering sequence.
+	// By this point we have populated the target dates array, and
+	// filtered the exceptions and semesters list based on those dates.
+	//
+	// This sets up the second Promise chain, which starts with loading
+	// the list of applicable semester hours, and then starts assembling
+	// all loaded data into the final Hours object.
+	//
+	// The chain finishes by calling the render() method.
+	loadSemesterHours: function() {
+		console.log('Loading required semester hours');
+		var cache, files, loader;
+		cache = this.cache;
+		files = [];
+		loader = this.loadCacheFile;
+		_.each(this.semesters, function(semester) {
+			files.push(semester[4]);
+		})
+		console.log('Files to be loaded:');
+		console.log(files);
+
+		Promise.all(
+			files.map(this.loadCacheFile.bind(this))
+		)
+		.then(
+			this.setSemesterHours.bind(this)
+		)
+		.then(
+			this.assembleExceptions.bind(this)
+		)
+		.then(
+			this.assembleSemesterHours.bind(this)
+		)
+		.then(
+			this.assembleHours.bind(this)
+		)
+		.then(
+			this.render.bind(this)
+		)
+		.catch(function(error) {
+			console.error('Error encountered loading semester hours');
+			console.error(error);
+		});
+
+	},
+
+	// This is the main render function, which detects markup conditions and calls the appropriate render function.
+	render: function() {
+		console.log('Render method');
+		if ( jQuery("[data-location-hours]").length > 0 ) {
+			this.renderSingle();
+		} else if ( jQuery("table.hrList").length > 0 ) {
+			this.renderGrid();
+		}
+	},
+
+	// This renders an hours grid in response to a specific table class in markup.
+	renderGrid: function() {
+		console.log('Rendering hours grid');
+	},
+
+	// This renders a single hours value in response to a data attribute in markup.
+	renderSingle: function() {
+		console.log('Rendering single hours value');
+
+	},
+
+	// This method stores data loaded by the Promise into object properties.
+	// Data is an array of file contents defined within the init method.
+	setData: function(data) {
+		console.log('First batch of data loaded from local cache:');
+		this.locations = data[0];
+		console.log('Locations:');
+		console.log(this.locations);
+		this.semesters = data[1];
+		console.log('Semesters:');
+		console.log(this.semesters);
+		this.exceptions = data[2];
+		console.log('Exceptions:');
+		console.log(this.exceptions);
+	},
+
+	// This stores an array of saved semester hours.
+	setSemesterHours: function(data) {
+		this.semester_hours = data;
 	},
 
 	// This method defines the date about which we are concerned.
-	buildTestDate: function() {
+	setTestDate: function() {
 		// We start with todays date unless something else is specified.
 		var testDate = new Date();
 		if ( window.location.search ) {
@@ -103,48 +294,21 @@ var HoursLoader = {
 				testDate = new Date(year, month, day);
 			}
 		}
-		this.log(testDate);
-		return testDate;
+		this.date = testDate;
+		this.log('Date set to ' + this.date);
 	},
 
-	init: function() {
-		if ( jQuery("[data-location-hours]").length > 0 ) {
-			this.log('Found a placeholder for one location hours');
-			// Single-location displays only ever show today's hours.
-			this.date = new Date();
-			this.assembleHoursObject();
+	// This method will return the Target Dates array.
+	setWeek: function() {
+		var week = [];
+		var moment_date = moment(this.date);
+		var start_date = moment_date.clone().subtract(moment_date.isoWeekday()-1, 'days');
+		for (var i=0; i < 7; i++) {
+			var idate = start_date.clone().add(i, 'days');
+			week.push(idate);
 		}
-
-		if ( jQuery("table.hrList").length > 0 ) {
-			this.log('Found a grid for all location hours');
-			// The hours grid can be requested for any arbitrary date.
-			this.date = this.buildTestDate();
-			this.assembleHoursObject();
-		}
-
-	},
-
-	log: function(message) {
-		if ( this.debug ) {
-			console.log( this.step + ':\n');
-			console.log( message );
-			console.log('\n==============================\n\n');
-			this.step++;
-		}
-	},
-
-	// This method loads a locally-cached file, and then passes it to the
-	// specified callback.
-	loadCacheFile: function(path, callback) {
-		this.log( 'Loading ' + path + ' from cache');
-		var request = new XMLHttpRequest();
-		request.responseType = 'json';
-		request.open('GET', this.cache + path);
-		request.onload = callback;
-		request.onerror = function(e) {
-			console.error(request.statusText);
-		};
-		request.send(null);
+		this.week = week;
+		this.log('Week set to ' + this.week);
 	}
 
 }
@@ -153,4 +317,4 @@ window.HoursLoader = HoursLoader;
 
 $(document).ready(function(){HoursLoader.init()});
 
-})(jQuery);;
+})(jQuery);
