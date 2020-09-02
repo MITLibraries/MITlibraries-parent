@@ -165,9 +165,8 @@ var HoursLoader = {
 		var cache, files, loader;
 		cache = this.cache;
 		files = [];
-		loader = this.loadCacheFile;
 		_.each(this.semesters, function(semester) {
-			files.push(semester[4]);
+			files.push(semester[3]);
 		})
 		console.log('Files to be loaded:');
 		console.log(files);
@@ -312,7 +311,7 @@ var HoursLoader = {
 	// This method will return the Target Dates array.
 	setWeek: function() {
 		var week = [];
-		var moment_date = moment(this.date);
+		var moment_date = moment(this.date).startOf('day');
 		var start_date = moment_date.clone().subtract(moment_date.isoWeekday()-1, 'days');
 		for (var i=0; i < 7; i++) {
 			var idate = start_date.clone().add(i, 'days');
