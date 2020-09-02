@@ -1,34 +1,75 @@
 digraph G {
-	subgraph cluster_0 {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		setTestDate -> setWeek -> loadCacheFile
-		label = "Init";
-	}
-
 	subgraph cluster_1 {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		loadCacheFile -> setData -> assembleWeek -> loadSemesterHours
-		label = "Promise Chain One";
+		label = "Compile Step One";
+		color=blue;
+		setTestDate -> setWeek -> loadCacheFile
+
+		subgraph cluster_2 {
+			label="Promise Chain One";
+			style=filled;
+			color=grey70;
+			node [style=filled,color=white];
+			loadCacheFile -> setData -> assembleWeek -> loadSemesterHours
+			loadCacheFile -> error1
+			setData -> error1
+			assembleWeek -> error1
+			loadSemesterHours -> error1
+		}
 	}
 
-	subgraph cluster_2 {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		assembleExceptions -> assembleSemesterHours -> assembleHours -> render
-		label = "Promise Chain Two";
+	subgraph cluster_3 {
+		label = "Compile Step Two";
+		color = purple;
+
+		subgraph cluster_3 {
+			style=filled;
+			color=lightgrey;
+			node [style=filled,color=white];
+			assembleExceptions -> assembleSemesterHours -> assembleHours -> render
+			label = "Promise Chain Two";
+		}
 	}
 
-	start -> Init
+	start -> init
+	init -> compileStepOne
+	compileStepOne -> compileStepTwo
+	compileStepTwo -> renderCluster
+	init -> stop;
 	loadSemesterHours -> assembleExceptions
 	render -> renderSingle
 	render -> renderGrid
 
-	start [shape=circle,color=green];
+	compileStepOne [
+		shape=box,
+		color=blue
+	];
+	compileStepTwo [
+		shape=box,
+		color=purple
+	];
+	error1 [
+		style=filled,
+		shape=octagon,
+		color=red,
+		label="Catch"
+	];
+	init [
+		shape=diamond
+	];
+	loadCacheFile [
+		style=filled,
+		color=white
+	];
+	start [
+		style=filled,
+		shape=circle,
+		color=green
+	];
+	stop [
+		style=filled,
+		shape=octagon,
+		color=red
+	];
 	renderSingle [shape=octagon,color=red];
 	renderGrid [shape=octagon,color=red];
 }

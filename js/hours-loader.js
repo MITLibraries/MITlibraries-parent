@@ -14,6 +14,9 @@ var HoursLoader = {
 
 	locations: [],
 
+	// This is an array of markup conditions, any of which indicates that
+	// hours are called for on the page. If found, the rest of the code
+	// is executed.
 	markers: [
 		"table.hrList tr",
 		"[data-location-hours]",
@@ -113,7 +116,9 @@ var HoursLoader = {
 		this.week = rebuildweek;
 	},
 
-	init: function() {
+	compileStepOne: function() {
+		console.log('Hours markers found. Proceeding...');
+
 		// Setup phase
 		// Define any needed properties
 		this.setTestDate();
@@ -138,42 +143,11 @@ var HoursLoader = {
 			this.assembleWeek.bind(this)
 		)
 		.then(
-			this.loadSemesterHours.bind(this)
+			this.compileStepTwo.bind(this)
 		)
 		.catch(function(error) {
 			console.error('Error encountered loading required data files:')
 			console.error(error);
-		});
-
-	},
-
-	log: function(message) {
-		if ( this.debug ) {
-			console.log( this.step + ':\n');
-			console.log( message );
-			console.log('\n==============================\n\n');
-			this.step++;
-		}
-	},
-
-	// This method loads a file inside the cache directory, using a Promise
-	loadCacheFile: function(path) {
-		var url = this.cache + path;
-		return new Promise( function( resolve, reject ) {
-			var request = new XMLHttpRequest();
-			request.responseType = 'json';
-			request.open('GET', url);
-			request.onload = function() {
-				if ( 200 == request.status ) {
-					resolve( request.response );
-				} else {
-					reject( Error( request.statusText ) );
-				}
-			};
-			request.onerror = function() {
-				reject( Error( "Network Error" ) );
-			};
-			request.send();
 		});
 	},
 
@@ -186,7 +160,7 @@ var HoursLoader = {
 	// all loaded data into the final Hours object.
 	//
 	// The chain finishes by calling the render() method.
-	loadSemesterHours: function() {
+	compileStepTwo: function() {
 		console.log('Loading required semester hours');
 		var cache, files, loader;
 		cache = this.cache;
@@ -221,6 +195,43 @@ var HoursLoader = {
 			console.error(error);
 		});
 
+	},
+
+	init: function() {
+		// Check for any of the conditions in the markup array
+		if ( _.find(this.markers, function(marker) { return jQuery(marker).length }) ) {
+			this.compileStepOne();
+		}
+	},
+
+	log: function(message) {
+		if ( this.debug ) {
+			console.log( this.step + ':\n');
+			console.log( message );
+			console.log('\n==============================\n\n');
+			this.step++;
+		}
+	},
+
+	// This method loads a file inside the cache directory, using a Promise
+	loadCacheFile: function(path) {
+		var url = this.cache + path;
+		return new Promise( function( resolve, reject ) {
+			var request = new XMLHttpRequest();
+			request.responseType = 'json';
+			request.open('GET', url);
+			request.onload = function() {
+				if ( 200 == request.status ) {
+					resolve( request.response );
+				} else {
+					reject( Error( request.statusText ) );
+				}
+			};
+			request.onerror = function() {
+				reject( Error( "Network Error" ) );
+			};
+			request.send();
+		});
 	},
 
 	// This is the main render function, which detects markup conditions and calls the appropriate render function.
