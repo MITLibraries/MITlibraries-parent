@@ -107,6 +107,7 @@ var HoursLoader = {
 		var regex, testday, testweek, testsemesters, semester_cache, semester_start, semester_end, rebuildsemesters, rebuildweek;
 		rebuildsemesters = [];
 		rebuildweek = [];
+		// This regex is used to convert a sheet name to a filename.
 		regex = / /gi;
 		testweek = this.week;
 		testsemesters = this.semesters;
