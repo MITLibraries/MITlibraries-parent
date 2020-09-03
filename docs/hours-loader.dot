@@ -2,15 +2,15 @@ digraph G {
 	subgraph cluster_1 {
 		label = "Compile Step One";
 		color=blue;
-		setTestDate -> setWeek -> loadCacheFile
+		setTestDate -> setWeek -> loadCacheFile1
 
 		subgraph cluster_2 {
 			label="Promise Chain One";
 			style=filled;
 			color=grey70;
 			node [style=filled,color=white];
-			loadCacheFile -> setData -> assembleWeek -> loadSemesterHours
-			loadCacheFile -> error1
+			loadCacheFile1 -> setData -> assembleWeek -> loadSemesterHours
+			loadCacheFile1 -> error1
 			setData -> error1
 			assembleWeek -> error1
 			loadSemesterHours -> error1
@@ -23,9 +23,14 @@ digraph G {
 
 		subgraph cluster_3 {
 			style=filled;
-			color=lightgrey;
+			color=grey70;
 			node [style=filled,color=white];
-			assembleExceptions -> assembleSemesterHours -> assembleHours -> render
+			loadCacheFile2 -> setSemsterHours -> assembleExceptions -> applySemesterHours -> assembleHours -> render
+			loadCacheFile2 -> error2
+			setSemsterHours -> error2
+			assembleExceptions -> error2
+			applySemesterHours -> error2
+			assembleHours -> error2
 			label = "Promise Chain Two";
 		}
 	}
@@ -35,19 +40,27 @@ digraph G {
 	compileStepOne -> compileStepTwo
 	compileStepTwo -> renderCluster
 	init -> stop;
-	loadSemesterHours -> assembleExceptions
+	loadSemesterHours -> loadCacheFile2
 	render -> renderSingle
 	render -> renderGrid
 
 	compileStepOne [
 		shape=box,
-		color=blue
+		color=blue,
+		label="Compile Step One"
 	];
 	compileStepTwo [
 		shape=box,
-		color=purple
+		color=purple,
+		label="Compile Step Two"
 	];
 	error1 [
+		style=filled,
+		shape=octagon,
+		color=red,
+		label="Catch"
+	];
+	error2 [
 		style=filled,
 		shape=octagon,
 		color=red,
@@ -56,9 +69,18 @@ digraph G {
 	init [
 		shape=diamond
 	];
-	loadCacheFile [
+	loadCacheFile1 [
 		style=filled,
 		color=white
+		label="loadCacheFile"
+	];
+	loadCacheFile2 [
+		style=filled,
+		color=white
+		label="loadCacheFile"
+	];
+	renderCluster [
+		label="Render Cluster"
 	];
 	start [
 		style=filled,

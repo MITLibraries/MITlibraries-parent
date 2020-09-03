@@ -28,6 +28,40 @@ var HoursLoader = {
 
 	week: [],
 
+	// This iterates over the assembled week, loading each day's hours from the relevant semester.
+	// At the beginning of this method, the locations array is populated by the base default hours,
+	// coming from the Default Hours sheet.
+	// At the end of this method, those values have been replaced according to which semester governs
+	// that date.
+	applySemesterHours: function() {
+		console.log('Loading appropriate semester hours into locations arrays for each day of the week');
+		// Transfer values into local scope so that the coming anonymous functions can still read them.
+		var locations, needle, semesters, semester_hours, testweek;
+		locations = this.locations;
+		semesters = this.semesters;
+		semester_hours = this.semester_hours;
+		testweek = this.week;
+		// Loop over our Week construct
+		_.each(testweek, function(dayofweek, i) {
+			// Define which column in the data collections we're replacing for this day of the week.
+			target_column = (0 === dayofweek.getDay()) ? 7 : dayofweek.getDay();
+			// Find the element in semester_hours that corresponds to this semester
+			needle = _.find(semesters, function(swap) {
+				return dayofweek.semestername === swap[0];
+			});
+			id = _.indexOf(_.pluck(semesters, 0), needle[0]);
+			// Pluck the column for this date from the relevant source data
+			relevant = _.pluck(semester_hours[id], target_column);
+			// This isn't quite as elegant as _.pluck, but close. Drop the
+			// relevant data over the appropriate element in the locations array-of-arrays.
+			locations = _.map(locations, function(loc, j) {
+				loc[target_column] = relevant[j];
+				return loc;
+			});
+		});
+		this.locations = locations;
+	},
+
 	// This method transposes the exceptions array of arrays
 	// From https://stackoverflow.com/a/17428779/2245617
 	assembleExceptions: function() {
@@ -66,17 +100,6 @@ var HoursLoader = {
 		console.log(testhours);
 		this.hours = testhours;
 
-	},
-
-	// This iterates over the assembled week, loading each day's hours from the relevant semester.
-	assembleSemesterHours: function() {
-		console.log('Loading appropriate semester hours for each day of the week');
-		var testweek;
-		testweek = this.week;
-		console.log(testweek);
-		_.each(testweek, function(dayofweek) {
-			console.log(dayofweek);
-		});
 	},
 
 	assembleWeek: function() {
@@ -181,7 +204,7 @@ var HoursLoader = {
 			this.assembleExceptions.bind(this)
 		)
 		.then(
-			this.assembleSemesterHours.bind(this)
+			this.applySemesterHours.bind(this)
 		)
 		.then(
 			this.assembleHours.bind(this)
