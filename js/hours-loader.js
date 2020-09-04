@@ -245,7 +245,7 @@ var HoursLoader = {
 	},
 
 	init: function() {
-		// Check for any of the conditions in the markup array
+		// Check for any of the conditions in the markup array. If found, start the compilation process.
 		if ( _.find(this.markers, function(marker) { return jQuery(marker).length }) ) {
 			this.compileStepOne();
 		}
