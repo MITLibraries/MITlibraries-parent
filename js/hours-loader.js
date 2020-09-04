@@ -60,6 +60,11 @@ var HoursLoader = {
 			});
 		});
 		this.locations = locations;
+		this.logArray([
+			'Applied semester hours',
+			this.locations,
+			'\n'
+		]);
 	},
 
 	// This method transposes the exceptions array of arrays
@@ -70,6 +75,10 @@ var HoursLoader = {
 		rebuild = [];
 		testweek = this.week;
 		this.exceptions = _.zip.apply(_, this.exceptions);
+		this.logArray([
+			'Transposed exceptions:',
+			this.exceptions
+		]);
 		// Now we filter the exceptions array for only those events within our target week...
 		_.each(this.exceptions, function(except) {
 			except_date = new Date(except[1]);
@@ -205,7 +214,7 @@ var HoursLoader = {
 	// The chain finishes by calling the render() method.
 	compileStepTwo: function() {
 		this.logArray([
-			'Compile Step Two...',
+			'Compile Step Two...\n',
 			'Loading required semester hours'
 		]);
 		var cache, files, loader;
@@ -216,7 +225,8 @@ var HoursLoader = {
 		})
 		this.logArray([
 			'Files to be loaded:',
-			files
+			files,
+			'\n'
 		]);
 
 		Promise.all(
@@ -336,6 +346,11 @@ var HoursLoader = {
 	// This stores an array of saved semester hours.
 	setSemesterHours: function(data) {
 		this.semester_hours = data;
+		this.logArray([
+			'Loaded semester hours:',
+			this.semester_hours,
+			'\n'
+		]);
 	},
 
 	// This method defines the date about which we are concerned.
