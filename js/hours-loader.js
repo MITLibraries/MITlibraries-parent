@@ -34,7 +34,7 @@ var HoursLoader = {
 	// At the end of this method, those values have been replaced according to which semester governs
 	// that date.
 	applySemesterHours: function() {
-		console.log('Loading appropriate semester hours into locations arrays for each day of the week');
+		this.logArray('Loading appropriate semester hours into locations arrays for each day of the week');
 		// Transfer values into local scope so that the coming anonymous functions can still read them.
 		var locations, needle, semesters, semester_hours, testweek;
 		locations = this.locations;
@@ -65,7 +65,7 @@ var HoursLoader = {
 	// This method transposes the exceptions array of arrays
 	// From https://stackoverflow.com/a/17428779/2245617
 	assembleExceptions: function() {
-		console.log('Assembling relevant exceptions');
+		this.logArray('Assembling relevant exceptions');
 		var testweek;
 		rebuild = [];
 		testweek = this.week;
@@ -77,12 +77,17 @@ var HoursLoader = {
 				rebuild.push(except);
 			}
 		});
-		console.log(rebuild);
+		this.exceptions = rebuild;
+		this.logArray([
+			'New exceptions list:',
+			this.exceptions,
+			'\n'
+		]);
 	},
 
 	// This assembles the final hours information from all previous data.
 	assembleHours: function() {
-		console.log('Assembling final hours object');
+		this.logArray('Assembling final hours object');
 		testhours = {};
 		var loc, testexceptions, testlocations, testsemesters, testweek;
 		testexceptions = this.exceptions;
@@ -91,19 +96,24 @@ var HoursLoader = {
 		testweek = this.week;
 		// For each location...
 		_.each(testlocations, function(location) {
-			console.log(location);
+			this.logArray([
+				location
+			]);
 			loc = [];
 			locname = location[0];
 			loc = location.slice(1);
 			testhours[locname] = loc;
 		});
-		console.log(testhours);
 		this.hours = testhours;
-
+		this.logArray([
+			'New hours data:',
+			this.hours,
+			'\n'
+		]);
 	},
 
 	assembleWeek: function() {
-		console.log('Assembling semester information about target week');
+		this.logArray('Assembling semester information about target week')
 		var regex, testday, testweek, testsemesters, semester_cache, semester_start, semester_end, rebuildsemesters, rebuildweek;
 		rebuildsemesters = [];
 		rebuildweek = [];
@@ -132,16 +142,25 @@ var HoursLoader = {
 			rebuildsemesters.push(rebuildsemester);
 			rebuildweek.push(testday);
 		});
-		console.log('Rebuilt semesters array is:');
-		console.log(rebuildsemesters);
+		this.logArray([
+			'Rebuilt semesters data:',
+			rebuildsemesters
+		]);
 		this.semesters = _.uniq(rebuildsemesters);
-		console.log('Trimmed semesters list is now:');
-		console.log(this.semesters);
+		this.logArray([
+			'Unique semesters data:',
+			this.semesters
+		]);
 		this.week = rebuildweek;
+		this.logArray([
+			'Rebuilt week data:',
+			this.week,
+			'\n'
+		]);
 	},
 
 	compileStepOne: function() {
-		console.log('Hours markers found. Proceeding...');
+		this.logArray('Hours markers found. Proceeding...');
 
 		// Setup phase
 		// Define any needed properties
@@ -185,15 +204,20 @@ var HoursLoader = {
 	//
 	// The chain finishes by calling the render() method.
 	compileStepTwo: function() {
-		console.log('Loading required semester hours');
+		this.logArray([
+			'Compile Step Two...',
+			'Loading required semester hours'
+		]);
 		var cache, files, loader;
 		cache = this.cache;
 		files = [];
 		_.each(this.semesters, function(semester) {
 			files.push(semester[3]);
 		})
-		console.log('Files to be loaded:');
-		console.log(files);
+		this.logArray([
+			'Files to be loaded:',
+			files
+		]);
 
 		Promise.all(
 			files.map(this.loadCacheFile.bind(this))
@@ -227,12 +251,25 @@ var HoursLoader = {
 		}
 	},
 
-	log: function(message) {
+	// This method is necessary for a few reasons:
+	// 1. Can easily turn on / off debugging with an object property (this.debug)
+	// 2. Provides a wrapper around console.log( JSON.parse( JSON.stringify( ) ) ),
+	//    which is needed as described in https://stackoverflow.com/a/15364821/2245617
+	// 3. Allows methods to pass an array of values for logging, which I hope
+	//    will be easier to read within code.
+	// PLEASE NOTE: This method currently does not log some objects accurately,
+	// particularly Date objects.
+	logArray: function(messages) {
 		if ( this.debug ) {
-			console.log( this.step + ':\n');
-			console.log( message );
-			console.log('\n==============================\n\n');
-			this.step++;
+			// If we were sent a string, just log it and return.
+			if ("string" === typeof(messages)) {
+				console.log( JSON.parse( JSON.stringify( messages ) ) );
+				return;
+			}
+			// Otherwise, iterate over the object and log each line.
+			_.each(messages, function(line) {
+				console.log( JSON.parse( JSON.stringify( line ) ) );
+			});
 		}
 	},
 
@@ -281,16 +318,19 @@ var HoursLoader = {
 	// This method stores data loaded by the Promise into object properties.
 	// Data is an array of file contents defined within the init method.
 	setData: function(data) {
-		console.log('First batch of data loaded from local cache:');
 		this.locations = data[0];
-		console.log('Locations:');
-		console.log(this.locations);
 		this.semesters = data[1];
-		console.log('Semesters:');
-		console.log(this.semesters);
 		this.exceptions = data[2];
-		console.log('Exceptions:');
-		console.log(this.exceptions);
+		this.logArray([
+			'First batch of data loaded from local cache:',
+			'Locations:',
+			this.locations,
+			'Semesters:',
+			this.semesters,
+			'Exceptions:',
+			this.exceptions,
+			'\n'
+		]);
 	},
 
 	// This stores an array of saved semester hours.
@@ -329,7 +369,11 @@ var HoursLoader = {
 			}
 		}
 		this.date = testDate;
-		this.log('Date set to ' + this.date);
+		this.logArray([
+			'Date set to:',
+			this.date,
+			'\n'
+		]);
 	},
 
 	// This method will return the Target Dates array.
@@ -342,7 +386,11 @@ var HoursLoader = {
 			week.push(idate);
 		}
 		this.week = week;
-		this.log('Week set to ' + this.week);
+		this.logArray([
+			'Week set to:',
+			this.week,
+			'\n'
+		]);
 	}
 
 }
