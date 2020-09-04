@@ -146,24 +146,45 @@ var HoursLoader = {
 		]);
 	},
 
-	// This assembles the final hours information from all previous data.
+	// This reshapes the compiled hours array-of-arrays from its build location
+	// inside this.locations, and dumps it into this.hours in a format which
+	// the render functions are expecting.
 	assembleHours: function() {
 		this.logArray('Assembling final hours object');
 		testhours = {};
-		var loc, testexceptions, testlocations, testsemesters, testweek;
-		testexceptions = this.exceptions;
+		var loc, testlocations;
 		testlocations = this.locations;
-		testsemesters = this.semesters;
-		testweek = this.week;
-		// For each location...
+		// For each location, add an object to the final hours object.
+		// the key for this object is the first value in the location array,
+		// while the rest of the values are converted to an object with keys
+		// of the index value.
+		//
+		// Example:
+		// starting location:
+		// [
+		//   "Administrative Offices",
+		//   "closed",
+		//   "closed",
+		//   "closed",
+		//   "By appt only",
+		//   "By appt only",
+		//   "closed",
+		//   "closed"
+		// ]
+		//
+		// Final object:
+		// "Administrative Offices": {
+		//   "0": "closed",
+		//   "1": "closed",
+		//   "2": "closed",
+		//   "3": "By appt only",
+		//   "4": "By appt only",
+		//   "5": "closed",
+		//   "6": "closed"
+		// }
 		_.each(testlocations, function(location) {
-			this.logArray([
-				location
-			]);
-			loc = [];
-			locname = location[0];
 			loc = location.slice(1);
-			testhours[locname] = loc;
+			testhours[location[0]] = _.object([...loc.keys()], loc);
 		});
 		this.hours = testhours;
 		this.logArray([
