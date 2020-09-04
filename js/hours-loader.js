@@ -67,6 +67,58 @@ var HoursLoader = {
 		]);
 	},
 
+	// This method applies the remaining exceptions that still exist in memory.
+	// (The list of exceptions was previously filtered in assembleExceptions)
+	applyExceptionHours: function() {
+		this.logArray('Applying (already-filtered) hours exceptions to location arrays');
+		// Transfer values into local scope for anonymous functions.
+		var exception_hours, haystack, locations, logArray, needle, week;
+		logArray = this.logArray;
+		locations = this.locations;
+		this.logArray([
+			'Current state of compiled hours:',
+			locations
+		]);
+		week = this.week;
+		// This builds an array of dates in a comparable format to how the exceptions are recorded.
+		haystack = _.map(week, function(day) {
+			return(moment(day).format('M/D/YYYY'));
+		});
+		this.logArray([
+			'Haystack for searching within the following loop:',
+			haystack
+		]);
+		// Loop over our array of exceptions...
+		_.each(this.exceptions, function(exception, i) {
+			exception_hours = exception.slice(2); // Skips first two values
+			// Extract the actual new values into a separate array.
+			// Exception[0] is a text string describing why the exception exists. It is never displayed.
+			// Exception[1] is the effective date, which we need to look up in the week array.
+			needle = exception[1];
+			target = _.indexOf(haystack, needle);
+			// The haystack dates are already sorted with Monday first, so the index find just above
+			// only needs to be increased by one due to the compiled array-of-arrays having a label field.
+			target_column = target + 1;
+			values = _.pluck(locations, target_column);
+			// Iterate over the new values, overwriting any non-blank values
+			_.each(exception_hours, function(new_value, j) {
+				// The index j of this loop is within the 12-element list of locations.
+				// In order to transfer this accurately to the compiled hours information, we increment by two.
+				// (see note above about our not storing exceptions for the chat service hours)
+				if ( "" !== new_value && undefined !== new_value ) {
+					target_row = j + 1; // offset one row because of row labels
+					locations[target_row][target_column] = new_value;
+				}
+			});
+		});
+		this.locations = locations;
+		this.logArray([
+			'Hours with all exceptions applied:',
+			this.locations,
+			'\n'
+		]);
+	},
+
 	// This method transposes the exceptions array of arrays
 	// From https://stackoverflow.com/a/17428779/2245617
 	assembleExceptions: function() {
@@ -240,6 +292,9 @@ var HoursLoader = {
 		)
 		.then(
 			this.applySemesterHours.bind(this)
+		)
+		.then(
+			this.applyExceptionHours.bind(this)
 		)
 		.then(
 			this.assembleHours.bind(this)

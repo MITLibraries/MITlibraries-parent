@@ -25,11 +25,12 @@ digraph G {
 			style=filled;
 			color=grey70;
 			node [style=filled,color=white];
-			loadCacheFile2 -> setSemsterHours -> assembleExceptions -> applySemesterHours -> assembleHours -> render
+			loadCacheFile2 -> setSemsterHours -> assembleExceptions -> applySemesterHours -> applyExceptionHours -> assembleHours -> render
 			loadCacheFile2 -> error2
 			setSemsterHours -> error2
 			assembleExceptions -> error2
 			applySemesterHours -> error2
+			applyExceptionHours -> error2
 			assembleHours -> error2
 			label = "Promise Chain Two";
 		}
