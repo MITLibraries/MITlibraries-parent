@@ -155,15 +155,15 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.js', array(), '1.7.0', true );
 
-	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), '1.5.5', true );
+	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), '1.10.0', true );
 
-	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), '1.5.5', true );
+	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), '1.10.0', true );
 
-	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore'), '1.5.5', true);
+	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore'), '1.10.0', true);
 
 	wp_register_script( 'hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true );
 
-	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '1.5.5', true );
+	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '1.10.0', true );
 
 	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), '1.5.5', false );
 
