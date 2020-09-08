@@ -382,7 +382,6 @@ var HoursLoader = {
 
 	// This is the main render function, which detects markup conditions and calls the appropriate render function.
 	render: function() {
-		console.log('Render method');
 		if ( jQuery("[data-location-hours]").length > 0 ) {
 			this.renderSingle();
 		} else if ( jQuery("table.hrList").length > 0 ) {
@@ -392,6 +391,7 @@ var HoursLoader = {
 
 	// This renders an hours grid in response to a specific table class in markup.
 	renderGrid: function() {
+		this.logArray('Rendering grid of hours');
 		var hours, needle, thisLocation;
 		hours = this.hours;
 		// For each row in the table with a "location" data-attribute, look up the
@@ -437,6 +437,7 @@ var HoursLoader = {
 
 	// This renders a single hours value in response to a data attribute in markup.
 	renderSingle: function() {
+		this.logArray('Rendering single hours value');
 		var hours;
 		hours = this.hours;
 		jQuery("[data-location-hours]").each(function() {
