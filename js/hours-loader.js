@@ -392,12 +392,62 @@ var HoursLoader = {
 
 	// This renders an hours grid in response to a specific table class in markup.
 	renderGrid: function() {
-		console.log('Rendering hours grid');
+		var hours, needle, thisLocation;
+		hours = this.hours;
+		// For each row in the table with a "location" data-attribute, look up the
+		// corresponding record in the compiled hours object, apply last-minute
+		// formatting, and drop into the markup for each cell.
+		jQuery("table.hrList tr").each(function() {
+			if(jQuery(this).data("location")) {
+				thisLocation = jQuery(this).data("location");
+				// Iterate over each cell in the row, rendering the hours string
+				// twice (once for full width display, once for mobile).
+				for (var i = 0; i < 7; i++) {
+					hoursText = hours[thisLocation][i];
+					day = jQuery(this).find("td[data-day="+i+"]");
+					// Append full version, with any last-minute formatting.
+					day.append(function() {
+						var fullEl = document.createElement("span");
+						fullEl.setAttribute("class","hidden-mobile");
+						var fullText = hoursText
+							.replace("-"," - ")
+							.replace(/:00/g,"");
+						fullEl.innerHTML = fullText;
+						return fullEl;
+					});
+					// Append mobile version, with any last-minute formatting.
+					day.append(function() {
+						var mobileEl = document.createElement("span");
+						mobileEl.setAttribute("class","hidden-non-mobile");
+						var mobileText = hoursText
+							.replace("-"," - ")
+							.replace("midnight","midn")
+							.replace(/am/g,"a")
+							.replace(/pm/g,"p")
+							.replace(/:00/g,"");
+						mobileEl.innerHTML = mobileText;
+						return mobileEl;
+					});
+				}
+
+			}
+		});
+
 	},
 
 	// This renders a single hours value in response to a data attribute in markup.
 	renderSingle: function() {
-		console.log('Rendering single hours value');
+		var hours;
+		hours = this.hours;
+		jQuery("[data-location-hours]").each(function() {
+			// Read the relevant location from data attributes in the markup.
+			loc = jQuery(this).data("location-hours");
+			// Perform any last-minute formatting
+			singleHoursValue = hours[loc][moment(Date()).isoWeekday()-1]
+			    .replace(/:00/g,"");
+			// Write out to the page
+			jQuery(this).html(singleHoursValue);
+		});
 
 	},
 
