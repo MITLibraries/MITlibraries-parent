@@ -6,7 +6,7 @@ var HoursLoader = {
 
 	date: '',
 
-	debug: true,
+	debug: false,
 
 	exceptions: [],
 
