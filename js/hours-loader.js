@@ -251,9 +251,9 @@ var HoursLoader = {
 
 		// Load all required files, then take further action
 		files = [
-			'default-hours.json',
-			'semester-breakdown.json',
-			'holidays-and-special-hours.json'
+			'Default-Hours.json',
+			'Semester-Breakdown.json',
+			'Holidays-and-Special-Hours.json'
 		];
 
 		Promise.all([
