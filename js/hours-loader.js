@@ -184,7 +184,8 @@ var HoursLoader = {
 		// }
 		_.each(testlocations, function(location) {
 			loc = location.slice(1);
-			testhours[location[0]] = _.object([...loc.keys()], loc);
+			// This used to be [...loc.keys()] instead of [0,1,2,3,4,5,6] but was dropped to support IE.
+			testhours[location[0]] = _.object([0,1,2,3,4,5,6], loc);
 		});
 		this.hours = testhours;
 		this.logArray([
@@ -362,13 +363,25 @@ var HoursLoader = {
 	// This method loads a file inside the cache directory, using a Promise
 	loadCacheFile: function(path) {
 		var url = this.cache + path;
+		this.logArray([
+			'Loading file inside a Promise:',
+			url
+		]);
 		return new Promise( function( resolve, reject ) {
 			var request = new XMLHttpRequest();
-			request.responseType = 'json';
 			request.open('GET', url);
+			request.onloadstart = function() {
+				request.responseType = 'json';
+			};
 			request.onload = function() {
 				if ( 200 == request.status ) {
-					resolve( request.response );
+					// This is a hack to force IE to parse the response as JSON.
+					// From: https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie#comment86300642_24861185
+					if ( /Trident|MSIE/.test(navigator.userAgent) ) {
+							resolve( JSON.parse( request.response ) );
+					} else {
+							resolve( request.response );
+					}
 				} else {
 					reject( Error( request.statusText ) );
 				}
