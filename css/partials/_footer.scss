@@ -109,16 +109,7 @@
 		}
 	}
 	.text-find-us {
-		color: #ebebeb;
 		display: none;
-		margin-bottom: 0 !important;
-		font-size: 0.625em;
-		font-weight: bold;
-		text-transform: uppercase;
-		min-width: 7em;
-		@include bp-tablet--portrait {
-			display: block;
-		}
 	}
 	.social {
 		align-items: center;

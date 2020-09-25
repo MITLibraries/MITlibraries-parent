@@ -98,13 +98,11 @@
 					</a><!-- End RSS -->
 
 			</div><!-- end div.social -->
-			
+
 			<div class="links-primary flex-container">
-				<span><a href="/faculty" class="link-sub">Faculty</a></span>
-				<span><a href="/alumni" class="link-sub">Alumni</a></span>
-				<span><a href="/visitors" class="link-sub">Visitors</a></span>
-				<span><a href="/giving" class="link-sub">Giving</a></span>
-				<span><a href="/disabilities" class="link-sub">Persons with disabilities</a></span>
+				<span><a href="https://libraries.mit.edu/privacy" class="link-sub">Privacy</a></span>
+				<span><a href="https://libraries.mit.edu/permissions" class="link-sub">Permissions</a></span>
+				<span><a href="https://accessibility.mit.edu/" class="link-sub">Accessibility</a></span>
 			</div><!-- End div.links-primary -->
 			
 		</div><!-- End div.identity -->
@@ -117,12 +115,10 @@
 		</a><!-- End MIT Logo -->
 		
 		<div class="about-mit">
-			<span>MASSACHUSETTS INSTITUTE OF TECHNOLOGY </span>
-			<span>77 MASSACHUSETTS AVENUE </span>
-			<span>CAMBRIDGE MA 02139-4307</span>
+			<span class="item">Massachusetts Institute of Technology</span>
 		</div><!-- End div.about-mit -->
 		
-		<div class="license">Licensed under the <a href="http://creativecommons.org/licenses/by-nc/2.0/" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted. <a href="/research-support/notices/copyright-notify/">Notify us about copyright concerns</a>.
+		<div class="license">Content created by the MIT Libraries, <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a> unless otherwise noted. <a href="https://libraries.mit.edu/research-support/notices/copyright-notify/">Notify us about copyright concerns</a>.
 		</div><!-- End footer.footer-info-institure -->
 	</div>
 </footer>
