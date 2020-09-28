@@ -1,2 +1,126 @@
 $line-height-primary: 1.4;
 $font-family-primary: 'Open Sans', Helvetica, sans-serif;
+
+// font-sizes and line-heights
+$fs-xxxsmall: .9rem;
+$fs-xxsmall: 1rem;
+$fs-xsmall: 1.2rem;
+$fs-smallish: 1.3rem;
+$fs-small: 1.4rem;
+$fs-base: 1.6rem;
+$fs-large: 2.0rem;
+$fs-xlarge: 2.6rem;
+$fs-xxlarge: 3.2rem;
+$fs-xxxlarge: 4.2rem;
+$fs-xxxxlarge: 4.8rem;
+
+$fw-bold: 600;
+$fw-normal: 400;
+$fw-light: 300;
+
+$lh-xtight: .92;
+$lh-tight: 1;
+$lh-base: 1.2;
+$lh-loose: 1.5;
+$lh-xloose: 1.7;
+
+// general typography helpers
+
+// headers 
+.hd-1 {
+  margin-bottom: .5em;
+  font-size: $fs-xxxlarge;
+  line-height: $lh-tight;
+  font-weight: $fw-bold;
+}
+
+.hd-2 {
+  margin-bottom: .5em;
+  font-size: $fs-xxlarge;  
+  line-height: $lh-tight;
+  font-weight: $fw-bold;
+}
+
+.hd-3 {
+  margin-bottom: .5em;
+  font-size: $fs-xlarge;
+  line-height: $lh-tight;
+  font-weight: $fw-normal;
+}
+
+.hd-4 {
+  margin-bottom: .5em;
+  font-size: $fs-large;
+  line-height: $lh-tight;
+  font-weight: $fw-bold;
+}
+
+.hd-5 {
+  margin-bottom: .5em;
+  font-size: $fs-base;
+  line-height: $lh-tight;
+  font-weight: $fw-bold;
+}
+
+.hd-6 {
+  margin-bottom: .5em;
+  font-size: $fs-base;
+  line-height: $lh-tight;
+  font-weight: $fw-bold;
+}
+
+.hd-subtitle1 {
+  margin-bottom: .5em;
+  font-size: $fs-base; 
+  text-transform: uppercase;
+}
+
+.hd-subtitle2 {
+  margin-bottom: .5em;
+  font-size: $fs-small; 
+  text-transform: uppercase;
+}
+
+.hd-subtitle3 {
+  margin-bottom: .5em;
+  font-size: $fs-xsmall; 
+  text-transform: uppercase;
+}
+
+// copy 
+
+.copy-lead {
+  font-size: $fs-xlarge;
+}
+
+.copy-base {
+  font-size: $fs-base;
+}
+
+.copy-sup {
+  font-size: $fs-xsmall;
+}
+
+.copy-micro {
+  font-size: $fs-xxsmall;  
+  font-weight: $fw-normal;
+}
+
+.list-inline-pipe {
+  padding-left: 0;
+
+  li, 
+  .item {
+    display: inline-block;
+    padding-right: 1rem;
+
+    &:after {
+      content: ' | ';
+      margin-left: 1rem;
+    }
+    
+    &:last-child:after {
+      content: '';
+    }
+  }
+}

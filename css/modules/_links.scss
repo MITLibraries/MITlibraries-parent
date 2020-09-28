@@ -1,0 +1,34 @@
+%link {
+  transition: all .25s ease-in-out 0s;
+  color: $brand-primary;
+  text-decoration: underline;
+
+  // STATE: hover, active, focus
+  &:hover,
+  &:active,
+  &:focus {
+      color: $brand-primary-accent;
+  }
+
+  // STATE: is disabled
+  &:disabled,
+  &.is-disabled {
+    border: none;
+    background-color: $gray-l3;
+    color: $gray-d1;
+
+    &:hover {
+      border: none;
+      background-color: $gray-l3;
+      color: $gray-d1;
+      cursor: not-allowed;
+    }
+  }
+
+  // STATE: is pressed or active
+  &:active,
+  &.is-pressed,
+  &.is-active {
+      color: $brand-secondary;
+  }
+}

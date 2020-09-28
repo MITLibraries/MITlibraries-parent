@@ -1,276 +1,321 @@
-.footer-main {
-	background: $black url(#{$imagesPath}/vi-shape7-tp.png) no-repeat 10% center;
-	flex-wrap: wrap;
-	@include bp-tablet--portrait {
-		padding: 2em 1.375em;
-	}
-	@include span-12-12;
-	a {
-		color: $gray-light;
-	}
-	.identity {
-		flex-wrap: wrap;
-		padding: 2em 0 0;
-		@include bp-tablet--portrait {
-			align-items: flex-end;
-			justify-content: space-between;
-			width: 100%;
-		}
-	}
-	.links-all {
-		display: none;
-		@include bp-tablet--portrait {
-			display: flex;
-			width: 100%;
-		}
-		h4 {
-			font-size: 1.125em;
-			font-weight: normal;
-			padding-bottom: 1em;
-		}
-		.flex-item {
-			margin-right: 1.75em;
-		}
-		.link-sub {
-			display: block;
-			font-size: 0.75em;
-			@include bp-tablet--portrait {
-				font-size: 0.75em;
-				font-weight: 300;
-				&:not(:last-of-type) {
-					padding-bottom: 1em;
-				}
-			}
-		}
-	}
-	.links-primary {
-		border-top: 1px solid #808285;
-		border-bottom: 1px solid #808285;
-		flex-wrap: wrap;
-		font-size: 0.8125em;
-		margin-top: 2em;
-		padding: 2rem 1.375rem;
-		width: 100%;
-		@include bp-tablet--portrait {
-			border-top: none;
-			border-bottom: none;
-			font-size: 0.875em;
-			@include rem-first(margin-top, -1.4);
-			@include rem-first(margin-left, 11.5); // Match logo width
-			padding: 0;
-			z-index: map-get($zindex, main-secondary);
-		}
-		@include bp-tablet--landscape-below { // Prevent these links from overflowing into Social icons
-			@include rem-first(margin-top, 1.5);
-			@include rem-first(margin-left, 0);
-		}
-		span {
-			display: block;
-			width: 50%;
-			&:not(:last-of-type) {
-				margin-bottom: 1.5em;
-			}
-			@include bp-tablet--portrait {
-				font-weight: 300;
-				padding-left: 1em;
-				width: auto;
-				&:not(:last-of-type):after {
-					color: #dedede;
-					content: '|';
-					display: inline-block;
-					margin-left: 1em;
-				}
-			}
-		}
-		span:first-of-type {
-			@include bp-tablet--landscape-below {
-				padding-left: 0; // So that primary links are flush with left edge
-			}
-		}
-	}
-	.logo-mit-lib {
-		display: block;
-		fill: #fff;
-		padding-left: 1.375em;
-		width: 10.3125em;
-		@include bp-tablet--portrait {
-			padding-left: 0;
-			max-width: 9.5em;
-			width: 9.5em;
-		}
-		svg {
-			max-height: 4em;
-			max-width: 9.5em;
-			fill: #fff;
-		}
-		title {
-			color: #000;
-			background-color: #fff;
-		}
-	}
-	.text-find-us {
-		display: none;
-	}
-	.social {
-		align-items: center;
-		flex-wrap: wrap;
-		padding-left: 1.375em;
-		width: auto;
-		@include bp-tablet--portrait {
-			flex-wrap: nowrap;
-			margin-bottom: .2em;
-			z-index: map-get($zindex, main);
-		}
-		a {
-			width: 33%;
-			&:hover {
-				text-decoration: none;
-			}
-			@include bp-tablet--portrait {
-				width: 20%;
-				&:not(:last-of-type) {
-					margin-right: 0.5em;
-				}
-			}
-		}
-		[class*="icon-social"] {
-			background: $color-secondary;
-			border-radius: 50%;
-			height: 1.5em;
-			padding: 0.2em;
-			width: 1.5em;
-			path {
-				fill: #474747;
-			}
-			@include bp-tablet--portrait {
-				height: 2em;
-				padding: 0.2em;
-				width: 2em;
-			}
-		}
-	}
-} // End .footer-main
-.footer-info-institute {
-	align-items: baseline;
-	background: $gray-dark;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	padding: 1.5em 1em;
-	@include bp-tablet--portrait {
-		flex-direction: row;
-	}
-	.about-mit {
-		font-size: 0.625em;
-		margin-bottom: 2em;
-		span {
-			color: #eeeeee;
-			text-transform: uppercase;
-			&:first-of-type {
-				font-weight: bold;
-			}
-			@include bp-tablet--portrait {
-				color: #ededed;
-				&:not(:last-of-type):after {
-					content: '|';
-					font-weight: normal;
-				}
-			}
-		}
-	}
-	.license {
-		color: #fff;
-		font-size: 0.6875em;
-		width: 100%;
-		a {
-			color: #ededed;
-			text-decoration: underline;
-		}
-	}
-	.link-mit-home {
-		display: block;
-		@include bp-tablet--portrait{
-			margin: 0 1em 1.5em 0;
-		}
-	}
-	.logo-mit {
-		fill: #bbb9b8;
-		width: 3.375em;
-		.color {
-			fill: #ededed;
-		}
-	}
-}
-// Old browser fixes
-.no-flexbox {
-	.footer-info-institute {
-		display: block;
-		&:after {
-			clear: both;
-			content: '';
-			display: table;
-		}
-		> a,
-		> div {
-			float: left;
-		}
-		.about-mit {
-			padding-top: 4em;
-		}
-		.link-mit-home {
-			padding-top: 1.5em;
-		}
-	}
-	.footer-main {
-		&.flex-container {
-			display: block;
-			float: left;
-		}
-		&:after {
-			clear: both;
-			content: '';
-			display: table;
-		}
-		.identity {
-			position: relative;
-			width: 100%;
-			.logo-mit-lib {
-				display: block;
-				float: left;
-			}
-			.social {
-				bottom: 0;
-				display: block;
-				right: 22px;
-				position: absolute;
-			}
-		}
-		.links-primary {
-			display: block;
-			margin-top: 0;
-			margin-left: 0;
-			left: 202px;
-			position: absolute;
-			top: 79px;
-			width: 100%;
-			span {
-				display: block;
-				float: left;
-				position: relative;
-			}
-		}
-	}
+// Footer layout
+.wrap-footer, 
+.wrap-footer-institute {
+  @include clearfix;
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 10px 4%;
 }
 
-.no-flexbox.flexboxlegacy {
-	.footer-main {
-		overflow-x: hidden;
-	}
+.wrap-footer {
+  padding: 3.5rem 4%;
+
+  .wrap-sitemap {
+
+    // hide the sub menu items on small screens
+    .menu-sub {
+      display: none;
+    }
+  }
+
+  .identity {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .wrap-logo-lib {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 20px 20px 0;
+  }
+
+  .wrap-social {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 20px;
+  }
+
+  .wrap-policies {
+    width: 100%;
+    border-top: 1px solid $gray;
+    padding-top: 2rem;
+
+    span {
+      display: inline-block;
+      margin: 1rem 1.5rem 1rem 0;
+
+      &:after {
+        content:'';
+      }
+    }
+  }
+
+  .wrap-social .text-find-us {
+    display: none;
+  }
+
+  // bigger than small mobile - able to handle columns ok
+  @media (min-width: $bp-screen-md) {
+
+    .wrap-sitemap {
+      display: flex;
+      flex-direction: row;
+
+      .col {
+        margin-right: 3%;
+
+        &:last-child {
+          margin-right: 0;
+        } 
+      }
+
+      .menu-sub {
+        display: block;
+      }
+    }
+
+    .identity {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 4% 0 0 0;
+    }
+
+    .wrap-logo-lib, 
+    .wrap-policies, 
+    .wrap-social {
+      align-self: flex-end;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .wrap-logo-lib {
+      order: 1;
+      margin-right: 4%;
+    }
+
+    .wrap-policies {
+      order: 2;
+      padding: auto;
+      border-top: none;
+      width: auto;
+
+      span {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .wrap-social {
+      order: 3;
+      margin-left: auto;
+    }
+  }
+
+  // large screen - able to handle several inline items
+  @media (min-width: $bp-screen-lg) {
+
+    .wrap-social {
+      order: 3;
+    }
+
+    .wrap-policies {
+      order: 2;
+    }
+
+  }
 }
-.lte-ie9.no-flexbox {
-	.footer-main {
-		.identity {
-			width: 100%;
-		}
-	}
+
+// footer - adjustments for slim
+.wrap-footer.footer-slim {
+  padding: 1.5rem 4%;
+
+  .wrap-middle {
+    order: 2;
+    display: flex;
+    flex: 1; // No other element gets a value, forcing this element to be greedy in its sizing
+    flex-direction: column;
+    align-items: flex-start;
+
+    .wrap-policies {
+      align-self: flex-start; // This overrides the flex-end applicable to vertial alignment in full footer.
+    }
+
+    .wrap-sitemap {
+      display: inline-block;
+      margin-bottom: 2rem;
+
+      .item {
+        display: block;
+        margin-right: 10px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+
+  // larger screen - able to handle several inline items
+  @media (min-width: $bp-screen-md) {
+
+    .wrap-middle {
+      order: 2;
+
+      .wrap-policies {
+        margin-left: 2%;
+        order: 2;
+      }
+
+      .wrap-sitemap {
+        display: inline-block;
+        margin-left: 2%;
+        margin-bottom: auto;
+        order: 1;
+
+        .item {
+          display: inline-block;
+          margin-bottom: auto;
+        }
+      }
+    }
+
+    .wrap-social {
+      order: 3;
+    }
+  }
+
+  @media (min-width: $bp-screen-lg) {
+    .wrap-policies {
+    }
+
+    .wrap-sitemap {
+    }
+  }
 }
+
+// mit institute footer
+.wrap-footer-institute {
+  padding: 20px 4%;
+}
+
+
+// footer styles
+
+.wrap-outer-footer {
+  background-color: $black;
+  color: $white;
+  font-size: $fs-xsmall;
+}
+
+.wrap-footer {
+    background: $black url('#{$imagesPath}/vi-shape7-tp.svg') no-repeat 10% center;
+
+  a {
+    @extend %link;
+    color: $white;
+    text-decoration: none;
+  }
+
+  .title {
+    @extend .hd-6;
+    margin-bottom: .8rem;
+  }
+
+  .wrap-list .link-sub {
+    display: list-item;
+    list-style-type: none;
+    margin-bottom: .65rem;
+    font-weight: $fw-light;
+  }
+
+  .logo-mit-lib {
+    fill: $white;
+
+    img {
+      max-height: 60px;
+      max-width: 100%;
+      vertical-align: baseline;
+    }
+  }
+
+  .wrap-policies {
+    @extend .list-inline-pipe;
+    font-size: $fs-small;
+  }
+
+  .wrap-social {
+
+    p, a {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: .5rem;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-size: $fs-xsmall;
+    }
+
+    svg {
+      height: 2em;
+      width: 2em;
+      border-radius: 50%;
+      padding: 0.2em;
+      background: $white none repeat scroll 0 0;
+
+      path {
+        fill: $gray-d1;      
+      }
+    }
+  }
+}
+
+// footer - adjustments for slim
+.wrap-footer.footer-slim {
+
+  .sitemap-libraries-abbrev a {
+    @extend .list-inline-pipe;
+    font-size: $fs-small;
+  }
+
+}
+
+// MIT footer
+.wrap-outer-footer-institute {
+  background-color: $gray-d1;
+  font-size: $fs-xxsmall;
+  color: $gray-l3;
+
+  .footer-info-institute {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  a {
+    @extend %link;
+    color: $white;
+  }
+
+  .link-logo-mit {
+
+    .logo-mit {
+      fill: $gray-l2;
+
+      .color {
+        fill: $white;
+      }
+    }
+  }
+
+  .about-mit {
+    color: $gray-l3;
+    margin-right: 4%;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .license {
+    margin-left: auto;
+    margin-top: 1rem;
+    color: $gray-l3;
+  }
+}
+
