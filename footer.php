@@ -62,7 +62,7 @@
 			</a><!-- End MIT Libraries Logo -->
 			
 			<div class="social flex-container">
-				<p class="text-find-us">Find us on</p>
+				<p class="text-find-us sr">Find us on</p>
 					<a href="//twitter.com/mitlibraries" title="Twitter">
 						<svg class="icon-social--twitter" width="2048" height="2048" viewBox="-192 -384 2048 2048" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 -1) translate(0 -1280)"><path d="M1620 1128q-67 -98 -162 -167q1 -14 1 -42q0 -130 -38 -259.5t-115.5 -248.5t-184.5 -210.5t-258 -146t-323 -54.5q-271 0 -496 145q35 -4 78 -4q225 0 401 138q-105 2 -188 64.5t-114 159.5q33 -5 61 -5q43 0 85 11q-112 23 -185.5 111.5t-73.5 205.5v4q68 -38 146 -41 q-66 44 -105 115t-39 154q0 88 44 163q121 -149 294.5 -238.5t371.5 -99.5q-8 38 -8 74q0 134 94.5 228.5t228.5 94.5q140 0 236 -102q109 21 205 78q-37 -115 -142 -178q93 10 186 50z" fill="black" /></g></svg>
 						<span class="sr">Twitter</span>
@@ -100,31 +100,26 @@
 			</div><!-- end div.social -->
 			
 			<div class="links-primary flex-container">
-				<span><a href="/faculty" class="link-sub">Faculty</a></span>
-				<span><a href="/alumni" class="link-sub">Alumni</a></span>
-				<span><a href="/visitors" class="link-sub">Visitors</a></span>
-				<span><a href="/giving" class="link-sub">Giving</a></span>
-				<span><a href="/disabilities" class="link-sub">Persons with disabilities</a></span>
+				<span><a href="/privacy" class="link-sub">Privacy</a></span>
+				<span><a href="/permissions" class="link-sub">Permissions</a></span>
+				<span><a href="https://accessibility.mit.edu/" class="link-sub">Accessibility</a></span>
 			</div><!-- End div.links-primary -->
 			
 		</div><!-- End div.identity -->
 	</div>
 	
 	<div class="footer-info-institute">
-		<a class="link-logo-mit" href="//www.mit.edu">
+		<a class="link-logo-mit" href="https://www.mit.edu">
 			<span class="sr">MIT</span>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="54" height="28" viewBox="0 0 54 28" enable-background="new 0 0 54 28" xml:space="preserve" class="logo-mit"><rect x="28.9" y="8.9" width="5.8" height="19.1" class="color"/><rect width="5.8" height="28"/><rect x="9.6" width="5.8" height="18.8"/><rect x="19.3" width="5.8" height="28"/><rect x="38.5" y="8.9" width="5.8" height="19.1"/><rect x="38.8" width="15.2" height="5.6"/><rect x="28.9" width="5.8" height="5.6"/></svg>
 		</a><!-- End MIT Logo -->
 		
 		<div class="about-mit">
-			<span>MASSACHUSETTS INSTITUTE OF TECHNOLOGY </span>
-			<span>77 MASSACHUSETTS AVENUE </span>
-			<span>CAMBRIDGE MA 02139-4307</span>
+			<span class="item">Massachusetts Institute of Technology</span>
 		</div><!-- End div.about-mit -->
 		
-		<div class="license">Licensed under the <a href="http://creativecommons.org/licenses/by-nc/2.0/" class="license-cc">Creative Commons Attribution Non-Commercial License</a> unless otherwise noted. <a href="/research-support/notices/copyright-notify/">Notify us about copyright concerns</a>.
-		</div><!-- End footer.footer-info-institure -->
-	</div>
+		<div class="license">Content created by the MIT Libraries, <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a> unless otherwise noted. <a href="https://libraries.mit.edu/research-support/notices/copyright-notify/">Notify us about copyright concerns</a>.
+	</div><!-- End div.footer-info-institure -->
 </footer>
 	
 
