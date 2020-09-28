@@ -175,11 +175,15 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'lib-hours', get_site_url( 1 ) . '/app/libhours/js/libhours.js', array( 'moment', 'tabletop', 'underscore' ), false, true );
 
+	wp_register_script( 'privacy-notice', get_template_directory_uri() . '/js/privacy-notice.js', false, false, false );
+
 	/* All-site JS */
 
 	wp_enqueue_script( 'modernizr' );
 
 	wp_enqueue_script( 'lib-hours' );
+
+	wp_enqueue_script( 'privacy-notice' );
 
 	/* Page-specific JS & CSS */
 

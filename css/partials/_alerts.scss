@@ -20,6 +20,32 @@
 	}
 }
 
+.privacy-notice {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  padding: 1rem 2rem;
+  border: 1px solid #000;
+  border-top: 5px solid #000;
+  color: #000;
+  font-weight: 600;
+  background-color: #eee;
+  span {
+    margin-right: 0.5em;
+    .fa {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+}
+
 .home .wrap-page .posts--preview--alerts {
 	background: #000;
 	border-bottom: 0;
