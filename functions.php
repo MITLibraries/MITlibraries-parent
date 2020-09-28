@@ -96,6 +96,8 @@ add_action( 'after_setup_theme', 'twentytwelve_setup' );
 function twentytwelve_scripts_styles() {
 	global $wp_styles;
 
+	$theme_version = wp_get_theme()->get( 'Version' );
+
 	/*
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
@@ -110,19 +112,19 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
 
-	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), '1.9.1' );
+	wp_register_style( 'libraries-global', get_template_directory_uri() . '/css/build/minified/global.css', array( 'twentytwelve-style', 'font-open-sans' ), $theme_version );
 
 	wp_enqueue_style( 'libraries-global' );
 
-	wp_register_style( 'mitlib-forms', get_template_directory_uri() . '/css/build/minified/forms.min.css', array( 'libraries-global' ), '1.7.0' );
+	wp_register_style( 'mitlib-forms', get_template_directory_uri() . '/css/build/minified/forms.min.css', array( 'libraries-global' ), $theme_version );
 
-	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), '1.5.5' );
+	wp_register_style( 'get-it', get_template_directory_uri() . '/css/build/minified/get-it.min.css', array( 'libraries-global' ), $theme_version );
 
 	wp_register_style( 'hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', false, null, 'all' );
 
 	wp_register_style( 'hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', false, null, 'all' );
 
-	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), '1.5.5' );
+	wp_register_style( 'hours', get_template_directory_uri() . '/css/build/minified/hours.min.css', array( 'libraries-global', 'hours-mobile', 'hours-gldatepicker' ), $theme_version );
 
 	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false );
 
