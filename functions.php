@@ -151,13 +151,21 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false );
 
-	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr' ), '1.5.5', true );
+	wp_register_script( 'moment', get_template_directory_uri() . '/js/libs/moment.min.js', array(), '2.9.0', true );
 
-	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '1.5.5', true );
+	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.js', array(), '1.7.0', true );
+
+	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), '1.10.0', true );
+
+	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), '1.10.0', true );
+
+	wp_register_script( 'polyfill', '//polyfill.io/v3/polyfill.js?version=3.52.1', array(), '3.52.1', true );
+
+	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), '1.10.0', true );
 
 	wp_register_script( 'hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true );
 
-	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '1.5.5', true );
+	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), '1.10.0', true );
 
 	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), '1.5.5', false );
 
@@ -181,7 +189,7 @@ function twentytwelve_scripts_styles() {
 
 	wp_enqueue_script( 'modernizr' );
 
-	wp_enqueue_script( 'lib-hours' );
+	wp_enqueue_script( 'hours-loader' );
 
 	wp_enqueue_script( 'privacy-notice' );
 
