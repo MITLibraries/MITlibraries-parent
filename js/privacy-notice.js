@@ -82,35 +82,29 @@ const privacyNotice = () => {
 
 window.onload = () => { 
   addStylesheetRules([
-    [
-      ['#privacy-notice', 'a'],
-        ['color', '#000'],
-        ['text-decoration', 'underline']
+    ['#privacy-notice a',
+      ['color', '#000'],
+      ['text-decoration', 'underline']
     ],
-    [
-      ['#privacy-notice', 'button'],
-        ['background-color', '#000'],
-        ['border', '1px solid #000']
+    ['#privacy-notice button',
+      ['background-color', '#000'],
+      ['border', '1px solid #000']
     ],
-    [
-      ['#privacy-notice', 'a:hover'], // Also accepts a second argument as an array of arrays instead
-        ['color', '#0000ff'],
-        ['text-decoration', 'none']
+    ['#privacy-notice a:hover',
+      ['color', '#0000ff', true],
+      ['text-decoration', 'none', true]
     ],
-    [
-      ['#privacy-notice', 'a:focus'], // Also accepts a second argument as an array of arrays instead
-        ['color', '#0000ff'],
-        ['text-decoration', 'none']
+    ['#privacy-notice a:focus',
+      ['color', '#0000ff', true],
+      ['text-decoration', 'none', true]
     ],  
-    [
-      ['#privacy-notice', 'button:hover'], 
-        ['background-color', '#0000ff'],
-        ['border-color', '#0000ff']
+    ['#privacy-notice button:hover', 
+      ['background-color', '#0000ff', true],
+      ['border-color', '#0000ff', true]
     ],
-    [
-      ['#privacy-notice', 'button:focus'], 
-        ['background-color', '#0000ff'],
-        ['border-color', '#0000ff']
+    ['#privacy-notice button:focus', 
+      ['background-color', '#0000ff', true],
+      ['border-color', '#0000ff', true]
     ]
   ]);
   privacyNotice();
