@@ -105,8 +105,7 @@ window.onload = () => {
     [
       ['#privacy-notice', 'button:hover'], 
         ['background-color', '#0000ff'],
-        ['border-color', '#0000ff'],
-        ['text-decoration', 'none']
+        ['border-color', '#0000ff']
     ],
     [
       ['#privacy-notice', 'button:focus'], 
