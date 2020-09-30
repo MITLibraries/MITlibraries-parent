@@ -91,20 +91,21 @@ window.onload = () => {
       ['border', '1px solid #000']
     ],
     ['#privacy-notice a:hover',
-      ['color', '#0000ff', true],
-      ['text-decoration', 'none', true]
+      ['color', '#0000ff'],
+      ['text-decoration', 'none']
     ],
     ['#privacy-notice a:focus',
-      ['color', '#0000ff', true],
-      ['text-decoration', 'none', true]
+      ['color', '#0000ff'],
+      ['text-decoration', 'none']
     ],  
     ['#privacy-notice button:hover', 
-      ['background-color', '#0000ff', true],
-      ['border-color', '#0000ff', true]
+      ['background-color', '#0000ff'],
+      ['border-color', '#0000ff']
     ],
     ['#privacy-notice button:focus', 
-      ['background-color', '#0000ff', true],
-      ['border-color', '#0000ff', true]
+      ['background-color', '#0000ff'],
+      ['border-color', '#0000ff'],
+      ['background-image', 'none']
     ]
   ]);
   privacyNotice();
