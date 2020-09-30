@@ -34,19 +34,85 @@ const getCookieValue = (cookieName) => {
   return match;
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule
+const addStylesheetRules = (rules) => {
+  let styleEl = document.createElement('style');
+
+  // Append <style> element to <head>
+  document.head.appendChild(styleEl);
+
+  // Grab style element's sheet
+  let styleSheet = styleEl.sheet;
+
+  for (let i = 0; i < rules.length; i++) {
+    let j = 1, 
+        rule = rules[i], 
+        selector = rule[0], 
+        propStr = '';
+    // If the second argument of a rule is an array of arrays, correct our variables.
+    if (Array.isArray(rule[1][0])) {
+      rule = rule[1];
+      j = 0;
+    }
+
+    for (let pl = rule.length; j < pl; j++) {
+      let prop = rule[j];
+      propStr += prop[0] + ': ' + prop[1] + (prop[2] ? ' !important' : '') + ';\n';
+    }
+
+    // Insert CSS Rule
+    styleSheet.insertRule(selector + '{' + propStr + '}', styleSheet.cssRules.length);
+  }
+}
+
 // Display privacy notice if the acknowledgment cookie isn't set
 const privacyNotice = () => {
   if (!getCookieValue('mitlibPrivAck')) {
     document.body.innerHTML += `
-      <div id="privacy-notice" style="position: fixed; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-radius: 2px; padding: .6rem 1.2rem; border: 1px solid #000; border-top: 5px solid #000; font-weight: 600; font-size: 16px; font-family: 'Helvetica Neue', Helvetica, Arial, 'Open Sans', sans-serif; background-color: #eee; color: #000; bottom: 40px; left: 10%; right: 10%; width: 80%">
+      <div id="privacy-notice" style="position: fixed; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-radius: 2px; padding: 1.2rem 1.6rem; border: 1px solid #000; border-top: 5px solid #000; font-weight: 600; font-size: 16px; font-family: 'Helvetica Neue', Helvetica, Arial, 'Open Sans', sans-serif; background-color: #eee; color: #000; bottom: 40px; left: 10%; right: 10%; width: 80%">
         <span style="margin-right: .5em;">
           <i class="fa fa-info-circle fa-lg" style="display: inline-block; margin-right: .5em"></i>
-          By using this website, you consent to the <a href="#" style="transition: all .25s ease-in-out 0s; color: #000; text-decoration: underline;">MIT Libraries privacy policy</a>.
+          By using this website, you consent to the <a href="#" style="transition: all .25s ease-in-out 0s;">MIT Libraries privacy policy</a>.
         </span>
-        <button onclick="setCookie();" style="transition: background-color .25s, border .25s; height: 80%; border: 1px solid #000; border-radius: 3px; padding: 5px 10px; background-color: #000; font-size: 16px; font-weight: 600; color: #fff; text-decoration: none;">I understand</a></button>
+        <button onclick="setCookie();" style="transition: all .25s; height: 80%; border-radius: 3px; padding: 5px 10px; font-size: 16px; font-weight: 600; color: #fff; text-decoration: none; cursor: pointer;">I understand</a></button>
       </div>
     `;
   }
 }
 
-window.onload = () => { privacyNotice(); }
+window.onload = () => { 
+  addStylesheetRules([
+    [
+      ['#privacy-notice', 'a'],
+        ['color', '#000'],
+        ['text-decoration', 'underline']
+    ],
+    [
+      ['#privacy-notice', 'button'],
+        ['background-color', '#000'],
+        ['border', '1px solid #000']
+    ],
+    [
+      ['#privacy-notice', 'a:hover'], // Also accepts a second argument as an array of arrays instead
+        ['color', '#0000ff'],
+        ['text-decoration', 'none']
+    ],
+    [
+      ['#privacy-notice', 'a:focus'], // Also accepts a second argument as an array of arrays instead
+        ['color', '#0000ff'],
+        ['text-decoration', 'none']
+    ],  
+    [
+      ['#privacy-notice', 'button:hover'], 
+        ['background-color', '#0000ff'],
+        ['border-color', '#0000ff'],
+        ['text-decoration', 'none']
+    ],
+    [
+      ['#privacy-notice', 'button:focus'], 
+        ['background-color', '#0000ff'],
+        ['border-color', '#0000ff']
+    ]
+  ]);
+  privacyNotice();
+}
