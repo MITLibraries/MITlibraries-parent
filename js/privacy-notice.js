@@ -38,12 +38,12 @@ const getCookieValue = (cookieName) => {
 const privacyNotice = () => {
   if (!getCookieValue('mitlibPrivAck')) {
     document.body.innerHTML += `
-      <div class="libraryAlert privacy-notice" id="privacy-notice">
-        <span class="alertText">
-          <i class="fa fa-info-circle fa-lg"></i>
-          By using this website, you consent to the <a href="#">MIT Libraries privacy policy</a>.
-        </span>
-        <button class="button-secondary--blue" onClick="setCookie();">I understand</a></button>
+      <div id="privacy-notice" style="position: fixed; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-radius: 2px; padding: .6rem 1.2rem; border: 1px solid #000; border-top: 5px solid #000; font-weight: 600; font-size: 16px; font-family: 'Helvetica Neue', Helvetica, Arial, 'Open Sans', sans-serif; background-color: #eee; color: #000; bottom: 40px; left: 10%; right: 10%; width: 80%">
+        <p style="margin-right: .5em;">
+          <i class="fa fa-info-circle fa-lg" style="display: inline-block; margin-right: .5em"></i>
+          By using this website, you consent to the <a href="#" style="transition: all .25s ease-in-out 0s; color: #000; text-decoration: underline;">MIT Libraries privacy policy</a>.
+        </p>
+        <button onclick="setCookie();" style="transition: background-color .25s, border .25s; height: 80%; border: 1px solid #000; border-radius: 3px; padding: 5px 10px; background-color: #000; font-size: 16px; font-weight: 600; color: #fff; text-decoration: none;">I understand</a></button>
       </div>
     `;
   }
