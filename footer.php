@@ -30,8 +30,7 @@
 			<div class="flex-item">
 				<h4><a href="/borrow">Borrow &amp; request</a></h4>
 				<a href="/barton-account" class="link-sub">Your Account</a>
-				<a href="/circ" class="link-sub">Circulation FAQ</a>
-				<a href="/reserves" class="link-sub">Reserves &amp; TIP FAQ</a>
+				<a href="/reserves" class="link-sub">Reserves &amp; TIP</a>
 				<a href="/otherlibraries" class="link-sub">Visit non-MIT libraries</a>
 				<a href="/borrow" class="link-sub">More borrow &amp; request options</a>
 			</div>
@@ -39,7 +38,6 @@
 				<h4><a href="/research-support">Research support</a></h4>
 				<a href="/ask" class="link-sub">Ask us</a>
 				<a href="/experts" class="link-sub">Research guides &amp; expert librarians</a>
-				<a href="/productivity-tools" class="link-sub">Productivity tools</a>
 				<a href="/scholarly" class="link-sub">Scholarly publishing</a>
 				<a href="/references" class="link-sub">Citation &amp; writing software</a>
 				<a href="/research-support" class="link-sub">More research support options</a>
@@ -50,7 +48,7 @@
 				<a href="/news" class="link-sub">News</a>
 				<a href="/events" class="link-sub">Classes &amp; events</a>
 				<a href="/use-policies" class="link-sub">Use policy</a>
-				<a href="/site-search/" class="link-sub">Services A-Z</a>
+				<a href="/giving" class="link-sub">Giving</a>
 				<a href="/about" class="link-sub">More about us</a>
 			</div>
 		</div><!-- end div.links-all -->
