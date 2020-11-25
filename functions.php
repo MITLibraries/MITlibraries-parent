@@ -177,11 +177,15 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true );
 
+	wp_register_script( 'privacyJS', get_template_directory_uri() . '/js/privacy-notice.js' , array(), $theme_version, false );
+
 	/* All-site JS */
+
+	wp_enqueue_script( 'hours-loader' );
 
 	wp_enqueue_script( 'modernizr' );
 
-	wp_enqueue_script( 'hours-loader' );
+	wp_enqueue_script( 'privacyJS' );
 
 	/* Page-specific JS & CSS */
 
