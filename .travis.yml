@@ -25,9 +25,9 @@ matrix:
     - php: 'nightly'
     - php: '7.3'
     - php: '7.2'
-      env: PHPCS_BRANCH=master PHPCS_SCRIPT=bin SNIFF=1
+      env: PHPCS_BRANCH=main PHPCS_SCRIPT=bin SNIFF=1
     - php: '7.1'
-      env: PHPCS_BRANCH=master PHPCS_SCRIPT=bin SNIFF=1
+      env: PHPCS_BRANCH=main PHPCS_SCRIPT=bin SNIFF=1
 
   allow_failures:
     - php: "nightly"
