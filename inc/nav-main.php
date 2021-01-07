@@ -80,7 +80,7 @@
 					<h3 class="heading-col">Renew, request, suggest</h3>
 					<ul class="list-unbulleted">
 						<li><a href="/borrow">Borrow &amp; request home</a></li>
-						<li><a href="/barton-account">Your Account <span class="about">Renew MIT items</span></a></li>
+						<li><a href="/barton-account">Your Account - Barton <span class="about">Renew MIT items</span></a></li>
 						<li><a href="/barton">Barton catalog <span class="about">Request items owned by MIT</span></a></li>
 						<li><a href="/worldcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
 						<li><a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a></li>
@@ -90,8 +90,9 @@
 			  <div class="col-2 flex-item">
 					<h3 class="heading-col">More information</h3>
 					<ul class="list-unbulleted">
-						<li><a href="/circ">Circulation FAQ <span class="about">Info about fines, renewing, etc.</span></a></li>
-						<li><a href="/reserves">Course reserves &amp; TIP FAQ</a></li>
+						<li><a href="/accounts">Accounts overview <span class="about">Barton, ILLiad, Aeon, etc.</span></a></li>
+						<li><a href="/reserves">Course reserves &amp; TIP</a></li>
+						<li><a href="/borrow-direct">Borrow Direct <span class="about">Request items from Harvard, Yale, etc.</span></a></li>
 						<li><a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a></li>
 					</ul>
 			  </div>
@@ -108,8 +109,7 @@
 						<li><a href="/research-support">Research support home</a></li>
 						<li><a href="/ask">Ask us <span class="about">Email, chat, call, drop by</span></a></li>
 						<li><a href="/experts">Research guides &amp; expert librarians <span class="about">For every research interest</span></a></li>
-						<li><a href="/offcampus">Connect from on and off-campus <span class="about">Tips &amp; tricks</span></a></li>
-						<li><a href="/productivity-tools">Productivity tools <span class="about">Apps, RSS, etc.</span></a></li>
+						<li><a href="/authenticate">Authenticate to online resources <span class="about">Tips &amp; tricks</span></a></li>
 						<li><a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a></li>
 					</ul>
 			  </div>
@@ -120,6 +120,7 @@
 						<li><a href="/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
 						<li><a href="/data-services">Data services <span class="about">GIS, data management, statistical support</span></a></li>
 						<li><a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a></li>
+						<li><a href="/apis">APIs for scholarly resources</a></li>
 					</ul>
 			  </div>
 			</div><!-- end div.links-sub -->
@@ -161,7 +162,7 @@
 		</li>
 		<li class="link-primary flex-end small">
 			<h2 class="main-nav-header">
-				<a href="/barton-account" class="no-underline main-nav-link account-link">
+				<a href="/accounts" class="no-underline main-nav-link account-link">
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="15.4" height="16" viewBox="0 0 15.4 16" enable-background="new 0 0 15.445 16" xml:space="preserve"><path d="M13.4 15.7C12.2 15.9 10.4 16 7.7 16c-5.4 0-7.3-0.6-7.3-0.6 -0.3-0.1-0.4-0.4-0.4-0.7 0.3-1.6 1.2-2.5 2.5-3.3 0.3-0.2 0.8-0.4 1.2-0.6 0.8-0.3 1.8-0.7 2-1.3C5.8 9.2 5.7 8.6 5.2 7.9c-1.4-2.3-1.7-4.3-0.8-5.9C5.1 0.7 6.4 0 7.7 0c1.4 0 2.6 0.7 3.3 2 0.9 1.6 0.7 3.6-0.8 5.9C9.8 8.6 9.6 9.2 9.8 9.6c0.2 0.6 1.2 1 2 1.3 0.4 0.2 0.9 0.4 1.2 0.6 1.2 0.8 2.1 1.6 2.5 3.3 0.1 0.3-0.1 0.6-0.4 0.7C15 15.4 14.5 15.6 13.4 15.7"/></svg><span>Account</span>
 				</a>
 			</h2>
