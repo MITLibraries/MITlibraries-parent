@@ -1,15 +1,15 @@
 <?php
 /**
- * Template for top navigation, showing EDS / Barton as discovery options.
+ * Template for top navigation, showing Alma / Primo as discovery options.
  *
  * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @since 1.11.0
  */
 
 ?>
 
 <!-- Menu shown on non-mobile screens -->
-<nav class="nav-main hidden-mobile nav-eds" aria-label="Primary">
+<nav class="nav-main hidden-mobile nav-alma" aria-label="Primary">
 	<ul class="nav-main-list flex-container">
 		<li class="link-primary flex-end">
 			<h2 class="main-nav-header">
