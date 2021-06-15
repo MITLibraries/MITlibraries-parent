@@ -9,7 +9,7 @@
 ?>
 
 <!-- Menu shown on non-mobile screens -->
-<nav class="nav-main hidden-mobile nav-eds" aria-label="Primary">
+<nav class="nav-main hidden-mobile" aria-label="Primary">
 	<ul class="nav-main-list flex-container">
 		<li class="link-primary flex-end">
 			<h2 class="main-nav-header">

@@ -7,7 +7,7 @@
  */
 
 ?>
-<div class="footer-main flex-container footer-eds">
+<div class="footer-main flex-container">
 	<div class="links-all flex-container">
 		<div class="flex-item">
 			<h4><a href="/search">Search</a></h4>
