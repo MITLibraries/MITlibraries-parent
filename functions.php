@@ -644,7 +644,7 @@ function network_discovery_settings_page_html() {
 		check_admin_referer( 'custom_nonce_action', 'custom_nonce_field' );
 
 		// Update settings.
-		if ( 'update' == filter_input( INPUT_POST, 'action' ) ) {
+		if ( 'update' === filter_input( INPUT_POST, 'action' ) ) {
 			// Set default values.
 			$network_discovery_mode = 'eds';
 

@@ -10,7 +10,7 @@
 <footer>
 	
 	<?php
-	if ( 'alma' == get_site_option( 'network_discovery_mode' ) ) {
+	if ( 'alma' === get_site_option( 'network_discovery_mode' ) ) {
 		get_template_part( 'inc/footer', 'alma' );
 	} else {
 		get_template_part( 'inc/footer', 'main' );
