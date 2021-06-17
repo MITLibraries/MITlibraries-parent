@@ -1,9 +1,9 @@
 <?php
 /**
- * Template for top navigation, showing EDS / Barton as discovery options.
+ * Template for top navigation, showing Alma / Primo as discovery options.
  *
  * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @since 1.11.0
  */
 
 ?>
@@ -20,17 +20,14 @@
 					<h3 class="heading-col">Start here</h3>
 					<ul class="list-unbulleted">
 						<li><a href="/search">Search tools home</a></li>
-						<li><a href="/quicksearch">Quick search <span class="about">Books, articles, and more at MIT</span></a></li>
-						<li><a href="/vera">Vera <span class="about">E-journals &amp; databases</span></a></li>
-						<li><a href="/barton">Barton catalog <span class="about">Classic catalog search</span></a></li>
+						<li><a href="/search-collections">Search our collections <span class="about">Books, articles, and more</span></a></li>
 						<li><a href="/worldcat">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
-						<li><a href="/barton-reserves">Course reserves</a></li>
+						<li><a href="/search-reserves">Course reserves</a></li>
 					</ul>
 				</div>
 				<div class="col-2 flex-item">
 					<h3 class="heading-col">Also try</h3>
 					<ul class="list-unbulleted">
-						<li><a href="/fulltext">FullText Finder <span class="about">Find specific citations</span></a></li>
 						<li><a href="/google-scholar-tips">Google Scholar for MIT <span class="about">Change settings to get better access</span></a></li>
 						<li><a href="/dspace">DSpace@MIT <span class="about">MIT research</span></a></li>
 						<li><a href="/dome">Dome <span class="about">MIT-digitized images, maps, etc.</span></a></li>
@@ -80,8 +77,8 @@
 					<h3 class="heading-col">Renew, request, suggest</h3>
 					<ul class="list-unbulleted">
 						<li><a href="/borrow">Borrow &amp; request home</a></li>
-						<li><a href="/barton-account">Your Account - Barton <span class="about">Renew MIT items</span></a></li>
-						<li><a href="/barton">Barton catalog <span class="about">Request items owned by MIT</span></a></li>
+						<li><a href="/accounts">Accounts overview <span class="about">Your Account, ILLiad, Aeon, etc.</span></a></li>
+						<li><a href="/search-collections">Search our collections <span class="about">Request items owned by MIT</span></a></li>
 						<li><a href="/worldcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
 						<li><a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a></li>
 						<li><a href="/suggest-purchase">Suggest a purchase</a></li>
@@ -90,7 +87,6 @@
 				<div class="col-2 flex-item">
 					<h3 class="heading-col">More information</h3>
 					<ul class="list-unbulleted">
-						<li><a href="/accounts">Accounts overview <span class="about">Barton, ILLiad, Aeon, etc.</span></a></li>
 						<li><a href="/reserves">Course reserves &amp; TIP</a></li>
 						<li><a href="/borrow-direct">Borrow Direct <span class="about">Request items from Harvard, Yale, etc.</span></a></li>
 						<li><a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a></li>
@@ -110,7 +106,6 @@
 						<li><a href="/ask">Ask us <span class="about">Email, chat, call, drop by</span></a></li>
 						<li><a href="/experts">Research guides &amp; expert librarians <span class="about">For every research interest</span></a></li>
 						<li><a href="/authenticate">Authenticate to online resources <span class="about">Tips &amp; tricks</span></a></li>
-						<li><a href="/new-books">New books by subject <span class="about">Browse or subscribe to RSS feeds</span></a></li>
 					</ul>
 				</div>
 				<div class="col-2 flex-item">

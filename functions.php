@@ -544,6 +544,143 @@ function twentytwelve_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'twentytwelve_customize_register' );
 
+/****************************************************************************
+ *
+ * Network-level discovery settings
+ *
+ * Creates settings
+ */
+function network_discovery_init() {
+	// Register a setting field for which navigation template to load.
+	register_setting(
+		'network_discovery',
+		'network_discovery_mode'
+	);
+
+	// Register a settings section.
+	add_settings_section(
+		'network_discovery_general',
+		__( 'General', 'twentytwelve' ),
+		'network_discovery_general_section_html',
+		'network-discovery'
+	);
+
+	// Register a new field in the general section, inside the "discovery-setings" page.
+	add_settings_field(
+		'network_discovery_mode',
+		__( 'Active discovery environment', 'twentytwelve' ),
+		'network_discovery_mode_field_html',
+		'network-discovery',
+		'network_discovery_general'
+	);
+}
+add_action( 'admin_init', 'network_discovery_init' );
+
+/**
+ * Section rendering callback (empty)
+ */
+function network_discovery_general_section_html() {
+}
+
+/**
+ * Field rendering callback
+ */
+function network_discovery_mode_field_html() {
+	// Get the settings value.
+	$option = get_site_option( 'network_discovery_mode' );
+	?>
+	<fieldset>
+		<label><input
+		type="radio"
+		name="<?php echo esc_attr( 'network_discovery_mode' ); ?>"
+		value="alma"
+		<?php
+		if ( 'alma' == $option ) {
+			echo 'checked="checked"';
+		}
+		?>> Alma / Primo</label>
+		<br>
+		<label><input
+		type="radio"
+		name="<?php echo esc_attr( 'network_discovery_mode' ); ?>"
+		value="eds"
+		<?php
+		if ( 'eds' == $option ) {
+			echo 'checked="checked"';
+		}
+		?>> EDS / Barton</label>
+	</fieldset>
+	<p class="description">This setting determines which header and footer navigation templates are used across the network.</p>
+	<?php
+}
+
+/**
+ * Create network admin settings page.
+ */
+function network_discovery_settings() {
+	add_menu_page(
+		'Network-wide discovery settings',
+		'Discovery',
+		'manage_options',
+		'discovery-settings',
+		'network_discovery_settings_page_html'
+	);
+}
+add_action( 'network_admin_menu', 'network_discovery_settings' );
+
+/**
+ * Options page for network settings form
+ */
+function network_discovery_settings_page_html() {
+	// Check user capabilities.
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	// Handle post actions.
+	$action = filter_input( INPUT_POST, 'action' );
+	if ( ! empty( $action ) ) {
+		// Check for validity.
+		check_admin_referer( 'custom_nonce_action', 'custom_nonce_field' );
+
+		// Update settings.
+		if ( 'update' === filter_input( INPUT_POST, 'action' ) ) {
+			// Set default values.
+			$network_discovery_mode = 'eds';
+
+			if ( filter_input( INPUT_POST, 'network_discovery_mode' ) ) {
+				$network_discovery_mode = sanitize_text_field(
+					wp_unslash( filter_input( INPUT_POST, 'network_discovery_mode' ) )
+				);
+			}
+
+			update_site_option( 'network_discovery_mode', $network_discovery_mode );
+		}
+
+		// Advise user.
+		echo '<div class="updated"><p>Discovery settings updated.</p></div>';
+	}
+
+	// Build the form.
+	?>
+	<div class="wrap">
+		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+		<form method="post" action="admin.php?page=discovery-settings">
+			<?php
+			wp_nonce_field( 'custom_nonce_action', 'custom_nonce_field' );
+			settings_fields( 'network_discovery' );
+			do_settings_sections( 'network-discovery' );
+			submit_button( 'Save settings' );
+			?>
+		</form>
+	</div>
+	<?php
+}
+
+// **************************************************************************
+// End network-level discovery settings.
+// **************************************************************************
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
