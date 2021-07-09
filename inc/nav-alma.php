@@ -20,7 +20,7 @@
 					<h3 class="heading-col">Start here</h3>
 					<ul class="list-unbulleted">
 						<li><a href="/search">Search tools home</a></li>
-						<li><a href="/search-collections">Search our collections <span class="about">Books, articles, and more</span></a></li>
+						<li><a href="/search-collections">Search Our Collections <span class="about">Books, articles, and more</span></a></li>
 						<li><a href="/worldcat">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
 						<li><a href="/search-reserves">Course reserves</a></li>
 					</ul>
@@ -78,7 +78,7 @@
 					<ul class="list-unbulleted">
 						<li><a href="/borrow">Borrow &amp; request home</a></li>
 						<li><a href="/accounts">Accounts overview <span class="about">Your Account, ILLiad, Aeon, etc.</span></a></li>
-						<li><a href="/search-collections">Search our collections <span class="about">Request items owned by MIT</span></a></li>
+						<li><a href="/search-collections">Search Our Collections <span class="about">Request items owned by MIT</span></a></li>
 						<li><a href="/worldcat">WorldCat <span class="about">Request items not owned by MIT</span></a></li>
 						<li><a href="/illiad">ILLiad <span class="about">Track your Interlibrary Borrowing requests</span></a></li>
 						<li><a href="/suggest-purchase">Suggest a purchase</a></li>

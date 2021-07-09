@@ -11,7 +11,7 @@
 	<div class="links-all flex-container">
 		<div class="flex-item">
 			<h4><a href="/search">Search</a></h4>
-			<a href="/search-collections" class="link-sub">Search our collections</a>
+			<a href="/search-collections" class="link-sub">Search Our Collections</a>
 			<a href="/worldcat" class="link-sub">WorldCat</a>
 			<a href="/search-reserves" class="link-sub">Course reserves</a>
 			<a href="/site-search" class="link-sub">Site search</a>
