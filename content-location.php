@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying location post information.
+ * The template for displaying location post information in a tabbed layout.
  *
  * @package MIT_Libraries_Parent
  * @since 1.2.1
