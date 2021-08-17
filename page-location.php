@@ -2,10 +2,9 @@
 /**
  * Template Name: Location Template
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is the template that displays location records, which have a number
+ * of custom fields defined by the ACF plugin. This template was designed
+ * prior to 2021, and is a legacy layout.
  *
  * @package MIT_Libraries_Parent
  * @since 1.2.1

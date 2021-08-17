@@ -501,7 +501,7 @@ function twentytwelve_body_class( $classes ) {
 		$classes[] = 'boxSizingOn';
 	}
 
-	if ( is_page_template( 'page-location.php' ) ) {
+	if ( is_page_template( 'page-location.php' ) || is_page_template( 'page-location-2021.php' ) ) {
 		$classes[] = 'locationPage';
 	}
 

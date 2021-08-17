@@ -74,6 +74,38 @@
 			}
 }
 
+// The 2021 location template adjusts column widths because the sidebar is not
+// loaded.
+.locationPage.page-template-page-location-2021 {
+	// This matches the left-margin that is used throughout the site.
+	.main-content {
+		padding-right: 27.5px;
+	}
+	.tab {
+		.first {
+			@include bp-tablet--portrait {
+				width: 33%;
+			}
+		}
+		.second {
+			@include bp-tablet--portrait {
+				width: 66%;
+			}
+			// This overrides default .alignleft styling which has 1em top
+			// margin.
+			img.alignleft {
+				margin-top: 0;
+			}
+		}
+	}
+	// This repeats a media-queried rule from _tabs.scss, for all screens.
+	.tabcontent {
+		border-top: 1px solid #dedede;
+		padding-top: 20px;
+		clear: both;
+	}
+}
+
 .page-locations {
 	.location-name {
 		padding-bottom: 15px;
