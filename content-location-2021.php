@@ -165,7 +165,6 @@ $alertContent = cf( 'alert_content' );
 
 					<div class="flex-item second span3">
 						<?php echo $content_top_2021; ?>
-						<?php echo $content1; ?>
 					</div>
 
 				</div>

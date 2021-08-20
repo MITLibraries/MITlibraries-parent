@@ -88,13 +88,19 @@
 			}
 		}
 		.second {
+			max-width: 540px;
 			@include bp-tablet--portrait {
 				width: 66%;
 			}
-			// This overrides default .alignleft styling which has 1em top
-			// margin.
-			img.alignleft {
-				margin-top: 0;
+
+			.featured-location {
+				margin-top: 36px;
+
+				// This overrides default .alignleft styling which has 1em top
+				// margin.
+				img.alignleft {
+					margin-top: 0;
+				}
 			}
 		}
 	}
@@ -306,6 +312,18 @@
 }
 
 /* ---- Responsive Styles ---- */
+@media screen and (max-width: 820px) {
+	.page-template-page-location-2021 {
+		.second {
+			.featured-location {
+				.alignleft {
+					float: inherit;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 569px) and (max-width: 820px) {
 	.locationPage {
 		.profile-content {
