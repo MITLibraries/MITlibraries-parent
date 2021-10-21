@@ -119,7 +119,7 @@ get_header(); ?>
 												<?php endif; ?>
 												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
 												<?php if ( get_the_title() !== 'Information Intersection at Stata Center' ) : ?>
-													<span class="hours">Open today<br/>
+													<span class="hours">Today's hours:<br/>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
 												<?php
 													endif;
