@@ -379,6 +379,9 @@ $next = '';
 	
 		<div class="locations-more">
 			<h3>Locations without hours</h3>
+			<!-- Building 9 -->
+			<h4>Building 9 book drop</h4>
+			<p><a href="/locations/#!building-9">Map:&nbsp; 9-Samuel Tak Lee Building</a></p>
 			<!-- DIRC -->
 			<h4><a href="/dirc">Digital Instruction Resource Center (DIRC)</a></h4>
 			<p><a href="/locations/#!digital-instruction-resource-center-dirc">Map:&nbsp; 14N-132</a></p>
