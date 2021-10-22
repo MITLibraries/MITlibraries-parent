@@ -343,6 +343,16 @@ function mitlib_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
+	register_sidebar( array(
+		'name'          => __( 'Location Hours Area', 'twentytwelve' ),
+		'id'            => 'sidebar-location-hours',
+		'description'   => __( 'Appears on library location pages, displaying a widget which displays the current hours for arbitrary locations. This enables a single location to display multiple sets of hours.', 'twentytwelve' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'mitlib_widgets_init' );
 
