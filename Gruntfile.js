@@ -41,9 +41,6 @@ module.exports = function(grunt) {
   // The default task performs all three phases.
   grunt.registerTask('default', ['javascript', 'release']);
 
-  // Code analysis is handled via PHP_CodeSniffer
-  grunt.registerTask('analyze', ['phpcs']);
-
   // Moved to the tasks folder:
   // grunt.registerTask('dev', ['connect', 'watch']);
 
