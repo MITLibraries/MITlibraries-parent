@@ -1,0 +1,16 @@
+name: Build assets
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  build_css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout theme
+        uses: actions/checkout@v2
+      - name: Install NPM packages
+        run: npm install
+      - name: Run Grunt javascript step
+        run: grunt javascript
+      - name: Run Grunt release step
+        run: grunt release
