@@ -41,7 +41,4 @@ module.exports = function(grunt) {
   // The default task performs all three phases.
   grunt.registerTask('default', ['javascript', 'release']);
 
-  // Moved to the tasks folder:
-  // grunt.registerTask('dev', ['connect', 'watch']);
-
 };
