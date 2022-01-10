@@ -29,14 +29,7 @@ jobs:
         run: grunt default
       - name: DEBUG enumerate files in build path
         run: ls -lR * css/build/
-
-  update_release_branch:
-    needs: build_assets          # This should run after the build_assets step, using its output.
-    runs-on: ubuntu-latest
-    steps:
-      - name: DEBUG what exists? # If nothing exists, then these steps merge with build_assets above
-        run: ls -lR *
-      - name: Create swap directory
+      - name: Create swap directory # Ideally this is part of a separate workflow, but I do not want to repeat the build.
         run: mkdir -vp /tmp/swap
       - name: Copy file to swap directory
         run: cp -R * . /tmp/swap
@@ -61,7 +54,7 @@ jobs:
           branch: dev-release
 
   development_release:
-    needs: update_release_branch # This generates the pre-release release of the theme.
+    needs: build_assets # This generates the pre-release release of the theme.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
