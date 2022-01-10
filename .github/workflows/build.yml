@@ -1,0 +1,75 @@
+name: Build assets
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  build_assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout theme
+        uses: actions/checkout@v2
+      - name: Install NPM packages
+        run: npm install
+      - name: Compile global
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: css/global.scss
+          destination: css/build/global.css
+      - name: Compile forms
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: css/forms.scss
+          destination: css/build/forms.css
+      - name: Compile hours
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: css/hours.scss
+          destination: css/build/hours.css
+      - name: Run Grunt steps
+        run: grunt default
+      - name: DEBUG enumerate files in build path
+        run: ls -lR * css/build/
+      - name: Create swap directory # Ideally this is part of a separate workflow, but I do not want to repeat the build.
+        run: mkdir -vp /tmp/swap
+      - name: Copy file to swap directory
+        run: cp -R * . /tmp/swap
+      - name: Checkout dev-release branch
+        uses: actions/checkout@v2
+        with:
+          ref: dev-release
+          fetch-depth: 1
+      - name: Copy files from swap directory
+        run: rsync -rlDz --delete --exclude '.git' /tmp/swap/ .
+      - name: Add and commit files to dev-release
+        run: |
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add .
+          git add -f css/build/*
+          git commit -m 'Updates theme including compiled assets'
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: dev-release
+
+  development_release:
+    needs: build_assets # This generates the pre-release release of the theme.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: dev-release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Dev release ${{ github.ref }}
+          body: |
+            This release created automatically. Please edit this text to something meaningful.
+          draft: false
+          prerelease: true
