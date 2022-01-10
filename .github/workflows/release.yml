@@ -1,0 +1,12 @@
+name: Prepare production release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update_release:       # Is it possible to depend on a job from a separate workflow?
+    needs: build_assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout theme source
+        uses: actions/checkout@v2
