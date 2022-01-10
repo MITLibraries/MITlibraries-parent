@@ -42,12 +42,18 @@ jobs:
           fetch-depth: 1
       - name: Copy files from swap directory
         run: rsync -rlDz --delete --exclude '.git' /tmp/swap/ .
-      - name: Add and commit files to dev-release
+      - name: Git add .
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git add .
+          git status
+      - name: Force-add css/build
+        run: |
           git add -f css/build/*
+          git status
+      - name: Commit changes
+        run: |
           git commit -m 'Updates theme including compiled assets'
       - name: Push changes
         uses: ad-m/github-push-action@master
