@@ -1,15 +1,13 @@
-name: Build assets
+name: Build stylesheets
 on:
   pull_request:
     branches: [ main ]
 jobs:
-  build_css:
+  compile_sass:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout theme
         uses: actions/checkout@v2
-      - name: Install NPM packages
-        run: npm install
       - name: Compile global
         uses: gha-utilities/sass-build@v0.2.2
         with:
@@ -25,9 +23,10 @@ jobs:
         with:
           source: css/hours.scss
           destination: css/build/hours.css
-      - name: Run Grunt javascript step
-        run: grunt styles
-      - name: Run Grunt javascript step
-        run: grunt javascript
-      - name: Run Grunt release step
-        run: grunt release
+
+  compile_stylesheets:
+    needs: compile_sass
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
