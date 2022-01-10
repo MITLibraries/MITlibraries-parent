@@ -23,10 +23,3 @@ jobs:
         with:
           source: css/hours.scss
           destination: css/build/hours.css
-
-  compile_stylesheets:
-    needs: compile_sass
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
