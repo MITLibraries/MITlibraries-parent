@@ -44,6 +44,5 @@ module.exports = function(grunt) {
   // For local development, there is a slightly separate workflow, because
   // Sass gets built directly in Grunt (the GH actions workflow handles this
   // using a separate taskrunner)
-  grunt.registerTask('styles-local', ['sass', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('build-local', ['javascript', 'styles-local', 'release']);
+  grunt.registerTask('build-local', ['javascript', 'sass', 'styles', 'release']);
 };

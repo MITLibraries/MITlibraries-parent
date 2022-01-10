@@ -2,7 +2,7 @@ name: Prepare production release
 on:
   push:
     branches:
-      - main
+      - [ main, engx-117-github-actions ]
 jobs:
   update_release:       # Is it possible to depend on a job from a separate workflow?
     needs: build_assets
@@ -10,3 +10,5 @@ jobs:
     steps:
       - name: Checkout theme source
         uses: actions/checkout@v2
+      - name: DEBUG what exists
+        run: ls -lR * .
