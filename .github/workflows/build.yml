@@ -6,11 +6,11 @@ jobs:
   build_assets:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout theme
+      - name: Checkout theme                      # 1.  Initialize local environment. Checkout code, install tools, etc.
         uses: actions/checkout@v2
       - name: Install NPM packages
         run: npm install
-      - name: Compile global
+      - name: Compile global                      # 2a. The actual build - the next three steps are Sass compiling...
         uses: gha-utilities/sass-build@v0.2.2
         with:
           source: css/global.scss
@@ -25,13 +25,26 @@ jobs:
         with:
           source: css/hours.scss
           destination: css/build/hours.css
-      - name: Run Grunt steps
+      - name: Run Grunt steps                     # 2b. The rest of the build after Sass happens through Grunt (see 
+                                                  #     Gruntfile.js)
         run: grunt default
-      - name: DEBUG inspect build output
-        run: |
-          head style.css
-          ls -lR ./css/build/
+      - name: DEBUG inspect build output          # At this point, the build is complete. We just need to get the
+                                                  # output into a state that can be distributed.
+                                                  # The next few steps confirm that we've built what we expect (the
+                                                  # stylesheet should have branch information, and there should be built
+                                                  # css and js files)
+        run: git status
+      - name: DEBUG confirm git branch/commit in stylesheet
+        run: head style.css
+      - name: DEBUG confirm CSS build output
+        run: ls -lR ./css/build/
+      - name: DEBUG confirm JS build output
+        run: ls -lR ./js/build/
+
       - name: Create swap directory # Ideally this is part of a separate workflow, but I do not want to repeat the build.
+                                                  # 3.  For interim releases, we need to transfer the assets over to
+                                                  #     the dev-release branch. So we copy those assets to a swap
+                                                  #     directory, check out, and then copy them back.
         run: mkdir -vp /tmp/swap
       - name: Copy file to swap directory
         run: cp -R * . /tmp/swap
@@ -39,27 +52,28 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: dev-release
-          fetch-depth: 1
+          fetch-depth: 0                          # TODO - do we need this fetch-depth parameter?
+      - name: DEBUG Confirm our place in git tree (have we checked out what we expect?)
+        run: git log --oneline --decorate --graph --all
       - name: Copy files from swap directory
         run: rsync -rlDz --delete --exclude '.git' /tmp/swap/ .
-      - name: Git add .
+                                                  # I _think_ things are working okay throught this step, but everything
+                                                  # after this is a bit suspect.
+      - name: Stage changed files for commit
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git add .
           git status
-      - name: Force-add css/build
+      - name: Force-add built content (stylesheets and javascript) - necessary because of .gitignore
         run: |
           git add -f css/build/*
-          git status
-      - name: Commit changes
+          git add -f js/build/*
+      - name: DEBUG Confirm scope of changes to dev-release
+        run: git status
+      - name: Commit changes                      # TODO - could we get a better commit message?
         run: |
           git commit -m 'Updates theme including compiled assets'
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: dev-release
       - name: Experimental release
         id: create_release
         uses: actions/create-release@v1
@@ -72,6 +86,13 @@ jobs:
             This is an experimental draft release. Where does it appear?
           draft: true
           prerelease: true
+      - name: DEBUG Confirm our place in git tree (compare to previous git tree output)
+        run: git log --oneline --decorate --graph --all
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: dev-release
 
   development_release:
     needs: build_assets # This generates the pre-release release of the theme.
