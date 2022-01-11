@@ -35,16 +35,14 @@ module.exports = function(grunt) {
   // 1) Javascript preparation (concatenating and uglifying scripts)
   grunt.registerTask('javascript', ['concat', 'uglify']);
   // 2) Stylesheet preparation (SASS, autoprefixing, and minification)
-  grunt.registerTask('styles', ['sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('styles', ['autoprefixer', 'cssmin']);
   // 3) Appending the most recent git commit to the theme version
   grunt.registerTask('release', ['gitinfo', 'replace']);
   // The default task performs all three phases.
   grunt.registerTask('default', ['javascript', 'styles', 'release']);
 
-  // Code analysis is handled via PHP_CodeSniffer
-  grunt.registerTask('analyze', ['phpcs']);
-
-  // Moved to the tasks folder:
-  // grunt.registerTask('dev', ['connect', 'watch']);
-
+  // For local development, there is a slightly separate workflow, because
+  // Sass gets built directly in Grunt (the GH actions workflow handles this
+  // using a separate taskrunner)
+  grunt.registerTask('build-local', ['javascript', 'sass', 'styles', 'release']);
 };
