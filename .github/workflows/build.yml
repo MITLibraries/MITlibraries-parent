@@ -7,7 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout theme                      # 1.  Initialize local environment. Checkout code, install tools, etc.
+                                                  # FIXME - The checkout happens in a detached head state, so the branch
+                                                  # isn't showing up in the stylesheet correctly. This also may mean an
+                                                  # orphan commit getting created. Maybe using fetch-depth 0?
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Install NPM packages
         run: npm install
       - name: Compile global                      # 2a. The actual build - the next three steps are Sass compiling...
@@ -47,7 +52,9 @@ jobs:
                                                   #     directory, check out, and then copy them back.
         run: mkdir -vp /tmp/swap
       - name: Copy file to swap directory
-        run: cp -R * . /tmp/swap
+        run: cp -R . /tmp/swap
+      - name: DEBUG Confirm state of swap directory
+        run: ls -lR /tmp/swap
       - name: Checkout dev-release branch
         uses: actions/checkout@v2
         with:
@@ -102,6 +109,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: dev-release
+      - name: DEBUG confirm our place in git tree
+        run: git log --oneline --decorate --graph --all
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
