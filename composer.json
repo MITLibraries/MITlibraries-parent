@@ -1,0 +1,12 @@
+{
+    "name": "mjbernha/mitlib-tesseract",
+    "description": "A parent theme for the Pentagram-designed branding of the MIT Libraries",
+    "type": "wordpress-theme",
+    "authors": [
+        {
+            "name": "Matt Bernhardt",
+            "email": "mjbernha@mit.edu"
+        }
+    ],
+    "require": {}
+}

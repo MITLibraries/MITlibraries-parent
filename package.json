@@ -1,8 +1,8 @@
 {
-  "name": "MITLibrares-parent",
+  "name": "mitlib-tesseract",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mitlibraries/mitlibraries-parent.git"
+    "url": "https://github.com/matt-bernhardt/mitlib-tessearct.git"
   },
   "version": "1.5.6",
   "devDependencies": {
