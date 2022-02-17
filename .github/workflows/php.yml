@@ -26,11 +26,69 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
+
+    - name: Install NPM packages
+      run: npm install
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
-
     # - name: Run test suite
     #   run: composer run-script test
+    # This approach could also be used if we adopt Robo for our build, rather than Grunt
+
+    - name: Compile global                      # 2a. The actual build - the next three steps are Sass compiling...
+      uses: gha-utilities/sass-build@v0.2.2
+      with:
+        source: css/global.scss
+        destination: css/build/global.css
+    - name: Compile forms
+      uses: gha-utilities/sass-build@v0.2.2
+      with:
+        source: css/forms.scss
+        destination: css/build/forms.css
+    - name: Compile hours
+      uses: gha-utilities/sass-build@v0.2.2
+      with:
+        source: css/hours.scss
+        destination: css/build/hours.css
+    - name: Run Grunt steps                     # 2b. The rest of the build after Sass happens through Grunt (see
+                                                #     Gruntfile.js)
+      run: grunt default
+
+    - name: DEBUG inspect build output          # At this point, the build is complete. We just need to get the
+                                                # output into a state that can be distributed.
+                                                # The next few steps confirm that we've built what we expect (the
+                                                # stylesheet should have branch information, and there should be built
+                                                # css and js files)
+      run: git status
+    - name: DEBUG confirm git branch/commit in stylesheet
+      run: head style.css
+    - name: DEBUG confirm CSS build output
+      run: ls -lR ./css/build/
+    - name: DEBUG confirm JS build output
+      run: ls -lR ./js/build/
+
+    - name: Store build result as an artifact   # At the end of the build process, we store those files needed for
+                                                # use (templates, stylesheets, scripts, images, etc) as an artifact.
+                                                # That artifact will be retrieved and committed to the release
+                                                # branch below.
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact
+        path: |
+          css
+          !css/**/*.scss
+          fonts
+          images
+          inc
+          js
+          languages
+          lib
+          libs
+          composer.json
+          *.css
+          *.php
+          *.png
+          *.html
