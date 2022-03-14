@@ -191,6 +191,7 @@ function twentytwelve_scripts_styles() {
 
 	if ( is_front_page() && ! is_child_theme() ) {
 		wp_enqueue_script( 'homeJS' );
+		wp_add_inline_script( 'homeJS', 'const ALERT_URL = "' . esc_js( get_option( 'source' ) ) . '";', 'before' );
 	}
 
 	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) || is_page_template( 'page.php' ) ) {
@@ -1084,3 +1085,9 @@ if ( ! function_exists( 'mitlib_page_customization_meta_callback' ) ) {
  * End the functions which implement the customization metabox on the page
  * editing screen.
  */
+
+/**
+ * Initialize alerts object
+ */
+add_action( 'admin_init', array( 'Mitlib\Alerts\Settings', 'init' ) );
+add_action( 'admin_menu', array( 'Mitlib\Alerts\Dashboard', 'init' ) );
