@@ -2,6 +2,7 @@
     "name": "mjbernha/mitlib-tesseract",
     "description": "A parent theme for the Pentagram-designed branding of the MIT Libraries",
     "type": "wordpress-theme",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Matt Bernhardt",

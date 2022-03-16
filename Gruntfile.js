@@ -35,7 +35,7 @@ module.exports = function(grunt) {
   // 1) Javascript preparation (concatenating and uglifying scripts)
   grunt.registerTask('javascript', ['concat', 'uglify']);
   // 2) Stylesheet preparation (SASS, autoprefixing, and minification)
-  grunt.registerTask('styles', ['sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('styles', ['autoprefixer', 'cssmin']);
   // 3) Appending the most recent git commit to the theme version
   grunt.registerTask('release', ['gitinfo', 'replace']);
   // The default task performs all three phases.
