@@ -10,6 +10,7 @@
 	<exclude-pattern>/libs/*</exclude-pattern>
 	<exclude-pattern>/navwalker.php</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
