@@ -117,9 +117,13 @@ function showAlerts(json) {
 
 $(function(){
 
+	if ( 'undefined' === typeof ALERT_URL || '' === ALERT_URL ) {
+		ALERT_URL = '/wp-json/wp/v2/posts';
+	};
+
 	// This retrieves a list of posts, with additional parsing to determine if
 	// any are displayable alerts.
-	$.getJSON('/wp-json/wp/v2/posts')
+	$.getJSON( ALERT_URL )
 		.done(function(data){
 			showAlerts(data);
 		});
