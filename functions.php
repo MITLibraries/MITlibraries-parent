@@ -197,9 +197,8 @@ function twentytwelve_scripts_styles() {
 
 	if ( is_front_page() && ! is_child_theme() ) {
 		wp_enqueue_script( 'homeJS' );
-		wp_localize_script( 'homeJS', 'mitlib', array(
-			'themeUrl' => get_template_directory_uri(),
-		));
+		wp_localize_script( 'homeJS', 'mitlib', array( 'themeUrl' => get_template_directory_uri(), ) );
+		wp_add_inline_script( 'homeJS', 'const ALERT_URL = "' . esc_js( get_option( 'source' ) ) . '";', 'before' );
 	}
 
 	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) || is_page_template( 'page.php' ) ) {
@@ -1057,3 +1056,9 @@ function ssl_srcset( $sources ) {
 	return $sources;
 }
 add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
+
+/**
+ * Initialize alerts object
+ */
+add_action( 'admin_init', array( 'Mitlib\Alerts\Settings', 'init' ) );
+add_action( 'admin_menu', array( 'Mitlib\Alerts\Dashboard', 'init' ) );
