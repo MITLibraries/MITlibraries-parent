@@ -1054,3 +1054,33 @@ function ssl_srcset( $sources ) {
 	return $sources;
 }
 add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
+
+/**
+ * Start a block of functions that implement a metabox on the page editing
+ * screen.
+ */
+if ( ! function_exists( 'mitlib_page_customization_meta' ) ) {
+	/**
+	 * Adds a meta box to the page editing screen
+	 */
+	function mitlib_page_customization_meta() {
+		add_meta_box( 'mitlib_page_customization_meta', __( 'Page Customization', 'prfx-textdomain' ), 'mitlib_page_customization_meta_callback', 'page', 'side', 'high' );
+	}
+}
+add_action( 'add_meta_boxes', 'mitlib_page_customization_meta' );
+
+if ( ! function_exists( 'mitlib_page_customization_meta_callback' ) ) {
+	/**
+	 * Outputs the content of the meta box
+	 *
+	 * @param object $post unused.
+	 */
+	function mitlib_page_customization_meta_callback( $post ) {
+		$post = null; // Wipe Unused argument.
+		echo 'To customize the breadcrumb and the link to the top-level category at the top of the page, see the <strong>Categories</strong> box below.';
+	}
+}
+/**
+ * End the functions which implement the customization metabox on the page
+ * editing screen.
+ */
