@@ -376,23 +376,10 @@ $next = '';
 	</table>
 	
 	<!-- TABLE ENDS -->
-	
-		<div class="locations-more">
-			<h3>Locations without hours</h3>
-			<!-- Building 9 -->
-			<h4>Building 9 book drop</h4>
-			<p><a href="/locations/#!building-9">Map:&nbsp; 9-Samuel Tak Lee Building</a></p>
-			<!-- DIRC -->
-			<h4><a href="/dirc">Digital Instruction Resource Center (DIRC)</a></h4>
-			<p><a href="/locations/#!digital-instruction-resource-center-dirc">Map:&nbsp; 14N-132</a></p>
-			<!-- STATA -->
-			<h4>Stata Center Book Drop</h4>
-			<p><a href="/locations/#!stata">Map:&nbsp;  32-Student Street</a></p>
-			<!-- Physics Reading Room -->
-			<h4>Physics Reading Room</h4>
-			<p>Building 4-332 | 617.253.1791<br>
-			<a href="mailto:jytqtran@mit.edu">Tan-Quy Tran</a>, Reading Room Assistant</p>
-		</div>  <!-- end div.locations-more -->
+
+	<?php if ( is_active_sidebar( 'sidebar-below-hours-grid' ) ) : ?>
+		<?php dynamic_sidebar( 'sidebar-below-hours-grid' ); ?>
+	<?php endif; ?>
 
 	</div> <!-- end .content-page -->
 </div> <!-- end #content -->
