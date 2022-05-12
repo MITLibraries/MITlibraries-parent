@@ -47,7 +47,6 @@ body.page-home {
 		display: flex;
 		flex-direction: column;
 		h2 {
-			border-bottom: 1px solid $color-secondary;
 			text-align: left;
 			@include bp-tablet--portrait {
 				padding: 0.5em .5em 0.25em;
@@ -294,7 +293,6 @@ body.page-home {
 				margin: 8px;
 				.widget-title {
 					color: white;
-					border-bottom: 1px solid white;
 					padding: 9px 9px 0 9px;
 				}
 				.textwidget {
