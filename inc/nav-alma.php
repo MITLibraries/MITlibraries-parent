@@ -22,6 +22,7 @@
 						<li><a href="/search">Search tools home</a></li>
 						<li><a href="/search-collections">Search Our Collections <span class="about">Books, articles, and more</span></a></li>
 						<li><a href="/worldcat">WorldCat<span class="about">Books &amp; more worldwide</span></a></li>
+						<li><a href="https://libguides.mit.edu/az.php">Databases A-Z<span class="about">JSTOR, PubMed, Web of Science, etc.</span></a></li>
 						<li><a href="/search-reserves">Course reserves</a></li>
 					</ul>
 				</div>
@@ -60,9 +61,9 @@
 						<li><a href="/locations">Map of locations</a></li>
 						<li><a href="/study">Study spaces</a></li>
 						<li><a href="/disabilities">Persons with disabilities</a></li>
-						<li><a href="/copying">Scan, copy, print</a></li>
+						<li><a href="/copying">Scan &amp; print</a></li>
 						<li><a href="/exhibits">Exhibits &amp; galleries</a></li>
-						<li><a href="/visitors">Non-MIT visitors</a></li>
+						<li><a href="/visitors">Visitors</a></li>
 						<li><a href="/use-policies">Library use policy</a></li>
 					</ul>
 				</div>
@@ -87,7 +88,7 @@
 				<div class="col-2 flex-item">
 					<h3 class="heading-col">More information</h3>
 					<ul class="list-unbulleted">
-						<li><a href="/reserves">Course reserves &amp; TIP</a></li>
+						<li><a href="/reserves">Course reserves</a></li>
 						<li><a href="/borrow-direct">Borrow Direct <span class="about">Request items from Harvard, Yale, etc.</span></a></li>
 						<li><a href="/otherlibraries">Visit non-MIT libraries <span class="about">Harvard, Borrow Direct, etc.</span></a></li>
 					</ul>
@@ -114,7 +115,7 @@
 						<li><a href="/references">Citation &amp; writing tools <span class="about">Mendeley, Zotero, &amp; Overleaf</span></a></li>
 						<li><a href="/citing">Citing sources <span class="about">Avoid plagiarism, format references, etc.</span></a></li>
 						<li><a href="/data-services">Data services <span class="about">GIS, data management, statistical support</span></a></li>
-						<li><a href="/scholarly">Scholarly publishing <span class="about">Open access &amp; copyright</span></a></li>
+						<li><a href="/scholarly">Scholarly communications <span class="about">Open access, copyright, &amp; publishing</span></a></li>
 						<li><a href="/apis">APIs for scholarly resources</a></li>
 					</ul>
 				</div>
