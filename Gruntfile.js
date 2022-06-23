@@ -43,8 +43,4 @@ module.exports = function(grunt) {
 
   // Code analysis is handled via PHP_CodeSniffer
   grunt.registerTask('analyze', ['phpcs']);
-
-  // Moved to the tasks folder:
-  // grunt.registerTask('dev', ['connect', 'watch']);
-
 };
