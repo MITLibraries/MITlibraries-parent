@@ -130,6 +130,8 @@ function twentytwelve_scripts_styles() {
 
 	wp_register_style( 'jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false );
 
+	wp_register_style( 'super-admin', get_template_directory_uri() . '/css/super-admin.css', array(), $theme_version, false );
+
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
@@ -226,6 +228,9 @@ function twentytwelve_scripts_styles() {
 		wp_enqueue_script( 'bootstrap-js' );
 	}
 
+	if ( is_super_admin() ) {
+		wp_enqueue_style( 'super-admin' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );

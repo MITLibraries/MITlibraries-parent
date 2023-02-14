@@ -1,0 +1,23 @@
+/* Links to the production URL are in green, and change the cursor to warn against clicking them. */
+body.admin-bar a[href^="https://libraries."],
+body.admin-bar a[href^="http://libraries."] {
+  border: 5px solid green;
+  cursor: not-allowed;
+}
+
+body.admin-bar img[src^="https://libraries."],
+body.admin-bar img[src^="http://libraries."] {
+	border: 5px solid green;
+  cursor: not-allowed;
+}
+
+/* Links to non-productions URLs are thicker and red, to be annoying and force changes. */
+body.admin-bar a[href^="https://libraries-"],
+body.admin-bar a[href^="http://libraries-"] {
+  border: 10px solid red;
+}
+
+body.admin-bar img[src^="https://libraries-"],
+body.admin-bar img[src^="http://libraries-"] {
+	border: 10px solid red;
+}
